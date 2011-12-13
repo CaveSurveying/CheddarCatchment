@@ -1,0 +1,267 @@
+encoding  utf-8
+#common layout for the mendip maps
+
+# This file contains the settings used for the layout that should be common for the
+# whole data set.
+# The help with each command,comes from the Therion Book issued with v0.3.10
+#('M' and 'A' idicate whether the option applies to Map or Atlas output mode respectively)
+
+input Symbols.th
+
+layout common
+copy symbols
+
+
+scale 1 500
+# scale <picture length> <real length> 
+# set scale of output map or map atlas (M, A; default: 1 200)
+
+#base-scale 1 1000
+# base-scale <picture length> <real length> . if set, Therion will optically scale
+#the map by a (scale/base-scale) factor. This has the same effect as if the map
+#printed in base-scale would be photoreduced to the scale. (M, A)
+
+
+units metric
+# units <metric/imperial> . set output units (M, A; default: metric)
+
+#symbol-set UIS
+# needs to be disabled for the metacode to work
+# symbol-set <symbol-set> . use symbol-set for all map symbols, if available (M, A)
+#Therion uses following predefined symbol sets:
+#UIS (International Union of Speleology)
+#ASF (Australian Speleological Federation)
+#CCNP (Carlsbad Caverns National Park)
+#SKBB (Speleoklub Bansk´a Bystrica)
+
+#symbol-assign
+# symbol-assign <point/line/area/group/special> <symbol-type> <symbol-set>
+#. display a particular symbol in the given symbol-set. This option overrides symbol-set
+#option.
+#If the symbol has a subtype, <symbol-type> argument may have one of the following
+#forms: type:subtype or simply type, which assigns new symbol set to all subtypes of
+#a given symbol.
+#Following symbols may not be used with this option: point section (which isn't rendered
+#at all) and all point and line labels (label, remark, altitude, height, passage-height,
+#station-name, date). See the chapter Changing layout/Customizing text labels for details
+#how to change labels' appearance. (M, A)
+#Group may be one of the following: all, centerline, sections.
+#There are two special symbols: north-arrow, scale-bar.
+
+#overlap <value> <units>
+# overlap <value> <units> . set overlap size in paper units in the atlas mode or map
+#margin in the map mode (M, A; default: 1 cm)
+
+# page-setup <dimensions> <units>
+# page-setup <dimensions> <units> . set page dimensions in this order: paper-width,
+#paper-height, page-width, page-height, left-margin and top-margin. If not specified, it
+#will be computed from size and overlap (A; default: 21 29.7 20 28.7 0.5 0.5 cm (A4))
+
+#page-numbers <on/off>
+# page-numbers <on/off> . turn on/off page numbering (A; default: true)
+
+#exclude-pages <on/off> <list>
+# exclude-pages <on/off> <list> . exclude specified pages from cave atlas. The list
+#may contain page numbers separated by a comma or dash (for intervals) e.g. 2,4-
+#7,9,23 means, that pages 2, 4, 5, 6, 7, 9 and 23 should be omitted. Only the map
+#pages should be counted. (Set own-pages 0 and title-pages off to get the correct
+#page numbers to be excluded.) Changes of own-pages or title-pages options dont
+#affect page excluding. (A)
+
+#title-pages <on/off>
+# title-pages <on/off> . turn on/off title pages before each atlas chapter (A; default:
+#off)
+
+#nav-factor <factor>
+# nav-factor <factor> . set atlas navigator zoom factor (A; default: 30)
+
+#nav-size <x-size> <y-size>
+# nav-size <x-size> <y-size> . set number of atlas pages in both directions of navigator
+#(A; default: 2 2)
+
+transparency on
+# transparency <on/off> . set transparency for the passages (underlying passages are
+#also visible) (M, A; default: on)
+
+opacity 60
+# opacity <value> . set opacity value (used if transparency is on). Value range is
+#0100. (M, A; default: 70)
+
+#surface <top/bottom/off>
+# surface-opacity <value> . set the surface bitmap opacity (used if transparency is
+#on). Value range is 0-100. (M, A; default: 70)
+
+surface-opacity 25
+# surface <top/bottom/off> . set the position of the surface bitmap above/below the
+#map. (M, A; default: off)
+
+#layers <on/off>
+# layers <on/off> . enable/disable PDF 1.5 layers (M, A; default: on)
+
+north grid
+#north <true/grid>
+
+grid bottom
+# grid <off/bottom/top> . enable/disable grid (M, A; default: off)
+
+#grid-origin <x> <y> <x> <units>
+# grid-origin <x> <y> <x> <units> . set coordinates of grid origin (M, A) 
+
+grid-size 200 200 50 metres
+# grid-size <x> <y> <z> <units> . set grid size in real units (M, A; default 10 m)
+
+grid-coords border
+#grid-coords <off/border/all> ◃ specify where to label grid with coordinates. 
+#(M,A; default: off)
+
+#origin <x> <y> <z> <units>
+# origin <x> <y> <z> <units> . set origin of atlas pages (M, A)
+
+#origin-label <x-label> <y-label>
+# origin-label <x-label> <y-label> . set label for atlas page which has the lower
+#left corner at the given origin coordinates (M, A; default: 0 0)
+
+#own-pages <number>
+# own-pages <number> . set number of own pages added before the first page of automatically
+#generated pages in atlas mode (currently required for correct page numbering)
+#(A; default: 0)
+
+#page-grid <on/off>
+# page-grid <on/off> . show pages key plan (M; default: off)
+
+legend off
+# legend <on/off/all> . display list of used map symbols in the map header. If set to
+#all, all symbols from the current symbol set are displayed. (M, A; default: off)
+
+#colour-legend <on/off>
+# colo[u]r-legend <on/off> . turn on/off colour legend (M, A)
+
+#legend-columns <number>
+# legend-columns <number> . adjusts the number of legend columns (M, A; default: 2)
+
+#legend-width <n> <units>
+# legend-width <n> <units> . legend width (M, A; default: 14 cm)
+
+map-header 10 10 sw
+#map-header <x> <y> <off/n/s/e/w/ne/nw/se/sw/center> . print map header at
+#location specied by <x> <y>. Predened map header contains some basic information
+#about cave: name, scale, north arrow, list of surveyors etc. It is fully customizable (see
+#the chapter Changing layout for details). <x> is easting (left-right on page). <y> is
+#northing (up/down page). Ranges for <x> and <y> are -100{200. Lower-left corner of
+#the map is 0 0, upper-right corner is 100 100. The header is aligned with the specied
+#corner or side to this anchor point. (M; default: 0 100 nw)
+
+map-header-bg on
+# map-header-bg <on/off> . when on, background of map header is filled with background
+#colour (e.g. to hide map grid). (M; default: off)
+
+#statistics <explo/topo/carto/copyright all/off/number><explo/topo-length on/off>
+# statistics <explo/topo/carto/copyright all/off/number> or
+# statistics <explo/topo-length on/off> . display some basic statistics (M, A; default:
+#off)
+
+scale-bar 100 metres
+# scale-bar <length> <units> . set the length of the scale-bar (M, A)
+
+#Change the scale bar to black and white bar, split into 5 and labelled
+code metapost
+  def s_scalebar (expr l, units, txt) =
+    begingroup
+      interim warningcheck:=0;
+      tmpl:=l / Scale * cm * units / 2;
+      tmpx:=l / Scale * cm * units / 5;
+      tmph:=5bp; % bar height
+    endgroup;
+    pickup PenC;
+#Adjusted to make lines not stick out: 0.25*u/10,0 is half thickness of PenC
+    draw (-tmpl+0.25*u/10,0)--(tmpl-0.25*u/10,0);
+    draw (tmpl-0.25*u/10,-tmph)--(-tmpl+0.25*u/10,-tmph);
+    p:=(0,0)--(tmpx,0)--(tmpx,-tmph)--(0,-tmph)--cycle;
+    for i:=-2.5 step 2 until 2:
+      fill p shifted (i * tmpx,0);
+
+    endfor;
+    begingroup
+      interim labeloffset:=3.5bp;
+      for i:=0 step (l/5) until (l-1):
+        tmpx:=tmpl * (i * 2 / l - 1);
+        label.top(thTEX(decimal (i)),(tmpx,0));
+      endfor;
+      label.top(thTEX(decimal (l) & "\thinspace" & txt),(tmpl,0));
+#      label.bot(thTEX("Original Scale = 1 : " & decimal (Scale*100)),(0,-tmph));
+    endgroup;
+  enddef;
+
+endcode
+
+language en_UK
+# language <xx[_YY]> . set output language. Available languages are listed on impressum
+#page. See the Appendix if you want to add or customize translations. (M,A)
+
+
+#colour map-gb [ 70 90 70 ]
+colour map-bg 90
+#colour map-fg altitude
+# colo[u]r <item> <colour> . customize colour for special map items (map-fg, mapbg,
+#preview-above, preview-below). Colour range is 0-100 for grayscale, [0-100 0-100
+#0-100] triplet for RGB colours. Special colour specification for map-fg is altitude,
+#scrap or map, in which case the map is coloured according to altitude, scraps or maps.
+# Set background to be grey or pale blue. 
+
+
+# code <metapost/tex-map/tex-atlas> . Add/redefine TEX and METAPOST macros
+#here. This allows user to configure various things (like user defined symbols, map and
+#atlas layout at one place &c.) See the chapter Changing layout for details.
+
+symbol-colour point water-flow [0 0 100]
+code metapost
+  let p_gradient = p_entrance_UIS;
+#replaces the UIS gradient symbol with the entrance symbol that looks like 
+#BCRA gradient symbol
+
+  let l_floorstep = l_border_visible_SKBB;
+# bodge to make floor-steps look sensible
+
+
+ 
+
+
+# define dashed line for surface surveys
+  def l_survey_surface (expr P) =
+    T:=identity;
+    pickup PenD scaled 0.2;
+    thdraw P withcolor (0.8,0.8,0.8);
+  enddef;
+  def l_survey_cave (expr P) =
+    T:=identity;
+    pickup PenD scaled 0.2;
+    thdraw P;
+  enddef;
+
+# define water to be light blue
+  def a_water (expr p) =
+    T:=identity;
+#nice light blue - but nearly same as level colour - change back when we have control of that
+#    thfill p withcolor (0.48, 0.84, 1.0);
+    thfill p withcolor (0.0, 0.0, 1.0);
+
+    enddef;
+
+# define sump to be dark blue
+  def a_sump (expr p) =
+    T:=identity;
+    thfill p withcolor (0.05, 0.0, 0.7);
+  enddef;
+  
+
+endcode
+
+doc-author "Andrew Atkinson"
+# doc-author <string> . set document author (M, A)
+
+doc-keywords "Cave Survey"
+doc-subject "Cave Survey"
+
+
+endlayout
+

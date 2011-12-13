@@ -1,0 +1,153 @@
+encoding  utf-8
+layout symbols
+
+code metapost
+
+
+def l_u_rail (expr P) = 
+  T:=identity;
+  cas := 0;
+  dlzka := arclength P;
+  mojkrok:=adjust_step(dlzka, 0.8u);
+  pickup PenC;
+  forever:
+    t0 := arctime (cas) of P;
+    t1 := arctime (cas + mojkrok*2/5) of P;
+    t  := arctime (cas + mojkrok/2) of P;
+    t4 := arctime (cas + mojkrok*3/5) of P;
+    t5 := arctime (cas + mojkrok) of P;
+    thdraw (subpath (t0,t1) of P);
+    thdraw (subpath (t4,t5) of P);
+    drawdot
+       (point t of P);
+    #mark_ (P,t,0.02u);
+    #mark_ (P,t,-0.02u);
+     #f := (P,t,0.2u);
+     #draw f;
+    cas := cas + mojkrok;
+    exitif cas > dlzka - (2*mojkrok/3); % for rounding errors
+  endfor;
+enddef;
+
+
+initsymbol("l_u_rail")
+#text en line u:rail "Railing"
+
+              
+      def a_debris_CHED (expr p) =
+      T:=identity;
+      pickup PenC;
+      path q, qq; q = bbox p;
+      picture tmp_pic; 
+      tmp_pic := image(
+        for i = xpart llcorner q step u until xpart urcorner q:
+         for j = ypart llcorner q step u until ypart urcorner q:
+            qq := punked 
+  (((-.2u,-.2u)--(.2u,-.2u)--(.2u,.2u)--(-.2u,.2u)--cycle) 
+         randomized (u/2))
+               rotated uniformdeviate(360) 
+               shifted ((i,j) randomized u);
+       if xpart (p intersectiontimes qq) < 0:
+        thclean qq;
+        thdraw qq;
+       fi;
+          endfor;  
+        endfor;
+      );
+      clip tmp_pic to p;
+      draw tmp_pic;
+    enddef;
+    
+      def a_sand_CHED(expr p) =
+        T:=identity;
+        %  thclean p;
+        pickup PenC;
+        path q; q = bbox p;
+        picture tmp_pic; 
+        tmp_pic := image(
+          for i = xpart llcorner q step .3u until xpart urcorner q:
+            for j = ypart llcorner q step .3u until ypart urcorner q:
+              draw origin shifted ((i,j) randomized 0.2u) withpen PenC;
+            endfor;  
+          endfor;
+        );
+        clip tmp_pic to p;
+        draw tmp_pic;
+      enddef;
+      
+      def l_flowstone_CHED (expr P) = 
+  T:=identity;
+  cas := 0;
+  dlzka := arclength P;
+  mojkrok:=adjust_step(dlzka, .25u);
+  pickup PenC;  
+  t1:=0;
+  forever:
+    t2 := arctime (cas + mojkrok) of P;
+    thdraw (point t1 of P){dir (angle(thdir(P,t1)) + 60)} ..
+           {dir (angle(thdir(P,t2)) - 60)}(point t2 of P);
+    cas := cas + mojkrok;
+    exitif cas > dlzka + (mojkrok / 3); % for rounding errors
+    t1:=t2;
+  endfor;
+enddef;
+
+def l_overhang_CHED (expr P) =
+# taken from: def l_ceilingstep_SKBB (expr P) =
+  T:=identity;
+  cas := 0;
+  dlzka := arclength P;
+  #controls the length
+  mojkrok:=adjust_step(dlzka, 0.3u);
+  pickup PenC;
+  forever:
+    t1 := arctime (cas + mojkrok*1/5) of P;
+    t  := arctime (cas + mojkrok/2) of P;
+    t2 := arctime (cas + mojkrok*4/5) of P;
+    thdraw (subpath (t1,t2) of P);
+    #controls the lengthof the tick
+    mark_ (P,t,0.15u);
+    cas := cas + mojkrok;
+    exitif cas > dlzka - (2*mojkrok/3); % for rounding errors
+  endfor;
+enddef;
+
+ def l_pit_CHED (expr P) = 
+  T:=identity;
+  cas := 0;
+  dlzka := arclength P;
+  mojkrok:=adjust_step(dlzka, 0.1u);
+  pickup PenD;  
+  forever:
+    t := arctime cas of P;
+    mark_ (P,t,0.1u);
+    cas := cas + mojkrok;
+    exitif cas > dlzka + (mojkrok / 3); % for rounding errors
+  endfor;
+  pickup PenC;  
+  thdraw P;
+enddef; 
+
+
+
+initsymbol ("l_flowstone_CHED");
+initsymbol ("l_pit_CHED");
+initsymbol ("l_overhang_CHED");
+
+    initsymbol ("a_sand_CHED");
+    initsymbol ("a_debris_CHED");
+    
+endcode
+
+    symbol-assign area debris CHED
+    symbol-assign area sand CHED
+    
+    symbol-assign line flowstone CHED
+    symbol-assign line overhang CHED
+    symbol-assign line pit CHED
+
+
+
+
+endlayout
+
