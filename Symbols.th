@@ -137,6 +137,54 @@ initsymbol ("l_overhang_CHED");
     initsymbol ("a_sand_CHED");
     initsymbol ("a_debris_CHED");
     
+def l_wall_blocks_CHED (expr P) = 
+
+%  pickup PenD;
+%  draw P withcolor red;
+
+  T:=identity;
+  cas := 0;
+  dlzka := arclength P;
+if dlzka > 0:
+  mojkrok:=adjust_step(dlzka, .9u);
+  pickup PenB;
+  forever:
+    t1 := arctime (cas + mojkrok*1/10) of P;
+    t2 := arctime (cas + mojkrok*9/10) of P;
+    q := ((point t1 of P) + .2u * unitvector(thdir(P,t1) rotated -90)) --
+         (subpath (t1,t2) of P) --
+         ((point t2 of P) + .2u * unitvector(thdir(P,t2) rotated -90));
+    thdraw q randomized (u/6);
+    cas := cas + mojkrok;
+    exitif cas > dlzka - (2*mojkrok/3); % for rounding errors
+  endfor;
+fi;
+enddef;
+
+    initsymbol ("l_wall_blocks_CHED");
+
+#derived from def l_pit_UIS (expr P) =     
+    def l_floorstep_CHED (expr P) = 
+  T:=identity;
+  cas := 0;
+  dlzka := arclength P;
+ # Step leangth changed from 0.25
+  mojkrok:=adjust_step(dlzka, 0.12u);
+  pickup PenD;  
+  forever:
+    t := arctime cas of P;
+ #length of tck shorted pit was 0.2
+    mark_ (P,t,0.1u);
+    cas := cas + mojkrok;
+    exitif cas > dlzka + (mojkrok / 3); % for rounding errors
+  endfor;
+  pickup PenC;  
+  thdraw P;
+enddef;
+
+    initsymbol ("l_floorstep_CHED");
+     
+    
 endcode
 
     symbol-assign area debris CHED
@@ -145,6 +193,8 @@ endcode
     symbol-assign line flowstone CHED
     symbol-assign line overhang CHED
     symbol-assign line pit CHED
+    symbol-assign line wall:blocks CHED
+    symbol-assign line floor-step CHED
 
 
 
