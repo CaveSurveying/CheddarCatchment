@@ -223,9 +223,6 @@ code metapost
 # bodge to make floor-steps look sensible
 
 
- 
-
-
 # define dashed line for surface surveys
   def l_survey_surface (expr P) =
     T:=identity;

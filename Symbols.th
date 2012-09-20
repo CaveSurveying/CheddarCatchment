@@ -1,6 +1,8 @@
 encoding  utf-8
 layout symbols
 
+symbol-assign line wall:debris AUT
+
 code metapost
 
 
