@@ -189,6 +189,7 @@ enddef;
     
 endcode
 
+    symbol-assign area blocks AUT
     symbol-assign area debris CHED
     symbol-assign area sand CHED
     
