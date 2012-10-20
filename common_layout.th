@@ -107,7 +107,7 @@ grid bottom
 #grid-origin <x> <y> <x> <units>
 # grid-origin <x> <y> <x> <units> . set coordinates of grid origin (M, A) 
 
-grid-size 200 200 50 metres
+grid-size 200 200 25 metres
 # grid-size <x> <y> <z> <units> . set grid size in real units (M, A; default 10 m)
 
 grid-coords border
