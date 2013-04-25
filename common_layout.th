@@ -25,28 +25,6 @@ scale 1 500
 units metric
 # units <metric/imperial> . set output units (M, A; default: metric)
 
-#symbol-set UIS
-# needs to be disabled for the metacode to work
-# symbol-set <symbol-set> . use symbol-set for all map symbols, if available (M, A)
-#Therion uses following predefined symbol sets:
-#UIS (International Union of Speleology)
-#ASF (Australian Speleological Federation)
-#CCNP (Carlsbad Caverns National Park)
-#SKBB (Speleoklub Bansk´a Bystrica)
-
-#symbol-assign
-# symbol-assign <point/line/area/group/special> <symbol-type> <symbol-set>
-#. display a particular symbol in the given symbol-set. This option overrides symbol-set
-#option.
-#If the symbol has a subtype, <symbol-type> argument may have one of the following
-#forms: type:subtype or simply type, which assigns new symbol set to all subtypes of
-#a given symbol.
-#Following symbols may not be used with this option: point section (which isn't rendered
-#at all) and all point and line labels (label, remark, altitude, height, passage-height,
-#station-name, date). See the chapter Changing layout/Customizing text labels for details
-#how to change labels' appearance. (M, A)
-#Group may be one of the following: all, centerline, sections.
-#There are two special symbols: north-arrow, scale-bar.
 
 #overlap <value> <units>
 # overlap <value> <units> . set overlap size in paper units in the atlas mode or map
@@ -163,36 +141,7 @@ map-header-bg on
 scale-bar 100 metres
 # scale-bar <length> <units> . set the length of the scale-bar (M, A)
 
-#Change the scale bar to black and white bar, split into 5 and labelled
-code metapost
-  def s_scalebar (expr l, units, txt) =
-    begingroup
-      interim warningcheck:=0;
-      tmpl:=l / Scale * cm * units / 2;
-      tmpx:=l / Scale * cm * units / 5;
-      tmph:=5bp; % bar height
-    endgroup;
-    pickup PenC;
-#Adjusted to make lines not stick out: 0.25*u/10,0 is half thickness of PenC
-    draw (-tmpl+0.25*u/10,0)--(tmpl-0.25*u/10,0);
-    draw (tmpl-0.25*u/10,-tmph)--(-tmpl+0.25*u/10,-tmph);
-    p:=(0,0)--(tmpx,0)--(tmpx,-tmph)--(0,-tmph)--cycle;
-    for i:=-2.5 step 2 until 2:
-      fill p shifted (i * tmpx,0);
 
-    endfor;
-    begingroup
-      interim labeloffset:=3.5bp;
-      for i:=0 step (l/5) until (l-1):
-        tmpx:=tmpl * (i * 2 / l - 1);
-        label.top(thTEX(decimal (i)),(tmpx,0));
-      endfor;
-      label.top(thTEX(decimal (l) & "\thinspace" & txt),(tmpl,0));
-#      label.bot(thTEX("Original Scale = 1 : " & decimal (Scale*100)),(0,-tmph));
-    endgroup;
-  enddef;
-
-endcode
 
 language en_UK
 # language <xx[_YY]> . set output language. Available languages are listed on impressum
@@ -213,42 +162,7 @@ colour map-bg 90
 #here. This allows user to configure various things (like user defined symbols, map and
 #atlas layout at one place &c.) See the chapter Changing layout for details.
 
-symbol-colour point water-flow [0 0 100]
-code metapost
-  let p_gradient = p_entrance_UIS;
-#replaces the UIS gradient symbol with the entrance symbol that looks like 
-#BCRA gradient symbol
 
-  let l_floorstep = l_border_visible_SKBB;
-# bodge to make floor-steps look sensible
-
-
-# define dashed line for surface surveys
-  def l_survey_surface (expr P) =
-    T:=identity;
-    pickup PenD scaled 0.2;
-    thdraw P withcolor (0.8,0.8,0.8);
-  enddef;
-  def l_survey_cave (expr P) =
-    T:=identity;
-    pickup PenD scaled 0.2;
-    thdraw P;
-  enddef;
-
-# define water to be light blue
-  def a_water (expr p) =
-    T:=identity;
-#nice light blue - but nearly same as level colour - change back when we have control of that
-#    thfill p withcolor (0.48, 0.84, 1.0);
-    thfill p withcolor (0.0, 0.0, 1.0);
-
-    enddef;
-
-# define sump to be dark blue
-  def a_sump (expr p) =
-    T:=identity;
-    thfill p withcolor (0.05, 0.0, 0.7);
-  enddef;
   
 
 endcode

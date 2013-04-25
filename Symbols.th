@@ -185,7 +185,72 @@ enddef;
 enddef;
 
     initsymbol ("l_floorstep_CHED");
-     
+ 
+symbol-colour point water-flow [0 0 100]
+code metapost
+  let p_gradient = p_entrance_UIS;
+#replaces the UIS gradient symbol with the entrance symbol that looks like 
+#BCRA gradient symbol
+
+  let l_floorstep = l_border_visible_SKBB;
+# bodge to make floor-steps look sensible
+
+
+# define dashed line for surface surveys
+  def l_survey_surface (expr P) =
+    T:=identity;
+    pickup PenD scaled 0.2;
+    thdraw P withcolor (0.8,0.8,0.8);
+  enddef;
+  def l_survey_cave (expr P) =
+    T:=identity;
+    pickup PenD scaled 0.2;
+    thdraw P;
+  enddef;
+
+# define water to be light blue
+  def a_water (expr p) =
+    T:=identity;
+#nice light blue - but nearly same as level colour - change back when we have control of that
+#    thfill p withcolor (0.48, 0.84, 1.0);
+    thfill p withcolor (0.0, 0.0, 1.0);
+
+    enddef;
+
+# define sump to be dark blue
+  def a_sump (expr p) =
+    T:=identity;
+    thfill p withcolor (0.05, 0.0, 0.7);
+  enddef;    
+  
+#Change the scale bar to black and transparent bar, split into 5 and labelled
+
+    def s_scalebar (expr l, units, txt) =
+    begingroup
+      interim warningcheck:=0;
+      tmpl:=l / Scale * cm * units / 2;
+      tmpx:=l / Scale * cm * units / 5;
+      tmph:=5bp; % bar height
+    endgroup;
+    pickup PenC;
+#Adjusted to make lines not stick out: 0.25*u/10,0 is half thickness of PenC
+    draw (-tmpl+0.25*u/10,0)--(tmpl-0.25*u/10,0);
+    draw (tmpl-0.25*u/10,-tmph)--(-tmpl+0.25*u/10,-tmph);
+    p:=(0,0)--(tmpx,0)--(tmpx,-tmph)--(0,-tmph)--cycle;
+    for i:=-2.5 step 2 until 2:
+      fill p shifted (i * tmpx,0);
+
+    endfor;
+    begingroup
+      interim labeloffset:=3.5bp;
+      for i:=0 step (l/5) until (l-1):
+        tmpx:=tmpl * (i * 2 / l - 1);
+        label.top(thTEX(decimal (i)),(tmpx,0));
+      endfor;
+      label.top(thTEX(decimal (l) & "\thinspace" & txt),(tmpl,0));
+#      label.bot(thTEX("Original Scale = 1 : " & decimal (Scale*100)),(0,-tmph));
+    endgroup;
+  enddef;
     
 endcode
 
