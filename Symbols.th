@@ -192,9 +192,6 @@ code metapost
 #replaces the UIS gradient symbol with the entrance symbol that looks like 
 #BCRA gradient symbol
 
-  let l_floorstep = l_border_visible_SKBB;
-# bodge to make floor-steps look sensible
-
 
 # define dashed line for surface surveys
   def l_survey_surface (expr P) =
