@@ -248,6 +248,14 @@ code metapost
 #      label.bot(thTEX("Original Scale = 1 : " & decimal (Scale*100)),(0,-tmph));
     endgroup;
   enddef;
+  
+  def s_northarrow_CHED (expr rot) =
+  T:=identity scaled 0.7 rotated -rot;
+  thdraw (-1cm,-2cm)--(0,3cm)--(1cm,-2cm)--(0,0cm)--cycle;
+  thfill (-1cm,-2cm)--(0,3cm)--(0,0cm)--cycle;
+enddef;
+
+    initsymbol("s_northarrow_CHED")
     
 endcode
 
@@ -260,6 +268,10 @@ endcode
     symbol-assign line pit CHED
     symbol-assign line wall:blocks CHED
     symbol-assign line floor-step CHED
+    
+   symbol-assign special north-arrow CHED
+    
+
 
 
 
