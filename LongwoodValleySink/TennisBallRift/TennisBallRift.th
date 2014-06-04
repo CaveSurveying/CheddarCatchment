@@ -25,7 +25,8 @@ data normal from to tape compass clino ignoreall
 #1.0  -  2.382  259.82  18.37  
 #1.0  -  2.382  259.44  18.1  
 #1.0  -  2.39  76.54  -18.32  
-7  14  0.0  0.0  0.0  
+#The below connection was wrong, replace 7 with 13 [AA June 2014]
+#7  14  0.0  0.0  0.0  
 #14  18  5.824  193.17  -33.57  
 #14  18  5.834  193.13  -33.35  
 #14  18  5.831  192.95  -33.28  
