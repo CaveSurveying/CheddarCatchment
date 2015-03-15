@@ -3,8 +3,10 @@ survey LongwoodValleySink
 
 input Entrance/Entrance.th
 input TennisBallRift/TennisBallRift.th
+input Triasic/Triasic.th
 
 equate 13@Entrance 14@TennisBallRift
+equate 8@Entrance 14@Triasic
 
 endsurvey
 

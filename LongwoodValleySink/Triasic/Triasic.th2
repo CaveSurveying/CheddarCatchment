@@ -1,0 +1,30 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -133.014797704 -75.31555442000013 910.386777099 1598.0072802253999
+##XTHERION## xth_me_area_zoom_to 50
+##XTHERION## xth_me_image_insert {655.40021211 1 1.0} {411.69346959999996 24} PocketTopo/Triasic_p.xvi 0 {}
+
+
+
+scrap TriasicSP1 -projection plan -scale [0 0 787.4 787.4 0 0 10 10 m]
+
+endscrap
+
+
+
+scrap TriasicSP2 -projection plan -scale [0 0 787.4 787.4 0 0 10 10 m]
+
+endscrap
+
+
+
+scrap TriasicSPX18 -projection none -scale [0 0 787.4 787.4 0 0 10 10 m]
+
+endscrap
+
+
+
+scrap TriasicSPX16 -projection none -scale [0 0 787.4 787.4 0 0 10 10 m]
+
+endscrap
+
+

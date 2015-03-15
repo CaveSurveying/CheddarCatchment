@@ -30,7 +30,7 @@ data normal from to tape compass clino ignoreall
 #14  18  5.824  193.17  -33.57  
 #14  18  5.834  193.13  -33.35  
 #14  18  5.831  192.95  -33.28  
-14  18  5.83  193.15  -33.4  Calculated leg from 3 above
+#14  18  5.83  193.15  -33.4  Calculated leg from 3 above
 #15  16  1.655  166.55  -34.24  
 #15  16  1.653  166.56  -34.12  
 #15  16  1.656  166.56  -34.26  

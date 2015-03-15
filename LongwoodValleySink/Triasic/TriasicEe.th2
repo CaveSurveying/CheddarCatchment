@@ -1,0 +1,16 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -275.63 -161.1 1653.78 966.59
+##XTHERION## xth_me_area_zoom_to 50
+##XTHERION## xth_me_image_insert {162.42361448 1 1.0} {831.257565524 9} PocketTopo/Triasic_e.xvi 0 {}
+
+
+scrap TriasicSE1 -projection [extended] -scale [0 0 787.4 787.4  0 0 10 10 m]
+
+endscrap
+
+
+scrap TriasicSEXP22 -projection [none] -scale [0 0 787.4 787.4  0 0 10 10 m]
+
+endscrap
+
+
