@@ -1,10 +1,11 @@
 encoding  utf-8
 survey Entrance  -namespace off
 
-input Entrance.th2
+input EntranceP.th2
 
-map EntranceM
+map EntranceMP
   EntranceSP1
+    break
   EntranceSP2
 endmap
 

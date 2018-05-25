@@ -1,9 +1,11 @@
 encoding  utf-8
 survey TennisBallRift
 
+input TennisBallRiftP.th2
 
-
-
+map TennisBallRiftMP
+  TennisBallRiftSP1
+endmap
 
 centreline
 
@@ -26,11 +28,15 @@ data normal from to tape compass clino ignoreall
 #1.0  -  2.382  259.44  18.1  
 #1.0  -  2.39  76.54  -18.32  
 #The below connection was wrong, replace 7 with 13 [AA June 2014]
-#7  14  0.0  0.0  0.0  
+#13 14  0.0  0.0  0.0  
 #14  18  5.824  193.17  -33.57  
 #14  18  5.834  193.13  -33.35  
 #14  18  5.831  192.95  -33.28  
 #14  18  5.83  193.15  -33.4  Calculated leg from 3 above
+#15  14  5.856  356.07  33.23  
+#15  14  5.856  356.09  33.28  
+#15  14  5.856  356.2  33.14  
+15  14  5.856  356.07  33.22  Calculated leg from 3 above
 #15  16  1.655  166.55  -34.24  
 #15  16  1.653  166.56  -34.12  
 #15  16  1.656  166.56  -34.26  

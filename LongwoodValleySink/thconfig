@@ -2,11 +2,10 @@ encoding  utf-8
 source LongwoodValleySink.th
 # Change name to the main therion file
 
-
 #Surveys to output
 #-----------------
 
-#export map -proj plan -layout local -o LongwoodValleySink.pdf
+export map -proj plan -layout local -o LongwoodValleySinkP.pdf
 #Produces plan of cave, on a single sheet
 
 #export map -proj extended -layout local -o LongwoodValleySinkEe.pdf
@@ -14,7 +13,7 @@ source LongwoodValleySink.th
 export model -fmt survex -o LongwoodValleySinkth.3d
 #Survex file showing centre line only
 
-#export model -o LongwoodValleySink.lox
+export model -o LongwoodValleySink.lox
 #3d therion model to be viewed in the therion viewer
 
 #export map -proj plan -o LongwoodValleySink_Walls.3d
@@ -23,5 +22,8 @@ export model -fmt survex -o LongwoodValleySinkth.3d
 layout local
 debug off
 map-header 0 0 ne
+north grid
+grid bottom
+grid-size 5 5 5 m
 #symbol-hide group cave-centreline
 endlayout
