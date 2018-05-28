@@ -9,7 +9,7 @@ source Triasic2.th
 export map -proj plan -layout local -o Triasic2P.pdf
 #Produces plan of cave, on a single sheet
 
-export map -proj extended -layout local -o Triasic2Ee.pdf
+export map -proj [elevation 90] -layout local -o Triasic2E90.pdf
 
 #export map -proj [elevation 15] -layout local -o Triasic2E15.pdf
 

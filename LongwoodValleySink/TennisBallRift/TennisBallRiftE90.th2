@@ -1,0 +1,33 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -135.0 -135.0 652.0 494.0
+##XTHERION## xth_me_area_zoom_to 100
+
+
+
+scrap TennisBallRiftSE901 -projection [elevation 90] -scale [0 0 800 800 0.0 0.0 10 10 m]
+
+line wall
+  -3.0 310.0
+  44.0 276.0
+  44.0 276.0 55.15 274.47 77.0 198.0
+  89.0 156.0 370.0 84.0 386.0 75.0
+  402.0 66.0 408.0 50.0 409.0 40.0
+  410.0 30.0 423.0 -3.0 443.0 -2.0
+  463.0 -1.0 518.0 -9.0 519.0 13.0
+  520.0 35.0 523.0 88.0 505.0 94.0
+  487.0 100.0 440.0 121.0 427.0 129.0
+  414.0 137.0 47.0 351.0 33.0 362.0
+  smooth off
+endline
+
+point 419.2 94.4 station -name 17
+
+point 506.4 5.6 station -name 16
+
+point 400 80 station -name 15
+
+point 8.8 336.8 station -name 14
+
+endscrap
+
+

@@ -7,12 +7,16 @@ input Triasic/Triasic.th
 input Triasic2/Triasic2.th
 
 equate 13@Entrance 14@TennisBallRift
-equate 8@Entrance 14@Triasic
+equate 9@Entrance 14@Triasic
 equate 19@Triasic 0@Triasic2
 
 join EntranceSP1@Entrance TriasicSP1@Triasic
 join EntranceSP2@Entrance TennisBallRiftSP1@TennisBallRift
 join TriasicSP1@Triasic Triasic2SP1@Triasic2
+
+join EntranceSE901@Entrance TriasicSE901@Triasic
+join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift
+join TriasicSE901@Triasic Triasic2SE901@Triasic2
 
 endsurvey
 

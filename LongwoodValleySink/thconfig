@@ -8,6 +8,8 @@ source LongwoodValleySink.th
 export map -proj plan -layout local -o LongwoodValleySinkP.pdf
 #Produces plan of cave, on a single sheet
 
+export map -proj [elevation 90] -layout local -o LongwoodValleySinkE90.pdf
+
 #export map -proj extended -layout local -o LongwoodValleySinkEe.pdf
 
 export model -fmt survex -o LongwoodValleySinkth.3d

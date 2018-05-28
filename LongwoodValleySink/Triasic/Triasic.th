@@ -2,11 +2,16 @@ encoding  utf-8
 survey Triasic
 
 input TriasicP.th2
+input TriasicE90.th2
 
 map TriasicM
   TriasicSP1
     break
   TriasicSP2
+endmap
+
+map TriasicE90
+  TriasicSE901
 endmap
 
 centreline

@@ -2,9 +2,14 @@ encoding  utf-8
 survey TennisBallRift
 
 input TennisBallRiftP.th2
+input TennisBallriftE90.th2
 
 map TennisBallRiftMP
   TennisBallRiftSP1
+endmap
+
+map TennisBallRiftME90
+  TennisBallRiftSE901
 endmap
 
 centreline

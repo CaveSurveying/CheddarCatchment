@@ -9,9 +9,11 @@ source Triasic.th
 export map -proj plan -layout local -o TriasicP.pdf
 #Produces plan of cave, on a single sheet
 
-export map -proj extended -layout local -o TriasicEe.pdf
+export map -proj [elevation 90] -layout local -o TriasicE90.pdf
 
-export map -proj [elevation 15] -layout local -o TriasicE15.pdf
+#export map -proj extended -layout local -o TriasicEe.pdf
+
+#export map -proj [elevation 15] -layout local -o TriasicE15.pdf
 
 export model -fmt survex -o Triasicth.3d
 #Survex file showing centre line only
@@ -19,7 +21,7 @@ export model -fmt survex -o Triasicth.3d
 #export model -o Triasic.lox
 #3d therion model to be viewed in the therion viewer
 
-export map -proj plan -o Triasic_Walls.3d
+#export map -proj plan -o Triasic_Walls.3d
 #Survex file showing walls only
 
 layout local

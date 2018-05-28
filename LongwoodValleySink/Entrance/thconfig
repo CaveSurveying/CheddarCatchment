@@ -9,7 +9,7 @@ source Entrance.th
 export map -proj plan -layout local -o EntranceP.pdf
 #Produces plan of cave, on a single sheet
 
-export map -proj extended -layout local -o EntranceEe.pdf
+export map -proj [elevation 90] -layout local -o EntranceE90.pdf
 
 #export map -proj [elevation 15] -layout local -o EntranceE15.pdf
 
