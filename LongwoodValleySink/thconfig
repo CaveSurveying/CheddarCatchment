@@ -5,10 +5,11 @@ source LongwoodValleySink.th
 #Surveys to output
 #-----------------
 
+export map -proj [elevation 90] -layout local -o LongwoodValleySinkE90.pdf
+#Produces elevation looking East (90)
+
 export map -proj plan -layout local -o LongwoodValleySinkP.pdf
 #Produces plan of cave, on a single sheet
-
-export map -proj [elevation 90] -layout local -o LongwoodValleySinkE90.pdf
 
 #export map -proj extended -layout local -o LongwoodValleySinkEe.pdf
 

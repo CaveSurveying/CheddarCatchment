@@ -117,6 +117,7 @@ line wall
   46.0 534.5 48.0 532.5 53.5 531.0
   59.0 529.5 70.5 541.5 74.5 541.5
   78.5 541.5 83.57 543.49 92.0 546.5
+  smooth off
 endline
 
 point 99.01283464566927 554.7611023622046 station -name 13
@@ -124,6 +125,10 @@ point 99.01283464566927 554.7611023622046 station -name 13
 point 57.99283464566928 538.1511023622046 station -name 12
 
 point 66.49283464566928 547.7511023622046 station -name 11
+
+point 2.5 698.5 label -text Entrance -align right
+
+point 182.0 600.0 label -text Adit -align top-right
 
 endscrap
 

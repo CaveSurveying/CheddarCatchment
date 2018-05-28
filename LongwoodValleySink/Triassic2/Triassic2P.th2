@@ -1,0 +1,83 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -132.0 -132.0 398.0 1432.0
+##XTHERION## xth_me_area_zoom_to 100
+
+
+
+scrap Triassic2SP1 -projection plan -scale [0 0 700 700 0 0 10 10 m]
+
+point 70.0 22.0 label -text [Dig Face May 2018] -align right
+
+point 265.0 815.0 label -text [Aven above Flowstone] -align right
+
+line flowstone -id l15-194-735
+  170.0 736.0
+  212.0 736.0 217.0 737.0 217.0 737.0
+  smooth off
+endline
+
+line border -id l18-150-822
+  162.0 832.0
+  134.0 815.0
+  135.0 748.0
+  170.0 736.0
+endline
+
+line border -id l17-231-757 -reverse on
+  202.0 832.0
+  237.0 818.0
+  241.0 772.0
+  217.0 737.0
+endline
+
+area flowstone
+  l16-176-831
+  l18-150-822
+  l18-150-822
+  l18-150-822
+  l15-194-735
+  l17-231-757
+  l17-231-757
+endarea
+
+line flowstone -id l16-176-831 -reverse on
+  162.0 832.0
+  202.0 832.0
+endline
+
+line wall
+  82.0 1298.0
+  87.0 1270.0 135.0 1110.0 138.0 1086.0
+  141.0 1062.0 160.0 873.0 161.0 844.0
+  162.0 815.0 178.0 612.0 177.0 590.0
+  176.0 568.0 184.0 360.0 183.0 334.0
+  182.0 308.0 184.0 90.0 184.0 90.0
+  smooth off
+  221.0 91.0
+  221.0 91.0 241.0 285.0 240.0 324.0
+  239.0 363.0 237.0 553.0 235.0 574.0
+  233.0 595.0 234.0 654.0 218.0 725.0
+  202.0 796.0 207.0 775.0 203.0 818.0
+  199.0 861.0 208.0 931.0 201.0 1006.0
+  194.0 1081.0 166.0 1225.0 157.0 1263.0
+  148.0 1301.0 150.0 1293.0 148.0 1300.0
+  smooth off
+endline
+
+point 198.7 93.2 station -name 6
+
+point 186.8 326.3 station -name 5
+
+point 218.3 586.7 station -name 4
+
+point 188.2 834.5 station -name 3
+
+point 170.7 1081.6 station -name 2
+
+point 100 1300 station -name 1
+
+point 100 1300 station -name 0
+
+endscrap
+
+

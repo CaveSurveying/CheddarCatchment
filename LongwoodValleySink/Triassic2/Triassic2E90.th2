@@ -1,0 +1,86 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -132.0 -132.0 1433.0 549.0
+##XTHERION## xth_me_area_zoom_to 100
+
+
+
+scrap Triassic2SE901 -projection [elevation 90] -scale [0 0 400 400 0.0 0.0 5 5 m]
+
+point 387.0 416.0 label -text [Aven above flowstone] -align right
+
+point 1299.2 61.6 station -name 6
+
+point 1032.8 118.4 station -name 5
+
+point 735.2 171.2 station -name 4
+
+line wall
+  102.0 334.0
+  117.22 335.01 172.0 314.0 189.0 307.0
+  206.0 300.0 399.0 232.0 424.0 228.0
+  449.0 224.0 620.0 173.0 655.0 157.0
+  690.0 141.0 777.0 136.0 809.0 129.0
+  841.0 122.0 1041.0 106.0 1041.0 106.0
+  smooth off
+endline
+
+line wall
+  1040.0 138.0
+  1032.0 139.0 799.0 176.0 768.0 184.0
+  737.0 192.0 582.0 247.0 559.0 254.0
+  smooth off
+endline
+
+line flowstone -reverse on
+  499.0 281.0
+  484.0 281.0 466.0 295.0 461.0 280.0
+  456.0 265.0 456.0 267.0 456.0 267.0
+  smooth off
+  467.0 284.0
+endline
+
+line wall -reverse on
+  409.0 294.0
+  420.0 298.0 421.0 296.0 434.0 307.0
+  447.0 318.0 461.0 333.0 463.0 340.0
+  465.0 347.0 497.0 364.0 497.0 344.0
+  497.0 309.01 499.0 281.0 499.0 281.0
+  smooth off
+endline
+
+line wall -close on
+  409.0 294.0
+  409.0 294.0
+endline
+
+line wall
+  559.0 254.0
+  536.0 261.0 497.0 251.0 456.0 267.0
+  smooth off
+endline
+
+line wall
+  409.0 294.0
+  378.0 302.0 258.0 345.0 236.0 354.0
+  214.0 363.0 141.0 384.0 127.0 388.0
+  113.0 392.0 79.0 398.0 79.0 398.0
+  smooth off
+endline
+
+line wall
+  1041.0 106.0
+  1041.0 122.0 1040.0 138.0 1040.0 138.0
+  smooth off
+endline
+
+point 452.0 264.0 station -name 3
+
+point 169.6 334.4 station -name 2
+
+point 80.0 390.4 station -name 1
+
+point 80.0 320.0 station -name 0
+
+endscrap
+
+

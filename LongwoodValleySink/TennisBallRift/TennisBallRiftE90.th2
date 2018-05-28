@@ -6,6 +6,8 @@ encoding  utf-8
 
 scrap TennisBallRiftSE901 -projection [elevation 90] -scale [0 0 800 800 0.0 0.0 10 10 m]
 
+point 77.0 54.0 label -text [Tennis Ball Rift]
+
 line wall
   -3.0 310.0
   44.0 276.0

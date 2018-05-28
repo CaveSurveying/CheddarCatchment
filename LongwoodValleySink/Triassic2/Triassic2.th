@@ -1,0 +1,42 @@
+encoding  utf-8
+survey Triassic2
+
+input Triassic2P.th2
+input Triassic2E90.th2
+
+map Triassic2MP
+  Triassic2SP1
+endmap
+
+map Triassic2ME90
+  Triassic2SE901
+endmap
+
+centreline
+cs OSGB:ST
+
+copyright 2018 "CC BY SA NC"
+
+  date 2018.05.17
+
+  team "John Cooper" notes
+  team "John Cooper" instruments
+  team "Barry Weaver" dog
+
+  instrument  instruments "John Cooper"
+
+  explo-date 2018.05.17
+
+data normal from to tape compass clino ignoreall
+  extend right
+
+0 1 0.88  180 +90
+1 2 3.35  162 -12
+2 3 3.65  176 -14
+3 4 3.75  173 -18
+4 5 3.81  187 -10
+5 6 3.41  177 -12  
+ 
+endcentreline
+endsurvey
+

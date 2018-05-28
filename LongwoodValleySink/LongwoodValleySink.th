@@ -3,20 +3,20 @@ survey LongwoodValleySink
 
 input Entrance/Entrance.th
 input TennisBallRift/TennisBallRift.th
-input Triasic/Triasic.th
-input Triasic2/Triasic2.th
+input Triassic/Triassic.th
+input Triassic2/Triassic2.th
 
 equate 13@Entrance 14@TennisBallRift
-equate 9@Entrance 14@Triasic
-equate 19@Triasic 0@Triasic2
+equate 9@Entrance 14@Triassic
+equate 19@Triassic 0@Triassic2
 
-join EntranceSP1@Entrance TriasicSP1@Triasic
+join EntranceSP1@Entrance TriassicSP1@Triassic
 join EntranceSP2@Entrance TennisBallRiftSP1@TennisBallRift
-join TriasicSP1@Triasic Triasic2SP1@Triasic2
+join TriassicSP1@Triassic Triassic2SP1@Triassic2
 
-join EntranceSE901@Entrance TriasicSE901@Triasic
+join EntranceSE901@Entrance TriassicSE901@Triassic
 join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift
-join TriasicSE901@Triasic Triasic2SE901@Triasic2
+join TriassicSE901@Triassic Triassic2SE901@Triassic2
 
 endsurvey
 
