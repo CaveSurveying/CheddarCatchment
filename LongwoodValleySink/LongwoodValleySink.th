@@ -10,13 +10,13 @@ equate 13@Entrance 14@TennisBallRift
 equate 9@Entrance 14@Triassic
 equate 19@Triassic 0@Triassic2
 
-join EntranceSP1@Entrance TriassicSP1@Triassic
-join EntranceSP2@Entrance TennisBallRiftSP1@TennisBallRift
-join TriassicSP1@Triassic Triassic2SP1@Triassic2
+join EntranceSP1@Entrance TriassicSP1@Triassic -smooth on
+join EntranceSP2@Entrance TennisBallRiftSP1@TennisBallRift -smooth on
+join TriassicSP1@Triassic Triassic2SP1@Triassic2 -smooth on
 
-join EntranceSE901@Entrance TriassicSE901@Triassic
-join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift
-join TriassicSE901@Triassic Triassic2SE901@Triassic2
+join EntranceSE901@Entrance TriassicSE901@Triassic -smooth on
+join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift -smooth on
+join TriassicSE901@Triassic Triassic2SE901@Triassic2 -smooth on
 
 endsurvey
 

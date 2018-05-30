@@ -5,10 +5,10 @@ source LongwoodValleySink.th
 #Surveys to output
 #-----------------
 
-export map -proj [elevation 90] -layout local -o LongwoodValleySinkE90.pdf
+export map -proj [elevation 90] -layout Projected -o LongwoodValleySinkE90.pdf
 #Produces elevation looking East (90)
 
-export map -proj plan -layout local -o LongwoodValleySinkP.pdf
+export map -proj plan -layout plan -o LongwoodValleySinkP.pdf
 #Produces plan of cave, on a single sheet
 
 #export map -proj extended -layout local -o LongwoodValleySinkEe.pdf
@@ -22,11 +22,61 @@ export model -o LongwoodValleySink.lox
 #export map -proj plan -o LongwoodValleySink_Walls.3d
 #Survex file showing walls only
 
-layout local
-debug off
-map-header 0 0 ne
-north grid
-grid bottom
-grid-size 5 5 5 m
-#symbol-hide group cave-centreline
+layout plan
+copy local
+
+rotate -90
+
+map-image -10 -15 nw LongwoodValleySinkE90.pdf
+map-header 180 -100 ne
+
+map-comment "<br>Longwood Valley Sink<br>\
+Vertical Range 15.7m<br>\
+N-S Range 42.2m<br>\
+E-W Range 8.46m<br>\
+Drawn using Therion<br>\
+by John Cooper<br>\
+Survey by Andrew Atkinson, John Cooper,<br>\
+Alison Moody and Barry Weaver"
+grid-coords off
+#symbol-hide special north-arrow
+
+scale-bar 10 metres
+
+code tex-map
+  \cavename={\size[20] Longwood Valley Sink}
+  \cavelength={}%empty
+  \cavedepth={}%empty
+  \colorlegendfalse
+endcode
+
 endlayout
+
+layout Projected
+
+copy local
+
+map-header 0 0 off
+symbol-hide special north-arrow
+symbol-hide special scale-bar
+
+endlayout
+
+layout local
+
+copy common
+doc-title "Longwood Valley Sink"
+grid-size 5 5 5 metres
+#symbol-hide special scale-bar
+
+scale 1 250
+
+symbol-hide point remark
+symbol-hide group cave-centreline
+
+statistics explo off
+statistics topo off
+
+endlayout
+
+input ../common_layout.th

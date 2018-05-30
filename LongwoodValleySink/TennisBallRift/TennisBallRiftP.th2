@@ -6,7 +6,7 @@ encoding  utf-8
 
 scrap TennisBallRiftSP1 -projection plan -scale [0 0 400 800 0.0 0.0 5 10 m]
 
-point 196.0 432.0 label -text [Tennis Ball Rift] -align right
+point 240.0 348.0 label -text [Tennis Ball Rift] -align right
 
 line wall
   115.0 548.0

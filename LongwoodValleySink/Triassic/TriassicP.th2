@@ -7,7 +7,7 @@ encoding  utf-8
 
 scrap TriassicSP1 -projection plan -scale [0 0 787.4 787.4 0 0 10 10 m]
 
-point 732.0 526.0 label -text [Bridge with aven above] -align right
+point 391.0 527.0 label -text [Bridge with aven above] -align right
 
 line pit -close on
   633.0 495.0
@@ -64,7 +64,7 @@ endscrap
 
 scrap TriassicSP2 -projection plan -scale [0 0 787.4 787.4 0 0 10 10 m]
 
-point 566.0 920.0 label -text [Triassic Tunnel] -align right
+point 625.0 1197.0 label -text [Triassic Tunnel] -align right
 
 point 788.0 290.0 label -text [PSS Rift] -align right
 
