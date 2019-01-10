@@ -120,16 +120,16 @@ legend off
 #legend-width <n> <units>
 # legend-width <n> <units> . legend width (M, A; default: 14 cm)
 
-map-header 10 10 sw
+map-header 0 0 nw
 #map-header <x> <y> <off/n/s/e/w/ne/nw/se/sw/center> . print map header at
-#location specied by <x> <y>. Predened map header contains some basic information
+#location specied by <x> <y>. Predefined map header contains some basic information
 #about cave: name, scale, north arrow, list of surveyors etc. It is fully customizable (see
 #the chapter Changing layout for details). <x> is easting (left-right on page). <y> is
 #northing (up/down page). Ranges for <x> and <y> are -100{200. Lower-left corner of
 #the map is 0 0, upper-right corner is 100 100. The header is aligned with the specied
 #corner or side to this anchor point. (M; default: 0 100 nw)
 
-map-header-bg on
+map-header-bg off
 # map-header-bg <on/off> . when on, background of map header is filled with background
 #colour (e.g. to hide map grid). (M; default: off)
 
@@ -138,7 +138,7 @@ map-header-bg on
 # statistics <explo/topo-length on/off> . display some basic statistics (M, A; default:
 #off)
 
-scale-bar 100 metres
+scale-bar 10 metres
 # scale-bar <length> <units> . set the length of the scale-bar (M, A)
 
 

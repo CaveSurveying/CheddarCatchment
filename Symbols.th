@@ -35,21 +35,99 @@ enddef;
 initsymbol("l_u_rail")
 #text en line u:rail "Railing"
 
+def a_blocks_BCA (expr p) =
+ T:=identity;
+% This is probably a better way to impliment the different sided blocks calculates the vertices of polygons
+%for (i = 0; i < n; i++) {
+% printf("%f %f\n",x + r * Math.cos(2 * Math.PI * i / n), y + r * Math.sin(2 * Math.PI * i / n));
+%}
+symbol_distance:=0.7; % Distance between the blocks as set out in a rectangular grid
+block_randomisation:=0.6; % Max each point of the base block can be moved. Too big and they can intersect themselves
+base_rotation:= 0; % Rotation from 0 of base block, can be used to set all blocks to the same angle
+random_rotation:= 360; % Rotation either side of base rotation eg 20 will be plus or minus 10 each side
+min_scale_factor:=0.7; % Minimum multiplier used for the base shape
+add_scale_factor:= 0.6; % Added to the minimum multiplier to get the maximum scale
+block_rectangle:=1.5; % How much longer the block is than it is wide, before randomising
+shift_randomisation:=0.75; % Max random amount block can be moved from the original grid
+%Now set the propotions of different sided block
+b_tri:=1;
+b_quad:=4;
+b_pent:=5;
+b_hex:=3;
+pickup PenC;
+path q, qq; q = bbox p;
+pair outside;
+outside:= ulcorner q + up;
+picture tmp_pic; 
+uu := max(u, (xpart urcorner q - xpart llcorner q)/100, (ypart urcorner q - ypart     llcorner q)/100);
+iu := uu * block_rectangle;
+blocks := b_tri+b_quad + b_pent + b_hex;
+tmp_pic := image(
+   for i = xpart llcorner q step symbol_distance * block_rectangle * uu until xpart urcorner q:
+      for j = ypart llcorner q step symbol_distance*uu until ypart urcorner q:
+        pick_sides := uniformdeviate(blocks);
+        if pick_sides < b_tri:
+          qq := punked (((.5iu,0)--(-0.25iu,.43uu)--(-.25iu,-0.43uu)--cycle) 
+          randomized (block_randomisation * uu))
+          scaled (uniformdeviate(add_scale_factor)+min_scale_factor)
+         rotated (base_rotation + random_rotation / 2 - uniformdeviate(random_rotation) )
+          shifted ((i,j) randomized (shift_randomisation * uu));
+        elseif pick_sides < b_tri + b_quad:
+                    qq := punked (((0.5iu,0)--(0,0.5uu)--(-0.5iu,0)--(0,-0.5uu)--cycle) 
+          randomized (block_randomisation * uu))
+          scaled (uniformdeviate(add_scale_factor)+min_scale_factor)
+         rotated (base_rotation + random_rotation / 2 - uniformdeviate(random_rotation) )
+          shifted ((i,j) randomized (shift_randomisation * uu));
+         elseif pick_sides < b_tri + b_quad + b_pent:
+                    qq := punked (((0.5iu,0)--(.15iu,0.48uu)--(-0.4iu,0.29uu)--(-0.4iu,-0.29uu)--(0.15iu,-0.48uu)--cycle) 
+          randomized (block_randomisation * uu))
+          scaled (uniformdeviate(add_scale_factor)+min_scale_factor)
+         rotated (base_rotation + random_rotation / 2 - uniformdeviate(random_rotation) )
+          shifted ((i,j) randomized (shift_randomisation * uu));
+          else:
+          qq := punked (((0.5iu,0)--(0.25iu,0.43uu)--(-0.25iu,0.43uu)--(-0.5iu,0)--(-0.25iu,-0.43uu)--(0.25iu,-0.43uu)--cycle) 
+          randomized (block_randomisation * uu))
+          scaled (uniformdeviate(add_scale_factor)+min_scale_factor)
+          rotated (base_rotation + random_rotation / 2 - uniformdeviate(random_rotation) )
+          shifted ((i,j) randomized (shift_randomisation * uu));
+         fi;
+         
+          forever: % Repeatedly reduces the size of the image, as this is done round zero it also moves it to the zero location, until it fits in the area
+           exitif xpart (p intersectiontimes qq) < 0;
+           qq:= qq scaled (0.99 );
+          endfor;
+             if pointinside((i,j),p,outside):
+               thclean qq;
+               thclean qq;
+               thclean qq;
+               thdraw qq;
+             fi;
+      endfor;  
+   endfor;
+);
+ clip tmp_pic to p;
+ drawoptions();
+ draw tmp_pic;
+enddef; 
+
               
-      def a_debris_CHED (expr p) =
+      def a_debris_BCA (expr p) =
       T:=identity;
       pickup PenC;
       path q, qq; q = bbox p;
       picture tmp_pic; 
       tmp_pic := image(
-        for i = xpart llcorner q step u until xpart urcorner q:
-         for j = ypart llcorner q step u until ypart urcorner q:
+        for i = xpart llcorner q step u/2 until xpart urcorner q:
+         for j = ypart llcorner q step u/2 until ypart urcorner q:
             qq := punked 
   (((-.2u,-.2u)--(.2u,-.2u)--(.2u,.2u)--(-.2u,.2u)--cycle) 
          randomized (u/2))
                rotated uniformdeviate(360) 
                shifted ((i,j) randomized u);
        if xpart (p intersectiontimes qq) < 0:
+        thclean qq;
+        thclean qq;
+        thclean qq;
         thclean qq;
         thdraw qq;
        fi;
@@ -60,7 +138,7 @@ initsymbol("l_u_rail")
       draw tmp_pic;
     enddef;
     
-      def a_sand_CHED(expr p) =
+      def a_sand_BCA(expr p) =
         T:=identity;
         %  thclean p;
         pickup PenC;
@@ -77,7 +155,7 @@ initsymbol("l_u_rail")
         draw tmp_pic;
       enddef;
       
-      def l_flowstone_CHED (expr P) = 
+      def l_flowstone_BCA (expr P) = 
   T:=identity;
   cas := 0;
   dlzka := arclength P;
@@ -94,7 +172,7 @@ initsymbol("l_u_rail")
   endfor;
 enddef;
 
-def l_overhang_CHED (expr P) =
+def l_overhang_BCA (expr P) =
 # taken from: def l_ceilingstep_SKBB (expr P) =
   T:=identity;
   cas := 0;
@@ -114,7 +192,7 @@ def l_overhang_CHED (expr P) =
   endfor;
 enddef;
 
- def l_pit_CHED (expr P) = 
+ def l_pit_BCA (expr P) = 
   T:=identity;
   cas := 0;
   dlzka := arclength P;
@@ -132,14 +210,15 @@ enddef;
 
 
 
-initsymbol ("l_flowstone_CHED");
-initsymbol ("l_pit_CHED");
-initsymbol ("l_overhang_CHED");
+initsymbol ("l_flowstone_BCA");
+initsymbol ("l_pit_BCA");
+initsymbol ("l_overhang_BCA");
 
-    initsymbol ("a_sand_CHED");
-    initsymbol ("a_debris_CHED");
+    initsymbol ("a_sand_BCA");
+    initsymbol ("a_debris_BCA");
+    initsymbol ("a_blocks_BCA");
     
-def l_wall_blocks_CHED (expr P) = 
+def l_wall_blocks_BCA (expr P) = 
 
 %  pickup PenD;
 %  draw P withcolor red;
@@ -163,10 +242,10 @@ if dlzka > 0:
 fi;
 enddef;
 
-    initsymbol ("l_wall_blocks_CHED");
+    initsymbol ("l_wall_blocks_BCA");
 
 #derived from def l_pit_UIS (expr P) =     
-    def l_floorstep_CHED (expr P) = 
+    def l_floorstep_BCA (expr P) = 
   T:=identity;
   cas := 0;
   dlzka := arclength P;
@@ -184,7 +263,7 @@ enddef;
   thdraw P;
 enddef;
 
-    initsymbol ("l_floorstep_CHED");
+    initsymbol ("l_floorstep_BCA");
  
 symbol-colour point water-flow [0 0 100]
 code metapost
@@ -249,27 +328,27 @@ code metapost
     endgroup;
   enddef;
   
-  def s_northarrow_CHED (expr rot) =
+  def s_northarrow_BCA (expr rot) =
   T:=identity scaled 0.7 rotated -rot;
   thdraw (-1cm,-2cm)--(0,3cm)--(1cm,-2cm)--(0,0cm)--cycle;
   thfill (-1cm,-2cm)--(0,3cm)--(0,0cm)--cycle;
 enddef;
 
-    initsymbol("s_northarrow_CHED")
+    initsymbol("s_northarrow_BCA")
     
 endcode
 
-    symbol-assign area blocks AUT
-    symbol-assign area debris CHED
-    symbol-assign area sand CHED
+    symbol-assign area blocks BCA
+    symbol-assign area debris BCA
+    symbol-assign area sand BCA
     
-    symbol-assign line flowstone CHED
-    symbol-assign line overhang CHED
-    symbol-assign line pit CHED
-    symbol-assign line wall:blocks CHED
-    symbol-assign line floor-step CHED
+    symbol-assign line flowstone BCA
+    symbol-assign line overhang BCA
+    symbol-assign line pit BCA
+    symbol-assign line wall:blocks BCA
+    symbol-assign line floor-step BCA
     
-   symbol-assign special north-arrow CHED
+   symbol-assign special north-arrow BCA
     
 
 

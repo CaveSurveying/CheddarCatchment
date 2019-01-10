@@ -1,4 +1,5 @@
 encoding  utf-8
+select Triassic2.LongwoodValleySink
 source LongwoodValleySink.th
 # Change name to the main therion file
 
