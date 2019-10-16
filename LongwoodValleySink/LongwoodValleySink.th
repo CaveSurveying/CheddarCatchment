@@ -10,6 +10,22 @@ equate 13@Entrance 14@TennisBallRift
 equate 9@Entrance 14@Triassic
 equate 19@Triassic 0@Triassic2
 
+map LongwoodValleySinkPM
+  EntranceMP@Entrance
+  TennisBallRiftMP@TennisBallRift
+  TriassicM@Triassic
+  Triassic2MP@Triassic2
+endmap
+
+############################################################
+
+map LongwoodValleySinkE90M
+  EntranceME90@Entrance
+  TriassicE90@Triassic
+  TennisBallRiftME90@TennisBallRift
+  Triassic2ME90@Triassic2
+endmap
+
 join EntranceSP1@Entrance TriassicSP1@Triassic -smooth on
 join EntranceSP2@Entrance TennisBallRiftSP1@TennisBallRift -smooth on
 join TriassicSP1@Triassic Triassic2SP1@Triassic2 -smooth on
