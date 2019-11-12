@@ -6,7 +6,7 @@ encoding  utf-8
 # The help with each command,comes from the Therion Book issued with v0.3.10
 #('M' and 'A' idicate whether the option applies to Map or Atlas output mode respectively)
 
-input Symbols.th
+input Symbols/Symbols.th
 
 layout common
 copy symbols

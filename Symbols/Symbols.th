@@ -1,13 +1,35 @@
 encoding  utf-8
-input Symbols/Special/s_northarrow_BCA.th
-input Symbols/Lines/l_u_rail.th
-input Symbols/Areas/a_blocks_BCA.th
+# Input areas 
+  ########################################
+
+input Areas/a_blocks_BCA.th
+
+
+# Input Lines
+ ########################################
+input Lines/l_u_rail.th
+
+
+# Input Points
+ ########################################
+
+# Input Special
+ ########################################
+input Special/s_northarrow_BCA.th
 
 layout symbols
-copy s_northarrow_BCA
-copy u_rail
+
+#Copy Areas
+ ########################################
 copy a_blocks_BCA
 
+# Copy Lines
+ ########################################
+copy l_u_rail
+
+#copy specials
+ ########################################
+copy s_northarrow_BCA
 
 symbol-assign line wall:debris AUT
 
