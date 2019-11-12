@@ -1,114 +1,22 @@
 encoding  utf-8
+input Symbols/Special/s_northarrow_BCA.th
+input Symbols/Lines/l_u_rail.th
+input Symbols/Areas/a_blocks_BCA.th
+
 layout symbols
+copy s_northarrow_BCA
+copy u_rail
+copy a_blocks_BCA
+
 
 symbol-assign line wall:debris AUT
+
 
 code metapost
 
 
-def l_u_rail (expr P) = 
-  T:=identity;
-  cas := 0;
-  dlzka := arclength P;
-  mojkrok:=adjust_step(dlzka, 0.8u);
-  pickup PenC;
-  forever:
-    t0 := arctime (cas) of P;
-    t1 := arctime (cas + mojkrok*2/5) of P;
-    t  := arctime (cas + mojkrok/2) of P;
-    t4 := arctime (cas + mojkrok*3/5) of P;
-    t5 := arctime (cas + mojkrok) of P;
-    thdraw (subpath (t0,t1) of P);
-    thdraw (subpath (t4,t5) of P);
-    drawdot
-       (point t of P);
-    #mark_ (P,t,0.02u);
-    #mark_ (P,t,-0.02u);
-     #f := (P,t,0.2u);
-     #draw f;
-    cas := cas + mojkrok;
-    exitif cas > dlzka - (2*mojkrok/3); % for rounding errors
-  endfor;
-enddef;
 
 
-initsymbol("l_u_rail")
-#text en line u:rail "Railing"
-
-def a_blocks_BCA (expr p) =
- T:=identity;
-% This is probably a better way to impliment the different sided blocks calculates the vertices of polygons
-%for (i = 0; i < n; i++) {
-% printf("%f %f\n",x + r * Math.cos(2 * Math.PI * i / n), y + r * Math.sin(2 * Math.PI * i / n));
-%}
-symbol_distance:=0.7; % Distance between the blocks as set out in a rectangular grid
-block_randomisation:=0.6; % Max each point of the base block can be moved. Too big and they can intersect themselves
-base_rotation:= 0; % Rotation from 0 of base block, can be used to set all blocks to the same angle
-random_rotation:= 360; % Rotation either side of base rotation eg 20 will be plus or minus 10 each side
-min_scale_factor:=0.7; % Minimum multiplier used for the base shape
-add_scale_factor:= 0.6; % Added to the minimum multiplier to get the maximum scale
-block_rectangle:=1.5; % How much longer the block is than it is wide, before randomising
-shift_randomisation:=0.75; % Max random amount block can be moved from the original grid
-%Now set the propotions of different sided block
-b_tri:=1;
-b_quad:=4;
-b_pent:=5;
-b_hex:=3;
-pickup PenC;
-path q, qq; q = bbox p;
-pair outside;
-outside:= ulcorner q + up;
-picture tmp_pic; 
-uu := max(u, (xpart urcorner q - xpart llcorner q)/100, (ypart urcorner q - ypart     llcorner q)/100);
-iu := uu * block_rectangle;
-blocks := b_tri+b_quad + b_pent + b_hex;
-tmp_pic := image(
-   for i = xpart llcorner q step symbol_distance * block_rectangle * uu until xpart urcorner q:
-      for j = ypart llcorner q step symbol_distance*uu until ypart urcorner q:
-        pick_sides := uniformdeviate(blocks);
-        if pick_sides < b_tri:
-          qq := punked (((.5iu,0)--(-0.25iu,.43uu)--(-.25iu,-0.43uu)--cycle) 
-          randomized (block_randomisation * uu))
-          scaled (uniformdeviate(add_scale_factor)+min_scale_factor)
-         rotated (base_rotation + random_rotation / 2 - uniformdeviate(random_rotation) )
-          shifted ((i,j) randomized (shift_randomisation * uu));
-        elseif pick_sides < b_tri + b_quad:
-                    qq := punked (((0.5iu,0)--(0,0.5uu)--(-0.5iu,0)--(0,-0.5uu)--cycle) 
-          randomized (block_randomisation * uu))
-          scaled (uniformdeviate(add_scale_factor)+min_scale_factor)
-         rotated (base_rotation + random_rotation / 2 - uniformdeviate(random_rotation) )
-          shifted ((i,j) randomized (shift_randomisation * uu));
-         elseif pick_sides < b_tri + b_quad + b_pent:
-                    qq := punked (((0.5iu,0)--(.15iu,0.48uu)--(-0.4iu,0.29uu)--(-0.4iu,-0.29uu)--(0.15iu,-0.48uu)--cycle) 
-          randomized (block_randomisation * uu))
-          scaled (uniformdeviate(add_scale_factor)+min_scale_factor)
-         rotated (base_rotation + random_rotation / 2 - uniformdeviate(random_rotation) )
-          shifted ((i,j) randomized (shift_randomisation * uu));
-          else:
-          qq := punked (((0.5iu,0)--(0.25iu,0.43uu)--(-0.25iu,0.43uu)--(-0.5iu,0)--(-0.25iu,-0.43uu)--(0.25iu,-0.43uu)--cycle) 
-          randomized (block_randomisation * uu))
-          scaled (uniformdeviate(add_scale_factor)+min_scale_factor)
-          rotated (base_rotation + random_rotation / 2 - uniformdeviate(random_rotation) )
-          shifted ((i,j) randomized (shift_randomisation * uu));
-         fi;
-         
-          forever: % Repeatedly reduces the size of the image, as this is done round zero it also moves it to the zero location, until it fits in the area
-           exitif xpart (p intersectiontimes qq) < 0;
-           qq:= qq scaled (0.99 );
-          endfor;
-             if pointinside((i,j),p,outside):
-               thclean qq;
-               thclean qq;
-               thclean qq;
-               thdraw qq;
-             fi;
-      endfor;  
-   endfor;
-);
- clip tmp_pic to p;
- drawoptions();
- draw tmp_pic;
-enddef; 
 
               
       def a_debris_BCA (expr p) =
@@ -216,7 +124,6 @@ initsymbol ("l_overhang_BCA");
 
     initsymbol ("a_sand_BCA");
     initsymbol ("a_debris_BCA");
-    initsymbol ("a_blocks_BCA");
     
 def l_wall_blocks_BCA (expr P) = 
 
@@ -324,17 +231,11 @@ code metapost
         label.top(thTEX(decimal (i)),(tmpx,0));
       endfor;
       label.top(thTEX(decimal (l) & "\thinspace" & txt),(tmpl,0));
-#      label.bot(thTEX("Original Scale = 1 : " & decimal (Scale*100)),(0,-tmph));
+%      label.bot(thTEX("Original Scale = 1 : " & decimal (Scale*100)),(0,-tmph));
     endgroup;
   enddef;
-  
-  def s_northarrow_BCA (expr rot) =
-  T:=identity scaled 0.7 rotated -rot;
-  thdraw (-1cm,-2cm)--(0,3cm)--(1cm,-2cm)--(0,0cm)--cycle;
-  thfill (-1cm,-2cm)--(0,3cm)--(0,0cm)--cycle;
-enddef;
 
-    initsymbol("s_northarrow_BCA")
+%input /mnt/c408ae7c-c590-4fe0-ab71-538d53a95829/Andrew/Caving/Surveys/CheddarCatchment/Symbols/Other/northarrow_BCA.mp
     
 endcode
 
