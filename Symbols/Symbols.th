@@ -19,7 +19,7 @@ input Special/s_northarrow_BCA.th
 
 layout symbols
 
-#Copy Areas
+# Copy Areas
  ########################################
 copy a_blocks_BCA
 
@@ -27,7 +27,7 @@ copy a_blocks_BCA
  ########################################
 copy l_u_rail
 
-#copy specials
+# Copy specials
  ########################################
 copy s_northarrow_BCA
 
@@ -35,11 +35,6 @@ symbol-assign line wall:debris AUT
 
 
 code metapost
-
-
-
-
-
               
       def a_debris_BCA (expr p) =
       T:=identity;
@@ -147,31 +142,78 @@ initsymbol ("l_overhang_BCA");
     initsymbol ("a_sand_BCA");
     initsymbol ("a_debris_BCA");
     
-def l_wall_blocks_BCA (expr P) = 
-
-%  pickup PenD;
-%  draw P withcolor red;
+def l_wall_blocks_CHED (expr P) = 
 
   T:=identity;
-  cas := 0;
-  dlzka := arclength P;
-if dlzka > 0:
-  mojkrok:=adjust_step(dlzka, .9u);
-  pickup PenB;
+  pickup PenC;
+  laenge := arclength P;
+
+  path block;
+  path old_block;
+  
+  cur := 0;
+  
+  
+  #draw first block
+  old_block := punked (( (.65u,-.15u)--(.72u,0.05u)--(.55u,.15u)--(.23u,.17u)--(.0u,.03u)--(.05u,-.1u))randomized (0.1u))
+             scaled (uniformdeviate(0.3)+.65);
+  block_width := (xpart urcorner old_block - xpart ulcorner old_block);
+  t:= arctime (cur+block_width/2) of P;
+  old_block:=old_block rotated angle( direction t of P) shifted point 0 of P;
+  thclean (old_block--cycle);
+  thdraw old_block;
+  
+  
+  cur := cur + block_width + 0.04u;
+
   forever:
-    t1 := arctime (cas + mojkrok*1/10) of P;
-    t2 := arctime (cas + mojkrok*9/10) of P;
-    q := ((point t1 of P) + .2u * unitvector(thdir(P,t1) rotated -90)) --
-         (subpath (t1,t2) of P) --
-         ((point t2 of P) + .2u * unitvector(thdir(P,t2) rotated -90));
-    thdraw q randomized (u/6);
-    cas := cas + mojkrok;
-    exitif cas > dlzka - (2*mojkrok/3); % for rounding errors
+    # generate random block
+    block := punked( ((.65u,-.15u)--(.72u,0.05u)--(.55u,.15u)--(.2u,.17u)--(.0u,.03u)--(.05u,-.1u)randomized (0.1u) ))
+          scaled (uniformdeviate(0.3)+.65)
+          rotated (uniformdeviate(20)-10);
+    # check width of block
+    block_width := (xpart urcorner block - xpart ulcorner block);
+    
+    exitif cur > (laenge- 3*block_width/2);
+    # find next position where the block fits in without intersecting the previous one
+    forever:    
+      cur:=cur+0.01u;
+      t:= arctime cur of P;
+      st:= arctime (cur+block_width/2) of P;
+      exitif cur > (laenge- 3*block_width/2);
+      exitif xpart ( ((block--cycle) rotated angle(direction st of P) shifted point t of P) intersectiontimes old_block) < 0;
+    endfor;
+    exitif cur > (laenge- 3*block_width/2);
+    
+    old_block:= block rotated angle(direction st of P) shifted point t of P;
+    thclean (old_block--cycle);
+    thdraw old_block;
+ 
+  cur := cur + block_width + 0.04u;
+
   endfor;
-fi;
+  
+    # generate last block
+    
+    block := (((.65u,-.15u)--(.72u,0.05u)--(.55u,.15u)--(.2u,.17u)--(.0u,.03u)--(.05u,-.1u)) );
+    block_width := (xpart urcorner block - xpart ulcorner block);
+
+    # scale last block to fit in the remaining gap
+    scale_factor:=(laenge-cur)/block_width;
+      t:= arctime cur of P;
+      st:= arctime (laenge+cur)/2 of P;
+    forever:
+    exitif scale_factor < 0;
+      exitif xpart ( ( (block) rotated angle (direction st of P) scaled scale_factor shifted (point t of P) ) intersectiontimes old_block) < 0;
+      scale_factor:=scale_factor-0.001;
+    endfor;
+    if scale_factor > 0:
+      thclean (block--cycle) rotated angle (direction st of P) scaled scale_factor shifted (point t of P);
+      thdraw (block) rotated angle (direction st of P) scaled scale_factor shifted (point t of P);
+    fi;
 enddef;
 
-    initsymbol ("l_wall_blocks_BCA");
+    initsymbol ("l_wall_blocks_CHED");
 
 #derived from def l_pit_UIS (expr P) =     
     def l_floorstep_BCA (expr P) = 
@@ -268,15 +310,10 @@ endcode
     symbol-assign line flowstone BCA
     symbol-assign line overhang BCA
     symbol-assign line pit BCA
-    symbol-assign line wall:blocks BCA
+    symbol-assign line wall:blocks CHED
     symbol-assign line floor-step BCA
     
    symbol-assign special north-arrow BCA
-    
-
-
-
-
 
 endlayout
 
