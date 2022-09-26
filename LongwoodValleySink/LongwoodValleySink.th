@@ -5,13 +5,16 @@ input Entrance/Entrance.th
 input TennisBallRift/TennisBallRift.th
 input Triassic/Triassic.th
 input Triassic2/Triassic2.th
+input TickleRift/TickleRift.th
 
 equate 13@Entrance 14@TennisBallRift
+equate 14@TennisBallRift 30@TickleRift
 equate 9@Entrance 14@Triassic
 equate 19@Triassic 0@Triassic2
 
 map LongwoodValleySinkPM
   EntranceMP@Entrance
+  TickleRiftMP@TickleRift
   TennisBallRiftMP@TennisBallRift
   TriassicM@Triassic
   Triassic2MP@Triassic2
@@ -24,15 +27,18 @@ map LongwoodValleySinkE90M
   TriassicE90@Triassic
   TennisBallRiftME90@TennisBallRift
   Triassic2ME90@Triassic2
+  TickleRiftME90@TickleRift
 endmap
 
 join EntranceSP1@Entrance TriassicSP1@Triassic -smooth on
+join EntranceSP2@Entrance TickleRiftSP1@TickleRift -smooth on
 join EntranceSP2@Entrance TennisBallRiftSP1@TennisBallRift -smooth on
 join TriassicSP1@Triassic Triassic2SP1@Triassic2 -smooth on
 
 join EntranceSE901@Entrance TriassicSE901@Triassic -smooth on
 join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift -smooth on
 join TriassicSE901@Triassic Triassic2SE901@Triassic2 -smooth on
+join TennisBallRiftSE901@TennisBallRift TickleRiftSE901@TickleRift -smooth on
 
 endsurvey
 

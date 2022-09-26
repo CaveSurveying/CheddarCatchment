@@ -9,7 +9,7 @@ scrap TennisBallRiftSE901 -projection [elevation 90] -scale [0 0 800 800 0.0 0.0
 point 77.0 54.0 label -text [Tennis Ball Rift]
 
 line wall
-  -3.0 310.0
+  -28.0 305.0
   21.0 288.0
   21.0 288.0 25.47 272.67 34.0 201.0
   39.0 159.0 354.0 72.0 370.0 63.0

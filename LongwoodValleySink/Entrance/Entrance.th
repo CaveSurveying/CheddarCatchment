@@ -12,8 +12,6 @@ endmap
 
 map EntranceME90
   EntranceSE901
-#    break
-#  EntranceSE902
 endmap
 
 centreline

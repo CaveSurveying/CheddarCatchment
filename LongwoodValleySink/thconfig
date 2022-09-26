@@ -1,5 +1,4 @@
 encoding  utf-8
-#select Triassic2.LongwoodValleySink
 source LongwoodValleySink.th
 # Change name to the main therion file
 
@@ -14,10 +13,10 @@ export map -proj plan -layout plan -o LongwoodValleySinkP.pdf
 
 #export map -proj extended -layout local -o LongwoodValleySinkEe.pdf
 
-#export model -fmt survex -o LongwoodValleySinkth.3d
+export model -fmt survex -o LongwoodValleySinkth.3d
 #Survex file showing centre line only
 
-export model -o LongwoodValleySink.lox
+#export model -o LongwoodValleySink.lox
 #3d therion model to be viewed in the therion viewer
 
 #export map -proj plan -o LongwoodValleySink_Walls.3d
@@ -31,8 +30,8 @@ rotate -90
 map-image -10 -55 nw LongwoodValleySinkE90.pdf
 map-header 165 -80 ne
 
-map-comment "Length 91.68 m. Vertical Range 15.7m.<br>\
-N-S Range 42.2m. E-W Range 8.46m.<br>\
+map-comment "Length 97.8 m. Vertical Range 17.1m.<br>\
+N-S Range 43.6m. E-W Range 8.3m.<br>\
 <br>\
 Drawn using Therion by John Cooper<br>\
 <br>\
