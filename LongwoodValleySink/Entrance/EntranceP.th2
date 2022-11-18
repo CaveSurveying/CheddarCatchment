@@ -25,8 +25,6 @@ line floor-step
   smooth off
 endline
 
-line wall
-endline
 
 point 109.52283464566928 187.24110236220457 station -name 9
 
