@@ -6,20 +6,22 @@ source TennisBallRift.th
 #Surveys to output
 #-----------------
 
-export map -proj plan -layout local -o TennisBallRiftP.pdf
+export map -proj plan -layout local -o Outputs/TennisBallRiftP.pdf
+export map -proj plan -layout local -o Outputs/TennisBallRiftP.xvi
 #Produces plan of cave, on a single sheet
 
-export map -proj [elevation 90] -layout local -o TennisBallRiftE90.pdf
+export map -proj [elevation 90] -layout local -o Outputs/TennisBallRiftE90.pdf
+export map -proj [elevation 90] -layout local -o Outputs/TennisBallRiftE90.xvi
 
-#export map -proj extended -layout local -o TennisBallRiftEe.pdf
+#export map -proj extended -layout local -o Outputs/TennisBallRiftEe.pdf
 
-export model -fmt survex -o TennisBallRiftth.3d
+export model -fmt survex -o Outputs/TennisBallRiftth.3d
 #Survex file showing centre line only
 
-#export model -o TennisBallRift.lox
+#export model -o Outputs/TennisBallRift.lox
 #3d therion model to be viewed in the therion viewer
 
-#export map -proj plan -o TennisBallRift_Walls.3d
+#export map -proj plan -o Outputs/TennisBallRift_Walls.3d
 #Survex file showing walls only
 
 layout local

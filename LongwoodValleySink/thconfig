@@ -5,21 +5,21 @@ source LongwoodValleySink.th
 #Surveys to output
 #-----------------
 
-export map -proj [elevation 90] -layout Projected -o LongwoodValleySinkE90.pdf
+export map -proj [elevation 90] -layout Projected -o Outputs/LongwoodValleySinkE90.pdf
 #Produces elevation looking East (90)
 
-export map -proj plan -layout plan -o LongwoodValleySinkP.pdf
+export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
 #Produces plan of cave, on a single sheet
 
-#export map -proj extended -layout local -o LongwoodValleySinkEe.pdf
+#export map -proj extended -layout local -o Outputs/LongwoodValleySinkEe.pdf
 
-export model -fmt survex -o LongwoodValleySinkth.3d
+export model -fmt survex -o Outputs/LongwoodValleySinkth.3d
 #Survex file showing centre line only
 
-#export model -o LongwoodValleySink.lox
+#export model -o Outputs/LongwoodValleySink.lox
 #3d therion model to be viewed in the therion viewer
 
-#export map -proj plan -o LongwoodValleySink_Walls.3d
+#export map -proj plan -o Outputs/LongwoodValleySink_Walls.3d
 #Survex file showing walls only
 
 layout plan
@@ -27,7 +27,7 @@ copy local
 
 rotate -90
 
-map-image -10 -55 nw LongwoodValleySinkE90.pdf
+map-image -10 -55 nw Outputs/LongwoodValleySinkE90.pdf
 map-header 165 -80 ne
 
 map-comment "Length 97.8 m. Vertical Range 17.1m.<br>\
