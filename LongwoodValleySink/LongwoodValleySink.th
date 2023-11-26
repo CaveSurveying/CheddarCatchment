@@ -4,41 +4,54 @@ survey LongwoodValleySink
 input Entrance/Entrance.th
 input TennisBallRift/TennisBallRift.th
 input Triassic/Triassic.th
-input Triassic2/Triassic2.th
 input TickleRift/TickleRift.th
+input GoWest/GoWest.th
 
 equate 13@Entrance 14@TennisBallRift
-equate 14@TennisBallRift 30@TickleRift
-equate 9@Entrance 14@Triassic
-equate 19@Triassic 0@Triassic2
+equate 13@Entrance 30@TickleRift
+equate 2@Entrance 2@Triassic
+equate 45.0@TickleRift 45.0@GoWest
 
+#Plan shows all passages
 map LongwoodValleySinkPM
   EntranceMP@Entrance
   TickleRiftMP@TickleRift
   TennisBallRiftMP@TennisBallRift
-  TriassicM@Triassic
-  Triassic2MP@Triassic2
+  TriassicMP@Triassic
+  GoWestMP@GoWest
 endmap
 
-############################################################
+#Profile E0 does NOT show Triassic Tunnel nor Tennis Ball Rift
+map LongwoodValleySinkE0M
+  EntranceME0@Entrance
+#  TriassicME0@Triassic
+#  TennisBallRiftME0@TennisBallRift
+  TickleRiftME0@TickleRift
+  GoWestME0@GoWest
+endmap
 
+#Profile E90 does NOT show Tickle Rift nor Go West
 map LongwoodValleySinkE90M
   EntranceME90@Entrance
-  TriassicE90@Triassic
+  TriassicME90@Triassic
   TennisBallRiftME90@TennisBallRift
-  Triassic2ME90@Triassic2
-  TickleRiftME90@TickleRift
+#  TickleRiftME90@TickleRift
+#  GoWestME90@GoWest
 endmap
 
+#join for Plan
 join EntranceSP1@Entrance TriassicSP1@Triassic -smooth on
 join EntranceSP2@Entrance TickleRiftSP1@TickleRift -smooth on
 join EntranceSP2@Entrance TennisBallRiftSP1@TennisBallRift -smooth on
-join TriassicSP1@Triassic Triassic2SP1@Triassic2 -smooth on
+join TickleRiftSP4@TickleRift GoWestSP1@GoWest -smooth on
 
+#join for E0 survey
+join EntranceSE01@Entrance TickleRiftSE01@TickleRift -smooth on
+join TickleRiftSE01@TickleRift GoWestSE01@GoWest -smooth on
+
+#join for E90 survey
 join EntranceSE901@Entrance TriassicSE901@Triassic -smooth on
 join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift -smooth on
-join TriassicSE901@Triassic Triassic2SE901@Triassic2 -smooth on
-join TennisBallRiftSE901@TennisBallRift TickleRiftSE901@TickleRift -smooth on
 
 endsurvey
 

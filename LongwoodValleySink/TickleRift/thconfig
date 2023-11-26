@@ -1,17 +1,17 @@
 encoding  utf-8
 source TickleRift.th
-# Change name to the main therion file
-
 
 #Surveys to output
 #-----------------
 
 export map -proj plan -layout local -o Outputs/TickleRiftP.pdf
-#Produces plan of cave, on a single sheet
+export map -proj plan -layout local -o Outputs/TickleRiftP.xvi
 
-export map -proj [elevation 90] -layout local -o Outputs/TickleRiftE90.pdf
+export map -proj elevation -layout local -o Outputs/TickleRiftE0.pdf
+export map -proj elevation -layout local -o Outputs/TickleRiftE0.xvi
 
-#export map -proj [elevation 15] -layout local -o Outputs/TickleRiftE15.pdf
+#export map -proj [elevation 90] -layout local -o Outputs/TickleRiftE90.pdf
+export map -proj [elevation 90] -layout local -o Outputs/TickleRiftE90.xvi
 
 export model -fmt survex -o Outputs/TickleRiftth.3d
 #Survex file showing centre line only

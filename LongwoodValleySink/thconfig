@@ -1,45 +1,57 @@
 encoding  utf-8
 source LongwoodValleySink.th
-# Change name to the main therion file
 
 #Surveys to output
 #-----------------
 
-export map -proj [elevation 90] -layout Projected -o Outputs/LongwoodValleySinkE90.pdf
-#Produces elevation looking East (90)
-
-export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
 #Produces plan of cave, on a single sheet
+export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
 
-#export map -proj extended -layout local -o Outputs/LongwoodValleySinkEe.pdf
+#Produces elevation looking North (0)
+export map -proj elevation -layout ProjectedNorth -o Outputs/LongwoodValleySinkE0.pdf
+
+#Produces elevation looking East (90)
+export map -proj [elevation 90] -layout ProjectedEast -o Outputs/LongwoodValleySinkE90.pdf
+
 
 export model -fmt survex -o Outputs/LongwoodValleySinkth.3d
 #Survex file showing centre line only
 
 #export model -o Outputs/LongwoodValleySink.lox
-#3d therion model to be viewed in the therion viewer
-
-#export map -proj plan -o Outputs/LongwoodValleySink_Walls.3d
-#Survex file showing walls only
+#3d therion model to be viewed in the therion viewer Loch
 
 layout plan
 copy local
 
-rotate -90
-
-map-image -10 -55 nw Outputs/LongwoodValleySinkE90.pdf
-map-header 165 -80 ne
-
-map-comment "Length 97.8 m. Vertical Range 17.1m.<br>\
-N-S Range 43.6m. E-W Range 8.3m.<br>\
-<br>\
+map-comment "Location ST 4858.5548 Altitude 207m OD<br>\
+Length 172m. Vertical Range 54m.<br>\
+N-S Range 48m. E-W Range 35m.<br>\
+Grade UISv1 6-4-EF to top of Century Rift<br>\
+Copyright 2023 CC BY NC SA<br>\
 Drawn using Therion by John Cooper<br>\
-<br>\
-Survey by Andrew Atkinson, John Cooper, Alison Moody and Barry Weaver"
+Survey by Andrew Atkinson, John Cooper, Lee Hawkswell, Alison Moody and Barry Weaver"
 grid-coords off
 #symbol-hide special north-arrow
 
 scale-bar 10 metres
+
+code tex-map
+  \cavename={\size[20] Longwood Valley Sink - Plan View}
+  \cavelength={}%empty
+  \cavedepth={}%empty
+  \colorlegendfalse
+endcode
+
+endlayout
+
+layout ProjectedNorth
+
+copy local
+map-comment "New Series - Profile Looking North<br>\
+Comprising: Entrance Rift, Tickle Rift and Go West"
+map-header 30 30 nw
+symbol-hide special north-arrow
+symbol-hide special scale-bar
 
 code tex-map
   \cavename={\size[20] Longwood Valley Sink}
@@ -50,13 +62,22 @@ endcode
 
 endlayout
 
-layout Projected
+layout ProjectedEast
 
 copy local
-
-map-header 0 0 off
+map-comment "Old Series - Profile Looking East<br>\
+Comprising Entrance Rift, Adit, Triassic Tunnel,<br>\
+PSS Rift and Tennis Ball Rift"
+map-header 100 70 se
 symbol-hide special north-arrow
 symbol-hide special scale-bar
+
+code tex-map
+  \cavename={\size[20] Longwood Valley Sink}
+  \cavelength={}%empty
+  \cavedepth={}%empty
+  \colorlegendfalse
+endcode
 
 endlayout
 

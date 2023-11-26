@@ -1,19 +1,17 @@
 encoding  utf-8
 source Entrance.th
-# Change name to the main therion file
-
 
 #Surveys to output
 #-----------------
 
 export map -proj plan -layout local -o Outputs/EntranceP.pdf
 export map -proj plan -layout local -o Outputs/EntranceP.xvi
-#Produces plan of cave, on a single sheet
+
+export map -proj elevation -layout local -o Outputs/EntranceE0.pdf
+export map -proj elevation -layout local -o Outputs/EntranceE0.xvi
 
 export map -proj [elevation 90] -layout local -o Outputs/EntranceE90.pdf
 export map -proj [elevation 90] -layout local -o Outputs/EntranceE90.xvi
-
-#export map -proj [elevation 15] -layout local -o Outputs/EntranceE15.pdf
 
 export model -fmt survex -o Outputs/Entranceth.3d
 #Survex file showing centre line only
@@ -21,14 +19,11 @@ export model -fmt survex -o Outputs/Entranceth.3d
 #export model -o Outputs/Entrance.lox
 #3d therion model to be viewed in the therion viewer
 
-#export map -proj plan -o Outputs/Entrance_Walls.3d
-#Survex file showing walls only
-
 layout local
 copy common
 debug off
 map-header 0 0 off
-#symbol-hide group cave-centreline
+symbol-hide group cave-centreline
 endlayout
 
 input ../../common_layout.th

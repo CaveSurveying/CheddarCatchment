@@ -1,10 +1,10 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -135.0 -135.0 652.0 494.0
+##XTHERION## xth_me_area_adjust -160.0 -135.0 652.0 494.0
 ##XTHERION## xth_me_area_zoom_to 100
 
 
 
-scrap TennisBallRiftSE901 -projection [elevation 90] -scale [0 0 800 800 0.0 0.0 10 10 m]
+scrap TennisBallRiftSE901 -projection [elevation 90 deg] -scale [0 0 800 800 0.0 0.0 10 10 m]
 
 point 77.0 54.0 label -text [Tennis Ball Rift]
 
