@@ -2,7 +2,7 @@ encoding  utf-8
 survey Entrance  -namespace off
 
 input EntranceP.th2
-input EntranceE0.th2
+#input EntranceE0.th2
 input EntranceE90.th2
 
 map EntranceMP
@@ -11,9 +11,9 @@ map EntranceMP
   EntranceSP2
 endmap
 
-map EntranceME0
-  EntranceSE01
-endmap
+#map EntranceME0
+#  EntranceSE01
+#endmap
 
 map EntranceME90
   EntranceSE901
