@@ -1,5 +1,5 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -50 -100 206 156
+##XTHERION## xth_me_area_adjust -1710.49 -1717.09 180.875 174.875
 ##XTHERION## xth_me_area_zoom_to 800
 ##XTHERION## xth_me_image_insert {-7.680000000000064 1 1.0} {-14.289999999999964 30} Outputs/TickleRiftP.xvi 0 {}
 
@@ -120,6 +120,23 @@ line wall
 endline
 
 line wall
+  50.375 46.625
+  47.88 47.62 38.25 50.79 38.25 52.13
+  38.25 53.38 38.75 52.38 38.75 54.875
+  38.75 57.38 39.0 58.875 39.0 58.875
+  smooth off
+endline
+
+line wall
+  38.13 41.88
+  37.37 43.63 36.87 44.38 36.5 45.625
+  36.12 46.88 35.0 49.63 37.0 48.375
+  39.0 47.13 44.63 44.62 46.125 44.0
+  47.63 43.37 49.75 42.375 49.75 42.375
+  smooth off
+endline
+
+line wall
   37.13 30.5
   37.13 32.63 38.88 35.38 39.13 37.38
   39.36 39.22 38.5 39.5 38.13 41.88
@@ -128,9 +145,21 @@ endline
 
 point 38.620000000000005 35.08 station -name 44.0
 
-point 35.24 46.5 station -name 45.0
+point 34.839999999999954 63.19000000000005 station -name 47.0
 
-point 52.17 38.54 station -name 46.0
+line wall
+  33.25 59.38
+  32.5 56.63 31.75 52.5 31.875 51.125
+  32.0 49.75 32.25 47.25 32.5 46.25
+  32.75 45.25 33.0 44.0 33.0 44.0
+  smooth off
+endline
+
+point 48.76999999999995 44.450000000000045 station -name 46.5
+
+point 31.839999999999954 52.48000000000005 station -name 46.0
+
+point 35.24 46.5 station -name 45.0
 
 endscrap
 

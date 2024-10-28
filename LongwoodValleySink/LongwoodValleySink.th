@@ -10,7 +10,7 @@ input GoWest/GoWest.th
 equate 13@Entrance 14@TennisBallRift
 equate 13@Entrance 30@TickleRift
 equate 2@Entrance 2@Triassic
-equate 45.0@TickleRift 45.0@GoWest
+equate 47.0@TickleRift 47.0@GoWest
 
 #Plan shows all passages
 map LongwoodValleySinkPM
