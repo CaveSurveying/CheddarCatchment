@@ -24,7 +24,7 @@ layout plan
 copy local
 
 map-comment "Location ST 4858.5548 Altitude 207m OD<br>\
-Length 172m. Vertical Range 54m.<br>\
+Length 173.5m. Vertical Range 54.8m.<br>\
 N-S Range 48m. E-W Range 35m.<br>\
 Grade UISv1 6-4-EF to top of Century Rift<br>\
 Copyright 2023 CC BY NC SA<br>\
@@ -48,7 +48,8 @@ layout ProjectedNorth
 
 copy local
 map-comment "New Series - Profile Looking North<br>\
-Comprising: Entrance Rift, Tickle Rift and Go West"
+Comprising: Entrance Rift, Adit,<br>\
+ Tickle Rift and Go West"
 map-header 30 30 nw
 symbol-hide special north-arrow
 symbol-hide special scale-bar
@@ -67,7 +68,7 @@ layout ProjectedEast
 copy local
 map-comment "Old Series - Profile Looking East<br>\
 Comprising Entrance Rift, Adit, Triassic Tunnel,<br>\
-PSS Rift and Tennis Ball Rift"
+ PSS Rift and Tennis Ball Rift"
 map-header 100 70 se
 symbol-hide special north-arrow
 symbol-hide special scale-bar
