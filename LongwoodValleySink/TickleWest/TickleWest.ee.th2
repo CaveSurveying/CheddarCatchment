@@ -1,0 +1,92 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -6062.99 -2834.65 1574.80 866.14
+##XTHERION## xth_me_area_zoom_to 25
+##XTHERION## xth_me_image_insert {-1188.6400000000003 1 1.0} {-819.54 12} XVI/TickleWest.ee.xvi 0 {}
+
+
+
+scrap ticklewest-ee -projection extended -scale [-6062.99 -2834.65 1574.80 -2834.65 0.0 0.0 193.999866 0.0 m]
+
+point -1188.6394 -819.53937 station -name 12
+
+point -1365.6383 -1108.3307 station -name 15
+
+point -3758.7976 -987.3611 station -name 34
+
+point -4059.8098 -1799.0525 station -name 36
+
+point -4474.303 -1884.2747 station -name 39
+
+point -1056.9421 -578.51306 station -name 9
+
+point -996.9613 -374.19568 station -name 8
+
+point -3003.4355 -1379.5714 station -name 28
+
+point -3923.5886 -1673.0839 station -name 35
+
+point -2290.3882 -1297.4939 station -name 24
+
+point -503.60803 -48.578537 station -name 3
+
+point -1689.1448 -1116.1661 station -name 19
+
+point -4194.776 -1863.2937 station -name 37
+
+point -1163.4509 -1094.3464 station -name 17
+
+point -896.06213 -338.32236 station -name 7
+
+
+point -1142.1523 -771.06116 station -name 11
+
+point -3584.6687 -1334.4501 station -name 32
+
+point -939.1777 -84.2488 station -name 6
+
+point -706.46014 -66.86375 station -name 4
+
+point -1449.478 -1083.7268 station -name 14
+
+point -1753.6141 -1139.9426 station -name 20
+
+point -345.86 -77.73512 station -name 2
+
+point -1273.8013 -934.6666 station -name 13
+
+point -2418.998 -1335.6382 station -name 25
+
+point -1289.5485 -1103.8707 station -name 16
+
+point -2650.9697 -1350.3958 station -name 26
+
+point -1975.0535 -1221.0947 station -name 22
+
+point -3370.8513 -1295.7211 station -name 30
+
+point -1567.2888 -1092.8412 station -name 18
+
+point -3189.1426 -768.5191 station -name 31
+
+point -3822.765 -1497.143 station -name 33
+
+point -2068.7458 -1255.8973 station -name 23
+
+point -782.1575 -193.49646 station -name 5
+
+point -1846.4104 -1175.1907 station -name 21
+
+point -4401.8384 -1874.6803 station -name 38
+
+point -3267.0747 -1301.947 station -name 29
+
+point -1084.6389 -720.9636 station -name 10
+
+point -2815.8594 -1360.891 station -name 27
+
+point -1093.7955 -861.8679 label -text " GRP " -scale xs
+
+point -974.99646 -45.231796 water-flow -orientation 114.45503 -scale xl
+
+endscrap
+

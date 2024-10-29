@@ -1,0 +1,128 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -2962.6458 -915.4016 836.6614000000004 1781.5433600000001
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {92.30000000000018 1 1.0} {234.90999999999997 12} XVI/TickleWest.plan.xvi 0 {}
+
+
+
+scrap ticklewest-plan -projection plan -scale [-3228.35 -1181.10 1181.10 -1181.10 0.0 0.0 112.00003 0.0 m]
+
+point 92.29545 234.91052 station -name 12
+
+point 225.98953 468.65918 station -name 15
+
+point -1807.4196 96.46461 station -name 34
+
+point -2024.5415 -30.216188 station -name 36
+
+point -2354.6772 -206.15762 station -name 39
+
+point 160.96785 165.69853 station -name 9
+
+point 171.14482 106.58745 station -name 8
+
+point -1012.9955 145.3752 station -name 28
+
+point -1891.7698 0.24569316 station -name 35
+
+point -323.09583 229.02727 station -name 24
+
+point -174.544 -160.77849 station -name 3
+
+point 34.877296 585.08105 station -name 19
+
+point -2157.6753 -52.380314 station -name 37
+
+point 385.3782 421.4393 station -name 17
+
+point 70.38248 101.33384 station -name 7
+
+point 125.70225 202.58357 station -name 11
+
+point -1566.561 -28.132406 station -name 32
+
+point 193.7598 14.0838995 station -name 6
+
+point -37.325554 -11.3794565 station -name 4
+
+point 142.70496 459.0268 station -name 14
+
+point 27.883993 520.9923 station -name 20
+
+point -142.35115 -315.2067 station -name 2
+
+point 161.62196 284.37155 station -name 13
+
+point -450.7672 244.53384 station -name 25
+
+point 260.93686 401.06958 station -name 16
+
+point -677.2656 194.43927 station -name 26
+
+point -17.11725 305.18143 station -name 22
+
+point -1367.5493 50.048386 station -name 30
+
+point 156.39732 576.0391 station -name 18
+
+point -1303.1 -119.85 station -name 31
+
+point -1796.562 33.425293 station -name 33
+
+point -107.6126 280.91467 station -name 23
+
+point 38.29439 -7.9575553 station -name 5
+
+point 19.142586 428.60873 station -name 21
+
+point -2347.9712 -134.00388 station -name 38
+
+point -1265.8716 70.81438 station -name 29
+
+point 140.52391 147.01273 station -name 10
+
+point -840.3565 218.72737 station -name 27
+
+point -1123.8425 -54.248226 label -text " rock floor " -scale s
+
+point -1837.1411 57.910633 blocks -scale s
+
+point -1889.3516 94.044975 blocks -scale s
+
+point -1897.2028 20.205318 blocks -scale s
+
+point -1936.8511 15.492177 blocks -scale s
+
+point -1931.3552 49.269745 blocks -scale s
+
+point -1924.2896 112.11215 blocks -scale s
+
+point -1830.4677 31.988415 blocks -scale s
+
+point -907.0123 254.46565 clay -scale xs
+
+point -901.0303 228.09914 clay -scale xs
+
+point -819.86993 260.9361 clay -scale xs
+
+point -833.4506 240.71634 clay -scale xs
+
+point -694.16833 241.525 clay -scale xs
+
+point -467.8212 280.55566 clay -scale xs
+
+point -505.65637 263.44977 clay -scale xs
+
+point -468.45453 292.4348 clay -scale xs
+
+point -451.9906 302.57178 clay -scale xs
+
+point -535.7278 262.95773 clay -scale xs
+
+point -505.65637 286.57455 clay -scale xs
+
+point -616.8075 255.11249 clay -scale xs
+
+endscrap
+
+
