@@ -10,8 +10,8 @@ input TickleWest/TickleWest.th
 
 equate 13@Entrance 14@TennisBallRift
 equate 13@Entrance 30@TickleRift
-#equate 13@Entrance 2@TickleWest
-equate 59.0@GoWest 29@TickleWest
+equate 13@Entrance 2@TickleWest
+#equate 59.0@GoWest 29@TickleWest
 equate 2@Entrance 2@Triassic
 equate 47.0@TickleRift 47.0@GoWest
 
