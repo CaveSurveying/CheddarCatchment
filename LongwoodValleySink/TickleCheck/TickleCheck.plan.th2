@@ -1,0 +1,35 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -314.96 -1181.10 551.18 1417.32
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 2} "TickleCheck.plan.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap ticklecheck-plan -projection plan
+
+point 237.1782 294.5895 station -name 8
+
+point 8.952985 156.24962 station -name 3
+
+point 323.1882 451.83456 station -name 11
+
+point 356.62598 412.92288 station -name 9
+
+point 256.9516 406.44427 station -name 7
+
+point 343.11377 588.95154 station -name 14
+
+point 0.0 0.0 station -name 2
+
+point 273.41577 539.53406 station -name 13
+
+point 226.80437 297.5332 station -name 6
+
+point 305.72125 507.21 station -name 12
+
+point 343.06976 471.68182 station -name 10
+
+point 38.51568 1.4313469 station -name 4
+
+point 151.57477 297.8722 station -name 5
+
+endscrap

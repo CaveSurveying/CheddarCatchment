@@ -1,0 +1,17 @@
+# Created with SexyTopo 1.8.3 on 2024-11-04
+
+encoding utf-8
+
+layout local
+  debug off
+  # map-header 0 0 off
+  # symbol-hide group cave-centreline
+endlayout
+
+source "TickleCheck.th"
+
+export model -fmt survex -o "TickleCheck-th.3d"
+
+export map -proj plan -layout local -o "TickleCheck-plan.pdf"
+
+export map -proj extended -layout local -o "TickleCheck-ee.pdf"
