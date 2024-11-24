@@ -9,12 +9,14 @@ input TickleRift/TickleRift.th
 #input GoWest/GoWest.th
 input TickleWest/TickleWest.th
 input TickleCheck/TickleCheck.th
+input WestPassage/WestPassage.th
 
 equate 39@Century 39@TickleWest
 equate 13@Entrance 14@TennisBallRift
 equate 13@Entrance 30@TickleRift 2@TickleCheck
 equate 13@Entrance 2@TickleWest
 #equate 59.0@GoWest 29@TickleWest
+equate 53@Century 53@WestPassage
 equate 2@Entrance 2@Triassic
 #equate 47.0@TickleRift 47.0@GoWest
 

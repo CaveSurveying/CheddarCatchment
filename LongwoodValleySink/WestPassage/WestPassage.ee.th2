@@ -1,0 +1,69 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -3543.31 -2677.17 1181.10 2047.24
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 53} "WestPassage.ee.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap westpassage-ee -projection extended
+
+point -781.0153 -245.9948 station -name 59
+
+point -1049.0797 535.4492 station -name 64
+
+point -1582.9336 -696.0701 station -name 76
+
+point -159.90634 -78.20377 station -name 54
+
+point -821.94507 -28.547077 station -name 58
+
+point -2121.306 -809.3681 station -name 81
+
+point -704.4992 -183.6688 station -name 57
+
+point -1255.4988 -452.85474 station -name 72
+
+point -1379.3623 -584.6532 station -name 74
+
+point -1331.8214 710.79803 station -name 67
+
+point -1681.8564 -741.53705 station -name 77
+
+point -1038.279 -395.92252 station -name 69
+
+point -930.26404 365.2711 station -name 62
+
+point -1949.1926 -772.0754 station -name 79
+
+point -1535.0033 -370.85004 station -name 73
+
+point -891.99414 338.3367 station -name 61
+
+point -1197.9717 586.6333 station -name 66
+
+point -1776.573 -775.36914 station -name 78
+
+point -1210.77 -532.9829 station -name 70
+
+point -1295.7465 -563.7284 station -name 71
+
+point -346.99448 -126.94586 station -name 55
+
+point -1462.0142 -628.9063 station -name 75
+
+point -1092.4895 539.74713 station -name 63
+
+point -1008.3344 -63.182266 station -name 60
+
+point -539.46216 -171.85547 station -name 56
+
+point -2309.5269 -877.2239 station -name 82
+
+point -900.0056 -352.8411 station -name 68
+
+point 0.0 0.0 station -name 53
+
+point -1991.5508 -770.4732 station -name 80
+
+point -866.96906 615.2281 station -name 65
+
+endscrap

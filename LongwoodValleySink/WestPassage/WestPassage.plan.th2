@@ -1,0 +1,69 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -2755.91 -1889.76 866.14 1338.58
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 53} "WestPassage.plan.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap westpassage-plan -projection plan
+
+point -555.0658 -363.61682 station -name 59
+
+point -698.79584 -145.58977 station -name 64
+
+point -1087.7388 -219.44707 station -name 76
+
+point -157.0454 -30.112804 station -name 54
+
+point -451.89066 -448.2491 station -name 58
+
+point -1278.603 183.4788 station -name 81
+
+point -483.99197 -335.27548 station -name 57
+
+point -1007.0543 -513.93915 station -name 72
+
+point -1055.7146 -402.6841 station -name 74
+
+point -440.04324 -76.99924 station -name 67
+
+point -1143.5618 -137.77986 station -name 77
+
+point -775.05084 -391.53403 station -name 69
+
+point -635.24036 -277.4351 station -name 62
+
+point -1173.7786 121.91743 station -name 79
+
+point -1282.7261 -560.06836 station -name 73
+
+point -652.96704 -311.35184 station -name 61
+
+point -561.0419 -134.22733 station -name 66
+
+point -1127.6165 -44.415222 station -name 78
+
+point -927.0989 -472.9867 station -name 70
+
+point -1012.06915 -474.00504 station -name 71
+
+point -297.0969 -154.15938 station -name 55
+
+point -1107.9849 -338.6595 station -name 75
+
+point -665.27045 -118.01335 station -name 63
+
+point -379.52924 -620.0188 station -name 60
+
+point -488.88574 -170.31097 station -name 56
+
+point -1464.1233 215.24843 station -name 82
+
+point -662.1407 -311.71643 station -name 68
+
+point 0.0 0.0 station -name 53
+
+point -1151.398 157.8802 station -name 80
+
+point -880.50275 -133.47011 station -name 65
+
+endscrap

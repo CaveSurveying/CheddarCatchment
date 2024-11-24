@@ -1,0 +1,85 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -2047.24 -1417.32 3779.53 1732.28
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 39} "Centry.plan.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap centry-plan -projection plan
+
+point 1870.8711 658.10046 station -name 76
+
+point 1565.2931 635.0014 station -name 66
+
+point 701.31647 582.1084 station -name 62
+
+point 2495.5024 613.2151 station -name 74
+
+point 355.80835 272.37186 station -name 58
+
+point -797.562 170.96579 station -name 48
+
+point -173.17027 28.047083 station -name 44
+
+point 1734.554 596.40125 station -name 67
+
+point 858.78705 583.56287 station -name 63
+
+point 2227.5564 631.00903 station -name 72
+
+point -459.5867 340.17468 station -name 49
+
+point 0.0 0.0 station -name 39
+
+point 1102.7263 511.24707 station -name 64
+
+point -347.05902 392.11697 station -name 50
+
+point 2097.1272 662.26587 station -name 75
+
+point 2322.5298 644.66 station -name 69
+
+point 237.5613 463.99362 station -name 55
+
+point 2323.5176 639.7611 station -name 73
+
+point 62.959587 339.80243 station -name 54
+
+point 293.4974 324.68976 station -name 56
+
+point 427.6787 546.5281 station -name 61
+
+point 80.10028 -540.6462 station -name 43
+
+point -63.40471 197.97723 station -name 52
+
+point -203.38629 -92.69665 station -name 41
+
+point 315.84906 264.2742 station -name 57
+
+point 347.52933 246.35417 station -name 59
+
+point -479.9192 194.8252 station -name 47
+
+point -158.63213 14.621207 station -name 40
+
+point -95.89011 -257.38852 station -name 42
+
+point 2330.0076 725.0028 station -name 70
+
+point -102.34253 314.81485 station -name 51
+
+point 1054.6848 475.98694 station -name 65
+
+point -206.96344 214.03876 station -name 45
+
+point -455.2863 204.78125 station -name 46
+
+point 2041.692 715.3401 station -name 68
+
+point 2530.5627 809.68695 station -name 71
+
+point -538.6541 229.75421 station -name 53
+
+point 423.28613 72.57918 station -name 60
+
+endscrap
