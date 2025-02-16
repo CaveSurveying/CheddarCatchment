@@ -1,57 +1,84 @@
 encoding  utf-8
 survey LongwoodValleySink
+#copyright 2014 "GNU GPL"
 
 input Century/Century.th
 input Entrance/Entrance.th
-input TennisBallRift/TennisBallRift.th
-input Triassic/Triassic.th
-input TickleRift/TickleRift.th
 #input GoWest/GoWest.th
+input TennisBallRift/TennisBallRift.th
+#input TickleRift/TickleRift.th
 input TickleWest/TickleWest.th
 input TickleCheck/TickleCheck.th
+input Triassic/Triassic.th
+input Triassic2/Triassic2.th
 input WestPassage/WestPassage.th
 
+
+equate 9 9@Triassic
+equate 13 14@TennisBallRift 2@TickleCheck 2@TickleWest  # 4 stations connected
+#equate 13 30@TickleRift
 equate 39@Century 39@TickleWest
-equate 13@Entrance 14@TennisBallRift
-equate 13@Entrance 30@TickleRift 2@TickleCheck
-equate 13@Entrance 2@TickleWest
-#equate 59.0@GoWest 29@TickleWest
 equate 53@Century 53@WestPassage
-equate 2@Entrance 2@Triassic
-#equate 47.0@TickleRift 47.0@GoWest
+#equate 47.0@GoWest 47.0@TickleRift
+#equate 59.0@GoWest 29@TickleWest
+equate 3@TickleCheck 3@TickleWest
+equate 5@TickleCheck 4@TickleWest
+equate 6@TickleCheck 5@TickleWest
+equate 7@TickleCheck 7@TickleWest
+equate 9@TickleCheck 8@TickleWest
+equate 10@TickleCheck 9@TickleWest
+equate 11@TickleCheck 10@TickleWest
+equate 12@TickleCheck 11@TickleWest
+equate 13@TickleCheck 12@TickleWest
+equate 14@TickleCheck 13@TickleWest
+equate 6.0@Triassic 0@Triassic2
+
 
 #Plan shows all passages
-map LongwoodValleySinkPM
+map LongwoodValleySinkMP
   EntranceMP@Entrance
  # TickleRiftMP@TickleRift
+  TickleWestMP@TickleWest
   TennisBallRiftMP@TennisBallRift
   TriassicMP@Triassic
+  Triassic2MP@Triassic2
+  CenturyMP@Century
   #GoWestMP@GoWest
 endmap
 
 #Profile E0 does NOT show Triassic Tunnel nor Tennis Ball Rift
-map LongwoodValleySinkE0M
-  EntranceME0@Entrance
+#map LongwoodValleySinkE0M
+#  EntranceME0@Entrance
 #  TriassicME0@Triassic
 #  TennisBallRiftME0@TennisBallRift
  # TickleRiftME0@TickleRift
 #  GoWestME0@GoWest
-endmap
+#endmap
 
 #Profile E90 does NOT show Tickle Rift nor Go West
-map LongwoodValleySinkE90M
-  EntranceME90@Entrance
-  TriassicME90@Triassic
-  TennisBallRiftME90@TennisBallRift
+#map LongwoodValleySinkE90M
+  #EntranceME90@Entrance
+ # TriassicME90@Triassic
+  #TennisBallRiftME90@TennisBallRift
 #  TickleRiftME90@TickleRift
 #  GoWestME90@GoWest
-endmap
+#endmap
 
-#join for Plan
-join EntranceSP1@Entrance TriassicSP1@Triassic -smooth on
-#join EntranceSP2@Entrance TickleRiftSP1@TickleRift -smooth on
-join EntranceSP2@Entrance TennisBallRiftSP1@TennisBallRift -smooth on
+#Joins for Plan
+#Scraps
+join CenturySP1@Century TickleWestSP4@TickleWest -smooth on
+join CenturySP1@Century WestPassage-planS1@WestPassage -smooth on
+join EntranceSP2@Entrance TriassicSP1@Triassic -smooth on
+join EntranceSP3@Entrance TickleWestSP1@TickleWest -smooth on
+join EntranceSP3@Entrance TennisBallRiftSP1@TennisBallRift -smooth on
 #join TickleRiftSP4@TickleRift GoWestSP1@GoWest -smooth on
+join TriassicSP1@Triassic TriassicSP3@Triassic -smooth on
+join TriassicSP3@Triassic Triassic2SP1@Triassic2 -smooth on
+
+#Line Points
+join Wall1@TickleWest:Left Wall2@TickleWest:0 Wall3@TickleWest:0 -smooth on
+join Wall1@TickleWest:Right Wall3@TickleWest:end -smooth on
+join Wall3@TickleWest:Middle Wall4@TickleWest:end -smooth on
 
 #join for E0 survey
 #join EntranceSE01@Entrance TickleRiftSE01@TickleRift -smooth on

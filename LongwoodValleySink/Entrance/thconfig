@@ -4,7 +4,7 @@ source Entrance.th
 #Surveys to output
 #-----------------
 
-export map -proj plan -layout local -o Outputs/EntranceP.pdf
+export map -proj plan -layout local -o EntranceP.pdf
 export map -proj plan -layout local -o Outputs/EntranceP.xvi
 
 export map -proj elevation -layout local -o Outputs/EntranceE0.pdf

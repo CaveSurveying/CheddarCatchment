@@ -8,8 +8,15 @@ survey TickleWest
 input "TickleWest.plan.th2"
 input "TickleWest.ee.th2"
 
+map TickleWestMP
+  TickleWestSP1
+  TickleWestSP2
+  TickleWestSP3
+  TickleWestSP4
+endmap
   
   centreline
+  copyright 2024 "GNU GPL"
   
     date 2024.10.26
     team "Andrew Atkinson" notes

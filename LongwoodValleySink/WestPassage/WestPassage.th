@@ -1,16 +1,15 @@
 encoding  utf-8
 # Created with SexyTopo 1.8.3 on 2024-11-11
-
-# created with SexyTopo 1.8.3
-
 survey WestPassage
-
 input "WestPassage.plan.th2"
 input "WestPassage.ee.th2"
 
 
+map WestPassageM
+  WestPassage-planS1
+  WestPassage-planS2
+endmap
 
-  
   centreline
   
     date 2024.11.09

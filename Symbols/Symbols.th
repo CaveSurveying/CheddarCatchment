@@ -80,6 +80,29 @@ code metapost
         draw tmp_pic;
       enddef;
       
+def a_pebbles_BCA (expr p) =
+  T:=identity;
+  pickup PenC;
+  path q, qq; q = bbox p;
+  picture tmp_pic;
+  tmp_pic := image(
+    for i = xpart llcorner q step .5u until xpart urcorner q:
+      for j = ypart llcorner q step .5u until ypart urcorner q:
+        qq := (superellipse((.2u,0),(0,.1u),(-.2u,0),(0,.-.1u),.75))
+%             randomized (u/25)
+             rotated uniformdeviate(360)
+             shifted ((i,j) randomized 0.3u);
+	if xpart (p intersectiontimes qq) < 0:
+	  thdraw qq;
+	fi;
+      endfor;
+    endfor;
+  );
+  clip tmp_pic to p;
+  drawoptions();
+  draw tmp_pic;
+enddef;
+      
       def l_flowstone_BCA (expr P) = 
   T:=identity;
   cas := 0;
@@ -141,6 +164,7 @@ initsymbol ("l_overhang_BCA");
 
     initsymbol ("a_sand_BCA");
     initsymbol ("a_debris_BCA");
+    initsymbol ("a_pebbles_BCA");
     
 def l_wall_blocks_CHED (expr P) = 
 
@@ -306,6 +330,7 @@ endcode
     symbol-assign area blocks BCA
     symbol-assign area debris BCA
     symbol-assign area sand BCA
+    symbol-assign area pebbles BCA
     
     symbol-assign line flowstone BCA
     symbol-assign line overhang BCA

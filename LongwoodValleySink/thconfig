@@ -13,6 +13,7 @@ export map -proj elevation -layout ProjectedNorth -o Outputs/LongwoodValleySinkE
 #Produces elevation looking East (90)
 export map -proj [elevation 90] -layout ProjectedEast -o Outputs/LongwoodValleySinkE90.pdf
 
+export survey-list -o Outputs/survey-list.html
 
 export model -fmt survex -o Outputs/LongwoodValleySinkth.3d
 #Survex file showing centre line only
@@ -22,25 +23,20 @@ export model -fmt survex -o Outputs/LongwoodValleySinkth.3d
 
 layout plan
 copy local
+debug off
+map-header 0 -2 sw
+map-header-bg on
 
-map-comment "Location ST 4858.5548 Altitude 207m OD<br>\
-Length 173.5m. Vertical Range 54.8m.<br>\
-N-S Range 48m. E-W Range 35m.<br>\
+map-comment "Location ST 4858 5548 Altitude 207m OD<br>\
+Length 365.79m. Vertical Range 91.05m.<br>\
 Grade UISv1 6-4-EF to top of Century Rift<br>\
-Copyright 2023 CC BY NC SA<br>\
-Drawn using Therion by John Cooper<br>\
+Copyright 2014-25 CC BY NC SA<br>\
+Drawn using Therion by Andrew Atkinson. John Cooper<br>\
 Survey by Andrew Atkinson, John Cooper, Lee Hawkswell, Alison Moody and Barry Weaver"
 grid-coords off
 #symbol-hide special north-arrow
 
 scale-bar 10 metres
-
-code tex-map
-  \cavename={\size[20] Longwood Valley Sink - Plan View}
-  \cavelength={}%empty
-  \cavedepth={}%empty
-  \colorlegendfalse
-endcode
 
 endlayout
 
@@ -54,13 +50,6 @@ map-header 30 30 nw
 symbol-hide special north-arrow
 symbol-hide special scale-bar
 
-code tex-map
-  \cavename={\size[20] Longwood Valley Sink}
-  \cavelength={}%empty
-  \cavedepth={}%empty
-  \colorlegendfalse
-endcode
-
 endlayout
 
 layout ProjectedEast
@@ -73,12 +62,7 @@ map-header 100 70 se
 symbol-hide special north-arrow
 symbol-hide special scale-bar
 
-code tex-map
-  \cavename={\size[20] Longwood Valley Sink}
-  \cavelength={}%empty
-  \cavedepth={}%empty
-  \colorlegendfalse
-endcode
+
 
 endlayout
 
@@ -86,16 +70,22 @@ layout local
 
 copy common
 doc-title "Longwood Valley Sink"
-grid-size 5 5 5 metres
+grid-size 10 10 10 metres
 #symbol-hide special scale-bar
 
 scale 1 250
-
 symbol-hide point remark
 symbol-hide group cave-centreline
 
 statistics explo off
 statistics topo off
+
+code tex-map
+  \cavename={\size[20] Longwood Valley Sink}
+  \cavelength={}%empty
+  \cavedepth={}%empty
+  \colorlegendfalse
+endcode
 
 endlayout
 
