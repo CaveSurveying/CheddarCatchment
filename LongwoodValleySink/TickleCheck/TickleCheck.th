@@ -90,3 +90,9 @@ flags duplicate
 
 endsurvey
 
+
+input TickleCheckE000.th2
+
+map TickleCheckME000
+    TickleCheckSE000_1
+endmap

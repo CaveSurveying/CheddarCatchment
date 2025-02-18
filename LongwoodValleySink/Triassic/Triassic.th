@@ -4,6 +4,11 @@ survey Triassic
 #Triassic only for Plan and E90
 
 input TriassicP.th2
+input TriassicE000.th2
+
+map TriassicME000
+    TriassicSE000_1
+endmap
 
 #Triassic not on E0 profile
 #input TriassicE0.th2

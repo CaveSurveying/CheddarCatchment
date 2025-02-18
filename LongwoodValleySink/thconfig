@@ -8,7 +8,7 @@ source LongwoodValleySink.th
 export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
 
 #Produces elevation looking North (0)
-export map -proj elevation -layout ProjectedNorth -o Outputs/LongwoodValleySinkE0.pdf
+export map -proj [elevation 0] -layout ProjectedNorth -o Outputs/LongwoodValleySinkE000.pdf
 
 #Produces elevation looking East (90)
 export map -proj [elevation 90] -layout ProjectedEast -o Outputs/LongwoodValleySinkE90.pdf
@@ -43,12 +43,10 @@ endlayout
 layout ProjectedNorth
 
 copy local
-map-comment "New Series - Profile Looking North<br>\
-Comprising: Entrance Rift, Adit,<br>\
- Tickle Rift and Go West"
-map-header 30 30 nw
+map-comment "Looking North"
+map-header 100 10 se
 symbol-hide special north-arrow
-symbol-hide special scale-bar
+#symbol-hide special scale-bar
 
 endlayout
 

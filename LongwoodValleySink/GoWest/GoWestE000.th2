@@ -1,0 +1,7 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 718.75 781.15
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {590.75 1 1.0} {653.15 47.0} Notes/GoWestE000.xvi 0 {}
+
+scrap GoWestSE000_1 -projection [elevation 0] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+endscrap

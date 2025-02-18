@@ -47,13 +47,16 @@ map LongwoodValleySinkMP
 endmap
 
 #Profile E0 does NOT show Triassic Tunnel nor Tennis Ball Rift
-#map LongwoodValleySinkE0M
-#  EntranceME0@Entrance
+map LongwoodValleySinkM000
+  CenturyME000@Century
+  EntranceME000@Entrance
+#  GoWestME0@GoWest
+  TickleWestME000@TickleWest
 #  TriassicME0@Triassic
 #  TennisBallRiftME0@TennisBallRift
  # TickleRiftME0@TickleRift
-#  GoWestME0@GoWest
-#endmap
+
+endmap
 
 #Profile E90 does NOT show Tickle Rift nor Go West
 #map LongwoodValleySinkE90M

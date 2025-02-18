@@ -2,6 +2,13 @@ encoding  utf-8
 # Created with SexyTopo 1.8.3 on 2024-11-11
 survey WestPassage
 input "WestPassage.plan.th2"
+input WestPassageE000.th2
+
+map WestPassageME000
+    WestPassageSE000_2
+    break
+    WestPassageSE000_1
+endmap
 input "WestPassage.ee.th2"
 
 

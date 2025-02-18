@@ -2,6 +2,11 @@ encoding  utf-8
 survey GoWest
 
 input GoWestP.th2
+input GoWestE000.th2
+
+map GoWestME000
+    GoWestSE000_1
+endmap
 input GoWestE0.th2
 #input GoWestE90.th2
 
