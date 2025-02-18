@@ -1,6 +1,6 @@
 encoding  utf-8
 ##XTHERION## xth_me_area_adjust -2755.91 -1889.76 866.14 1338.58
-##XTHERION## xth_me_area_zoom_to 200
+##XTHERION## xth_me_area_zoom_to 100
 ##XTHERION## xth_me_image_insert {-555.0700000000002 1 1.0} {-363.6199999999999 59} WestPassage.plan.xvi 0 {}
 
 
@@ -155,6 +155,7 @@ endline
 line pit -reverse on
   -452.5 -337.5
   -454.07 -400.49 -480.0 -428.0 -480.0 -451.0
+  smooth off
 endline
 
 line pit
@@ -162,26 +163,31 @@ line pit
   -823.0 -418.5 -826.0 -419.0 -826.0 -419.0
   smooth off
   -826.0 -419.0 -834.0 -402.0 -846.5 -399.0
+  smooth off
 endline
 
 line pit
   -580.0 -462.0
   -576.0 -420.0 -561.0 -318.5 -547.5 -300.5
+  smooth off
 endline
 
 line pit
   -632.5 -291.5
   -646.5 -296.5 -649.58 -298.78 -657.5 -301.5
+  smooth off
 endline
 
 line pit -reverse on
   -979.0 -498.0
   -1001.0 -490.0 -999.87 -489.84 -1015.0 -475.5
+  smooth off
 endline
 
 line pit
   -1733.0 190.0
   -1655.0 181.0 -1467.5 168.5 -1434.5 194.0
+  smooth off
 endline
 
 line pit
@@ -190,6 +196,7 @@ line pit
   -1401.5 237.5 -1340.0 332.5 -1369.5 382.5
   -1382.8 405.04 -1433.0 416.0 -1465.0 420.0
   -1497.0 424.0 -1646.5 380.5 -1672.0 367.5
+  smooth off
 endline
 
 line wall -subtype presumed
@@ -207,8 +214,13 @@ line wall -subtype presumed
   -1021.0 203.0 -1392.0 222.0 -1406.5 218.5
   smooth off
   -1358.5 211.0 -1190.0 225.5 -1139.0 207.5
+  smooth off
   subtype presumed
 endline
+
+point -1698.0 -305.0 label -text [<centre>Shaft<br>of the<br>Cyclops] -scale m -align bottom
+
+point -1150.0 -215.0 label -scale s -align bottom-left -text [Slot 2]
 
 line wall
   -1285.0 -556.0
@@ -300,7 +312,10 @@ line wall
   -652.0 -159.0 -651.0 -162.5 -649.0 -168.0
   -647.0 -173.5 -647.94 -195.06 -647.0 -204.5
   -646.0 -214.5 -633.0 -278.5 -632.5 -291.5
+  smooth off
 endline
+
+point -718.0 -23.0 label -align top -scale s -text [<centre>Flowstone<br>Aven]
 
 line wall
   -963.5 -131.5

@@ -14,7 +14,10 @@ point 174.015748031 1371.05499422 station -name 0
 line pit -outline out
   128.0 1217.0
   122.0 1226.0 104.0 1243.5 85.0 1240.0
+  smooth off
 endline
+
+point 216.5 1464.5 entrance -orientation 205.7 -scale l
 
 line wall
   200.5 1378.0
@@ -77,12 +80,16 @@ endline
 line ceiling-step
   282.0 1168.0
   279.5 1188.0 276.5 1198.5 277.5 1214.5
+  smooth off
 endline
 
 line ceiling-step -reverse on
   382.0 1139.5
   386.0 1156.0 388.0 1187.0 384.0 1199.5
+  smooth off
 endline
+
+point 433.5 1212.0 label -align top-right -text Adit -scale m
 
 line wall
   159.0 1172.5

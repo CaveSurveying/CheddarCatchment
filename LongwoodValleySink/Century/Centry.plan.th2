@@ -1,6 +1,6 @@
 encoding  utf-8
 ##XTHERION## xth_me_area_adjust -1387.8425 -1151.6221 3120.1261400000003 3703.3071800000002
-##XTHERION## xth_me_area_zoom_to 400
+##XTHERION## xth_me_area_zoom_to 200
 ##XTHERION## xth_me_image_insert {2043.1828999999998 1 0.7413102413009175} {713.8521000000001 68} CenturyFixed.plan.xvi 0 {}
 ##XTHERION## xth_me_image_insert {1870.87 1 0.17378008287493754} {658.1 76} Centry.plan.xvi 0 {}
 
@@ -82,16 +82,19 @@ line pit
   94.0 -82.0
   75.5 -44.0 66.0 -17.5 69.0 -2.5
   72.0 12.5 48.5 96.5 33.5 110.0
+  smooth off
 endline
 
 line pit -reverse on
   33.5 110.0
   55.0 97.0 96.5 63.5 100.0 50.0
+  smooth off
 endline
 
 line pit -reverse on
   -3.0 252.5
   -18.0 256.0 -27.0 257.0 -38.0 254.0
+  smooth off
 endline
 
 line rock-edge
@@ -110,6 +113,7 @@ line rock-edge
   18.25 94.25
   14.152899999999903 101.67210000000004
   14.152899999999903 101.67210000000004 20.25 110.25 20.5 110.5
+  smooth off
 endline
 
 line rock-border -close on
@@ -139,6 +143,10 @@ line overhang
   -483.0 183.0 -503.0 145.0 -505.0 134.0
   smooth off
 endline
+
+point -410.5 159.5 label -scale m -text [<centre>Second<br>Pitch] -align bottom-right
+
+point 114.5 -25.5 label -align right -text Century -scale m
 
 line wall
   187.3228999999999 73.62210000000005
@@ -244,6 +252,8 @@ line pit -reverse on
   227.0 434.5 217.5 470.5 224.0 491.0
   smooth off
 endline
+
+point 1205.0 662.0 label -scale m -align top -text [East Passage]
 
 line wall
   2525.5 822.5

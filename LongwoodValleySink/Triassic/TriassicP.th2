@@ -125,6 +125,8 @@ line wall
   smooth off
 endline
 
+point 2349.5 1835.0 label -text PSS<br>Rift -scale m -align right
+
 endscrap
 
 
@@ -137,6 +139,7 @@ line wall
   1726.5 3210.0 1725.25 3258.75 1724.5 3267.25
   1723.75 3275.75 1718.75 3327.0 1718.5 3335.5
   1718.25 3344.0 1711.25 3397.25 1709.75 3405.5
+  smooth off
 endline
 
 line wall
@@ -145,6 +148,7 @@ line wall
   1732.25 3328.5 1740.25 3277.25 1740.25 3268.0
   1740.25 3258.75 1737.0 3202.5 1737.25 3194.0
   1737.5 3185.5 1739.75 3140.5 1740.5 3134.0
+  smooth off
 endline
 
 point 1730.223 3128.8678346454 station -name 6.0
@@ -156,6 +160,12 @@ point 1735.733 3267.6478346453996 station -name 4.0
 point 1727.273 3337.3378346453997 station -name 3.0
 
 point 1722.353 3407.0178346453995 station -name 2.0
+
+line label -text [Triassic Tunnel]
+  1626.0 3537.0
+  1686.0 3331.5 1674.0 3171.5 1675.5 3095.5
+  smooth off
+endline
 
 endscrap
 

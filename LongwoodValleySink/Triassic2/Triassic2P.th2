@@ -6,9 +6,9 @@ encoding  utf-8
 
 scrap Triassic2SP1 -projection plan -scale [0 0 700 700 0 0 10 10 m]
 
-point 70.0 22.0 label -text [Dig Face May 2018] -align right
+point 200.0 31.0 label -text [Dig Face May 2018] -align bottom -scale s
 
-point 265.0 815.0 label -text [Aven above Flowstone] -align right
+point 96.0 776.0 label -align left -scale m -text [<right>Flowstone<br>Chimney]
 
 line flowstone -id l15-194-735
   170.0 736.0
