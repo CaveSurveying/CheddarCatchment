@@ -21,10 +21,8 @@ scale 1 500
 #the map by a (scale/base-scale) factor. This has the same effect as if the map
 #printed in base-scale would be photoreduced to the scale. (M, A)
 
-
 units metric
 # units <metric/imperial> . set output units (M, A; default: metric)
-
 
 #overlap <value> <units>
 # overlap <value> <units> . set overlap size in paper units in the atlas mode or map
@@ -140,8 +138,6 @@ map-header-bg off
 
 scale-bar 10 metres
 # scale-bar <length> <units> . set the length of the scale-bar (M, A)
-
-
 
 language en_UK
 # language <xx[_YY]> . set output language. Available languages are listed on impressum

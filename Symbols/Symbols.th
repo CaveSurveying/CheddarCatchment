@@ -8,6 +8,7 @@ input Areas/a_blocks_BCA.th
 # Input Lines
  ########################################
 input Lines/l_u_rail.th
+input Lines/l_wall_debris_CHED.th
 
 
 # Input Points
@@ -26,16 +27,17 @@ copy a_blocks_BCA
 # Copy Lines
  ########################################
 copy l_u_rail
+copy l_wall_debris_CHED
 
 # Copy specials
  ########################################
 copy s_northarrow_BCA
 
-symbol-assign line wall:debris AUT
+symbol-assign line wall:debris CHED
 
 
 code metapost
-              
+           
       def a_debris_BCA (expr p) =
       T:=identity;
       pickup PenC;
@@ -62,6 +64,7 @@ code metapost
       clip tmp_pic to p;
       draw tmp_pic;
     enddef;
+
     
       def a_sand_BCA(expr p) =
         T:=identity;
@@ -92,9 +95,9 @@ def a_pebbles_BCA (expr p) =
 %             randomized (u/25)
              rotated uniformdeviate(360)
              shifted ((i,j) randomized 0.3u);
-	if xpart (p intersectiontimes qq) < 0:
-	  thdraw qq;
-	fi;
+  if xpart (p intersectiontimes qq) < 0:
+    thdraw qq;
+  fi;
       endfor;
     endfor;
   );
@@ -171,13 +174,9 @@ def l_wall_blocks_CHED (expr P) =
   T:=identity;
   pickup PenC;
   laenge := arclength P;
-
   path block;
   path old_block;
-  
   cur := 0;
-  
-  
   #draw first block
   old_block := punked (( (.65u,-.15u)--(.72u,0.05u)--(.55u,.15u)--(.23u,.17u)--(.0u,.03u)--(.05u,-.1u))randomized (0.1u))
              scaled (uniformdeviate(0.3)+.65);
@@ -186,10 +185,7 @@ def l_wall_blocks_CHED (expr P) =
   old_block:=old_block rotated angle( direction t of P) shifted point 0 of P;
   thclean (old_block--cycle);
   thdraw old_block;
-  
-  
   cur := cur + block_width + 0.04u;
-
   forever:
     # generate random block
     block := punked( ((.65u,-.15u)--(.72u,0.05u)--(.55u,.15u)--(.2u,.17u)--(.0u,.03u)--(.05u,-.1u)randomized (0.1u) ))
@@ -260,11 +256,28 @@ enddef;
 
     initsymbol ("l_floorstep_BCA");
  
-symbol-colour point water-flow [0 0 100]
+symbol-colour point water-flow [30 80 100]
+
+# define water to be light blue
+  def a_water (expr p) =
+    T:=identity;
+#nice light blue - but nearly same as level colour - change back when we have control of that
+#    thfill p withcolor (0.48, 0.84, 1.0);
+    thfill p withcolor (0.3, 0.8, 1.0);
+    enddef;
+    
+# define sump to be dark blue
+  def a_sump (expr p) =
+    T:=identity;
+    thfill p withcolor (0.05, 0.0, 0.7);
+  enddef;  
+
+
 code metapost
   let p_gradient = p_entrance_UIS;
 #replaces the UIS gradient symbol with the entrance symbol that looks like 
 #BCRA gradient symbol
+ let l_chimney = l_overhang_BCA;
 
 
 # define dashed line for surface surveys
@@ -277,22 +290,7 @@ code metapost
     T:=identity;
     pickup PenD scaled 0.2;
     thdraw P;
-  enddef;
-
-# define water to be light blue
-  def a_water (expr p) =
-    T:=identity;
-#nice light blue - but nearly same as level colour - change back when we have control of that
-#    thfill p withcolor (0.48, 0.84, 1.0);
-    thfill p withcolor (0.0, 0.0, 1.0);
-
-    enddef;
-
-# define sump to be dark blue
-  def a_sump (expr p) =
-    T:=identity;
-    thfill p withcolor (0.05, 0.0, 0.7);
-  enddef;    
+  enddef;  
   
 #Change the scale bar to black and transparent bar, split into 5 and labelled
 
@@ -323,7 +321,6 @@ code metapost
     endgroup;
   enddef;
 
-%input /mnt/c408ae7c-c590-4fe0-ab71-538d53a95829/Andrew/Caving/Surveys/CheddarCatchment/Symbols/Other/northarrow_BCA.mp
     
 endcode
 
