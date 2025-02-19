@@ -1,6 +1,9 @@
 encoding  utf-8
 source LongwoodValleySink.th
 
+select LongwoodValleySinkM000@LongwoodValleySink
+
+
 #Surveys to output
 #-----------------
 
@@ -21,18 +24,41 @@ export model -fmt survex -o Outputs/LongwoodValleySinkth.3d
 #export model -o Outputs/LongwoodValleySink.lox
 #3d therion model to be viewed in the therion viewer Loch
 
+lookup map
+  CenturyME000@Century.LongwoodValleySink [90 30 0]
+  CenturyMP@Century.LongwoodValleySink [90 30 0]
+  EntranceME000@Entrance.LongwoodValleySink [90 90 0]
+  EntranceMP@Entrance.LongwoodValleySink [90 90 0]
+  TennisBallRiftME000@TennisBallRift.LongwoodValleySink [90 90 0]
+  TennisBallRiftMP@TennisBallRift.LongwoodValleySink [90 90 0]
+  TickleWestME000@TickleWest.LongwoodValleySink [0 90 0]
+  TickleWestMP@TickleWest.LongwoodValleySink [0 90 0]
+  TriassicME000@Triassic.LongwoodValleySink [90 0 0]
+  TriassicMP@Triassic.LongwoodValleySink [90 0 0]
+  Triassic2ME000@Triassic2.LongwoodValleySink [90 0 0]
+   Triassic2MP@Triassic2.LongwoodValleySink [90 0 0]
+  WestPassageME000@WestPassage.LongwoodValleySink [90 0 90]
+  WestPassageMP@WestPassage.LongwoodValleySink [90 0 90]
+endlookup
+
 layout plan
 copy local
 debug off
+map-image -2 110 sw Outputs/LongwoodValleySinkE000.pdf
 map-header 0 -2 sw
 map-header-bg on
 
+
+
 map-comment "Location ST 4858 5548 Altitude 207m OD<br>\
 Length 365.79m. Vertical Range 91.05m.<br>\
-Grade UISv1 6-4-EF to top of Century Rift<br>\
+Grade UISv1 6-4-BEF to Slot 2<br>\
 Copyright 2014-25 CC BY NC SA<br>\
+Data available at cave-registry.org.uk<br>\
 Drawn using Therion by Andrew Atkinson. John Cooper<br>\
-Survey by Andrew Atkinson, John Cooper, Lee Hawkswell, Alison Moody and Barry Weaver"
+Survey by Andrew Atkinson, John Cooper, Lee Hawkswell, Alison Moody and Barry Weaver<br>\
+<br>\
+Heights in metres OD"
 grid-coords off
 #symbol-hide special north-arrow
 
@@ -41,7 +67,6 @@ scale-bar 10 metres
 endlayout
 
 layout ProjectedNorth
-
 copy local
 map-comment "Looking North"
 map-header 100 10 se
@@ -59,13 +84,9 @@ Comprising Entrance Rift, Adit, Triassic Tunnel,<br>\
 map-header 100 70 se
 symbol-hide special north-arrow
 symbol-hide special scale-bar
-
-
-
 endlayout
 
 layout local
-
 copy common
 doc-title "Longwood Valley Sink"
 grid-size 10 10 10 metres
@@ -75,6 +96,7 @@ scale 1 250
 symbol-hide point remark
 symbol-hide group cave-centreline
 
+colour map-fg map
 statistics explo off
 statistics topo off
 

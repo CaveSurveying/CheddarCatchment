@@ -7,6 +7,7 @@ input TriassicP.th2
 input TriassicE000.th2
 
 map TriassicME000
+    TriassicSE000_2
     TriassicSE000_1
 endmap
 
@@ -16,9 +17,9 @@ endmap
 #input TriassicE90.th2
 
 map TriassicMP
-  TriassicSP1
-  break
   TriassicSP2
+  break
+  TriassicSP1
   TriassicSP3
 endmap
 

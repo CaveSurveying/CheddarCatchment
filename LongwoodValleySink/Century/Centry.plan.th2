@@ -219,7 +219,7 @@ area water
   l65-671-558
 endarea
 
-line border -id l65-671-558 -close on
+line border -id l65-671-558 -close on -subtype invisible
   672.5 578.5
   669.5 582.5 661.5 582.0 654.0 577.0
   646.5 572.0 643.0 549.0 643.0 544.5
@@ -231,7 +231,7 @@ area water
   l63-832-561
 endarea
 
-line border -id l63-832-561 -close on
+line border -id l63-832-561 -close on -subtype invisible
   817.0 554.0
   833.11 554.0 835.0 566.5 836.0 576.0
   837.0 585.5 841.5 596.0 828.0 601.0

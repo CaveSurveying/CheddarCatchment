@@ -46,16 +46,18 @@ map LongwoodValleySinkMP
   #GoWestMP@GoWest
 endmap
 
-#Profile E0 does NOT show Triassic Tunnel nor Tennis Ball Rift
+
 map LongwoodValleySinkM000
   CenturyME000@Century
   EntranceME000@Entrance
-#  GoWestME0@GoWest
+  #GoWestME0@GoWest
+  TriassicME000@Triassic
+  Triassic2ME000@Triassic2
+ break
   TickleWestME000@TickleWest
-#  TriassicME0@Triassic
-#  TennisBallRiftME0@TennisBallRift
+  TennisBallRiftME000@TennisBallRift
  # TickleRiftME0@TickleRift
-
+  WestPassageME000@WestPassage
 endmap
 
 #Profile E90 does NOT show Tickle Rift nor Go West
@@ -83,13 +85,18 @@ join Wall1@TickleWest:Left Wall2@TickleWest:0 Wall3@TickleWest:0 -smooth on
 join Wall1@TickleWest:Right Wall3@TickleWest:end -smooth on
 join Wall3@TickleWest:Middle Wall4@TickleWest:end -smooth on
 
-#join for E0 survey
-#join EntranceSE01@Entrance TickleRiftSE01@TickleRift -smooth on
-#join TickleRiftSE01@TickleRift GoWestSE01@GoWest -smooth on
+#joins for E000 survey
+join CenturySE000_1@Century TickleWestSE000_1@TickleWest -smooth on
+join CenturySE000_1@Century WestPassageSE000_1@WestPassage -smooth on
+join EntranceSE000_1@Entrance TennisBallRiftSE000_1@TennisBallRift -smooth on
+join EntranceSE000_1@Entrance TickleWestSE000_1@TickleWest -smooth on
+join EntranceSE000_1@Entrance TriassicSE000_1@Triassic -smooth on
+join TriassicSE000_2@Triassic Triassic2SE000_1@Triassic2 -smooth on
+
 
 #join for E90 survey
 #join EntranceSE901@Entrance TriassicSE901@Triassic -smooth on
-join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift -smooth on
+#join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift -smooth on
 
 endsurvey
 

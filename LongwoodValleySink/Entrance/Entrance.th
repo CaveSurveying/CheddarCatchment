@@ -3,12 +3,12 @@ survey Entrance  -namespace off
 
 input EntranceP.th2
 input EntranceE000.th2
+input EntranceE0.th2
+input EntranceE90.th2
 
 map EntranceME000
     EntranceSE000_1
 endmap
-input EntranceE0.th2
-input EntranceE90.th2
 
 map EntranceMP
  EntranceSP1
