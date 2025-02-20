@@ -190,6 +190,12 @@ line overhang -reverse on
   smooth off
 endline
 
+point 258.5 114.75 label -scale m -text [<centre>Rift<br>Chamber] -align bottom
+
+point 450.25 118.0 label -scale m -text [Go West] -align bottom-right
+
+point 576.25 311.75 label -text [<right>Tickle<br>Rift] -align bottom-left -scale m
+
 line wall
   585.0 359.5
   589.5 362.75 600.27 367.0 604.25 367.5

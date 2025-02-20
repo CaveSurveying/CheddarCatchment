@@ -36,6 +36,7 @@ line wall
   240.0 104.5 231.0 94.5 213.0 94.0
   195.0 93.5 151.0 137.0 146.0 151.0
   141.0 165.0 127.75 221.25 134.25 229.75
+  smooth off
 endline
 
 line rock-edge
@@ -64,7 +65,14 @@ line wall -subtype debris
   140.75 238.25 186.5 243.5 193.0 254.5
   199.5 265.5 205.5 285.5 212.5 298.5
   219.5 311.5 272.5 353.0 273.5 365.5
+  smooth off
 endline
+
+point 469.0 99.0 label -scale m -align bottom-right -text [East Passage]
+
+point 160.25 167.75 label -align right -scale m -text [<right>Second<br>Pitch]
+
+point 234.0 519.0 label -text Century -align right -scale m
 
 line wall
   273.5 365.5
@@ -123,6 +131,7 @@ line wall
   295.5 47.0 291.5 48.0 287.0 53.5
   282.5 59.0 279.64 66.17 277.0 71.0
   274.0 76.5 271.25 77.25 273.0 79.5
+  smooth off
 endline
 
 line wall -subtype sand
@@ -147,6 +156,7 @@ endline
 line overhang -reverse on
   134.5 36.5
   144.0 37.25 159.5 40.5 169.75 42.75
+  smooth off
 endline
 
 line wall

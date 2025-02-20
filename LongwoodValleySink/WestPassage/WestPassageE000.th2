@@ -235,6 +235,10 @@ point 191.34 353.15000000000003 station -name 64
 
 point 145.86 373.04 station -name 65
 
+point 122.5 -95.75 label -align top-right -text [<right>Shaft of the<br>Cyclops]
+
+point 203.5 400.75 label -align top -text [<centre>Flowstone<br>Aven]
+
 endscrap
 
 
