@@ -5,13 +5,11 @@ source Triassic.th
 #-----------------
 
 #export map -proj plan -layout local -o Outputs/TriassicP.pdf
-export map -proj plan -o TriassicP.xvi
 
 #export map -proj [elevation 0] -layout local -o Outputs/TriassicE0.pdf
-#export map -proj [elevation 0] -layout local -o Outputs/TriassicE0.xvi
 
 #export map -proj [elevation 90] -layout local -o Outputs/TriassicE90.pdf
-#export map -proj [elevation 90] -layout local -o Outputs/TriassicE90.xvi
+
 
 #export map -proj extended -layout local -o Outputs/TriassicEe.pdf
 

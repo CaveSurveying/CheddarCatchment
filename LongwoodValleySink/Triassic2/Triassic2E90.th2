@@ -1,85 +1,43 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -132.0 -132.0 1433.0 549.0
-##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_area_adjust -128.0 -128.0 541.385 285.48
+##XTHERION## xth_me_area_zoom_to 200
+##XTHERION## xth_me_image_insert {39.36500000000001 1 1.0} {118.1103 0} Notes/Triassic2E90.xvi 0 {}
 
 
 
-scrap Triassic2SE901 -projection [elevation 90] -scale [0 0 400 400 0.0 0.0 5 5 m]
-
-point 387.0 416.0 label -text [Aven above flowstone] -align right
-
-point 1299.2 61.6 station -name 6
-
-point 1032.8 118.4 station -name 5
-
-point 735.2 171.2 station -name 4
+scrap Triassic2SE90_1 -projection [elevation 90] -scale [0 0 400 400 0.0 0.0 5 5 m]
 
 line wall
-  84.0 338.0
-  99.22 339.01 175.0 307.0 192.0 300.0
-  209.0 293.0 399.0 232.0 424.0 228.0
-  449.0 224.0 620.0 173.0 655.0 157.0
-  690.0 141.0 777.0 136.0 809.0 129.0
-  841.0 122.0 1041.0 106.0 1041.0 106.0
+  32.0 145.0
+  40.0 143.0 95.5 134.0 108.0 132.5
+  120.5 131.0 160.5 113.5 172.0 110.0
+  183.5 106.5 229.5 92.5 248.0 91.5
+  266.5 90.5 303.0 77.5 316.0 76.0
+  329.0 74.5 379.5 69.5 382.5 65.0
+  385.5 60.5 382.0 49.0 381.5 46.0
+  381.0 43.0 365.5 44.0 340.0 47.0
+  314.5 50.0 284.0 58.5 262.5 62.0
+  241.0 65.5 208.5 75.0 202.0 78.5
+  195.5 82.0 169.5 90.0 166.0 92.5
+  162.5 95.0 112.5 104.0 107.0 105.5
+  101.5 107.0 55.0 119.5 52.5 118.5
+  50.0 117.5 44.5 112.0 39.5 110.0
   smooth off
 endline
 
-line wall
-  1040.0 138.0
-  1032.0 139.0 799.0 176.0 768.0 184.0
-  737.0 192.0 582.0 247.0 559.0 254.0
-  smooth off
-endline
+point 378.745 54.5303 station -name 6
 
-line flowstone -reverse on
-  499.0 281.0
-  484.0 281.0 466.0 295.0 461.0 280.0
-  456.0 265.0 456.0 267.0 456.0 267.0
-  smooth off
-  467.0 284.0
-endline
+point 313.185 68.5003 station -name 5
 
-line wall -reverse on
-  397.0 284.0
-  408.0 288.0 421.0 296.0 434.0 307.0
-  447.0 318.0 461.0 333.0 463.0 340.0
-  465.0 347.0 497.0 364.0 497.0 344.0
-  497.0 309.01 499.0 281.0 499.0 281.0
-  smooth off
-endline
+point 239.965 81.5003 station -name 4
 
-line wall -close on
-  397.0 284.0
-  397.0 284.0
-endline
+point 170.275 104.3303 station -name 3
 
-line wall
-  559.0 254.0
-  536.0 261.0 497.0 251.0 456.0 267.0
-  smooth off
-endline
+point 100.78500000000001 121.6503 station -name 2
 
-line wall
-  397.0 284.0
-  366.0 292.0 251.0 327.0 229.0 336.0
-  207.0 345.0 145.0 367.0 131.0 371.0
-  117.0 375.0 91.0 386.0 91.0 386.0
-  smooth off
-endline
+point 39.36500000000001 135.4303 station -name 1
 
-line wall
-  1041.0 106.0
-  1041.0 122.0 1040.0 138.0 1040.0 138.0
-  smooth off
-endline
-
-point 452.0 264.0 station -name 3
-
-point 169.6 334.4 station -name 2
-
-point 80.0 390.4 station -name 1
-
-point 80.0 320.0 station -name 0
+point 39.36500000000001 118.1103 station -name 0
 
 endscrap
 

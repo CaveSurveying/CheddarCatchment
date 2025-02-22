@@ -1,9 +1,6 @@
 encoding  utf-8
 source LongwoodValleySink.th
 
-select LongwoodValleySinkM000@LongwoodValleySink
-
-
 #Surveys to output
 #-----------------
 

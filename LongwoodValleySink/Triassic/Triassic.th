@@ -5,16 +5,12 @@ survey Triassic
 
 input TriassicP.th2
 input TriassicE000.th2
+input TriassicE90.th2
 
 map TriassicME000
     TriassicSE000_2
     TriassicSE000_1
 endmap
-
-#Triassic not on E0 profile
-#input TriassicE0.th2
-
-#input TriassicE90.th2
 
 map TriassicMP
   TriassicSP2
@@ -23,14 +19,9 @@ map TriassicMP
   TriassicSP3
 endmap
 
-#Triassic not on E0 profile
-#map TriassicME0
-# TriassicSE01
-#endmap
-
-#map TriassicME90
-#  TriassicSE901
-#endmap
+map TriassicME90
+  TriassicSE90_1
+endmap
 
 centreline
 

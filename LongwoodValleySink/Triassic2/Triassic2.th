@@ -3,18 +3,19 @@ survey Triassic2
 
 input Triassic2P.th2
 input Triassic2E000.th2
+input Triassic2E90.th2
+
 
 map Triassic2ME000
     Triassic2SE000_1
 endmap
-input Triassic2E90.th2
 
 map Triassic2MP
   Triassic2SP1
 endmap
 
 map Triassic2ME90
-  Triassic2SE901
+  Triassic2SE90_1
 endmap
 
 centreline
