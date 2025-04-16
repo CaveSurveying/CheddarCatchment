@@ -51,7 +51,7 @@ point -1278.603 183.4788 station -name	81
 
 point -1464.1233 215.24843 station -name	82
 
-line wall
+line wall -reverse on
   -1139.0 207.5
   -1142.5 188.5 -1144.5 195.5 -1146.0 176.5
   -1147.5 157.5 -1150.29 140.67 -1146.0 124.0
@@ -74,7 +74,7 @@ line wall
   smooth off
 endline
 
-line wall
+line wall -reverse on
   -632.5 -291.5
   -607.0 -283.0 -590.02 -282.78 -547.5 -300.5
   -535.5 -305.5 -522.0 -319.5 -513.5 -312.0
@@ -199,7 +199,7 @@ line pit
   smooth off
 endline
 
-line wall -subtype presumed
+line wall -reverse on -subtype presumed
   -1171.5 150.5
   -1182.5 154.5 -1268.5 173.0 -1285.5 175.5
   -1302.5 178.0 -1427.88 203.66 -1434.5 194.0
@@ -222,7 +222,7 @@ point -1698.0 -305.0 label -text [<centre>Shaft<br>of the<br>Cyclops] -scale m -
 
 point -1150.0 -215.0 label -scale s -align bottom-left -text [Slot 2]
 
-line wall
+line wall -reverse on
   -1285.0 -556.0
   -1246.5 -551.0 -1155.0 -531.5 -1131.5 -525.5
   -1108.0 -519.5 -1067.03 -489.18 -1051.5 -484.0
@@ -240,7 +240,7 @@ line wall
   smooth off
 endline
 
-line wall
+line wall -reverse on
   -398.0 -653.5
   -403.5 -640.5 -421.5 -604.5 -423.5 -591.0
   -425.5 -577.5 -426.5 -577.5 -428.0 -577.0
@@ -266,7 +266,7 @@ line wall
   smooth off
 endline
 
-line wall
+line wall -reverse on
   21.0 8.5
   1.5 -0.0 21.5 10.0 -5.0 -4.0
   -31.5 -18.0 -34.0 -18.5 -35.5 -19.0
@@ -305,7 +305,7 @@ point -880.50275 -133.47011 station -name	65
 
 point -561.0419 -134.22733 station -name	66
 
-line wall
+line wall -reverse on
   -433.0 -83.0
   -459.5 -94.0 -527.0 -134.5 -545.0 -138.0
   -563.0 -141.5 -644.23 -156.09 -648.0 -157.5
@@ -317,7 +317,7 @@ endline
 
 point -718.0 -23.0 label -align top -scale s -text [<centre>Flowstone<br>Aven]
 
-line wall
+line wall -reverse on
   -963.5 -131.5
   -941.5 -132.0 -900.5 -132.0 -884.0 -129.5
   -867.5 -127.0 -860.5 -127.5 -840.5 -126.5
@@ -329,7 +329,7 @@ line wall
   smooth off
 endline
 
-line wall
+line wall -reverse on
   -657.5 -301.5
   -660.0 -288.5 -655.0 -291.0 -657.5 -281.0
   -660.0 -271.0 -665.0 -223.0 -663.5 -211.5

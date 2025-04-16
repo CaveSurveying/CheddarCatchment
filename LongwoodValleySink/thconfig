@@ -4,23 +4,26 @@ source LongwoodValleySink.th
 #Surveys to output
 #-----------------
 
-#Produces plan of cave, on a single sheet
-export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
-
 #Produces elevation looking North (0)
 export map -proj [elevation 0] -layout ProjectedNorth -o Outputs/LongwoodValleySinkE000.pdf
 
 #Produces elevation looking East (90)
 export map -proj [elevation 90] -layout ProjectedEast -o Outputs/LongwoodValleySinkE90.pdf
 
-export survey-list -o Outputs/survey-list.html
+#Produces plan of cave, on a single sheet
+export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
+
+#export survey-list -o Outputs/survey-list.html
 
 export model -fmt survex -o Outputs/LongwoodValleySinkth.3d
 #Survex file showing centre line only
 
-#export model -o Outputs/LongwoodValleySink.lox
+export model -o Outputs/LongwoodValleySink.lox
 #3d therion model to be viewed in the therion viewer Loch
 
+#Shape File exports
+export map -proj plan -fmt esri -o Outputs/LongwoodValleySinkMap
+export model -fmt esri  -o Outputs/LongwoodValeySinkModel
 lookup map
   CenturyME000@Century.LongwoodValleySink [90 30 0]
   CenturyMP@Century.LongwoodValleySink [90 30 0]
