@@ -1,0 +1,11 @@
+{
+  "active-station": "85",
+  "connections": {
+    "81": [
+      [
+        "content:\/\/com.android.externalstorage.documents\/tree\/primary%3ADocuments%2FSurveys%2FLVS%2FWestPassage\/document\/primary%3ADocuments%2FSurveys%2FLVS%2FWestPassage",
+        "81"
+      ]
+    ]
+  }
+}

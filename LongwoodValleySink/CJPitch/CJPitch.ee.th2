@@ -1,0 +1,41 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -1496.06 -2204.72 2519.69 1023.62
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 105} "Notes/CJPitch.ee.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap cjpitch-ee -projection extended
+
+point 110.1008 -297.218 station -name 106
+
+point 244.21658 -360.6186 station -name 107
+
+point 442.21307 -392.02875 station -name 108
+
+point 572.26086 -954.56744 station -name 109
+
+point 948.467 -1085.1213 station -name 110
+
+point 1340.4918 -1162.5922 station -name 111
+
+point 943.80084 -809.96497 station -name 112
+
+point 1035.1044 -661.3638 station -name 113
+
+point 1130.8116 -526.1686 station -name 114
+
+point 1625.0231 -606.07684 station -name 115
+
+point 1083.7538 -1054.4773 station -name 116
+
+point 1246.2822 -1108.2963 station -name 117
+
+point 711.413 -754.4626 station -name 118
+
+point 475.45764 -708.7576 station -name 119
+
+point 195.09413 -769.91077 station -name 120
+
+point -114.10554 -761.3711 station -name 121
+
+endscrap

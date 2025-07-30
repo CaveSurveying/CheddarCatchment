@@ -1,10 +1,11 @@
-encoding utf-8
-
+encoding  utf-8
 ##XTHERION## xth_me_area_adjust -3543.31 -2677.17 1181.10 2047.24
-##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 53} "WestPassage.ee.xvi" 0 {}
 ##XTHERION## xth_me_area_zoom_to 25
+##XTHERION## xth_me_image_insert {-781.02 1 1.0} {-245.99000000000024 59} WestPassage.ee.xvi 0 {}
 
-scrap westpassage-ee -projection extended
+
+
+scrap westpassage-ee -projection extended -scale [-3543.31 -2677.17 1181.10 -2677.17 0.0 0.0 120.000014 0.0 m]
 
 point -781.0153 -245.9948 station -name 59
 
@@ -56,8 +57,6 @@ point -1008.3344 -63.182266 station -name 60
 
 point -539.46216 -171.85547 station -name 56
 
-point -2309.5269 -877.2239 station -name 82
-
 point -900.0056 -352.8411 station -name 68
 
 point 0.0 0.0 station -name 53
@@ -67,3 +66,5 @@ point -1991.5508 -770.4732 station -name 80
 point -866.96906 615.2281 station -name 65
 
 endscrap
+
+

@@ -1,0 +1,56 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -1968.50 -1968.50 6141.73 1102.36
+##XTHERION## xth_me_area_zoom_to 25
+##XTHERION## xth_me_image_insert {1719.78 1 1.0} {-399.48 113} Notes/CJS.ee.xvi 0 {}
+
+
+
+scrap cjs-ee -projection extended -scale [-944.88 -5826.77 1732.28 -5826.77 0.0 0.0 67.99986399999999 0.0 m]
+
+point 322.62186 -100.28077 station -name 108
+
+point 694.3203 -144.59462 station -name 109
+
+point 1041.6293 -162.98106 station -name 110
+
+point 1216.4177 -200.35776 station -name 111
+
+point 1381.6931 -353.8612 station -name 112
+
+point 1719.7839 -399.48236 station -name 113
+
+point 1930.3455 -446.86444 station -name 114
+
+point 2227.3914 -440.56018 station -name 115
+
+point 2151.716 -271.28754 station -name 116
+
+point 2434.7288 -355.86597 station -name 117
+
+point 2668.8848 -573.5113 station -name 118
+
+point 3106.2124 -372.18503 station -name 119
+
+point 3225.0542 -257.28784 station -name 120
+
+point 3497.3262 -184.76428 station -name 122
+
+point 3698.3599 -55.263176 station -name 123
+
+point 3792.4302 26.5929 station -name 124
+
+point 3448.6157 59.1692 station -name 125
+
+point 3368.0596 64.12862 station -name 126
+
+point 3157.227 -267.80237 station -name 127
+
+point 4231.2075 -4.7442365 station -name 128
+
+point 4299.429 -58.44945 station -name 129
+
+point 4514.1597 -86.349335 station -name 130
+
+endscrap
+
+

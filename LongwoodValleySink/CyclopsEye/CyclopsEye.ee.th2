@@ -1,0 +1,21 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -1181.10 -3070.87 2519.69 2519.69
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 85} "Notes/CyclopsEye.ee.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap cyclopseye-ee -projection extended
+
+point 192.58844 -558.0156 station -name 86
+
+point 67.78233 -696.36523 station -name 87
+
+point 549.7323 -854.3392 station -name 88
+
+point 679.11456 -1143.0522 station -name 89
+
+point -111.20699 -1454.688 station -name 90
+
+point -225.5184 -1765.7113 station -name 91
+
+endscrap

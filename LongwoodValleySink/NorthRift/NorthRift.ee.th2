@@ -1,0 +1,52 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -4015.75 -3937.01 3858.27 2125.98
+##XTHERION## xth_me_area_zoom_to 25
+##XTHERION## xth_me_image_insert {-292.59000000000015 1 1.0} {-1759.8699999999994 98} Notes/NorthRift.ee.xvi 0 {}
+
+
+
+scrap northrift-ee -projection extended -scale [-1496.06 -4015.75 2283.46 -4015.75 0.0 0.0 95.999808 0.0 m]
+
+point -150.64009 58.429295 station -name 86
+
+point -394.317 157.63443 station -name 87
+
+point -447.89682 114.52968 station -name 88
+
+point -881.8087 300.27002 station -name 89
+
+point -968.8993 308.23547 station -name 90
+
+point -1183.7612 833.97754 station -name 91
+
+point -738.20154 -1747.3308 station -name 92
+
+point -998.4302 -2017.9432 station -name 93
+
+point -1219.1539 -2199.5828 station -name 94
+
+point -1261.4885 -1851.6766 station -name 108
+
+point -2400.5115 -1656.6986 station -name 95
+
+point -445.11774 -1667.3318 station -name 96
+
+point -339.12888 -1709.7805 station -name 97
+
+point -292.58633 -1759.8666 station -name 98
+
+point -219.28513 -1857.6136 station -name 99
+
+point -73.27783 -1680.5126 station -name 101
+
+point 361.28394 -1710.4321 station -name 102
+
+point 725.9734 -1762.2081 station -name 103
+
+point 850.3761 -1594.3921 station -name 104
+
+point 1215.671 -1581.8024 station -name 105
+
+endscrap
+
+

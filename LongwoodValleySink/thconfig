@@ -45,10 +45,8 @@ layout plan
 copy local
 debug off
 map-image -2 110 sw Outputs/LongwoodValleySinkE000.pdf
-map-header 0 -2 sw
+map-header 0 -5 nw
 map-header-bg on
-
-
 
 map-comment "Location ST 4858 5548 Altitude 207m OD<br>\
 Length 365.79m. Vertical Range 91.05m.<br>\

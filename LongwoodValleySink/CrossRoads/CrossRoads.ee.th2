@@ -1,0 +1,75 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -2519.69 -1259.84 8267.72 1574.80
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 105} "Notes/CrossRoads.ee.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap crossroads-ee -projection extended
+
+point -237.52374 172.21416 station -name 106
+
+point 280.04016 102.82247 station -name 107
+
+point 596.4324 90.28809 station -name 108
+
+point 1160.2247 185.556 station -name 109
+
+point 909.7 207.63812 station -name 110
+
+point 1456.0687 272.28268 station -name 111
+
+point 1610.3069 296.07938 station -name 112
+
+point 2028.1266 278.51028 station -name 113
+
+point 2382.237 316.24603 station -name 114
+
+point 2645.2373 271.23428 station -name 115
+
+point 2437.4592 311.13684 station -name 116
+
+point 2243.9175 274.9102 station -name 117
+
+point 2801.5127 288.1808 station -name 118
+
+point 3333.2527 283.74542 station -name 119
+
+point 3762.723 281.7004 station -name 120
+
+point 4115.7217 331.7936 station -name 121
+
+point 4392.723 289.86255 station -name 122
+
+point 4482.13 351.34384 station -name 123
+
+point 4764.929 363.1177 station -name 124
+
+point 4970.254 364.29883 station -name 125
+
+point 5227.8325 376.08658 station -name 126
+
+point 5443.4756 397.3882 station -name 127
+
+point 5491.464 679.07794 station -name 128
+
+point 5589.404 353.39633 station -name 129
+
+point 5778.156 324.19437 station -name 130
+
+point 5954.805 319.2195 station -name 131
+
+point 6145.6846 275.59924 station -name 132
+
+point 6347.147 219.96503 station -name 133
+
+point 643.404 257.75586 station -name 134
+
+point 833.3801 480.39676 station -name 135
+
+point 253.28104 233.663 station -name 136
+
+point -345.4911 53.092644 station -name 137
+
+point -665.20905 15.763261 station -name 138
+
+endscrap
