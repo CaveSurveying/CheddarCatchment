@@ -1,0 +1,7 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 328.79 508.12
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {45.86 1 1.0} {202.35999999999999 53} Notes/WestPassageE090.xvi 0 {}
+
+scrap WestPassageSE090_1 -projection [elevation 90] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+endscrap

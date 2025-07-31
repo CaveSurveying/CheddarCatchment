@@ -1,6 +1,6 @@
+encoding  utf-8
 # Created with SexyTopo 1.8.4 on 2025-07-29
 
-encoding utf-8
 
 layout local
   debug off
@@ -13,5 +13,7 @@ source "Cyclops.th"
 export model -fmt survex -o "Cyclops-th.3d"
 
 export map -proj plan -layout local -o "Cyclops-plan.pdf"
+
+export map -proj [elevation 0] -layout local -o "Cyclops.E000.xvi"
 
 export map -proj extended -layout local -o "Cyclops-ee.pdf"

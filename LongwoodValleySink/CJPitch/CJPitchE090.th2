@@ -1,0 +1,7 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 519.53 418.55
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {184.44 1 1.0} {290.55 105} Notes/CJPitchE090.xvi 0 {}
+
+scrap CJPitchSE090_1 -projection [elevation 90] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+endscrap

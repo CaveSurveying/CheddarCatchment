@@ -3,6 +3,11 @@ encoding  utf-8
 survey WestPassage
 
 input "WestPassage.plan.th2"
+input WestPassageE090.th2
+
+map WestPassageME090
+    WestPassageSE090_1
+endmap
 input WestPassageE000.th2
 input "WestPassage.ee.th2"
 

@@ -94,6 +94,7 @@ join CenturySP1@Century TickleWestSP4@TickleWest -smooth on
 join CrossRoadsSP1@CrossRoads CJPitchSP2@CJPitch -smooth on
 join CrossRoadsSP1@CrossRoads CJSSP1@CJS -smooth on
 join CrossRoadsSP1@CrossRoads NorthRiftSP2@NorthRift -smooth on
+join CyclopsSP1@Cyclops NorthRiftSP1@NorthRift -smooth on
 join CyclopsSP1@Cyclops WestPassage-planS1@WestPassage -smooth on
 join EntranceSP2@Entrance TriassicSP1@Triassic -smooth on
 join EntranceSP3@Entrance TickleWestSP1@TickleWest -smooth on

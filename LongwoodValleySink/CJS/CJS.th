@@ -6,6 +6,16 @@ encoding  utf-8
 survey CJS
 
 input "CJS.plan.th2"
+input CJSE090.th2
+
+map CJSME090
+    CJSSE090_1
+endmap
+input CJSE000.th2
+
+map CJSME000
+    CJSSE000_1
+endmap
 input "CJS.ee.th2"
 
 equate 120 127

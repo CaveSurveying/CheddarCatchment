@@ -1,0 +1,7 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 1031.74 886.26
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {555.9000000000001 1 1.0} {549.8 85} Notes/NorthRiftE090.xvi 0 {}
+
+scrap NorthRiftSE090_1 -projection [elevation 90] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+endscrap

@@ -6,6 +6,16 @@ encoding  utf-8
 survey CyclopsEye
 
 input "CyclopsEye.plan.th2"
+input CyclopsEyeE090.th2
+
+map CyclopsEyeME090
+    CyclopsEyeSE090_1
+endmap
+input CyclopsEyeE000.th2
+
+map CyclopsEyeME000
+    CyclopsEyeSE000_1
+endmap
 input "CyclopsEye.ee.th2"
 
  map CyclopsEyeMP

@@ -6,11 +6,24 @@ encoding  utf-8
 survey NorthRift
 
 input "NorthRift.plan.th2"
+input NorthRiftE090.th2
+
+map NorthRiftME090
+    NorthRiftSE090_1
+endmap
+input NorthRiftE000.th2
+
+map NorthRiftME000
+    NorthRiftSE000_1
+endmap
 input "NorthRift.ee.th2"
 
 map NorthRiftMP
   NorthRiftSP1
+ break
   NorthRiftSP2
+ break
+  NorthRiftSP3
 endmap
   
   centreline
@@ -18,8 +31,14 @@ endmap
     date 2025.05.03
     team "Andrew Atkinson" notes assistant
     team "Mike Eise" assistant assistant
-    team "Alison Moody " instruments assistant
+    team "Alison Moody" instruments assistant
     team "Pete Buckley" assistant assistant
+    
+    explo-date 2025.05.03
+    explo-team "Andrew Atkinson"
+    explo-team "Mike Eise"
+    explo-team "Alison Moody"
+    explo-team "Pete Buckley" 
     
     data normal from to length compass clino
   #Calibration check at Max House  

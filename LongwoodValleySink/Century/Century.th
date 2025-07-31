@@ -6,6 +6,11 @@ encoding  utf-8
 survey Century
 
 input "Centry.plan.th2"
+input CenturyE090.th2
+
+map CenturyME090
+    CenturySE090_1
+endmap
 input CenturyE000.th2
 
 map CenturyME000

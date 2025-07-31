@@ -1,0 +1,7 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 876.4200000000001 297.69
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {27.560000000000002 1 1.0} {0.0 105} Notes/CrossRoadsE000.xvi 0 {}
+
+scrap CrossRoadsSE000_1 -projection [elevation 0] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+endscrap
