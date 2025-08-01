@@ -4,16 +4,15 @@ source Entrance.th
 #Surveys to output
 #-----------------
 
-export map -proj plan -layout local -o EntranceP.pdf
-export map -proj plan -layout local -o Outputs/EntranceP.xvi
+#export map -proj plan -layout local -o EntranceP.pdf
+#export map -proj plan -layout local -o Outputs/EntranceP.xvi
 
-export map -proj elevation -layout local -o Outputs/EntranceE0.pdf
-export map -proj elevation -layout local -o Outputs/EntranceE0.xvi
+#export map -proj [elevation -0] -o EntranceE000.xvi
 
-export map -proj [elevation 90] -layout local -o Outputs/EntranceE90.pdf
-export map -proj [elevation 90] -layout local -o Outputs/EntranceE90.xvi
+#export map -proj [elevation 90] -layout local -o Outputs/EntranceE90.pdf
+export map -proj [elevation 90] -layout local -o PocketTopo/EntranceE90.xvi
 
-export model -fmt survex -o Outputs/Entranceth.3d
+#export model -fmt survex -o Outputs/Entranceth.3d
 #Survex file showing centre line only
 
 #export model -o Outputs/Entrance.lox

@@ -7,16 +7,21 @@ survey Cyclops
 
 input "Cyclops.plan.th2"
 input CyclopsE090.th2
+input CyclopsE000.th2
+input "Cyclops.ee.th2"
 
 map CyclopsME090
     CyclopsSE090_1
+   break
+    CyclopsSE090_1
 endmap
-input CyclopsE000.th2
 
 map CyclopsME000
     CyclopsSE000_1
+   break
+    CyclopsSE000_2
 endmap
-input "Cyclops.ee.th2"
+
 
 map CyclopsMP
   CyclopsSP1

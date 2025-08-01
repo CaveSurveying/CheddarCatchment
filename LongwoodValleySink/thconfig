@@ -94,7 +94,7 @@ scale 1 250
 symbol-hide point remark
 symbol-hide group cave-centreline
 
-colour map-fg map
+colour map-fg scrap
 statistics explo off
 statistics topo off
 

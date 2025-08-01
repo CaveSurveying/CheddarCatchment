@@ -7,16 +7,22 @@ survey CrossRoads
 
 input "CrossRoads.plan.th2"
 input CrossRoadsE090.th2
+input CrossRoadsE000.th2
+input "CrossRoads.ee.th2"
 
 map CrossRoadsME090
     CrossRoadsSE090_1
 endmap
-input CrossRoadsE000.th2
+
 
 map CrossRoadsME000
+    CrossRoadsSE000_2
     CrossRoadsSE000_1
+    CrossRoadsSE000_3
+    CrossRoadsSE000_4
+    CrossRoadsSE000_5
 endmap
-input "CrossRoads.ee.th2"
+
 
 map CrossRoadsMP
   CrossRoadsSP1

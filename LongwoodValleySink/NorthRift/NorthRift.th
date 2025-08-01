@@ -7,6 +7,7 @@ survey NorthRift
 
 input "NorthRift.plan.th2"
 input NorthRiftE090.th2
+input "NorthRift.ee.th2"
 
 map NorthRiftME090
     NorthRiftSE090_1
@@ -14,9 +15,15 @@ endmap
 input NorthRiftE000.th2
 
 map NorthRiftME000
+    NorthRiftSE000_4
+   break
+    NorthRiftSE000_3
+   break
+    NorthRiftSE000_2
+   break
     NorthRiftSE000_1
 endmap
-input "NorthRift.ee.th2"
+
 
 map NorthRiftMP
   NorthRiftSP1

@@ -77,16 +77,24 @@ map LongwoodValleySinkM000
   TennisBallRiftME000@TennisBallRift
  # TickleRiftME0@TickleRift
   WestPassageME000@WestPassage
+  CyclopsME000@Cyclops
+  NorthRiftME000@NorthRift
+  CrossRoadsME000@CrossRoads
+  CyclopsEyeME000@CyclopsEye
+  CJSME000@CJS
+  CJPitchME000@CJPitch
 endmap
 
-#Profile E90 does NOT show Tickle Rift nor Go West
-#map LongwoodValleySinkE90M
-  #EntranceME90@Entrance
- # TriassicME90@Triassic
-  #TennisBallRiftME90@TennisBallRift
-#  TickleRiftME90@TickleRift
+#Profile E90 does NOT show Go West
+map LongwoodValleySinkE90M
+  EntranceME90@Entrance
+  TriassicME90@Triassic
+  TennisBallRiftME90@TennisBallRift
+ # TickleRiftME90@TickleRift
 #  GoWestME90@GoWest
-#endmap
+  TickleWestME090@TickleWest
+  CenturyME090@Century
+endmap
 
 #Joins for Plan
 #Scraps
