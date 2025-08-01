@@ -85,3 +85,9 @@ flags duplicate
 
   endcentreline
 endsurvey
+
+input TickleCheckE315.th2
+
+map TickleCheckME315
+    TickleCheckSE315_1
+endmap

@@ -2,6 +2,11 @@ encoding  utf-8
 survey Triassic2
 
 input Triassic2P.th2
+input Triassic2E315.th2
+
+map Triassic2ME315
+    Triassic2SE315_1
+endmap
 input Triassic2E000.th2
 input Triassic2E90.th2
 

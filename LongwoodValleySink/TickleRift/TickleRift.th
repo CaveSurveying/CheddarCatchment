@@ -2,6 +2,11 @@ encoding  utf-8
 survey TickleRift
 
 input TickleRiftP.th2
+input TickleRiftE315.th2
+
+map TickleRiftME315
+    TickleRiftSE315_1
+endmap
 input TickleRiftE000.th2
 
 map TickleRiftME000

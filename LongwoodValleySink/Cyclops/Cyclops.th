@@ -6,6 +6,11 @@ encoding  utf-8
 survey Cyclops
 
 input "Cyclops.plan.th2"
+input CyclopsE315.th2
+
+map CyclopsME315
+    CyclopsSE315_1
+endmap
 input CyclopsE090.th2
 input CyclopsE000.th2
 input "Cyclops.ee.th2"

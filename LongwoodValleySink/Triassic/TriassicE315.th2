@@ -1,0 +1,7 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 469.16 312.84000000000003
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {306.36 1 1.0} {162.01 15} Notes/TriassicE315.xvi 0 {}
+
+scrap TriassicSE315_1 -projection [elevation 315] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+endscrap

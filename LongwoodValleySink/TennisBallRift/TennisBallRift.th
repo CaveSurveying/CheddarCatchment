@@ -2,6 +2,11 @@ encoding  utf-8
 survey TennisBallRift
 
 input TennisBallRiftP.th2
+input TennisBallRiftE315.th2
+
+map TennisBallRiftME315
+    TennisBallRiftSE315_1
+endmap
 input TennisBallRiftE000.th2
 
 map TennisBallRiftME000

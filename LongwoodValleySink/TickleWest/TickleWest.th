@@ -3,6 +3,11 @@ encoding  utf-8
 survey TickleWest
 
 input "TickleWest.plan.th2"
+input TickleWestE315.th2
+
+map TickleWestME315
+    TickleWestSE315_1
+endmap
 input TickleWestE090.th2
 
 map TickleWestME090

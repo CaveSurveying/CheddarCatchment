@@ -4,6 +4,11 @@ survey Triassic
 #Triassic only for Plan and E90
 
 input TriassicP.th2
+input TriassicE315.th2
+
+map TriassicME315
+    TriassicSE315_1
+endmap
 input TriassicE000.th2
 input TriassicE90.th2
 

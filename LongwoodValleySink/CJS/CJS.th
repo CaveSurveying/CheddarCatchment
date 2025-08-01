@@ -6,6 +6,11 @@ encoding  utf-8
 survey CJS
 
 input "CJS.plan.th2"
+input CJSE315.th2
+
+map CJSME315
+    CJSSE315_1
+endmap
 input CJSE090.th2
 
 map CJSME090

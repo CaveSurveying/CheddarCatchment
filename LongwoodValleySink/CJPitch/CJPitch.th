@@ -6,6 +6,11 @@ encoding  utf-8
 survey CJPitch
 
 input "CJPitch.plan.th2"
+input CJPitchE315.th2
+
+map CJPitchME315
+    CJPitchSE315_1
+endmap
 input CJPitchE090.th2
 
 map CJPitchME090

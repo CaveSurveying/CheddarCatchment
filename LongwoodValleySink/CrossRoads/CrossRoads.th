@@ -6,6 +6,11 @@ encoding  utf-8
 survey CrossRoads
 
 input "CrossRoads.plan.th2"
+input CrossRoadsE315.th2
+
+map CrossRoadsME315
+    CrossRoadsSE315_1
+endmap
 input CrossRoadsE090.th2
 input CrossRoadsE000.th2
 input "CrossRoads.ee.th2"

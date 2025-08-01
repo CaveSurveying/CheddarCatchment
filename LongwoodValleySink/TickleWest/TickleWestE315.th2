@@ -1,0 +1,7 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 723.48 586.86
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {371.93 1 1.0} {451.58 2} XVI/TickleWestE315.xvi 0 {}
+
+scrap TickleWestSE315_1 -projection [elevation 315] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+endscrap
