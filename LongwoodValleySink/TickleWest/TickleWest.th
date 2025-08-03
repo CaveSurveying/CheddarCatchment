@@ -4,8 +4,11 @@ survey TickleWest
 
 input "TickleWest.plan.th2"
 input TickleWestE315.th2
+input TickleWestE000.th2
+input "TickleWest.ee.th2"
 
 map TickleWestME315
+    TickleWestSE315_2
     TickleWestSE315_1
 endmap
 input TickleWestE090.th2
@@ -14,7 +17,7 @@ map TickleWestME090
     TickleWestSE090_1
     TickleWestSE090_2
 endmap
-input TickleWestE000.th2
+
 
 map TickleWestME000
     TickleWestSE000_1
