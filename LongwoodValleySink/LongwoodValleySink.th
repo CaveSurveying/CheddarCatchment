@@ -129,5 +129,25 @@ join TriassicSE000_2@Triassic Triassic2SE000_1@Triassic2 -smooth on
 #join EntranceSE901@Entrance TriassicSE901@Triassic -smooth on
 #join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift -smooth on
 
+
+#### Joins for E315 survey
+join CenturySE315_1@Century TickleWestSE315_2@TickleWest -smooth on
+join CenturySE315_2@Century WestPassageSE315_1@WestPassage -smooth on
+join CJSSE315_1@CJS NorthRiftSE315_1@NorthRift -smooth on
+join CJPitchSE315_1@CJPitch NorthRiftSE315_1@NorthRift -smooth on
+join CyclopsSE315_1@Cyclops CyclopsEyeSE315_1@CyclopsEye -smooth on
+join CyclopsSE315_1@Cyclops NorthRiftSE315_1@NorthRift -smooth on
+join CyclopsEyeSE315_1@CyclopsEye NorthRiftSE315_1@NorthRift -smooth on
+join EntranceSE315_1@Entrance TennisBallRiftSE315_1@TennisBallRift -smooth on
+join EntranceSE315_1@Entrance TickleWestSE315_1@TickleWest -smooth on
+join EntranceSE315_1@Entrance TriassicSE315_1@Triassic -smooth on
+join TriassicSE315_1@Triassic Triassic2SE315_1@Triassic2 -smooth on
+
+#Joins Line points E325
+join WallT@Cyclops:0 Wall1@WestPassage:Top
+join WallB@Cyclops:end Wall1@WestPassage:Bottom
+join WallT@NorthRift:Top WallT_1@CrossRoads:0
+join WallB@NorthRift:Bottom WallB_1@CrossRoads:end
+
 endsurvey
 

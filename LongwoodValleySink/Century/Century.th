@@ -7,24 +7,26 @@ survey Century
 
 input "Centry.plan.th2"
 input CenturyE315.th2
-
-map CenturyME315
-    CenturySE315_1
-endmap
 input CenturyE090.th2
 input "Centry.ee.th2"
 input CenturyE000.th2
+
+
 
 map CenturyME090
     CenturySE090_1
     CenturySE090_2
 endmap
 
-
 map CenturyME000
     CenturySE000_1
 endmap
 
+
+map CenturyME315
+    CenturySE315_1
+    CenturySE315_2
+endmap
 
 map CenturyMP
   CenturySP1

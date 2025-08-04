@@ -5,10 +5,13 @@ source LongwoodValleySink.th
 #-----------------
 
 #Produces elevation looking North (0)
-export map -proj [elevation 0] -layout ProjectedNorth -o Outputs/LongwoodValleySinkE000.pdf
+#export map -proj [elevation 0] -layout ProjectedNorth -o Outputs/LongwoodValleySinkE000.pdf
 
 #Produces elevation looking East (90)
-export map -proj [elevation 90] -layout ProjectedEast -o Outputs/LongwoodValleySinkE90.pdf
+#export map -proj [elevation 90] -layout ProjectedEast -o Outputs/LongwoodValleySinkE90.pdf
+
+#Produces elevation looking NW (315)
+export map -proj [elevation 315] -layout ProjectedNorth -o Outputs/LongwoodValleySinkE315.pdf
 
 #Produces plan of cave, on a single sheet
 export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
@@ -44,7 +47,8 @@ endlookup
 layout plan
 copy local
 debug off
-map-image -2 110 sw Outputs/LongwoodValleySinkE000.pdf
+rotate 45
+map-image -2 110 sw Outputs/LongwoodValleySinkE315.pdf
 map-header 0 -5 nw
 map-header-bg on
 
@@ -94,7 +98,7 @@ scale 1 250
 symbol-hide point remark
 symbol-hide group cave-centreline
 
-colour map-fg scrap
+colour map-fg altitude
 statistics explo off
 statistics topo off
 

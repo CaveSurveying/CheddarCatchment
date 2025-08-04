@@ -7,6 +7,8 @@ input WestPassageE315.th2
 
 map WestPassageME315
     WestPassageSE315_1
+    WestPassageSE315_2
+    WestPassageSE315_3
 endmap
 input WestPassageE090.th2
 

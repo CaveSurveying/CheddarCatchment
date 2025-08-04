@@ -41,10 +41,10 @@ endmap
     team "Pete Buckley " assistant
     
     data normal from to length compass clino
-    
-    81  -  4.429  26.89  -4.61  
-    81  -  4.417  26.85  -4.78  
-    81  -  4.419  206.31  4.21  
+ # Calibration check at Max house
+#    81  -  4.429  26.89  -4.61  
+#    81  -  4.417  26.85  -4.78  
+#    81  -  4.419  206.31  4.21  
     81  -  0.582  60.69  -81.52  
     81  -  0.246  179.24  -2.51  
     81  -  0.797  170.49  66.75  
