@@ -153,9 +153,9 @@ point 1727.273 3337.3378346453997 station -name 3.0
 
 point 1722.353 3407.0178346453995 station -name 2.0
 
-line label -text [Triassic Tunnel]
-  1626.0 3537.0
-  1686.0 3331.5 1674.0 3171.5 1675.5 3095.5
+line label -reverse on -text [Triassic Tunnel] -scale l
+  1817.0 3558.0
+  1877.0 3352.5 1862.5 3144.5 1864.0 3068.5
   smooth off
 endline
 

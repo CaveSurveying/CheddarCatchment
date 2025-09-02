@@ -10,7 +10,10 @@ scrap EntranceSE315_1 -projection [elevation 315] -scale [-128.0 -128.0 3238.23 
 line wall
   150.5 -23.5
   152.0 -18.25 149.5 0.25 169.0 -0.0
+  smooth off
 endline
+
+point 203.75 181.5 entrance -orientation 240.4
 
 line wall
   169.25 30.25

@@ -27,7 +27,6 @@ endmap
 
 map CJPitchMP
   CJPitchSP2
- break
   CJPitchSP1
 endmap
   

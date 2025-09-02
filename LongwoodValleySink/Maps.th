@@ -14,8 +14,8 @@ map EntranceTriassicME315
 endmap
 
 map CyclopsMP
-  CyclopsMP@Cyclops
-  CyclopsEyeMP@CyclopsEye
+  CyclopsSP1@Cyclops
+  CyclopsEyeSP1@CyclopsEye
 endmap
 
 map CyclopsME315
@@ -31,6 +31,7 @@ endmap
 map CrystalPassageME315
   CrossRoadsSE315_3@CrossRoads
   CrystalPitchSE315_1@CrystalPitch
+ break
   CrystalPitchSE315_2@CrystalPitch
 endmap
 
@@ -42,4 +43,31 @@ map CrossRoadsME315
   CrossRoadsSE315_1@CrossRoads
   CrossRoadsSE315_2@CrossRoads
 endmap
-  
+
+map RoundTheBendMP
+  RoundTheBendSP2@RoundTheBend
+ break
+  RoundTheBendSP1@RoundTheBend
+ break
+  RoundTheBendSP3@RoundTheBend
+endmap
+
+map RoundTheBendME315
+  RoundTheBendSE315_2@RoundTheBend
+endmap
+
+map CJPitchMP
+   CJPitchSP2@CJPitch
+   CJPitchSP1@CJPitch
+   RoundTheBendSP0@RoundTheBend
+endmap
+
+map CJPitchME315
+   CJPitchSE315_1@CJPitch
+  break
+   CJPitchSE315_2@CJPitch
+  break
+   CJPitchSE315_3@CJPitch
+   RoundTheBendSE315_1@RoundTheBend
+endmap
+   

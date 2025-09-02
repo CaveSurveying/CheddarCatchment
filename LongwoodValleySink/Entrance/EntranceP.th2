@@ -89,7 +89,7 @@ line ceiling-step -reverse on
   smooth off
 endline
 
-point 433.5 1212.0 label -align top-right -text Adit -scale m
+point 440.0 1230.0 label -align top-right -text Adit -scale m
 
 line wall
   159.0 1172.5

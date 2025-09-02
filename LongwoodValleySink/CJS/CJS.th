@@ -30,6 +30,7 @@ map CJSMP
  CJSSP2
 break
  CJSSP1
+break
  CJSSP3
 endmap
   

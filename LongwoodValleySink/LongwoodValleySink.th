@@ -24,6 +24,7 @@ input WestPassage/WestPassage.th
 #File for toplevel maps
 input Maps.th
 
+###################################################################
 equate 105@CJPitch 105@CrossRoads
 equate 121@CJPitch 121@RoundTheBend
 equate 106@CJS 106@CrossRoads
@@ -52,7 +53,7 @@ equate 13@TickleCheck 12@TickleWest
 equate 14@TickleCheck 13@TickleWest
 equate 6.0@Triassic 0@Triassic2
 
-
+###################################################################
 #Plan shows all passages
 map LongwoodValleySinkMP
   EntranceTriassicMP
@@ -64,11 +65,11 @@ map LongwoodValleySinkMP
   CyclopsMP
   NorthRiftMP@NorthRift
   CJSMP@CJS
-  CJPitchMP@CJPitch
-  RoundTheBendMP@RoundTheBend
+  CJPitchMP
+  RoundTheBendMP
 endmap
 
-
+###################################################################
 map LongwoodValleySinkM315
   EntranceTriassicME315
   TickleWestME315@TickleWest
@@ -79,10 +80,11 @@ map LongwoodValleySinkM315
   CyclopsME315
   NorthRiftME315@NorthRift
   CJSME315@CJS
-  CJPitchME315@CJPitch
-  RoundTheBendME315@RoundTheBend
+  CJPitchME315
+  RoundTheBendME315
 endmap
 
+###################################################################
 #Profile E90 does NOT show Go West
 map LongwoodValleySinkE90M
   EntranceME90@Entrance
@@ -94,16 +96,20 @@ map LongwoodValleySinkE90M
   CenturyME090@Century
 endmap
 
+###################################################################
 #Joins for Plan
 #Scraps
 join CenturySP1@Century TickleWestSP4@TickleWest -smooth on
-join CJPitchSP1@CJPitch RoundTheBendSP1@RoundTheBend -smooth on
+join CJPitchSP1@CJPitch RoundTheBendSP0@RoundTheBend -smooth on
 join CrossRoadsSP1@CrossRoads CJPitchSP2@CJPitch -smooth on
 join CrossRoadsSP1@CrossRoads CJSSP1@CJS -smooth on
+join CrossRoadsSP1@CrossRoads CyclopsEyeSP1@CyclopsEye -smooth on
 join CrossRoadsSP1@CrossRoads NorthRiftSP2@NorthRift -smooth on
 join CrossRoadsSP2@CrossRoads CrystalPitchSP1@CrystalPitch -smooth on
 join CyclopsSP1@Cyclops NorthRiftSP1@NorthRift -smooth on
 join CyclopsSP1@Cyclops WestPassage-planS1@WestPassage -smooth on
+join CyclopsSP1@Cyclops RoundTheBendSP3@RoundTheBend -smooth on
+join CyclopsEyeSP1@CyclopsEye NorthRiftSP2@NorthRift -smooth on
 join EntranceSP2@Entrance TriassicSP1@Triassic -smooth on
 join EntranceSP3@Entrance TickleWestSP1@TickleWest -smooth on
 join EntranceSP3@Entrance TennisBallRiftSP1@TennisBallRift -smooth on
@@ -116,6 +122,8 @@ join Wall1@TickleWest:Left Wall2@TickleWest:0 Wall3@TickleWest:0 -smooth on
 join Wall1@TickleWest:Right Wall3@TickleWest:end -smooth on
 join Wall3@TickleWest:Middle Wall4@TickleWest:end -smooth on
 
+
+###################################################################
 #joins for E000 survey
 join CenturySE000_1@Century TickleWestSE000_1@TickleWest -smooth on
 join CenturySE000_1@Century WestPassageSE000_1@WestPassage -smooth on
@@ -124,20 +132,22 @@ join EntranceSE000_1@Entrance TickleWestSE000_1@TickleWest -smooth on
 join EntranceSE000_1@Entrance TriassicSE000_1@Triassic -smooth on
 join TriassicSE000_2@Triassic Triassic2SE000_1@Triassic2 -smooth on
 
-
+###################################################################
 #join for E90 survey
 #join EntranceSE901@Entrance TriassicSE901@Triassic -smooth on
 #join EntranceSE901@Entrance TennisBallRiftSE901@TennisBallRift -smooth on
 
-
+###################################################################
 #### Joins for E315 survey
 join CenturySE315_1@Century TickleWestSE315_2@TickleWest -smooth on
 join CenturySE315_2@Century WestPassageSE315_1@WestPassage -smooth on
 join CJSSE315_1@CJS NorthRiftSE315_1@NorthRift -smooth on
 join CJPitchSE315_1@CJPitch NorthRiftSE315_1@NorthRift -smooth on
+join CJPitchSE315_3@CJPitch RoundTheBendSE315_1@RoundTheBend -smooth on
 join CrossRoadsSE315_3@CrossRoads CrystalPitchSE315_2@CrystalPitch -smooth on
 join CyclopsSE315_1@Cyclops CyclopsEyeSE315_1@CyclopsEye -smooth on
 join CyclopsSE315_1@Cyclops NorthRiftSE315_1@NorthRift -smooth on
+join CyclopsSE315_1@Cyclops RoundTheBendSE315_2@RoundTheBend -smooth on
 join CyclopsEyeSE315_1@CyclopsEye NorthRiftSE315_1@NorthRift -smooth on
 join EntranceSE315_1@Entrance TennisBallRiftSE315_1@TennisBallRift -smooth on
 join EntranceSE315_1@Entrance TickleWestSE315_1@TickleWest -smooth on

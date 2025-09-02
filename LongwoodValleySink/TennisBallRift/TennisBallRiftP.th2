@@ -21,7 +21,7 @@ line border -id l9-223-462 -close on
   322.0 -20.0 285.0 575.0 114.0 558.0
 endline
 
-point 237.0 354.0 label -text Tennis<br>Ball<br>Rift -scale m -align right
+point 220.0 177.0 label -text Tennis<br>Ball<br>Rift -scale m -align right
 
 line wall
   55.0 501.0

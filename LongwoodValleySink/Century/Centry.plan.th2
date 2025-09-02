@@ -144,9 +144,9 @@ line overhang
   smooth off
 endline
 
-point -410.5 159.5 label -scale m -text [<centre>Second<br>Pitch] -align bottom-right
+point -435.0 106.5 label -scale m -text [<centre>Second<br>Pitch] -align bottom-right
 
-point 114.5 -25.5 label -align right -text Century -scale m
+point 235.5 -216.5 label -align right -text Century -scale m
 
 line wall
   187.3228999999999 73.62210000000005

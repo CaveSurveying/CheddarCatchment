@@ -21,7 +21,7 @@ copy local
 legend-width 6 cm
 map-header 0 101 nw
 map-comment "Location ST 4858 5548 Altitude 207m OD<br>\
-Length 365.79m. Vertical Range 91.05m.<br>\
+Length 1004.00m. Vertical Range 126.27m.<br>\
 Grade UISv1 6-4-BEF<br>\
 Copyright 2014-25 CC BY NC SA<br>\
 Data available at cave-registry.org.uk<br>\
@@ -31,18 +31,15 @@ Pete Buckley, Lee Hawkswell, Alison Moody,<br>\
 Barry Weaver, Mike Wise<br>\
 <br>\
 Heights in metres OD"
-overlap 0 mm
 map-header-bg on
 legend off
 
 code tex-map
 
-\copyrights={Elevation Looking Towards 315$^{^{\circ}}$}
  \legendwidth=6cm
   
 \def\maplayout{
   \legendbox{0}{101}{NW}{\the\legendcontent}
-% \legendbox{100}{100}{W}{\the\copyrights}
 }
 
 endlayout
@@ -60,14 +57,15 @@ code tex-map
   \cavename={}%empty
   \colorlegendfalse
   \legendtextsize={\size[9]}
-  \comment={Elevation Looking Towards 315}
-  \cavename={\size[10] Passage colours are the same on the plan and elevation} %bad bodge!
+  %\comment={Elevation Looking Towards 315$^{^{\circ}}$}
+  %\cavename={\size[10] Passage colours are the same on the plan and elevation} %bad bodge!
+  \legendtitle={}
 
 \def\maplayout{
   \legendbox{20}{3}{SW}{\northarrow}
-  \legendbox{37}{25}{SW}{\scalebar}
-  \legendbox{0}{101}{SW}{\loadpicture{Outputs/LongwoodValleySinkE315.pdf}}
-  \legendbox{100}{125}{NE}{\the\legendcontent}
+  \legendbox{35}{25}{SW}{\scalebar}
+  \legendbox{0}{104}{SW}{\loadpicture{Outputs/LongwoodValleySinkE315.pdf}}
+  \legendbox{105}{125}{NE}{\the\legendcontent}
  %\legendbox{00}{105}{W}{Elevation Looking Towards 315$^{^{\circ}}$}
 }
 
@@ -80,7 +78,7 @@ grid-size 50 50 10 metres
 symbol-hide special north-arrow
 symbol-hide special scale-bar
 scale 1 500
-base-scale 1 250
+base-scale 1 350
 symbol-hide point remark
 symbol-hide group cave-centreline
 
@@ -90,6 +88,7 @@ colour-legend off
 statistics explo off
 statistics topo off
 legend on
+overlap 5 mm
 
 code tex-map
   \cavename={\size[30] Longwood Valley Sink}

@@ -36,6 +36,8 @@ line wall
   smooth off
 endline
 
+point 366.0 378.0 label -align top-left -text [Shaft of the<br>Cyclops]
+
 line wall
   507.25 219.5
   501.25 225.5 494.0 252.5 498.0 261.5
