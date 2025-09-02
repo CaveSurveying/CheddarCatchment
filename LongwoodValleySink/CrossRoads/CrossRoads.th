@@ -30,6 +30,7 @@ map CrossRoadsME000
 endmap
 
 map CrossRoadsMP
+  CrossRoadsSP0
   CrossRoadsSP1
   CrossRoadsSP2
 endmap

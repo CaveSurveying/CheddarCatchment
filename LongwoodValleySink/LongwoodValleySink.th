@@ -63,7 +63,7 @@ map LongwoodValleySinkMP
   CrystalPassageMP
   CrossRoadsMP
   CyclopsMP
-  NorthRiftMP@NorthRift
+  NorthRiftMP
   CJSMP@CJS
   CJPitchMP
   RoundTheBendMP
@@ -101,10 +101,10 @@ endmap
 #Scraps
 join CenturySP1@Century TickleWestSP4@TickleWest -smooth on
 join CJPitchSP1@CJPitch RoundTheBendSP0@RoundTheBend -smooth on
-join CrossRoadsSP1@CrossRoads CJPitchSP2@CJPitch -smooth on
-join CrossRoadsSP1@CrossRoads CJSSP1@CJS -smooth on
+join CrossRoadsSP0@CrossRoads CJPitchSP2@CJPitch -smooth on
+join CrossRoadsSP0@CrossRoads CJSSP1@CJS -smooth on
 join CrossRoadsSP1@CrossRoads CyclopsEyeSP1@CyclopsEye -smooth on
-join CrossRoadsSP1@CrossRoads NorthRiftSP2@NorthRift -smooth on
+join CrossRoadsSP0@CrossRoads NorthRiftSP2@NorthRift -smooth on
 join CrossRoadsSP2@CrossRoads CrystalPitchSP1@CrystalPitch -smooth on
 join CyclopsSP1@Cyclops NorthRiftSP1@NorthRift -smooth on
 join CyclopsSP1@Cyclops WestPassage-planS1@WestPassage -smooth on

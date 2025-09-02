@@ -182,7 +182,9 @@ line pit -reverse on
   smooth off
 endline
 
-point -1186.0 -232.0 label -scale s -align bottom-left -text [Slot 2]
+point -721.0 -431.0 label -scale s -align bottom-left -text [Slot 1]
+
+point -1183.0 -233.0 label -scale s -align bottom-left -text [Slot 2]
 
 line wall -reverse on
   -1285.0 -556.0

@@ -153,6 +153,8 @@ line wall
   smooth off
 endline
 
+point -35.0 721.0 label -align left -text Colossus
+
 line wall
   -18.75 878.25
   -31.57 817.01 -18.0 807.5 -12.25 805.25

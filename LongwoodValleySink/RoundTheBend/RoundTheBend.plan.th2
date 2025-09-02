@@ -98,6 +98,7 @@ line border
   -1386.0 413.0 -1256.0 460.0 -1225.0 467.0
   -1194.0 474.0 -1100.0 540.0 -1084.0 546.0
   -1068.0 552.0 -989.0 586.0 -986.0 593.0
+  smooth off
 endline
 
 line wall
@@ -250,23 +251,26 @@ endline
 line wall -outline out -subtype bedrock
 endline
 
-point -1909.0 629.0 label -align top-right -text Colossos
+point -1906.0 629.0 label -align top-right -text Colossus
 
 line pit
   -1551.0 492.0
   -1547.0 503.0 -1548.03 533.84 -1578.5154 530.9188
   -1609.0 528.0 -1724.0 518.0 -1737.0 539.0
   -1750.0 560.0 -1745.0 556.0 -1748.0 579.0
+  smooth off
 endline
 
 line pit
   -1753.0 476.0
   -1756.0 487.0 -1782.0 560.0 -1800.0 584.0
+  smooth off
 endline
 
 line pit
   -1826.0 422.0
   -1867.0 411.0 -2032.0 373.0 -2136.0 383.0
+  smooth off
 endline
 
 line wall

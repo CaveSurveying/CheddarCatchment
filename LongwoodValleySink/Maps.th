@@ -70,4 +70,12 @@ map CJPitchME315
    CJPitchSE315_3@CJPitch
    RoundTheBendSE315_1@RoundTheBend
 endmap
-   
+
+map NorthRiftMP
+  NorthRiftSP1@NorthRift
+ break
+  NorthRiftSP2@NorthRift
+ break
+  NorthRiftSP3@NorthRift
+  CrossRoadsSP0@CrossRoads
+endmap  
