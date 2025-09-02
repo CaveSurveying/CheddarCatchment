@@ -1,22 +1,14 @@
 encoding  utf-8
 source LongwoodValleySink.th
 
-#Surveys to output
-#-----------------
-
-#Produces elevation looking North (0)
-#export map -proj [elevation 0] -layout ProjectedNorth -o Outputs/LongwoodValleySinkE000.pdf
-
-#Produces elevation looking East (90)
-#export map -proj [elevation 90] -layout ProjectedEast -o Outputs/LongwoodValleySinkE90.pdf
+select LongwoodValleySinkMP@LongwoodValleySink -map-level 1
+select LongwoodValleySinkM315@LongwoodValleySink -map-level 1
 
 #Produces elevation looking NW (315)
-export map -proj [elevation 315] -layout ProjectedNorth -o Outputs/LongwoodValleySinkE315.pdf
+export map -proj [elevation 315] -layout Projected315 -o Outputs/LongwoodValleySinkE315.pdf
 
 #Produces plan of cave, on a single sheet
 export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
-
-#export survey-list -o Outputs/survey-list.html
 
 export model -fmt survex -o Outputs/LongwoodValleySinkth.3d
 #Survex file showing centre line only
@@ -24,91 +16,86 @@ export model -fmt survex -o Outputs/LongwoodValleySinkth.3d
 export model -o Outputs/LongwoodValleySink.lox
 #3d therion model to be viewed in the therion viewer Loch
 
-#Shape File exports
-export map -proj plan -fmt esri -o Outputs/LongwoodValleySinkMap
-export model -fmt esri  -o Outputs/LongwoodValeySinkModel
-lookup map
-  CenturyME000@Century.LongwoodValleySink [90 30 0]
-  CenturyMP@Century.LongwoodValleySink [90 30 0]
-  EntranceME000@Entrance.LongwoodValleySink [90 90 0]
-  EntranceMP@Entrance.LongwoodValleySink [90 90 0]
-  TennisBallRiftME000@TennisBallRift.LongwoodValleySink [90 90 0]
-  TennisBallRiftMP@TennisBallRift.LongwoodValleySink [90 90 0]
-  TickleWestME000@TickleWest.LongwoodValleySink [0 90 0]
-  TickleWestMP@TickleWest.LongwoodValleySink [0 90 0]
-  TriassicME000@Triassic.LongwoodValleySink [90 0 0]
-  TriassicMP@Triassic.LongwoodValleySink [90 0 0]
-  Triassic2ME000@Triassic2.LongwoodValleySink [90 0 0]
-   Triassic2MP@Triassic2.LongwoodValleySink [90 0 0]
-  WestPassageME000@WestPassage.LongwoodValleySink [90 0 90]
-  WestPassageMP@WestPassage.LongwoodValleySink [90 0 90]
-endlookup
+layout Projected315
+copy local
+legend-width 6 cm
+map-header 0 101 nw
+map-comment "Location ST 4858 5548 Altitude 207m OD<br>\
+Length 365.79m. Vertical Range 91.05m.<br>\
+Grade UISv1 6-4-BEF<br>\
+Copyright 2014-25 CC BY NC SA<br>\
+Data available at cave-registry.org.uk<br>\
+Drawn using Therion by Andrew Atkinson.<br>\
+Survey by Andrew Atkinson, John Cooper,<br>\
+Pete Buckley, Lee Hawkswell, Alison Moody,<br>\
+Barry Weaver, Mike Wise<br>\
+<br>\
+Heights in metres OD"
+overlap 0 mm
+map-header-bg on
+legend off
+
+code tex-map
+
+\copyrights={Elevation Looking Towards 315$^{^{\circ}}$}
+ \legendwidth=6cm
+  
+\def\maplayout{
+  \legendbox{0}{101}{NW}{\the\legendcontent}
+% \legendbox{100}{100}{W}{\the\copyrights}
+}
+
+endlayout
 
 layout plan
 copy local
-debug off
+map-header-bg off
+legend-width 65 mm
 rotate 45
-map-image -2 110 sw Outputs/LongwoodValleySinkE315.pdf
-map-header 0 -5 nw
-map-header-bg on
-
-map-comment "Location ST 4858 5548 Altitude 207m OD<br>\
-Length 365.79m. Vertical Range 91.05m.<br>\
-Grade UISv1 6-4-BEF to Slot 2<br>\
-Copyright 2014-25 CC BY NC SA<br>\
-Data available at cave-registry.org.uk<br>\
-Drawn using Therion by Andrew Atkinson. John Cooper<br>\
-Survey by Andrew Atkinson, John Cooper, Lee Hawkswell, Alison Moody and Barry Weaver<br>\
-<br>\
-Heights in metres OD"
+grid off
 grid-coords off
-#symbol-hide special north-arrow
+scale-bar  25 metres
+code tex-map
+  
+  \cavename={}%empty
+  \colorlegendfalse
+  \legendtextsize={\size[9]}
+  \comment={Elevation Looking Towards 315}
+  \cavename={\size[10] Passage colours are the same on the plan and elevation} %bad bodge!
 
-scale-bar 10 metres
+\def\maplayout{
+  \legendbox{20}{3}{SW}{\northarrow}
+  \legendbox{37}{25}{SW}{\scalebar}
+  \legendbox{0}{101}{SW}{\loadpicture{Outputs/LongwoodValleySinkE315.pdf}}
+  \legendbox{100}{125}{NE}{\the\legendcontent}
+ %\legendbox{00}{105}{W}{Elevation Looking Towards 315$^{^{\circ}}$}
+}
 
-endlayout
-
-layout ProjectedNorth
-copy local
-map-comment "Looking North"
-map-header 100 10 se
-symbol-hide special north-arrow
-#symbol-hide special scale-bar
-
-endlayout
-
-layout ProjectedEast
-
-copy local
-map-comment "Old Series - Profile Looking East<br>\
-Comprising Entrance Rift, Adit, Triassic Tunnel,<br>\
- PSS Rift and Tennis Ball Rift"
-map-header 100 70 se
-symbol-hide special north-arrow
-symbol-hide special scale-bar
 endlayout
 
 layout local
 copy common
 doc-title "Longwood Valley Sink"
-grid-size 10 10 10 metres
-#symbol-hide special scale-bar
-
-scale 1 250
+grid-size 50 50 10 metres
+symbol-hide special north-arrow
+symbol-hide special scale-bar
+scale 1 500
+base-scale 1 250
 symbol-hide point remark
 symbol-hide group cave-centreline
 
-colour map-fg altitude
+colour map-bg transparent
+colour map-fg map
+colour-legend off
 statistics explo off
 statistics topo off
+legend on
 
 code tex-map
-  \cavename={\size[20] Longwood Valley Sink}
+  \cavename={\size[30] Longwood Valley Sink}
   \cavelength={}%empty
   \cavedepth={}%empty
-  \colorlegendfalse
 endcode
-
 endlayout
 
 input ../common_layout.th

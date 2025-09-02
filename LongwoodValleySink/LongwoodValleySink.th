@@ -6,11 +6,13 @@ input Century/Century.th
 input CJPitch/CJPitch.th
 input CJS/CJS.th
 input CrossRoads/CrossRoads.th
+input CrystalPitch/CrystalPitch.th
 input Cyclops/Cyclops.th
 input CyclopsEye/CyclopsEye.th
 input Entrance/Entrance.th
 #input GoWest/GoWest.th
 input NorthRift/NorthRift.th
+input RoundTheBend/RoundTheBend.th
 input TennisBallRift/TennisBallRift.th
 #input TickleRift/TickleRift.th
 input TickleWest/TickleWest.th
@@ -19,12 +21,16 @@ input Triassic/Triassic.th
 input Triassic2/Triassic2.th
 input WestPassage/WestPassage.th
 
+#File for toplevel maps
+input Maps.th
+
 equate 105@CJPitch 105@CrossRoads
+equate 121@CJPitch 121@RoundTheBend
 equate 106@CJS 106@CrossRoads
 equate 105@CrossRoads 106@NorthRift #NorthRift was originally 105 but the splays look wrong! [AA July '25]
+equate 138@CrossRoads 1@CrystalPitch
 equate 85@Cyclops 85@CyclopsEye
 equate 91@CyclopsEye 98@NorthRift
-
 equate 9 9@Triassic
 equate 13 14@TennisBallRift 2@TickleCheck 2@TickleWest  # 4 stations connected
 #equate 13 30@TickleRift
@@ -49,40 +55,32 @@ equate 6.0@Triassic 0@Triassic2
 
 #Plan shows all passages
 map LongwoodValleySinkMP
-  EntranceMP@Entrance
- # TickleRiftMP@TickleRift
+  EntranceTriassicMP
   TickleWestMP@TickleWest
-  TennisBallRiftMP@TennisBallRift
-  TriassicMP@Triassic
-  Triassic2MP@Triassic2
   CenturyMP@Century
-  CyclopsMP@Cyclops
-  CyclopsEyeMP@CyclopsEye
+  WestPassageMP@WestPassage
+  CrystalPassageMP
+  CrossRoadsMP
+  CyclopsMP
   NorthRiftMP@NorthRift
-  CrossRoadsMP@CrossRoads
   CJSMP@CJS
   CJPitchMP@CJPitch
-  #GoWestMP@GoWest
+  RoundTheBendMP@RoundTheBend
 endmap
 
 
-map LongwoodValleySinkM000
-  CenturyME000@Century
-  EntranceME000@Entrance
-  #GoWestME0@GoWest
-  TriassicME000@Triassic
-  Triassic2ME000@Triassic2
- break
-  TickleWestME000@TickleWest
-  TennisBallRiftME000@TennisBallRift
- # TickleRiftME0@TickleRift
-  WestPassageME000@WestPassage
-  CyclopsME000@Cyclops
-  NorthRiftME000@NorthRift
-  CrossRoadsME000@CrossRoads
-  CyclopsEyeME000@CyclopsEye
-  CJSME000@CJS
-  CJPitchME000@CJPitch
+map LongwoodValleySinkM315
+  EntranceTriassicME315
+  TickleWestME315@TickleWest
+  CenturyME315@Century
+  WestPassageME315@WestPassage
+  CrystalPassageME315
+  CrossRoadsME315
+  CyclopsME315
+  NorthRiftME315@NorthRift
+  CJSME315@CJS
+  CJPitchME315@CJPitch
+  RoundTheBendME315@RoundTheBend
 endmap
 
 #Profile E90 does NOT show Go West
@@ -99,9 +97,11 @@ endmap
 #Joins for Plan
 #Scraps
 join CenturySP1@Century TickleWestSP4@TickleWest -smooth on
+join CJPitchSP1@CJPitch RoundTheBendSP1@RoundTheBend -smooth on
 join CrossRoadsSP1@CrossRoads CJPitchSP2@CJPitch -smooth on
 join CrossRoadsSP1@CrossRoads CJSSP1@CJS -smooth on
 join CrossRoadsSP1@CrossRoads NorthRiftSP2@NorthRift -smooth on
+join CrossRoadsSP2@CrossRoads CrystalPitchSP1@CrystalPitch -smooth on
 join CyclopsSP1@Cyclops NorthRiftSP1@NorthRift -smooth on
 join CyclopsSP1@Cyclops WestPassage-planS1@WestPassage -smooth on
 join EntranceSP2@Entrance TriassicSP1@Triassic -smooth on
@@ -135,6 +135,7 @@ join CenturySE315_1@Century TickleWestSE315_2@TickleWest -smooth on
 join CenturySE315_2@Century WestPassageSE315_1@WestPassage -smooth on
 join CJSSE315_1@CJS NorthRiftSE315_1@NorthRift -smooth on
 join CJPitchSE315_1@CJPitch NorthRiftSE315_1@NorthRift -smooth on
+join CrossRoadsSE315_3@CrossRoads CrystalPitchSE315_2@CrystalPitch -smooth on
 join CyclopsSE315_1@Cyclops CyclopsEyeSE315_1@CyclopsEye -smooth on
 join CyclopsSE315_1@Cyclops NorthRiftSE315_1@NorthRift -smooth on
 join CyclopsEyeSE315_1@CyclopsEye NorthRiftSE315_1@NorthRift -smooth on

@@ -31,6 +31,7 @@ endmap
 
 map CrossRoadsMP
   CrossRoadsSP1
+  CrossRoadsSP2
 endmap
 
 join WallT_1:end WallT_2:Top

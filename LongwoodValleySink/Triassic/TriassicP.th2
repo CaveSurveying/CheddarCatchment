@@ -58,7 +58,7 @@ endscrap
 
 scrap TriassicSP2 -projection plan -scale [-127.99999999999999 -127.99999999999991 1702.8 -127.99999999999991 0.0 0.0 46.50232 0.0 m]
 
-line chimney -reverse on -outline in
+line pit -outline out -clip off
   2226.0 2031.0
   2223.5 2039.5 2226.5 2047.75 2218.5 2048.5
   2210.5 2049.25 2176.75 2052.5 2171.5 2043.0
@@ -66,7 +66,7 @@ line chimney -reverse on -outline in
   smooth off
 endline
 
-line chimney -reverse on -clip off
+line pit
   2178.375009814 1996.36902402
   2185.5 1991.75 2191.75 1979.5 2200.75 1978.5
   2209.75 1977.5 2227.0 1970.75 2229.5 1975.5

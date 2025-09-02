@@ -1,0 +1,45 @@
+encoding  utf-8
+map EntranceTriassicMP
+  EntranceMP
+  Triassic2MP@Triassic2
+  TriassicMP@Triassic
+  TennisBallRiftMP@TennisBallRift
+endmap
+
+map EntranceTriassicME315
+  TennisBallRiftME315@TennisBallRift
+  EntranceME315
+  Triassic2ME315@Triassic2
+  TriassicME315@Triassic
+endmap
+
+map CyclopsMP
+  CyclopsMP@Cyclops
+  CyclopsEyeMP@CyclopsEye
+endmap
+
+map CyclopsME315
+  CyclopsME315@Cyclops
+  CyclopsEyeME315@CyclopsEye
+endmap
+
+map CrystalPassageMP
+  CrossRoadsSP2@CrossRoads
+  CrystalPitchSP1@CrystalPitch
+endmap
+
+map CrystalPassageME315
+  CrossRoadsSE315_3@CrossRoads
+  CrystalPitchSE315_1@CrystalPitch
+  CrystalPitchSE315_2@CrystalPitch
+endmap
+
+map CrossRoadsMP
+  CrossRoadsSP1@CrossRoads
+endmap
+
+map CrossRoadsME315
+  CrossRoadsSE315_1@CrossRoads
+  CrossRoadsSE315_2@CrossRoads
+endmap
+  

@@ -1,0 +1,17 @@
+encoding  utf-8
+# Created with SexyTopo 1.8.4 on 2025-08-30
+
+
+layout local
+  debug all
+   map-header 0 0 off
+  # symbol-hide group cave-centreline
+endlayout
+
+source "CrystalPitch.th"
+
+export model -fmt survex -o "CrystalPitch-th.3d"
+
+export map -proj plan -layout local -o "CrystalPitch-plan.pdf"
+
+export map -proj [elevation 315] -layout local -o "CrystalPitchE315.pdf"
