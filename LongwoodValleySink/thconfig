@@ -26,9 +26,9 @@ Grade UISv1 6-4-BEF<br>\
 Copyright 2014-25 CC BY NC SA<br>\
 Data available at cave-registry.org.uk<br>\
 Drawn using Therion by Andrew Atkinson.<br>\
-Survey by Andrew Atkinson, John Cooper,<br>\
-Pete Buckley, Lee Hawkswell, Alison Moody,<br>\
-Barry Weaver, Mike Wise<br>\
+Survey by Andrew Atkinson, Alison Moody,<br>\
+Pete Buckley,  John Cooper, Mike Wise<br>\
+Lee Hawkswell, Barry Weaver.<br>\
 <br>\
 Heights in metres OD"
 map-header-bg on
@@ -64,7 +64,7 @@ code tex-map
 \def\maplayout{
   \legendbox{20}{3}{SW}{\northarrow}
   \legendbox{35}{25}{SW}{\scalebar}
-  \legendbox{0}{104}{SW}{\loadpicture{Outputs/LongwoodValleySinkE315.pdf}}
+  \legendbox{-2}{104}{SW}{\loadpicture{Outputs/LongwoodValleySinkE315.pdf}}
   \legendbox{105}{125}{NE}{\the\legendcontent}
  %\legendbox{00}{105}{W}{Elevation Looking Towards 315$^{^{\circ}}$}
 }
