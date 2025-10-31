@@ -31,6 +31,8 @@ line wall
   smooth off
 endline
 
+point 144.0 168.0 label -align right -text [<right>Second<br>Pitch]
+
 point 151.0 585.0 label -align right -text Century
 
 line wall

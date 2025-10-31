@@ -10,6 +10,7 @@ scrap NorthRiftSE315_1 -projection [elevation 315] -scale [-128.0 -128.0 3238.23
 line wall
   -39.25 76.25
   -30.25 76.75 -27.5 66.75 -25.5 62.75
+  smooth off
 endline
 
 line wall -id WallB
@@ -40,6 +41,7 @@ line wall -id WallT
   49.5 161.5 2.3 162.63 -1.75 166.5
   mark Top
   -7.5 172.0 -6.31 181.93 -9.0 190.0
+  smooth off
 endline
 
 line wall
@@ -70,6 +72,8 @@ line wall
   281.0 654.5 281.25 658.0 268.5 661.25
   smooth off
 endline
+
+point 397.0 453.75 label -align right -text North<br>Rift
 
 line wall
   562.0 142.0

@@ -1,6 +1,6 @@
 encoding  utf-8
 ##XTHERION## xth_me_area_adjust -2962.6458 -915.4016 836.6614000000004 1781.5433600000001
-##XTHERION## xth_me_area_zoom_to 200
+##XTHERION## xth_me_area_zoom_to 50
 ##XTHERION## xth_me_image_insert {92.30000000000018 1 1.0} {234.90999999999997 12} XVI/TickleWest.plan.xvi 0 {}
 
 
@@ -148,6 +148,21 @@ line wall -id Wall4
 endline
 
 point 288.5 514.5 label -align top-right -scale s -text Right-Hand<br>Tube
+
+area blocks
+  l77--1236-250
+endarea
+
+line border -id l77--1236-250 -close on -subtype invisible
+  -950.0 26.0
+  -950.0 26.0 -1018.0 276.0 -1030.0 276.0
+  -1042.0 276.0 -2100.0 152.0 -2114.0 148.0
+  -2128.0 144.0 -2172.0 -138.0 -2172.0 -138.0
+  smooth off
+  -2172.0 -138.0 -1382.0 -106.0 -1390.0 -114.0
+  -1400.77 -124.77 -950.0 26.0 -950.0 26.0
+  smooth off
+endline
 
 line wall
   -2392.5 -146.0

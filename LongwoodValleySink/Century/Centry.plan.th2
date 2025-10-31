@@ -1,6 +1,6 @@
 encoding  utf-8
 ##XTHERION## xth_me_area_adjust -1387.8425 -1151.6221 3120.1261400000003 3703.3071800000002
-##XTHERION## xth_me_area_zoom_to 200
+##XTHERION## xth_me_area_zoom_to 100
 ##XTHERION## xth_me_image_insert {2043.1828999999998 1 0.7413102413009175} {713.8521000000001 68} CenturyFixed.plan.xvi 0 {}
 ##XTHERION## xth_me_image_insert {1870.87 1 0.17378008287493754} {658.1 76} Centry.plan.xvi 0 {}
 
@@ -78,7 +78,27 @@ line wall
   smooth off
 endline
 
-line pit
+area blocks
+  l83-176--125
+endarea
+
+line border -id l83-176--125 -close on -subtype invisible
+  107.5 -85.5
+  107.5 -85.5 77.5 -64.5 66.0 -9.5
+  54.5 45.5 38.5 112.0 33.5 122.0
+  28.5 132.0 18.5 240.5 15.5 240.5
+  12.5 240.5 -49.5 239.5 -49.5 239.5
+  smooth off
+  -40.5 -92.5
+  -40.5 -92.5 97.5 -356.5 95.5 -360.0
+  93.5 -363.5 326.5 -520.0 332.0 -524.5
+  337.5 -529.0 299.5 -338.5 295.0 -341.5
+  290.5 -344.5 208.0 -138.0 208.0 -138.0
+  smooth off
+  107.5 -85.5
+endline
+
+line overhang -reverse on
   94.0 -82.0
   75.5 -44.0 66.0 -17.5 69.0 -2.5
   72.0 12.5 48.5 96.5 33.5 110.0
@@ -390,6 +410,34 @@ line overhang
   -81.0 276.5
   -104.0 274.0 -122.5 266.5 -147.5 269.5
   smooth off
+endline
+
+area sand
+  l87-1033-682
+endarea
+
+line border -id l87-1033-682 -close on -subtype invisible
+  1015.0 681.0
+  1005.0 680.0 925.0 407.0 918.0 399.0
+  911.0 391.0 1603.0 372.0 1603.0 372.0
+  smooth off
+  1603.0 372.0 1929.0 437.0 1922.0 438.0
+  1915.0 439.0 1809.0 760.0 1809.0 760.0
+  smooth off
+  1809.0 760.0 1025.0 682.0 1015.0 681.0
+endline
+
+area blocks
+  l85-253-274
+endarea
+
+line border -id l85-253-274 -close on -subtype invisible
+  -78.0 429.0
+  -74.0 408.0 -86.0 264.0 -72.0 257.0
+  -58.0 250.0 195.0 227.0 228.0 252.0
+  261.0 277.0 345.0 361.0 352.0 370.0
+  359.0 379.0 263.0 392.0 207.0 509.0
+  151.0 626.0 -82.0 450.0 -78.0 429.0
 endline
 
 line wall
