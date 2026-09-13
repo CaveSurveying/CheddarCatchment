@@ -39,7 +39,7 @@ map NorthRiftMP
 endmap
   
   centreline
-  
+    copyright 2026 "Andrew Atkinson (WCC)" # "GPLv3.0+"
     date 2025.05.03
     team "Andrew Atkinson" notes assistant
     team "Mike Eise" assistant assistant
@@ -138,14 +138,15 @@ endmap
     94  -  0.409  254.73  0.08  
     94  -  2.266  116.87  -85.06  
     94  -  2.511  247.75  -78.19  
-    94  -  14.053  139.84  81.84  
-    108  94  4.451  182.69  -83.06
-  #FIXME - therion currently would take this as three legs in length (2025)    
+    94  -  14.053  139.84  81.84 
+    #Leg replaced by survey in connection.th (AA 2026)
+   # 108  94  4.451  182.69  -83.06
  #   108  94  4.449  183.57  -83.11  
  #   108  94  4.447  184.51  -83.10  
     94  -  0.502  79.05  27.34  
-    94  -  4.610  139.80  74.10  
-    108  95  14.676  351.31  9.71    #  {from: 14.677 351.27 9.72, 14.665 351.28 9.64, 14.686 351.36 9.79}
+    94  -  4.610  139.80  74.10 
+    #Leg replaced by survey in connection.th (AA 2026)
+    #108  95  14.676  351.31  9.71    #  {from: 14.677 351.27 9.72, 14.665 351.28 9.64, 14.686 351.36 9.79}
     96  92  3.858  358.11  -15.27    #  {from: 3.848 358.20 -15.40, 3.835 358.16 -15.20, 3.892 357.97 -15.21}
     96  -  0.375  86.62  -8.11  
     96  -  1.444  302.05  -75.36  

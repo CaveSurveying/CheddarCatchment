@@ -2,37 +2,60 @@ encoding  utf-8
 survey LongwoodValleySink
 #copyright 2014 "GNU GPL"
 
+input BoldStep/BoldStep.th
 input Century/Century.th
 input CJPitch/CJPitch.th
 input CJS/CJS.th
+input Connection/Connection.th
 input CrossRoads/CrossRoads.th
 input CrystalPitch/CrystalPitch.th
 input Cyclops/Cyclops.th
 input CyclopsEye/CyclopsEye.th
 input Entrance/Entrance.th
+input FairyChimneys/FairyChimneys.th
+input GoSouth/GoSouth.th
 #input GoWest/GoWest.th
+input IDontCare/IDontCare.th
 input NorthRift/NorthRift.th
 input RoundTheBend/RoundTheBend.th
 input TennisBallRift/TennisBallRift.th
 #input TickleRift/TickleRift.th
 input TickleWest/TickleWest.th
 input TickleCheck/TickleCheck.th
+input TritonNorth/TritonNorth.th
+input TritonSouth/TritonSouth.th
 input Triassic/Triassic.th
 input Triassic2/Triassic2.th
+input Trident/Trident.th
+input TridentCentre/TridentCentre.th
+input TridentLeft/TridentLeft.th
 input WestPassage/WestPassage.th
 
 #File for toplevel maps
 input Maps.th
 
 ###################################################################
+
+equate 0@BoldStep 36@TridentLeft
 equate 105@CJPitch 105@CrossRoads
 equate 121@CJPitch 121@RoundTheBend
 equate 106@CJS 106@CrossRoads
+equate 1@Connection 94@NorthRift
+equate 15@Connection 7@TritonSouth
+equate 28@Connection 8@BoldStep
 equate 105@CrossRoads 106@NorthRift #NorthRift was originally 105 but the splays look wrong! [AA July '25]
+equate 133@CrossRoads 1@Trident
 equate 138@CrossRoads 1@CrystalPitch
+equate 27@CrystalPitch 1@GoSouth
 equate 85@Cyclops 85@CyclopsEye
 equate 91@CyclopsEye 98@NorthRift
+equate 1@FairyChimneys 20@TritonSouth
+equate 6@IDontCare 32@TridentLeft
 equate 9 9@Triassic
+equate  12@Trident 1@TridentCentre
+equate  11@Trident 1@TridentLeft
+equate  37@TridentLeft 1@TritonNorth
+equate  38@TridentLeft 1@TritonSouth
 equate 13 14@TennisBallRift 2@TickleCheck 2@TickleWest  # 4 stations connected
 #equate 13 30@TickleRift
 equate 39@Century 39@TickleWest

@@ -94,8 +94,6 @@ line wall -reverse on
   smooth off
 endline
 
-point 43.109999999999985 86.80999999999995 station -name 108
-
 endscrap
 
 

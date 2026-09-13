@@ -1,0 +1,17 @@
+# Created with SexyTopo 1.12.2 on 2026-07-11
+
+encoding utf-8
+
+layout local
+  debug off
+  # map-header 0 0 off
+  # symbol-hide group cave-centreline
+endlayout
+
+source "TridentCentre.th"
+
+export model -fmt survex -o "TridentCentre-th.3d"
+
+export map -proj plan -layout local -o "TridentCentre-plan.pdf"
+
+export map -proj extended -layout local -o "TridentCentre-ee.pdf"

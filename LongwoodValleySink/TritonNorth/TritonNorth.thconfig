@@ -1,0 +1,17 @@
+# Created with SexyTopo 1.12.2 on 2026-07-25
+
+encoding utf-8
+
+layout local
+  debug off
+  # map-header 0 0 off
+  # symbol-hide group cave-centreline
+endlayout
+
+source "TritonNorth.th"
+
+export model -fmt survex -o "TritonNorth-th.3d"
+
+export map -proj plan -layout local -o "TritonNorth-plan.pdf"
+
+export map -proj extended -layout local -o "TritonNorth-ee.pdf"

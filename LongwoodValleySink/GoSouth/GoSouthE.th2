@@ -1,0 +1,67 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -1496.06 -1574.80 4330.71 1102.36
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 1} "Notes/GoSouthE.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap GoSouthES1 -projection extended
+
+point 370.39362 -70.30999 station -name 2
+
+point 459.51782 -66.98171 station -name 3
+
+point 656.1838 -114.65728 station -name 4
+
+point 730.48615 -135.08919 station -name 5
+
+point 874.30505 -166.54097 station -name 6
+
+point 982.25446 -167.3931 station -name 7
+
+point 1162.6293 -196.1378 station -name 8
+
+point 1250.0236 -340.14523 station -name 9
+
+point 1294.6304 -366.08557 station -name 10
+
+point 1337.9935 -367.4843 station -name 11
+
+point 1267.3226 -249.49603 station -name 12
+
+point 1443.1151 -251.17586 station -name 13
+
+point 1530.8967 -268.36563 station -name 14
+
+point 1578.6324 -263.80728 station -name 15
+
+point 1751.9717 -261.15363 station -name 16
+
+point 1526.6111 -327.22034 station -name 17
+
+point 1442.326 -214.08984 station -name 18
+
+point 1106.5427 293.38092 station -name 19
+
+point 1379.8073 -126.21185 station -name 20
+
+point 1571.2335 -101.06611 station -name 21
+
+point 1742.4043 -225.82385 station -name 22
+
+point 2024.3318 -334.94803 station -name 23
+
+point 2181.7607 -280.2313 station -name 24
+
+point 2321.9636 -258.2467 station -name 26
+
+point 2586.3254 -331.72394 station -name 27
+
+point 2795.1208 -554.6811 station -name 28
+
+point 3101.8992 -515.95746 station -name 29
+
+endscrap
+
+scrap GoSouthES2 -projection extended
+
+endscrap
