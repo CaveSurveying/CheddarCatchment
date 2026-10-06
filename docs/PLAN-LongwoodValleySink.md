@@ -1,41 +1,71 @@
 # Plan: LongwoodValleySink in git, with Swildons-style tools
 
-Status: **plan only**, agreed 2026-10-06. Nothing below has been done
-yet apart from committing this plan and the starting `tools/Style.md`.
+Status: **plan only**, agreed 2026-10-06 and revised the same day after
+review against the SVN repository (revision 501). Nothing below has been
+done yet apart from committing this plan and the starting `tools/Style.md`.
 
 ## Goal
 
 1. Make a git copy of the SVN repository
    <https://www.cave-registry.org.uk/svn/CheddarCatchment/>, limited to
-   `LongwoodValleySink/` and `tools/`, with history.
-2. Add the tools needed to work the way the Swildons survey does
+   `LongwoodValleySink/` and the root files it needs to build
+   (`common_layout.th`, `Symbols/`), with history.
+2. Add a `tools/` folder, **new in git** (there is no `tools/` in SVN),
+   holding the tools needed to work the way the Swildons survey does
    (<https://paperclipmonkey.github.io/caves-mendip-swildons/>, source
    at <https://github.com/paperclipmonkey/caves-mendip-swildons>), for
    LongwoodValleySink only.
-3. Draw the **plan** `.th2` files that have not yet been drawn, for
+3. Add `LongwoodValleySink/thconfig_plan`, a new thconfig that produces
+   **only the plan**, using the same `plan` layout as the existing
+   `LongwoodValleySink/thconfig`.
+4. Draw the **plan** `.th2` files that have not yet been drawn, for
    surveys undertaken **this year (2026)** only, copying the style and
    good practice of the rest of LongwoodValleySink.
-4. Start `tools/Style.md` as a working file recording what improves the
+5. Keep `tools/Style.md` as a working file recording what improves the
    output, and improve it from what we learn.
 
 ## Decisions taken
 
 | Question | Decision |
 |---|---|
-| What the git copy contains | `LongwoodValleySink/` and `tools/` with full SVN history (original author, date and message, plus `SVN-Revision:` and `SVN-URL:` trailers), keeping the SVN folder layout. Other caves later. |
+| What the git copy contains | `LongwoodValleySink/`, `common_layout.th` and `Symbols/` with full SVN history (original author, date and message, plus `SVN-Revision:` and `SVN-URL:` trailers), keeping the SVN folder layout. Anything further found by the dependency walk (Phase 1) is added at the check point. Other caves later. |
+| `tools/` | Does not exist in SVN. Created new in git; it has no SVN history. |
+| Plan-only build | New `LongwoodValleySink/thconfig_plan` (named like the root's `thconfig_A0plan`). It uses the existing `plan` layout, not a copy of it (see Phase 3). |
 | How 2026 surveys were sketched | SexyTopo. |
 | Publishing | CI build artefacts and a PR comment only; no GitHub Pages (the repository is private). |
-| `tools/Style.md` | Does not exist in SVN. Created new, starting from the supplied skill file (committed as-is alongside this plan), then revised as in Phase 5. |
+| `tools/Style.md` | Does not exist in SVN. Created new, starting from the supplied skill file (committed as-is alongside this plan), then revised as in Phase 2. |
+| Working branch | `claude/serene-cerf-h45zcu`. |
 
 Assumptions: "this year" means a centreline `date` in 2026. A plan is
-"undrawn" if its plan `.th2` is missing, is SexyTopo's empty scrap (no
-`line wall`), is not `input`, or is in no plan map.
+"undrawn" if its plan `.th2` is missing or is SexyTopo's empty scrap (no
+`line wall`). A scrap that is drawn but not `input`, or in no plan map,
+is **reported, not drawn**: LongwoodValleySink already comments out some
+inputs on purpose (`GoWest`, `TickleRift`).
+
+## Findings from the SVN repository (revision 501)
+
+- No `tools/` folder at the root (404).
+- `LongwoodValleySink/thconfig` ends with `input ../common_layout.th`,
+  which in turn has `input Symbols/Symbols.th`. `Symbols/` (`Areas/`,
+  `Lines/`, `Special/`) has no further outside dependencies.
+- The `plan` layout does `\loadpicture{Outputs/LongwoodValleySinkE315.pdf}`
+  (the elevation inset), but the elevation export is commented out and
+  `LongwoodValleySink/Outputs/` is empty, so a clean checkout cannot
+  build the plan sheet as it stands.
+- Licences conflict: the map header says "Copyright 2014-25 CC BY NC SA";
+  `LongwoodValleySink.th` has `#copyright 2014 "GNU GPL"`; the starting
+  `Style.md` says GPL3+; the Swildons tools are GPLv3.
+- The root also has `Long_Vall_Sink/` and `Longwood/`: possible earlier
+  homes of the same data.
+- House style seen so far: scale 1:500, base-scale 1:350, plan rotated
+  45°, elevations projected to 315°, scrap ids such as `CyclopsSP1` and
+  `CrossRoadsSE315_3`, maps `…MP` / `…ME315` in `Maps.th`.
 
 ## Background: what the Swildons system is
 
 - An SVN-to-git migration of one folder, each commit with an
   `SVN-Revision: rNNN` / `SVN-URL:` trailer; access-restricted folders left out.
-- `.github/workflows/build.yml`: Therion 6.4.0 from the pinned image
+- `.github/workflows/build.yml`: Therion 6.4.0 from the image
   `ghcr.io/paperclipmonkey/therion:6.4.0`, OSTN15 grid file cached,
   build fails on `therion: error`, statistics posted on PRs, sheets
   attached to the run.
@@ -50,62 +80,153 @@ Assumptions: "this year" means a centreline `date` in 2026. A plan is
 
 ## Phase 0: Prerequisites
 
-1. Environment network access must allow `www.cave-registry.org.uk` and
-   `cave-registry.org.uk` (optionally `ghcr.io`, `cdn.proj.org`), in a
-   new session.
+1. Network access to `www.cave-registry.org.uk` (confirmed working in
+   this environment); optionally `ghcr.io`, `cdn.proj.org`.
 2. Toolchain: `subversion`, `git-svn` (apt); `git-filter-repo`,
-   `shapely`, `pytest` (pip); Therion via the pinned CI image, or apt's
+   `shapely`, `pytest` (pip); Therion via the CI image, or apt's
    Therion 6.2.0 for local log checks only (CI is the reference renderer).
 
 ## Phase 1: Inventory (read-only; stop and confirm)
 
-3. `svn log -v --xml` for `LongwoodValleySink/` and `tools/`: revisions,
-   authors, any paths returning 403 (restricted, to be left out). Note
-   `svn:externals`, `svn:ignore`, `svn:eol-style`, large binaries.
-4. `tools/svn2git/inventory.py` writes `docs/lvs-inventory.md`: every
+3. `svn log -v --xml` for `LongwoodValleySink/`, `common_layout.th` and
+   `Symbols/`: revisions, authors, any paths returning 403 (restricted,
+   to be left out). Note `svn:externals`, `svn:ignore`, `svn:eol-style`.
+4. **Copy history:** `svn log --stop-on-copy` and the `copyfrom-path` of
+   each path. If LongwoodValleySink (or files in it) were copied or
+   renamed from `Long_Vall_Sink/`, `Longwood/` or elsewhere, add those
+   source paths to the include filter for the revisions before the copy,
+   so history is not cut at the copy.
+5. **Dependency walk:** `tools/svn2git/deps.py` follows every `input`,
+   `source`, `load` and `\loadpicture` from `LongwoodValleySink/thconfig`
+   (and the planned `thconfig_plan`) and lists every file outside
+   `LongwoodValleySink/` that the build needs.
+6. **Large files:** list binaries over 1 MB (`.xcf`, `.odt`, photos,
+   PDFs) and decide on Git LFS or leaving them out.
+7. `tools/svn2git/inventory.py` writes `docs/lvs-inventory.md`: every
    survey `.th` with date, team, length and plan `.th2` status; the 2026
-   surveys with undrawn plans; whether their SexyTopo `.xvi` files are
-   present.
-5. Record LongwoodValleySink house style: naming prefixes and scrap ids,
-   map files and `join`s, the layout/`.thc` in use, scale, `cs` and fix,
-   label sizes, how boulders, sediment and water are drawn.
-6. **Check point** with the user: the list of surveys to draw; the SVN
-   username to "Name <email>" mapping; the CheddarCatchment licence (the
-   Swildons tools are GPLv3).
+   surveys with undrawn plans; drawn-but-not-input scraps (reported
+   only); whether their SexyTopo `.xvi` files are present.
+8. Record LongwoodValleySink house style in full (adding to the findings
+   above): `cs` and fix, label sizes, `join`s, how boulders, sediment and
+   water are drawn.
+9. **Check point** with the user:
+   - the list of surveys to draw;
+   - the SVN username to "Name <email>" mapping;
+   - the survey data licence (CC BY-NC-SA or GPL), to be written into
+     `Style.md` and the layouts consistently; the tools stay GPLv3;
+   - **whether SVN stays the master copy** (this decides how Phase 3 is
+     done; see "Incremental sync");
+   - Git LFS;
+   - extra paths from the dependency walk and copy history.
 
-## Phase 2: Migration (`tools/svn2git/`)
+## Phase 2: First revision of `tools/Style.md`
 
-7. `git svn clone <repo> --include-paths='^(LongwoodValleySink|tools)(/|$)'
-   --authors-file=tools/svn2git/authors.txt` (flat layout, unless the
-   inventory shows `trunk/`).
-8. `git filter-repo --message-callback`: turn each `git-svn-id:` line
-   into `SVN-Revision:` / `SVN-URL:` trailers; drop empty commits.
-9. `svn:ignore` to `.gitignore`, plus build outputs (`output/`, `proj/`,
-   `*.3d`, `*.lox`, `*.pdf` in project folders) and `__pycache__/`.
-10. `tools/svn2git/verify.py`: `diff -r` of git HEAD against `svn export`
-    HEAD for both folders; commit count equals the SVN revisions touching
-    them; sampled author/date check.
-11. Push to `claude/eager-edison-jpd51y`. There is no `main` yet: the user
-    chooses whether this branch becomes `main` or a PR goes into a new one.
-    `tools/Style.md` and this plan are rebased on top as new files.
+Done before the tools, because `th2lint` (Phase 4) reads the `[lint]`
+rules from it. The committed file is the supplied starting version,
+unchanged. Revise it:
 
-## Phase 3: Tools copied and adapted
+1. **General to the catchment:** remove the skill front-matter, Footleg
+   references, the "displaced upper level of the Entrance Series" and the
+   `swildons*.thconfig` commands; use LongwoodValleySink's thconfig names
+   (`thconfig`, `thconfig_plan`) with a placeholder per cave.
+2. **British English spelling:** boarder → border, tranistion →
+   transition, Indiviually → Individually, carful → careful, completly
+   accross → completely across, decending → descending, passge → passage,
+   boudary → boundary, overlaping → overlapping; "look  like" (double
+   space).
+3. **Precise symbol names:** "pitch boundary" → `line pit`; "floor step"
+   → `line floor-step`, with which side the low side is on **confirmed by
+   a test render** before it becomes a rule; "do not close gaps" → also
+   no invisible walls and no `-outline none` fill line, as Therion closes
+   the outline itself; closed rocks → `-close on`, ending exactly on the
+   first point (avoids xTherion's "no such element in array"); water →
+   the `area water` refers to the border's `-id`; the four text sizes →
+   `-scale xl / l / m / s` with a LongwoodValleySink example of each.
+4. **Licence:** the title licence line follows the decision at the
+   Phase 1 check point, not "GPL3+" by default.
+5. **New sections:** SexyTopo sketching (colours: black walls, brown/grey
+   another level, blue water, green formations, red/orange notes, which
+   the converter ignores; draw both views and cross-sections); splay-based
+   fill where unsketched, drawn as presumed walls, never guessed;
+   `-author` / `-copyright` on every scrap; git and CI (case-sensitive
+   filenames, one survey per commit, CI and `th2lint` green); "how to
+   update this file": add whatever a review or drawing session teaches,
+   in the same commit.
+6. Tag machine-checkable rules `[lint]`.
+
+Phase 5 keeps revising it as drawing teaches us more.
+
+## Phase 3: Migration (`tools/svn2git/`)
+
+10. `git svn clone <repo>
+    --include-paths='^(LongwoodValleySink(/|$)|Symbols(/|$)|common_layout\.th$)'
+    --authors-file=tools/svn2git/authors.txt` (flat layout), plus any
+    paths added at the check point. `git svn` walks all 501 revisions; if
+    a revision under a restricted (403) path stops it, fall back to
+    `svnrdump` of the readable paths.
+11. If SVN stays the master copy, keep this raw `git svn` clone as a
+    mirror and do step 12 on a copy, because `git filter-repo` removes
+    the metadata an incremental sync needs.
+12. `git filter-repo --message-callback`: turn each `git-svn-id:` line
+    into `SVN-Revision:` / `SVN-URL:` trailers; drop empty commits.
+13. `svn:ignore` to `.gitignore`, plus build outputs (`output/`, `proj/`,
+    `*.3d`, `*.lox`, and `LongwoodValleySink/Outputs/*`, keeping the
+    folder with a `.gitkeep` because the thconfigs write into it) and
+    `__pycache__/`.
+14. `tools/svn2git/verify.py`: `diff -r` of git HEAD against `svn export`
+    HEAD for every included path; commit count equals the SVN revisions
+    touching them; sampled author/date check.
+15. Push to `claude/serene-cerf-h45zcu`. There is no `main` yet: the user
+    chooses whether this branch becomes `main` or a PR goes into a new
+    one. This plan, `tools/Style.md` and the other new files are replayed
+    on top of the migrated history, which rewrites this branch, so this
+    push is a `--force-with-lease`.
+
+## Phase 4: Tools added, the plan-only thconfig, and CI
+
+### `LongwoodValleySink/thconfig_plan`
+
+- `source LongwoodValleySink.th`, the same two `select` lines, and one
+  `export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf`.
+  No elevation, model or `.lox` export.
+- **Same layout, not a copy:** the `plan`, `local` and `Projected315`
+  layouts move unchanged from `LongwoodValleySink/thconfig` into a new
+  `LongwoodValleySink/layouts.th`, which both thconfigs `input` (with
+  `input ../common_layout.th` as now). The existing `thconfig` then
+  differs only by that `input` line; its PDF must be unchanged
+  (before/after comparison), so a later change to the plan layout
+  reaches both.
+- **The elevation inset:** the `plan` layout loads
+  `Outputs/LongwoodValleySinkE315.pdf`, which a plan-only build does not
+  make. Choose at the Phase 1 check point:
+  1. *(recommended)* `thconfig_plan` exports the plan with `-layout plan`
+     unchanged and CI first builds the elevation PDF (the full
+     `thconfig` with its elevation export un-commented), so the sheet
+     matches the existing one exactly; or
+  2. `layouts.th` gains a guard so the inset is drawn only when the PDF
+     exists (TeX `\IfFileExists`), letting `thconfig_plan` build on its
+     own from a clean checkout with the same layout, minus the inset.
+
+### `tools/` (all new)
 
 | New path | From | Change |
 |---|---|---|
-| `tools/project.toml` | new | Per-cave config: master `.th`, plan/elevation maps, file prefixes, sheet scale, sheets for `sections`. LongwoodValleySink first. |
+| `tools/project.toml` | new | Per-cave config: master `.th`, thconfigs (`thconfig`, `thconfig_plan`), plan/elevation maps, file prefixes, sheet scale, sheets for `sections`. LongwoodValleySink first. |
+| `tools/svn2git/` | new | `deps.py`, `inventory.py`, `authors.txt`, `verify.py`, and `sync.sh` if SVN stays master. |
 | `tools/sketch2therion/` | Swildons | Names read from `project.toml`; Swildons output unchanged (regression test). |
 | `tools/layout.thconfig`, `tools/layout.th` | Swildons | Point at the LongwoodValleySink master survey. |
-| `tools/new-trip-template.th` | Swildons | LongwoodValleySink naming and equate example. |
+| `tools/new-trip-template.th` | Swildons | LongwoodValleySink naming (`…SP1`, `…SE315_1`) and equate example. |
 | `tools/web/make_index.py` | Swildons | Sheet list from config; writes `output/stats.md`. |
-| `tools/th2lint.py` | new | Checks every `.th2` against the `[lint]` rules in `tools/Style.md`. |
-| `.github/workflows/build.yml` | Swildons | LongwoodValleySink thconfig(s), pytest, `th2lint`, Therion error gate, PR comment, run artefact. No Pages deploy. |
+| `tools/th2lint.py` | new | Checks `.th2` files against the `[lint]` rules in `tools/Style.md`. Existing drawings are covered by a baseline file (`tools/th2lint-baseline.txt`); CI fails only on new findings, and fixing a baseline entry removes it. |
+| `.github/workflows/build.yml` | Swildons | Builds `LongwoodValleySink/thconfig_plan` (and the elevation first, if option 1), pytest, `th2lint`, Therion error gate, PR comment, run artefact. Therion image pinned by digest, not tag. OSTN15 grid only if the cave's `cs` needs it. No Pages deploy. |
 | `.claude/skills/therion-drawing/SKILL.md`, `AGENTS.md` | Swildons | Short pointers to `tools/Style.md`, the single source of truth. |
 | `tools/README.md`, `README.md` | Swildons | LongwoodValleySink SexyTopo workflow, building, history. |
 
 Not copied: `routes/`, `surface/` (Swildons-specific; possible later).
+Any Swildons fixture copied for the regression test is checked for a
+licence that allows it.
 
-## Phase 4: Draw the 2026 plans (plan view only)
+## Phase 5: Draw the 2026 plans (plan view only)
 
 For each confirmed survey:
 
@@ -115,84 +236,78 @@ For each confirmed survey:
 3. `python3 -m tools.sketch2therion check plan.xvi --survey X`; report a
    poor fit.
 4. `python3 -m tools.sketch2therion plan plan.xvi --floor ee.xvi
-   --author … --copyright … --map-scale <LVS scale>`, written over the
-   empty scrap under its existing name. The elevation sketch is used for
-   floor steps only; no elevation `.th2` is drawn.
+   --author … --copyright … --map-scale 500`, written over the empty
+   scrap under its existing name. The elevation sketch is used for floor
+   steps only; no elevation `.th2` is drawn.
 5. `roofs` (walls from splays where unsketched), `details`, `tidy`;
    `sections` only if cross-sections were sketched and LongwoodValleySink
    plans show them.
 6. Hand-finish to match existing LongwoodValleySink plans: passage names
    at its label sizes, boulders, water and flow, `C2`/`P5`, `join`s to
    neighbouring scraps.
-7. Un-comment the `input` lines; add the scraps to the plan map.
-8. Checks: no `therion: error` or `invalid scrap outline`, no new
-   "intersects itself", `th2lint` clean, opens in xTherion without error,
+7. Un-comment the `input` lines; add the scraps to the plan map in
+   `Maps.th`.
+8. Checks: `therion LongwoodValleySink/thconfig_plan` with no
+   `therion: error` or `invalid scrap outline`, no new "intersects
+   itself", `th2lint` clean, opens in xTherion without error (by hand),
    before/after PDF compared.
 9. One commit per survey. Anything learnt goes into `tools/Style.md` in
    the same commit.
-
-## Phase 5: Revise `tools/Style.md`
-
-The committed file is the supplied starting version, unchanged. Revise it:
-
-1. **General to the catchment:** remove the skill front-matter, Footleg
-   references, the "displaced upper level of the Entrance Series" and the
-   `swildons*.thconfig` commands; use LongwoodValleySink's thconfig names
-   with a placeholder per cave.
-2. **British English spelling:** boarder → border, tranistion →
-   transition, Indiviually → Individually, carful → careful, completly
-   accross → completely across, decending → descending, passge → passage,
-   boudary → boundary.
-3. **Precise symbol names:** "pitch boundary" → `line pit`; "floor step"
-   → `line floor-step`, low side on the line's left; "do not close gaps"
-   → also no invisible walls and no `-outline none` fill line, as Therion
-   closes the outline itself; closed rocks → `-close on`, ending exactly
-   on the first point (avoids xTherion's "no such element in array");
-   the four text sizes → `-scale xl / l / m / s` with a
-   LongwoodValleySink example of each.
-4. **New sections:** SexyTopo sketching (colours: black walls, brown/grey
-   another level, blue water, green formations, red/orange notes, which
-   the converter ignores; draw both views and cross-sections); splay-based
-   fill where unsketched, drawn as presumed walls, never guessed;
-   `-author` / `-copyright` on every scrap; git and CI (case-sensitive
-   filenames, one survey per commit, CI and `th2lint` green); "how to
-   update this file": add whatever a review or drawing session teaches,
-   in the same commit.
-5. Tag machine-checkable rules `[lint]`.
 
 ## Unit tests (`tests/`, pytest, run in CI)
 
 - **svn2git:** `git-svn-id` line becomes the two trailers with the body
   kept; an unmapped author fails listing the missing usernames; the path
-  filter accepts `LongwoodValleySink/a.th` and `tools/Style.md` and rejects
-  `LongwoodValleySinkOld/` and `Other/tools/`; `verify` reports equal and
-  differing trees.
+  filter accepts `LongwoodValleySink/a.th`, `Symbols/Lines/l_u_rail.th`
+  and `common_layout.th`, and rejects `LongwoodValleySinkOld/`,
+  `Long_Vall_Sink/`, `Other/Symbols/` and `common_layout.th.bak`;
+  `svn:ignore` becomes the matching `.gitignore` lines; `verify` reports
+  equal and differing trees.
+- **deps:** follows `input`, `source` and `\loadpicture` relative to the
+  file that contains them (`../common_layout.th` then
+  `Symbols/Symbols.th` resolves to the root `Symbols/`); a missing
+  target fails naming the file and line; commented-out lines are
+  ignored; a loop of inputs terminates.
 - **inventory:** date parsing (`date 2026.03.14`, ranges, several dates,
   commented-out dates, nested surveys); year filter with a fixed "today"
-  (excludes 2025.12.31, includes 2026.01.01); empty SexyTopo scrap versus
-  drawn scrap; commented-out `input`; scrap in no map; `input` whose case
-  differs from the file.
+  (excludes 2025.12.31, includes 2026.01.01, a range 2025.12.30 -
+  2026.01.02 counts); empty SexyTopo scrap versus drawn scrap;
+  commented-out `input` reported, not listed for drawing; scrap in no
+  map; `input` whose case differs from the file.
+- **thconfig_plan:** has exactly one `export`, which is `map -proj plan
+  -layout plan`; both thconfigs `input` the same `layouts.th`; the
+  layout blocks in `layouts.th` equal those removed from `thconfig`
+  (text comparison against the SVN version).
+- **project.toml:** the LongwoodValleySink config loads; a missing key
+  fails naming the key; every file it names exists.
 - **sketch2therion:** a Swildons fixture `.xvi` gives byte-identical
-  output before and after the config refactor; the LongwoodValleySink
-  `project.toml` loads; SexyTopo `.xvi` reader gets stations and colour
-  classes; walls have the passage on their left (signed area); closed
-  lines end on their first point; no invisible walls; climb labels have
-  no units.
+  output before and after the config refactor; SexyTopo `.xvi` reader
+  gets stations and colour classes; walls have the passage on their left
+  (signed area); closed lines end on their first point; no invisible
+  walls; climb labels have no units.
 - **th2lint:** a failing and a passing tiny `.th2` per rule (closed line
   not ending on its first point, smoothed `rock-border`, `ceiling-step`,
-  unexplained `-clip off`, undated draught, bad label `-scale`).
+  unexplained `-clip off`, undated draught, bad label `-scale`, `area
+  water` with no matching border `-id`); a finding in the baseline does
+  not fail; a new one does; a fixed one reports the stale baseline entry.
 - **Style.md and th2lint stay in step:** every `[lint]` rule in
-  `tools/Style.md` has a matching `th2lint` check.
+  `tools/Style.md` has a matching `th2lint` check, and the reverse.
 - **make_index:** statistics parsed from a sample `therion.log`; a
   missing PDF is skipped without failing.
+- **sync.sh** (only if SVN stays master): a second run with no new SVN
+  revisions brings nothing across; a new revision arrives with its
+  trailers.
 
 ## Delivery
 
-Commits pushed to `claude/eager-edison-jpd51y`; changed files also
+Commits pushed to `claude/serene-cerf-h45zcu`; changed files also
 supplied as numbered zips (`CheddarCatchment-1.zip`, `-2`, …) with their
 relative paths.
 
-## Open question
+## Incremental sync
 
-Will SVN stay the master copy? If so, add `tools/svn2git/sync.sh` to
-bring new revisions across incrementally.
+If SVN stays the master copy (decided at the Phase 1 check point), add
+`tools/svn2git/sync.sh`: fetch new revisions into the raw `git svn`
+mirror (Phase 3 step 11), apply the same trailer rewrite to the new
+commits only, and bring them onto the git branch. If git becomes the
+master, SVN is frozen and no sync is needed.
