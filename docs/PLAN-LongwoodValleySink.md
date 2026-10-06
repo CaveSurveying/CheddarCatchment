@@ -1,6 +1,8 @@
 # Plan: LongwoodValleySink in git, with Swildons-style tools
 
-Status: **plan only**, agreed 2026-10-06 and revised the same day after
+Status: agreed 2026-10-06. **Phase 1 done** (findings and check point
+in `docs/lvs-phase1.md`, survey table in `docs/lvs-inventory.md`),
+waiting on the check point. The plan was revised the same day after
 review against the SVN repository (revision 501), then for the
 `Plan_only.thcfg` trial scope. Nothing below has been
 done yet apart from committing this plan and the starting `tools/Style.md`.
@@ -100,6 +102,8 @@ inputs on purpose (`GoWest`, `TickleRift`).
 3. `svn log -v --xml` for `LongwoodValleySink/`, `common_layout.th` and
    `Symbols/`: revisions, authors, any paths returning 403 (restricted,
    to be left out). Note `svn:externals`, `svn:ignore`, `svn:eol-style`.
+   Without an `svn` client, `tools/svn2git/svnhttp.py` reads the same
+   over plain HTTP (WebDAV `PROPFIND`, `REPORT log-report`, `GET`).
 4. **Copy history:** `svn log --stop-on-copy` and the `copyfrom-path` of
    each path. If LongwoodValleySink (or files in it) were copied or
    renamed from `Long_Vall_Sink/`, `Longwood/` or elsewhere, add those
@@ -171,9 +175,9 @@ Phase 5 keeps revising it as drawing teaches us more.
 10. `git svn clone <repo>
     --include-paths='^(LongwoodValleySink(/|$)|Symbols(/|$)|common_layout\.th$)'
     --authors-file=tools/svn2git/authors.txt` (flat layout), plus any
-    paths added at the check point. `git svn` walks all 501 revisions; if
-    a revision under a restricted (403) path stops it, fall back to
-    `svnrdump` of the readable paths.
+    paths added at the check point (proposed: the root `Symbols.th`, from
+    which `Symbols/Symbols.th` was copied at r416). Phase 1 found no
+    restricted (403) paths. Expect 56 revisions.
 11. If SVN stays the master copy, keep this raw `git svn` clone as a
     mirror and do step 12 on a copy, because `git filter-repo` removes
     the metadata an incremental sync needs.
@@ -186,11 +190,13 @@ Phase 5 keeps revising it as drawing teaches us more.
 14. `tools/svn2git/verify.py`: `diff -r` of git HEAD against `svn export`
     HEAD for every included path; commit count equals the SVN revisions
     touching them; sampled author/date check.
-15. Push to `claude/serene-cerf-h45zcu`. There is no `main` yet: the user
-    chooses whether this branch becomes `main` or a PR goes into a new
-    one. This plan, `tools/Style.md` and the other new files are replayed
-    on top of the migrated history, which rewrites this branch, so this
-    push is a `--force-with-lease`.
+15. The plan and all work stay on the working branch
+    `claude/serene-cerf-h45zcu`. The filtered SVN history (an
+    independent root) is joined to it with one
+    `git merge --allow-unrelated-histories` commit, so neither the
+    branch nor `main` is rewritten and no force push is needed. `main`
+    (which already holds the plan) is updated only by a pull request
+    from the working branch, when the user asks for one.
 
 ## Phase 4: Tools added, the plan-only thconfig, and CI
 
@@ -228,7 +234,7 @@ Phase 5 keeps revising it as drawing teaches us more.
 | New path | From | Change |
 |---|---|---|
 | `tools/project.toml` | new | Per-cave config: master `.th`, thconfig (`Plan_only.thcfg`), plan/elevation maps, file prefixes, sheet scale, sheets for `sections`. LongwoodValleySink first. |
-| `tools/svn2git/` | new | `deps.py`, `inventory.py`, `authors.txt`, `verify.py`, and `sync.sh` if SVN stays master. |
+| `tools/svn2git/` | new | `svnhttp.py`, `deps.py`, `inventory.py`, `authors.txt`, `verify.py`, and `sync.sh` if SVN stays master. |
 | `tools/sketch2therion/` | Swildons | Names read from `project.toml`; Swildons output unchanged (regression test). |
 | `tools/layout.thcfg`, `tools/layout.th` | Swildons | Renamed from `layout.thconfig` to the `.thcfg` convention; point at the LongwoodValleySink master survey. |
 | `tools/new-trip-template.th` | Swildons | LongwoodValleySink naming (`…SP1`, `…SE315_1`) and equate example. |
@@ -281,6 +287,10 @@ For each confirmed survey:
   `Long_Vall_Sink/`, `Other/Symbols/` and `common_layout.th.bak`;
   `svn:ignore` becomes the matching `.gitignore` lines; `verify` reports
   equal and differing trees.
+- **svnhttp:** a `PROPFIND` response gives paths (URL-decoded), folder
+  or file, size and SVN properties; a `log-report` gives revision,
+  author, date, message, changed paths and copy sources, and copes with
+  a revision that has no author or message.
 - **deps:** follows `input`, `source` and `\loadpicture` relative to the
   file that contains them (`../common_layout.th` then
   `Symbols/Symbols.th` resolves to the root `Symbols/`); a missing
