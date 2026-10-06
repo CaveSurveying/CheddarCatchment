@@ -2,7 +2,7 @@
 
 Status: **plan only**, agreed 2026-10-06 and revised the same day after
 review against the SVN repository (revision 501), then for the
-`Plan_only.thconfig` trial scope. Nothing below has been
+`Plan_only.thcfg` trial scope. Nothing below has been
 done yet apart from committing this plan and the starting `tools/Style.md`.
 
 ## Goal
@@ -16,11 +16,11 @@ done yet apart from committing this plan and the starting `tools/Style.md`.
    (<https://paperclipmonkey.github.io/caves-mendip-swildons/>, source
    at <https://github.com/paperclipmonkey/caves-mendip-swildons>), for
    LongwoodValleySink only.
-3. Add `LongwoodValleySink/Plan_only.thconfig`, a new thconfig that
+3. Add `LongwoodValleySink/Plan_only.thcfg`, a new thconfig that
    produces **only the plan**, with its own copy of the `plan` layout
    from the existing `LongwoodValleySink/thconfig`.
 
-**This is a trial run.** Only `LongwoodValleySink/Plan_only.thconfig` is
+**This is a trial run.** Only `LongwoodValleySink/Plan_only.thcfg` is
 built and checked. The existing `thconfig`, the elevation, the 3D model
 and every other thconfig are left exactly as they are and are not run;
 they will be worked on over time.
@@ -36,10 +36,10 @@ they will be worked on over time.
 |---|---|
 | What the git copy contains | `LongwoodValleySink/`, `common_layout.th` and `Symbols/` with full SVN history (original author, date and message, plus `SVN-Revision:` and `SVN-URL:` trailers), keeping the SVN folder layout. Anything further found by the dependency walk (Phase 1) is added at the check point. Other caves later. |
 | `tools/` | Does not exist in SVN. Created new in git; it has no SVN history. |
-| thconfig naming | The current convention is `name.thconfig`. Older names (`thconfig`, `thconfig_A0plan`, `LongwoodValley.thcfg`, …) are still in use and are not renamed. |
-| Plan-only build | New `LongwoodValleySink/Plan_only.thconfig`. The layout blocks are **copied** into it from `LongwoodValleySink/thconfig`, which is not changed; the two are expected to diverge. |
-| Trial scope | Only `Plan_only.thconfig` is run, locally and in CI. Everything else is ignored for now. |
-| Licences | Aligned. Survey data: CC BY-NC-SA, as on the existing sheets (version to confirm). Tools: GPLv3, as the Swildons tools. `Style.md` and `Plan_only.thconfig` say the same; the existing files are left as they are in this trial. |
+| thconfig naming | The current convention is `name.thcfg` (as the root's `LongwoodValley.thcfg`). Older names (`thconfig`, `thconfig_A0plan`, `thconfig_overview`, …) are still in use and are not renamed. |
+| Plan-only build | New `LongwoodValleySink/Plan_only.thcfg`. The layout blocks are **copied** into it from `LongwoodValleySink/thconfig`, which is not changed; the two are expected to diverge. |
+| Trial scope | Only `Plan_only.thcfg` is run, locally and in CI. Everything else is ignored for now. |
+| Licences | Aligned. Survey data: CC BY-NC-SA, as on the existing sheets (version to confirm). Tools: GPLv3, as the Swildons tools. `Style.md` and `Plan_only.thcfg` say the same; the existing files are left as they are in this trial. |
 | How 2026 surveys were sketched | SexyTopo. |
 | Publishing | CI build artefacts and a PR comment only; no GitHub Pages (the repository is private). |
 | `tools/Style.md` | Does not exist in SVN. Created new, starting from the supplied skill file (committed as-is alongside this plan), then revised as in Phase 2. |
@@ -107,7 +107,7 @@ inputs on purpose (`GoWest`, `TickleRift`).
    so history is not cut at the copy.
 5. **Dependency walk:** `tools/svn2git/deps.py` follows every `input`,
    `source`, `load` and `\loadpicture` from
-   `LongwoodValleySink/Plan_only.thconfig` (as planned) and lists every
+   `LongwoodValleySink/Plan_only.thcfg` (as planned) and lists every
    file outside
    `LongwoodValleySink/` that the build needs.
 6. **Large files:** list binaries over 1 MB (`.xcf`, `.odt`, photos,
@@ -136,8 +136,8 @@ unchanged. Revise it:
 
 1. **General to the catchment:** remove the skill front-matter, Footleg
    references, the "displaced upper level of the Entrance Series" and the
-   `swildons*.thconfig` commands; use `LongwoodValleySink/Plan_only.thconfig`
-   with a placeholder per cave, and state the `name.thconfig` convention
+   `swildons*.thconfig` commands; use `LongwoodValleySink/Plan_only.thcfg`
+   with a placeholder per cave, and state the `name.thcfg` convention
    for new thconfigs.
 2. **British English spelling:** boarder → border, tranistion →
    transition, Indiviually → Individually, carful → careful, completly
@@ -194,9 +194,9 @@ Phase 5 keeps revising it as drawing teaches us more.
 
 ## Phase 4: Tools added, the plan-only thconfig, and CI
 
-### `LongwoodValleySink/Plan_only.thconfig`
+### `LongwoodValleySink/Plan_only.thcfg`
 
-- Named by the current `name.thconfig` convention. The existing
+- Named by the current `name.thcfg` convention. The existing
   `LongwoodValleySink/thconfig` is **not changed**.
 - `encoding utf-8`, `source LongwoodValleySink.th`, the existing
   `select LongwoodValleySinkMP@LongwoodValleySink -map-level 1`, and one
@@ -220,21 +220,21 @@ Phase 5 keeps revising it as drawing teaches us more.
     licence and credits (position checked on the render);
   - otherwise unchanged (scale 1:500, base-scale 1:350, rotate 45, the
     same `code tex-map`).
-- Built with `therion Plan_only.thconfig` from `LongwoodValleySink/`,
+- Built with `therion Plan_only.thcfg` from `LongwoodValleySink/`,
   output to `LongwoodValleySink/Outputs/LongwoodValleySinkP.pdf`.
 
 ### `tools/` (all new)
 
 | New path | From | Change |
 |---|---|---|
-| `tools/project.toml` | new | Per-cave config: master `.th`, thconfig (`Plan_only.thconfig`), plan/elevation maps, file prefixes, sheet scale, sheets for `sections`. LongwoodValleySink first. |
+| `tools/project.toml` | new | Per-cave config: master `.th`, thconfig (`Plan_only.thcfg`), plan/elevation maps, file prefixes, sheet scale, sheets for `sections`. LongwoodValleySink first. |
 | `tools/svn2git/` | new | `deps.py`, `inventory.py`, `authors.txt`, `verify.py`, and `sync.sh` if SVN stays master. |
 | `tools/sketch2therion/` | Swildons | Names read from `project.toml`; Swildons output unchanged (regression test). |
-| `tools/layout.thconfig`, `tools/layout.th` | Swildons | Point at the LongwoodValleySink master survey. |
+| `tools/layout.thcfg`, `tools/layout.th` | Swildons | Renamed from `layout.thconfig` to the `.thcfg` convention; point at the LongwoodValleySink master survey. |
 | `tools/new-trip-template.th` | Swildons | LongwoodValleySink naming (`…SP1`, `…SE315_1`) and equate example. |
 | `tools/web/make_index.py` | Swildons | Sheet list from config; writes `output/stats.md`. |
-| `tools/th2lint.py` | new | Checks the `.th2` files that `Plan_only.thconfig` builds against the `[lint]` rules in `tools/Style.md`. Existing drawings are covered by a baseline file (`tools/th2lint-baseline.txt`); CI fails only on new findings, and fixing a baseline entry removes it. |
-| `.github/workflows/build.yml` | Swildons | Builds `LongwoodValleySink/Plan_only.thconfig` only, pytest, `th2lint`, Therion error gate, PR comment, run artefact. Therion image pinned by digest, not tag. OSTN15 grid only if the cave's `cs` needs it. No Pages deploy. |
+| `tools/th2lint.py` | new | Checks the `.th2` files that `Plan_only.thcfg` builds against the `[lint]` rules in `tools/Style.md`. Existing drawings are covered by a baseline file (`tools/th2lint-baseline.txt`); CI fails only on new findings, and fixing a baseline entry removes it. |
+| `.github/workflows/build.yml` | Swildons | Builds `LongwoodValleySink/Plan_only.thcfg` only, pytest, `th2lint`, Therion error gate, PR comment, run artefact. Therion image pinned by digest, not tag. OSTN15 grid only if the cave's `cs` needs it. No Pages deploy. |
 | `.claude/skills/therion-drawing/SKILL.md`, `AGENTS.md` | Swildons | Short pointers to `tools/Style.md`, the single source of truth. |
 | `tools/README.md`, `README.md` | Swildons | LongwoodValleySink SexyTopo workflow, building, history. |
 
@@ -248,7 +248,7 @@ For each confirmed survey:
 
 1. SexyTopo export and originals in the folder LongwoodValleySink uses
    (else `SexyTopo/<yyyymmdd>_<Where>/`). Ask for any that are missing.
-2. Build; `therion tools/layout.thconfig`. This is the converter's own
+2. Build; `therion tools/layout.thcfg`. This is the converter's own
    helper (it exports station positions for `sketch2therion`), not a
    survey output, so it is within the trial scope.
 3. `python3 -m tools.sketch2therion check plan.xvi --survey X`; report a
@@ -265,7 +265,7 @@ For each confirmed survey:
    neighbouring scraps.
 7. Un-comment the `input` lines; add the scraps to the plan map in
    `Maps.th`.
-8. Checks: `therion Plan_only.thconfig` (in `LongwoodValleySink/`) with no
+8. Checks: `therion Plan_only.thcfg` (in `LongwoodValleySink/`) with no
    `therion: error` or `invalid scrap outline`, no new "intersects
    itself", `th2lint` clean, opens in xTherion without error (by hand),
    before/after PDF compared.
@@ -292,7 +292,7 @@ For each confirmed survey:
   2026.01.02 counts); empty SexyTopo scrap versus drawn scrap;
   commented-out `input` reported, not listed for drawing; scrap in no
   map; `input` whose case differs from the file.
-- **Plan_only.thconfig:** has exactly one `export`, which is `map -proj
+- **Plan_only.thcfg:** has exactly one `export`, which is `map -proj
   plan -layout plan`; selects no elevation map; contains no
   `\loadpicture`; has a `map-comment` containing the data licence;
   every file it reaches (`deps`) exists in the git tree;
@@ -300,8 +300,8 @@ For each confirmed survey:
   changes (a test that will be relaxed as they diverge); the existing
   `thconfig` is byte-identical to the SVN version.
 - **thconfig naming:** a new thconfig added under a cave folder is named
-  `*.thconfig`; the historic names are allowed as they are.
-- **licence:** `Style.md` and `Plan_only.thconfig` give the same data
+  `*.thcfg`; the historic names are allowed as they are.
+- **licence:** `Style.md` and `Plan_only.thcfg` give the same data
   licence text.
 - **project.toml:** the LongwoodValleySink config loads; a missing key
   fails naming the key; every file it names exists.
