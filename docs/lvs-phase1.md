@@ -128,3 +128,19 @@ new plan-only file is `Plan_only.thcfg`, as agreed.
 9. **New plan scraps:** when drawn, rename to house style
    (`X.plan.th2`, `XSP1`, a `map XMP`, added to `LongwoodValleySinkMP`),
    or keep SexyTopo's `XP.th2` / `XP1`?
+
+## Check point answers (2026-10-06)
+
+1. **Surveys to draw:** the ten 2026 surveys. Not TickleCheck (2024).
+2. **Authors:** agreed; names and emails still to be supplied for
+   `andrew`, `JohnCooper` and `graham` (`tools/svn2git/authors.txt`).
+3. **Licence:** CC BY-NC-SA **4.0** for survey data and drawings;
+   GPLv3 for the tools.
+4. **SVN is the master copy for now:** keep a raw `git svn` mirror and
+   add `tools/svn2git/sync.sh` (plan, "Incremental sync").
+5. **New plan scraps use the house style** (`X.plan.th2`, `XSP1`,
+   `map XMP` added to `LongwoodValleySinkMP`). SexyTopo has been changed
+   to export in the house style; the r501 files were exported before
+   that, so they are renamed when drawn.
+6. Recommendations taken: include the root `Symbols.th`; drop the
+   executable bit from data files; no Git LFS.

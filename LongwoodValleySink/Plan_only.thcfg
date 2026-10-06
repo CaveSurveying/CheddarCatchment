@@ -1,0 +1,78 @@
+encoding  utf-8
+# Plan of Longwood Valley Sink only (trial: see docs/PLAN-LongwoodValleySink.md).
+# The layouts are copied from thconfig and will diverge from it. Changes
+# from the copy: no elevation inset (no elevation is built here), and the
+# location, licence and credits text (map-comment, from Projected315)
+# added to the plan layout, with the licence as CC BY-NC-SA 4.0.
+# Run from this folder: therion Plan_only.thcfg
+
+source LongwoodValleySink.th
+
+select LongwoodValleySinkMP@LongwoodValleySink -map-level 1
+
+export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
+
+layout plan
+copy local
+map-comment "Location ST 4858 5548 Altitude 207m OD<br>\
+Length 1004.00m. Vertical Range 126.27m.<br>\
+Grade UISv1 6-4-BEF<br>\
+Copyright 2014-26 CC BY-NC-SA 4.0<br>\
+Data available at cave-registry.org.uk<br>\
+Drawn using Therion by Andrew Atkinson.<br>\
+Survey by Andrew Atkinson, Alison Moody,<br>\
+Pete Buckley,  John Cooper, Mike Wise,<br>\
+Lee Hawkswell, Barry Weaver.<br>\
+<br>\
+Heights in metres OD"
+map-header-bg off
+legend-width 65 mm
+rotate 45
+grid off
+grid-coords off
+scale-bar  25 metres
+code tex-map
+  
+  \cavename={}%empty
+  \colorlegendfalse
+  \legendtextsize={\size[9]}
+  %\comment={Elevation Looking Towards 315$^{^{\circ}}$}
+  %\cavename={\size[10] Passage colours are the same on the plan and elevation} %bad bodge!
+  \legendtitle={}
+
+\def\maplayout{
+  \legendbox{20}{3}{SW}{\northarrow}
+  \legendbox{35}{25}{SW}{\scalebar}
+  \legendbox{105}{130}{NE}{\the\legendcontent}
+ %\legendbox{00}{105}{W}{Elevation Looking Towards 315$^{^{\circ}}$}
+}
+
+endlayout
+
+layout local
+copy common
+doc-title "Longwood Valley Sink"
+grid-size 50 50 10 metres
+symbol-hide special north-arrow
+symbol-hide special scale-bar
+scale 1 500
+base-scale 1 350
+symbol-hide point remark
+symbol-hide group cave-centreline
+
+colour map-bg transparent
+colour map-fg map
+colour-legend off
+statistics explo off
+statistics topo off
+legend on
+overlap 5 mm
+
+code tex-map
+  \cavename={\size[30] Longwood Valley Sink}
+  \cavelength={}%empty
+  \cavedepth={}%empty
+endcode
+endlayout
+
+input ../common_layout.th

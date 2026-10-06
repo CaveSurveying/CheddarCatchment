@@ -1,8 +1,12 @@
 # Plan: LongwoodValleySink in git, with Swildons-style tools
 
 Status: agreed 2026-10-06. **Phase 1 done** (findings and check point
-in `docs/lvs-phase1.md`, survey table in `docs/lvs-inventory.md`),
-waiting on the check point. The plan was revised the same day after
+answers in `docs/lvs-phase1.md`, survey table in `docs/lvs-inventory.md`).
+**Phase 2 done** (`tools/Style.md` revised). **Phase 4 started**:
+`tools/th2lint.py` with its baseline, and
+`LongwoodValleySink/Plan_only.thcfg`. Phase 3 (migration) waits on the
+author names and emails and on `git-svn` / `git-filter-repo` being
+installable; `sketch2therion` and drawing wait on `shapely` and Therion. The plan was revised the same day after
 review against the SVN repository (revision 501), then for the
 `Plan_only.thcfg` trial scope. Nothing below has been
 done yet apart from committing this plan and the starting `tools/Style.md`.
@@ -166,7 +170,8 @@ unchanged. Revise it:
    filenames, one survey per commit, CI and `th2lint` green); "how to
    update this file": add whatever a review or drawing session teaches,
    in the same commit.
-6. Tag machine-checkable rules `[lint]`.
+6. Tag machine-checkable rules `[lint: id]`, the id being the
+   `th2lint` check's name.
 
 Phase 5 keeps revising it as drawing teaches us more.
 
