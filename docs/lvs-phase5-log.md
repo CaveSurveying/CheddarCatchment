@@ -120,3 +120,18 @@ crosses itself between 15 and 16, where the line 15 to 16 is now a
 `line wall` (it was a `line border` in draft 6), so two walls fan out
 from one point near 15; and three borders end 1 to 2 cm from a wall
 without being on its node (`end-on-node`).
+
+## GoSouth reference and draft 8 (2026-10-07)
+
+| # | Comment | Kind | Outcome |
+|---|---|---|---|
+| 46 | The outline crossing between 15 and 16 was a wall put in the wrong scrap. Border ends should be on a wall node. | Hand work | The user moved the wall to GoSouthSP2; the three border ends were moved onto new wall nodes (rows edited, nothing else in the file touched). The drawing was committed as the reference that converter drafts are compared against. |
+| 47 | Areas outside the walls are clipped, which is good: it does not matter how far out they go; what matters is that they are as readable as possible. | Converter settings | `area_over_walls = 0.5`, `area_splines = 0.25`: 5 to 8 nodes per area, as in the reference. |
+| 48 | There is still the problem wall near 5 to sort. | Open | Asked: the sketch near 5 has the east wall in four strokes (one a short hook just below 5) and the channel as a long thin black loop from 3 to 6, drawn as two borders. |
+
+Draft 8 (the converter run again on the sketch, with the changes above)
+is in `review/GoSouth.draft8.plan.th2`; the committed reference drawing
+was put back afterwards. Against the reference, the converter still
+cannot know that the wall by 10 closes 9 to 11 off from 19, or that the
+strip by 17 is a pillar (two `wall-outline-none` findings): both are
+hand work.
