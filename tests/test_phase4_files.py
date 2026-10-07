@@ -77,6 +77,12 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn("python -m pytest -q tests", self.text)
         self.assertIn("tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg", self.text)
 
+    def test_tests_run_where_git_svn_installs(self):
+        test_job = self.text[self.text.index("  test:\n"):self.text.index("  build:\n")]
+        self.assertIn("container: ubuntu:24.04", test_job)
+        self.assertIn("git subversion git-svn", test_job)
+        self.assertLess(test_job.index("git subversion git-svn"), test_job.index("actions/checkout"))
+
 
 class PointerDocsTest(unittest.TestCase):
     def test_paths_they_name_exist(self):

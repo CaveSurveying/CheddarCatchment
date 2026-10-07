@@ -28,27 +28,33 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
+    # Ubuntu 24.04's own git, git-svn and subversion, which work together
+    # (the runner's newer git cannot take Ubuntu's git-svn). Same system
+    # as the development environment.
+    container: ubuntu:24.04
     steps:
-      - uses: actions/checkout@v5
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      # subversion and git-svn for the svn2git sync tests (they skip
-      # without them).
+      # git before checkout, so the checkout is a real repository (the
+      # .gitignore and .gitattributes tests need one).
       - name: Install tools
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq subversion git-svn
-          pip install -r tools/requirements.txt pytest git-filter-repo
+          apt-get update -qq
+          DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \
+            git subversion git-svn python3 python3-venv
+          python3 -m venv /opt/venv
+          /opt/venv/bin/pip install -q pytest git-filter-repo
 
+      - uses: actions/checkout@v5
+
+      - name: Install Python libraries
+        run: /opt/venv/bin/pip install -q -r tools/requirements.txt
+
+      # subversion and git-svn are for the svn2git sync tests.
       - name: Unit tests
-        run: python -m pytest -q tests
+        run: /opt/venv/bin/python -m pytest -q tests
 
       # Fails only on findings not in tools/th2lint-baseline.txt.
       - name: th2lint
-        run: python tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg
+        run: /opt/venv/bin/python tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg
 
   build:
     runs-on: ubuntu-latest
