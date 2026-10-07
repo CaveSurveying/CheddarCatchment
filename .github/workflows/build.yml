@@ -1,0 +1,149 @@
+name: Build survey
+
+# Adapted from caves-mendip-swildons, .github/workflows/build.yml
+# (commit 198bf46). Trial scope (docs/PLAN-LongwoodValleySink.md): only
+# LongwoodValleySink/Plan_only.thcfg is built. The repository is
+# private, so nothing is published: the sheets are attached to the run,
+# and a pull request gets a comment with the statistics and a link.
+on:
+  push:
+    branches: [main, "claude/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Therion 6.4.0 with TeX, METAPOST, Ghostscript and python3, pinned by
+  # digest so a survey rebuilt in a year renders identically. Bump it
+  # deliberately (tag 6.4.0 at the time of pinning).
+  THERION_IMAGE: ghcr.io/paperclipmonkey/therion@sha256:6f7365a75e338a99a3772e6aaf48872f75717ebd4167ef5bd5e88777b24a2d45
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # subversion and git-svn for the svn2git sync tests (they skip
+      # without them).
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq subversion git-svn
+          pip install -r tools/requirements.txt pytest git-filter-repo
+
+      - name: Unit tests
+        run: python -m pytest -q tests
+
+      # Fails only on findings not in tools/th2lint-baseline.txt.
+      - name: th2lint
+        run: python tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # output/ is git-ignored, and Therion will not create it.
+      - name: Create output directory
+        run: mkdir -p output
+
+      # --user maps the container's output back to the runner user.
+      # Plan_only.thcfg runs in the cave folder, as its paths are
+      # relative to it. layout.thcfg is the converter's helper: built
+      # here so a broken survey shows up before anyone converts a sketch.
+      - name: Build with Therion
+        run: |
+          therion() {
+            docker run --rm -v "${{ github.workspace }}:/project" \
+              -u "$(id -u):$(id -g)" -w "/project/$1" \
+              -e PROJ_NETWORK=OFF "$THERION_IMAGE" "${@:2}"
+          }
+          therion LongwoodValleySink -l ../output/therion.log Plan_only.thcfg
+          therion . -l output/therion-layout.log tools/layout.thcfg
+
+      - name: Fail if Therion logged an error
+        run: |
+          status=0
+          for log in output/therion.log output/therion-layout.log; do
+            if grep -qE "^therion: error|invalid scrap outline" "$log"; then
+              echo "::error::Therion reported an error in $log"
+              grep -nE "^therion: (error|warning)|invalid scrap outline" "$log"
+              status=1
+            fi
+          done
+          # Worth seeing, not failing on: the existing drawings give a
+          # few "scrap outline intersects itself" warnings.
+          if grep -qiE "warning|intersects itself" output/therion.log; then
+            echo "::group::Therion warnings"
+            grep -inE "warning|intersects itself" output/therion.log | sort -u
+            echo "::endgroup::"
+          fi
+          exit $status
+
+      - name: Build the index page
+        run: |
+          sudo apt-get install -y -qq ghostscript
+          python3 -m tools.web.make_index
+
+      - name: Summarise the build
+        run: |
+          {
+            echo "### Survey built"
+            echo
+            cat output/stats.md
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload build
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: survey-${{ github.run_number }}-${{ github.sha }}
+          path: |
+            output/*.pdf
+            output/*.log
+            output/index.html
+            output/stats.md
+            output/previews/
+          retention-days: 14
+
+      - name: Comment on the PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const marker = '### Survey rebuilt from this PR';
+            const run = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            let stats = '';
+            try { stats = fs.readFileSync('output/stats.md', 'utf8'); } catch (e) {}
+            const body = [
+              marker, '', stats,
+              `**[Download the built sheets](${{ steps.upload.outputs.artifact-url }})**: unzip and open \`index.html\`.`,
+              '', `<sub>[Build log](${run}) · commit \`${context.sha.slice(0, 7)}\`</sub>`,
+            ].join('\n');
+            // Update our earlier comment rather than adding one per push.
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
+            });
+            const mine = comments.find(c => c.user.type === 'Bot' && c.body.startsWith(marker));
+            if (mine) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo, comment_id: mine.id, body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, body,
+              });
+            }
