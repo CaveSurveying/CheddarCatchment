@@ -87,7 +87,7 @@ class SyncTest(unittest.TestCase):
         self.write("Other/b.th", "b3\n")
         self.commit("Other cave only")
 
-        self.assertEqual(self.sync(), [2])
+        self.assertEqual(self.sync(), [(2, "applied")])
         msg = run("git", "-C", self.repo, "log", "-1", "--format=%an <%ae>%n%B")
         self.assertTrue(msg.startswith("Andrew Atkinson <andrew@x.invalid>\nSecond survey\n\nSVN-Revision: r2\n"), msg)
         self.assertIn(f"SVN-URL: {self.url}\n", msg)
@@ -108,8 +108,35 @@ class SyncTest(unittest.TestCase):
             env=dict(self.env, GIT_AUTHOR_NAME="T", GIT_AUTHOR_EMAIL="t@x"))
         self.write("LongwoodValleySink/a.th", "three\n")
         self.commit("Third")
-        self.assertEqual(self.sync(), [2])
+        self.assertEqual(self.sync(), [(2, "applied")])
         self.assertIn("Plan_only.thcfg", run("git", "-C", self.repo, "ls-files"))
+
+    def test_revision_already_in_git_is_recorded(self):
+        # Option C: a drawing made in git, then committed to SVN by hand.
+        with open(os.path.join(self.repo, "LongwoodValleySink", "a.th"), "w") as f:
+            f.write("drawn in git\n")
+        run("git", "-C", self.repo, "commit", "-q", "-am", "Drawing",
+            env=dict(self.env, GIT_AUTHOR_NAME="T", GIT_AUTHOR_EMAIL="t@x"))
+        tree = run("git", "-C", self.repo, "rev-parse", "HEAD^{tree}")
+        self.write("LongwoodValleySink/a.th", "drawn in git\n")
+        self.commit("Drawing from git")
+        self.assertEqual(self.sync(), [(2, "recorded")])
+        self.assertEqual(run("git", "-C", self.repo, "rev-parse", "HEAD^{tree}"), tree)
+        msg = run("git", "-C", self.repo, "log", "-1", "--format=%an%n%B")
+        self.assertTrue(msg.startswith("Andrew Atkinson\nDrawing from git\n\n" + sync.ALREADY + "\n\nSVN-Revision: r2\n"), msg)
+        self.assertEqual(self.sync(), [])
+
+    def test_property_only_revision_skipped(self):
+        run("svn", "propset", "-q", "svn:executable", "*", "Other/b.th", cwd=self.wc)
+        run("svn", "propdel", "-q", "svn:executable", "LongwoodValleySink/a.th", cwd=self.wc)
+        self.commit("Properties only")
+        before = self.log("%H")
+        self.assertEqual(self.sync(), [])
+        self.assertEqual(self.log("%H"), before)
+
+    def test_with_note(self):
+        msg = b"Body\n\nSVN-Revision: r5\nSVN-URL: u\n"
+        self.assertEqual(sync.with_note(msg, "Note."), b"Body\n\nNote.\n\nSVN-Revision: r5\nSVN-URL: u\n")
 
 
 if __name__ == "__main__":

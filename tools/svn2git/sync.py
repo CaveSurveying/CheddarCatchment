@@ -4,8 +4,12 @@ Fetches into the raw `git svn` mirror made by `migrate.sh`, then
 applies each mirror commit newer than the branch's latest
 `SVN-Revision:` trailer: same changes, author and date, the git-svn-id
 line turned into trailers, no executable bits. Revisions that change
-nothing git records are skipped, as in the first migration. Stops on a
-conflict (a file changed in both SVN and git), leaving it for a person.
+nothing git records (properties, empty folders) are skipped, as in the
+first migration. A revision whose changes git already has (drawings
+made in git and committed to SVN by hand: option C in
+docs/PLAN-LongwoodValleySink.md) is recorded as an empty commit with its
+trailers. Stops on a conflict (a file changed differently in SVN and
+git), leaving it for a person.
 
     python3 -m tools.svn2git.sync [--mirror MIRROR] [--no-fetch]
 """
@@ -50,8 +54,34 @@ def pending(repo, after):
     return found
 
 
+ALREADY = "Already in git: this SVN revision's changes were made in git first."
+
+
+def changes_content(repo, sha):
+    """True if a mirror commit adds, deletes or edits a file (not only its mode)."""
+    out = git(repo, "diff-tree", "-r", "--root", "--no-commit-id", "--no-renames", sha).decode()
+    for line in out.splitlines():
+        meta = line.split("\t", 1)[0].split()
+        if meta[4] in ("A", "D") or meta[2] != meta[3]:
+            return True
+    return False
+
+
+def with_note(message, note):
+    """The message with a note paragraph before its trailers."""
+    body, sep, trailers = message.rpartition(b"\n\nSVN-Revision:")
+    if not sep:
+        return message.rstrip(b"\n") + b"\n\n" + note.encode() + b"\n"
+    return body + b"\n\n" + note.encode() + sep + trailers
+
+
 def apply(repo, sha):
-    """Apply one mirror commit to HEAD. Returns False if it changes nothing."""
+    """Apply one mirror commit to HEAD.
+
+    Returns "applied", "recorded" (its changes were already in git) or
+    "skipped" (it changes nothing git records)."""
+    if not changes_content(repo, sha):
+        return "skipped"
     try:
         git(repo, "cherry-pick", "--no-commit", "--allow-empty", sha)
     except subprocess.CalledProcessError as e:
@@ -63,16 +93,16 @@ def apply(repo, sha):
             git(repo, "update-index", "--chmod=-x", "--", path)
             full = os.path.join(repo, path)
             os.chmod(full, os.stat(full).st_mode & 0o666)
-    if not git(repo, "diff", "--cached", "--name-only"):
-        _quit(repo)
-        return False
+    already = not git(repo, "diff", "--cached", "--name-only")
     fmt = git(repo, "log", "-1", "--format=%an%x00%ae%x00%aI%x00%B", sha).decode()
     name, email, date, message = fmt.split("\x00", 3)
+    message = rewrite_message(message.encode())
+    if already:
+        message = with_note(message, ALREADY)
     env = dict(os.environ, GIT_AUTHOR_NAME=name, GIT_AUTHOR_EMAIL=email, GIT_AUTHOR_DATE=date)
-    git(repo, "commit", "--quiet", "--no-verify", "-F", "-", env=env,
-        input=rewrite_message(message.encode()))
+    git(repo, "commit", "--quiet", "--no-verify", "--allow-empty", "-F", "-", env=env, input=message)
     _quit(repo)
-    return True
+    return "recorded" if already else "applied"
 
 
 def _quit(repo):
@@ -81,7 +111,7 @@ def _quit(repo):
 
 
 def sync(repo, mirror, fetch=True):
-    """Bring new revisions across; returns the revisions committed."""
+    """Bring new revisions across; returns [(revision, "applied" or "recorded")]."""
     if not os.path.isdir(os.path.join(mirror, ".git")):
         sys.exit(f"no git svn mirror at {mirror}; make it with tools/svn2git/migrate.sh")
     if git(repo, "status", "--porcelain", "--untracked-files=no"):
@@ -91,8 +121,9 @@ def sync(repo, mirror, fetch=True):
     git(repo, "fetch", "--quiet", "--no-tags", mirror, f"+refs/remotes/git-svn:{FETCHED}")
     done = []
     for sha, rev in pending(repo, last_synced(repo)):
-        if apply(repo, sha):
-            done.append(rev)
+        outcome = apply(repo, sha)
+        if outcome != "skipped":
+            done.append((rev, outcome))
     return done
 
 
@@ -103,7 +134,8 @@ def main(argv=None):
     ap.add_argument("--no-fetch", action="store_true", help="use what the mirror already has")
     args = ap.parse_args(argv)
     done = sync(args.repo, args.mirror, fetch=not args.no_fetch)
-    print("brought across: " + (", ".join(f"r{r}" for r in done) if done else "nothing new"))
+    print("brought across: " + (", ".join(f"r{r}" + (" (already in git)" if o == "recorded" else "")
+                                          for r, o in done) if done else "nothing new"))
     return 0
 
 
