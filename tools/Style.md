@@ -139,6 +139,8 @@ plan-only config.
 - Water against an outer wall is best drawn with its border outside the
   wall.
 - Areas can overlap to show a transition, or pebbles in water.
+- No borders drawn over boulder or debris areas: the sketch's lines
+  among the rocks are part of the rocks, which the area's symbols show.
 - An area's border has few control points and is smooth (a spline):
   where it meets a wall, run it out over the wall and let the wall clip
   it, rather than following the wall point by point.

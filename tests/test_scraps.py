@@ -162,3 +162,48 @@ class Areas(unittest.TestCase):
         self.assertTrue(all(len(r.split()) == 6 for r in rows[1:]))        # Bezier segments
         ys = [float(r.split()[-1]) for r in rows]
         self.assertLess(min(ys), 0)                                         # over the wall
+
+    def test_brown_lines_in_rock_areas_dropped(self):
+        from shapely.geometry import box
+        from tools.sketch2therion import marks, settings
+        settings.load()
+        passage = box(0, 0, 6, 2)
+        loops = [("BROWN", [(x, 0.6), (x + 0.4, 0.6), (x + 0.4, 1.0), (x, 1.0), (x, 0.6)])
+                 for x in (0.5 + 0.6 * k for k in range(6))]
+        rock_line = ("BROWN", [(1.2, 0.8), (1.4, 0.75), (1.6, 0.85), (1.8, 0.8)])       # among the rocks
+        ledge = ("BROWN", [(0.5, 1.7), (2.0, 1.75), (3.5, 1.7), (5.0, 1.75)])           # well clear of them
+        px = lambda p: (100 * p[0], 100 * p[1])
+
+        def borders():
+            text = "\n".join(marks.th2(loops + [rock_line, ledge], passage, px, "XSP1", ["BLACK"], 0.3))
+            return [m for m in re.findall(r"(?ms)^line border\n(.*?)^endline", text)]
+        self.assertEqual(len(borders()), 1)                 # the ledge only
+        settings.use(dict(settings.SETTINGS, area_lines=True))
+        self.assertEqual(len(borders()), 2)
+
+
+class Corner(unittest.TestCase):
+    def test_leg_off_to_one_side(self):
+        from shapely.geometry import LineString, Point
+        from tools.sketch2therion.convert import _leg_in_cone
+        leg = LineString([(1, 1), (5, 1)])
+        self.assertTrue(_leg_in_cone(Point(0, 0), (0, 1), leg, 8, 60))      # 45 degrees off
+        self.assertFalse(_leg_in_cone(Point(0, 0), (0, 1), leg, 8, 30))
+        self.assertFalse(_leg_in_cone(Point(0, 0), (0, -1), leg, 8, 60))    # behind
+        self.assertFalse(_leg_in_cone(Point(0, 0), (0, 1), leg, 1, 60))     # too far
+
+    @unittest.skipUnless(os.path.exists(os.path.join(REPO, "output", "layout-plan.xvi")),
+                         "needs the layout (therion tools/layout.thcfg)")
+    def test_gosouth_corner_by_2_and_3_is_wall(self):
+        from shapely.geometry import LineString, Point
+        from tools.sketch2therion import tidy
+        with tempfile.TemporaryDirectory() as d:
+            out = os.path.join(d, "GoSouth.plan.th2")
+            subprocess.run([sys.executable, "-m", "tools.sketch2therion", "plan",
+                            os.path.join(REPO, "LongwoodValleySink", "GoSouth", "Notes", "GoSouthP.xvi"),
+                            "--survey", "GoSouth", "-o", out], cwd=REPO, check=True, capture_output=True)
+            body = re.search(r"(?ms)^scrap GoSouthSP1[^\n]*\n(.*?)^endscrap", open(out).read()).group(1)
+        corner = Point(-46, -430)          # the sketch's wall turning west there (drawing units)
+        kinds = [o.head for o in tidy.parse_scrap(body) if o.kind == "line" and len(o.segments()) > 1
+                 and LineString(tidy.bezier_points(o.segments(), 6)).distance(corner) < 8]
+        self.assertTrue(kinds and all(h.startswith("line wall") and "-outline none" not in h for h in kinds), kinds)

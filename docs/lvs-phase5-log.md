@@ -127,7 +127,7 @@ without being on its node (`end-on-node`).
 |---|---|---|---|
 | 46 | The outline crossing between 15 and 16 was a wall put in the wrong scrap. Border ends should be on a wall node. | Hand work | The user moved the wall to GoSouthSP2; the three border ends were moved onto new wall nodes (rows edited, nothing else in the file touched). The drawing was committed as the reference that converter drafts are compared against. |
 | 47 | Areas outside the walls are clipped, which is good: it does not matter how far out they go; what matters is that they are as readable as possible. | Converter settings | `area_over_walls = 0.5`, `area_splines = 0.25`: 5 to 8 nodes per area, as in the reference. |
-| 48 | There is still the problem wall near 5 to sort. | Open | Asked: the sketch near 5 has the east wall in four strokes (one a short hook just below 5) and the channel as a long thin black loop from 3 to 6, drawn as two borders. |
+| 48 | There is still the problem wall near 5 to sort. (Fixed by the user: by 2 and 3, the border outside the wall deleted and the west wall extended to where the sketch's wall turns west.) | Converter (`convert.cut_back`) | The passage fill bridged the corner, so the two strokes there were inside it: one became a border, the other an `-outline none` piece that `smooth` then dropped, leaving the wall short. `cut_back` cuts the fill back to an outer wall when tracing out from it meets nothing before the fill's edge and the passage's leg is on the other side; it now also accepts the leg off to one side, within `corner_cone = 60` degrees of straight across, as at a corner. Both strokes are now wall, as in the reference. |
 
 Draft 8 (the converter run again on the sketch, with the changes above)
 is in `review/GoSouth.draft8.plan.th2`; the committed reference drawing
@@ -135,3 +135,8 @@ was put back afterwards. Against the reference, the converter still
 cannot know that the wall by 10 closes 9 to 11 off from 19, or that the
 strip by 17 is a pillar (two `wall-outline-none` findings): both are
 hand work.
+| 49 | Borders drawn over rocks deleted by hand (nine in all: three by 17 and 18 in the first edit, six by 3 to 4 and 8 to 13 now). Hopefully that can be tightened. | Converter (`marks.py`); `Style.md` | All but one were open brown strokes, part of the boulders' sketch. With `area_lines = false`, an open brown line at least half inside a boulder or debris area (allowing for the area's spline) is dropped: all eight brown ones go. The ninth was grey (a step or ledge) and is left. The converter also drops a brown line by 20 that the reference keeps: to ask. |
+
+Draft 9 (`review/GoSouth.draft9.plan.th2`) against the reference: the
+same from 1 to 12 apart from the wall by 10; the two `wall-outline-none`
+findings by 17 (the pillar) remain hand work.
