@@ -89,15 +89,25 @@ plan its floor steps, climbs and gradient arrows.
    python3 -m tools.sketch2therion details LongwoodValleySink/X/X.plan.th2
    python3 -m tools.sketch2therion smooth LongwoodValleySink/X/X.plan.th2
    ```
-   Scraps are named `XSP1`, `XSP2`, … (`project.toml`), and the
-   command prints where they go: `map XMP` in `X.th`, and `XMP@X` in
-   `LongwoodValleySinkMP` in `LongwoodValleySink.th`. `roofs` and
+   Scraps are named `XSP1`, `XSP2`, … (`project.toml`). Then
+   ```bash
+   python3 -m tools.sketch2therion place X
+   ```
+   files the drawing: it removes SexyTopo's empty `XP.th2`, inputs
+   `X.plan.th2` in `X.th` with a `map XMP` of its scraps, and adds
+   `XMP@X` to `LongwoodValleySinkMP` in `LongwoodValleySink.th`. `roofs` and
    `details` use the splays from `output/layout.sql`; `smooth` comes
    last. `tidy` redoes drawings converted earlier.
 6. **Finish by hand** in xTherion (the sketch is linked as a
    backdrop): passage names at the label sizes in `Style.md`, flow
    arrows, `C2`/`P5`, `join`s to neighbouring scraps.
 7. **Check**, as in `Style.md` ("Checking"), and with `review` below.
+   For review on another computer,
+   ```bash
+   python3 -m tools.sketch2therion zip X review-X.zip --extra review/
+   ```
+   zips the drawing, its sketches (the backdrop works when unzipped),
+   `X.th`, `LongwoodValleySink.th` and the files in `review/`.
 8. **Commit** one survey per commit, with anything learnt added to
    `Style.md`. While SVN is the master copy, the drawing then goes to
    SVN by hand (see "SVN" below).

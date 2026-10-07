@@ -169,11 +169,11 @@ class NoSwildonsNamesTest(unittest.TestCase):
     def test_sections_not_ported(self):
         self.assertFalse(os.path.exists(os.path.join(REPO, "tools", "sketch2therion", "sections.py")))
 
-    def test_ported_files_say_where_from(self):
+    def test_files_say_where_from(self):
         for path in glob.glob(os.path.join(REPO, "tools", "sketch2therion", "*.py")):
             with open(path, encoding="utf-8") as f:
                 head = f.read(300)
-            self.assertIn("caves-mendip-swildons", head, path)
+            self.assertTrue("caves-mendip-swildons" in head or "new for the Cheddar Catchment survey" in head, path)
             self.assertIn("GPLv3", head, path)
 
 

@@ -5,8 +5,9 @@ answers in `docs/lvs-phase1.md`, survey table in `docs/lvs-inventory.md`).
 **Phase 2 done** (`tools/Style.md` revised). **Phase 3 done**
 (2026-10-07): SVN history to r501 merged, `verify` clean, authors with
 placeholder emails. **Phase 4 done** (2026-10-07): the tools, the
-plan-only thconfig and CI (see "Phase 4 as built"). Next: Phase 5,
-drawing the 2026 plans. The plan was revised on 2026-10-06 after review
+plan-only thconfig and CI (see "Phase 4 as built"). **Phase 5 started**
+(2026-10-07): `place` and `zip`, and a test review zip of the GoSouth
+draft. The plan was revised on 2026-10-06 after review
 against the SVN repository (revision 501), then for the
 `Plan_only.thcfg` trial scope, and on 2026-10-07 for Phase 4.
 
@@ -286,34 +287,78 @@ licence that allows it.
 
 ## Phase 5: Draw the 2026 plans (plan view only)
 
-For each confirmed survey:
+Agreed 2026-10-07. The ten 2026 surveys, neighbours first so that joins
+have something to meet:
 
-1. SexyTopo export and originals in the folder LongwoodValleySink uses
-   (else `SexyTopo/<yyyymmdd>_<Where>/`). Ask for any that are missing.
-2. Build; `therion tools/layout.thcfg`. This is the converter's own
-   helper (it exports station positions for `sketch2therion`), not a
-   survey output, so it is within the trial scope.
-3. `python3 -m tools.sketch2therion check plan.xvi --survey X`; report a
-   poor fit.
-4. `python3 -m tools.sketch2therion plan plan.xvi --floor ee.xvi
-   --author … --copyright … --map-scale 500`, written over the empty
-   scrap under its existing name. The elevation sketch is used for floor
-   steps only; no elevation `.th2` is drawn.
-5. `roofs` (walls from splays where unsketched), `details`, `tidy`;
-   `sections` only if cross-sections were sketched and LongwoodValleySink
-   plans show them.
-6. Hand-finish to match existing LongwoodValleySink plans: passage names
-   at its label sizes, boulders, water and flow, `C2`/`P5`, `join`s to
-   neighbouring scraps.
-7. Un-comment the `input` lines; list the scraps in `map XMP` in
-   `X.th`, and `XMP@X` in `LongwoodValleySinkMP` in
-   `LongwoodValleySink.th` (or in a group map in `Maps.th`).
-8. Checks: `therion Plan_only.thcfg` (in `LongwoodValleySink/`) with no
-   `therion: error` or `invalid scrap outline`, no new "intersects
-   itself", `th2lint` clean, opens in xTherion without error (by hand),
-   before/after PDF compared.
-9. One commit per survey. Anything learnt goes into `tools/Style.md` in
-   the same commit.
+| Order | Survey | Joins |
+|---|---|---|
+| 1 (pilot) | GoSouth | 27@CrystalPitch |
+| 2 | Trident | 133@CrossRoads |
+| 3 | TridentCentre, TridentLeft | 12@Trident, 11@Trident |
+| 4 | IDontCare, BoldStep, TritonNorth, TritonSouth | 32, 36, 37, 38@TridentLeft |
+| 5 | Connection, FairyChimneys | 94@NorthRift, TritonSouth, BoldStep |
+
+What the pilot teaches goes into `tools/Style.md` and the converter
+before Trident is started. A test review zip of the GoSouth draft
+was sent first, to check the backdrop opens on the user's computer.
+
+For each survey X:
+
+1. **Prepare:** `therion -l output/therion-layout.log tools/layout.thcfg`;
+   `python3 -m tools.sketch2therion check X/Notes/XP.xvi --survey X`
+   (stop and report a fit worse than about 0.3 m); keep the current
+   plan PDF as "before".
+2. **Convert:** `plan --floor` (the elevation sketch gives floor steps
+   only; no elevation `.th2` is drawn), `roofs`, `details`, `smooth`,
+   writing `X/X.plan.th2` with the sketch linked as xTherion's backdrop.
+3. **File it:** `python3 -m tools.sketch2therion place X` removes
+   SexyTopo's empty `XP.th2`, inputs `X.plan.th2`, writes `map XMP` and
+   adds `XMP@X` to `LongwoodValleySinkMP`.
+4. **Hand-finish** (editing the `.th2` text): passage names at the
+   `Style.md` label sizes, water and flow, `C2`/`P5`, `join`s to
+   neighbouring scraps, anything the conversion got wrong against the
+   sketch.
+5. **Check:** build `Plan_only.thcfg` with no `therion: error` or
+   `invalid scrap outline` and no new "intersects itself"; `th2lint`
+   clean; `review check` valid; opens in xTherion (headless, Xvfb)
+   without an error.
+6. **Review zip** (`python3 -m tools.sketch2therion zip X OUT.zip
+   --extra review/`), opened by the user in xTherion or wtherion: the
+   `.th2`, its sketches (the backdrop path works when unzipped), `X.th`,
+   `LongwoodValleySink.th`, and under `review/` the plan PDF before and
+   after, the review plan with station names, `review show` pictures,
+   and `NOTES.md` (what was converted, what was changed by hand and
+   why, the check results, and the questions). The pictures and PDFs
+   are also shown in the chat.
+7. **Improve the process:** each review comment is recorded in
+   `docs/lvs-phase5-log.md` and handled as a converter fault (fixed in
+   `sketch2therion`, with a test), a rule (`Style.md`, with a `th2lint`
+   check where possible) or one-off hand work.
+8. **Commit** one survey per commit, only after the user approves its
+   zip; then the changed files go to SVN by hand (option C).
+
+### Difficulties (where the user's eye is needed)
+
+1. Whether the drawing is true to the cave: only the sketch, splays
+   and data are available to the converter and to Claude.
+2. Passage names: SexyTopo exports text as strokes, read by eye from
+   the rendered sketch; guessed names are listed for confirmation.
+3. Joins to neighbouring surveys (CrossRoads, CrystalPitch, NorthRift,
+   then the 2026 surveys themselves): walls meeting without overlaps,
+   outlines not crossing, and passages not drawn twice where a new
+   survey revisits drawn passage.
+4. Label placement on the 45° sheet, judged at screen resolution.
+5. The low side of `line floor-step` and `line pit` (`Style.md` leaves
+   it to a test render; existing drawings use `line pit` both ways).
+6. xTherion is only checked headless for errors; the user views the
+   zip locally.
+7. The leftover `-outline none` wall from `smooth` (lint rule
+   `wall-outline-none`): fix by hand, or allow it; decided after the
+   pilot.
+8. The sheet's `map-comment` length (1004 m) against Therion's
+   1682.2 m: the user's decision.
+9. Therion 6.2.0 here against 6.4.0 in CI: CI is the reference (the
+   first CI build on 6.4.0 was clean).
 
 ## Unit tests (`tests/`, pytest, run in CI)
 
