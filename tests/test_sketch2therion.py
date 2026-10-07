@@ -144,7 +144,7 @@ class SurveyTest(unittest.TestCase):
         from tools.sketch2therion.survey import survey_of
         self.assertEqual(survey_of(os.path.join(CAVE, "Cyclops", "Cyclops.plan.th2")), "Cyclops")   # quoted input
         self.assertEqual(survey_of(os.path.join(CAVE, "Cyclops", "CyclopsE315.th2")), "Cyclops")    # bare input
-        self.assertEqual(survey_of(os.path.join(CAVE, "GoSouth", "GoSouthP.th2")), "GoSouth")
+        self.assertEqual(survey_of(os.path.join(CAVE, "BoldStep", "BoldStepP.th2")), "BoldStep")
         self.assertIsNone(survey_of(os.path.join(CAVE, "GoSouth", "Nothing.th2")))
 
     def test_fit(self):

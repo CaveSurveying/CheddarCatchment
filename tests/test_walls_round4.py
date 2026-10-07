@@ -183,8 +183,9 @@ class GoSouthStation21Test(unittest.TestCase):
                   "--layout", os.path.join(cls.tmp, "no-layout.xvi")])
         smooth.redo_file(out)
         text = open(out, encoding="utf-8").read()
-        body = re.search(r"(?ms)^scrap GoSouthSP1[^\n]*\n(.*?)^endscrap", text).group(1)
-        cls.objs = tidy.parse_scrap(body)
+        # every scrap: station 21 is in GoSouthSP2 since the scraps were chosen by hand
+        cls.objs = [o for body in re.findall(r"(?ms)^scrap GoSouthSP\d[^\n]*\n(.*?)^endscrap", text)
+                    for o in tidy.parse_scrap(body)]
 
     @classmethod
     def tearDownClass(cls):

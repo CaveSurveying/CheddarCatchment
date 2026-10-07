@@ -54,6 +54,13 @@ plan-only config.
   for the scrap) or MetaPost "scrap outline intersects itself".
 - A line inside the passage (a ledge, the edge of another level) is a
   `line border`, not a wall.
+- Passages that overlap in plan, or only come close together without
+  joining, go in **different scraps**: one scrap would join them up and
+  turn the walls between them into borders. A leg from one into the
+  other (dropping into a passage below) is between the scraps. For the
+  converter, list each scrap's stations under `[scraps]` in
+  `tools/project.toml` (GoSouth: 15 to 17 drops into the passage beside;
+  19 comes close to 10 and 11 but does not join them).
 - Where a passage was not sketched, walls may be drawn from the splays,
   as `line wall -subtype presumed`. Never guess a wall that neither the
   sketch nor the splays show.

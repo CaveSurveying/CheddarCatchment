@@ -83,3 +83,21 @@ Still open: the wall from 18 to the alcove is partly inside the passage
 fill, so it is written `-outline none` (one new `wall-outline-none`
 finding, the open question in rows 22 and 29). The junction with
 CrystalPitch stays a border until the joins (stage 5c).
+
+## GoSouth draft 5 review (2026-10-07) and draft 6
+
+Draft 5 was rebuilt and reviewed on the user's own machine (Therion
+6.4.0, as CI), opened in place in xTherion instead of a zip.
+
+| # | Comment | Outcome in draft 6 |
+|---|---|---|
+| 39 | The leg 15 to 17 goes from one passage into another, and they overlap slightly: they should be in different scraps. | `[scraps]` in `tools/project.toml` lists the stations of each scrap (`GoSouth = ["1-16", "17-29"]`, `hand_scraps = true` in `[convert]`). The leg 15 to 17 is in neither. Each stroke goes to the scrap of its nearest leg; a stroke running past both passages is cut where that changes (`scraps.py`). Rule in `Style.md`. |
+| 40 | There is no passage between 19 and 10: the passages only get close together. | 19 is in GoSouthSP2, 9 to 11 in GoSouthSP1, so they are no longer one fill; the wall from 11 now ends by 19 where the other passage's wall begins. |
+| 41 | The walls separating the passages were drawn as borders. | Each is now a wall of its own scrap (the left wall of 12 to 15 in SP1, the right wall of 19 to 18 in SP2). |
+
+Still open: the two strokes of the narrow strip just right of the 19 to
+17 leg are inside SP2's fill and written `-outline none` (two
+`wall-outline-none` findings, as in rows 22 and 29): a pillar
+(`-outline in`), a third passage, or the wall between the passages drawn
+twice? The two scraps' fills overlap a little by 16 and 21, as the
+passages do.
