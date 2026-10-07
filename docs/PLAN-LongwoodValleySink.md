@@ -2,14 +2,13 @@
 
 Status: agreed 2026-10-06. **Phase 1 done** (findings and check point
 answers in `docs/lvs-phase1.md`, survey table in `docs/lvs-inventory.md`).
-**Phase 2 done** (`tools/Style.md` revised). **Phase 4 started**:
-`tools/th2lint.py` with its baseline, and
-`LongwoodValleySink/Plan_only.thcfg`. **Phase 3 done** (2026-10-07):
-SVN history to r501 merged, `verify` clean, authors with placeholder
-emails; `sketch2therion` and drawing wait on `shapely` and Therion. The plan was revised the same day after
-review against the SVN repository (revision 501), then for the
-`Plan_only.thcfg` trial scope. Nothing below has been
-done yet apart from committing this plan and the starting `tools/Style.md`.
+**Phase 2 done** (`tools/Style.md` revised). **Phase 3 done**
+(2026-10-07): SVN history to r501 merged, `verify` clean, authors with
+placeholder emails. **Phase 4 done** (2026-10-07): the tools, the
+plan-only thconfig and CI (see "Phase 4 as built"). Next: Phase 5,
+drawing the 2026 plans. The plan was revised on 2026-10-06 after review
+against the SVN repository (revision 501), then for the
+`Plan_only.thcfg` trial scope, and on 2026-10-07 for Phase 4.
 
 ## Goal
 
@@ -74,7 +73,8 @@ inputs on purpose (`GoWest`, `TickleRift`).
   homes of the same data.
 - House style seen so far: scale 1:500, base-scale 1:350, plan rotated
   45°, elevations projected to 315°, scrap ids such as `CyclopsSP1` and
-  `CrossRoadsSE315_3`, maps `…MP` / `…ME315` in `Maps.th`.
+  `CrossRoadsSE315_3`, maps `…MP` / `…ME315` in each survey's `.th`,
+  grouped in `Maps.th`.
 
 ## Background: what the Swildons system is
 
@@ -241,12 +241,12 @@ Phase 5 keeps revising it as drawing teaches us more.
 
 | New path | From | Change |
 |---|---|---|
-| `tools/project.toml` | new | Per-cave config: master `.th`, thconfig (`Plan_only.thcfg`), plan/elevation maps, file prefixes, sheet scale, sheets for `sections`. LongwoodValleySink first. |
-| `tools/svn2git/` | new | `svnhttp.py`, `deps.py`, `inventory.py`, `authors.txt`, `verify.py`, `migrate.sh`, and `sync.py` (Python, so it shares the rewrite and is tested) as SVN stays master. |
-| `tools/sketch2therion/` | Swildons | Names read from `project.toml`; Swildons output unchanged (regression test). |
-| `tools/layout.thcfg`, `tools/layout.th` | Swildons | Renamed from `layout.thconfig` to the `.thcfg` convention; point at the LongwoodValleySink master survey. |
+| `tools/project.toml`, `tools/project.py` | new | Per-cave config: master `.th`, thconfig (`Plan_only.thcfg`), the plan map and the file it is in, file/scrap/map name patterns, which sketches are plans, line endings, map scale, licence, sheets. LongwoodValleySink first. |
+| `tools/svn2git/` | new | `svnhttp.py`, `deps.py`, `inventory.py`, `authors.txt`, `verify.py`, `migrate.sh`, and `sync.py` (Python, so it shares the rewrite and is tested) as SVN stays master; `sync.py` records SVN revisions already in git (option C, below). |
+| `tools/sketch2therion/` | Swildons | Names read from `project.toml`; output on LongwoodValleySink sketches identical to the unmodified upstream code apart from the licence line (regression test). `sections` not ported (no LongwoodValleySink plan has cross-sections). `review` ported, working per survey on a rotated sheet. |
+| `tools/layout.thcfg`, `tools/layout.th` | Swildons | Renamed from `layout.thconfig` to the `.thcfg` convention; point at the LongwoodValleySink master survey; also export `output/layout.sql` for `roofs` and `details`. |
 | `tools/new-trip-template.th` | Swildons | LongwoodValleySink naming (`…SP1`, `…SE315_1`) and equate example. |
-| `tools/web/make_index.py` | Swildons | Sheet list from config; writes `output/stats.md`. |
+| `tools/web/make_index.py` | Swildons | Sheet list from config; writes `output/index.html` and `output/stats.md` (statistics from the log). |
 | `tools/th2lint.py` | new | Checks the `.th2` files that `Plan_only.thcfg` builds against the `[lint]` rules in `tools/Style.md`. Existing drawings are covered by a baseline file (`tools/th2lint-baseline.txt`); CI fails only on new findings, and fixing a baseline entry removes it. |
 | `.github/workflows/build.yml` | Swildons | Builds `LongwoodValleySink/Plan_only.thcfg` only, pytest, `th2lint`, Therion error gate, PR comment, run artefact. Therion image pinned by digest, not tag. OSTN15 grid only if the cave's `cs` needs it. No Pages deploy. |
 | `.claude/skills/therion-drawing/SKILL.md`, `AGENTS.md` | Swildons | Short pointers to `tools/Style.md`, the single source of truth. |
@@ -255,6 +255,34 @@ Phase 5 keeps revising it as drawing teaches us more.
 Not copied: `routes/`, `surface/` (Swildons-specific; possible later).
 Any Swildons fixture copied for the regression test is checked for a
 licence that allows it.
+
+### Phase 4 as built (2026-10-07)
+
+- `review build` derives its config from `Plan_only.thcfg` (no
+  separate `tools/review.thcfg`), with station names on and the
+  centreline shown. `review show` places stations from the printed
+  station names, allowing for the sheet's 45° rotation, and takes
+  `--survey` because station names restart in each survey.
+- `roofs` reads Therion's SQL with bare `nan` values (90° projected
+  maps) as NULL.
+- The CI Therion image is pinned to
+  `sha256:6f7365a75e338a99a3772e6aaf48872f75717ebd4167ef5bd5e88777b24a2d45`
+  (tag 6.4.0). No OSTN15 grid: the plan-only build does not need it
+  (Therion 6.2.0 builds it without), to be confirmed by the first CI
+  run on 6.4.0.
+- `LongwoodValleySinkMP` is in `LongwoodValleySink.th`, not `Maps.th`
+  (which holds group maps such as `CyclopsMP`); corrected in
+  `tools/Style.md` and `docs/lvs-phase1.md`.
+- Local build (Therion 6.2.0): no errors, 5 "scrap outline intersects
+  itself" warnings from existing drawings. The sheet's `map-comment`
+  still says "Length 1004.00m. Vertical Range 126.27m" (copied from
+  `thconfig`); Therion now gives 1682.2 m and 132.19 m with the 2026
+  surveys. Left for the user to decide.
+- For Phase 5: on GoSouth the converter's whole pipeline (`plan`,
+  `roofs`, `details`, `smooth`) gives a valid outline but leaves one
+  wall with `-outline none`, which `th2lint` (`wall-outline-none`)
+  rejects. To be settled when drawing: fix by hand, or refine the rule
+  if such a wall is right.
 
 ## Phase 5: Draw the 2026 plans (plan view only)
 
@@ -277,8 +305,9 @@ For each confirmed survey:
 6. Hand-finish to match existing LongwoodValleySink plans: passage names
    at its label sizes, boulders, water and flow, `C2`/`P5`, `join`s to
    neighbouring scraps.
-7. Un-comment the `input` lines; add the scraps to the plan map in
-   `Maps.th`.
+7. Un-comment the `input` lines; list the scraps in `map XMP` in
+   `X.th`, and `XMP@X` in `LongwoodValleySinkMP` in
+   `LongwoodValleySink.th` (or in a group map in `Maps.th`).
 8. Checks: `therion Plan_only.thcfg` (in `LongwoodValleySink/`) with no
    `therion: error` or `invalid scrap outline`, no new "intersects
    itself", `th2lint` clean, opens in xTherion without error (by hand),
@@ -354,3 +383,17 @@ If SVN stays the master copy (decided at the Phase 1 check point), add
 mirror (Phase 3 step 11), apply the same trailer rewrite to the new
 commits only, and bring them onto the git branch. If git becomes the
 master, SVN is frozen and no sync is needed.
+
+### Drawings back to SVN (decided 2026-10-07: option C)
+
+Drawings are made and checked in git (CI, `th2lint`, `review`), then
+handed over (as the numbered zips in "Delivery") and committed to SVN
+by hand in the usual way, keeping their real authors. The next
+`sync.py` finds that revision's changes already in git and records it
+as an empty commit with its `SVN-Revision:` / `SVN-URL:` trailers and
+a note saying so, so `verify` still counts every revision. A file
+changed differently in SVN and git stops the sync for a person. The
+alternatives considered were writing back automatically
+(`git svn dcommit`, needs SVN credentials here), making git the master
+for LongwoodValleySink, and splitting by file type; option B (git as
+master) remains the simplest if the SVN users agree to it later.

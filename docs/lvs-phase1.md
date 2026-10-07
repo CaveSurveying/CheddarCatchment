@@ -102,7 +102,7 @@ See `docs/lvs-inventory.md`. Summary:
 | Plan scrap ids | `XSP1`, `XSP2`, …; SexyTopo export is `XP1` |
 | Elevation | `X/XE315.th2`, scraps `XSE315_1`; also E000, E090 |
 | Survey plan map | `map XMP` in `X.th` listing its plan scraps |
-| Cave plan map | `LongwoodValleySinkMP` in `Maps.th` lists `XMP@X` (or grouped maps such as `CyclopsMP`) |
+| Cave plan map | `LongwoodValleySinkMP` in `LongwoodValleySink.th` lists `XMP@X`, or group maps from `Maps.th` such as `CyclopsMP` (corrected in Phase 4) |
 | Sketches | `X/Notes/*.xvi` (TickleWest uses `X/XVI/`) |
 | Scale | 1:500, base-scale 1:350; plan rotated 45°; elevation projected 315° |
 | Label sizes in `.th2` | `-scale m` 17, `s` 8, `l` 2, `xs` 2, `xl` 1: all five Therion sizes are in use |

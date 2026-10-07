@@ -25,7 +25,9 @@ plan-only config.
 - Plan scraps are `XSP1`, `XSP2`, …; elevation scraps `XSE315_1`, ….
 - `X.th` has a `map XMP` listing its plan scraps (and `map XME315` for
   the elevation). The cave's plan map, `LongwoodValleySinkMP` in
-  `Maps.th`, lists `XMP@X`.
+  `LongwoodValleySink.th`, lists `XMP@X`; `Maps.th` holds group maps
+  such as `CyclopsMP` (which lists `CyclopsSP1@Cyclops`) that it can
+  list instead.
 - Filenames and `input` lines must match in letter case: CI runs on
   Linux, where `TickleWest.th` and `ticklewest.th` are different files.
 
@@ -159,13 +161,20 @@ plan-only config.
 
 ## Checking
 
-Build with `therion Plan_only.thcfg` in `LongwoodValleySink/`, then:
+Build with `therion -l ../output/therion.log Plan_only.thcfg` in
+`LongwoodValleySink/`, then (logs in `output/`):
 
-- `grep -E "^therion: error|invalid scrap outline" *.log`: there
-  should be none.
-- `grep "intersects itself" *.log | sort -u`: only scraps you didn't
-  touch.
-- `python3 tools/th2lint.py` is clean.
+- `grep -E "^therion: error|invalid scrap outline" output/*.log`:
+  there should be none.
+- `grep "intersects itself" output/*.log | sort -u`: only scraps you
+  didn't touch.
+- `python3 tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg`
+  is clean.
+- `python3 -m tools.sketch2therion review check X/X.plan.th2`: every
+  outline valid and its turning number not 0 (0 is MetaPost's
+  "intersects itself"), before building.
+- `review show` (see `tools/README.md`): the drawing beside the sketch
+  round the new stations, with someone who knows the cave.
 - Render and look. poppler (pdftoppm, Evince, Okular) can show white
   holes in Therion's smooth altitude shading that are not in the PDF;
   check with another renderer (MuPDF) before chasing them.
