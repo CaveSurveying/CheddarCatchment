@@ -1,0 +1,39 @@
+# Per-cave settings for the tools (sketch2therion, layout, review, web,
+# CI). One cave for now; another cave gets its own copy of this file
+# (see tools/README.md). Paths are relative to the top of the repository.
+
+[cave]
+name = "LongwoodValleySink"
+title = "Longwood Valley Sink"
+folder = "LongwoodValleySink"
+master = "LongwoodValleySink/LongwoodValleySink.th"   # sources every survey
+survey = "LongwoodValleySink"                          # its top-level survey
+thconfig = "LongwoodValleySink/Plan_only.thcfg"        # the trial build
+plan_map = "LongwoodValleySinkMP"                      # the cave's plan map,
+plan_map_file = "LongwoodValleySink/LongwoodValleySink.th"   # defined here (group maps are in Maps.th)
+
+[names]
+# {survey} is a survey's name, e.g. GoSouth (see tools/Style.md).
+survey_file = "{survey}/{survey}.th"
+plan_file = "{survey}/{survey}.plan.th2"
+scrap_prefix = "{survey}S"          # the converter adds P1, P2, ... (plan) or E1, ... (elevation)
+survey_plan_map = "{survey}MP"
+plan_sketch = '(\.plan|_p|P)\.xvi$'   # regex: which .xvi sketches are plans (the rest are elevations)
+
+[drawing]
+line_endings = "lf"                 # "lf" or "crlf", for .th2 files the tools write
+map_scale = 500
+licence = "CC BY-NC-SA 4.0"         # survey data and drawings; the tools are GPLv3
+
+[build]
+outputs = "LongwoodValleySink/Outputs"   # where the thconfigs write their sheets
+log = "output/therion.log"
+layout_plan = "output/layout-plan.xvi"
+layout_extended = "output/layout-extended.xvi"
+sql = "output/layout.sql"
+review_plan = "output/review-plan.pdf"
+
+[[sheets]]
+file = "LongwoodValleySinkP.pdf"
+title = "Plan"
+blurb = "The whole cave in plan, rotated 45 degrees. Scale 1:500."
