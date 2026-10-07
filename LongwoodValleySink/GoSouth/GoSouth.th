@@ -2,7 +2,12 @@ encoding  utf-8
 survey GoSouth
 # Created with SexyTopo 1.11.1 on 2026-04-26
 
-input "GoSouthP.th2"
+input "GoSouth.plan.th2"
+
+map GoSouthMP
+  GoSouthSP1
+  GoSouthSP2
+endmap
 input "GoSouthE.th2"
 
 centreline
