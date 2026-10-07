@@ -16,6 +16,7 @@ LongwoodValleySink/CJPitch/CJPitchE315.th2	CJPitchSE315_2	scrap-author-copyright
 LongwoodValleySink/CJPitch/CJPitchE315.th2	CJPitchSE315_2	wall-invisible	1
 LongwoodValleySink/CJPitch/CJPitchE315.th2	CJPitchSE315_3	scrap-author-copyright	1
 LongwoodValleySink/CJS/CJS.ee.th2	cjs-ee	scrap-author-copyright	1
+LongwoodValleySink/CJS/CJS.plan.th2	CJSSP1	end-on-node	1
 LongwoodValleySink/CJS/CJS.plan.th2	CJSSP1	rock-closed	1
 LongwoodValleySink/CJS/CJS.plan.th2	CJSSP1	rock-not-smooth	1
 LongwoodValleySink/CJS/CJS.plan.th2	CJSSP1	rock-not-smooth	2
@@ -64,10 +65,12 @@ LongwoodValleySink/CrossRoads/CrossRoadsE315.th2	CrossRoadsSE315_1	scrap-author-
 LongwoodValleySink/CrossRoads/CrossRoadsE315.th2	CrossRoadsSE315_2	scrap-author-copyright	1
 LongwoodValleySink/CrossRoads/CrossRoadsE315.th2	CrossRoadsSE315_3	scrap-author-copyright	1
 LongwoodValleySink/CrystalPitch/CrystalPitch.ee.th2	crystalpitch-ee	scrap-author-copyright	1
+LongwoodValleySink/CrystalPitch/CrystalPitch.plan.th2	CrystalPitchSP1	end-on-node	1
 LongwoodValleySink/CrystalPitch/CrystalPitch.plan.th2	CrystalPitchSP1	scrap-author-copyright	1
 LongwoodValleySink/CrystalPitch/CrystalPitchE315.th2	CrystalPitchSE315_1	scrap-author-copyright	1
 LongwoodValleySink/CrystalPitch/CrystalPitchE315.th2	CrystalPitchSE315_2	scrap-author-copyright	1
 LongwoodValleySink/Cyclops/Cyclops.ee.th2	cyclops-ee	scrap-author-copyright	1
+LongwoodValleySink/Cyclops/Cyclops.plan.th2	CyclopsSP1	end-on-node	1
 LongwoodValleySink/Cyclops/Cyclops.plan.th2	CyclopsSP1	scrap-author-copyright	1
 LongwoodValleySink/Cyclops/CyclopsE000.th2	CyclopsSE000_1	scrap-author-copyright	1
 LongwoodValleySink/Cyclops/CyclopsE000.th2	CyclopsSE000_2	scrap-author-copyright	1
@@ -105,7 +108,9 @@ LongwoodValleySink/GoSouth/GoSouthP.th2	GoSouthSP2	scrap-author-copyright	1
 LongwoodValleySink/IDontCare/IDontCareEe.th2	IDontCareES1	scrap-author-copyright	1
 LongwoodValleySink/IDontCare/IDontCareP.th2	IDontCareSP1	scrap-author-copyright	1
 LongwoodValleySink/NorthRift/NorthRift.ee.th2	northrift-ee	scrap-author-copyright	1
+LongwoodValleySink/NorthRift/NorthRift.plan.th2	NorthRiftSP1	end-on-node	1
 LongwoodValleySink/NorthRift/NorthRift.plan.th2	NorthRiftSP1	scrap-author-copyright	1
+LongwoodValleySink/NorthRift/NorthRift.plan.th2	NorthRiftSP2	end-on-node	1
 LongwoodValleySink/NorthRift/NorthRift.plan.th2	NorthRiftSP2	rock-not-smooth	1
 LongwoodValleySink/NorthRift/NorthRift.plan.th2	NorthRiftSP2	rock-not-smooth	2
 LongwoodValleySink/NorthRift/NorthRift.plan.th2	NorthRiftSP2	rock-not-smooth	3
@@ -134,8 +139,12 @@ LongwoodValleySink/TickleWest/TickleWest.plan.th2	TickleWestSP1	scrap-author-cop
 LongwoodValleySink/TickleWest/TickleWest.plan.th2	TickleWestSP2	scrap-author-copyright	1
 LongwoodValleySink/TickleWest/TickleWest.plan.th2	TickleWestSP3	scrap-author-copyright	1
 LongwoodValleySink/TickleWest/TickleWest.plan.th2	TickleWestSP4	clip-off-reason	1
+LongwoodValleySink/TickleWest/TickleWest.plan.th2	TickleWestSP4	end-on-node	1
+LongwoodValleySink/TickleWest/TickleWest.plan.th2	TickleWestSP4	end-on-node	2
+LongwoodValleySink/TickleWest/TickleWest.plan.th2	TickleWestSP4	end-on-node	3
 LongwoodValleySink/TickleWest/TickleWest.plan.th2	TickleWestSP4	rock-not-smooth	1
 LongwoodValleySink/TickleWest/TickleWest.plan.th2	TickleWestSP4	scrap-author-copyright	1
+LongwoodValleySink/TickleWest/TickleWestE000.th2	TickleWestSE000_1	end-on-node	1
 LongwoodValleySink/TickleWest/TickleWestE000.th2	TickleWestSE000_1	scrap-author-copyright	1
 LongwoodValleySink/TickleWest/TickleWestE090.th2	TickleWestSE090_1	scrap-author-copyright	1
 LongwoodValleySink/TickleWest/TickleWestE090.th2	TickleWestSE090_2	scrap-author-copyright	1
@@ -152,6 +161,10 @@ LongwoodValleySink/Triassic/TriassicP.th2	TriassicSP3	scrap-author-copyright	1
 LongwoodValleySink/Triassic2/Triassic2E000.th2	Triassic2SE000_1	scrap-author-copyright	1
 LongwoodValleySink/Triassic2/Triassic2E315.th2	Triassic2SE315_1	scrap-author-copyright	1
 LongwoodValleySink/Triassic2/Triassic2E90.th2	Triassic2SE90_1	scrap-author-copyright	1
+LongwoodValleySink/Triassic2/Triassic2P.th2	Triassic2SP1	end-on-node	1
+LongwoodValleySink/Triassic2/Triassic2P.th2	Triassic2SP1	end-on-node	2
+LongwoodValleySink/Triassic2/Triassic2P.th2	Triassic2SP1	end-on-node	3
+LongwoodValleySink/Triassic2/Triassic2P.th2	Triassic2SP1	end-on-node	4
 LongwoodValleySink/Triassic2/Triassic2P.th2	Triassic2SP1	scrap-author-copyright	1
 LongwoodValleySink/Trident/TridentEe.th2	TridentES1	scrap-author-copyright	1
 LongwoodValleySink/Trident/TridentEe.th2	TridentES2	scrap-author-copyright	1

@@ -12,6 +12,7 @@ longer occur are reported so they can be removed.
 
 import argparse
 import os
+import math
 import re
 import sys
 from dataclasses import dataclass, field
@@ -195,6 +196,74 @@ def check_water_border(scrap):
         if o.kind == "area" and o.type == "water":
             if not o.ids or any(i not in border_ids for i in o.ids):
                 yield "water-border", o.line, "area water does not refer to a line border -id in the scrap"
+
+
+def scrap_scale(scrap):
+    """Drawing units per metre, from the scrap's -scale, or None."""
+    m = re.search(r"-scale\s*\[([^\]]*)\]", " ".join(scrap.options))
+    if not m:
+        return None
+    v = m.group(1).split()
+    try:
+        x1, y1, x2, y2, X1, Y1, X2, Y2 = (float(w) for w in v[:8])
+    except ValueError:
+        return None
+    real = math.hypot(X2 - X1, Y2 - Y1)
+    if len(v) > 8 and v[8] not in ("m", "meter", "meters", "metre", "metres"):
+        return None
+    return math.hypot(x2 - x1, y2 - y1) / real if real else None
+
+
+END_TYPES = ("border", "floor-step", "pit", "overhang", "rimstone-dam", "ceiling-step")
+
+
+def check_end_on_node(scrap):
+    """A line ending at a wall (within 0.15 m) ends on a node of the wall."""
+    K = scrap_scale(scrap)
+    if not K:
+        return
+    wall_objs = [o for o in scrap.objects
+                 if o.kind == "line" and o.type.split(":")[0] == "wall" and o.opt("subtype") != "invisible"
+                 and len(o.coords) > 1]
+    if not wall_objs:
+        return
+    walls = [_curve(o.coords) for o in wall_objs]
+    nodes = [(c[-2], c[-1]) for o in wall_objs for c in o.coords]
+    for o in scrap.objects:
+        if o.kind != "line" or o.type.split(":")[0] not in END_TYPES or len(o.coords) < 2:
+            continue
+        if o.opt("close") == "on" or o.opt("subtype") == "invisible":
+            continue
+        for c in (o.coords[0], o.coords[-1]):
+            end = (c[-2], c[-1])
+            near = min(_seg_dist(end, a, b) for w in walls for a, b in zip(w, w[1:]))
+            on = min(math.dist(end, p) for p in nodes)
+            if near <= 0.15 * K and on > 0.005 * K:
+                yield "end-on-node", o.line, f"{o.type} ends {near / K:.2f} m from a wall, not on a node"
+
+
+def _curve(coords, n=12):
+    """Points along a line, following its Bezier segments."""
+    pts = [(coords[0][-2], coords[0][-1])]
+    for c in coords[1:]:
+        p0, p3 = pts[-1], (c[-2], c[-1])
+        if len(c) == 6:
+            c1, c2 = (c[0], c[1]), (c[2], c[3])
+            for k in range(1, n + 1):
+                t = k / n
+                u = 1 - t
+                pts.append((u ** 3 * p0[0] + 3 * u * u * t * c1[0] + 3 * u * t * t * c2[0] + t ** 3 * p3[0],
+                            u ** 3 * p0[1] + 3 * u * u * t * c1[1] + 3 * u * t * t * c2[1] + t ** 3 * p3[1]))
+        else:
+            pts.append(p3)
+    return pts
+
+
+def _seg_dist(p, a, b):
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    L = dx * dx + dy * dy
+    t = 0.0 if L == 0 else max(0.0, min(1.0, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / L))
+    return math.dist(p, (a[0] + t * dx, a[1] + t * dy))
 
 
 CHECKS = {name[len("check_"):].replace("_", "-"): fn

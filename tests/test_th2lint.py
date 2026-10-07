@@ -16,6 +16,7 @@ def rules(body, head=HEAD):
 # rule id -> (failing body, passing body), one tiny scrap each
 CASES = {
     "scrap-author-copyright": None,     # tested on the scrap line below
+    "end-on-node": None,                # needs a -scale: tested in EndOnNodeTest
     "wall-invisible": ("line wall -subtype invisible\n0 0\n1 1\nendline\n",
                        "line wall\n0 0\n1 1\nendline\n"),
     "wall-outline-none": ("line wall -outline none\n0 0\n1 1\nendline\n",
@@ -66,6 +67,28 @@ class RuleTest(unittest.TestCase):
 
     def test_every_check_has_a_case(self):
         self.assertEqual(set(CASES), set(th2lint.CHECKS))
+
+
+class EndOnNodeTest(unittest.TestCase):
+    # 100 units per metre
+    SCALED = HEAD.replace("-projection plan", "-projection plan -scale [0 0 100 0 0.0 0.0 1 0 m]")
+    WALL = "line wall\n0 0\n200 0\n400 0\nendline\n"
+
+    def test_end_near_wall_not_on_node(self):
+        self.assertEqual(rules(self.WALL + "line border\n150 100\n150 8\nendline\n", self.SCALED), ["end-on-node"])
+
+    def test_end_on_node_passes(self):
+        self.assertEqual(rules(self.WALL + "line border\n200 100\n200 0\nendline\n", self.SCALED), [])
+
+    def test_far_from_wall_passes(self):
+        self.assertEqual(rules(self.WALL + "line floor-step\n150 100\n150 50\nendline\n", self.SCALED), [])
+
+    def test_no_scale_skipped(self):
+        self.assertEqual(rules(self.WALL + "line border\n150 100\n150 10\nendline\n"), [])
+
+    def test_scale(self):
+        scrap = th2lint.parse(self.SCALED + "endscrap\n")[0]
+        self.assertAlmostEqual(th2lint.scrap_scale(scrap), 100.0)
 
 
 class StyleInStepTest(unittest.TestCase):

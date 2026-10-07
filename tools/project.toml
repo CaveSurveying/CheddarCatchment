@@ -25,6 +25,36 @@ line_endings = "lf"                 # "lf" or "crlf", for .th2 files the tools w
 map_scale = 500
 licence = "CC BY-NC-SA 4.0"         # survey data and drawings; the tools are GPLv3
 
+[convert]
+# How tools/sketch2therion reads this cave's sketches (defaults, and what
+# each means: tools/sketch2therion/settings.py). Colours: black walls;
+# brown boulders, debris (closed loops, told apart by size), sand (dots),
+# mud (dashes); grey and other lines inside the passage are steps or
+# ledges, drawn as borders; blue water; green flowstone and pretties,
+# solid green lines gours. Colours are hints: the notation (ticks,
+# dashes) decides steps, pitches and overhangs.
+wall_colours = ["BLACK"]
+interior_borders = true
+brown = "floor"
+boulder_min = 0.3           # m: a closed loop this wide or wider is a boulder
+wall_jog_max = 0.4
+pool_min_area = 0.05
+pools_first = true
+climb_whole = true
+notation = true             # ticked lines: steps/pitches; dashed with ticks: overhangs
+elevation_data = false      # draw only what the plan sketch shows: nothing inferred from the elevation
+gours = true                # solid green lines
+water_to_walls = false      # pools keep their sketched outline
+area_marks = true           # groups of boulders/debris as areas, isolated boulders alone
+one_rock_edge = true
+smooth_lines = true
+end_on_node = true
+boulder_over_wall = 0.1     # m: a boulder at a wall just crosses it, without growing
+mark_max = 0.15             # m: smaller marks are dirt: ignored alone, sand or mud in groups
+area_min_width = 0.5        # m: areas need room for their symbols: thinner parts dropped
+area_min_area = 0.4         # m2
+green_loops = true          # a single green loop is a boulder or debris (the colour was wrong)
+
 [build]
 outputs = "LongwoodValleySink/Outputs"   # where the thconfigs write their sheets
 log = "output/therion.log"

@@ -43,6 +43,7 @@ class Project:
         self.drawing = data["drawing"]
         self.build = data["build"]
         self.sheets = data.get("sheets", [])
+        self.convert = data.get("convert", {})     # sketch2therion settings (settings.py)
 
     def path(self, rel):
         return os.path.join(self.root, rel)

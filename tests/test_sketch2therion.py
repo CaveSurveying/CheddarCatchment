@@ -50,10 +50,17 @@ class ConverterTest(unittest.TestCase):
         with open(path, "rb") as f:
             return f.read().decode("utf-8")
 
+    def upstream(self):
+        """The Swildons converter's settings, for comparing with its output."""
+        from tools.sketch2therion import settings
+        settings.use({})
+        self.addCleanup(settings.load)
+
     def compare(self, fixture, output):
         self.assertEqual(normalise(self.read(output)), normalise(self.read(os.path.join(FIXTURES, fixture))))
 
     def test_plan_same_as_upstream(self):
+        self.upstream()
         out = os.path.join(self.tmp, "GoSouth-plan.th2")
         self.run_cli("plan", self.sketch("GoSouth", "GoSouthP.xvi"), "--floor", self.sketch("GoSouth", "GoSouthE.xvi"),
                      "-o", out, "--survey", "GoSouth", "--name", "GoSouthS",
@@ -61,6 +68,7 @@ class ConverterTest(unittest.TestCase):
         self.compare("GoSouth-plan.th2", out)
 
     def test_plan_with_cross_section_same_as_upstream(self):
+        self.upstream()
         out = os.path.join(self.tmp, "Trident-plan.th2")
         self.run_cli("plan", self.sketch("Trident", "TridentP.xvi"), "-o", out, "--survey", "Trident",
                      "--name", "TridentS", "--author", "2026.06.13", "Andrew Atkinson",
@@ -68,6 +76,7 @@ class ConverterTest(unittest.TestCase):
         self.compare("Trident-plan.th2", out)
 
     def test_extended_same_as_upstream(self):
+        self.upstream()
         out = os.path.join(self.tmp, "GoSouth-ext.th2")
         self.run_cli("extended", self.sketch("GoSouth", "GoSouthE.xvi"), "-o", out, "--survey", "GoSouth",
                      "--name", "GoSouthS")
@@ -88,11 +97,13 @@ class ConverterTest(unittest.TestCase):
         self.assertIn("GoSouthMP@GoSouth to LongwoodValleySinkMP in LongwoodValleySink/LongwoodValleySink.th", printed)
 
     def test_output_rules_th2lint_checks(self):
-        # The first draft: every rule but wall-outline-none, which the
-        # later steps (roofs, details, smooth) and Phase 5 deal with.
+        # plan then smooth (which puts line ends on wall nodes): every rule
+        # but wall-outline-none, an open question (docs/lvs-phase5-log.md).
+        from tools.sketch2therion import smooth
         out = os.path.join(self.tmp, "t.th2")
         self.run_cli("plan", self.sketch("Trident", "TridentP.xvi"), "-o", out, "--survey", "Trident",
                      "--author", "2026.06.13", "Andrew Atkinson", "--copyright", "2026", "CC BY-NC-SA 4.0")
+        smooth.redo_file(out)
         findings = [f for f in th2lint.lint_text(self.read(out), "t.th2") if f.rule != "wall-outline-none"]
         self.assertEqual(findings, [])
 

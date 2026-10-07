@@ -314,10 +314,9 @@ For each survey X:
 3. **File it:** `python3 -m tools.sketch2therion place X` removes
    SexyTopo's empty `XP.th2`, inputs `X.plan.th2`, writes `map XMP` and
    adds `XMP@X` to `LongwoodValleySinkMP`.
-4. **Hand-finish** (editing the `.th2` text): passage names at the
-   `Style.md` label sizes, water and flow, `C2`/`P5`, `join`s to
-   neighbouring scraps, anything the conversion got wrong against the
-   sketch.
+4. **Hand-finish** (editing the `.th2` text): water and flow,
+   `C2`/`P5`, anything the conversion got wrong against the sketch.
+   Passage names and joins come later (stages 5b and 5c).
 5. **Check:** build `Plan_only.thcfg` with no `therion: error` or
    `invalid scrap outline` and no new "intersects itself"; `th2lint`
    clean; `review check` valid; opens in xTherion (headless, Xvfb)
@@ -336,6 +335,18 @@ For each survey X:
    check where possible) or one-off hand work.
 8. **Commit** one survey per commit, only after the user approves its
    zip; then the changed files go to SVN by hand (option C).
+
+### Later stages
+
+- **5b, passage names** (decided after the GoSouth test zip): added
+  once the drawings are reasonable, with the user.
+- **5c, joins to neighbouring surveys** (decided after the GoSouth test
+  zip): once every survey's drawing is reasonable on its own, join each
+  to its neighbours (`join`s, walls meeting without overlaps, outlines
+  not crossing, no passage drawn twice), in the order of the table
+  above, with a review zip of each junction.
+
+Review comments and their outcomes are in `docs/lvs-phase5-log.md`.
 
 ### Difficulties (where the user's eye is needed)
 

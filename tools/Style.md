@@ -73,7 +73,7 @@ plan-only config.
   steps or pitch edges, and are not in water.
 - Water flow (`point water-flow`) is inside the walls.
 - Climbs and pitches are labelled `C2`, `P5`: no units **[lint: climb-units]**,
-  placed outside the passage.
+  in whole metres, placed outside the passage.
 - Draught arrows (`point air-draught -orientation N`) go beside the
   passage, not across it, with a `point x y date -value YYYY.MM.DD` in
   the same scrap for when the draught was seen. **[lint: draught-date]**
@@ -105,10 +105,22 @@ plan-only config.
   - significant boundaries and low steps under 20 cm: `line border`;
   - 20 cm to 2 m and easily climbed: `line floor-step`;
   - harder climbs and anything over 2 m: `line pit`.
-- Which side of a `line floor-step` or `line pit` is the low side is to
-  be confirmed by a test render and then written here. LongwoodValleySink
-  uses `line pit` both ways round (45 plain, 17 with `-reverse on`).
-- Use `line overhang`, not `line ceiling-step`. **[lint: ceiling-step]**
+- The low side is the left of the line's direction (see above).
+  Existing LongwoodValleySink drawings use `line pit` both ways round
+  (45 plain, 17 with `-reverse on`): check old ones when they are next
+  edited.
+- Use `line overhang`, not `line ceiling-step`, for ceiling steps and
+  overhangs (dashed lines with a tick on each dash in the sketch).
+  **[lint: ceiling-step]**
+- Therion draws the ticks of `line floor-step` and `line pit`, and the
+  teeth of `line overhang`, on the **left** of the line's direction
+  (test render with the house symbols from `common_layout.th`,
+  2026-10-07): draw the line with the low (or
+  overhanging) side on its left. In the sketch these are lines with
+  ticks on the low side; really small steps are plain solid lines and
+  are drawn as `line border` (grey in rock, brown in mud).
+- A line that ends at a wall (or another line) ends exactly on one of
+  its nodes. **[lint: end-on-node]** (walls only so far)
 
 ## Symbols: areas
 
@@ -146,9 +158,45 @@ plan-only config.
 
 - Sketch both the plan and the extended elevation, and cross-sections
   where the passage shape matters.
-- Colours: black for walls; brown or grey for another level; blue for
-  water; green for formations; red or orange for notes, which the
-  converter ignores.
+- Colours (`[convert]` in `tools/project.toml` tells the converter):
+  - black: walls;
+  - brown: the floor: boulders and debris are closed loops, told apart
+    by size (boulders drawn singly or as an area); sand is dots, mud is
+    dashes, always as area fills; other brown lines are steps in mud;
+  - grey: ceiling steps, but also floor steps, pitches and channels;
+  - colours are hints and are sometimes wrong: the notation decides;
+  - blue: water (a closed outline is a pool, kept to its sketched
+    outline: not run along a wall it only touches);
+  - green: flowstone and pretties (area fills, and point symbols for the
+    different stals); solid green lines are gours (`line rimstone-dam`);
+  - red or orange: notes, which the converter ignores.
+- A step or pitch is shown by its symbol (the ticks), not its colour: it
+  can be any colour (brown for a step in mud).
+- Short jogs in a wall where the sketcher's strokes did not meet are not
+  features: the wall is drawn through them.
+- Draw only what the plan sketch shows: no steps, pitches, labels or
+  slope arrows inferred from the survey data or the elevation sketch.
+- Little marks (dots, tiny loops, short dashes) come from sketching in a
+  dirty place: ignore one on its own; many together are sand (dots) or
+  mud (dashes).
+- Closed loops are boulders (about 0.3 m across or more) or debris
+  (smaller), whatever their colour: a green loop on its own is a boulder,
+  only rings inside one another are a formation.
+- An area needs room to draw its symbols: leave out thin parts (under
+  about 0.5 m) and small areas; this matters most for boulders and debris.
+- Gours (`line rimstone-dam`) are smooth, regular arcs, not every wobble
+  of the hand sketch.
+- Where there are several boulders or much debris, use an area
+  (`area blocks` or `area debris`) rather than drawing each one as well;
+  an area stops at a trench or step and does not cross to the other
+  side. A single boulder is a `line rock-border` (straight sides, not
+  smoothed) with its `line rock-edge` after it in the file, one edge line
+  where its pieces share a point.
+- Lines other than boulders are smooth: points only where the line
+  really bends (a few per metre at most), with splines, not every point
+  of the sketch.
+- A boulder's edge lines meet at a ridge point and end on its corners;
+  more than one may be needed, but as few as possible.
 - SexyTopo is set up to export in the house style (`X.plan.th2`, `XSP1`,
   `map XMP`).
 
