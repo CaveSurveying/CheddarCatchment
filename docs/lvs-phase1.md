@@ -39,7 +39,8 @@ and allow `archive.ubuntu.com`, `security.ubuntu.com` and `pypi.org` /
   folders). Their messages will mention caves that are not in the git
   copy; that is expected.
 - **Properties:** `svn:global-ignores` on `LongwoodValleySink/`
-  (`Triasic`, `Triasic2`) becomes `LongwoodValleySink/.gitignore`;
+  (`Triasic`, `Triasic2`): left out of git (decided at Phase 3; the
+  folders were renamed to `Triassic`, `Triassic2`, so nothing matches);
   `svn:mime-type application/octet-stream` on the three PocketTopo
   `.top` files (binary, mark `-diff` in `.gitattributes`);
   `svn:executable` on 224 of the 348 files (data files, not scripts):
@@ -137,7 +138,7 @@ new plan-only file is `Plan_only.thcfg`, as agreed.
 3. **Licence:** CC BY-NC-SA **4.0** for survey data and drawings;
    GPLv3 for the tools.
 4. **SVN is the master copy for now:** keep a raw `git svn` mirror and
-   add `tools/svn2git/sync.sh` (plan, "Incremental sync").
+   add `tools/svn2git/sync.py` (plan, "Incremental sync").
 5. **New plan scraps use the house style** (`X.plan.th2`, `XSP1`,
    `map XMP` added to `LongwoodValleySinkMP`). SexyTopo has been changed
    to export in the house style; the r501 files were exported before

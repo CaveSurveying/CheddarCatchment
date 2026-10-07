@@ -4,9 +4,9 @@ Status: agreed 2026-10-06. **Phase 1 done** (findings and check point
 answers in `docs/lvs-phase1.md`, survey table in `docs/lvs-inventory.md`).
 **Phase 2 done** (`tools/Style.md` revised). **Phase 4 started**:
 `tools/th2lint.py` with its baseline, and
-`LongwoodValleySink/Plan_only.thcfg`. Phase 3 (migration) waits on the
-author names and emails and on `git-svn` / `git-filter-repo` being
-installable; `sketch2therion` and drawing wait on `shapely` and Therion. The plan was revised the same day after
+`LongwoodValleySink/Plan_only.thcfg`. **Phase 3 done** (2026-10-07):
+SVN history to r501 merged, `verify` clean, authors with placeholder
+emails; `sketch2therion` and drawing wait on `shapely` and Therion. The plan was revised the same day after
 review against the SVN repository (revision 501), then for the
 `Plan_only.thcfg` trial scope. Nothing below has been
 done yet apart from committing this plan and the starting `tools/Style.md`.
@@ -182,13 +182,16 @@ Phase 5 keeps revising it as drawing teaches us more.
     --authors-file=tools/svn2git/authors.txt` (flat layout), plus any
     paths added at the check point (proposed: the root `Symbols.th`, from
     which `Symbols/Symbols.th` was copied at r416). Phase 1 found no
-    restricted (403) paths. Expect 56 revisions.
+    restricted (403) paths. Expect 56 revisions (60 with the root
+    `Symbols.th`; that is what the migration gave).
 11. If SVN stays the master copy, keep this raw `git svn` clone as a
     mirror and do step 12 on a copy, because `git filter-repo` removes
     the metadata an incremental sync needs.
 12. `git filter-repo --message-callback`: turn each `git-svn-id:` line
     into `SVN-Revision:` / `SVN-URL:` trailers; drop empty commits.
-13. `svn:ignore` to `.gitignore`, plus build outputs (`output/`, `proj/`,
+13. `svn:ignore` to `.gitignore` (the only one, `svn:global-ignores`
+    `Triasic` / `Triasic2`, is left out: those folders were renamed to
+    `Triassic` / `Triassic2` long ago), plus build outputs (`output/`, `proj/`,
     `*.3d`, `*.lox`, and `LongwoodValleySink/Outputs/*`, keeping the
     folder with a `.gitkeep` because the thconfigs write into it) and
     `__pycache__/`.
@@ -239,7 +242,7 @@ Phase 5 keeps revising it as drawing teaches us more.
 | New path | From | Change |
 |---|---|---|
 | `tools/project.toml` | new | Per-cave config: master `.th`, thconfig (`Plan_only.thcfg`), plan/elevation maps, file prefixes, sheet scale, sheets for `sections`. LongwoodValleySink first. |
-| `tools/svn2git/` | new | `svnhttp.py`, `deps.py`, `inventory.py`, `authors.txt`, `verify.py`, and `sync.sh` if SVN stays master. |
+| `tools/svn2git/` | new | `svnhttp.py`, `deps.py`, `inventory.py`, `authors.txt`, `verify.py`, `migrate.sh`, and `sync.py` (Python, so it shares the rewrite and is tested) as SVN stays master. |
 | `tools/sketch2therion/` | Swildons | Names read from `project.toml`; Swildons output unchanged (regression test). |
 | `tools/layout.thcfg`, `tools/layout.th` | Swildons | Renamed from `layout.thconfig` to the `.thcfg` convention; point at the LongwoodValleySink master survey. |
 | `tools/new-trip-template.th` | Swildons | LongwoodValleySink naming (`…SP1`, `…SE315_1`) and equate example. |
@@ -290,7 +293,7 @@ For each confirmed survey:
   filter accepts `LongwoodValleySink/a.th`, `Symbols/Lines/l_u_rail.th`
   and `common_layout.th`, and rejects `LongwoodValleySinkOld/`,
   `Long_Vall_Sink/`, `Other/Symbols/` and `common_layout.th.bak`;
-  `svn:ignore` becomes the matching `.gitignore` lines; `verify` reports
+  build outputs are ignored and no tracked file is; `verify` reports
   equal and differing trees.
 - **svnhttp:** a `PROPFIND` response gives paths (URL-decoded), folder
   or file, size and SVN properties; a `log-report` gives revision,
@@ -334,7 +337,7 @@ For each confirmed survey:
   `tools/Style.md` has a matching `th2lint` check, and the reverse.
 - **make_index:** statistics parsed from a sample `therion.log`; a
   missing PDF is skipped without failing.
-- **sync.sh** (only if SVN stays master): a second run with no new SVN
+- **sync.py** (SVN stays master; against a local `svnadmin` repository): a second run with no new SVN
   revisions brings nothing across; a new revision arrives with its
   trailers.
 
@@ -347,7 +350,7 @@ relative paths.
 ## Incremental sync
 
 If SVN stays the master copy (decided at the Phase 1 check point), add
-`tools/svn2git/sync.sh`: fetch new revisions into the raw `git svn`
+`tools/svn2git/sync.py`: fetch new revisions into the raw `git svn`
 mirror (Phase 3 step 11), apply the same trailer rewrite to the new
 commits only, and bring them onto the git branch. If git becomes the
 master, SVN is frozen and no sync is needed.
