@@ -1,1 +1,11 @@
 __pycache__/
+
+# Therion build outputs. Outputs/ folders are kept (the thconfigs write
+# into them), their contents are not.
+output/
+proj/
+*.3d
+*.lox
+*.log
+**/Outputs/*
+!**/Outputs/.gitkeep
