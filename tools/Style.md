@@ -61,6 +61,8 @@ plan-only config.
   converter, list each scrap's stations under `[scraps]` in
   `tools/project.toml` (GoSouth: 15 to 17 drops into the passage beside;
   19 comes close to 10 and 11 but does not join them).
+- One wall that runs from one scrap into the next is two walls that
+  meet exactly: the last point of one is the first of the other.
 - Where a passage was not sketched, walls may be drawn from the splays,
   as `line wall -subtype presumed`. Never guess a wall that neither the
   sketch nor the splays show.
@@ -137,6 +139,9 @@ plan-only config.
 - Water against an outer wall is best drawn with its border outside the
   wall.
 - Areas can overlap to show a transition, or pebbles in water.
+- An area's border has few control points and is smooth (a spline):
+  where it meets a wall, run it out over the wall and let the wall clip
+  it, rather than following the wall point by point.
 - Individually drawn rocks can be above or below the water; this needs
   careful ordering and use of clipping.
 

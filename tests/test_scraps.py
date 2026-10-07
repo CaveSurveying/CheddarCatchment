@@ -70,6 +70,40 @@ class Assign(unittest.TestCase):
         self.assertEqual(len(out), 1)
 
 
+class MeetEnds(unittest.TestCase):
+    TEXT = """scrap A -projection plan
+line wall
+  0.00 0.00
+  100.00 0.00
+endline
+line wall -subtype invisible -close on
+  0 0
+  1 1
+endline
+endscrap
+scrap B -projection plan
+line wall
+  110.00 4.00
+  200.00 0.00 210.00 0.00 300.00 0.00
+endline
+line wall
+  0.00 50.00
+  500.00 50.00
+endline
+endscrap
+"""
+
+    def test_walls_in_two_scraps_meet_at_the_midpoint(self):
+        out = scraps.meet_ends(self.TEXT, 20)
+        self.assertEqual(out.count("105.00 2.00"), 2)
+        self.assertIn("  0.00 50.00", out)          # too far from any other scrap's wall end
+        self.assertIn("  0.00 0.00", out)
+
+    def test_walls_in_one_scrap_left_alone(self):
+        text = self.TEXT.replace("endscrap\nscrap B -projection plan\n", "")
+        self.assertEqual(scraps.meet_ends(text, 20), text)
+
+
 class GoSouth(unittest.TestCase):
     def test_config(self):
         self.assertEqual(project.load().scraps.get("GoSouth"), ["1-16", "17-29"])
@@ -89,7 +123,42 @@ class GoSouth(unittest.TestCase):
         self.assertTrue({"9", "10", "11", "12", "15", "16"} <= st["GoSouthSP1"])
         self.assertTrue({"17", "18", "19", "20", "21"} <= st["GoSouthSP2"])
         self.assertFalse(st["GoSouthSP1"] & st["GoSouthSP2"])
+        # the north wall by 21 is one wall across the two scraps: its pieces meet
+        def ends(body):
+            out = []
+            for m in re.finditer(r"(?ms)^line wall(?! -subtype)[^\n]*\n(.*?)^endline", body):
+                rows = [r.split() for r in m.group(1).strip().splitlines() if re.match(r"\s*-?\d", r)]
+                out += [tuple(rows[0][-2:]), tuple(rows[-1][-2:])]
+            return set(out)
+        self.assertTrue(ends(bodies["GoSouthSP1"]) & ends(bodies["GoSouthSP2"]))
 
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Areas(unittest.TestCase):
+    """Areas: few nodes, splines, run out over the walls (Style.md)."""
+
+    def tearDown(self):
+        from tools.sketch2therion import settings
+        settings.load()
+
+    def test_area_over_the_wall_as_a_spline(self):
+        from shapely.geometry import box
+        from tools.sketch2therion import marks, settings
+        settings.load()
+        passage = box(0, 0, 6, 2)
+        loops = []
+        for k in range(8):                    # boulders along the wall at y = 0
+            x = 0.5 + 0.6 * k
+            loops.append(("BROWN", [(x, 0.05), (x + 0.4, 0.05), (x + 0.4, 0.45), (x, 0.45), (x, 0.05)]))
+        o = marks.th2(loops, passage, lambda p: (100 * p[0], 100 * p[1]), "XSP1", ["BLACK"], 0.3)
+        text = "\n".join(o)
+        m = re.search(r"(?ms)^line border -subtype invisible -id (\S+) -close on\n(.*?)^endline", text)
+        self.assertIsNotNone(m, text)
+        rows = m.group(2).strip().splitlines()
+        self.assertLessEqual(len(rows), 10)
+        self.assertTrue(all(len(r.split()) == 6 for r in rows[1:]))        # Bezier segments
+        ys = [float(r.split()[-1]) for r in rows]
+        self.assertLess(min(ys), 0)                                         # over the wall

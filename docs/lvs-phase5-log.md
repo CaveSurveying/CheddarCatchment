@@ -101,3 +101,22 @@ Still open: the two strokes of the narrow strip just right of the 19 to
 (`-outline in`), a third passage, or the wall between the passages drawn
 twice? The two scraps' fills overlap a little by 16 and 21, as the
 passages do.
+
+## GoSouth draft 6: the user's own edits (2026-10-07)
+
+The user edited `GoSouth.plan.th2` by hand in xTherion between stations
+10 and 21. Their file is now the working drawing; the converter's
+draft 7 (below) is only used to check the converter learnt from it.
+
+| # | Comment or edit | Kind | Outcome |
+|---|---|---|---|
+| 42 | Near 21 the north wall had been drawn as one wall; the conversion left it as two pieces, one per scrap, apart. Joined by hand. | Converter (`scraps.meet_ends`) | It was two sketch strokes nearly meeting, one in each scrap. With hand-chosen scraps, wall ends in different scraps within 0.3 m now meet at their midpoint, after `tidy` (which had moved them apart again). Rule in `Style.md`. |
+| 43 | 18 to 19 fixed by hand: the narrow strip is a pillar, coming to a point at 17. | Hand work | Answers the open question from draft 6: no `-outline none` walls left. |
+| 44 | The wall by 10 as it should be: the passage 9 to 11 closed off, not running down to 19. | Hand work | The sketch draws the wall from 11 on down to 19; only someone who knows the cave can say it stops. |
+| 45 | Areas can be done with fewer control points and splines. (The user's areas: 5 or 6 spline nodes, run out over the walls, against 13 to 17 straight points along them.) | Converter (`marks.py`); `Style.md` | `area_over_walls = 0.3` (areas run over the walls, which clip them) and `area_splines = 0.15` (notches closed up, simplified, drawn as a closed spline): 6 to 10 nodes. Pools keep their sketched outline. |
+
+Found while checking the user's file (to ask): GoSouthSP1's outline
+crosses itself between 15 and 16, where the line 15 to 16 is now a
+`line wall` (it was a `line border` in draft 6), so two walls fan out
+from one point near 15; and three borders end 1 to 2 cm from a wall
+without being on its node (`end-on-node`).
