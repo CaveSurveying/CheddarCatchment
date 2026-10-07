@@ -92,6 +92,8 @@ class PointerDocsTest(unittest.TestCase):
                 path = path.rstrip("/")
                 if re.search(r"(^|/)X(/|$)", path) or "<" in path:
                     continue        # placeholders such as LongwoodValleySink/X/X.th
+                if re.search(r"(^|/)(Outputs|output)/.", path):
+                    continue        # build outputs: not in a clean checkout
                 self.assertTrue(os.path.exists(os.path.join(REPO, path)), f"{doc}: {path}")
 
     def test_skill_does_not_copy_style(self):

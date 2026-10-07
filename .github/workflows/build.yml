@@ -45,6 +45,11 @@ jobs:
 
       - uses: actions/checkout@v5
 
+      # The checkout belongs to the runner's user; git in the container
+      # (root) refuses it as "dubious ownership" unless told it is safe.
+      - name: Trust the checkout
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - name: Install Python libraries
         run: /opt/venv/bin/pip install -q -r tools/requirements.txt
 
