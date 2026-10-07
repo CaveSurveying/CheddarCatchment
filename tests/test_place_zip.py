@@ -140,7 +140,6 @@ class ZipTest(Fixture):
         out = os.path.join(self.root, "r.zip")
         names = reviewzip.write("GoSouth", out, extra, self.p)
         self.assertEqual(names, ["LongwoodValleySink/GoSouth/GoSouth.plan.th2", "LongwoodValleySink/GoSouth/GoSouth.th",
-                                 "LongwoodValleySink/GoSouth/Notes/GoSouthE.xvi",
                                  "LongwoodValleySink/GoSouth/Notes/GoSouthP.xvi",
                                  "LongwoodValleySink/LongwoodValleySink.th", "review/NOTES.md"])
         with zipfile.ZipFile(out) as z:

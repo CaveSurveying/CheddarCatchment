@@ -173,7 +173,14 @@ plan-only config.
 - A step or pitch is shown by its symbol (the ticks), not its colour: it
   can be any colour (brown for a step in mud).
 - Short jogs in a wall where the sketcher's strokes did not meet are not
-  features: the wall is drawn through them.
+  features: the wall is drawn through them. The same goes for a wall
+  stroke started again a little beside the last (the outer one is the
+  wall) and for small gaps in a border.
+- A stroke drawn on as the wall is wall all along, even where a border
+  comes off it close by. Splays ending on a stroke show it is a wall.
+- Pitches and floor steps are often drawn alike: a P near the line means
+  a pitch, a C one depending on its height. The converter cannot read
+  these notes and draws a floor step: check each one.
 - Draw only what the plan sketch shows: no steps, pitches, labels or
   slope arrows inferred from the survey data or the elevation sketch.
 - Little marks (dots, tiny loops, short dashes) come from sketching in a

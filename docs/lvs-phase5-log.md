@@ -66,3 +66,20 @@ not changed and no other drawing was touched.
 | 30 | The two overhangs are one, joined by a curve drawn as a dash and a tick (and a stray dash). | Overhang pieces whose ends are within 1.2 m are joined through the strokes between them: one overhang round the U at stations 1 to 3. |
 | 31 | Areas only work with room to draw the objects; thin parts are pointless. | Parts narrower than 0.5 m (0.3 m for sand and mud) are dropped, and areas under 0.4 m². |
 | 32 | Is `common_layout.th` (and the symbols it calls) used? | Yes: `Plan_only.thcfg` inputs it and its layouts copy `common`, which copies `symbols` (BCA areas, overhang, pit, floor step). The tick-side test render had not used it; redone with it: ticks still on the left. |
+
+## GoSouth draft 4 review (2026-10-07) and draft 5
+
+| # | Comment | Outcome in draft 5 |
+|---|---|---|
+| 33 | Pitches and floor steps are often drawn alike; a C# or P# near one is the only indication (P always a pitch, C depends on the height). A human will check; take a guess. Then: no elevations, just plans for now. | Plans only: the elevation sketch is not used (`--floor` ignored). No sketch has text labels (the C and P are hand-drawn strokes the converter cannot read), so a ticked line is drawn as a floor step: check each against its C or P note and change it to `line pit` where needed. GoSouth has four, near 26 to 27. |
+| 34 | Get the wall sorted: it is the most important. Near station 5 is a good interpretation. | Station 5 unchanged. Outer walls the passage fill had bridged (station 7, right) are found by tracing out from the stroke (nothing between it and the fill's edge, a leg on the other side) or by splays ending on it, and the fill is cut back to them: they are walls. |
+| 35 | A border has small gaps where the sketcher did not quite continue the line (as with walls). | Border pieces whose ends are within 0.3 m and carry on (turning less than 60°) are joined. |
+| 36 | A splay through the interpreted wall shows the sketched line was right. | Splays ending on a stroke count as evidence that it is a wall (see 34). |
+| 37 | Near 21 the wall should be continuous, with the border coming off it. | A stroke drawn mostly along the passage's edge is wall all along, even where the fill takes in a stretch of it: strokes 182, 192 and 194 are one wall from 18 round to the top of the alcove; stroke 148 is the border off it. The outline builder (`tidy`) no longer routes the outline to the end of such a stretch, nor makes it a border. |
+| 38 | Near 21 there are still steps in the wall. | Two causes, both fixed. Where a wall is drawn twice a little apart (strokes 183 and 193), the outline now goes on along the outer one instead of cutting in to the inner and jumping out at its end. Joining walls refitted the whole wall each time, so the error added up (0.25 m off by the fifth join): now only a metre either side of a join is refitted (`join_local`), and every refit is checked to stay within 0.1 m of the sketch. A Bézier segment whose control points fall behind its start (the zigzag where 193 and 195 overlap near 22) is drawn straight. |
+| — | (found while checking) `traced_outer` measured the fill's width from 0.3 m out, so the cut-back left a 0.15 m strip. | Measured from the stroke. |
+
+Still open: the wall from 18 to the alcove is partly inside the passage
+fill, so it is written `-outline none` (one new `wall-outline-none`
+finding, the open question in rows 22 and 29). The junction with
+CrystalPitch stays a border until the joins (stage 5c).
