@@ -1,0 +1,71 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -1889.76 -3228.35 6141.73 1102.36
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 1} "Notes/CrystalPitch.ee.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap crystalpitch-ee -projection extended
+
+point 235.62424 -69.53142 station -name 2
+
+point 623.9623 -8.548738 station -name 3
+
+point 799.46716 -63.864647 station -name 4
+
+point 1156.8914 -70.1934 station -name 5
+
+point 881.55707 105.79171 station -name 6
+
+point 1280.1849 -61.554188 station -name 7
+
+point 1352.5747 -56.41207 station -name 8
+
+point 1705.7539 -40.961777 station -name 9
+
+point 1818.6473 -96.16897 station -name 10
+
+point 2015.0957 -163.97638 station -name 11
+
+point 380.97293 -290.40723 station -name 12
+
+point 513.1173 -617.9864 station -name 13
+
+point 668.47125 -814.2585 station -name 14
+
+point 830.18207 -1090.7263 station -name 15
+
+point 1081.7988 -1290.9746 station -name 16
+
+point 1259.104 -1357.9342 station -name 17
+
+point 1439.2697 -1320.7482 station -name 18
+
+point 1587.4387 -1248.8354 station -name 19
+
+point 1774.097 -1136.8188 station -name 20
+
+point 1919.5133 -1558.6799 station -name 21
+
+point 2021.3689 -1611.7578 station -name 22
+
+point 2329.2898 -1716.6671 station -name 23
+
+point 2520.5813 -1766.661 station -name 24
+
+point 2847.073 -1908.3365 station -name 25
+
+point 2985.795 -2011.1647 station -name 26
+
+point 3070.943 -2034.916 station -name 27
+
+point 3407.8167 -2047.6149 station -name 28
+
+point 3516.3079 -2095.093 station -name 29
+
+point 3736.3735 -2147.162 station -name 30
+
+point 3804.8662 -2156.556 station -name 31
+
+point 4490.8145 -2323.8877 station -name 32
+
+endscrap

@@ -1,0 +1,43 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -5275.59 -4094.49 1968.50 6062.99
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 81} "Cyclops.ee.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap cyclops-ee -projection extended
+
+point -209.79907 -117.73634 station -name 82
+
+point -546.7214 89.468216 station -name 83
+
+point -243.36128 148.66219 station -name 84
+
+point 357.19925 252.82979 station -name 85
+
+point -637.6027 213.22658 station -name 86
+
+point -779.6681 155.46336 station -name 87
+
+point -1007.18207 109.4214 station -name 88
+
+point -1181.3496 83.83633 station -name 89
+
+point -1417.2859 50.58589 station -name 90
+
+point -1534.2483 32.368034 station -name 91
+
+point -1716.3903 -5.110479 station -name 92
+
+point -1856.2651 -48.16667 station -name 93
+
+point -1981.7214 -71.80698 station -name 94
+
+point -2211.2344 -88.30182 station -name 95
+
+point -2441.2793 -120.662 station -name 96
+
+point -2556.2375 -135.85634 station -name 97
+
+point -2688.394 -182.53377 station -name 98
+
+endscrap

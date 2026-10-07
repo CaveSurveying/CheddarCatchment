@@ -1,0 +1,4 @@
+encoding  utf-8
+
+scrap TickleWestS0_1 -projection [elevation 0] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+endscrap

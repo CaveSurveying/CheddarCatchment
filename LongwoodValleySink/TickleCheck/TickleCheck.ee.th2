@@ -1,0 +1,35 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -1181.10 -1653.54 1732.28 866.14
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 2} "TickleCheck.ee.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap ticklecheck-ee -projection extended
+
+point 659.3242 -113.29369 station -name 8
+
+point 156.5059 27.465586 station -name 3
+
+point 734.01483 -637.8768 station -name 11
+
+point 645.6199 -294.11676 station -name 9
+
+point 545.73517 -257.06485 station -name 7
+
+point 923.2192 -849.7427 station -name 14
+
+point 0.0 0.0 station -name 2
+
+point 837.77966 -736.1649 station -name 13
+
+point 432.7286 -114.640236 station -name 6
+
+point 792.0797 -687.37463 station -name 12
+
+point 705.9223 -498.3942 station -name 10
+
+point 314.12143 -1.5414934 station -name 4
+
+point 357.49826 11.476508 station -name 5
+
+endscrap

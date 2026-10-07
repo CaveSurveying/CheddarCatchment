@@ -1,0 +1,29 @@
+encoding  utf-8
+source Triassic.th
+
+#Surveys to output
+#-----------------
+
+#export map -proj plan -layout local -o Outputs/TriassicP.pdf
+
+#export map -proj [elevation 0] -layout local -o Outputs/TriassicE0.pdf
+
+#export map -proj [elevation 90] -layout local -o Outputs/TriassicE90.pdf
+
+
+#export map -proj extended -layout local -o Outputs/TriassicEe.pdf
+
+#export model -fmt survex -o Outputs/Triassicth.3d
+#Survex file showing centre line only
+
+#export model -o Outputs/Triassic.lox
+#3d therion model to be viewed in the therion viewer
+
+layout local
+copy common
+debug off
+map-header 0 0 off
+#symbol-hide group cave-centreline
+endlayout
+
+input ../../common_layout.th

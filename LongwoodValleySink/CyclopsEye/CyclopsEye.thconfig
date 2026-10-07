@@ -1,0 +1,17 @@
+# Created with SexyTopo 1.8.4 on 2025-07-30
+
+encoding utf-8
+
+layout local
+  debug off
+  # map-header 0 0 off
+  # symbol-hide group cave-centreline
+endlayout
+
+source "CyclopsEye.th"
+
+export model -fmt survex -o "CyclopsEye-th.3d"
+
+export map -proj plan -layout local -o "CyclopsEye-plan.pdf"
+
+export map -proj extended -layout local -o "CyclopsEye-ee.pdf"

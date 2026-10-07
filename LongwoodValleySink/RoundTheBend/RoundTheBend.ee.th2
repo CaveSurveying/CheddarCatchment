@@ -1,0 +1,51 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -1889.76 -2440.94 5590.55 3543.31
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 121} "Notes/RoundTheBend.ee.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap roundthebend-ee -projection extended
+
+point 170.72313 -73.914 station -name 122
+
+point 397.09827 -70.28922 station -name 123
+
+point 557.58405 -60.882523 station -name 124
+
+point 802.68 138.75958 station -name 125
+
+point 1000.3848 176.1384 station -name 126
+
+point 1331.309 109.93963 station -name 127
+
+point 1112.7819 666.25024 station -name 128
+
+point 1360.6139 743.4578 station -name 129
+
+point 1526.1588 720.8125 station -name 130
+
+point 1650.782 838.9771 station -name 131
+
+point 2002.5829 893.0477 station -name 132
+
+point 2297.649 796.37573 station -name 133
+
+point 1637.7466 587.7297 station -name 134
+
+point 1795.3342 545.4934 station -name 135
+
+point 1992.4266 439.51282 station -name 136
+
+point 2272.8225 179.32184 station -name 137
+
+point 2377.6724 43.34586 station -name 138
+
+point 2733.3845 -221.65047 station -name 139
+
+point 3268.3071 -641.94867 station -name 140
+
+point 3493.731 -780.9403 station -name 141
+
+point 3648.6377 -919.324 station -name 142
+
+endscrap

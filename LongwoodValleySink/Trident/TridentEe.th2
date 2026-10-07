@@ -1,0 +1,105 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -1889.76 -1023.62 10393.70 1811.02
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 1} "Notes/TridentE.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap TridentES1 -projection extended
+
+point 163.65277 -74.57286 station -name 2
+
+point 284.1276 -82.08261 station -name 3
+
+point 129.4471 -176.47563 station -name 4
+
+point 463.43646 -38.341618 station -name 5
+
+point 733.16034 2.3907986 station -name 6
+
+point 923.19366 40.443386 station -name 7
+
+point 1105.8613 75.82641 station -name 8
+
+point 1392.6249 80.26232 station -name 9
+
+point 1596.9875 167.30167 station -name 10
+
+point 1440.1636 98.02606 station -name 11
+
+point 1854.0531 217.06157 station -name 12
+
+point 1820.6289 165.52199 station -name 13
+
+point 2109.017 147.93399 station -name 14
+
+point 2430.5576 350.0532 station -name 15
+
+point 2745.8442 285.4511 station -name 16
+
+point 2067.8967 358.353 station -name 17
+
+point 2990.1843 337.2191 station -name 18
+
+point 3368.816 346.28397 station -name 19
+
+point 3769.0305 329.23734 station -name 20
+
+point 4028.4521 342.56372 station -name 21
+
+point 3941.0828 222.85745 station -name 22
+
+point 4293.5986 323.92523 station -name 23
+
+point 4683.42 343.5505 station -name 24
+
+point 4986.7188 389.9284 station -name 25
+
+point 5256.64 401.20932 station -name 26
+
+point 5460.9014 403.84015 station -name 27
+
+point 5795.532 370.91428 station -name 28
+
+point 6178.7607 418.25565 station -name 29
+
+point 6592.374 381.7317 station -name 30
+
+point 7023.597 423.91125 station -name 31
+
+point 7307.1147 499.5688 station -name 32
+
+point 7476.8525 561.8792 station -name 33
+
+point 7648.9053 570.2655 station -name 34
+
+point 7771.457 701.70874 station -name 35
+
+point 8006.5 864.1179 station -name 37
+
+point 7748.219 559.50555 station -name 36
+
+point 8034.687 508.51505 station -name 38
+
+point 8311.475 472.804 station -name 39
+
+point 8473.632 497.42474 station -name 40
+
+point 8635.953 608.97314 station -name 41
+
+point 8587.25 496.5097 station -name 42
+
+point 8741.816 571.28973 station -name 43
+
+endscrap
+
+scrap TridentES2 -projection extended
+
+endscrap
+
+scrap TridentES3 -projection extended
+
+endscrap
+
+scrap TridentES4 -projection extended
+
+endscrap

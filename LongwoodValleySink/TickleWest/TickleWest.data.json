@@ -1,0 +1,3376 @@
+{
+  "sexyTopoVersionName": "1.8.3",
+  "sexyTopoVersionCode": 82,
+  "name": "TickleWest",
+  "stations": [
+    {
+      "name": "1",
+      "eeDirection": "left",
+      "comment": "",
+      "legs": [
+        {
+          "distance": 4.505000114440918,
+          "azimuth": 204.3511962890625,
+          "inclination": -12.6617431640625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 0,
+          "promotedFrom": []
+        },
+        {
+          "distance": 4.501999855041504,
+          "azimuth": 204.30450439453125,
+          "inclination": -12.667236328125,
+          "destination": "2",
+          "wasShotBackwards": false,
+          "index": 1,
+          "promotedFrom": []
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "eeDirection": "left",
+      "comment": "nv drilled hole from previous survey",
+      "legs": [
+        {
+          "distance": 2.0380001068115234,
+          "azimuth": 107.95166015625,
+          "inclination": -72.1636962890625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 2,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.9129999876022339,
+          "azimuth": 245.2423095703125,
+          "inclination": -65.0390625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 3,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.0010000467300415,
+          "azimuth": 289.215087890625,
+          "inclination": -7.7069091796875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 4,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.30799999833106995,
+          "azimuth": 56.502685546875,
+          "inclination": -25.1422119140625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 5,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9710000157356262,
+          "azimuth": 270.19775390625,
+          "inclination": -6.317138671875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 6,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.9889999628067017,
+          "azimuth": 339.554443359375,
+          "inclination": 44.9560546875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 7,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.0373332500457764,
+          "azimuth": 348.2244873046875,
+          "inclination": 10.4718017578125,
+          "destination": "3",
+          "wasShotBackwards": true,
+          "index": 8,
+          "promotedFrom": [
+            {
+              "distance": 2.0350000858306885,
+              "azimuth": 168.1951904296875,
+              "inclination": -10.48095703125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.0380001068115234,
+              "azimuth": 168.2391357421875,
+              "inclination": -10.4095458984375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.0390000343322754,
+              "azimuth": 168.2391357421875,
+              "inclination": -10.52490234375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 1.4880000352859497,
+          "azimuth": 278.3111572265625,
+          "inclination": 63.709716796875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 9,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.3049999475479126,
+          "azimuth": 155.467529296875,
+          "inclination": 84.7540283203125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 10,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9850000143051147,
+          "azimuth": 124.4586181640625,
+          "inclination": 62.841796875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 11,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.7929999828338623,
+          "azimuth": 117.1966552734375,
+          "inclination": -27.9217529296875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 12,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.35499998927116394,
+          "azimuth": 125.430908203125,
+          "inclination": -70.3070068359375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 13,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6230000257492065,
+          "azimuth": 262.1942138671875,
+          "inclination": 3.7628173828125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 14,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9509999752044678,
+          "azimuth": 38.29833984375,
+          "inclination": 29.366455078125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 15,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.2920000553131104,
+          "azimuth": 36.1065673828125,
+          "inclination": 67.47802734375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 16,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.5866668224334717,
+          "azimuth": 42.5665283203125,
+          "inclination": -5.1507568359375,
+          "destination": "4",
+          "wasShotBackwards": false,
+          "index": 17,
+          "promotedFrom": [
+            {
+              "distance": 2.5840001106262207,
+              "azimuth": 42.593994140625,
+              "inclination": -5.1800537109375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.5999999046325684,
+              "azimuth": 42.5445556640625,
+              "inclination": -5.1690673828125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.5759999752044678,
+              "azimuth": 42.56103515625,
+              "inclination": -5.1031494140625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 1.569000005722046,
+          "azimuth": 111.1431884765625,
+          "inclination": 75.465087890625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 18,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.4119999408721924,
+          "azimuth": 138.8067626953125,
+          "inclination": -69.8126220703125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 19,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.4119999408721924,
+          "azimuth": 44.2584228515625,
+          "inclination": -77.1075439453125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 20,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.3889999985694885,
+          "azimuth": 153.4515380859375,
+          "inclination": -3.460693359375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 21,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.859000027179718,
+          "azimuth": 217.452392578125,
+          "inclination": 44.9835205078125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 22,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8140000104904175,
+          "azimuth": 209.3115234375,
+          "inclination": -39.737548828125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 23,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.8736666440963745,
+          "azimuth": 87.4090576171875,
+          "inclination": -59.1302490234375,
+          "destination": "5",
+          "wasShotBackwards": false,
+          "index": 24,
+          "promotedFrom": [
+            {
+              "distance": 1.8739999532699585,
+              "azimuth": 87.4676513671875,
+              "inclination": -59.0570068359375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.8739999532699585,
+              "azimuth": 87.374267578125,
+              "inclination": -59.1998291015625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.8730000257492065,
+              "azimuth": 87.38525390625,
+              "inclination": -59.1339111328125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.19699999690055847,
+          "azimuth": 172.5238037109375,
+          "inclination": 17.5341796875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 25,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5889999866485596,
+          "azimuth": 1.8621826171875,
+          "inclination": -0.406494140625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 26,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.32100000977516174,
+          "azimuth": 72.7734375,
+          "inclination": 3.9495849609375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 27,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.39500001072883606,
+          "azimuth": 271.9390869140625,
+          "inclination": -6.83349609375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 28,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8190000057220459,
+          "azimuth": 311.165771484375,
+          "inclination": 2.6861572265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 29,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.5290000438690186,
+          "azimuth": 310.726318359375,
+          "inclination": 82.3919677734375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 30,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.429333448410034,
+          "azimuth": 81.9305419921875,
+          "inclination": 34.8284912109375,
+          "destination": "6",
+          "wasShotBackwards": false,
+          "index": 31,
+          "promotedFrom": [
+            {
+              "distance": 2.4230000972747803,
+              "azimuth": 81.793212890625,
+              "inclination": 34.793701171875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.430000066757202,
+              "azimuth": 81.9854736328125,
+              "inclination": 34.8321533203125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.434999942779541,
+              "azimuth": 82.012939453125,
+              "inclination": 34.859619140625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        },
+        {
+          "distance": 2.3399999141693115,
+          "azimuth": 16.3623046875,
+          "inclination": -51.815185546875,
+          "destination": "7",
+          "wasShotBackwards": false,
+          "index": 32,
+          "promotedFrom": [
+            {
+              "distance": 2.3540000915527344,
+              "azimuth": 16.336669921875,
+              "inclination": -51.8280029296875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.302999973297119,
+              "azimuth": 16.314697265625,
+              "inclination": -51.7620849609375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.36299991607666,
+              "azimuth": 16.435546875,
+              "inclination": -51.85546875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6",
+      "eeDirection": "left",
+      "comment": "virtual",
+      "legs": []
+    },
+    {
+      "name": "7",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.41200000047683716,
+          "azimuth": 174.4464111328125,
+          "inclination": -4.1748046875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 33,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.371999979019165,
+          "azimuth": 131.165771484375,
+          "inclination": 60.64453125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 34,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.7230000495910645,
+          "azimuth": 190.9423828125,
+          "inclination": 60.84228515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 35,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.8259999752044678,
+          "azimuth": 247.6812744140625,
+          "inclination": 42.4896240234375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 36,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.878000020980835,
+          "azimuth": 248.895263671875,
+          "inclination": 41.15478515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 37,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.1729999780654907,
+          "azimuth": 248.9007568359375,
+          "inclination": -3.27392578125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 38,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.7580000162124634,
+          "azimuth": 257.7996826171875,
+          "inclination": -46.58203125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 39,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9589999914169312,
+          "azimuth": 307.6007080078125,
+          "inclination": -81.9744873046875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 40,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.4010000228881836,
+          "azimuth": 104.8150634765625,
+          "inclination": 14.0460205078125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 41,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.3600000143051147,
+          "azimuth": 87.015380859375,
+          "inclination": -19.5721435546875,
+          "destination": "8",
+          "wasShotBackwards": false,
+          "index": 42,
+          "promotedFrom": [
+            {
+              "distance": 1.3589999675750732,
+              "azimuth": 87.0556640625,
+              "inclination": -19.5556640625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.3609999418258667,
+              "azimuth": 86.9403076171875,
+              "inclination": -19.5501708984375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.3600000143051147,
+              "azimuth": 87.0501708984375,
+              "inclination": -19.610595703125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "8",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.9679999947547913,
+          "azimuth": 212.3931884765625,
+          "inclination": -6.3336181640625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 43,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6790000200271606,
+          "azimuth": 217.9962158203125,
+          "inclination": 8.6077880859375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 44,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.0670000314712524,
+          "azimuth": 271.1810302734375,
+          "inclination": -29.366455078125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 45,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.27799999713897705,
+          "azimuth": 349.9090576171875,
+          "inclination": -34.617919921875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 46,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.7043333053588867,
+          "azimuth": 350.2313232421875,
+          "inclination": -73.6395263671875,
+          "destination": "9",
+          "wasShotBackwards": false,
+          "index": 47,
+          "promotedFrom": [
+            {
+              "distance": 2.7049999237060547,
+              "azimuth": 350.1837158203125,
+              "inclination": -73.5919189453125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.7049999237060547,
+              "azimuth": 350.167236328125,
+              "inclination": -73.67431640625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.703000068664551,
+              "azimuth": 350.343017578125,
+              "inclination": -73.65234375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "9",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.4659999907016754,
+          "azimuth": 96.317138671875,
+          "inclination": -0.59326171875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 48,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6100000143051147,
+          "azimuth": 134.5001220703125,
+          "inclination": -0.5987548828125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 49,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.7009999752044678,
+          "azimuth": 223.8189697265625,
+          "inclination": -1.7193603515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 50,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8259999752044678,
+          "azimuth": 258.189697265625,
+          "inclination": 4.471435546875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 51,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6010000109672546,
+          "azimuth": 276.756591796875,
+          "inclination": -1.614990234375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 52,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.843000054359436,
+          "azimuth": 227.5726318359375,
+          "inclination": -78.9971923828125,
+          "destination": "10",
+          "wasShotBackwards": false,
+          "index": 53,
+          "promotedFrom": [
+            {
+              "distance": 1.8420000076293945,
+              "azimuth": 227.823486328125,
+              "inclination": -78.936767578125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.8420000076293945,
+              "azimuth": 227.471923828125,
+              "inclination": -78.99169921875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.8450000286102295,
+              "azimuth": 227.4224853515625,
+              "inclination": -79.0631103515625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "10",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.3630000054836273,
+          "azimuth": 25.0103759765625,
+          "inclination": 1.1810302734375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 54,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.0759999752044678,
+          "azimuth": 92.471923828125,
+          "inclination": 5.284423828125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 55,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9390000104904175,
+          "azimuth": 108.69873046875,
+          "inclination": 16.1334228515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 56,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.3889999985694885,
+          "azimuth": 143.404541015625,
+          "inclination": 25.0213623046875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 57,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.4609999656677246,
+          "azimuth": 283.370361328125,
+          "inclination": -10.469970703125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 58,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.2109999656677246,
+          "azimuth": 320.0372314453125,
+          "inclination": -5.789794921875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 59,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9686666131019592,
+          "azimuth": 345.06591796875,
+          "inclination": -41.0577392578125,
+          "destination": "11",
+          "wasShotBackwards": false,
+          "index": 60,
+          "promotedFrom": [
+            {
+              "distance": 0.9700000286102295,
+              "azimuth": 345.05859375,
+              "inclination": -41.099853515625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.9679999947547913,
+              "azimuth": 344.9871826171875,
+              "inclination": -41.055908203125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.9679999947547913,
+              "azimuth": 345.1519775390625,
+              "inclination": -41.0174560546875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "11",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 1.2230000495910645,
+          "azimuth": 102.3486328125,
+          "inclination": -48.0322265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 61,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.1260000467300415,
+          "azimuth": 171.8096923828125,
+          "inclination": -41.8194580078125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 62,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9419999718666077,
+          "azimuth": 238.7933349609375,
+          "inclination": -60.5511474609375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 63,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.0789999961853027,
+          "azimuth": 44.9560546875,
+          "inclination": -55.8270263671875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 64,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8529999852180481,
+          "azimuth": 314.058837890625,
+          "inclination": -46.201171875,
+          "destination": "12",
+          "wasShotBackwards": false,
+          "index": 65,
+          "promotedFrom": [
+            {
+              "distance": 0.8529999852180481,
+              "azimuth": 314.2254638671875,
+              "inclination": -46.20849609375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.8539999723434448,
+              "azimuth": 314.033203125,
+              "inclination": -46.1590576171875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.8519999980926514,
+              "azimuth": 313.9178466796875,
+              "inclination": -46.2359619140625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "12",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 2.7699999809265137,
+          "azimuth": 230.0372314453125,
+          "inclination": 67.3736572265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 66,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.2430000305175781,
+          "azimuth": 324.591064453125,
+          "inclination": 71.7242431640625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 67,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6690000295639038,
+          "azimuth": 24.0380859375,
+          "inclination": 3.1365966796875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 68,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.4480000138282776,
+          "azimuth": 115.224609375,
+          "inclination": 0.1318359375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 69,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.8186665773391724,
+          "azimuth": 54.4940185546875,
+          "inclination": -53.5089111328125,
+          "destination": "13",
+          "wasShotBackwards": false,
+          "index": 70,
+          "promotedFrom": [
+            {
+              "distance": 1.8179999589920044,
+              "azimuth": 54.4427490234375,
+              "inclination": -53.558349609375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.8179999589920044,
+              "azimuth": 54.5526123046875,
+              "inclination": -53.470458984375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.8200000524520874,
+              "azimuth": 54.4866943359375,
+              "inclination": -53.4979248046875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "13",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.7889999747276306,
+          "azimuth": 214.1400146484375,
+          "inclination": 0.2032470703125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 71,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.47699999809265137,
+          "azimuth": 281.634521484375,
+          "inclination": -6.954345703125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 72,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.9049999713897705,
+          "azimuth": 350.3375244140625,
+          "inclination": -2.2906494140625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 73,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6470000147819519,
+          "azimuth": 353.880615234375,
+          "inclination": -0.94482421875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 74,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.925999879837036,
+          "azimuth": 353.818359375,
+          "inclination": -40.3143310546875,
+          "destination": "14",
+          "wasShotBackwards": false,
+          "index": 75,
+          "promotedFrom": [
+            {
+              "distance": 2.924999952316284,
+              "azimuth": 353.5565185546875,
+              "inclination": -40.3582763671875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.924999952316284,
+              "azimuth": 353.924560546875,
+              "inclination": -40.2593994140625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.927999973297119,
+              "azimuth": 353.9739990234375,
+              "inclination": -40.3253173828125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "14",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 1.0299999713897705,
+          "azimuth": 4.10888671875,
+          "inclination": 5.8062744140625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 76,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.0180000066757202,
+          "azimuth": 16.446533203125,
+          "inclination": 3.9715576171875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 77,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.4480000138282776,
+          "azimuth": 92.823486328125,
+          "inclination": 0.362548828125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 78,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.5219999551773071,
+          "azimuth": 166.893310546875,
+          "inclination": 2.1258544921875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 79,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.444000005722046,
+          "azimuth": 178.9013671875,
+          "inclination": 2.7685546875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 80,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9110000133514404,
+          "azimuth": 120.8221435546875,
+          "inclination": 77.4755859375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 81,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5460000038146973,
+          "azimuth": 60.7049560546875,
+          "inclination": -79.8760986328125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 82,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.1096667051315308,
+          "azimuth": 83.4027099609375,
+          "inclination": -16.35498046875,
+          "destination": "15",
+          "wasShotBackwards": false,
+          "index": 83,
+          "promotedFrom": [
+            {
+              "distance": 1.1119999885559082,
+              "azimuth": 83.4136962890625,
+              "inclination": -16.270751953125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.1119999885559082,
+              "azimuth": 83.43017578125,
+              "inclination": -16.270751953125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.1050000190734863,
+              "azimuth": 83.3642578125,
+              "inclination": -16.5234375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        },
+        {
+          "distance": 1.500666618347168,
+          "azimuth": 6.6741943359375,
+          "inclination": -4.423828125,
+          "destination": "18",
+          "wasShotBackwards": false,
+          "index": 91,
+          "promotedFrom": [
+            {
+              "distance": 1.503999948501587,
+              "azimuth": 6.4434814453125,
+              "inclination": -4.5263671875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.4980000257492065,
+              "azimuth": 6.7840576171875,
+              "inclination": -4.3450927734375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.5,
+              "azimuth": 6.7950439453125,
+              "inclination": -4.4000244140625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "15",
+      "eeDirection": "right",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.7599999904632568,
+          "azimuth": 206.2957763671875,
+          "inclination": -19.368896484375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 84,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5630000233650208,
+          "azimuth": 214.87060546875,
+          "inclination": 23.6700439453125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 85,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9679999947547913,
+          "azimuth": 152.65869140625,
+          "inclination": 3.3544921875,
+          "destination": "16",
+          "wasShotBackwards": false,
+          "index": 86,
+          "promotedFrom": [
+            {
+              "distance": 0.9660000205039978,
+              "azimuth": 152.81982421875,
+              "inclination": 3.427734375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.9710000157356262,
+              "azimuth": 152.501220703125,
+              "inclination": 3.262939453125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.9670000076293945,
+              "azimuth": 152.655029296875,
+              "inclination": 3.372802734375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "16",
+      "eeDirection": "right",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.38199999928474426,
+          "azimuth": 36.068115234375,
+          "inclination": -23.4173583984375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 87,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.1860000044107437,
+          "azimuth": 190.0634765625,
+          "inclination": -45.7525634765625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 88,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.26499998569488525,
+          "azimuth": 54.4317626953125,
+          "inclination": -84.7650146484375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 89,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.6059999465942383,
+          "azimuth": 80.7037353515625,
+          "inclination": 4.3194580078125,
+          "destination": "17",
+          "wasShotBackwards": false,
+          "index": 90,
+          "promotedFrom": [
+            {
+              "distance": 1.6059999465942383,
+              "azimuth": 80.8319091796875,
+              "inclination": 4.4659423828125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.6059999465942383,
+              "azimuth": 80.70556640625,
+              "inclination": 4.2462158203125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.6059999465942383,
+              "azimuth": 80.57373046875,
+              "inclination": 4.2462158203125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "17",
+      "eeDirection": "right",
+      "comment": "virtual stn",
+      "legs": []
+    },
+    {
+      "name": "18",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.48899999260902405,
+          "azimuth": 203.7030029296875,
+          "inclination": 14.1448974609375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 92,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.24300000071525574,
+          "azimuth": 228.197021484375,
+          "inclination": 75.3167724609375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 93,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.4909999966621399,
+          "azimuth": 120.91552734375,
+          "inclination": -78.804931640625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 94,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.5756667852401733,
+          "azimuth": 274.25537109375,
+          "inclination": -10.836181640625,
+          "destination": "19",
+          "wasShotBackwards": false,
+          "index": 95,
+          "promotedFrom": [
+            {
+              "distance": 1.5759999752044678,
+              "azimuth": 274.3011474609375,
+              "inclination": -10.8819580078125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.5759999752044678,
+              "azimuth": 274.2462158203125,
+              "inclination": -10.78857421875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.5750000476837158,
+              "azimuth": 274.21875,
+              "inclination": -10.8380126953125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "19",
+      "eeDirection": "left",
+      "comment": "nv old stn",
+      "legs": [
+        {
+          "distance": 0.23800000548362732,
+          "azimuth": 143.7066650390625,
+          "inclination": 77.3876953125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 96,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.45100000500679016,
+          "azimuth": 144.3218994140625,
+          "inclination": 14.3536376953125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 97,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5230000019073486,
+          "azimuth": 137.4664306640625,
+          "inclination": -61.9683837890625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 98,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6449999809265137,
+          "azimuth": 27.257080078125,
+          "inclination": -87.12158203125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 99,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8726666569709778,
+          "azimuth": 186.2274169921875,
+          "inclination": -20.244140625,
+          "destination": "20",
+          "wasShotBackwards": false,
+          "index": 100,
+          "promotedFrom": [
+            {
+              "distance": 0.8730000257492065,
+              "azimuth": 186.1798095703125,
+              "inclination": -20.23681640625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.8730000257492065,
+              "azimuth": 186.2127685546875,
+              "inclination": -20.247802734375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.871999979019165,
+              "azimuth": 186.2896728515625,
+              "inclination": -20.247802734375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        },
+        {
+          "distance": 0.8650000095367432,
+          "azimuth": 296.96044921875,
+          "inclination": -36.1834716796875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 103,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5040000081062317,
+          "azimuth": 313.7530517578125,
+          "inclination": -66.37939453125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 104,
+          "promotedFrom": []
+        }
+      ]
+    },
+    {
+      "name": "20",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.210999995470047,
+          "azimuth": 176.385498046875,
+          "inclination": 82.188720703125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 101,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5989999771118164,
+          "azimuth": 272.3785400390625,
+          "inclination": 0.9613037109375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 102,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.2606667280197144,
+          "azimuth": 185.4052734375,
+          "inclination": -20.7989501953125,
+          "destination": "21",
+          "wasShotBackwards": false,
+          "index": 105,
+          "promotedFrom": [
+            {
+              "distance": 1.2589999437332153,
+              "azimuth": 185.625,
+              "inclination": -20.6488037109375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.2619999647140503,
+              "azimuth": 185.2459716796875,
+              "inclination": -20.9454345703125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.2610000371932983,
+              "azimuth": 185.3448486328125,
+              "inclination": -20.8026123046875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "21",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.25600001215934753,
+          "azimuth": 149.227294921875,
+          "inclination": 85.2484130859375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 106,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.4620000123977661,
+          "azimuth": 78.3160400390625,
+          "inclination": 30.443115234375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 107,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5289999842643738,
+          "azimuth": 82.2271728515625,
+          "inclination": -66.4288330078125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 108,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5040000081062317,
+          "azimuth": 41.9732666015625,
+          "inclination": -86.0064697265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 109,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.7346664667129517,
+          "azimuth": 196.3714599609375,
+          "inclination": -19.6380615234375,
+          "destination": "22",
+          "wasShotBackwards": false,
+          "index": 110,
+          "promotedFrom": [
+            {
+              "distance": 1.7339999675750732,
+              "azimuth": 196.28173828125,
+              "inclination": -19.599609375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.7359999418258667,
+              "azimuth": 196.41357421875,
+              "inclination": -19.6490478515625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.7339999675750732,
+              "azimuth": 196.4190673828125,
+              "inclination": -19.66552734375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "22",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.2280000001192093,
+          "azimuth": 277.3223876953125,
+          "inclination": 75.82763671875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 111,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6309999823570251,
+          "azimuth": 300.16845703125,
+          "inclination": 7.5531005859375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 112,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.796999990940094,
+          "azimuth": 315.802001953125,
+          "inclination": -38.95751953125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 113,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.4300000071525574,
+          "azimuth": 342.0648193359375,
+          "inclination": -70.9222412109375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 114,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.2693333625793457,
+          "azimuth": 254.989013671875,
+          "inclination": -20.3778076171875,
+          "destination": "23",
+          "wasShotBackwards": false,
+          "index": 115,
+          "promotedFrom": [
+            {
+              "distance": 1.2710000276565552,
+              "azimuth": 255.0091552734375,
+              "inclination": -20.3466796875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.2660000324249268,
+              "azimuth": 254.99267578125,
+              "inclination": -20.423583984375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.2710000276565552,
+              "azimuth": 254.9652099609375,
+              "inclination": -20.3631591796875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "23",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.3319999873638153,
+          "azimuth": 323.5089111328125,
+          "inclination": 73.773193359375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 116,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.27000001072883606,
+          "azimuth": 47.7960205078125,
+          "inclination": -77.552490234375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 117,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5149999856948853,
+          "azimuth": 149.6612548828125,
+          "inclination": -66.46728515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 118,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6209999918937683,
+          "azimuth": 150.1007080078125,
+          "inclination": -50.33935546875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 119,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.7630000114440918,
+          "azimuth": 143.2122802734375,
+          "inclination": -61.6387939453125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 120,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.828000009059906,
+          "azimuth": 161.751708984375,
+          "inclination": -33.914794921875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 121,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5529999732971191,
+          "azimuth": 175.10009765625,
+          "inclination": 34.617919921875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 122,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.1299999952316284,
+          "azimuth": 121.431884765625,
+          "inclination": -2.1258544921875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 123,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.7390000224113464,
+          "azimuth": 111.060791015625,
+          "inclination": 10.8929443359375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 124,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.864000082015991,
+          "azimuth": 256.461181640625,
+          "inclination": -10.6292724609375,
+          "destination": "24",
+          "wasShotBackwards": false,
+          "index": 125,
+          "promotedFrom": [
+            {
+              "distance": 2.867000102996826,
+              "azimuth": 256.4813232421875,
+              "inclination": -10.6622314453125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.86299991607666,
+              "azimuth": 256.4483642578125,
+              "inclination": -10.61279296875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.861999988555908,
+              "azimuth": 256.453857421875,
+              "inclination": -10.61279296875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "24",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.20499999821186066,
+          "azimuth": 77.486572265625,
+          "inclination": 85.968017578125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 126,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5740000009536743,
+          "azimuth": 5.1800537109375,
+          "inclination": 32.5579833984375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 127,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.4399999976158142,
+          "azimuth": 0.736083984375,
+          "inclination": -41.802978515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 128,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5070000290870667,
+          "azimuth": 9.9755859375,
+          "inclination": -63.0780029296875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 129,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.492000013589859,
+          "azimuth": 76.0693359375,
+          "inclination": -82.7105712890625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 130,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.7036666870117188,
+          "azimuth": 276.925048828125,
+          "inclination": -16.519775390625,
+          "destination": "25",
+          "wasShotBackwards": false,
+          "index": 131,
+          "promotedFrom": [
+            {
+              "distance": 1.7050000429153442,
+              "azimuth": 276.92138671875,
+              "inclination": -16.5618896484375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.7039999961853027,
+              "azimuth": 276.932373046875,
+              "inclination": -16.5234375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.7020000219345093,
+              "azimuth": 276.92138671875,
+              "inclination": -16.4739990234375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "25",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.5099999904632568,
+          "azimuth": 36.6339111328125,
+          "inclination": 79.9639892578125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 132,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.47600001096725464,
+          "azimuth": 169.1180419921875,
+          "inclination": 49.3670654296875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 133,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.38600000739097595,
+          "azimuth": 174.96826171875,
+          "inclination": -20.5499267578125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 134,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.4259999990463257,
+          "azimuth": 166.5692138671875,
+          "inclination": -55.5523681640625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 135,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.35899999737739563,
+          "azimuth": 185.0537109375,
+          "inclination": -86.7755126953125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 136,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.9519999027252197,
+          "azimuth": 257.5286865234375,
+          "inclination": -3.64013671875,
+          "destination": "26",
+          "wasShotBackwards": false,
+          "index": 137,
+          "promotedFrom": [
+            {
+              "distance": 2.9539999961853027,
+              "azimuth": 257.574462890625,
+              "inclination": -3.69140625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.950000047683716,
+              "azimuth": 257.574462890625,
+              "inclination": -3.603515625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.9519999027252197,
+              "azimuth": 257.4371337890625,
+              "inclination": -3.62548828125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "26",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.33500000834465027,
+          "azimuth": 14.337158203125,
+          "inclination": 76.146240234375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 138,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.42100000381469727,
+          "azimuth": 359.813232421875,
+          "inclination": 28.8995361328125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 139,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.43799999356269836,
+          "azimuth": 349.7882080078125,
+          "inclination": -8.0255126953125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 140,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.7609999775886536,
+          "azimuth": 348.7939453125,
+          "inclination": -41.68212890625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 141,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5379999876022339,
+          "azimuth": 349.0740966796875,
+          "inclination": -74.46533203125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 142,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.0983333587646484,
+          "azimuth": 278.470458984375,
+          "inclination": -3.6419677734375,
+          "destination": "27",
+          "wasShotBackwards": false,
+          "index": 143,
+          "promotedFrom": [
+            {
+              "distance": 2.0980000495910645,
+              "azimuth": 278.4814453125,
+              "inclination": -3.636474609375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.0989999771118164,
+              "azimuth": 278.4649658203125,
+              "inclination": -3.6419677734375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.0980000495910645,
+              "azimuth": 278.4649658203125,
+              "inclination": -3.6474609375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "27",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.15700000524520874,
+          "azimuth": 210.21240234375,
+          "inclination": 68.2196044921875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 144,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5370000004768372,
+          "azimuth": 188.558349609375,
+          "inclination": 3.01025390625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 145,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5080000162124634,
+          "azimuth": 303.11279296875,
+          "inclination": -76.552734375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 146,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6140000224113464,
+          "azimuth": 178.2586669921875,
+          "inclination": -48.0706787109375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 147,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.3939998149871826,
+          "azimuth": 246.97998046875,
+          "inclination": -5.687255859375,
+          "destination": "28",
+          "wasShotBackwards": false,
+          "index": 148,
+          "promotedFrom": [
+            {
+              "distance": 2.3929998874664307,
+              "azimuth": 246.9891357421875,
+              "inclination": -5.712890625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.3940000534057617,
+              "azimuth": 246.9451904296875,
+              "inclination": -5.657958984375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.3949999809265137,
+              "azimuth": 247.005615234375,
+              "inclination": -5.69091796875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "28",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.8069999814033508,
+          "azimuth": 356.24267578125,
+          "inclination": -23.0877685546875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 149,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5889999866485596,
+          "azimuth": 349.1949462890625,
+          "inclination": 41.451416015625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 150,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.9119999408721924,
+          "azimuth": 57.2552490234375,
+          "inclination": 88.8299560546875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 151,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.877000093460083,
+          "azimuth": 186.3995361328125,
+          "inclination": 81.0736083984375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 152,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.527999997138977,
+          "azimuth": 190.4095458984375,
+          "inclination": 78.914794921875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 153,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.24500000476837158,
+          "azimuth": 0.648193359375,
+          "inclination": -32.3712158203125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 154,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.0269999504089355,
+          "azimuth": 64.8687744140625,
+          "inclination": 17.1881103515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 155,
+          "promotedFrom": []
+        },
+        {
+          "distance": 3.4903335571289062,
+          "azimuth": 253.57177734375,
+          "inclination": 16.40625,
+          "destination": "29",
+          "wasShotBackwards": false,
+          "index": 156,
+          "promotedFrom": [
+            {
+              "distance": 3.492000102996826,
+              "azimuth": 253.6029052734375,
+              "inclination": 16.435546875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 3.490000009536743,
+              "azimuth": 253.597412109375,
+              "inclination": 16.3970947265625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 3.489000082015991,
+              "azimuth": 253.5150146484375,
+              "inclination": 16.3861083984375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "29",
+      "eeDirection": "left",
+      "comment": "stn 59 in previous. bolt",
+      "legs": [
+        {
+          "distance": 1.1779999732971191,
+          "azimuth": 165.2728271484375,
+          "inclination": -30.1080322265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 157,
+          "promotedFrom": []
+        },
+        {
+          "distance": 4.818999767303467,
+          "azimuth": 167.4920654296875,
+          "inclination": 68.565673828125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 158,
+          "promotedFrom": []
+        },
+        {
+          "distance": 5.585999965667725,
+          "azimuth": 145.052490234375,
+          "inclination": 82.1392822265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 159,
+          "promotedFrom": []
+        },
+        {
+          "distance": 8.244000434875488,
+          "azimuth": 93.197021484375,
+          "inclination": 85.0946044921875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 160,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.8499999046325684,
+          "azimuth": 0.8404541015625,
+          "inclination": 77.6953125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 161,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.2130000591278076,
+          "azimuth": 353.572998046875,
+          "inclination": -23.345947265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 162,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.7049999237060547,
+          "azimuth": 104.3975830078125,
+          "inclination": 7.6519775390625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 163,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.828000068664551,
+          "azimuth": 83.0181884765625,
+          "inclination": 5.5316162109375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 164,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.9479999542236328,
+          "azimuth": 31.849365234375,
+          "inclination": 4.537353515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 165,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.937000036239624,
+          "azimuth": 57.183837890625,
+          "inclination": 3.4002685546875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 166,
+          "promotedFrom": []
+        },
+        {
+          "distance": 9.414999961853027,
+          "azimuth": 81.947021484375,
+          "inclination": 77.9864501953125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 167,
+          "promotedFrom": []
+        },
+        {
+          "distance": 8.355999946594238,
+          "azimuth": 86.1932373046875,
+          "inclination": 69.7412109375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 168,
+          "promotedFrom": []
+        },
+        {
+          "distance": 6.663000106811523,
+          "azimuth": 79.8541259765625,
+          "inclination": 54.86572265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 169,
+          "promotedFrom": []
+        },
+        {
+          "distance": 4.560999870300293,
+          "azimuth": 74.1851806640625,
+          "inclination": 39.4354248046875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 170,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.3203333616256714,
+          "azimuth": 258.45703125,
+          "inclination": 3.4332275390625,
+          "destination": "30",
+          "wasShotBackwards": true,
+          "index": 171,
+          "promotedFrom": [
+            {
+              "distance": 1.3220000267028809,
+              "azimuth": 78.4698486328125,
+              "inclination": -3.5760498046875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.3179999589920044,
+              "azimuth": 78.46435546875,
+              "inclination": -3.33984375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.3209999799728394,
+              "azimuth": 78.4368896484375,
+              "inclination": -3.3837890625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "30",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 1.031999945640564,
+          "azimuth": 349.8980712890625,
+          "inclination": 4.9932861328125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 172,
+          "promotedFrom": []
+        },
+        {
+          "distance": 3.128999948501587,
+          "azimuth": 349.771728515625,
+          "inclination": 75.673828125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 173,
+          "promotedFrom": []
+        },
+        {
+          "distance": 6.635000228881836,
+          "azimuth": 335.10498046875,
+          "inclination": 85.0726318359375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 174,
+          "promotedFrom": []
+        },
+        {
+          "distance": 6.243000030517578,
+          "azimuth": 246.2750244140625,
+          "inclination": 84.9188232421875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 175,
+          "promotedFrom": []
+        },
+        {
+          "distance": 3.569000005722046,
+          "azimuth": 172.8863525390625,
+          "inclination": 63.9459228515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 176,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.3819999694824219,
+          "azimuth": 174.451904296875,
+          "inclination": -4.1253662109375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 177,
+          "promotedFrom": []
+        },
+        {
+          "distance": 7.081999778747559,
+          "azimuth": 159.224853515625,
+          "inclination": 70.982666015625,
+          "destination": "31",
+          "wasShotBackwards": false,
+          "index": 178,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.5240000486373901,
+          "azimuth": 352.2821044921875,
+          "inclination": -30.7672119140625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 181,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.515999972820282,
+          "azimuth": 138.175048828125,
+          "inclination": -52.44873046875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 182,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.6419999599456787,
+          "azimuth": 227.63671875,
+          "inclination": -1.7138671875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 183,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.759666681289673,
+          "azimuth": 248.5528564453125,
+          "inclination": -10.2667236328125,
+          "destination": "32",
+          "wasShotBackwards": false,
+          "index": 184,
+          "promotedFrom": [
+            {
+              "distance": 2.759999990463257,
+              "azimuth": 248.5601806640625,
+              "inclination": -10.2557373046875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.759999990463257,
+              "azimuth": 248.5162353515625,
+              "inclination": -10.283203125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.759000062942505,
+              "azimuth": 248.5821533203125,
+              "inclination": -10.26123046875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        },
+        {
+          "distance": 7.104000091552734,
+          "azimuth": 159.971923828125,
+          "inclination": 70.576171875,
+          "destination": "ggggggg1",
+          "wasShotBackwards": false,
+          "index": 180,
+          "promotedFrom": []
+        },
+        {
+          "distance": 7.079999923706055,
+          "azimuth": 159.598388671875,
+          "inclination": 70.872802734375,
+          "destination": "ggggggg",
+          "wasShotBackwards": false,
+          "index": 179,
+          "promotedFrom": []
+        }
+      ]
+    },
+    {
+      "name": "31",
+      "eeDirection": "right",
+      "comment": "",
+      "legs": []
+    },
+    {
+      "name": "ggggggg",
+      "eeDirection": "right",
+      "comment": "",
+      "legs": []
+    },
+    {
+      "name": "ggggggg1",
+      "eeDirection": "right",
+      "comment": "",
+      "legs": []
+    },
+    {
+      "name": "32",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 1.534999966621399,
+          "azimuth": 23.8348388671875,
+          "inclination": -87.9620361328125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 185,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.253000020980835,
+          "azimuth": 10.0909423828125,
+          "inclination": -31.728515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 186,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.434999942779541,
+          "azimuth": 4.85595703125,
+          "inclination": 50.4547119140625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 187,
+          "promotedFrom": []
+        },
+        {
+          "distance": 4.057000160217285,
+          "azimuth": 350.299072265625,
+          "inclination": 69.9664306640625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 188,
+          "promotedFrom": []
+        },
+        {
+          "distance": 3.624000072479248,
+          "azimuth": 354.70458984375,
+          "inclination": 84.88037109375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 189,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.5720000267028809,
+          "azimuth": 309.6661376953125,
+          "inclination": 22.247314453125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 190,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.3919999599456787,
+          "azimuth": 292.115478515625,
+          "inclination": 7.1026611328125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 191,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.5280001163482666,
+          "azimuth": 282.996826171875,
+          "inclination": -8.6297607421875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 192,
+          "promotedFrom": []
+        },
+        {
+          "distance": 3.6623334884643555,
+          "azimuth": 284.9835205078125,
+          "inclination": -34.3450927734375,
+          "destination": "33",
+          "wasShotBackwards": false,
+          "index": 193,
+          "promotedFrom": [
+            {
+              "distance": 3.6630001068115234,
+              "azimuth": 285.029296875,
+              "inclination": -34.34326171875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 3.6630001068115234,
+              "azimuth": 284.974365234375,
+              "inclination": -34.3212890625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 3.6610000133514404,
+              "azimuth": 284.9468994140625,
+              "inclination": -34.3707275390625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "33",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 1.1100000143051147,
+          "azimuth": 10.8380126953125,
+          "inclination": -4.0264892578125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 194,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.484999895095825,
+          "azimuth": 14.8590087890625,
+          "inclination": -60.40283203125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 195,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.8919999599456787,
+          "azimuth": 174.3914794921875,
+          "inclination": -58.9031982421875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 196,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.284000039100647,
+          "azimuth": 178.0389404296875,
+          "inclination": -25.960693359375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 197,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.503999948501587,
+          "azimuth": 182.9443359375,
+          "inclination": 76.4154052734375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 198,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.0160000324249268,
+          "azimuth": 317.384033203125,
+          "inclination": 86.693115234375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 199,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.4839999675750732,
+          "azimuth": 351.2054443359375,
+          "inclination": 69.697265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 200,
+          "promotedFrom": []
+        },
+        {
+          "distance": 6.295000076293945,
+          "azimuth": 351.2164306640625,
+          "inclination": 82.562255859375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 202,
+          "promotedFrom": []
+        },
+        {
+          "distance": 6.2789998054504395,
+          "azimuth": 349.9530029296875,
+          "inclination": 82.24365234375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 203,
+          "promotedFrom": []
+        },
+        {
+          "distance": 6.525000095367432,
+          "azimuth": 350.2276611328125,
+          "inclination": 82.847900390625,
+          "destination": "34",
+          "wasShotBackwards": false,
+          "index": 201,
+          "promotedFrom": []
+        },
+        {
+          "distance": 3.2279999256134033,
+          "azimuth": 60.84228515625,
+          "inclination": 63.841552734375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 204,
+          "promotedFrom": []
+        },
+        {
+          "distance": 3.878000020980835,
+          "azimuth": 303.4259033203125,
+          "inclination": 71.03759765625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 205,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.5753333568573,
+          "azimuth": 250.7867431640625,
+          "inclination": -60.1849365234375,
+          "destination": "35",
+          "wasShotBackwards": false,
+          "index": 206,
+          "promotedFrom": [
+            {
+              "distance": 2.575000047683716,
+              "azimuth": 250.850830078125,
+              "inclination": -60.1776123046875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.575000047683716,
+              "azimuth": 250.718994140625,
+              "inclination": -60.1995849609375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.5759999752044678,
+              "azimuth": 250.7904052734375,
+              "inclination": -60.1776123046875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "34",
+      "eeDirection": "right",
+      "comment": "virtual stn",
+      "legs": []
+    },
+    {
+      "name": "35",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 1.399999976158142,
+          "azimuth": 168.7939453125,
+          "inclination": -60.7818603515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 207,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6520000100135803,
+          "azimuth": 177.5994873046875,
+          "inclination": 4.5428466796875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 208,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9670000076293945,
+          "azimuth": 173.507080078125,
+          "inclination": 68.587646484375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 209,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5440000295639038,
+          "azimuth": 294.136962890625,
+          "inclination": 6.2677001953125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 210,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8809999823570251,
+          "azimuth": 311.220703125,
+          "inclination": -56.4202880859375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 211,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.3563334941864014,
+          "azimuth": 257.0782470703125,
+          "inclination": -42.7606201171875,
+          "destination": "36",
+          "wasShotBackwards": false,
+          "index": 212,
+          "promotedFrom": [
+            {
+              "distance": 2.3559999465942383,
+              "azimuth": 257.0855712890625,
+              "inclination": -42.7532958984375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.3559999465942383,
+              "azimuth": 257.05810546875,
+              "inclination": -42.703857421875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.3570001125335693,
+              "azimuth": 257.091064453125,
+              "inclination": -42.82470703125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "36",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.25699999928474426,
+          "azimuth": 177.6434326171875,
+          "inclination": -5.5755615234375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 213,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5450000166893005,
+          "azimuth": 205.0323486328125,
+          "inclination": 57.974853515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 214,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5609999895095825,
+          "azimuth": 321.866455078125,
+          "inclination": 63.80859375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 215,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.28299999237060547,
+          "azimuth": 345.596923828125,
+          "inclination": 7.152099609375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 216,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.8983334302902222,
+          "azimuth": 260.548095703125,
+          "inclination": -25.4534912109375,
+          "destination": "37",
+          "wasShotBackwards": false,
+          "index": 217,
+          "promotedFrom": [
+            {
+              "distance": 1.9010000228881836,
+              "azimuth": 260.57373046875,
+              "inclination": -25.4388427734375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.8990000486373901,
+              "azimuth": 260.5078125,
+              "inclination": -25.4058837890625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 1.8949999809265137,
+              "azimuth": 260.562744140625,
+              "inclination": -25.5157470703125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "37",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 0.3409999907016754,
+          "azimuth": 180.0164794921875,
+          "inclination": -26.3287353515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 218,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5139999985694885,
+          "azimuth": 190.8270263671875,
+          "inclination": 70.389404296875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 219,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.875,
+          "azimuth": 182.6531982421875,
+          "inclination": 83.43017578125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 220,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8389999866485596,
+          "azimuth": 355.352783203125,
+          "inclination": 72.784423828125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 221,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.24199999868869781,
+          "azimuth": 345.113525390625,
+          "inclination": -0.5712890625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 222,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.6959999799728394,
+          "azimuth": 85.9844970703125,
+          "inclination": 3.18603515625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 223,
+          "promotedFrom": []
+        },
+        {
+          "distance": 3.0920000076293945,
+          "azimuth": 265.93505859375,
+          "inclination": 6.21826171875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 224,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.502000093460083,
+          "azimuth": 262.9522705078125,
+          "inclination": 4.932861328125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 225,
+          "promotedFrom": []
+        },
+        {
+          "distance": 2.633666753768921,
+          "azimuth": 246.7840576171875,
+          "inclination": -3.1475830078125,
+          "destination": "38",
+          "wasShotBackwards": false,
+          "index": 226,
+          "promotedFrom": [
+            {
+              "distance": 2.632999897003174,
+              "azimuth": 246.741943359375,
+              "inclination": -3.1475830078125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.634000062942505,
+              "azimuth": 246.7913818359375,
+              "inclination": -3.1201171875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 2.634000062942505,
+              "azimuth": 246.81884765625,
+              "inclination": -3.175048828125,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "38",
+      "eeDirection": "left",
+      "comment": "nv",
+      "legs": [
+        {
+          "distance": 1.4329999685287476,
+          "azimuth": 321.3775634765625,
+          "inclination": -89.384765625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 227,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.49399995803833,
+          "azimuth": 155.7916259765625,
+          "inclination": -72.9986572265625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 228,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8009999990463257,
+          "azimuth": 133.4619140625,
+          "inclination": -40.902099609375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 229,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.1619999408721924,
+          "azimuth": 144.0362548828125,
+          "inclination": -27.520751953125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 230,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8429999947547913,
+          "azimuth": 150.22705078125,
+          "inclination": 11.3323974609375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 231,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.503000020980835,
+          "azimuth": 166.234130859375,
+          "inclination": 67.1484375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 232,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.777999997138977,
+          "azimuth": 325.008544921875,
+          "inclination": 74.3499755859375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 233,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9570000171661377,
+          "azimuth": 70.29052734375,
+          "inclination": -22.0660400390625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 234,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.5449999570846558,
+          "azimuth": 73.026123046875,
+          "inclination": 18.1658935546875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 235,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.9283333420753479,
+          "azimuth": 185.31005859375,
+          "inclination": -7.5421142578125,
+          "destination": "39",
+          "wasShotBackwards": false,
+          "index": 236,
+          "promotedFrom": [
+            {
+              "distance": 0.9309999942779541,
+              "azimuth": 185.328369140625,
+              "inclination": -7.58056640625,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.9269999861717224,
+              "azimuth": 185.3173828125,
+              "inclination": -7.5146484375,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            },
+            {
+              "distance": 0.9269999861717224,
+              "azimuth": 185.284423828125,
+              "inclination": -7.5311279296875,
+              "destination": "-",
+              "wasShotBackwards": false,
+              "promotedFrom": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "39",
+      "eeDirection": "left",
+      "comment": "small anchor",
+      "legs": [
+        {
+          "distance": 0.5370000004768372,
+          "azimuth": 154.6820068359375,
+          "inclination": -86.19873046875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 237,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.5910000205039978,
+          "azimuth": 331.1993408203125,
+          "inclination": 53.6737060546875,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 238,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.215000033378601,
+          "azimuth": 318.36181640625,
+          "inclination": 43.7200927734375,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 239,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.8659999966621399,
+          "azimuth": 344.42138671875,
+          "inclination": -8.98681640625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 240,
+          "promotedFrom": []
+        },
+        {
+          "distance": 1.4279999732971191,
+          "azimuth": 338.302001953125,
+          "inclination": -45.5548095703125,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 241,
+          "promotedFrom": []
+        },
+        {
+          "distance": 0.6259999871253967,
+          "azimuth": 351.6448974609375,
+          "inclination": -61.259765625,
+          "destination": "-",
+          "wasShotBackwards": false,
+          "index": 242,
+          "promotedFrom": []
+        }
+      ]
+    }
+  ],
+  "trip": {
+    "tripDate": "2024-10-26",
+    "comment": "",
+    "team": [
+      {
+        "name": "Andrew Atkinson",
+        "role": [
+          "BOOK"
+        ]
+      },
+      {
+        "name": "Alison Moody",
+        "role": [
+          "INSTRUMENTS",
+          "DOG"
+        ]
+      },
+      {
+        "name": "Lee Hawkins",
+        "role": [
+          "INSTRUMENTS",
+          "DOG"
+        ]
+      }
+    ]
+  }
+}

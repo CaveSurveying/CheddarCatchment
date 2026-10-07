@@ -1,0 +1,133 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -2677.17 -866.14 1102.36 3149.61
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 1} "Notes/TridentLeftP.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap TridentLeftSP1 -projection plan
+
+point 0.0 0.0 station -name 1
+
+point -120.50387 -211.48422 section -scrap TridentLeftSX1
+
+point -98.89781 141.91206 station -name 2
+
+point -206.65536 240.02408 station -name 3
+
+point -317.68115 311.27356 station -name 4
+
+point -385.8195 332.81418 station -name 5
+
+point -271.62842 391.301 station -name 6
+
+point -102.12369 376.75443 section -scrap TridentLeftSX6
+
+point -409.1664 438.23404 station -name 7
+
+point -495.38666 491.9142 station -name 8
+
+point -505.3052 351.58508 station -name 9
+
+point -687.54987 533.6232 station -name 10
+
+point -544.7521 705.74664 section -scrap TridentLeftSX10
+
+point -712.7096 422.6769 station -name 11
+
+point -895.8367 353.89972 station -name 12
+
+point -794.73535 121.06306 section -scrap TridentLeftSX12
+
+point -995.8287 441.4434 station -name 13
+
+point -1008.9503 246.21654 station -name 14
+
+point -1100.5621 523.7072 station -name 15
+
+point -1090.7893 810.734 station -name 16
+
+point -1299.107 746.98865 station -name 17
+
+point -1341.3942 953.5028 station -name 18
+
+point -844.4149 785.8241 station -name 19
+
+point -690.5916 792.972 station -name 20
+
+point -913.1941 953.491 station -name 21
+
+point -634.4928 1037.9637 section -scrap TridentLeftSX21
+
+point -923.52277 1104.707 station -name 22
+
+point -921.1391 1209.741 station -name 23
+
+point -934.92426 1349.8419 station -name 24
+
+point -961.07275 1443.5493 station -name 25
+
+point -1153.826 1462.7018 station -name 26
+
+point -1013.41254 1530.5072 station -name 27
+
+point -787.8193 1570.8704 station -name 28
+
+point -1021.9681 1684.4114 section -scrap TridentLeftSX28
+
+point -661.8841 1618.8442 station -name 29
+
+point -733.9597 2074.1184 station -name 30
+
+point -578.6112 1713.2802 station -name 31
+
+point -429.33304 1821.6656 station -name 32
+
+point -1333.4586 551.14105 station -name 33
+
+point -1555.5443 436.34723 station -name 34
+
+point -1759.8514 763.5458 station -name 35
+
+point -1832.0217 848.5864 station -name 36
+
+point -1685.3873 997.60986 station -name 37
+
+point -1859.1702 1139.2317 section -scrap TridentLeftSX37
+
+point -1733.0474 501.6142 station -name 38
+
+point -1998.626 527.26654 section -scrap TridentLeftSX38
+
+endscrap
+
+scrap TridentLeftSX1 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap TridentLeftSX6 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap TridentLeftSX10 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap TridentLeftSX12 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap TridentLeftSX21 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap TridentLeftSX28 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap TridentLeftSX37 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap TridentLeftSX38 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap

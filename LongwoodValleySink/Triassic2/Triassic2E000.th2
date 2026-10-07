@@ -1,0 +1,41 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 161.26 208.9
+##XTHERION## xth_me_area_zoom_to 400
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {63.58 0} Notes/Triassic2E000.xvi 0 {}
+
+
+
+scrap Triassic2SE000_1 -projection [elevation 0] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+
+line wall
+  0.25 59.25
+  8.0 59.0 10.53 64.08 14.0 59.75
+  18.0 54.75 18.75 47.0 20.5 45.25
+  22.25 43.5 22.25 26.75 23.0 24.0
+  23.75 21.25 19.75 15.25 21.0 12.0
+  22.25 8.75 22.5 -2.25 25.0 -4.0
+  27.5 -5.75 31.75 -5.0 31.75 -0.0
+  31.75 5.0 28.0 11.5 29.25 14.0
+  30.5 16.5 35.5 21.75 36.5 24.75
+  37.5 27.75 30.75 47.0 29.25 51.0
+  27.75 55.0 24.58 65.43 23.25 67.5
+  21.0 71.0 6.75 82.5 4.75 85.0
+endline
+
+point 27.75 0.0 station -name 6
+
+point 24.41 13.970000000000002 station -name 5
+
+point 33.26 26.970000000000002 station -name 4
+
+point 24.799999999999997 49.800000000000004 station -name 3
+
+point 19.88 67.12 station -name 2
+
+point 0.0 80.9 station -name 1
+
+point 0.0 63.58 station -name 0
+
+endscrap
+
+

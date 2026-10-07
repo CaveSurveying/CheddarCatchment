@@ -1,0 +1,131 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -3543.31 -5590.55 944.88 1968.50
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 1} "Notes/FairyChimneysP.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap FairyChimneysP1 -projection plan
+
+point 0.0 0.0 station -name 1
+
+point -204.81967 22.740538 station -name 2
+
+point -56.398647 296.44025 section -scrap FairyChimneysPX2
+
+point -483.3168 -73.556755 station -name 3
+
+point -722.19794 -208.61916 station -name 4
+
+point -986.20215 -245.86829 station -name 5
+
+point -846.22626 128.74837 section -scrap FairyChimneysPX5
+
+point -1095.8209 -339.39218 station -name 6
+
+point -1222.4534 -476.73602 station -name 7
+
+point -1293.6272 -595.7755 station -name 8
+
+point -1024.7461 -619.2557 section -scrap FairyChimneysPX8
+
+point -1508.7347 -600.66406 station -name 9
+
+point -1573.6167 -467.5987 station -name 10
+
+point -1578.3079 -455.036 station -name 11
+
+point -1592.6017 -355.38544 station -name 12
+
+point -1698.4956 -706.41486 station -name 13
+
+point -1878.1777 -671.7829 station -name 14
+
+point -1897.0261 -333.14676 section -scrap FairyChimneysPX14
+
+point -2041.379 -637.75024 station -name 15
+
+point -2214.4392 -703.2394 station -name 16
+
+point -2335.0002 -508.04266 station -name 17
+
+point -2339.3667 -380.27667 station -name 18
+
+point -2383.187 -259.72928 station -name 19
+
+point -2468.3303 -371.40527 station -name 20
+
+point -2604.3286 -468.64334 station -name 21
+
+point -2297.3796 -801.9771 station -name 22
+
+point -2561.5098 -832.39886 section -scrap FairyChimneysPX22
+
+point -2197.1133 -1004.75793 station -name 23
+
+point -2131.9578 -1203.2415 station -name 24
+
+point -2102.3127 -1467.4003 station -name 25
+
+point -1961.537 -1030.6727 section -scrap FairyChimneysPX25
+
+point -2000.2968 -1699.1221 station -name 26
+
+point -2024.2041 -2075.1055 station -name 27
+
+point -1986.9915 -2209.5078 station -name 28
+
+point -1959.2336 -2482.135 station -name 29
+
+point -1878.6177 -2758.738 station -name 30
+
+point -1822.6967 -3350.3452 station -name 31
+
+point -2084.641 -3511.4504 station -name 32
+
+point -2191.9028 -3189.6006 section -scrap FairyChimneysPX32
+
+point -2229.7368 -3450.9148 station -name 33
+
+point -2515.9028 -3583.8408 station -name 34
+
+point -2185.6072 -3767.562 station -name 35
+
+point -2164.529 -3986.9622 station -name 36
+
+point -1588.1394 -3434.779 station -name 37
+
+point -1377.2418 -3271.7166 station -name 38
+
+point -1181.7845 -3321.294 station -name 39
+
+point -838.5116 -3036.6455 station -name 40
+
+endscrap
+
+scrap FairyChimneysPX2 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap FairyChimneysPX5 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap FairyChimneysPX8 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap FairyChimneysPX14 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap FairyChimneysPX22 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap FairyChimneysPX25 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap
+
+scrap FairyChimneysPX32 -projection none -scale [0 0 787.40 787.40 0 0 10.00 10.00 m]
+
+endscrap

@@ -1,0 +1,33 @@
+encoding  utf-8
+source Triassic2.th
+# Change name to the main therion file
+
+
+#Surveys to output
+#-----------------
+
+#export map -proj plan -layout local -o Outputs/Triassic2P.pdf
+#export map -proj plan -layout local -o Outputs/Triassic2P.xvi
+#Produces plan of cave, on a single sheet
+
+#export map -proj [elevation 90] -layout local -o Outputs/Triassic2E90.pdf
+
+#export map -proj [elevation 15] -layout local -o Outputs/Triassic2E15.pdf
+
+#export model -fmt survex -o Outputs/Triassic2th.3d
+#Survex file showing centre line only
+
+#export model -o Outputs/Tria2sic2.lox
+#3d therion model to be viewed in the therion viewer
+
+#export map -proj plan -o Outputs/Triassic2_Walls.3d
+#Survex file showing walls only
+
+layout local
+copy common
+debug off
+map-header 0 0 off
+#symbol-hide group cave-centreline
+endlayout
+
+input ../../common_layout.th

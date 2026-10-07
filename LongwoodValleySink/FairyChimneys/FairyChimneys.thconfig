@@ -1,0 +1,18 @@
+encoding  utf-8
+select FairyChimneys
+# Created with SexyTopo 1.12.3 on 2026-08-08
+
+
+layout local
+  debug off
+  # map-header 0 0 off
+  # symbol-hide group cave-centreline
+endlayout
+
+source "FairyChimneys.th"
+
+export model -fmt survex -o "FairyChimneys-th.3d"
+
+export map -proj plan -layout local -o "FairyChimneys-plan.pdf"
+
+export map -proj extended -layout local -o "FairyChimneys-ee.pdf"

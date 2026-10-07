@@ -1,0 +1,21 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -314.96 -1417.32 393.70 1102.36
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 1} "Notes/IDontCareP.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap IDontCareSP1 -projection plan
+
+point 0.0 0.0 station -name 1
+
+point 182.27202 43.139114 station -name 2
+
+point -83.9188 289.4495 station -name 3
+
+point 28.891878 -239.54056 station -name 4
+
+point 120.50861 -486.8364 station -name 5
+
+point 146.30615 -548.3705 station -name 6
+
+endscrap

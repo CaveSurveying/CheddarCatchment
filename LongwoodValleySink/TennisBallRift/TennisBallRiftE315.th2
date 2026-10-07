@@ -1,0 +1,29 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 205.4 209.5
+##XTHERION## xth_me_area_zoom_to 400
+##XTHERION## xth_me_image_insert {14.060000000000002 1 1.0} {18.309999999999995 15} PocketTopo/TennisBallRiftE315.xvi 0 {}
+
+
+
+scrap TennisBallRiftSE315_1 -projection [elevation 315] -scale [-128.0 -128.0 3238.23 -128.0 0.0 0.0 85.502242 0.0 m]
+
+line wall
+  45.5 53.75
+  39.0 40.75 2.5 29.25 1.0 24.5
+  -0.5 19.75 -12.5 3.0 -6.75 -1.0
+  -1.0 -5.0 15.0 -8.5 20.25 -6.0
+  25.5 -3.5 41.25 13.75 44.5 19.25
+  47.75 24.75 78.75 31.75 80.75 54.75
+endline
+
+point 77.4 81.5 station -name 14
+
+point 0.0 0.0 station -name 16
+
+point 14.060000000000002 18.31 station -name 15
+
+point 5.010000000000005 21.85 station -name 17
+
+endscrap
+
+

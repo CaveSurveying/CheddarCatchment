@@ -1,0 +1,17 @@
+encoding  utf-8
+# Created with SexyTopo 1.11.1 on 2026-04-26
+
+
+layout local
+  debug off
+  # map-header 0 0 off
+  # symbol-hide group cave-centreline
+endlayout
+
+source "GoSouth.th"
+
+export model -fmt survex -o "GoSouth-th.3d"
+
+export map -proj plan -layout local -o "GoSouth-plan.pdf"
+
+export map -proj extended -layout local -o "GoSouth-ee.pdf"

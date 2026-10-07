@@ -1,0 +1,89 @@
+encoding utf-8
+
+##XTHERION## xth_me_area_adjust -1889.76 -2362.20 8031.50 944.88
+##XTHERION## xth_me_image_insert {0.0 1 1.0} {0.0 1} "Notes/FairyChimneysEE.xvi" 0 {}
+##XTHERION## xth_me_area_zoom_to 25
+
+scrap FairyChimneysEE1 -projection extended
+
+point 0.0 0.0 station -name 1
+
+point 206.0782 -29.754858 station -name 2
+
+point 500.75403 -70.69775 station -name 3
+
+point 775.1735 -140.35968 station -name 4
+
+point 1041.7925 -201.046 station -name 5
+
+point 1185.8861 -231.46907 station -name 6
+
+point 1372.6991 -259.4548 station -name 7
+
+point 1511.3936 -305.8442 station -name 8
+
+point 1726.5566 -340.27377 station -name 9
+
+point 1578.5159 -328.55417 station -name 10
+
+point 1565.1058 -250.85777 station -name 11
+
+point 1464.4353 -234.63995 station -name 12
+
+point 1943.7949 -376.16846 station -name 13
+
+point 2126.7842 -385.5275 station -name 14
+
+point 2293.496 -387.06726 station -name 15
+
+point 2478.5332 -352.48148 station -name 16
+
+point 2249.1064 -238.52829 station -name 17
+
+point 2121.2659 -259.84897 station -name 18
+
+point 1993.0007 -323.2909 station -name 19
+
+point 1852.5696 -354.74564 station -name 20
+
+point 1685.3848 -434.84048 station -name 21
+
+point 2607.484 -349.90137 station -name 22
+
+point 2833.6992 -342.04712 station -name 23
+
+point 3042.6033 -362.95276 station -name 24
+
+point 3308.4202 -354.2933 station -name 25
+
+point 3561.6045 -454.6158 station -name 26
+
+point 3938.347 -612.4055 station -name 27
+
+point 4077.806 -660.5421 station -name 28
+
+point 4351.843 -762.87317 station -name 29
+
+point 4639.954 -828.8292 station -name 30
+
+point 5234.198 -1030.3362 station -name 31
+
+point 5541.7207 -1046.6163 station -name 32
+
+point 5698.9385 -1057.7538 station -name 33
+
+point 6014.47 -919.5739 station -name 34
+
+point 5379.231 -929.39026 station -name 35
+
+point 5158.821 -924.1486 station -name 36
+
+point 5483.4897 -864.3868 station -name 37
+
+point 5750.074 -823.09094 station -name 38
+
+point 5951.7207 -874.55383 station -name 39
+
+point 6397.6587 -1498.6696 station -name 40
+
+endscrap
