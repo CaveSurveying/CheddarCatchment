@@ -58,6 +58,11 @@ area_splines = 0.25         # m: area outlines simplified to this, drawn as spli
 green_loops = true          # a single green loop is a boulder or debris (the colour was wrong)
 corner_cone = 60            # degrees: at a corner the passage's leg is off to one side of the wall
 area_lines = false          # brown lines inside boulder/debris areas are part of the rocks: dropped
+presumed_walls = false      # no presumed walls where nothing was sketched: gaps left open for Therion
+brown_ticks = false         # brown short strokes are mud or rocks, never the ticks of a step
+dash_max = 1.5              # m: brown dashes up to this long (roughly straight) are mud
+mud_near = 2.0              # m: mud marks this close are one patch
+mud_grow = 0.7              # m: a patch is grown this far round its marks, kept off rocks, sand on it merged in
 hand_scraps = true          # plan scraps from [scraps] below, where a survey has them
 join_local = true           # joined walls refitted only near the join, not along their length
 

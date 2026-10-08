@@ -174,12 +174,45 @@ class Areas(unittest.TestCase):
         ledge = ("BROWN", [(0.5, 1.7), (2.0, 1.75), (3.5, 1.7), (5.0, 1.75)])           # well clear of them
         px = lambda p: (100 * p[0], 100 * p[1])
 
+        settings.use(dict(settings.SETTINGS, dash_max=0.0, mud_grow=0.0, mud_near=0.0))   # the rock line is not mud here
+
         def borders():
             text = "\n".join(marks.th2(loops + [rock_line, ledge], passage, px, "XSP1", ["BLACK"], 0.3))
             return [m for m in re.findall(r"(?ms)^line border\n(.*?)^endline", text)]
         self.assertEqual(len(borders()), 1)                 # the ledge only
         settings.use(dict(settings.SETTINGS, area_lines=True))
         self.assertEqual(len(borders()), 2)
+
+
+class Mud(unittest.TestCase):
+    """Brown dashes are mud: one patch along the passage, off the rocks (Trident review)."""
+
+    def tearDown(self):
+        from tools.sketch2therion import settings
+        settings.load()
+
+    def test_dashes_along_a_passage_are_one_patch_off_the_rocks(self):
+        from shapely.geometry import box
+        from tools.sketch2therion import marks, settings
+        settings.load()
+        passage = box(0, 0, 12, 2)
+        dashes = [[(x, 1.0), (x + 0.9, 1.05)] for x in (0.5, 2.0, 3.6, 5.1, 6.5)]      # 0.9 m dashes, 0.6 m apart
+        rocks = [[(x, 0.3), (x + 0.4, 0.3), (x + 0.4, 0.7), (x, 0.7), (x, 0.3)] for x in (9.0, 9.6, 10.2, 10.8)]
+        _, areas, lines = marks.brown(dashes + rocks, passage, 0.3)
+        mud = [g for k, g in areas if k == 'clay']
+        self.assertEqual(len(mud), 1)
+        self.assertGreater(mud[0].bounds[2] - mud[0].bounds[0], 6.5)            # the whole stretch
+        rock = [g for k, g in areas if k in ('blocks', 'debris')]
+        self.assertTrue(rock and mud[0].intersection(rock[0]).area < 0.01)
+        self.assertEqual(lines, [])
+
+    def test_a_lone_long_dash_stays_a_line(self):
+        from shapely.geometry import box
+        from tools.sketch2therion import marks, settings
+        settings.load()
+        _, areas, lines = marks.brown([[(1, 1), (1.9, 1.05)]], box(0, 0, 4, 2), 0.3)
+        self.assertEqual(areas, [])
+        self.assertEqual(len(lines), 1)
 
 
 class Corner(unittest.TestCase):
