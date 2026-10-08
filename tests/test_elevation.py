@@ -68,3 +68,46 @@ class Adjusted(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class WallSubtypes(unittest.TestCase):
+    def setUp(self):
+        settings.load()
+
+    def test_one_line_per_subtype_never_a_point_subtype(self):
+        from tools.sketch2therion.smooth import wall_subtypes
+        K = 100.0
+        body = ("# wall-subtype clay: 500 0 1000 0\n\n"
+                "line wall\n  0 0\n  250 0\n  500 0\n  750 0\n  1000 0\nendline\n")
+        objs = parse_scrap(body)
+        wall_subtypes(objs, K)
+        text = '\n'.join(o.text() for o in objs)
+        self.assertNotIn('  subtype', text)
+        heads = [o.head for o in objs if o.kind == 'line']
+        self.assertEqual(heads, ['line wall', 'line wall -subtype clay'])
+        a, b = [o for o in objs if o.kind == 'line']
+        self.assertEqual(a.segments()[-1][-2:], b.segments()[0][-2:])        # they meet
+
+    def test_short_stretch_goes_with_its_neighbour(self):
+        from tools.sketch2therion.smooth import wall_subtypes
+        body = ("# wall-subtype clay: 0 0 400 0\n\n"
+                "line wall\n  0 0\n  200 0\n  400 0\n  420 0\nendline\n")
+        objs = parse_scrap(body)
+        wall_subtypes(objs, 100.0)
+        self.assertEqual([o.head for o in objs if o.kind == 'line'], ['line wall -subtype clay'])
+
+
+class Scraps(unittest.TestCase):
+    def test_stroke_drawn_on_goes_with_the_longer_one(self):
+        from tools.sketch2therion.convert import drawn_on
+        long_ = [(0, 0), (5, 0)]
+        short = [(5.1, 0), (7, 1)]
+        lines = [('BLACK', long_), ('BLACK', short)]
+        out = drawn_on([(0, 'BLACK', list(long_)), (1, 'BLACK', list(short))], lines)
+        self.assertEqual([k for k, _, _ in out], [0, 0])
+
+    def test_glitch_cut_out(self):
+        from tools.sketch2therion.convert import cut_glitches
+        pp = [(0, 0), (1, 0), (1.5, 3), (2, 0), (3, 0)]
+        out = cut_glitches([('BLACK', pp)], [[1.2, 1, 1.8, 4]])
+        self.assertEqual([len(p) for _, p in out], [2, 2])

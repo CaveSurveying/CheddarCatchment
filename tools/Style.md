@@ -155,10 +155,12 @@ plan-only config.
 - Walls carry a subtype for what they are drawn as: `clay` (mud: brown),
   `sand` (brown with dots), `flowstone` (green, smooth or running down
   a step), `blocks` (rock on the floor: green boulders or a humpy line),
-  `debris` (a floor with rubble: brown curls), `bedrock` otherwise. A
-  `subtype` on a line point applies from that point on; a `-subtype` on
-  the line is overridden by one on its first point. Colour is only a
-  hint: shape decides.
+  `debris` (a floor with rubble: brown curls), plain `line wall` for
+  rock. The subtype goes on the line, `line wall -subtype clay`, never
+  on a point (`subtype clay` among the points: Therion takes it, but it
+  is hard to follow when editing), and does not change along a line: a
+  wall that changes is drawn as one line per kind, meeting end to end.
+  Colour is only a hint: shape decides.
 - A wall inside the passage stays a wall (`-outline none`), not a border.
 - A pool is an `area water` in an invisible closed border whose first two
   points are its surface, the second with `adjust horizontal` so the

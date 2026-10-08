@@ -287,6 +287,9 @@ later.
 | 110 | Closed black loops made `rock-border -close on`. | Converter | A closed black loop holding no station. |
 | 111 | Trident split 1-12, 13-34 with 36 and 38-43, 35 and 37. | `[scraps_extended]` | As the user split it. |
 | 112 | Open: the user's `-subtype debris` lines start with `subtype clay` on their first point, which overrides it (renders as mud). Trident's green slope 34-37 the user made clay; the converter says flowstone (no shape rule). The roof by 37 (TridentSE3) still has a spike. | | For the user. |
+| 113 | Do not use point subtypes in walls (hard to follow as a user): `line wall -subtype clay`, and do not change subtype along a line. | Converter (`wall_subtypes`) | A wall whose kind changes is cut into one line per kind, `line wall -subtype X` (plain for rock), meeting end to end; a stretch under 0.5 m goes with its neighbour. Style.md updated. |
+| 114 | The green slope 34 to 37 (clay in the edit) was a mistake: flowstone is right. | | No change. |
+| 115 | The spike by 37 is a drawing glitch; its line is in the wrong scrap. | Converter (`drawn_on`, `[glitches]`, fill `stops`) | The stroke is the roof over 38 to 39 drawn on up past 37: a whole stroke drawn on from the end of a longer one in another scrap now goes into that scrap. The glitch, a peak 1.7 m above 37, is listed in `[glitches]` in project.toml (a box in sketch metres whose stroke points are ignored; the sketch is untouched). The elevation fill also stops at other scraps' walls (a passage above: its floor is this one's roof). |
 
 First drafts: Trident drawn along its length, the far end after 33 not
 yet complete; GoSouth in two parts, the stretch from 22 to 23 (floor

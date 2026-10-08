@@ -181,11 +181,7 @@ LongwoodValleySink/Trident/Trident.extended.th2	TridentSE2	wall-outline-none	1
 LongwoodValleySink/Trident/Trident.extended.th2	TridentSE2	wall-outline-none	2
 LongwoodValleySink/Trident/Trident.extended.th2	TridentSE2	wall-outline-none	3
 LongwoodValleySink/Trident/Trident.extended.th2	TridentSE2	wall-outline-none	4
-LongwoodValleySink/Trident/Trident.extended.th2	TridentSE3	wall-outline-none	1
-LongwoodValleySink/Trident/Trident.extended.th2	TridentSE3	wall-outline-none	2
-LongwoodValleySink/Trident/Trident.extended.th2	TridentSE3	wall-outline-none	3
-LongwoodValleySink/Trident/Trident.extended.th2	TridentSE3	wall-outline-none	4
-LongwoodValleySink/Trident/Trident.extended.th2	TridentSE3	wall-outline-none	5
+LongwoodValleySink/Trident/Trident.extended.th2	TridentSE2	wall-outline-none	5
 LongwoodValleySink/Trident/Trident.plan.th2	TridentSP1	wall-outline-none	1
 LongwoodValleySink/Trident/Trident.plan.th2	TridentSP1	wall-outline-none	2
 LongwoodValleySink/TridentCentre/TridentCentreEe.th2	TridentCentreES1	scrap-author-copyright	1

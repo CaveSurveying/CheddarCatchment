@@ -46,6 +46,7 @@ class Project:
         self.convert = data.get("convert", {})     # sketch2therion settings (settings.py)
         self.scraps = data.get("scraps", {})       # survey -> station specs per plan scrap (sketch2therion/scraps.py)
         self.scraps_extended = data.get("scraps_extended", {})   # the same, per extended-elevation scrap
+        self.glitches = data.get("glitches", {})   # survey -> sketch -> [[x0, y0, x1, y1], ...] (sketch metres)
 
     def path(self, rel):
         return os.path.join(self.root, rel)

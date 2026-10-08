@@ -123,3 +123,13 @@ GoSouth = ["1-16", "17-29"]
 # to 34 and the far end, 36 and 38 to 43; 35 and 37 above it.
 GoSouth = ["1-16", "17-29"]
 Trident = ["1-12", "13-34, 36, 38-43", "35, 37"]
+
+[glitches]
+# Slips of the pen in a sketch: stroke points inside these boxes (sketch
+# metres, x0 y0 x1 y1, as `check` and the .xvi give them) are ignored,
+# cutting the stroke there. The sketch itself is left as it is.
+# Trident elevation: the roof over 38 to 39 is drawn on up past 37 to a
+# peak 1.7 m above it.
+[glitches.Trident]
+"TridentEe.xvi" = [[99.9, 11.4, 101.4, 13.0]]
+
