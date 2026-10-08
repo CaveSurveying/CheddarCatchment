@@ -2,8 +2,18 @@ encoding  utf-8
 survey TritonSouth
 # Created with SexyTopo 1.12.3 on 2026-08-01
 
-input "TritonSouthP.th2"
-input "TritonSouthEE.th2"
+input "TritonSouth.plan.th2"
+
+map TritonSouthMP
+  TritonSouthSP1
+endmap
+input "TritonSouth.extended.th2"
+
+map TritonSouthMEe
+  TritonSouthSE1
+  TritonSouthSE2
+  TritonSouthSE3
+endmap
 
 equate 10 18
 equate 13 21
