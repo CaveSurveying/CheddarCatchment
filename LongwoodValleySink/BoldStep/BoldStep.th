@@ -8,6 +8,12 @@ map BoldStepMP
   BoldStepSP1
 endmap
 input "BoldStep.extended.th2"
+input "BoldStepE315.th2"
+
+map BoldStepME315
+  BoldStepSE315_1
+endmap
+
 
 map BoldStepMEe
   BoldStepSE1

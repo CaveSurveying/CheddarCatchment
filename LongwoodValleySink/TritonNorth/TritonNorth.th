@@ -8,6 +8,12 @@ map TritonNorthMP
   TritonNorthSP1
 endmap
 input "TritonNorth.extended.th2"
+input "TritonNorthE315.th2"
+
+map TritonNorthME315
+  TritonNorthSE315_1
+endmap
+
 
 map TritonNorthMEe
   TritonNorthSE1

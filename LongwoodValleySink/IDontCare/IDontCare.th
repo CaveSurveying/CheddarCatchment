@@ -8,6 +8,12 @@ map IDontCareMP
   IDontCareSP1
 endmap
 input "IDontCare.extended.th2"
+input "IDontCareE315.th2"
+
+map IDontCareME315
+  IDontCareSE315_1
+endmap
+
 
 map IDontCareMEe
   IDontCareSE1

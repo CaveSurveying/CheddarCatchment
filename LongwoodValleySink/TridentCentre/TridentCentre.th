@@ -8,6 +8,12 @@ map TridentCentreMP
   TridentCentreSP1
 endmap
 input "TridentCentre.extended.th2"
+input "TridentCentreE315.th2"
+
+map TridentCentreME315
+  TridentCentreSE315_1
+endmap
+
 
 map TridentCentreMEe
   TridentCentreSE1

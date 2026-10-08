@@ -8,11 +8,16 @@ map TritonSouthMP
   TritonSouthSP1
 endmap
 input "TritonSouth.extended.th2"
+input "TritonSouthE315.th2"
+
+map TritonSouthME315
+  TritonSouthSE315_1
+  TritonSouthSE315_2
+endmap
+
 
 map TritonSouthMEe
   TritonSouthSE1
-  TritonSouthSE2
-  TritonSouthSE3
 endmap
 
 equate 10 18
