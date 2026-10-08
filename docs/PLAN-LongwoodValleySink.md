@@ -369,7 +369,8 @@ For each survey X:
   - the per-survey exports (`layout --survey`, `output/layout-*`) go;
   - cross-sections: **drawn** as they are drawn in the SexyTopo `.xvi`
     export (their own walls, from the sketch); **placed**, for now, where
-    they are in the drawings in SVN, not computed from Therion's layout
+    they are in that `.xvi` export (as committed to SVN), not computed
+    from Therion's layout
     (now: `place_sections` puts an elevation's cross-sections beside the
     passage using Therion's plan layout). Placing them well is the
     harder part and is left for later;
