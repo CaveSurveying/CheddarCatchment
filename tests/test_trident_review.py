@@ -360,3 +360,13 @@ class Elevations(unittest.TestCase):
     def test_survey_layout_path(self):
         from tools.sketch2therion.__main__ import survey_layout_path
         self.assertTrue(survey_layout_path('GoSouth').endswith('layout-extended-GoSouth.xvi'))
+
+    def test_green_lumpy_is_blocks_smooth_is_flowstone(self):
+        from tools.sketch2therion.convert import _lumpy
+        import math
+        smooth = [(x * 0.1, 0.02 * x * 0.1) for x in range(30)]
+        bumps = [(x * 0.05, 0.15 * abs(math.sin(x * 0.05 * math.pi / 0.3))) for x in range(60)]
+        loop = [(0, 0), (0.3, 0), (0.3, 0.3), (0, 0.3), (0, 0)]
+        self.assertFalse(_lumpy(smooth))
+        self.assertTrue(_lumpy(bumps))
+        self.assertTrue(_lumpy(loop))
