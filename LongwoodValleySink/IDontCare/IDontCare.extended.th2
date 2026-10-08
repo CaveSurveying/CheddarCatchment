@@ -1,0 +1,71 @@
+encoding  utf-8
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+##XTHERION## xth_me_area_adjust -507.4 -413.6 792.7 292.5
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {241.28 1 1.0} {-87.00 4} {Notes/IDontCareEe.xvi} 0 {}
+
+
+# Converted from IDontCareEe.xvi by tools/sketch2therion (extended elevation).
+# Split into one scrap per group of stations that fits Therion's layout.
+
+scrap IDontCareSE1 -projection extended -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+line wall
+  -225.45 55.21
+  -183.23 42.55 -141.72 29.25 -100.53 13.60
+endline
+
+line wall -outline none
+  203.44 47.63
+  179.12 43.74 88.90 28.44 57.54 24.30
+  21.17 19.51 -16.19 23.85 -51.82 32.50
+  -79.21 39.16 -123.70 55.55 -149.05 62.74
+  -157.65 65.18 -186.16 67.19 -204.72 69.41
+  -186.29 39.31 -90.15 -24.17 -54.35 -52.06
+endline
+
+line wall -outline none
+  108.37 -20.97
+  113.05 -23.90 117.75 -26.67 122.49 -29.27
+  169.89 -55.35 220.48 -65.92 274.20 -75.81
+endline
+
+
+line wall -outline none
+  223.55 5.56
+  207.52 1.27 138.52 -24.98 122.49 -29.27
+endline
+
+
+line wall
+  -267.41 67.79
+  -258.72 65.08 -243.51 60.62 -225.52 54.35
+endline
+line wall
+  -100.50 13.50
+  -66.01 0.50 -29.36 -14.10 1.41 -24.41
+  45.77 -39.27 87.69 -47.91 121.82 -59.59
+  169.34 -75.85 216.63 -95.53 264.68 -112.35
+  292.99 -122.26 336.84 -141.70 376.06 -153.95
+  438.70 -173.50 501.53 -186.74 564.55 -207.47
+endline
+line wall
+  586.65 -147.26
+  577.11 -145.02 553.34 -136.28 529.32 -134.21
+  505.29 -132.13 466.15 -136.42 442.52 -134.74
+  412.91 -132.63 373.82 -122.75 346.22 -110.99
+  327.34 -102.94 286.26 -81.71 274.20 -75.81
+endline
+
+point 0.00 0.00 station -name 1
+
+point 187.31 26.03 station -name 2
+
+point -301.37 86.33 station -name 3
+
+point 241.28 -87.00 station -name 4
+
+point 505.00 -167.01 station -name 5
+
+point 571.72 -181.20 station -name 6
+endscrap
