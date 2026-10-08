@@ -189,3 +189,65 @@ class WallHooks(unittest.TestCase):
         settings.use(dict(settings.SETTINGS, wall_hooks=False))
         walls, boulders, _ = wall_strokes([('BLACK', wall), ('BLACK', hook)])
         self.assertEqual(len(boulders), 1)
+
+
+class MergeShort(unittest.TestCase):
+    """Short lines joined into the line of their kind they meet (user, draft 5)."""
+
+    def line(self, head, pts):
+        o = tidy.Obj('line', head, [])
+        o.set_segments([[x, y] for x, y in pts])
+        return o
+
+    def test_two_node_line_merged(self):
+        a = self.line('line border', [(0, 0), (100, 0), (200, 0)])
+        b = self.line('line border', [(210, 0), (300, 10)])
+        objs = [a, b]
+        self.assertEqual(nodes.merge_short(objs, 100.0, 0.2), 1)
+        self.assertEqual(len(objs), 1)
+        self.assertEqual(tuple(objs[0].segments()[-1][-2:]), (300.0, 10.0))
+
+    def test_other_kinds_and_gours_left(self):
+        a = self.line('line border', [(0, 0), (100, 0), (200, 0)])
+        b = self.line('line floor-step', [(200, 0), (300, 0)])
+        g1 = self.line('line rimstone-dam', [(0, 50), (50, 60), (100, 50)])
+        g2 = self.line('line rimstone-dam', [(100, 50), (150, 60)])
+        self.assertEqual(nodes.merge_short([a, b, g1, g2], 100.0, 0.2), 0)
+
+    def test_longer_short_line_only_if_it_runs_on(self):
+        a = self.line('line border', [(0, 0), (100, 0), (200, 0)])
+        back = self.line('line border', [(200, 0), (150, 20), (100, 30)])      # turns right back
+        self.assertEqual(nodes.merge_short([a, back], 100.0, 0.2), 0)
+        on = self.line('line border', [(200, 0), (250, 10), (300, 15)])
+        self.assertEqual(nodes.merge_short([a, on], 100.0, 0.2), 1)
+
+
+class HandlesInLine(unittest.TestCase):
+    def test_smooth_node_unless_a_corner(self):
+        segs = [[0, 0], [1, 1, 2, 1, 3, 0], [3.5, -0.2, 4, -1, 5, -1]]
+        out, n = nodes.align_handles(segs, 60)
+        self.assertEqual(n, 1)
+        p = out[1][-2:]
+        a, b = out[1][2:4], out[2][0:2]
+        cross = (p[0] - a[0]) * (b[1] - p[1]) - (p[1] - a[1]) * (b[0] - p[0])
+        self.assertAlmostEqual(cross, 0, places=6)
+        corner = [[0, 0], [1, 0, 2, 0, 3, 0], [3, 1, 3, 2, 3, 3]]          # a right angle stays
+        self.assertEqual(nodes.align_handles(corner, 60)[1], 0)
+
+
+class DetachedTicks(unittest.TestCase):
+    def tearDown(self):
+        settings.load()
+
+    def test_grey_ticks_clear_of_a_grey_line(self):
+        from tools.sketch2therion import notation
+        settings.load()
+        line = ('GRAY', [(x * 0.2, 0) for x in range(16)])
+        ticks = [('GRAY', [(x, -0.25), (x, -0.55)]) for x in (0.5, 1.2, 1.9, 2.6)]   # 0.25 m clear
+        feats, used = notation.find([line] + ticks)
+        self.assertEqual([k for k, _, _ in feats], ['step'])
+        settings.use(dict(settings.SETTINGS, tick_reach=0.0))
+        self.assertEqual(notation.find([line] + ticks)[0], [])
+        settings.load()
+        black = ('BLACK', line[1])                                       # a black line is wall
+        self.assertEqual(notation.find([black] + ticks)[0], [])

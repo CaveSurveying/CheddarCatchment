@@ -120,7 +120,8 @@ class OnlyWhatIsDrawnTest(unittest.TestCase):
     def test_lone_marks_ignored_groups_are_sand(self):
         settings.load()
         # the size rules, on the marks' own extent (mud patches grown round their marks: test_scraps)
-        settings.use(dict(settings.SETTINGS, mud_grow=0.0, mud_near=0.0, dash_max=0.0))
+        settings.use(dict(settings.SETTINGS, mud_grow=0.0, mud_near=0.0, dash_max=0.0, rock_curves=False,
+                          area_grow=0.0, area_inside_min=0.0))
         passage = Polygon([(-3, -3), (3, -3), (3, 3), (-3, 3)])
         tiny = lambda x, y: [(x + 0.05 * math.cos(a), y + 0.05 * math.sin(a)) for a in range(7)] + [(x + 0.05, y)]
         _, areas, _ = marks.brown([tiny(0, 0)], passage, 0.6)

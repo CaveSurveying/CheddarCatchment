@@ -233,7 +233,15 @@ plan-only config.
   another beside it. How many nodes a line needs goes with how it bends:
   a long sweep needs only a couple, an S bend more.
 - An area mostly outside the walls (rocks drawn along the wall) is not
-  drawn.
+  drawn. Areas run only just over the walls (about 0.15 m): more makes
+  odd shapes and is not needed.
+- Areas (not water) spread out from what is drawn in them to fill the
+  space they belong to, but stop at walls, steps and longer borders; one
+  area over a boulder floor, not each rock outlined.
+- At a node, the control points either side are in line with it (a
+  smooth node) unless the line needs a sharp corner there.
+- A short line (2 nodes, sometimes 3 or 4) that meets a line of the same
+  kind end to end is part of it: one line, not several.
 - Do not draw a wall where nothing was sketched: no presumed walls to
   close an outline; leave the gap for Therion.
 - Where two passages, or the two sides of a bend, come close, the rock

@@ -174,7 +174,8 @@ class Areas(unittest.TestCase):
         ledge = ("BROWN", [(0.5, 1.7), (2.0, 1.75), (3.5, 1.7), (5.0, 1.75)])           # well clear of them
         px = lambda p: (100 * p[0], 100 * p[1])
 
-        settings.use(dict(settings.SETTINGS, dash_max=0.0, mud_grow=0.0, mud_near=0.0))   # the rock line is not mud here
+        settings.use(dict(settings.SETTINGS, dash_max=0.0, mud_grow=0.0, mud_near=0.0, rock_curves=False,
+                          area_grow=0.0, barrier_min=0.0))   # the rock line is not mud (nor a rock) here
 
         def borders():
             text = "\n".join(marks.th2(loops + [rock_line, ledge], passage, px, "XSP1", ["BLACK"], 0.3))

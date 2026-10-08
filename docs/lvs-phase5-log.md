@@ -210,3 +210,20 @@ the reference) to give examples.
 Draft 5 against the hand drawing `Trident.plan.th2`: walls 0.059 m from
 the sketch (179 nodes; hand 0.058 m, 214), other lines 0.039 m (198
 nodes; hand 0.033 m, 285). GoSouth: walls 0.046 m, other lines 0.040 m.
+
+## Trident draft 5 review (2026-10-08)
+
+The user edited `review/Trident.draft5.plan.th2` with examples.
+
+| # | Comment or edit | Kind | Outcome |
+|---|---|---|---|
+| 71 | `-outline none` should be very rare. | Converter | Draft 6 has 2 (draft 5: 5): mainly from row 72. |
+| 72 | (Edit) The outer wall of the U by 20 to 21 was borders; made a wall. | Converter (`drop_rock_faces`) | The leg 20 to 22 runs out through that wall to a station beyond the drawing, so the rock it crossed counted as passage. A leg that crosses a wall stroke, and a station reached only by such legs, no longer keeps a face. |
+| 73 | Dog-bone areas: the bit outside the walls is not needed (TridentSP1-clay10 changed; others are odd too). | Converter (`smooth._areas_to_outline`, settings) | `area_over_walls` 0.5 to 0.15 m; after the walls are final, each area (not water) is clipped to the outline the walls make plus that, and its spline given more points where it would bulge out (shrinking instead ate long thin areas). Areas now at most 0.2 m past the walls. |
+| 74 | Control points ("splays") either side of a node should nearly always be in line, unless a sharp corner is needed. | Converter (`nodes.align_handles`) | `smooth_nodes = 60`: at a node turning less than 60 degrees the two control points are put in line with it (both turned to the mean direction, or the curve's to a straight neighbour's). Not boulders. |
+| 75 | Areas other than water need some expansion to work well; they should not cross borders, floor steps etc. (Edits: one area over the floor of the U instead of many rock outlines drawn as borders; areas by 23 to 25 spread out to the walls and the step.) | Converter (`marks.py`) | `rock_curves`: curved brown strokes up to 1.5 m are rock outlines (not borders). `area_grow = 1.0`: rock areas grow 1 m round their rocks within the passage, cut at walls, steps and lines of `barrier_min = 1.5` m or more; shorter lines do not stop an area and go where mostly inside one. Overlapping rock areas of a kind merge. |
+| 76 | (Edits) Many short borders deleted, most of them ticks drawn clear of their floor-step lines (15 to 18) or rock detail. | Converter (`notation.py`) | `tick_reach = 0.35`: a tick may stand up to 0.35 m clear of its line, only for a line that is not black (wall) or brown (mud beside it) and only ticks of the line's own colour. Borders under 1 m: draft 5 23, draft 6 6 (the user's GoSouth keeps 7, so there is no blanket rule). |
+| 77 | Lines with 2 nodes connected to a line of the same type should be merged into it; strong consideration for 3 or 4 nodes. | Converter (`nodes.merge_short`) | `merge_short = 4`: a 2-node line whose end is within the wall-join reach (0.15 m or 12% of the legs' length) of the end of a line of the same type is merged into it unless it turns right back (over 120 degrees); up to 4 nodes if the join turns under 90 degrees. Gours stay separate; walls are joined as before. |
+
+Not yet: the direction of floor-step ticks (two borders by 24 made floor
+steps `-reverse on`); the wall from 12 round to 13.
