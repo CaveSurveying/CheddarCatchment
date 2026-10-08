@@ -92,6 +92,14 @@ map LongwoodValleySinkMP
   RoundTheBendMP
   GoSouthMP@GoSouth
   TridentMP@Trident
+  TridentCentreMP@TridentCentre
+  TridentLeftMP@TridentLeft
+  IDontCareMP@IDontCare
+  BoldStepMP@BoldStep
+  TritonNorthMP@TritonNorth
+  TritonSouthMP@TritonSouth
+  ConnectionMP@Connection
+  FairyChimneysMP@FairyChimneys
 endmap
 
 ###################################################################
