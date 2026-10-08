@@ -273,6 +273,7 @@ later.
 | 96 | GoSouth's elevation sketch did not fit Therion's extended layout (1.7 m, split into 13 groups); Trident's did. | Converter (`layout --survey`) | In the whole cave a survey's extended elevation carries on the way the survey before it runs (GoSouth from CrystalPitch, leftwards), and its `extend start` is ignored; SexyTopo sketched it on its own (rightwards). `python3 -m tools.sketch2therion layout --survey X` exports X's own extended layout; `extended` uses it if present. Both fit to 0.01 m. |
 | 97 | Most of each floor missing. | Converter (`elevation_wall_colours`) | The floors are drawn brown in the elevation sketches (brown is mud and boulders in plan, so plans take walls from black only). Elevations take black and brown. |
 | 98 | Filed. | | `X.extended.th2` (scrap `XSE1`) in `map XMEe` in `X.th`, replacing SexyTopo's empty elevation (`GoSouthE.th2`, `TridentEe.th2`). Review builds in `review/ext/` (not committed). |
+| 99 | Brown is mud or sand, not rock: brown dots sand, dashes mud, no dots mud; walls can take a subtype. | Converter (`wall_subtypes`) | Brown strokes that make the outline are recorded in the th2 (`# wall-subtype clay: …`); after smoothing, wall segments along them get `subtype clay` (or `sand` with 3+ brown dots along them), back to `subtype bedrock` where the wall runs on as rock. A `subtype` on a point applies from that point on (checked in a test drawing). |
 
 First drafts: Trident drawn along its length, the far end after 33 not
 yet complete; GoSouth in two parts, the stretch from 22 to 23 (floor
