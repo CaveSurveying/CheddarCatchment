@@ -150,6 +150,25 @@ plan-only config.
 - Individually drawn rocks can be above or below the water; this needs
   careful ordering and use of clipping.
 
+## Extended elevations
+
+- Walls carry a subtype for what they are drawn as: `clay` (mud: brown),
+  `sand` (brown with dots), `flowstone` (green, smooth or running down
+  a step), `blocks` (rock on the floor: green boulders or a humpy line),
+  `debris` (a floor with rubble: brown curls), `bedrock` otherwise. A
+  `subtype` on a line point applies from that point on; a `-subtype` on
+  the line is overridden by one on its first point. Colour is only a
+  hint: shape decides.
+- A wall inside the passage stays a wall (`-outline none`), not a border.
+- A pool is an `area water` in an invisible closed border whose first two
+  points are its surface, the second with `adjust horizontal` so the
+  surface is level; a bowl wall under it where no floor was drawn.
+- Water flow is a `water-flow` point just under the floor, pointing
+  downhill along it.
+- A curtain is a point `curtain`; a group of stalactites `stalactites`;
+  no `flowstone` points (flowstone is a wall subtype). A rock in the
+  passage is a `rock-border -close on`.
+
 ## Cross-sections
 
 - `line section` goes completely across the passage.

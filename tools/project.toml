@@ -35,6 +35,7 @@ licence = "CC BY-NC-SA 4.0"         # survey data and drawings; the tools are GP
 # dashes) decides steps, pitches and overhangs.
 wall_colours = ["BLACK"]
 elevation_wall_colours = ["BLACK", "BROWN", "GREEN"]   # in elevations the floor is often drawn brown or green ...
+elevation_features = true   # elevations: pools, water flow, curtains, blocks, rocks, rubble, by shape
 wall_subtypes = true        # ... and is then mud (wall -subtype clay), sand (brown dots along it) or, green, flowstone (smooth) or blocks (lumpy, rock on the floor)
 interior_borders = true
 brown = "floor"
@@ -118,7 +119,7 @@ GoSouth = ["1-16", "17-29"]
 [scraps_extended]
 # The same for extended elevations: where passages overlap in elevation.
 # GoSouth: the rift up to 19 rises over the passage from 1 to 8.
-# Trident: the ramp to 14 (17 is above it); the passage on to 34; 35 to
-# 37 above 36 to 43 at the far end.
+# Trident (as the user split it): the ramp to 12; the passage from 13 on
+# to 34 and the far end, 36 and 38 to 43; 35 and 37 above it.
 GoSouth = ["1-16", "17-29"]
-Trident = ["1-14", "15-34", "35-43"]
+Trident = ["1-12", "13-34, 36, 38-43", "35, 37"]
