@@ -135,7 +135,7 @@ was put back afterwards. Against the reference, the converter still
 cannot know that the wall by 10 closes 9 to 11 off from 19, or that the
 strip by 17 is a pillar (two `wall-outline-none` findings): both are
 hand work.
-| 49 | Borders drawn over rocks deleted by hand (nine in all: three by 17 and 18 in the first edit, six by 3 to 4 and 8 to 13 now). Hopefully that can be tightened. | Converter (`marks.py`); `Style.md` | All but one were open brown strokes, part of the boulders' sketch. With `area_lines = false`, an open brown line at least half inside a boulder or debris area (allowing for the area's spline) is dropped: all eight brown ones go. The ninth was grey (a step or ledge) and is left. The converter also drops a brown line by 20 that the reference keeps: to ask. |
+| 49 | Borders drawn over rocks deleted by hand (nine in all: three by 17 and 18 in the first edit, six by 3 to 4 and 8 to 13 now). Hopefully that can be tightened. | Converter (`marks.py`); `Style.md` | All but one were open brown strokes, part of the boulders' sketch. With `area_lines = false`, an open brown line at least half inside a boulder or debris area (allowing for the area's spline) is dropped: all eight brown ones go. The ninth was grey (a step or ledge) and is left. The converter also dropped a brown line by 20 that the reference kept: the user confirmed it should go, and it was removed from the reference. |
 
 Draft 9 (`review/GoSouth.draft9.plan.th2`) against the reference: the
 same from 1 to 12 apart from the wall by 10; the two `wall-outline-none`
