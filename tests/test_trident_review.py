@@ -345,3 +345,18 @@ class Notation(unittest.TestCase):
         short = [('GRAY', [(0, 0), (0.5, 0)])] + [('GRAY', [(x, 0.01), (x, -0.15)]) for x in (0.1, 0.25, 0.4)]
         self.assertEqual([k for k, _, _ in notation.find(short)[0]], ['step'])
         self.assertEqual(notation.find(short[:3])[0], [])            # two ticks: too few for a short line
+
+
+class Elevations(unittest.TestCase):
+    def test_brown_floor_counts_in_elevations_only(self):
+        from tools.sketch2therion.convert import wall_strokes
+        settings.load()
+        self.assertEqual(settings.SETTINGS['wall_colours'], ['BLACK'])
+        self.assertIn('BROWN', settings.SETTINGS['elevation_wall_colours'])
+        floor = ('BROWN', [(x * 0.5, 0) for x in range(10)])
+        walls, _, _ = wall_strokes([floor])
+        self.assertEqual(walls, [])                                    # plan: brown is mud, not wall
+
+    def test_survey_layout_path(self):
+        from tools.sketch2therion.__main__ import survey_layout_path
+        self.assertTrue(survey_layout_path('GoSouth').endswith('layout-extended-GoSouth.xvi'))

@@ -262,3 +262,19 @@ The user's edits are in `8e32249`.
 | 93 | GoSouth: floor step missing by 17 to 18. | Converter (`notation.py`) | Two 0.52 m grey lines with three small ticks each: a ticked line down to 0.4 m is a step if it has at least three ticks. |
 | 94 | GoSouth: passage 18 to 19 still wrong; connected back to 10; not connected; not a pillar here. The first reference (`efd798c`) is correct. | Open | In `efd798c` the strip is a tongue of rock between the 19 to 18 passage and the passage at 17, its sides (sketch strokes 152 and 154) meeting at an apex and open at the wide end, where Therion closes the outline straight; the first scrap's wall left of 12 to 13 runs on to 17 (short dashes in the sketch). Tried (2026-10-08) and reverted: joining dashed walls; taking two strokes meeting at an apex with ends within 1.5 m as a wedge of rock (the 19 to 18 passage is itself such a V; with every leg counted it was kept, but the tongue was still not found, its far ends being near other strokes, and without that test Trident changed elsewhere); a stricter test for legs leaving through a wall (broke Trident's U). A general rule for this one place proved fragile. |
 | 95 | Add the rock hint for GoSouth 18 to 19 (agreed). | Tried, reverted | A per-survey `[rock]` outline (in metres from a station) cut from the fill. The cut itself worked (the tongue as rock, joined to the rock outside), but the 19 to 18 passage's walls then left the outline: the fill there is far wider than the walls, and reshaping it upsets the later steps that decide which strokes are outline walls. Left as hand work for this trial. |
+
+## Extended elevations, GoSouth and Trident (2026-10-08)
+
+Asked: draw the extended elevations of both; the projected versions
+later.
+
+| # | Finding | Kind | Outcome |
+|---|---|---|---|
+| 96 | GoSouth's elevation sketch did not fit Therion's extended layout (1.7 m, split into 13 groups); Trident's did. | Converter (`layout --survey`) | In the whole cave a survey's extended elevation carries on the way the survey before it runs (GoSouth from CrystalPitch, leftwards), and its `extend start` is ignored; SexyTopo sketched it on its own (rightwards). `python3 -m tools.sketch2therion layout --survey X` exports X's own extended layout; `extended` uses it if present. Both fit to 0.01 m. |
+| 97 | Most of each floor missing. | Converter (`elevation_wall_colours`) | The floors are drawn brown in the elevation sketches (brown is mud and boulders in plan, so plans take walls from black only). Elevations take black and brown. |
+| 98 | Filed. | | `X.extended.th2` (scrap `XSE1`) in `map XMEe` in `X.th`, replacing SexyTopo's empty elevation (`GoSouthE.th2`, `TridentEe.th2`). Review builds in `review/ext/` (not committed). |
+
+First drafts: Trident drawn along its length, the far end after 33 not
+yet complete; GoSouth in two parts, the stretch from 22 to 23 (floor
+drawn green and blue) missing. Lint: six `-outline none` walls,
+baselined. For the user's review.

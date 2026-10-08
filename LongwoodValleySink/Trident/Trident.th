@@ -7,7 +7,11 @@ input "Trident.plan.th2"
 map TridentMP
   TridentSP1
 endmap
-input "TridentEe.th2"
+input "Trident.extended.th2"
+
+map TridentMEe
+  TridentSE1
+endmap
 
 centreline
 

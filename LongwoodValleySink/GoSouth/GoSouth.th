@@ -8,7 +8,11 @@ map GoSouthMP
   GoSouthSP1
   GoSouthSP2
 endmap
-input "GoSouthE.th2"
+input "GoSouth.extended.th2"
+
+map GoSouthMEe
+  GoSouthSE1
+endmap
 
 centreline
 

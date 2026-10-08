@@ -20,8 +20,11 @@ plan-only config.
   `LongwoodValleySink/Plan_only.thcfg`). Older names (`thconfig`,
   `thconfig_A0plan`, SexyTopo's `X.thconfig`) stay as they are.
 - A survey `X` lives in `<Cave>/X/`: `X.th`, its plan `X.plan.th2`,
-  elevations `XE315.th2` (and `XE000.th2`, `XE090.th2`), sketches in
-  `X/Notes/*.xvi`.
+  its extended elevation `X.extended.th2` (scraps `XSE1`, …, in `map
+  XMEe`), projected elevations `XE315.th2` (and `XE000.th2`,
+  `XE090.th2`), sketches in `X/Notes/*.xvi`. An extended elevation is
+  drawn as sketched: laid out with the survey's own `extend` flags,
+  not as it falls in the whole cave.
 - Plan scraps are `XSP1`, `XSP2`, …; elevation scraps `XSE315_1`, ….
 - `X.th` has a `map XMP` listing its plan scraps (and `map XME315` for
   the elevation). The cave's plan map, `LongwoodValleySinkMP` in
