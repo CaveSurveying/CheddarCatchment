@@ -351,6 +351,33 @@ For each survey X:
   not crossing, no passage drawn twice), in the order of the table
   above, with a review zip of each junction.
 
+- **5d, do not second-guess Therion (agreed 2026-10-08, on hold until
+  the user says go).** Therion morphs each scrap onto its stations, and
+  stations move when other surveys connect (loops closing), so a drawing
+  must not be fixed to where Therion puts the stations today:
+  - scraps come from the cave (one per sketch, plus `[scraps]` and
+    `[scraps_extended]` chosen by hand where passages overlap), never
+    from where the sketch and today's layout disagree (now: a new scrap
+    per group of stations more than 1.5 m (elevation) or 3 m (plan)
+    apart, e.g. TritonSouth's elevation in three);
+  - the sketch is never mirrored to fit Therion (now: `register.fit`
+    may mirror it and drop the backdrop); a sketch that fits only
+    mirrored is reported;
+  - Therion's layout is used only by `check`, to report disagreement
+    (TritonSouth's loops, GoSouth's direction in the whole cave), never
+    to change a drawing;
+  - the per-survey exports (`layout --survey`, `output/layout-*`) go;
+  - cross-sections: **drawn** as they are drawn in the SexyTopo `.xvi`
+    export (their own walls, from the sketch); **placed**, for now, where
+    they are in the drawings in SVN, not computed from Therion's layout
+    (now: `place_sections` puts an elevation's cross-sections beside the
+    passage using Therion's plan layout). Placing them well is the
+    harder part and is left for later;
+  - the feedback loop is the PDF Therion builds: placement and fit are
+    judged on the output, not predicted from station positions.
+  The GoSouth and Trident drawings (hand-edited) are kept; the other
+  eight are converted again when this is done.
+
 Review comments and their outcomes are in `docs/lvs-phase5-log.md`.
 
 ### Difficulties (where the user's eye is needed)
