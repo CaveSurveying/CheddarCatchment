@@ -34,8 +34,8 @@ licence = "CC BY-NC-SA 4.0"         # survey data and drawings; the tools are GP
 # solid green lines gours. Colours are hints: the notation (ticks,
 # dashes) decides steps, pitches and overhangs.
 wall_colours = ["BLACK"]
-elevation_wall_colours = ["BLACK", "BROWN"]   # in elevations the floor is often drawn brown ...
-wall_subtypes = true        # ... and is then mud (wall -subtype clay), or sand where brown dots lie along it
+elevation_wall_colours = ["BLACK", "BROWN", "GREEN"]   # in elevations the floor is often drawn brown or green ...
+wall_subtypes = true        # ... and is then mud (wall -subtype clay), sand (brown dots along it) or flowstone (green)
 interior_borders = true
 brown = "floor"
 boulder_min = 0.3           # m: a closed loop this wide or wider is a boulder
