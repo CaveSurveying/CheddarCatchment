@@ -230,7 +230,10 @@ plan-only config.
   picked when editing (about 2% of the nearby legs' length, at least
   5 cm; the check uses the 5 cm) **[lint: node-gap]**: where a line ends
   on a wall, use the wall's node if one is that close, rather than adding
-  another beside it.
+  another beside it. How many nodes a line needs goes with how it bends:
+  a long sweep needs only a couple, an S bend more.
+- An area mostly outside the walls (rocks drawn along the wall) is not
+  drawn.
 - Do not draw a wall where nothing was sketched: no presumed walls to
   close an outline; leave the gap for Therion.
 - Where two passages, or the two sides of a bend, come close, the rock

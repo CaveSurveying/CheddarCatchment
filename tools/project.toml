@@ -68,13 +68,15 @@ wall_tol_rel = 0.02         # walls follow the sketch to within this share of th
 wall_presmooth = 3          # ... after smoothing out hand wobble over 3 times that (nodes where the wall bends)
 rock_faces = true           # the fill is cut along the walls; rock it took in (bends, tongues, hooks) dropped
 wall_hooks = true           # a small black loop left open at a wall is a hook of the wall, not a boulder
-line_tol_rel = 0.05         # borders, steps and overhangs likewise (fewer control points)
+wall_links = 0.4            # m: a piece of wall off the outline, this long or more, joining two outline walls' ends is wall (no hole)
+area_inside_min = 0.2       # an area less than this share inside the passage (its marks along a wall) is not drawn
+line_tol_rel = 0.02         # borders, steps and overhangs likewise
 section_tol_rel = 0.05      # a cross-section's wall to within this share of its size
 sections_in_place = true    # a cross-section is drawn where it was sketched, by its section mark
 wall_ends_meet = 0.15       # m: wall ends this close meet (not across a leg, and only if the outline stays sound) ...
 wall_ends_meet_rel = 0.12   # ... or within this share of the nearby legs' length, if larger
 node_gap = 0.05             # m: no two nodes of a line closer than this, so each can be picked when editing ...
-node_gap_rel = 0.02         # ... or this share of the nearby legs' length, if larger
+node_gap_rel = 0.05        # ... or this share of the nearby legs' length, if larger (fewer, smoother nodes)
 hand_scraps = true          # plan scraps from [scraps] below, where a survey has them
 join_local = true           # joined walls refitted only near the join, not along their length
 

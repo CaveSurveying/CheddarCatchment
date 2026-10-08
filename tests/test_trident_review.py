@@ -103,9 +103,21 @@ class NodeGap(unittest.TestCase):
         out = nodes.thin([[0, 0], [10, 0], [11, 0], [20, 0], [30, 0], [30.5, 0]], 3)
         self.assertEqual([tuple(s[-2:]) for s in out], [(0, 0), (10, 0), (20, 0), (30.5, 0)])
 
-    def test_curves_keep_their_outer_control_points(self):
-        out = nodes.thin([[0, 0], [2, 1, 4, 1, 5, 0], [5.5, 0.2, 5.8, 0.2, 6, 0], [8, -1, 9, -1, 10, 0]], 3)
-        self.assertEqual(out[-1], [5.5, 0.2, 9, -1, 10, 0])
+    def test_merged_segment_follows_the_shape(self):
+        # a sweep sampled with an extra node: the node goes and the curve barely moves
+        import math as m
+        arc = [(10 * m.cos(a), 10 * m.sin(a)) for a in (0, 0.5, 0.55, 1.1)]
+        segs = [[*arc[0]]] + [[*p] for p in arc[1:]]
+        out = nodes.thin(segs, 1.0, maxerr=0.5)
+        self.assertEqual(len(out), 3)
+
+    def test_s_bend_keeps_its_node_a_sweep_does_not(self):
+        # the user's point: sweeps need few nodes, S bends more
+        s_bend = [[0, 0], [0.2, 0.8, 0.8, 0.8, 1, 0], [1.2, -0.8, 1.8, -0.8, 2, 0]]
+        sweep = [[0, 0], [0.2, 0.3, 0.8, 0.5, 1, 0.55], [1.2, 0.6, 1.8, 0.5, 2, 0.2]]
+        self.assertEqual(len(nodes.thin(s_bend, 1.5, maxerr=0.1)), 3)
+        self.assertEqual(len(nodes.thin(s_bend, 1.5)), 2)              # with no limit it would go
+        self.assertEqual(len(nodes.thin(sweep, 1.5, maxerr=0.05)), 2)
 
     def test_nothing_to_thin(self):
         segs = [[0, 0], [10, 0], [20, 0]]
