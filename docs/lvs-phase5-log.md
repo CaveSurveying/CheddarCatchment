@@ -290,8 +290,31 @@ later.
 | 113 | Do not use point subtypes in walls (hard to follow as a user): `line wall -subtype clay`, and do not change subtype along a line. | Converter (`wall_subtypes`) | A wall whose kind changes is cut into one line per kind, `line wall -subtype X` (plain for rock), meeting end to end; a stretch under 0.5 m goes with its neighbour. Style.md updated. |
 | 114 | The green slope 34 to 37 (clay in the edit) was a mistake: flowstone is right. | | No change. |
 | 115 | The spike by 37 is a drawing glitch; its line is in the wrong scrap. | Converter (`drawn_on`, `[glitches]`, fill `stops`) | The stroke is the roof over 38 to 39 drawn on up past 37: a whole stroke drawn on from the end of a longer one in another scrap now goes into that scrap. The glitch, a peak 1.7 m above 37, is listed in `[glitches]` in project.toml (a box in sketch metres whose stroke points are ignored; the sketch is untouched). The elevation fill also stops at other scraps' walls (a passage above: its floor is this one's roof). |
+| 116 | The glitch in Trident is very small; the gross feature (the peak by 37) should be there. The user put it back (309e565). | Correction of row 115 | The `[glitches]` box for Trident is removed (the table stays, for slips the user confirms). The peak is converted again and goes into TridentSE2 as an outline wall, as the user has it: `drawn_on` no longer prefers the longer stroke (that was to keep the glitch out) but the scrap with more stations, a small scrap being a passage split off a main one. The user's Trident.extended.th2 is kept as edited. |
 
 First drafts: Trident drawn along its length, the far end after 33 not
 yet complete; GoSouth in two parts, the stretch from 22 to 23 (floor
 drawn green and blue) missing. Lint: six `-outline none` walls,
 baselined. For the user's review.
+
+## The other eight surveys, plans and extended elevations (2026-10-08)
+
+Asked: do all the other elevations and plans. First drafts, converted with
+every rule so far (`review/dev/doall.sh`), filed with `place` (plans) and
+as `X.extended.th2` in `map XMEe` (elevations), SexyTopo's empty files
+removed (stations only, no lines).
+
+| Survey | Plan sketch fit | Plan | Elevation | Open |
+|---|---|---|---|---|
+| TridentCentre | 0.05 m | 1 scrap | 1 scrap | plan outline crosses itself (MetaPost) by 8 |
+| TridentLeft | 0.14 m | 1 scrap | 1 scrap | |
+| IDontCare | 0.06 m | 1 scrap | 1 scrap | |
+| BoldStep | 0.05 m | 1 scrap | 1 scrap | |
+| TritonNorth | 0.23 m | 1 scrap | 1 scrap | |
+| TritonSouth | 0.13 m | 1 scrap | 3 scraps | elevation sketch fits only to 9 (3.0 m): the loops (equate 10 18, 13 21) are unfolded differently by SexyTopo and Therion |
+| Connection | 0.12 m | 1 scrap | 1 scrap | elevation outline crosses itself (MetaPost) |
+| FairyChimneys | 0.19 m | 1 scrap | 1 scrap | plan outline crosses itself round 16 to 22 |
+
+All build with no `therion: error` or `invalid scrap outline`; lint
+findings (mostly `-outline none` walls) baselined; review PDFs in
+`review/X-plan.pdf` and `review/X-extended.pdf`. For the user's review.

@@ -2,8 +2,16 @@ encoding  utf-8
 survey TridentCentre
 # Created with SexyTopo 1.12.2 on 2026-07-11
 
-input "TridentCentreP.th2"
-input "TridentCentreEe.th2"
+input "TridentCentre.plan.th2"
+
+map TridentCentreMP
+  TridentCentreSP1
+endmap
+input "TridentCentre.extended.th2"
+
+map TridentCentreMEe
+  TridentCentreSE1
+endmap
 
 
 centreline

@@ -98,13 +98,13 @@ class WallSubtypes(unittest.TestCase):
 
 
 class Scraps(unittest.TestCase):
-    def test_stroke_drawn_on_goes_with_the_longer_one(self):
+    def test_stroke_drawn_on_goes_with_the_bigger_scrap(self):
         from tools.sketch2therion.convert import drawn_on
-        long_ = [(0, 0), (5, 0)]
-        short = [(5.1, 0), (7, 1)]
-        lines = [('BLACK', long_), ('BLACK', short)]
-        out = drawn_on([(0, 'BLACK', list(long_)), (1, 'BLACK', list(short))], lines)
-        self.assertEqual([k for k, _, _ in out], [0, 0])
+        a = [(0, 0), (5, 0)]
+        b = [(5.1, 0), (12, 1)]
+        lines = [('BLACK', a), ('BLACK', b)]
+        out = drawn_on([(0, 'BLACK', list(a)), (1, 'BLACK', list(b))], lines, [20, 2])
+        self.assertEqual([k for k, _, _ in out], [0, 0])     # the longer stroke joins the main scrap
 
     def test_glitch_cut_out(self):
         from tools.sketch2therion.convert import cut_glitches

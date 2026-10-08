@@ -298,6 +298,11 @@ have something to meet:
 | 4 | IDontCare, BoldStep, TritonNorth, TritonSouth | 32, 36, 37, 38@TridentLeft |
 | 5 | Connection, FairyChimneys | 94@NorthRift, TritonSouth, BoldStep |
 
+Status 2026-10-08: all ten converted, plans and extended elevations
+(the elevations added at the user's request); GoSouth and Trident
+reviewed and hand-edited, the other eight first drafts for review (see
+`docs/lvs-phase5-log.md`).
+
 What the pilot teaches goes into `tools/Style.md` and the converter
 before Trident is started. A test review zip of the GoSouth draft
 was sent first, to check the backdrop opens on the user's computer.

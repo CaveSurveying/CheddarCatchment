@@ -127,9 +127,6 @@ Trident = ["1-12", "13-34, 36, 38-43", "35, 37"]
 [glitches]
 # Slips of the pen in a sketch: stroke points inside these boxes (sketch
 # metres, x0 y0 x1 y1, as `check` and the .xvi give them) are ignored,
-# cutting the stroke there. The sketch itself is left as it is.
-# Trident elevation: the roof over 38 to 39 is drawn on up past 37 to a
-# peak 1.7 m above it.
-[glitches.Trident]
-"TridentEe.xvi" = [[99.9, 11.4, 101.4, 13.0]]
-
+# cutting the stroke there. The sketch itself is left as it is. Only for
+# a slip the user confirms: a sharp feature is usually real (Trident's
+# peak by 37 is, log row 116).
