@@ -69,7 +69,8 @@ class NotationTest(unittest.TestCase):
         s = xvi.read(os.path.join(REPO, "LongwoodValleySink", "GoSouth", "Notes", "GoSouthP.xvi"))
         feats, _ = notation.find(s.lines)
         kinds = sorted(k for k, _, _ in feats)
-        self.assertEqual(kinds, ["overhang", "step", "step", "step", "step"])   # the two overhang pieces are one
+        # the two overhang pieces are one; the two short ticked lines by 17 to 18 are steps too
+        self.assertEqual(kinds, ["overhang", "step", "step", "step", "step", "step", "step"])
 
     def test_pitch_from_elevation(self):
         passage = Polygon([(-1, -2), (4, -2), (4, 2), (-1, 2)])

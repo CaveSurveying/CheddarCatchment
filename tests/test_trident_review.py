@@ -293,3 +293,55 @@ class DetachedTicks(unittest.TestCase):
         settings.load()
         black = ('BLACK', line[1])                                       # a black line is wall
         self.assertEqual(notation.find([black] + ticks)[0], [])
+
+
+class Discontinuities(unittest.TestCase):
+    """Overshoots where strokes overlap are not corners (user: discontinuities)."""
+
+    def wall(self, segs):
+        o = tidy.Obj('line', 'line wall', [])
+        o.set_segments(segs)
+        return o
+
+    def test_spike_removed(self):
+        w = self.wall([[0, 0], [100, 0], [92, 2], [200, 4]])       # runs on 0.08 m and back
+        self.assertEqual(nodes.despike([w], 100.0, 0.3), 1)
+        self.assertEqual(len(w.segments()), 3)
+
+    def test_small_step_removed_real_corner_kept(self):
+        w = self.wall([[0, 0], [100, 0], [100, 5], [200, 5]])      # a 5 cm sideways step
+        nodes.despike([w], 100.0, 0.3)
+        self.assertLess(len(w.segments()), 4)
+        c = self.wall([[0, 0], [100, 0], [100, 100]])               # a real corner, 1 m each way
+        self.assertEqual(nodes.despike([c], 100.0, 0.3), 0)
+
+    def test_hook_within_a_segment_fixed(self):
+        # the end handle lies past the end point: the curve overshoots and comes back
+        w = self.wall([[0, 0], [30, 0, 130, 0, 100, 0]])
+        self.assertEqual(nodes.fix_handles([w], 1.0), 1)
+        s = w.segments()[1]
+        self.assertTrue(0 <= s[2] <= 100)
+
+    def test_kinked_handles_on_a_smooth_line_aligned(self):
+        # the wall runs straight through the node, but the handles meet at a sharp angle
+        segs = [[0, 0], [30, 10, 80, 20, 100, 0], [120, 20, 170, 10, 200, 0]]
+        out, n = nodes.align_handles(segs, 60)
+        self.assertEqual(n, 1)
+
+
+class Notation(unittest.TestCase):
+    def tearDown(self):
+        settings.load()
+
+    def test_overhang_of_two_ticked_dashes_and_short_steps(self):
+        from tools.sketch2therion import notation
+        settings.load()
+        dashes = [('GRAY', [(0, 0), (0.45, 0)]), ('GRAY', [(0.9, 0), (1.35, 0)])]
+        ticks = [('GRAY', [(0.22, 0.02), (0.22, -0.4)]), ('GRAY', [(1.12, 0.02), (1.12, -0.4)])]
+        feats, _ = notation.find(dashes + ticks)
+        self.assertEqual([k for k, _, _ in feats], ['overhang'])
+        brown = [('BROWN', pp) for _, pp in dashes + ticks]          # mud dashes are not an overhang
+        self.assertEqual(notation.find(brown)[0], [])
+        short = [('GRAY', [(0, 0), (0.5, 0)])] + [('GRAY', [(x, 0.01), (x, -0.15)]) for x in (0.1, 0.25, 0.4)]
+        self.assertEqual([k for k, _, _ in notation.find(short)[0]], ['step'])
+        self.assertEqual(notation.find(short[:3])[0], [])            # two ticks: too few for a short line
