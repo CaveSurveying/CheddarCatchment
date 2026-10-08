@@ -227,3 +227,13 @@ The user edited `review/Trident.draft5.plan.th2` with examples.
 
 Not yet: the direction of floor-step ticks (two borders by 24 made floor
 steps `-reverse on`); the wall from 12 round to 13.
+
+## Converted run of both surveys (2026-10-08)
+
+| # | Comment | Kind | Outcome |
+|---|---|---|---|
+| 78 | Short lines can be merged even when the join is sharp; the control points there need not line up, but most nodes should have theirs in line. | Converter (`nodes.merge_short`) | Merged at any angle; a sharp join keeps its corner (`align_handles` only lines up turns under 60 degrees). A floor step, pitch or overhang is only joined where it already runs the same way: turning one round would move its ticks to the other side (the cause of the steps the user reversed by 16 to 18 and by 25). |
+| 79 | Ticks on the wrong side: possibly the line was reversed (`-reverse on`) rather than the ticks moved, which is convenient when editing but should not be in an original drawing. | Noted | The converter writes every line the right way round and never uses `-reverse on`; see row 78 for its own cause. |
+| 80 | Lines of different kinds ending close together usually share the end (border to floor step to pit: the height changing along the edge). | Converter (`nodes.ends_meet`) | `ends_meet = true`: within the wall-join reach they meet halfway, or at the end already on a wall. |
+| 81 | (Found by the build) MetaPost warned GoSouthSP1 "intersects itself". | Converter (`nodes.walls_meet`) | Joining two wall ends round a sharp corner (by 2 and 3) moved their curves into a small loop. Wall ends are now joined only where the walls carry on (turn under 75 degrees); at a corner Therion's straight closing is left. |
+| 82 | Produce Trident.th2 and GoSouth.th2 for the user to go through. | Run | Both converted with the current settings into `LongwoodValleySink/{GoSouth,Trident}/*.plan.th2`, replacing the hand-edited references (still in git: GoSouth `efd798c`, Trident `1732381`). Build: no errors, no MetaPost warning for either. Walls 0.041 m (GoSouth) and 0.063 m (Trident) from the sketch (p90), other lines 0.043 and 0.045 m. Lint: the two `-outline none` walls of GoSouth's pillar by 17 (in the baseline). Known: the wall from 12 round to 13 in Trident. |

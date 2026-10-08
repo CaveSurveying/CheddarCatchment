@@ -214,12 +214,54 @@ class MergeShort(unittest.TestCase):
         g2 = self.line('line rimstone-dam', [(100, 50), (150, 60)])
         self.assertEqual(nodes.merge_short([a, b, g1, g2], 100.0, 0.2), 0)
 
-    def test_longer_short_line_only_if_it_runs_on(self):
+    def test_merged_even_at_a_sharp_turn(self):
         a = self.line('line border', [(0, 0), (100, 0), (200, 0)])
-        back = self.line('line border', [(200, 0), (150, 20), (100, 30)])      # turns right back
-        self.assertEqual(nodes.merge_short([a, back], 100.0, 0.2), 0)
-        on = self.line('line border', [(200, 0), (250, 10), (300, 15)])
-        self.assertEqual(nodes.merge_short([a, on], 100.0, 0.2), 1)
+        back = self.line('line border', [(200, 0), (150, 20), (100, 30)])      # turns sharply
+        self.assertEqual(nodes.merge_short([a, back], 100.0, 0.2), 1)
+        a = self.line('line border', [(0, 0), (100, 0), (200, 0)])
+        back = self.line('line border', [(200, 0), (150, 20), (100, 30)])
+        self.assertEqual(nodes.merge_short([a, back], 100.0, 0.2, turn_max=90), 0)   # if asked to be strict
+
+
+class StepsKeepTheirTicks(unittest.TestCase):
+    def line(self, head, pts):
+        o = tidy.Obj('line', head, [])
+        o.set_segments([[x, y] for x, y in pts])
+        return o
+
+    def test_steps_joined_only_running_the_same_way(self):
+        a = self.line('line floor-step', [(0, 0), (100, 0), (200, 0)])
+        b = self.line('line floor-step', [(300, 0), (210, 0)])          # runs the other way: ticks the other side
+        self.assertEqual(nodes.merge_short([a, b], 100.0, 0.2), 0)
+        c = self.line('line floor-step', [(210, 0), (300, 0)])
+        objs = [a, c]
+        self.assertEqual(nodes.merge_short(objs, 100.0, 0.2), 1)
+        s = objs[0].segments()
+        self.assertEqual((tuple(s[0][-2:]), tuple(s[-1][-2:])), ((0.0, 0.0), (300.0, 0.0)))   # not turned round
+
+
+class EndsMeet(unittest.TestCase):
+    def line(self, head, pts):
+        o = tidy.Obj('line', head, [])
+        o.set_segments([[x, y] for x, y in pts])
+        return o
+
+    def test_border_floor_step_pit_share_ends(self):
+        b = self.line('line border', [(0, 0), (100, 0)])
+        f = self.line('line floor-step', [(110, 5), (200, 0)])
+        p = self.line('line pit', [(205, -8), (300, 0)])
+        objs = [b, f, p]
+        self.assertEqual(nodes.ends_meet(objs, 100.0, 0.2), 2)
+        self.assertEqual(tuple(b.segments()[-1][-2:]), tuple(f.segments()[0][-2:]))
+        self.assertEqual(tuple(f.segments()[-1][-2:]), tuple(p.segments()[0][-2:]))
+
+    def test_end_on_a_wall_stays(self):
+        w = self.line('line wall', [(0, -50), (100, 0), (100, 100)])
+        b = self.line('line border', [(100, 0), (200, 0)])               # ends on the wall's node
+        f = self.line('line floor-step', [(110, 5), (110, 80)])
+        nodes.ends_meet([w, b, f], 100.0, 0.2)
+        self.assertEqual(tuple(b.segments()[0][-2:]), (100.0, 0.0))
+        self.assertEqual(tuple(f.segments()[0][-2:]), (100.0, 0.0))
 
 
 class HandlesInLine(unittest.TestCase):
