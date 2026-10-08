@@ -11,6 +11,8 @@ input "Trident.extended.th2"
 
 map TridentMEe
   TridentSE1
+  TridentSE2
+  TridentSE3
 endmap
 
 centreline

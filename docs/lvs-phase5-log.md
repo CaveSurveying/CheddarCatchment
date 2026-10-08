@@ -276,6 +276,8 @@ later.
 | 99 | Brown is mud or sand, not rock: brown dots sand, dashes mud, no dots mud; walls can take a subtype. | Converter (`wall_subtypes`) | Brown strokes that make the outline are recorded in the th2 (`# wall-subtype clay: …`); after smoothing, wall segments along them get `subtype clay` (or `sand` with 3+ brown dots along them), back to `subtype bedrock` where the wall runs on as rock. A `subtype` on a point applies from that point on (checked in a test drawing). |
 | 100 | Green is flowstone. | Converter (`elevation_wall_colours`, `wall_subtypes`) | Elevations take walls from green too, with `subtype flowstone`. GoSouth now joins up from 0 through 22–23 to 29; Trident runs on to 39. |
 | 101 | Rock on the floor is a wall `-subtype blocks`; often green, but colour is only a hint. | Converter (`_lumpy`) | A green outline stroke drawn as a closed loop, or lumpy (over 1.3 × its length smoothed at 0.15 m), gets `subtype blocks`; a smooth one `flowstone`. GoSouth: blocks at 22–23, flowstone beyond. |
+| 102 | Why is `extend start` ignored? | Therion behaviour | Checked in a test: Therion uses only the first `extend start` it reads in a connected cave (BoldStep's, input first) and skips the rest silently; legs without a flag carry on the way they are reached. User: looks like a bug, leave for now. |
+| 103 | Split into scraps: GoSouth two, Trident at least three, for hand editing. | Converter (`[scraps_extended]`) | Hand-chosen elevation scraps, as `[scraps]` for plans. GoSouth 1-16, 17-29 (the rift to 19 over 1 to 8); Trident 1-14, 15-34, 35-43. |
 
 First drafts: Trident drawn along its length, the far end after 33 not
 yet complete; GoSouth in two parts, the stretch from 22 to 23 (floor

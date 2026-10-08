@@ -12,6 +12,7 @@ input "GoSouth.extended.th2"
 
 map GoSouthMEe
   GoSouthSE1
+  GoSouthSE2
 endmap
 
 centreline

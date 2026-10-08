@@ -114,3 +114,11 @@ blurb = "The whole cave in plan, rotated 45 degrees. Scale 1:500."
 # GoSouth: 15 to 17 drops into the passage beside (19, 18, 20 and on),
 # which only comes close to 9 to 11, 8 m below 19, without joining it.
 GoSouth = ["1-16", "17-29"]
+
+[scraps_extended]
+# The same for extended elevations: where passages overlap in elevation.
+# GoSouth: the rift up to 19 rises over the passage from 1 to 8.
+# Trident: the ramp to 14 (17 is above it); the passage on to 34; 35 to
+# 37 above 36 to 43 at the far end.
+GoSouth = ["1-16", "17-29"]
+Trident = ["1-14", "15-34", "35-43"]

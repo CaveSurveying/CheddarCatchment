@@ -370,3 +370,9 @@ class Elevations(unittest.TestCase):
         self.assertFalse(_lumpy(smooth))
         self.assertTrue(_lumpy(bumps))
         self.assertTrue(_lumpy(loop))
+
+    def test_extended_scraps_by_hand(self):
+        from tools import project
+        P = project.load()
+        self.assertEqual(P.scraps_extended.get('GoSouth'), ['1-16', '17-29'])
+        self.assertEqual(len(P.scraps_extended.get('Trident')), 3)
