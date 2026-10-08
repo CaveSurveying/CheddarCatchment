@@ -224,7 +224,12 @@ plan-only config.
   a line follows the sketch goes with the length of the legs nearby (the
   drawing is zoomed so that legs fit the screen), not a fixed distance.
 - Walls the sketcher did not quite join are joined: their ends meet
-  exactly, end to end (not across the passage).
+  exactly, end to end (not across the passage). Too close to see is
+  relative to the legs nearby, with a minimum.
+- No two nodes of a line so close that they cannot be told apart and
+  picked when editing (about 2% of the nearby legs' length, at least
+  5 cm): where a line ends on a wall, use the wall's node if one is that
+  close, rather than adding another beside it.
 - Do not draw a wall where nothing was sketched: no presumed walls to
   close an outline; leave the gap for Therion.
 - A cross-section is its own scrap, with its wall drawn, placed (in the

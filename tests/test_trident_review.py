@@ -94,3 +94,39 @@ class SectionInPlace(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NodeGap(unittest.TestCase):
+    """No two nodes too close to pick apart when editing (nodes.thin)."""
+
+    def test_close_nodes_go_ends_stay(self):
+        out = nodes.thin([[0, 0], [10, 0], [11, 0], [20, 0], [30, 0], [30.5, 0]], 3)
+        self.assertEqual([tuple(s[-2:]) for s in out], [(0, 0), (10, 0), (20, 0), (30.5, 0)])
+
+    def test_curves_keep_their_outer_control_points(self):
+        out = nodes.thin([[0, 0], [2, 1, 4, 1, 5, 0], [5.5, 0.2, 5.8, 0.2, 6, 0], [8, -1, 9, -1, 10, 0]], 3)
+        self.assertEqual(out[-1], [5.5, 0.2, 9, -1, 10, 0])
+
+    def test_nothing_to_thin(self):
+        segs = [[0, 0], [10, 0], [20, 0]]
+        self.assertEqual(nodes.thin(segs, 3), segs)
+
+    def test_closed_line_stays_closed(self):
+        o = tidy.Obj('line', 'line border -close on', [])
+        o.set_segments([[0, 0], [10, 0], [10.5, 0], [10, 10], [0, 10], [0, 0]])
+        nodes.thin_scrap([o], 1.0, lambda o: 2.0)
+        s = o.segments()
+        self.assertEqual(tuple(s[0][-2:]), tuple(s[-1][-2:]))
+        self.assertEqual(len(s), 5)
+
+
+class RelativeJoin(unittest.TestCase):
+    def wall(self, pts):
+        o = tidy.Obj('line', 'line wall', [])
+        o.set_segments([[x, y] for x, y in pts])
+        return o
+
+    def test_reach_can_depend_on_where(self):
+        a, b = self.wall([(0, 0), (100, 0)]), self.wall([(130, 0), (200, 0)])     # 0.3 m apart (K = 100)
+        self.assertEqual(nodes.walls_meet([a, b], 100.0, lambda p: 0.2), 0)
+        self.assertEqual(nodes.walls_meet([a, b], 100.0, lambda p: 0.4), 2)

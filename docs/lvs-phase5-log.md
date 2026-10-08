@@ -177,3 +177,8 @@ How row 57 was fixed, in `LongwoodValleySink/Trident/Trident.plan.th2`:
 Still open: the passage fill bridging rock (the inside of the U between
 19 and 23, 12 to 13, 37 to 39), which leaves walls inside the fill as
 `-outline none` or borders (the user made three of them walls by hand).
+| 58 | Should joins also be relative, with an absolute as well? | Converter settings | `wall_ends_meet = 0.15` m or `wall_ends_meet_rel = 0.12` of the local leg length, whichever is larger (about 0.4 m in Trident, 0.26 m in GoSouth). |
+| 59 | Many of the changes made to the user's edits came from two points too close together to see. A minimum distance between nodes, to let human editing work. | Converter (`nodes.thin`); `Style.md` | `node_gap = 0.05` m or `node_gap_rel = 0.02` of the local leg length, whichever is larger: a node closer than that to the one before goes (its two segments become one, keeping the outer control points; ends stay); a line's end at a wall reuses a node that close instead of adding one. Draft 2 had 17 such pairs, some of them repeated points; the new drafts none. |
+
+The user's Trident drawing (with the row 57 fixes) was committed as its
+first reference.

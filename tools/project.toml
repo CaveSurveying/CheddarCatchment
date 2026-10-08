@@ -68,7 +68,10 @@ wall_tol_rel = 0.06         # walls follow the sketch to within this share of th
 line_tol_rel = 0.05         # borders, steps and overhangs likewise (fewer control points)
 section_tol_rel = 0.05      # a cross-section's wall to within this share of its size
 sections_in_place = true    # a cross-section is drawn where it was sketched, by its section mark
-wall_ends_meet = 0.45       # m: wall ends this close meet (not across a leg, and only if the outline stays sound)
+wall_ends_meet = 0.15       # m: wall ends this close meet (not across a leg, and only if the outline stays sound) ...
+wall_ends_meet_rel = 0.12   # ... or within this share of the nearby legs' length, if larger
+node_gap = 0.05             # m: no two nodes of a line closer than this, so each can be picked when editing ...
+node_gap_rel = 0.02         # ... or this share of the nearby legs' length, if larger
 hand_scraps = true          # plan scraps from [scraps] below, where a survey has them
 join_local = true           # joined walls refitted only near the join, not along their length
 
