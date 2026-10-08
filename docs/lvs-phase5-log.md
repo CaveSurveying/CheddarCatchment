@@ -140,3 +140,40 @@ hand work.
 Draft 9 (`review/GoSouth.draft9.plan.th2`) against the reference: the
 same from 1 to 12 apart from the wall by 10; the two `wall-outline-none`
 findings by 17 (the pillar) remain hand work.
+
+## Trident draft 1 review (2026-10-08)
+
+Trident draft 1 (the converter as left after GoSouth) was edited by the
+user in xTherion; their comments and edits, and what was done. The
+user's file is still being edited and is not committed.
+
+| # | Comment or edit | Kind | Outcome |
+|---|---|---|---|
+| 50 | The brown dashes are mud; a mud patch just above should have been expanded. (The user drew one mud area each from 1 to 6 and 26 to 30.) | Converter (`marks.py`); `Style.md` | `dash_max = 1.5` (brown dashes up to 1.5 m, roughly straight, are mud), `mud_near = 2.0` (one patch), `mud_grow = 0.7` (grown round its marks, following the passage); sand on mud merged in; kept off rock areas; marks touching a step are its ticks; a lone longer dash stays a line. One patch each now, as drawn. |
+| 51 | (Edit) Three floor steps by 1 to 4 made walls, one deleted. | Converter (`notation.py`) | The mud dashes beside the walls had been read as step ticks: `brown_ticks = false`. |
+| 52 | Why was the presumed wall added where there was nothing? (Two deleted.) | Converter (`tidy.close_outline`); `Style.md` | `tidy` drew a presumed wall where Therion might close a gap badly. `presumed_walls = false`: the gap is left for Therion. The outline stays valid. |
+| 53 | A wall in space, deleted. The section should be in its own scrap and have its wall drawn. | Converter (`convert.section_th2`, `smooth`); `Style.md` | The "wall in space" was the cross-section at station 2: its own scrap, but drawn at its own coordinates, far from the cave in xTherion. `sections_in_place = true` draws it where it was sketched, by its section mark; `section_tol_rel = 0.05` refits its wall to its own size (it had become a triangle). |
+| 54 | Far too many control points on many lines; the person drawing zooms so the legs fit the screen, so use a measure relative to, say, the three nearest legs. | Converter (`scale.py`, `smooth`, `marks.smooth_rows`) | `wall_tol_rel = 0.06`, `line_tol_rel = 0.05`: walls and other lines follow the sketch to within that share of the mean length of the 3 nearest legs. Trident: walls 0.72 to 0.64 points/m, other lines 2.49 to 1.91. `nodes.nearest_on` now samples long segments finely (a 12 m segment had been measured 0.15 m out). |
+| 55 | Lots of little joins not continuous (a few fixed by hand). | Converter (`nodes.walls_meet`); `Style.md` | `wall_ends_meet = 0.45`: wall ends this close meet; a non-outline wall's end near another's side ends on it. Not across a survey leg, and undone if the outline would no longer be sound. The user's joins by 12 to 13 and 11 to 12 are now made. |
+| 56 | (Found) Brown boulders drawn as curls, not quite closed, came out as dense little borders. | Converter (`marks.py`) | `curls_closed = true`: such a stroke is a closed loop (boulder or debris). |
+| 57 | Fix "scrap intersects itself" in the user's edits, and say how. | Hand work (in the user's file) | Four places, each where two walls met (see below). Valid outline; Therion builds without a warning. |
+
+How row 57 was fixed, in `LongwoodValleySink/Trident/Trident.plan.th2`:
+
+1. By 2 (west wall): the new wall started on a node of the old one, but the
+   old wall carried on 0.23 m past it, back down the new one. The old
+   wall's last segment was deleted.
+2. By 2 and 3: likewise, the old wall started 0.14 m back past the node
+   where the new wall ended. Its first point was deleted.
+3. By 13 to 17: the wall's last segment went from a point back to the
+   same point with control points either side, a tiny loop left by
+   moving the end. Deleted.
+4. By the fork at 35/36 (37 one way, 38 and 39 the other): the 38 branch's
+   west wall was `-outline none` above and a border below, so Therion
+   closed the outline across the rock to the 37 branch. Both made outline
+   walls; the border's hook at its foot cut off so it ends where the wall
+   up to 37 starts.
+
+Still open: the passage fill bridging rock (the inside of the U between
+19 and 23, 12 to 13, 37 to 39), which leaves walls inside the fill as
+`-outline none` or borders (the user made three of them walls by hand).

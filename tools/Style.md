@@ -200,6 +200,12 @@ plan-only config.
 - Little marks (dots, tiny loops, short dashes) come from sketching in a
   dirty place: ignore one on its own; many together are sand (dots) or
   mud (dashes).
+- Brown dashes (up to about 1.5 m) are mud: draw the whole stretch where
+  they lie as one `area clay`, wall to wall, not a patch round each
+  group; keep it off boulder and debris areas. Brown dashes beside a
+  wall are mud, not the ticks of a step.
+- A brown stroke curled round on itself is a boulder, even if the loop
+  was not quite closed.
 - Closed loops are boulders (about 0.3 m across or more) or debris
   (smaller), whatever their colour: a green loop on its own is a boulder,
   only rings inside one another are a formation.
@@ -214,8 +220,15 @@ plan-only config.
   smoothed) with its `line rock-edge` after it in the file, one edge line
   where its pieces share a point.
 - Lines other than boulders are smooth: points only where the line
-  really bends (a few per metre at most), with splines, not every point
-  of the sketch.
+  really bends, with splines, not every point of the sketch. How closely
+  a line follows the sketch goes with the length of the legs nearby (the
+  drawing is zoomed so that legs fit the screen), not a fixed distance.
+- Walls the sketcher did not quite join are joined: their ends meet
+  exactly, end to end (not across the passage).
+- Do not draw a wall where nothing was sketched: no presumed walls to
+  close an outline; leave the gap for Therion.
+- A cross-section is its own scrap, with its wall drawn, placed (in the
+  file's coordinates) by its section mark, so xTherion shows it there.
 - A boulder's edge lines meet at a ridge point and end on its corners;
   more than one may be needed, but as few as possible.
 - SexyTopo is set up to export in the house style (`X.plan.th2`, `XSP1`,
