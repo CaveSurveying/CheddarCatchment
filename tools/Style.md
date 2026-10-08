@@ -241,7 +241,14 @@ plan-only config.
 - At a node, the control points either side are in line with it (a
   smooth node) unless the line needs a sharp corner there.
 - A short line (2 nodes, sometimes 3 or 4) that meets a line of the same
-  kind end to end is part of it: one line, not several.
+  kind end to end is part of it: one line, not several. A line sketched
+  in pieces with small gaps is one line too.
+- Lines of different kinds ending close together share the end (a
+  border running on as a floor step, then a pitch).
+- A deliberate bulge or pocket in a wall is drawn; it is not a glitch to
+  smooth away. Clear corners stay sharp.
+- Mud dashes beside a line are mud, not the ticks of a step; an area of
+  rocks stays on its side of the line, the mud on the other.
 - Do not draw a wall where nothing was sketched: no presumed walls to
   close an outline; leave the gap for Therion.
 - Where two passages, or the two sides of a bend, come close, the rock
