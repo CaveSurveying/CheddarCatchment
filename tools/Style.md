@@ -171,6 +171,26 @@ plan-only config.
   no `flowstone` points (flowstone is a wall subtype). A rock in the
   passage is a `rock-border -close on`.
 
+## Projected elevations (E315)
+
+- 315 is the direction the viewer faces (`-projection [elevation 315]`).
+  A survey X has `X/XE315.th2` (scraps `XSE315_1`, ...) with the
+  backdrop `X/Notes/XE315.xvi`, Therion's centreline of X alone so
+  projected; `X.th` inputs it with `map XME315`, and `XME315@X` is in
+  `LongwoodValleySinkM315` (`LongwoodValleySink.th`).
+- Walls only, drawn from the extended elevation
+  (`python3 -m tools.sketch2therion projected X --file`): a wall point
+  keeps its place along its nearest leg and its height above or below
+  it; its offset along the passage is scaled by how much of the leg is
+  seen across the view. A wall keeps its subtype; where the view mirrors
+  the extended drawing the wall is reversed, so the passage stays on the
+  same side of it.
+- Scraps from the 3D model (Therion's walls from the splays, as Loch
+  shows them): legs that do not meet but overlap in the view are passage
+  drawn over passage, and go in different scraps; otherwise a scrap is
+  as large as it can be. Judged on the PDF and iterated.
+- No closing walls: Therion closes the outline (as for every scrap).
+
 ## Cross-sections
 
 - `line section` goes completely across the passage.

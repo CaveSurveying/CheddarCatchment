@@ -351,8 +351,8 @@ For each survey X:
   not crossing, no passage drawn twice), in the order of the table
   above, with a review zip of each junction.
 
-- **5d, do not second-guess Therion (agreed 2026-10-08, on hold until
-  the user says go).** Therion morphs each scrap onto its stations, and
+- **5d, do not second-guess Therion (agreed 2026-10-08, done
+  2026-10-09).** Therion morphs each scrap onto its stations, and
   stations move when other surveys connect (loops closing), so a drawing
   must not be fixed to where Therion puts the stations today:
   - scraps come from the cave (one per sketch, plus `[scraps]` and
@@ -378,6 +378,14 @@ For each survey X:
     judged on the output, not predicted from station positions.
   The GoSouth and Trident drawings (hand-edited) are kept; the other
   eight are converted again when this is done.
+
+- **5e, projected elevations (started 2026-10-09).** The 315
+  elevation (the viewer facing 315) of each 2026 survey: walls only,
+  projected from its extended drawing, scraps from the 3D model
+  (`projected`, rules in `Style.md`), iterated against the PDFs. A
+  second projected direction later, with the user. The 3D model
+  (`loch.py`) may also check walls and help the extended elevations'
+  scraps.
 
 Review comments and their outcomes are in `docs/lvs-phase5-log.md`.
 

@@ -318,3 +318,29 @@ removed (stations only, no lines).
 All build with no `therion: error` or `invalid scrap outline`; lint
 findings (mostly `-outline none` walls) baselined; review PDFs in
 `review/X-plan.pdf` and `review/X-extended.pdf`. For the user's review.
+
+## Stage 5d, and the 315 projected elevations (2026-10-09)
+
+| # | Asked | Kind | Outcome |
+|---|---|---|---|
+| 117 | Do stage 5d (the layout for checking only, never to change a drawing). | Converter (`layout_split`) | `layout_split = false`: no scraps split, nor sketches flipped, to fit Therion's layout (kept on in the upstream settings, which the upstream comparison test uses); `check` reports disagreement instead. `layout --survey` and its `output/` files removed. Elevation cross-sections placed where sketched (plans already were). The eight first drafts converted again: the same, but TritonSouth's elevation in one scrap. |
+| 118 | Add the 315 projected elevations of the ten 2026 surveys, following `tools/ElevationsExx.py`: centreline `.xvi` in Notes, the th2, inputs and maps; walls only, from the extended drawings; try the scraps. | New command (`projected`) | `python3 -m tools.sketch2therion projected X --file` exports the 315 centreline of X alone to `X/Notes/XE315.xvi`, projects the extended drawing's outline walls (with subtypes) to `X/XE315.th2`, inputs it in `X.th` with `map XME315`, and adds `XME315@X` to `LongwoodValleySinkM315`. Rules in Style.md. |
+| 119 | Use the Loch model (or VRML) to tell when passages overlap, and whether walls are right. | `loch.py` | Therion 6.4 writes the splay walls only to the Loch file (VRML, DXF and 3DMF carry the centreline alone), so `loch.py` reads `.lox`. 315 scraps: each wall triangle goes with its nearest leg; legs that do not meet but overlap in the view by over 30% of the smaller are passage over passage, separate scraps; otherwise scraps merge (legs that meet always overlap round their station). GoSouth 7 scraps, Trident 6, the others 1 to 5. Not yet: checking walls against the model, and using it for the extended elevations. |
+| 120 | (lint) No invisible walls: Therion closes the outline. | Converter | The first try closed each 315 scrap with invisible walls; removed, and wall pieces under 0.5 m left out. Outlines crossing themselves (MetaPost) down from about 25 to 10 of 31 scraps. |
+
+315 results (review PDFs `review/e315/X-E315.pdf`, all build without errors):
+
+| Survey | Scraps | Outlines crossing themselves |
+|---|---|---|
+| GoSouth | 7 | 3 |
+| Trident | 6 | 1 |
+| TridentCentre | 1 | 0 |
+| TridentLeft | 5 | 2 |
+| IDontCare | 1 | 0 |
+| BoldStep | 1 | 1 |
+| TritonNorth | 1 | 1 |
+| TritonSouth | 2 | 0 |
+| Connection | 3 | 2 |
+| FairyChimneys | 4 | 0 |
+
+First iteration, for the user's review.

@@ -357,10 +357,6 @@ class Elevations(unittest.TestCase):
         walls, _, _ = wall_strokes([floor])
         self.assertEqual(walls, [])                                    # plan: brown is mud, not wall
 
-    def test_survey_layout_path(self):
-        from tools.sketch2therion.__main__ import survey_layout_path
-        self.assertTrue(survey_layout_path('GoSouth').endswith('layout-extended-GoSouth.xvi'))
-
     def test_green_lumpy_is_blocks_smooth_is_flowstone(self):
         from tools.sketch2therion.convert import _lumpy
         import math
