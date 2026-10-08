@@ -17,6 +17,7 @@ def rules(body, head=HEAD):
 CASES = {
     "scrap-author-copyright": None,     # tested on the scrap line below
     "end-on-node": None,                # needs a -scale: tested in EndOnNodeTest
+    "node-gap": None,                   # needs a -scale: tested in NodeGapTest
     "wall-invisible": ("line wall -subtype invisible\n0 0\n1 1\nendline\n",
                        "line wall\n0 0\n1 1\nendline\n"),
     "wall-outline-none": ("line wall -outline none\n0 0\n1 1\nendline\n",
@@ -67,6 +68,21 @@ class RuleTest(unittest.TestCase):
 
     def test_every_check_has_a_case(self):
         self.assertEqual(set(CASES), set(th2lint.CHECKS))
+
+
+class NodeGapTest(unittest.TestCase):
+    # 100 units per metre: 5 cm is 5 units
+    SCALED = HEAD.replace("-projection plan", "-projection plan -scale [0 0 100 0 0.0 0.0 1 0 m]")
+
+    def test_nodes_too_close(self):
+        self.assertEqual(rules("line border\n0 0\n100 0\n103 0\n200 0\nendline\n", self.SCALED), ["node-gap"])
+        self.assertEqual(rules("line wall\n0 0\n100 0\n100 0\nendline\n", self.SCALED), ["node-gap"])
+
+    def test_nodes_far_enough_apart(self):
+        self.assertEqual(rules("line border\n0 0\n100 0\n110 0\nendline\n", self.SCALED), [])
+
+    def test_invisible_walls_not_checked(self):
+        self.assertNotIn("node-gap", rules("line wall -subtype invisible\n0 0\n1 0\nendline\n", self.SCALED))
 
 
 class EndOnNodeTest(unittest.TestCase):

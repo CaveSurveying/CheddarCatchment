@@ -130,3 +130,50 @@ class RelativeJoin(unittest.TestCase):
         a, b = self.wall([(0, 0), (100, 0)]), self.wall([(130, 0), (200, 0)])     # 0.3 m apart (K = 100)
         self.assertEqual(nodes.walls_meet([a, b], 100.0, lambda p: 0.2), 0)
         self.assertEqual(nodes.walls_meet([a, b], 100.0, lambda p: 0.4), 2)
+
+
+class RockFaces(unittest.TestCase):
+    """The fill without the rock its closing-up took in (convert.drop_rock_faces)."""
+
+    def test_face_with_no_leg_across_bridged_edge_goes(self):
+        from shapely.geometry import box
+        from tools.sketch2therion.convert import drop_rock_faces
+        fill = box(0, 0, 10, 4)                     # closed up across rock above y = 2.5
+        wall = [(0, 2.5), (10, 2.5)]
+        out = drop_rock_faces(fill, [wall], [[(0, 1), (10, 1)]], [(0, 1), (10, 1)])
+        self.assertAlmostEqual(out.area, 25.0, delta=0.5)
+
+    def test_pillar_stays(self):
+        from shapely.geometry import box
+        from tools.sketch2therion.convert import drop_rock_faces
+        fill = box(0, 0, 10, 4)
+        pillar = [(4, 1.5), (6, 1.5), (6, 2.5), (4, 2.5), (4, 1.5)]
+        out = drop_rock_faces(fill, [pillar], [[(0, 0.5), (10, 0.5)], [(0, 3.5), (10, 3.5)]], [(0, 0.5)])
+        self.assertAlmostEqual(out.area, 40.0, delta=0.5)
+
+    def test_alcove_along_a_sketched_wall_stays(self):
+        # a ledge line cuts off a side with no leg, but its edge there is the sketched wall
+        from shapely.geometry import box
+        from tools.sketch2therion.convert import drop_rock_faces
+        fill = box(0, 0, 10, 4)
+        outer = [(0, 4), (10, 4)]
+        ledge = [(1, 4), (1, 3), (9, 3), (9, 4)]       # from the wall round and back to it
+        out = drop_rock_faces(fill, [outer, ledge], [[(0, 1), (10, 1)]], [(0, 1)])
+        self.assertAlmostEqual(out.area, 40.0, delta=0.5)
+
+
+class WallHooks(unittest.TestCase):
+    def tearDown(self):
+        settings.load()
+
+    def test_open_loop_at_a_wall_is_wall(self):
+        from tools.sketch2therion.convert import wall_strokes
+        settings.load()
+        wall = [(0, 0), (3, 0)]
+        hook = [(3.05, 0), (3.3, 0.25), (3.3, 0.5), (3.0, 0.55), (2.8, 0.35), (2.9, 0.15)]   # open, starts at the wall
+        walls, boulders, _ = wall_strokes([('BLACK', wall), ('BLACK', hook)])
+        self.assertEqual(len(boulders), 0)
+        self.assertEqual(len(walls), 2)
+        settings.use(dict(settings.SETTINGS, wall_hooks=False))
+        walls, boulders, _ = wall_strokes([('BLACK', wall), ('BLACK', hook)])
+        self.assertEqual(len(boulders), 1)

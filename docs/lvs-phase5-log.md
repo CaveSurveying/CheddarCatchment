@@ -182,3 +182,17 @@ Still open: the passage fill bridging rock (the inside of the U between
 
 The user's Trident drawing (with the row 57 fixes) was committed as its
 first reference.
+
+## Trident draft 3 review (2026-10-08)
+
+The user edited `review/Trident.draft3.plan.th2` (a converter draft, not
+the reference) to give examples.
+
+| # | Comment or edit | Kind | Outcome |
+|---|---|---|---|
+| 60 | Lots of the walls are not close enough to the sketch (one or two redrawn as examples). | Converter (`smooth.fit_wall`) | Draft 3's walls strayed 0.116 m from the sketch (90th percentile, by length) against 0.058 m in the hand-drawn `Trident.plan.th2`. The raw conversion is close (0.039 m); the refit lost it: 6% of the leg length was too loose, and tightening alone spent nodes on hand wobble (2%: 310 nodes for 0.069 m). Now the wall is smoothed first (running mean over 3 times the tolerance, `wall_presmooth = 3`) and refitted to 2% (`wall_tol_rel = 0.02`): 0.059 m with 187 nodes (hand drawing: 0.058 m, 214). GoSouth unchanged (0.046 m). |
+| 61 | A border on the edge changed to a wall (by 11 to 12; the wall from 12 round to 13). | Open | The fill took in only a sliver at the tip of the rock between the 12 and 13 branches, so this face is not dropped (row 63); still a border. |
+| 62 | The rock to the left of station 5 should be drawn as in `Trident.plan`. | Converter (`convert.wall_strokes`) | It is a hook of the wall (an open black loop starting at the wall), not a boulder: `wall_hooks = true` keeps it as wall. |
+| 63 | The border that should be a wall between 34, 35 and 36; the process keeps getting this type of passage wrong: a better solution is needed. | Converter (`convert.drop_rock_faces`) | The cause, here and at the U (19 to 23), 12 to 13 and the hook by 5: the passage fill is closed up by 1.8 m, which takes in rock wherever two passages (or the two sides of a bend) come within 3.6 m; walls inside it become borders or `-outline none`. Now (`rock_faces = true`) the fill is cut into faces along the wall strokes (gaps up to 0.3 m between strokes, and 0.5 m from a stroke's end to the fill's edge, closed first); a face with no leg or station whose edge has at least 0.5 m more than 0.3 m from any stroke (made by closing up, not sketched) is rock and goes; pillars and alcoves along sketched walls stay. Trident: the U, the tongue between the 37 and 38 branches, by 34 to 35 and by 7 to 8; GoSouth: between the 9 to 11 passage and 12, close to the wall the user drew by 10. |
+| 64 | The rock area all outside the wall near station 15. | Converter (`marks.py`) | The mud patch in the alcove by 17, grown and run over the walls and splined, became a bubble outside its walls reaching into the passage by 13 to 15 (the walls clip only to the scrap's outline, which holds that passage too). An area no longer runs into another part of the passage. (To confirm this is the area meant.) |
+| 65 | Ability to do lint checks would be good (node gap). | `th2lint` (`node-gap`); `Style.md` | `node-gap`: no two neighbouring nodes of a line within 0.05 m. Lint has no legs, so it uses the fixed minimum. It finds 5 lines in Trident.plan and 4 in GoSouth.plan, none in older drawings. These and the Trident reference's 6 `wall-outline-none` and 1 `end-on-node` findings (committed with it; CI's lint step failed on them) are in the baseline, to be cleared by hand. |

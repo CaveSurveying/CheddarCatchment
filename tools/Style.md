@@ -228,10 +228,19 @@ plan-only config.
   relative to the legs nearby, with a minimum.
 - No two nodes of a line so close that they cannot be told apart and
   picked when editing (about 2% of the nearby legs' length, at least
-  5 cm): where a line ends on a wall, use the wall's node if one is that
-  close, rather than adding another beside it.
+  5 cm; the check uses the 5 cm) **[lint: node-gap]**: where a line ends
+  on a wall, use the wall's node if one is that close, rather than adding
+  another beside it.
 - Do not draw a wall where nothing was sketched: no presumed walls to
   close an outline; leave the gap for Therion.
+- Where two passages, or the two sides of a bend, come close, the rock
+  between them is rock: their walls are walls, not borders, and the
+  passage's fill does not cross between them.
+- A small loop off a wall, left open where it meets it, is part of the
+  wall (a projection the wall goes round), not a boulder.
+- Walls follow the sketch closely (within about 2% of the nearby legs'
+  length), with nodes where the wall bends rather than where the hand
+  wobbled.
 - A cross-section is its own scrap, with its wall drawn, placed (in the
   file's coordinates) by its section mark, so xTherion shows it there.
 - A boulder's edge lines meet at a ridge point and end on its corners;

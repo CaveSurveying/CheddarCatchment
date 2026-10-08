@@ -177,6 +177,25 @@ def check_close_on_first_point(scrap):
                 yield "close-on-first-point", o.line, "-close on line does not end on its first point"
 
 
+NODE_GAP = 0.05    # m: nodes closer than this cannot be told apart and picked when editing
+
+
+def check_node_gap(scrap):
+    """No two neighbouring nodes of a line closer than NODE_GAP (lint has no
+    survey legs, so this is the fixed minimum; the converter also keeps to
+    a share of the nearby legs' length)."""
+    K = scrap_scale(scrap)
+    if not K:
+        return
+    for o in scrap.objects:
+        if o.kind != "line" or o.opt("subtype") == "invisible" and not o.opt("id"):
+            continue
+        pts = [(c[-2], c[-1]) for c in o.coords]
+        close = sum(1 for a, b in zip(pts, pts[1:]) if math.dist(a, b) < NODE_GAP * K)
+        if close:
+            yield "node-gap", o.line, f"{o.type} has {close} node(s) within {NODE_GAP} m of the one before"
+
+
 def check_rock_not_smooth(scrap):
     for o in scrap.objects:
         if o.kind == "line" and o.type == "rock-border" and any(len(c) == 6 for c in o.coords):
