@@ -114,7 +114,8 @@ line wall
   -2107.05 -3933.15 -2105.57 -3867.53 -2105.86 -3800.63
   -2106.12 -3741.82 -2135.64 -3684.16 -2152.05 -3627.12
   -2175.68 -3545.04 -2148.33 -3565.89 -2089.78 -3547.45
-  -2034.76 -3530.08 -1987.38 -3518.09 -1929.04 -3505.74
+  -2078.19 -3543.79 -2084.01 -3539.38 -2057.22 -3532.44
+  -2030.42 -3525.50 -1950.39 -3510.26 -1929.04 -3505.74
 endline
 line wall
   -1534.94 -3436.71
@@ -499,85 +500,85 @@ endline
 
 point -2191.90 -3189.60 section -scrap FairyChimneysS_xs_32
 
-point 0.00 0.00 station -name 1
-
-point -204.82 22.74 station -name 2
-
-point -483.32 -73.56 station -name 3
-
-point -722.20 -208.62 station -name 4
-
-point -986.20 -245.87 station -name 5
-
-point -1095.82 -339.39 station -name 6
-
-point -1222.45 -476.74 station -name 7
-
-point -1293.63 -595.78 station -name 8
-
-point -1508.73 -600.66 station -name 9
-
-point -1573.62 -467.60 station -name 10
-
-point -1578.31 -455.04 station -name 11
-
-point -1592.60 -355.39 station -name 12
-
-point -1698.50 -706.41 station -name 13
-
-point -1878.18 -671.78 station -name 14
-
-point -2041.38 -637.75 station -name 15
-
-point -2214.44 -703.24 station -name 16
-
-point -2335.00 -508.04 station -name 17
-
-point -2339.37 -380.28 station -name 18
-
-point -2383.19 -259.73 station -name 19
-
-point -2468.33 -371.41 station -name 20
-
-point -2604.33 -468.64 station -name 21
-
-point -2297.38 -801.98 station -name 22
-
-point -2197.11 -1004.76 station -name 23
-
-point -2131.96 -1203.24 station -name 24
-
-point -2102.31 -1467.40 station -name 25
-
-point -2000.30 -1699.12 station -name 26
-
-point -2024.20 -2075.11 station -name 27
-
-point -1986.99 -2209.51 station -name 28
-
-point -1959.23 -2482.14 station -name 29
-
-point -1878.62 -2758.74 station -name 30
-
-point -1822.70 -3350.35 station -name 31
-
-point -2084.64 -3511.45 station -name 32
-
 point -2229.74 -3450.91 station -name 33
-
-point -2515.90 -3583.84 station -name 34
 
 point -2185.61 -3767.56 station -name 35
 
 point -2164.53 -3986.96 station -name 36
 
-point -1588.14 -3434.78 station -name 37
+point 0.00 0.00 station -name 1
+
+point -2214.44 -703.24 station -name 16
+
+point -2102.31 -1467.40 station -name 25
+
+point -2339.37 -380.28 station -name 18
+
+point -2024.20 -2075.11 station -name 27
+
+point -1293.63 -595.78 station -name 8
+
+point -838.51 -3036.65 station -name 40
+
+point -2041.38 -637.75 station -name 15
+
+point -1592.60 -355.39 station -name 12
+
+point -2604.33 -468.64 station -name 21
+
+point -2084.64 -3511.45 station -name 32
+
+point -2383.19 -259.73 station -name 19
+
+point -2197.11 -1004.76 station -name 23
+
+point -1878.62 -2758.74 station -name 30
+
+point -204.82 22.74 station -name 2
+
+point -483.32 -73.56 station -name 3
+
+point -986.20 -245.87 station -name 5
+
+point -1095.82 -339.39 station -name 6
+
+point -1573.62 -467.60 station -name 10
 
 point -1377.24 -3271.72 station -name 38
 
+point -1822.70 -3350.35 station -name 31
+
+point -1578.31 -455.04 station -name 11
+
+point -2000.30 -1699.12 station -name 26
+
+point -1986.99 -2209.51 station -name 28
+
+point -2515.90 -3583.84 station -name 34
+
 point -1181.78 -3321.29 station -name 39
 
-point -838.51 -3036.65 station -name 40
+point -1959.23 -2482.14 station -name 29
+
+point -1222.45 -476.74 station -name 7
+
+point -722.20 -208.62 station -name 4
+
+point -1508.73 -600.66 station -name 9
+
+point -1698.50 -706.41 station -name 13
+
+point -2131.96 -1203.24 station -name 24
+
+point -2468.33 -371.41 station -name 20
+
+point -1878.18 -671.78 station -name 14
+
+point -2297.38 -801.98 station -name 22
+
+point -1588.14 -3434.78 station -name 37
+
+point -2335.00 -508.04 station -name 17
 endscrap
 
 scrap FairyChimneysS_xs_2 -projection none -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]

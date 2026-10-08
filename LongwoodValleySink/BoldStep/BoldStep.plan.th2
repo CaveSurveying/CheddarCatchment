@@ -260,37 +260,37 @@ point -440.86 412.05 section -scrap BoldStepS_xs_12
 
 point 0.00 0.00 station -name 0
 
-point -58.07 -71.51 station -name 1
-
-point -162.61 13.69 station -name 2
-
-point -364.03 15.52 station -name 3
-
-point -200.74 -104.34 station -name 4
-
-point -281.70 -206.76 station -name 5
-
-point -261.76 -24.78 station -name 6
-
-point -373.80 -52.54 station -name 7
-
-point -355.32 -375.25 station -name 8
-
-point -343.90 -499.24 station -name 9
-
-point -404.61 -621.11 station -name 10
-
 point -466.27 -803.16 station -name 11
-
-point -216.76 128.95 station -name 12
-
-point -212.54 244.82 station -name 13
 
 point -335.30 236.01 station -name 14
 
 point -243.28 404.13 station -name 15
 
+point -373.80 -52.54 station -name 7
+
+point -355.32 -375.25 station -name 8
+
+point -162.61 13.69 station -name 2
+
+point -216.76 128.95 station -name 12
+
+point -212.54 244.82 station -name 13
+
 point -332.74 464.00 station -name 16
+
+point -261.76 -24.78 station -name 6
+
+point -404.61 -621.11 station -name 10
+
+point -200.74 -104.34 station -name 4
+
+point -58.07 -71.51 station -name 1
+
+point -281.70 -206.76 station -name 5
+
+point -364.03 15.52 station -name 3
+
+point -343.90 -499.24 station -name 9
 endscrap
 
 scrap BoldStepS_xs_8 -projection none -author 2026.07.25 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]

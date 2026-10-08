@@ -164,23 +164,23 @@ point 76.80 547.72 section -scrap TridentCentreS_xs_5
 
 point -317.35 84.43 section -scrap TridentCentreS_xs_8
 
-point 0.00 0.00 station -name 1
-
-point -31.13 113.51 station -name 2
-
-point -71.27 274.30 station -name 3
-
-point 223.30 201.96 station -name 4
-
-point -199.16 483.80 station -name 5
+point -263.52 379.27 station -name 8
 
 point -236.18 635.52 station -name 6
 
+point -71.27 274.30 station -name 3
+
 point -255.46 793.75 station -name 7
 
-point -263.52 379.27 station -name 8
-
 point -387.82 445.15 station -name 9
+
+point -199.16 483.80 station -name 5
+
+point 223.30 201.96 station -name 4
+
+point 0.00 0.00 station -name 1
+
+point -31.13 113.51 station -name 2
 
 point -459.88 508.97 station -name 10
 endscrap

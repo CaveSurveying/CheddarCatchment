@@ -34,15 +34,15 @@ line wall
   24.05 -6.99 61.84 -14.27 102.65 -13.59
 endline
 
-point 0.00 0.00 station -name 1
-
-point 182.27 43.14 station -name 2
-
-point -83.92 289.45 station -name 3
-
 point 28.89 -239.54 station -name 4
+
+point 0.00 0.00 station -name 1
 
 point 120.51 -486.84 station -name 5
 
+point -83.92 289.45 station -name 3
+
 point 146.31 -548.37 station -name 6
+
+point 182.27 43.14 station -name 2
 endscrap

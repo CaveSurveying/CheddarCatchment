@@ -6,7 +6,7 @@ encoding  utf-8
 
 
 # Converted from FairyChimneysEE.xvi by tools/sketch2therion (extended elevation).
-# Split into one scrap per group of stations that fits Therion's layout.
+# One scrap per sketch, or as chosen by hand ([scraps_extended] in tools/project.toml).
 
 scrap FairyChimneysSE1 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
@@ -221,9 +221,9 @@ line wall
 endline
 line wall
   2726.92 -232.60
-  2718.97 -190.56 2720.22 -158.27 2685.09 -129.48
+  2719.07 -191.13 2719.74 -157.88 2685.09 -129.48
   2666.05 -113.87 2604.21 -101.81 2581.65 -113.21
-  2561.62 -123.33 2550.87 -225.38 2543.20 -249.82
+  2556.70 -125.82 2551.85 -222.30 2543.20 -249.82
 endline
 line wall
   2436.56 -276.31
@@ -269,83 +269,83 @@ line rock-border -close on
   4069.94 -567.11
 endline
 
-point 0.00 0.00 station -name 1
-
-point 206.08 -29.75 station -name 2
-
-point 500.75 -70.70 station -name 3
-
-point 775.17 -140.36 station -name 4
-
-point 1041.79 -201.05 station -name 5
-
-point 1185.89 -231.47 station -name 6
-
-point 1372.70 -259.45 station -name 7
-
-point 1511.39 -305.84 station -name 8
-
-point 1726.56 -340.27 station -name 9
-
-point 1578.52 -328.55 station -name 10
-
-point 1565.11 -250.86 station -name 11
-
-point 1464.44 -234.64 station -name 12
-
-point 1943.79 -376.17 station -name 13
-
-point 2126.78 -385.53 station -name 14
-
-point 2293.50 -387.07 station -name 15
-
-point 2478.53 -352.48 station -name 16
-
-point 2249.11 -238.53 station -name 17
-
-point 2121.27 -259.85 station -name 18
-
-point 1993.00 -323.29 station -name 19
-
-point 1852.57 -354.75 station -name 20
-
-point 1685.38 -434.84 station -name 21
-
-point 2607.48 -349.90 station -name 22
-
-point 2833.70 -342.05 station -name 23
-
-point 3042.60 -362.95 station -name 24
-
-point 3308.42 -354.29 station -name 25
-
-point 3561.60 -454.62 station -name 26
-
-point 3938.35 -612.41 station -name 27
-
-point 4077.81 -660.54 station -name 28
-
-point 4351.84 -762.87 station -name 29
-
-point 4639.95 -828.83 station -name 30
-
-point 5234.20 -1030.34 station -name 31
-
-point 5541.72 -1046.62 station -name 32
-
 point 5698.94 -1057.75 station -name 33
-
-point 6014.47 -919.57 station -name 34
 
 point 5379.23 -929.39 station -name 35
 
 point 5158.82 -924.15 station -name 36
 
-point 5483.49 -864.39 station -name 37
+point 0.00 0.00 station -name 1
+
+point 2478.53 -352.48 station -name 16
+
+point 3308.42 -354.29 station -name 25
+
+point 2121.27 -259.85 station -name 18
+
+point 3938.35 -612.41 station -name 27
+
+point 1511.39 -305.84 station -name 8
+
+point 6397.66 -1498.67 station -name 40
+
+point 2293.50 -387.07 station -name 15
+
+point 1464.44 -234.64 station -name 12
+
+point 1685.38 -434.84 station -name 21
+
+point 5541.72 -1046.62 station -name 32
+
+point 1993.00 -323.29 station -name 19
+
+point 2833.70 -342.05 station -name 23
+
+point 4639.95 -828.83 station -name 30
+
+point 206.08 -29.75 station -name 2
+
+point 500.75 -70.70 station -name 3
+
+point 1041.79 -201.05 station -name 5
+
+point 1185.89 -231.47 station -name 6
+
+point 1578.52 -328.55 station -name 10
 
 point 5750.07 -823.09 station -name 38
 
+point 5234.20 -1030.34 station -name 31
+
+point 1565.11 -250.86 station -name 11
+
+point 3561.60 -454.62 station -name 26
+
+point 4077.81 -660.54 station -name 28
+
+point 6014.47 -919.57 station -name 34
+
 point 5951.72 -874.55 station -name 39
 
-point 6397.66 -1498.67 station -name 40
+point 4351.84 -762.87 station -name 29
+
+point 1372.70 -259.45 station -name 7
+
+point 775.17 -140.36 station -name 4
+
+point 1726.56 -340.27 station -name 9
+
+point 1943.79 -376.17 station -name 13
+
+point 3042.60 -362.95 station -name 24
+
+point 1852.57 -354.75 station -name 20
+
+point 2126.78 -385.53 station -name 14
+
+point 2607.48 -349.90 station -name 22
+
+point 5483.49 -864.39 station -name 37
+
+point 2249.11 -238.53 station -name 17
 endscrap

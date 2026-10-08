@@ -260,61 +260,61 @@ endline
 
 point 176.73 2143.22 section -scrap ConnectionS_xs_17
 
-point 0.00 0.00 station -name 1
-
-point -2.33 190.20 station -name 2
+point -322.29 1951.37 station -name 13
 
 point 2.83 354.73 station -name 3
 
+point -383.79 2397.54 station -name 19
+
 point -35.38 397.28 station -name 4
 
-point 72.52 447.32 station -name 5
+point -342.75 2141.51 station -name 14
+
+point 0.00 0.00 station -name 1
+
+point -23.34 2557.58 station -name 25
 
 point 109.71 476.08 station -name 6
 
 point 226.24 960.84 station -name 7
 
-point -38.49 578.23 station -name 8
-
-point -125.37 891.69 station -name 9
-
-point -178.52 1130.25 station -name 10
-
-point -249.56 1364.84 station -name 11
-
-point -249.00 1626.40 station -name 12
-
-point -322.29 1951.37 station -name 13
-
-point -342.75 2141.51 station -name 14
-
-point -73.37 2114.81 station -name 15
-
-point -32.35 2219.69 station -name 16
-
-point -91.51 2325.45 station -name 17
-
-point -364.92 2256.52 station -name 18
-
-point -383.79 2397.54 station -name 19
-
-point -438.03 2501.58 station -name 20
-
-point -431.62 2620.71 station -name 21
-
-point -461.09 2697.05 station -name 22
-
-point -491.08 2860.37 station -name 23
+point 34.13 3079.89 station -name 28
 
 point -8.06 2480.76 station -name 24
 
-point -23.34 2557.58 station -name 25
+point -461.09 2697.05 station -name 22
 
-point 18.04 2647.97 station -name 26
+point -73.37 2114.81 station -name 15
+
+point -91.51 2325.45 station -name 17
 
 point 77.95 2905.70 station -name 27
 
-point 34.13 3079.89 station -name 28
+point -364.92 2256.52 station -name 18
+
+point -32.35 2219.69 station -name 16
+
+point -249.00 1626.40 station -name 12
+
+point 18.04 2647.97 station -name 26
+
+point -431.62 2620.71 station -name 21
+
+point -2.33 190.20 station -name 2
+
+point 72.52 447.32 station -name 5
+
+point -38.49 578.23 station -name 8
+
+point -178.52 1130.25 station -name 10
+
+point -491.08 2860.37 station -name 23
+
+point -249.56 1364.84 station -name 11
+
+point -125.37 891.69 station -name 9
+
+point -438.03 2501.58 station -name 20
 endscrap
 
 scrap ConnectionS_xs_3 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]

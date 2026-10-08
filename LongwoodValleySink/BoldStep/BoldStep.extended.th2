@@ -6,7 +6,7 @@ encoding  utf-8
 
 
 # Converted from BoldStepEE.xvi by tools/sketch2therion (extended elevation).
-# Split into one scrap per group of stations that fits Therion's layout.
+# One scrap per sketch, or as chosen by hand ([scraps_extended] in tools/project.toml).
 
 scrap BoldStepSE1 -projection extended -author 2026.07.25 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
@@ -90,35 +90,35 @@ endline
 
 point 0.00 0.00 station -name 0
 
-point 92.12 11.53 station -name 1
-
-point 226.98 45.40 station -name 2
-
-point 428.41 17.42 station -name 3
-
-point 238.51 -78.54 station -name 4
-
-point 369.07 -326.59 station -name 5
-
-point 186.00 -293.97 station -name 6
-
-point 548.70 -382.08 station -name 7
-
-point 552.94 -404.61 station -name 8
-
-point 677.47 -493.59 station -name 9
-
-point 813.62 -573.66 station -name 10
-
 point 1005.82 -590.52 station -name 11
-
-point 25.82 -348.76 station -name 12
-
-point -90.13 -408.36 station -name 13
 
 point -213.20 -407.75 station -name 14
 
 point -252.38 -453.07 station -name 15
 
+point 548.70 -382.08 station -name 7
+
+point 552.94 -404.61 station -name 8
+
+point 226.98 45.40 station -name 2
+
+point 25.82 -348.76 station -name 12
+
+point -90.13 -408.36 station -name 13
+
 point -360.02 -440.27 station -name 16
+
+point 186.00 -293.97 station -name 6
+
+point 813.62 -573.66 station -name 10
+
+point 238.51 -78.54 station -name 4
+
+point 92.12 11.53 station -name 1
+
+point 369.07 -326.59 station -name 5
+
+point 428.41 17.42 station -name 3
+
+point 677.47 -493.59 station -name 9
 endscrap

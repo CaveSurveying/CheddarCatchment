@@ -6,7 +6,7 @@ encoding  utf-8
 
 
 # Converted from TridentCentreEe.xvi by tools/sketch2therion (extended elevation).
-# Split into one scrap per group of stations that fits Therion's layout.
+# One scrap per sketch, or as chosen by hand ([scraps_extended] in tools/project.toml).
 
 scrap TridentCentreSE1 -projection extended -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
@@ -59,23 +59,23 @@ line wall
   212.85 140.36 183.99 127.00 175.32 123.13
 endline
 
-point 0.00 0.00 station -name 1
-
-point 117.70 66.09 station -name 2
-
-point 283.42 149.87 station -name 3
-
-point 586.74 147.07 station -name 4
-
-point 528.88 172.07 station -name 5
+point 64.38 132.78 station -name 8
 
 point 685.05 228.92 station -name 6
 
+point 283.42 149.87 station -name 3
+
 point 844.45 277.77 station -name 7
 
-point 64.38 132.78 station -name 8
-
 point -76.30 150.90 station -name 9
+
+point 528.88 172.07 station -name 5
+
+point 586.74 147.07 station -name 4
+
+point 0.00 0.00 station -name 1
+
+point 117.70 66.09 station -name 2
 
 point -172.56 213.17 station -name 10
 endscrap

@@ -300,51 +300,51 @@ endline
 
 point 648.25 3071.81 section -scrap TritonNorthS_xs_15
 
-point 0.00 0.00 station -name 1
-
-point 89.08 158.05 station -name 2
-
-point 38.86 164.04 station -name 3
-
-point 87.26 332.32 station -name 4
-
-point 220.75 691.34 station -name 5
-
-point 176.00 915.35 station -name 6
-
-point 253.73 1156.02 station -name 7
-
-point 124.64 1542.87 station -name 8
+point 448.33 3590.95 station -name 21
 
 point 194.99 1777.31 station -name 9
 
-point 223.71 1945.36 station -name 10
-
-point 278.69 2116.48 station -name 11
+point 220.75 691.34 station -name 5
 
 point 273.11 2398.67 station -name 12
 
-point 365.31 2694.31 station -name 13
+point 633.06 3557.66 station -name 23
 
-point 338.75 2899.90 station -name 14
+point 176.00 915.35 station -name 6
+
+point 124.64 1542.87 station -name 8
+
+point 278.69 2116.48 station -name 11
 
 point 421.10 3036.77 station -name 15
 
-point 414.99 3261.13 station -name 16
+point 338.75 2899.90 station -name 14
 
-point 508.94 3455.68 station -name 17
+point 87.26 332.32 station -name 4
 
-point 477.81 3733.53 station -name 18
+point 89.08 158.05 station -name 2
+
+point 223.71 1945.36 station -name 10
+
+point 543.27 3522.73 station -name 24
 
 point 643.21 3998.10 station -name 20
 
-point 448.33 3590.95 station -name 21
+point 508.94 3455.68 station -name 17
+
+point 38.86 164.04 station -name 3
+
+point 253.73 1156.02 station -name 7
+
+point 477.81 3733.53 station -name 18
+
+point 0.00 0.00 station -name 1
+
+point 414.99 3261.13 station -name 16
 
 point 490.78 4038.55 station -name 22
 
-point 633.06 3557.66 station -name 23
-
-point 543.27 3522.73 station -name 24
+point 365.31 2694.31 station -name 13
 endscrap
 
 scrap TritonNorthS_xs_5 -projection none -author 2026.07.25 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]

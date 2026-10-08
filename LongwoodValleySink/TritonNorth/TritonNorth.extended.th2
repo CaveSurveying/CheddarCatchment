@@ -6,7 +6,7 @@ encoding  utf-8
 
 
 # Converted from TritonNorthEE.xvi by tools/sketch2therion (extended elevation).
-# Split into one scrap per group of stations that fits Therion's layout.
+# One scrap per sketch, or as chosen by hand ([scraps_extended] in tools/project.toml).
 
 scrap TritonNorthSE1 -projection extended -author 2026.07.25 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
@@ -126,49 +126,49 @@ line wall
   59.31 186.07 -11.17 191.87 -78.37 198.63
 endline
 
-point 0.00 0.00 station -name 1
-
-point 181.43 54.45 station -name 2
-
-point 232.01 -461.82 station -name 3
-
-point 355.71 69.24 station -name 4
-
-point 738.74 91.40 station -name 5
-
-point 967.17 65.95 station -name 6
-
-point 1220.08 64.57 station -name 7
-
-point 1627.91 60.27 station -name 8
+point 3756.34 451.50 station -name 21
 
 point 1872.67 97.90 station -name 9
 
-point 2043.16 118.06 station -name 10
-
-point 2222.89 95.78 station -name 11
+point 738.74 91.40 station -name 5
 
 point 2505.15 79.85 station -name 12
 
-point 2814.82 35.13 station -name 13
+point 3568.64 756.04 station -name 23
 
-point 3022.12 27.24 station -name 14
+point 967.17 65.95 station -name 6
+
+point 1627.91 60.27 station -name 8
+
+point 2222.89 95.78 station -name 11
 
 point 3181.86 31.40 station -name 15
 
-point 3406.30 49.15 station -name 16
+point 3022.12 27.24 station -name 14
 
-point 3622.34 24.15 station -name 17
+point 355.71 69.24 station -name 4
 
-point 3901.94 95.50 station -name 18
+point 181.43 54.45 station -name 2
+
+point 2043.16 118.06 station -name 10
+
+point 3639.43 1338.26 station -name 24
 
 point 4213.95 156.15 station -name 20
 
-point 3756.34 451.50 station -name 21
+point 3622.34 24.15 station -name 17
+
+point 232.01 -461.82 station -name 3
+
+point 1220.08 64.57 station -name 7
+
+point 3901.94 95.50 station -name 18
+
+point 0.00 0.00 station -name 1
+
+point 3406.30 49.15 station -name 16
 
 point 4205.95 811.39 station -name 22
 
-point 3568.64 756.04 station -name 23
-
-point 3639.43 1338.26 station -name 24
+point 2814.82 35.13 station -name 13
 endscrap

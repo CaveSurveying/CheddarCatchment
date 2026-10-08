@@ -6,7 +6,7 @@ encoding  utf-8
 
 
 # Converted from ConnectionEE.xvi by tools/sketch2therion (extended elevation).
-# Split into one scrap per group of stations that fits Therion's layout.
+# One scrap per sketch, or as chosen by hand ([scraps_extended] in tools/project.toml).
 
 scrap ConnectionSE1 -projection extended -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
@@ -288,59 +288,59 @@ line wall
   -3232.41 896.48 -3235.91 897.00 -3239.02 895.95
 endline
 
-point 0.00 0.00 station -name 1
-
-point -190.21 360.42 station -name 2
+point -2002.48 428.82 station -name 13
 
 point -354.83 402.96 station -name 3
 
+point -2453.13 455.41 station -name 19
+
 point -412.01 457.47 station -name 4
 
-point -530.95 537.70 station -name 5
+point -2193.72 414.69 station -name 14
+
+point 0.00 0.00 station -name 1
+
+point -2766.32 689.49 station -name 25
 
 point -577.96 564.25 station -name 6
 
 point -1076.53 604.37 station -name 7
 
-point -592.99 444.48 station -name 8
-
-point -918.27 363.78 station -name 9
-
-point -1162.67 371.13 station -name 10
-
-point -1407.79 324.82 station -name 11
-
-point -1669.35 385.95 station -name 12
-
-point -2002.48 428.82 station -name 13
-
-point -2193.72 414.69 station -name 14
-
-point -2300.27 626.41 station -name 15
-
-point -2412.88 922.21 station -name 16
-
-point -2511.68 637.97 station -name 17
-
-point -2310.85 454.31 station -name 18
-
-point -2453.13 455.41 station -name 19
-
-point -2570.45 467.05 station -name 20
-
-point -2689.76 531.09 station -name 21
-
-point -2771.59 572.02 station -name 22
-
-point -2937.63 611.18 station -name 23
+point -3309.95 507.10 station -name 28
 
 point -2687.99 683.55 station -name 24
 
-point -2766.32 689.49 station -name 25
+point -2771.59 572.02 station -name 22
 
-point -2865.73 709.70 station -name 26
+point -2300.27 626.41 station -name 15
+
+point -2511.68 637.97 station -name 17
 
 point -3130.33 700.81 station -name 27
 
-point -3309.95 507.10 station -name 28
+point -2310.85 454.31 station -name 18
+
+point -2412.88 922.21 station -name 16
+
+point -1669.35 385.95 station -name 12
+
+point -2865.73 709.70 station -name 26
+
+point -2689.76 531.09 station -name 21
+
+point -190.21 360.42 station -name 2
+
+point -530.95 537.70 station -name 5
+
+point -592.99 444.48 station -name 8
+
+point -1162.67 371.13 station -name 10
+
+point -2937.63 611.18 station -name 23
+
+point -1407.79 324.82 station -name 11
+
+point -918.27 363.78 station -name 9
+
+point -2570.45 467.05 station -name 20
 endscrap

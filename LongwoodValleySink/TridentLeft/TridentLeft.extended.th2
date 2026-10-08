@@ -6,7 +6,7 @@ encoding  utf-8
 
 
 # Converted from TridentLeftEe.xvi by tools/sketch2therion (extended elevation).
-# Split into one scrap per group of stations that fits Therion's layout.
+# One scrap per sketch, or as chosen by hand ([scraps_extended] in tools/project.toml).
 
 scrap TridentLeftSE1 -projection extended -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
@@ -118,21 +118,17 @@ line wall
 endline
 line wall
   892.85 584.66
-  881.26 588.09 853.07 595.53 823.73 605.11
-  794.38 614.69 749.88 629.81 716.74 642.15
-  684.85 654.02 612.24 676.13 586.66 697.82
+  833.28 602.29 775.07 620.43 716.74 642.15
+  674.00 658.06 620.94 668.75 586.66 697.82
 endline
 line wall
   594.40 635.01
-  607.25 628.45 658.55 602.49 671.45 596.01
+  607.25 628.45 668.76 608.26 681.66 601.78
 endline
 line wall
-  691.88 607.56
-  715.62 596.21 749.89 583.04 771.56 570.37
-  779.94 565.47 789.17 554.81 801.36 548.56
-  813.54 542.31 833.33 537.92 844.68 532.89
-  859.66 526.25 868.48 517.32 885.18 513.12
-  913.51 506.00 1015.96 492.77 1042.20 488.69
+  681.66 601.78
+  721.17 582.89 764.69 567.36 801.36 548.56
+  882.77 506.78 952.38 502.67 1042.20 488.69
 endline
 line wall
   1050.27 177.45
@@ -150,79 +146,79 @@ line wall
   75.01 39.66 18.46 29.60 1.29 26.22
 endline
 
-point 0.00 0.00 station -name 1
-
-point 172.97 25.77 station -name 2
-
-point 318.70 66.48 station -name 3
-
-point 450.63 122.53 station -name 4
-
-point 522.09 135.17 station -name 5
-
-point 483.34 124.19 station -name 6
-
-point 628.67 156.97 station -name 7
+point 2191.14 323.46 station -name 20
 
 point 730.23 164.05 station -name 8
 
-point 589.56 138.58 station -name 9
+point 1986.84 160.74 station -name 34
+
+point 1356.74 689.33 station -name 30
 
 point 926.87 165.11 station -name 10
 
-point 1040.64 120.69 station -name 11
-
-point 1236.25 121.01 station -name 12
-
-point 1369.15 146.95 station -name 13
-
-point 1564.82 119.30 station -name 14
+point 769.89 613.50 station -name 31
 
 point 1502.33 185.18 station -name 15
 
-point 1789.52 292.64 station -name 16
-
-point 1571.67 197.64 station -name 17
-
-point 1360.87 248.96 station -name 18
-
-point 2037.15 290.73 station -name 19
-
-point 2191.14 323.46 station -name 20
+point 585.42 661.65 station -name 32
 
 point 1855.93 289.04 station -name 21
 
-point 1704.36 327.74 station -name 22
-
-point 1599.30 374.02 station -name 23
+point 318.70 66.48 station -name 3
 
 point 1458.52 435.97 station -name 24
 
+point 628.67 156.97 station -name 7
+
 point 1361.23 465.08 station -name 25
+
+point 2037.15 290.73 station -name 19
+
+point 450.63 122.53 station -name 4
+
+point 483.34 124.19 station -name 6
 
 point 1167.53 440.76 station -name 26
 
 point 1259.74 495.96 station -name 27
 
-point 1030.56 520.87 station -name 28
+point 1369.15 146.95 station -name 13
 
-point 895.80 551.80 station -name 29
+point 1040.64 120.69 station -name 11
 
-point 1356.74 689.33 station -name 30
+point 1704.36 327.74 station -name 22
 
-point 769.89 613.50 station -name 31
+point 2635.88 99.52 station -name 38
 
-point 585.42 661.65 station -name 32
+point 1571.67 197.64 station -name 17
+
+point 172.97 25.77 station -name 2
+
+point 1599.30 374.02 station -name 23
+
+point 2618.21 92.78 station -name 37
+
+point 522.09 135.17 station -name 5
+
+point 1236.25 121.01 station -name 12
+
+point 1789.52 292.64 station -name 16
 
 point 1736.84 150.48 station -name 33
 
-point 1986.84 160.74 station -name 34
+point 0.00 0.00 station -name 1
+
+point 1360.87 248.96 station -name 18
 
 point 2372.58 97.52 station -name 35
 
 point 2484.12 51.85 station -name 36
 
-point 2618.21 92.78 station -name 37
+point 589.56 138.58 station -name 9
 
-point 2635.88 99.52 station -name 38
+point 1564.82 119.30 station -name 14
+
+point 895.80 551.80 station -name 29
+
+point 1030.56 520.87 station -name 28
 endscrap
