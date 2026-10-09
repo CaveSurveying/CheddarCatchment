@@ -152,19 +152,30 @@ class RockEdgeTest(unittest.TestCase):
         details.boulders(objs, K)
         return objs[0], [x for x in objs[1:] if x.head == "line rock-edge"]
 
-    def test_edges_after_boulder_end_on_corners(self):
-        border, edges = self.edges(1.4)
-        self.assertEqual(len(edges), 1)                               # two corners: one line
-        corners = {(round(s[-2], 2), round(s[-1], 2)) for s in border.segments()}
-        segs = edges[0].segments()
-        for s in (segs[0], segs[-1]):
-            self.assertIn((round(s[-2], 2), round(s[-1], 2)), corners)
+    def test_edges_inside_ending_on_corners(self):
+        # a rock's edges (block, peak or ridge, the user 2026-10-09) lie inside it, each with an
+        # end on one of its corners, and come after it in the file
+        for size in (0.6, 1.4, 2.2):
+            border, edges = self.edges(size)
+            self.assertTrue(edges, size)
+            corners = {(round(s[-2], 2), round(s[-1], 2)) for s in border.segments()}
+            ring = Polygon([tuple(s[-2:]) for s in border.segments()]).buffer(0.5)
+            for e in edges:
+                ends = [(round(s[-2], 2), round(s[-1], 2)) for s in (e.segments()[0], e.segments()[-1])]
+                self.assertTrue(any(x in corners for x in ends), (size, ends))
+                self.assertTrue(ring.contains(LineString([tuple(s[-2:]) for s in e.segments()])), size)
 
-    def test_big_boulder_edges_meet_at_ridge(self):
-        _, edges = self.edges(2.2)
-        self.assertEqual(len(edges), 2)                               # three corners: two lines
-        ridge = tuple(edges[0].segments()[1][-2:])
-        self.assertEqual(tuple(edges[1].segments()[0][-2:]), ridge)
+    def test_styles_vary_from_rock_to_rock(self):
+        from tools.sketch2therion import details
+        settings.load()
+        K = 100.0
+        shapes = set()
+        for i in range(12):
+            ring = [(i * 300 + 60 * math.cos(2 * math.pi * k / 7), 60 * math.sin(2 * math.pi * k / 7))
+                    for k in range(7)]
+            corners, edges = details.rock(ring + [ring[0]], K)
+            shapes.add(tuple(len(e) for e in edges))
+        self.assertGreater(len(shapes), 1)                            # not all drawn alike
 
 
 class SmoothAndGourTest(unittest.TestCase):

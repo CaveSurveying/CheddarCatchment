@@ -179,14 +179,30 @@ plan-only config.
 - Rocks are drawn in file order and clip each other.
 - Large boulders get a `line rock-edge` inside them to look like 3D
   rocks.
-- Each sketched boulder (a brown loop 0.3 m or more across) is drawn as a
-  rock of its own, also among others (not an area of blocks); smaller
-  loops among them are `area debris`. A rock is angular and roughly
-  convex: the hull of the sketched loop cut to 5 to 8 corners by size.
-  From 0.5 m one edge line, corner to corner through a ridge a little to
-  the top left of the middle (light from the top left), bent about 140
-  degrees; from 1.6 m a third edge from the ridge. Rocks lower on the
-  page are drawn later, in front. Not copied from other drawings.
+- A group of boulders is an area (`area blocks`, or `area debris` if
+  mostly small). A boulder on its own, or one large for the passage it
+  is in (a quarter of the passage's narrowest width across it or more,
+  also within a group), is drawn as a rock. Rocks in cross-sections are
+  drawn (closed brown loops there are rocks, not the section's outline).
+- A rock is a simplified line drawing seen from above: its outline
+  angular and roughly convex (the hull of the sketched loop cut to 5 to 8
+  corners by size, corners at least 6 cm apart), its rock edges
+  (`line rock-edge`, after the rock) in one of three styles, picked for
+  each rock (the same every run) so they don't all look alike:
+  - a line across (about 35%), corner to a corner about opposite (two
+    faces), on some rocks with a second line from another corner meeting
+    it part-way;
+  - pointed (about 25%): a peak towards the light;
+  - a wedge (about 20%, long rocks more often): a ridge along its length;
+  - a block (about 20%): the top face shrunk and moved towards the light
+    (top left), its shadow side drawn.
+  Every corner inside the rock where edges meet has at least three lines
+  meeting there, as at a corner of a solid, usually going out to corners
+  of the outline. Rocks lower on the page are drawn later, in front. Not
+  copied from other drawings.
+- Walls that are rock or debris keep their subtype
+  (`line wall -subtype debris`, `-subtype blocks`): drawn rocks do not
+  replace them.
 - Rocks on the edge of a passage are best drawn going over the wall.
 - Steps, by height:
   - significant boundaries and low steps under 20 cm: `line border`;
