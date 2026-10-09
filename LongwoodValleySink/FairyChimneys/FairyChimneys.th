@@ -12,14 +12,13 @@ input "FairyChimneysE315.th2"
 
 map FairyChimneysME315
   FairyChimneysSE315_1
-  FairyChimneysSE315_2
-  FairyChimneysSE315_3
-  FairyChimneysSE315_4
 endmap
 
 
 map FairyChimneysMEe
   FairyChimneysSE1
+  FairyChimneysSE2
+  FairyChimneysSE3
 endmap
 
 

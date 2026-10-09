@@ -55,9 +55,6 @@ line wall
   -263.23 658.33 -254.98 612.42 -235.91 557.24
   -231.08 543.26 -214.61 487.56 -205.22 463.90
 endline
-line wall
-  -199.99 466.89
-endline
 
 line rock-border -close on
   35.37 158.63
@@ -146,23 +143,26 @@ line floor-step
   -460.01 584.42 -453.73 551.90 -452.16 543.77
 endline
 
-line section
-  224.87 61.67
-  -224.87 -61.67
+line section -direction both
+  -262.84 -72.08
+  262.84 72.08
 endline
 
-point 429.03 350.86 section -scrap TridentCentreS_xs_1
+point 429.03 350.86 section -scrap TridentCentrePX1
 
-line section
-  -158.53 500.68
-  -239.79 466.92
-  -307.12 298.22
+line section -direction both
+  -276.15 451.82
+  -122.17 515.78
 endline
 
-point 76.80 547.72 section -scrap TridentCentreS_xs_5
+point 76.80 547.72 section -scrap TridentCentrePX5
 
+line section -direction both
+  -325.78 263.55
+  -201.26 494.99
+endline
 
-point -317.35 84.43 section -scrap TridentCentreS_xs_8
+point -317.35 84.43 section -scrap TridentCentrePX8
 
 point -263.52 379.27 station -name 8
 
@@ -185,7 +185,7 @@ point -31.13 113.51 station -name 2
 point -459.88 508.97 station -name 10
 endscrap
 
-scrap TridentCentreS_xs_1 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TridentCentrePX1 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # Cross-section at station 1.
 
@@ -199,7 +199,7 @@ line wall -close on
 endline
 endscrap
 
-scrap TridentCentreS_xs_5 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TridentCentrePX5 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # Cross-section at station 5.
 
@@ -211,7 +211,7 @@ line wall -close on
 endline
 endscrap
 
-scrap TridentCentreS_xs_8 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TridentCentrePX8 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # Cross-section at station 8.
 

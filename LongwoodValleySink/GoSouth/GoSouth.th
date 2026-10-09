@@ -13,12 +13,6 @@ input "GoSouthE315.th2"
 
 map GoSouthME315
   GoSouthSE315_1
-  GoSouthSE315_2
-  GoSouthSE315_3
-  GoSouthSE315_4
-  GoSouthSE315_5
-  GoSouthSE315_6
-  GoSouthSE315_7
 endmap
 
 

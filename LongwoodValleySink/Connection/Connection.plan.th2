@@ -1,6 +1,6 @@
 encoding  utf-8
 # Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
-##XTHERION## xth_me_area_adjust -790.5 -222.0 440.0 3300.7
+##XTHERION## xth_me_area_adjust -794.3 -222.0 440.0 3300.7
 ##XTHERION## xth_me_area_zoom_to 100
 ##XTHERION## xth_me_image_insert {-322.29 1 1.0} {1951.37 13} {Notes/ConnectionP.xvi} 0 {}
 
@@ -10,11 +10,13 @@ encoding  utf-8
 
 scrap ConnectionSP1 -projection plan -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
+# wall-subtype presumed: -563.2 2029.0 -581.6 2023.9 -566.6 2015.2 -584.4 2011.9 -572.1 1997.6 -573.9 1987.7 -587.6 1995.0 -588.3 1984.1
 
 
 
 
-line wall -outline none
+
+line wall
   -222.11 1822.12
   -211.10 1850.34 -197.31 1886.23 -192.37 1898.75
 endline
@@ -28,24 +30,33 @@ endline
 
 
 
-line wall -outline none
+line border
   121.40 3034.21
   117.89 3017.19 113.30 2983.54 100.33 2932.07
-  92.81 2902.25 79.85 2856.24 67.43 2812.01
-  58.41 2779.91 49.68 2748.75 43.53 2725.41
+  87.35 2880.61 58.16 2780.91 43.53 2725.41
   28.90 2669.92 18.93 2627.29 12.56 2599.10
   3.50 2559.09 12.30 2523.79 2.08 2486.97
   -10.34 2442.18 -57.38 2320.81 -69.27 2287.57
+  -65.35 2282.91 -47.96 2268.13 -61.14 2265.23
+  -73.71 2262.52 -66.56 2280.12 -69.27 2287.57
 endline
+
+
 
 line border
-  -69.27 2287.57
-  -70.48 2295.43 -74.11 2262.43 -61.14 2265.23
-  -45.81 2268.61 -27.23 2317.01 -20.78 2330.09
+  -563.24 2028.95
+  -565.57 2028.18 -576.04 2026.36 -577.25 2024.30
+  -578.46 2022.25 -569.90 2019.12 -570.52 2016.64
+  -571.14 2014.16 -580.52 2012.75 -580.97 2009.42
+  -581.28 2007.09 -565.75 1988.86 -576.33 1989.69
+  -578.61 1989.87 -584.91 1993.46 -586.91 1992.52
+  -588.91 1991.58 -588.09 1985.47 -588.32 1984.06
 endline
 
-
-
+line wall
+  -20.78 2330.09
+  -25.38 2320.77 -43.80 2283.50 -48.40 2274.18
+endline
 
 line wall
   -509.13 2855.10
@@ -180,8 +191,8 @@ endline
 
 
 line border
-  -62.69 2263.03
-  -75.60 2240.86 -128.44 2157.69 -148.71 2127.09
+  -71.18 2260.14
+  -84.10 2237.96 -128.44 2157.69 -148.71 2127.09
   -167.25 2099.11 -190.23 2087.03 -203.48 2055.70
   -218.75 2019.60 -234.16 1994.50 -249.76 1957.83
   -285.53 1873.72 -258.63 1785.37 -247.17 1698.14
@@ -206,7 +217,7 @@ endline
 
 line floor-step
   16.17 2193.18
-  -16.88 2196.95 -51.56 2225.57 -62.69 2263.03
+  -16.88 2196.95 -37.27 2236.71 -48.40 2274.18
 endline
 
 line floor-step
@@ -215,8 +226,8 @@ line floor-step
 endline
 
 line floor-step
-  67.43 2812.01
-  69.35 2870.28 74.23 2926.30 85.04 2983.93
+  66.39 2812.77
+  68.31 2871.04 74.23 2926.30 85.04 2983.93
   91.03 3015.93 100.87 3043.72 104.04 3055.68
 endline
 
@@ -225,40 +236,40 @@ line rimstone-dam
   -484.26 2878.51 -481.80 2874.81 -509.13 2855.10
 endline
 
-line section
-  -44.56 337.42
-  50.22 372.04
+line section -direction both
+  -81.55 323.91
+  87.21 385.55
 endline
 
-point 288.19 280.52 section -scrap ConnectionS_xs_3
+point 288.19 280.52 section -scrap ConnectionPX3
 
-line section
-  189.25 424.62
-  30.17 527.54
+line section -direction both
+  -2.88 548.92
+  222.30 403.24
 endline
 
-point 301.12 605.37 section -scrap ConnectionS_xs_6
+point 301.12 605.37 section -scrap ConnectionPX6
 
-line section
-  0.47 583.87
-  -77.45 572.59
+line section -direction both
+  -116.42 566.95
+  39.44 589.51
 endline
 
-point -248.41 550.79 section -scrap ConnectionS_xs_8
+point -248.41 550.79 section -scrap ConnectionPX8
 
-line section
-  -410.34 2249.11
-  -319.50 2263.93
+line section -direction both
+  -449.20 2242.77
+  -280.64 2270.27
 endline
 
-point -533.20 2255.01 section -scrap ConnectionS_xs_18
+point -533.20 2255.01 section -scrap ConnectionPX18
 
-line section
-  -52.95 2317.49
-  -130.07 2333.41
+line section -direction both
+  -168.62 2341.37
+  -14.40 2309.53
 endline
 
-point 176.73 2143.22 section -scrap ConnectionS_xs_17
+point 176.73 2143.22 section -scrap ConnectionPX17
 
 point -322.29 1951.37 station -name 13
 
@@ -317,7 +328,7 @@ point -125.37 891.69 station -name 9
 point -438.03 2501.58 station -name 20
 endscrap
 
-scrap ConnectionS_xs_3 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap ConnectionPX3 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # Cross-section at station 3.
 
@@ -345,7 +356,7 @@ line wall -close on
 endline
 endscrap
 
-scrap ConnectionS_xs_6 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap ConnectionPX6 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # Cross-section at station 6.
 
@@ -358,7 +369,7 @@ line wall -close on
 endline
 endscrap
 
-scrap ConnectionS_xs_8 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap ConnectionPX8 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # Cross-section at station 8.
 
@@ -370,7 +381,7 @@ line wall -close on
 endline
 endscrap
 
-scrap ConnectionS_xs_18 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap ConnectionPX18 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # Cross-section at station 18.
 
@@ -385,7 +396,7 @@ line wall -close on
 endline
 endscrap
 
-scrap ConnectionS_xs_17 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap ConnectionPX17 -projection none -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # Cross-section at station 17.
 

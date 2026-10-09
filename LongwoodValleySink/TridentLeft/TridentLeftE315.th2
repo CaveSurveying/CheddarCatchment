@@ -1,222 +1,88 @@
 encoding  utf-8
 # Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
-##XTHERION## xth_me_area_adjust -835.3 -562.0 1254.7 666.9
+##XTHERION## xth_me_area_adjust -128.0 -128.0 591.94 300.24
 ##XTHERION## xth_me_area_zoom_to 100
-##XTHERION## xth_me_image_insert {-7.80 1 1.0} {-309.44 1} {Notes/TridentLeftE315.xvi} 0 {}
+##XTHERION## xth_me_image_insert {217.70 1 1.0} {0.00 1} Notes/TridentLeftE315.xvi 0 {}
 
+# Projected elevation, facing 315: the stations on the dots of Notes/TridentLeftE315.xvi
+# (tools/sketch2therion projected). Walls to be drawn round them.
 
-# Projected elevation, facing 315: the walls of TridentLeft.extended.th2 projected by
-# tools/sketch2therion projected (walls only; one scrap per run of passage heading one way
-# across the view).
+scrap TridentLeftSE315_1 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-scrap TridentLeftSE315_1 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+point 217.70 0.00 station -name 1
 
-# Walls of TridentLeftSE1 (TridentLeft.extended.th2) projected to 315.
+point 225.22 6.49 station -name 2
 
-line wall -subtype clay
-  25.47 -255.24
-  30.84 -250.20 49.19 -233.42 57.68 -225.01
-  66.17 -216.61 73.28 -208.19 76.40 -204.82
-endline
+point 223.69 16.53 station -name 3
 
-line wall
-  -7.58 -283.21
-  -4.94 -280.31 3.21 -271.78 8.22 -265.79
-  13.24 -259.79 21.02 -259.87 22.51 -247.26
-  24.00 -234.65 17.64 -200.48 17.18 -190.13
-  16.72 -179.79 20.09 -187.75 19.73 -185.18
-  19.38 -182.61 16.24 -174.77 15.06 -174.71
-  13.89 -174.65 13.45 -182.59 12.69 -184.82
-  11.93 -187.04 10.87 -187.53 10.50 -188.07
-endline
+point 216.59 30.71 station -name 4
 
-point -7.80 -309.44 station -name 1
+point 208.38 33.86 station -name 5
 
-point 22.28 -283.48 station -name 2
+point 238.86 31.10 station -name 6
 
-point 16.16 -243.32 station -name 3
+point 222.85 39.17 station -name 7
 
-point -12.24 -186.60 station -name 4
+point 217.14 40.94 station -name 8
 
-point -45.08 -174.00 station -name 5
+point 190.56 34.64 station -name 9
 
-point 76.84 -185.04 station -name 6
+point 190.56 41.34 station -name 10
 
-endscrap
+point 166.48 30.12 station -name 11
 
-scrap TridentLeftSE315_2 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+point 121.94 30.31 station -name 12
 
-# Walls of TridentLeftSE1 (TridentLeft.extended.th2) projected to 315.
+point 119.71 36.81 station -name 13
 
-line wall -subtype sand
-  -415.99 -188.23
-  -413.12 -189.10 -402.88 -190.30 -398.81 -193.47
-  -394.74 -196.64 -396.70 -204.24 -391.58 -207.25
-  -386.45 -210.26 -388.34 -208.66 -368.04 -211.52
-  -347.74 -214.38 -286.16 -222.26 -269.79 -224.41
-endline
+point 82.96 29.92 station -name 14
 
-line wall -subtype clay
-  -530.68 -158.59
-  -529.06 -159.62 -524.20 -163.17 -520.99 -164.77
-  -517.77 -166.36 -516.18 -167.43 -511.38 -168.17
-  -506.58 -168.91 -498.65 -169.44 -492.20 -169.19
-  -485.75 -168.95 -461.98 -167.37 -472.71 -166.71
-  -483.43 -166.05 -544.63 -165.47 -556.54 -165.23
-  -568.44 -164.99 -548.88 -165.03 -544.12 -165.26
-  -539.37 -165.50 -533.37 -166.06 -528.01 -166.64
-  -522.64 -167.22 -530.59 -165.13 -511.92 -168.73
-  -493.25 -172.33 -431.98 -184.98 -415.99 -188.23
-endline
+point 115.67 46.26 station -name 15
 
-line wall
-  55.44 -127.28
-  53.00 -127.30 50.17 -128.25 40.76 -127.43
-  31.36 -126.62 42.61 -121.60 -0.99 -122.39
-  -44.59 -123.17 -184.19 -130.53 -220.83 -132.16
-endline
+point 168.29 73.23 station -name 16
 
-point 76.84 -185.04 station -name 6
+point 120.13 49.41 station -name 17
 
-point 12.80 -152.76 station -name 7
+point 149.08 62.20 station -name 18
 
-point -10.04 -145.68 station -name 8
+point 207.40 72.64 station -name 19
 
-point -116.36 -170.88 station -name 9
+point 235.80 80.90 station -name 20
 
-point -116.36 -144.08 station -name 10
+point 224.80 72.24 station -name 21
 
-point -212.68 -188.96 station -name 11
+point 249.72 81.89 station -name 22
 
-point -390.84 -188.20 station -name 12
+point 268.79 93.50 station -name 23
 
-point -399.76 -162.20 station -name 13
+point 291.06 109.05 station -name 24
 
-point -546.76 -189.76 station -name 14
+point 303.03 116.34 station -name 25
 
-point -415.92 -124.40 station -name 15
+point 272.40 110.23 station -name 26
 
-point -205.44 -16.52 station -name 16
+point 309.15 124.01 station -name 27
 
-point -561.24 -159.04 station -name 33
+point 356.20 130.31 station -name 28
 
-point -799.52 -148.80 station -name 34
+point 386.82 137.99 station -name 29
 
-point -712.12 -211.80 station -name 35
+point 454.61 172.24 station -name 30
 
-endscrap
+point 418.28 153.34 station -name 31
 
-scrap TridentLeftSE315_3 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+point 463.94 165.35 station -name 32
 
-# Walls of TridentLeftSE1 (TridentLeft.extended.th2) projected to 315.
+point 79.34 37.60 station -name 33
 
-line wall
-  -54.28 32.18
-  -66.53 28.37 -109.56 14.74 -127.77 9.34
-  -145.98 3.94 -157.57 1.37 -163.53 -0.23
-endline
+point 19.77 40.16 station -name 34
 
-point -205.44 -16.52 station -name 16
+point 41.62 24.41 station -name 35
 
-point -398.08 -111.80 station -name 17
+point 43.85 12.99 station -name 36
 
-point -282.28 -60.64 station -name 18
+point 96.18 23.23 station -name 37
 
-point -49.00 -18.88 station -name 19
-
-point 64.60 14.16 station -name 20
-
-point 20.60 -20.48 station -name 21
-
-endscrap
-
-scrap TridentLeftSE315_4 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
-
-# Walls of TridentLeftSE1 (TridentLeft.extended.th2) projected to 315.
-
-line wall
-  60.73 -9.88
-  54.05 -8.32 27.33 -2.04 20.65 -0.47
-endline
-
-line wall
-  336.03 208.39
-  330.53 203.55 311.86 186.81 302.99 179.34
-  294.11 171.87 295.63 171.05 282.78 163.56
-  269.93 156.06 241.50 143.11 225.88 134.38
-  210.26 125.65 208.37 122.77 189.05 111.16
-  169.73 99.55 124.38 73.38 109.97 64.72
-  95.55 56.07 103.80 60.15 102.56 59.23
-endline
-
-point 20.60 -20.48 station -name 21
-
-point 120.28 18.12 station -name 22
-
-point 196.56 64.56 station -name 23
-
-point 285.64 126.76 station -name 24
-
-point 333.52 155.92 station -name 25
-
-endscrap
-
-scrap TridentLeftSE315_5 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
-
-# Walls of TridentLeftSE1 (TridentLeft.extended.th2) projected to 315.
-
-line wall
-  671.63 275.34
-  671.82 275.02 661.76 277.44 672.75 273.40
-  683.75 269.35 725.51 255.50 737.60 251.05
-  749.68 246.60 776.60 247.52 745.27 246.70
-  713.95 245.87 583.54 246.68 549.65 246.12
-  515.76 245.56 546.20 244.30 541.94 243.31
-  537.68 242.33 547.72 243.49 524.09 240.23
-  500.46 236.97 428.11 228.03 400.16 223.75
-  372.21 219.48 364.42 216.71 356.41 214.56
-  348.39 212.42 353.62 211.86 352.08 210.88
-  350.53 209.91 350.03 209.13 347.14 208.71
-  344.25 208.28 336.82 208.41 334.75 208.35
-endline
-
-line wall
-  975.93 388.13
-  973.68 386.45 967.14 381.17 962.39 378.05
-  957.64 374.93 955.39 373.19 947.44 369.42
-  939.49 365.64 942.25 365.38 914.68 355.39
-  887.11 345.41 822.54 322.84 782.03 309.50
-  741.52 296.16 690.03 281.04 671.63 275.34
-endline
-
-line wall
-  881.87 292.15
-  896.27 297.68 953.87 319.80 968.27 325.33
-endline
-
-line wall
-  536.64 179.60
-  555.19 182.83 620.08 193.20 647.93 198.97
-  675.79 204.74 689.57 209.86 703.76 214.22
-  717.94 218.59 718.39 218.78 733.05 225.18
-  747.70 231.58 766.86 241.46 791.67 252.62
-  816.47 263.79 866.84 285.56 881.87 292.15
-endline
-
-point 333.52 155.92 station -name 25
-
-point 211.00 131.48 station -name 26
-
-point 358.00 186.60 station -name 27
-
-point 546.20 211.80 station -name 28
-
-point 668.68 242.52 station -name 29
-
-point 939.84 379.52 station -name 30
-
-point 794.52 303.92 station -name 31
-
-point 977.16 351.96 station -name 32
+point 0.00 24.80 station -name 38
 
 endscrap

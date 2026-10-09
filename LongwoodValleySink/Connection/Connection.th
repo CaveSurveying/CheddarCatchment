@@ -12,13 +12,12 @@ input "ConnectionE315.th2"
 
 map ConnectionME315
   ConnectionSE315_1
-  ConnectionSE315_2
-  ConnectionSE315_3
 endmap
 
 
 map ConnectionMEe
   ConnectionSE1
+  ConnectionSE2
 endmap
 
 

@@ -12,15 +12,14 @@ scrap TridentSP1 -projection plan -author 2026.06.13 "Andrew Atkinson" -copyrigh
 
 
 
-line wall -outline none
+line border
   -127.28 1851.53
-  -149.60 1865.15 -154.61 1872.56 -152.46 1898.93
+  -153.35 1860.59 -156.95 1875.12 -152.42 1898.96
 endline
-line wall -outline none
-  607.23 1715.01
-  640.96 1708.42 648.26 1816.63 672.05 1791.27
-  682.76 1779.86 682.81 1759.77 691.18 1746.55
-  702.65 1728.44 720.70 1709.01 731.90 1690.14
+line wall
+  731.90 1690.14
+  718.25 1713.14 680.25 1777.68 663.92 1795.61
+  641.18 1773.44 635.45 1740.81 618.43 1714.18
 endline
 
 
@@ -32,24 +31,25 @@ endline
 
 
 
+
+
+
+
+
+line wall
+  -180.22 1653.71
+  -285.15 1662.56 -256.07 1634.91 -314.32 1625.14
+  -422.26 1607.04 -458.30 1717.01 -492.43 1797.42
+endline
 
 
 
 
 
 line border
-  -492.43 1797.42
-  -474.11 1755.23 -458.19 1715.03 -433.99 1675.71
-  -395.89 1613.90 -371.70 1632.41 -317.22 1628.88
-  -315.29 1628.76 -317.95 1622.37 -316.20 1623.18
-  -249.69 1654.07 -247.28 1625.24 -180.22 1653.71
-  -156.97 1663.58 -156.19 1703.28 -142.49 1754.97
+  -142.49 1754.97
+  -156.19 1703.28 -132.94 1680.63 -180.22 1653.71
 endline
-
-
-
-
-
 
 
 
@@ -186,11 +186,12 @@ line wall
   1165.21 1285.05 810.74 1596.24 731.90 1690.14
 endline
 line wall
-  607.23 1715.01
-  504.76 1790.24 404.56 1792.84 285.00 1832.05
+  607.01 1714.77
+  532.02 1769.81 499.95 1772.10 414.28 1795.22
+  378.02 1805.01 316.90 1821.59 285.00 1832.05
   204.30 1858.54 130.69 1909.57 51.51 1941.22
   -1.20 1962.29 -69.97 2010.09 -119.22 1980.98
-  -145.80 1965.27 -145.18 1928.91 -152.46 1898.93
+  -145.80 1965.27 -145.14 1928.94 -152.42 1898.96
 endline
 line wall
   -127.28 1851.53
@@ -204,8 +205,8 @@ line wall
 endline
 line wall
   -556.96 1749.92
-  -552.68 1700.72 -543.98 1650.36 -544.50 1601.02
-  -545.01 1555.92 -557.72 1567.68 -593.65 1579.24
+  -552.65 1700.32 -543.36 1649.14 -544.39 1599.45
+  -545.35 1555.13 -558.74 1567.96 -593.65 1579.24
 endline
 
 point 1080.02 4357.62 stalactite
@@ -389,10 +390,10 @@ area clay
 endarea
 
 line border -subtype invisible -id TridentSP1-clay9 -close on
-  -162.65 1906.78
-  -159.66 1920.21 -147.61 1952.30 -140.79 1966.23
-  -133.96 1980.15 -134.94 1987.02 -121.72 1990.34
-  -108.49 1993.66 -86.16 1991.22 -61.45 1986.13
+  -162.65 1906.68
+  -159.64 1920.08 -147.60 1952.28 -140.78 1966.23
+  -133.96 1980.17 -134.94 1987.02 -121.72 1990.34
+  -108.50 1993.66 -86.16 1991.22 -61.45 1986.13
   -36.74 1981.04 8.56 1966.85 26.57 1959.80
   44.58 1952.75 46.47 1953.33 46.61 1943.84
   46.74 1934.35 26.38 1918.86 27.37 1902.84
@@ -401,9 +402,9 @@ line border -subtype invisible -id TridentSP1-clay9 -close on
   43.61 1814.38 36.41 1801.52 28.39 1794.80
   20.37 1788.07 12.43 1779.49 -0.47 1782.85
   -13.38 1786.21 -27.34 1805.36 -49.03 1814.95
-  -70.71 1824.53 -112.30 1828.58 -130.59 1840.36
-  -148.88 1852.14 -153.43 1874.57 -158.77 1885.64
-  -164.12 1896.71 -165.65 1893.35 -162.65 1906.78
+  -70.71 1824.53 -112.29 1828.55 -130.59 1840.36
+  -148.88 1852.17 -153.48 1874.77 -158.82 1885.82
+  -164.17 1896.87 -165.65 1893.27 -162.65 1906.68
 endline
 
 area clay
@@ -447,7 +448,8 @@ endline
 line border
   -231.93 1184.10
   -248.02 1192.69 -311.10 1212.06 -334.80 1229.56
-  -413.97 1288.02 -452.64 1440.08 -473.78 1535.06
+  -391.73 1271.60 -430.37 1382.81 -454.19 1447.15
+  -469.75 1489.15 -470.52 1520.41 -473.78 1535.06
 endline
 
 line border
@@ -521,7 +523,7 @@ endline
 
 line floor-step
   -121.49 1643.65
-  -134.86 1645.34 -173.51 1649.68 -186.87 1651.37
+  -134.86 1645.34 -166.86 1652.02 -180.22 1653.71
 endline
 
 
@@ -598,99 +600,99 @@ line rimstone-dam
   992.13 4949.89 925.70 4892.62 902.47 4885.93
 endline
 
-line section
-  -53.04 154.64
-  23.90 171.36
+line section -direction both
+  -91.52 146.29
+  62.38 179.71
 endline
 
-point -207.24 39.21 section -scrap TridentS_xs_2
-
-point 0.00 0.00 station -name 1
-
-point -14.57 163.00 station -name 2
-
-point -54.59 276.64 station -name 3
-
-point 100.09 277.57 station -name 4
-
-point -79.58 454.19 station -name 5
-
-point -128.10 719.52 station -name 6
-
-point -186.33 900.41 station -name 7
-
-point -284.43 1054.50 station -name 8
-
-point -392.15 1320.26 station -name 9
-
-point -444.49 1517.81 station -name 10
-
-point -601.14 1510.32 station -name 11
-
-point -552.98 1750.86 station -name 12
-
-point -261.32 1646.11 station -name 13
-
-point 7.37 1541.36 station -name 14
-
-point 191.96 1804.64 station -name 15
+point -207.24 39.21 section -scrap TridentPX2
 
 point 495.73 1720.22 station -name 16
 
-point -158.21 1899.02 station -name 17
-
-point 618.30 1508.85 station -name 18
-
-point 994.66 1467.49 station -name 19
-
-point 1262.96 1170.52 station -name 20
-
-point 1353.62 1413.58 station -name 21
-
-point 1212.95 1638.33 station -name 23
-
-point 1083.91 2006.18 station -name 24
-
-point 1135.95 2304.98 station -name 25
-
-point 1125.20 2574.69 station -name 26
-
-point 1063.95 2769.55 station -name 27
-
-point 1021.06 3101.42 station -name 28
-
-point 997.63 3483.93 station -name 29
-
-point 999.55 3897.54 station -name 30
-
-point 1019.55 4328.30 station -name 31
-
-point 1058.20 4609.17 station -name 32
-
-point 1018.41 4774.18 station -name 33
-
-point 1024.91 4946.11 station -name 34
-
-point 923.65 5015.13 station -name 35
-
-point 1088.79 5022.15 station -name 36
-
-point 855.95 5240.21 station -name 37
+point 191.96 1804.64 station -name 15
 
 point 1055.70 5306.71 station -name 38
 
+point 100.09 277.57 station -name 4
+
+point 997.63 3483.93 station -name 29
+
+point 1088.79 5022.15 station -name 36
+
+point 1125.20 2574.69 station -name 26
+
 point 1082.96 5582.15 station -name 39
+
+point 618.30 1508.85 station -name 18
+
+point -128.10 719.52 station -name 6
+
+point 0.00 0.00 station -name 1
+
+point -392.15 1320.26 station -name 9
+
+point -158.21 1899.02 station -name 17
+
+point -552.98 1750.86 station -name 12
+
+point -14.57 163.00 station -name 2
+
+point 999.55 3897.54 station -name 30
+
+point -79.58 454.19 station -name 5
+
+point -444.49 1517.81 station -name 10
+
+point 1018.41 4774.18 station -name 33
 
 point 1087.05 5744.25 station -name 40
 
-point 1087.07 5906.58 station -name 41
-
 point 1195.16 5779.22 station -name 42
 
+point -284.43 1054.50 station -name 8
+
+point 1083.91 2006.18 station -name 24
+
+point 1063.95 2769.55 station -name 27
+
+point -186.33 900.41 station -name 7
+
+point -601.14 1510.32 station -name 11
+
+point 1058.20 4609.17 station -name 32
+
+point 1019.55 4328.30 station -name 31
+
+point -54.59 276.64 station -name 3
+
+point 1135.95 2304.98 station -name 25
+
+point 1024.91 4946.11 station -name 34
+
+point 855.95 5240.21 station -name 37
+
 point 1158.87 5929.47 station -name 43
+
+point 1021.06 3101.42 station -name 28
+
+point 994.66 1467.49 station -name 19
+
+point 1353.62 1413.58 station -name 21
+
+point 7.37 1541.36 station -name 14
+
+point -261.32 1646.11 station -name 13
+
+point 1262.96 1170.52 station -name 20
+
+point 1212.95 1638.33 station -name 23
+
+point 923.65 5015.13 station -name 35
+
+point 1087.07 5906.58 station -name 41
 endscrap
 
-scrap TridentS_xs_2 -projection none -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TridentPX2 -projection none -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # Cross-section at station 2.
 

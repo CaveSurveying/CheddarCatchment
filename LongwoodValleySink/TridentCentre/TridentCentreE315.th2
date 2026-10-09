@@ -1,72 +1,32 @@
 encoding  utf-8
 # Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
-##XTHERION## xth_me_area_adjust -386.0 -384.2 522.4 466.0
+##XTHERION## xth_me_area_adjust -128.0 -128.0 223.21 197.49
 ##XTHERION## xth_me_area_zoom_to 100
-##XTHERION## xth_me_image_insert {-171.48 1 1.0} {-123.64 1} {Notes/TridentCentreE315.xvi} 0 {}
+##XTHERION## xth_me_image_insert {0.00 1 1.0} {0.00 1} Notes/TridentCentreE315.xvi 0 {}
 
+# Projected elevation, facing 315: the stations on the dots of Notes/TridentCentreE315.xvi
+# (tools/sketch2therion projected). Walls to be drawn round them.
 
-# Projected elevation, facing 315: the walls of TridentCentre.extended.th2 projected by
-# tools/sketch2therion projected (walls only; one scrap per run of passage heading one way
-# across the view).
+scrap TridentCentreSE315_1 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-scrap TridentCentreSE315_1 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+point 0.00 0.00 station -name 1
 
-# Walls of TridentCentreSE1 (TridentCentre.extended.th2) projected to 315.
+point 14.47 16.54 station -name 2
 
-line wall -subtype clay
-  81.56 -18.50
-  90.63 -10.24 126.88 22.81 135.95 31.07
-endline
+point 35.77 37.41 station -name 3
 
-line wall -subtype clay
-  -107.35 -105.52
-  -105.36 -104.04 -102.89 -103.28 -95.41 -96.67
-  -87.93 -90.05 -77.46 -77.85 -62.48 -65.85
-  -47.50 -53.84 -15.01 -31.50 -5.51 -24.63
-endline
+point 75.16 36.82 station -name 4
 
-line wall
-  135.95 31.07
-  126.64 33.31 84.70 38.54 80.11 44.53
-  75.51 50.52 89.36 55.42 108.39 67.01
-  127.41 78.60 171.72 100.86 194.27 114.06
-  216.82 127.27 235.45 140.88 243.69 146.24
-endline
+point 50.25 43.11 station -name 5
 
-line wall
-  195.23 187.23
-  190.51 184.88 186.56 184.43 166.88 173.13
-  147.20 161.83 95.71 130.11 77.15 119.44
-  58.59 108.78 63.93 112.58 55.53 109.15
-  47.13 105.73 35.18 102.89 26.73 98.91
-  18.29 94.93 9.70 88.59 4.85 85.28
-  0.01 81.97 0.32 81.82 -2.31 79.03
-  -4.95 76.23 -8.93 72.82 -10.96 68.51
-  -12.99 64.20 -13.38 56.92 -14.49 53.17
-  -15.59 49.43 -16.02 48.33 -17.57 46.05
-  -19.12 43.77 -19.99 42.64 -23.80 39.49
-  -27.61 36.33 -34.65 33.79 -40.45 27.13
-  -46.25 20.47 -55.59 4.13 -58.62 -0.48
-endline
+point 70.57 57.29 station -name 6
 
-point -171.48 -123.64 station -name 1
+point 95.21 69.49 station -name 7
 
-point -113.60 -57.48 station -name 2
+point 20.46 33.27 station -name 8
 
-point -28.40 26.00 station -name 3
+point 10.16 37.80 station -name 9
 
-point 129.16 23.64 station -name 4
-
-point 29.52 48.80 station -name 5
-
-point 110.80 105.52 station -name 6
-
-point 209.36 154.32 station -name 7
-
-point -89.64 9.44 station -name 8
-
-point -130.84 27.56 station -name 9
-
-point -136.96 89.76 station -name 10
+point 8.63 53.35 station -name 10
 
 endscrap

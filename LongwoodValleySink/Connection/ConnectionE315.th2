@@ -1,210 +1,68 @@
 encoding  utf-8
 # Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
-##XTHERION## xth_me_area_adjust -1277.4 -1057.0 1375.5 746.6
+##XTHERION## xth_me_area_adjust -128.0 -128.0 678.37 358.51
 ##XTHERION## xth_me_area_zoom_to 100
-##XTHERION## xth_me_image_insert {-1104.92 1 1.0} {-630.72 1} {Notes/ConnectionE315.xvi} 0 {}
+##XTHERION## xth_me_image_insert {0.00 1 1.0} {0.00 1} Notes/ConnectionE315.xvi 0 {}
 
+# Projected elevation, facing 315: the stations on the dots of Notes/ConnectionE315.xvi
+# (tools/sketch2therion projected). Walls to be drawn round them.
 
-# Projected elevation, facing 315: the walls of Connection.extended.th2 projected by
-# tools/sketch2therion projected (walls only; one scrap per run of passage heading one way
-# across the view).
+scrap ConnectionSE315_1 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-scrap ConnectionSE315_1 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+point 0.00 0.00 station -name 1
 
-# Walls of ConnectionSE1 (Connection.extended.th2) projected to 315.
+point 33.27 90.16 station -name 2
 
-line wall -subtype clay
-  -277.21 -398.00
-  -269.79 -395.84 -260.65 -394.69 -232.69 -385.06
-  -204.74 -375.42 -133.20 -348.46 -109.48 -340.21
-  -85.75 -331.96 -101.40 -337.30 -90.35 -335.56
-  -79.29 -333.82 -54.47 -331.36 -43.15 -329.78
-  -31.83 -328.20 -39.04 -330.59 -22.42 -326.09
-  -5.80 -321.58 43.39 -306.64 56.56 -302.75
-endline
+point 63.19 100.79 station -name 3
 
-line wall -subtype clay
-  -998.69 -778.29
-  -998.00 -767.74 -995.88 -744.78 -994.57 -715.00
-  -993.26 -685.21 -992.36 -636.74 -990.80 -599.58
-  -989.25 -562.43 -986.15 -509.99 -985.22 -492.07
-endline
+point 63.89 114.37 station -name 4
 
-line wall
-  -854.40 -25.62
-  -854.92 -24.68 -843.05 -20.89 -857.50 -19.98
-  -871.95 -19.08 -923.60 -19.77 -941.09 -20.22
-  -958.58 -20.66 -957.99 -22.50 -962.47 -22.64
-  -966.94 -22.77 -966.19 -22.00 -967.94 -21.02
-  -969.69 -20.04 -971.34 -18.77 -973.00 -16.78
-  -974.65 -14.78 -976.24 -12.35 -977.88 -9.05
-  -979.52 -5.76 -982.01 0.99 -982.84 3.00
-endline
+point 91.87 134.45 station -name 5
 
-line wall
-  182.09 354.82
-  181.33 350.13 177.92 334.42 177.52 326.65
-  177.13 318.88 179.36 311.29 179.72 308.21
-endline
+point 103.56 141.14 station -name 6
 
-line wall
-  286.98 467.93
-  282.88 462.92 275.54 451.93 262.39 437.86
-  249.24 423.80 221.47 397.37 208.08 383.53
-  194.70 369.69 186.42 359.61 182.09 354.82
-endline
+point 209.76 151.18 station -name 7
 
-line wall
-  609.80 319.68
-  602.83 318.75 574.94 315.05 567.97 314.12
-endline
+point 95.35 111.03 station -name 8
 
-line wall
-  727.49 138.62
-  723.67 139.30 709.73 141.25 704.58 142.69
-  699.42 144.12 698.87 145.34 696.57 147.22
-  694.27 149.11 693.75 152.64 690.80 153.99
-  687.84 155.34 683.15 155.61 678.84 155.31
-  674.53 155.01 669.92 153.61 664.92 152.17
-  659.91 150.73 652.70 148.76 648.82 146.67
-  644.93 144.59 645.26 142.35 641.60 139.66
-  637.95 136.98 629.33 132.07 626.88 130.55
-endline
+point 135.44 90.95 station -name 9
 
-line wall
-  1096.90 265.22
-  1096.00 265.30 1115.63 268.38 1091.52 265.72
-  1067.40 263.07 979.91 252.90 952.19 249.26
-  924.47 245.63 934.01 246.01 925.20 243.91
-  916.38 241.80 907.67 239.47 899.30 236.64
-  890.93 233.82 880.12 229.36 874.97 226.95
-  869.82 224.55 871.87 225.93 868.41 222.22
-  864.95 218.52 862.02 216.18 854.19 204.71
-  846.37 193.24 828.60 163.57 821.47 153.41
-  814.34 143.24 816.54 147.67 811.43 143.71
-  806.31 139.76 796.18 134.41 790.78 129.65
-  785.37 124.90 780.96 117.58 778.99 115.16
-endline
+point 168.15 92.72 station -name 10
 
-point -1104.92 -630.72 station -name 1
+point 197.10 81.30 station -name 11
 
-point -971.84 -270.08 station -name 2
+point 243.45 96.46 station -name 12
 
-point -852.16 -227.56 station -name 3
+point 287.99 107.29 station -name 13
 
-point -849.36 -173.24 station -name 4
+point 318.06 103.74 station -name 14
 
-point -723.52 -186.60 station -name 8
+point 360.93 156.70 station -name 15
 
-point -563.16 -266.92 station -name 9
+point 386.68 230.51 station -name 16
 
-point -432.32 -259.84 station -name 10
+point 394.89 159.45 station -name 17
 
-point -316.52 -305.52 station -name 11
+point 334.48 113.59 station -name 18
 
-point -131.12 -244.88 station -name 12
+point 356.06 113.78 station -name 19
 
-point 47.04 -201.56 station -name 13
+point 364.83 116.74 station -name 20
 
-point 167.32 -215.76 station -name 14
+point 386.96 132.68 station -name 21
 
-point 338.80 -3.92 station -name 15
+point 395.17 142.92 station -name 22
 
-point 441.80 291.32 station -name 16
+point 418.70 152.76 station -name 23
 
-point 474.64 7.08 station -name 17
+point 437.07 170.87 station -name 24
 
-point 643.36 52.76 station -name 24
+point 447.93 172.44 station -name 25
 
-point 686.80 59.04 station -name 25
+point 471.31 177.37 station -name 26
 
-point 780.32 78.76 station -name 26
+point 527.41 175.20 station -name 27
 
-point 1004.72 70.08 station -name 27
-
-point 1096.56 -123.64 station -name 28
-
-endscrap
-
-scrap ConnectionSE315_2 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
-
-# Walls of ConnectionSE1 (Connection.extended.th2) projected to 315.
-
-line wall
-  314.31 -286.54
-  314.81 -278.36 316.30 -249.90 317.32 -237.49
-  318.34 -225.08 319.29 -219.18 320.42 -212.09
-  321.55 -205.01 323.48 -197.85 324.09 -195.00
-endline
-
-line wall
-  518.17 -128.86
-  521.54 -132.63 531.79 -143.46 538.40 -151.48
-  545.00 -159.49 548.19 -163.93 557.79 -176.93
-  567.39 -189.94 587.01 -216.00 595.99 -229.50
-  604.97 -243.01 608.07 -252.34 611.66 -257.98
-  615.25 -263.62 616.55 -262.46 617.53 -263.36
-endline
-
-line wall
-  397.07 -181.82
-  403.86 -177.62 431.01 -160.82 437.80 -156.62
-endline
-
-line wall -subtype clay
-  337.55 -186.14
-  340.42 -186.76 350.04 -189.26 354.76 -189.87
-  359.48 -190.48 360.53 -190.43 365.86 -189.81
-  371.20 -189.18 381.56 -187.46 386.76 -186.13
-  391.96 -184.80 395.35 -182.54 397.07 -181.82
-endline
-
-line wall
-  249.03 -425.43
-  249.69 -428.87 251.50 -435.53 253.02 -446.08
-  254.54 -456.62 256.59 -478.12 258.14 -488.71
-  259.69 -499.29 261.62 -506.12 262.32 -509.60
-endline
-
-point 167.32 -215.76 station -name 14
-
-point 233.00 -176.36 station -name 18
-
-point 319.32 -175.60 station -name 19
-
-point 354.40 -163.76 station -name 20
-
-point 442.92 -100.00 station -name 21
-
-point 475.76 -59.04 station -name 22
-
-point 569.88 -19.68 station -name 23
-
-endscrap
-
-scrap ConnectionSE315_3 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
-
-# Walls of ConnectionSE1 (Connection.extended.th2) projected to 315.
-
-line wall
-  -498.33 -8.89
-  -503.77 -3.61 -518.20 14.99 -530.96 22.79
-  -543.72 30.59 -558.93 35.05 -574.89 37.91
-  -590.86 40.78 -608.71 40.88 -626.76 39.97
-  -644.81 39.05 -662.78 35.97 -683.19 32.44
-  -703.60 28.91 -718.92 26.36 -749.21 18.80
-  -779.51 11.24 -838.11 -5.82 -864.95 -12.93
-  -891.78 -20.05 -900.66 -21.79 -910.23 -23.89
-  -919.80 -26.00 -916.36 -25.28 -922.35 -25.57
-  -928.35 -25.86 -942.22 -25.61 -946.19 -25.62
-endline
-
-point -849.36 -173.24 station -name 4
-
-point -737.44 -92.92 station -name 5
-
-point -690.68 -66.16 station -name 6
-
-point -265.88 -26.00 station -name 7
+point 550.37 126.77 station -name 28
 
 endscrap
