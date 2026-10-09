@@ -179,7 +179,7 @@ class Areas(unittest.TestCase):
 
         def borders():
             text = "\n".join(marks.th2(loops + [rock_line, ledge], passage, px, "XSP1", ["BLACK"], 0.3))
-            return [m for m in re.findall(r"(?ms)^line border\n(.*?)^endline", text)]
+            return [m for m in re.findall(r"(?ms)^line border(?: -id \S+)?\n(.*?)^endline", text)]
         self.assertEqual(len(borders()), 1)                 # the ledge only
         settings.use(dict(settings.SETTINGS, area_lines=True))
         self.assertEqual(len(borders()), 2)

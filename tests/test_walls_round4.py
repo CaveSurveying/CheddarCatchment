@@ -168,8 +168,8 @@ class BorderJoinTest(unittest.TestCase):
 @unittest.skipUnless(convert, "needs shapely")
 class GoSouthStation21Test(unittest.TestCase):
     """The GoSouth plan through plan and smooth: near station 21 the upper
-    wall is one wall (strokes 182, 192 and 194 of the sketch), with the
-    border (stroke 148) coming off it, and the lower wall has no step."""
+    wall is one wall (strokes 182, 192 and 194 of the sketch), stroke 148
+    beside it is a wall too (an outer line), and the lower wall has no step."""
 
     @classmethod
     def setUpClass(cls):
@@ -204,10 +204,12 @@ class GoSouthStation21Test(unittest.TestCase):
         for p in [(450, -1395), (520, -1411), (600, -1457)]:
             self.assertLess(min(w.distance(Point(p)) for w in walls), 0.15 * K, p)
 
-    def test_border_off_it(self):
+    def test_stroke_148_a_wall(self):
+        # stroke 148 was a border off the upper wall (round 4); the user has since confirmed the
+        # lines near 16 and 21 are walls (2026-10-09, log row 141): every outer line is a wall
         K = 78.74
-        borders = self.lines('border')
-        self.assertLess(min(b.distance(Point(470, -1385)) for b in borders), 0.15 * K)   # stroke 148
+        walls = self.lines('wall')
+        self.assertLess(min(w.distance(Point(470, -1385)) for w in walls), 0.15 * K)   # stroke 148
 
     def test_lower_wall_follows_the_sketch(self):
         K = 78.74

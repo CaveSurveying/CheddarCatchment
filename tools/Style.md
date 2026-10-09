@@ -48,8 +48,9 @@ plan-only config.
 - Walls are the scrap's outline. Draw each wall with the passage on its
   **left**, or add `-reverse on` if the passage is on its right.
 - A wall round an internal pillar has `-outline in`.
-- Do not close gaps between walls: Therion closes the outline itself.
-  No invisible walls (`line wall -subtype invisible`)
+- Do not bridge real gaps between walls with made-up lines: Therion
+  closes the outline itself (but ends that nearly meet are one point,
+  below). No invisible walls (`line wall -subtype invisible`)
   **[lint: wall-invisible]**.
 - Every line has at least two points **[lint: line-points]**.
 - Never use `-outline none` on a wall **[lint: wall-outline-none]**.
@@ -57,13 +58,44 @@ plan-only config.
   passage is not a wall (see below).
 - Outer or inner is decided by the line's own passage: the legs that
   see it (no other drawn line between), within 1.5 m of the nearest. A
-  line is inner (a border) only with those legs on both sides of it, or
-  their splays reaching more than 0.5 m past it. Otherwise it is a wall,
-  drawn with the passage on its left: draw it that way round, and keep
-  `-reverse on` for hand edits. Where a wall either way round would make
-  the outline cross itself, two passages are drawn over one another in
-  one scrap: they want separate scraps (the converter keeps the line a
-  border and lists it).
+  line is inner (a border) only with those legs' stations on both sides
+  of it, or their splays crossing it and reaching more than 0.5 m past
+  it (a splay crossing a wall by less is a drawing error; one from a
+  station on the line doesn't count). A station whose nearest point on
+  the line is within 1 m of its end doesn't say (the line hands over to
+  the next wall there). With no station to say, the legs do, and if they
+  tie, the leg along the line. Otherwise it is a wall, drawn with the
+  passage on its left: draw it that way round, and keep `-reverse on`
+  for hand edits.
+- A wall is never made a border to mend the outline. Where the outline
+  crosses itself the drawing is mended: a small loop at a sharp turn cut
+  out, walls run on past a corner cut back to it, two wall pieces ending
+  together joined into one, a stray wall mark (under 0.5 m, joined to no
+  other wall) dropped; anything left is reported to check.
+- Wall ends that nearly meet (under 0.3 m) are one point, in a scrap and
+  across a scrap join; a step or border ending on such an end moves with
+  it. A drawn line that joins two wall ends (to within 15 cm) is wall.
+  Two free wall ends under 0.6 m apart, each the other's nearest, meet
+  (gaps in the wall closed where the outline is no worse).
+- A line meeting another of its kind end to end is merged into it: always
+  one of 2 nodes, one of 3 or 4 unless the join turns 90 degrees or more,
+  walls included (where the outline is no worse). A short piece running
+  on from a border is a border (Connection 13 to 15).
+- A station on a line: its splays reaching well out on both sides, across
+  the line's length and into the drawn passage, make the line inner
+  (Connection 15); splays into passage not drawn yet, or past the line's
+  end, don't (TridentLeft 35).
+- In an elevation, a passage seen across a line with nothing between is
+  the passage below or above it, not one beyond: the line is inner, the
+  floor of one and the roof of the other.
+- Walls round an outline all run the same way (a short piece by a
+  junction is not drawn start to start with the wall beside it).
+- Two walls side by side between two scraps' passages (both passages'
+  legs along them): the one on the other passage's side is that scrap's
+  wall (GoSouth 16 to 21).
+- Hand edits used as examples are checked against these rules first
+  (an edit can carry a mistake too: TridentLeft 27, a piece the wrong way
+  round).
 - Two walls drawn on past the corner where they meet (crossing near an
   end of each) are cut at the crossing and the ends past it go (Trident
   17, hand edit). The rock the fill's closing-up takes in (a tongue
@@ -73,6 +105,9 @@ plan-only config.
 - An outer line ending on the middle of a wall (a T) is a wall there as
   a hand edit does it: the wall split at the T, and the piece of it
   then inside the passage a border, if its legs say it is inner.
+- Only strokes in a wall colour (black in plans) can be outer lines. A
+  grey or brown line inside the passage is a border whichever side the
+  legs are on (a channel either side of the leg: TridentLeft 21 to 29).
 - A black dashed line (no ticks) is a wall the surveyors could not see
   all of, where the passage carries on: `line wall -subtype presumed`.
 - The outline must not cross itself, and no wall may loop back on
