@@ -9,6 +9,7 @@ folder = "LongwoodValleySink"
 master = "LongwoodValleySink/LongwoodValleySink.th"   # sources every survey
 survey = "LongwoodValleySink"                          # its top-level survey
 thconfig = "LongwoodValleySink/Plan_only.thcfg"        # the trial build
+check_build = "LongwoodValleySink/Whole_cave.thcfg"   # plan, extended and 315 of the whole cave, after every run
 plan_map = "LongwoodValleySinkMP"                      # the cave's plan map,
 plan_map_file = "LongwoodValleySink/LongwoodValleySink.th"   # defined here (group maps are in Maps.th)
 
@@ -35,6 +36,11 @@ licence = "CC BY-NC-SA 4.0"         # survey data and drawings; the tools are GP
 # dashes) decides steps, pitches and overhangs.
 wall_colours = ["BLACK"]
 elevation_wall_colours = ["BLACK", "BROWN", "GREEN"]   # in elevations the floor is often drawn brown or green ...
+auto_scraps = true          # scraps from the 3D model where none are listed below (log row 133)
+section_names = true        # cross-sections named FairyChimneysPX5 (log row 125)
+outer_walls = true          # every outer line is a wall: passage on one side only, by the splays (log row 125)
+dashed_presumed = true      # black dashed lines are wall -subtype presumed (log row 125)
+section_arrows = true       # cross-section lines with arrows (Style.md, Cross-sections)
 layout_split = false        # never split or flip a drawing to fit where Therion puts the stations today (plan 5d)
 elevation_features = true   # elevations: pools, water flow, curtains, blocks, rocks, rubble, by shape
 wall_subtypes = true        # ... and is then mud (wall -subtype clay), sand (brown dots along it) or, green, flowstone (smooth) or blocks (lumpy, rock on the floor)

@@ -1,0 +1,43 @@
+encoding  utf-8
+# Whole cave check build: plan, extended elevation and 315 projected
+# elevation, built at the end of every run that edits th2 files
+# (tools/Style.md, Checking). Not a survey output: the fill is coloured
+# by scrap, with the legs and station names shown, so the drawing can be
+# checked against the survey. The SVGs draw the same as the PDFs; the
+# ESRI and XVI exports in ../output/check/ are what
+# `python3 -m tools.sketch2therion fillcheck` reads (legs and splays
+# against the fill).
+# Run from this folder: therion -l ../output/whole-cave.log Whole_cave.thcfg
+
+source LongwoodValleySink.th
+input ../common_layout.th
+
+select LongwoodValleySinkMP@LongwoodValleySink
+select LongwoodValleySinkMEe@LongwoodValleySink
+select LongwoodValleySinkM315@LongwoodValleySink
+
+layout check
+  copy common
+  doc-title "Longwood Valley Sink: check build"
+  scale 1 500
+  colour map-fg scrap
+  debug station-names
+  symbol-show group cave-centreline
+  legend off
+  colour-legend off
+endlayout
+
+export map -projection plan -layout check -o Outputs/WholeCaveP.pdf
+export map -projection plan -layout check -o Outputs/WholeCaveP.svg
+export map -projection plan -fmt esri -o ../output/check/plan
+export map -projection plan -fmt xvi -o ../output/check/plan.xvi
+
+export map -projection extended -layout check -o Outputs/WholeCaveEe.pdf
+export map -projection extended -layout check -o Outputs/WholeCaveEe.svg
+export map -projection extended -fmt esri -o ../output/check/extended
+export map -projection extended -fmt xvi -o ../output/check/extended.xvi
+
+export map -projection [elevation 315] -layout check -o Outputs/WholeCaveE315.pdf
+export map -projection [elevation 315] -layout check -o Outputs/WholeCaveE315.svg
+export map -projection [elevation 315] -fmt esri -o ../output/check/e315
+export map -projection [elevation 315] -fmt xvi -o ../output/check/e315.xvi

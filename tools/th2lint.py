@@ -137,6 +137,18 @@ def check_wall_outline_none(scrap):
             yield "wall-outline-none", o.line, "wall with -outline none"
 
 
+def check_line_points(scrap):
+    for o in scrap.objects:
+        if o.kind == "line" and len(o.coords) < 2:
+            yield "line-points", o.line, "line with fewer than 2 points"
+
+
+def check_section_direction(scrap):
+    for o in scrap.objects:
+        if o.kind == "line" and o.type.split(":")[0] == "section" and not o.opt("direction"):
+            yield "section-direction", o.line, "section line with no -direction (prefer both)"
+
+
 def check_clip_off_reason(scrap):
     for o in scrap.objects:
         if o.opt("clip") == "off" and not o.comment_before:

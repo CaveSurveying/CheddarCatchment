@@ -128,6 +128,22 @@ map LongwoodValleySinkM315
 endmap
 
 ###################################################################
+#Extended elevation: the surveys drawn in extended elevation (the older
+#surveys' extended scraps hold stations only)
+map LongwoodValleySinkMEe
+  GoSouthMEe@GoSouth
+  TridentMEe@Trident
+  TridentCentreMEe@TridentCentre
+  TridentLeftMEe@TridentLeft
+  IDontCareMEe@IDontCare
+  BoldStepMEe@BoldStep
+  TritonNorthMEe@TritonNorth
+  TritonSouthMEe@TritonSouth
+  ConnectionMEe@Connection
+  FairyChimneysMEe@FairyChimneys
+endmap
+
+###################################################################
 #Profile E90 does NOT show Go West
 map LongwoodValleySinkE90M
   EntranceME90@Entrance

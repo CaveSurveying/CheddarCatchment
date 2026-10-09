@@ -128,14 +128,22 @@ python3 -m tools.sketch2therion review gaps LongwoodValleySink/X/X.plan.th2 XSP1
   restart in each survey, so give `--survey`.
 - `check` reports each outline as Therion and MetaPost see it: valid,
   and the turning number (0 means "scrap outline intersects itself").
+- `fillcheck [--build] [--survey X ...]` builds the whole cave in plan,
+  extended and 315 elevation (`check_build` in `project.toml`:
+  `LongwoodValleySink/Whole_cave.thcfg`) and lists legs outside Therion's
+  fill, and splay ends more than 0.5 m outside it, from the ESRI and XVI
+  exports in `output/check/`. Run it at the end of every run that edits
+  th2 files.
 - `gaps` lists where Therion will close the outline with a straight
   line, and how much of it the sketch draws as wall.
 
 ## Another cave
 
 Copy `project.toml` and change it; the tools read every cave-specific
-name from it. `sections` (placing cross-sections) is not ported: no
-LongwoodValleySink plan has cross-sections.
+name from it. `sections` (placing cross-sections) is not ported. The converter
+writes each section line with `-direction both`, the view direction on
+its left and 0.5 m past the passage (`section_arrows`); placing the
+section drawings clear of passages is still by hand.
 
 ## SVN
 

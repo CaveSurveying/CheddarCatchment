@@ -50,8 +50,22 @@ plan-only config.
 - A wall round an internal pillar has `-outline in`.
 - Do not close gaps between walls: Therion closes the outline itself.
   No invisible walls (`line wall -subtype invisible`)
-  **[lint: wall-invisible]** and no `-outline none` fill line on a wall
-  **[lint: wall-outline-none]**.
+  **[lint: wall-invisible]**.
+- Every line has at least two points **[lint: line-points]**.
+- Never use `-outline none` on a wall **[lint: wall-outline-none]**.
+  Every outer line of the passage is drawn as a wall; a line inside the
+  passage is not a wall (see below).
+- Outer or inner is decided by the line's own passage: the legs that
+  see it (no other drawn line between), within 1.5 m of the nearest. A
+  line is inner (a border) only with those legs on both sides of it, or
+  their splays reaching more than 0.5 m past it. Otherwise it is a wall,
+  drawn with the passage on its left: draw it that way round, and keep
+  `-reverse on` for hand edits. Where a wall either way round would make
+  the outline cross itself, two passages are drawn over one another in
+  one scrap: they want separate scraps (the converter keeps the line a
+  border and lists it).
+- A black dashed line (no ticks) is a wall the surveyors could not see
+  all of, where the passage carries on: `line wall -subtype presumed`.
 - The outline must not cross itself, and no wall may loop back on
   itself. Otherwise Therion warns "invalid scrap outline" (no 3D model
   for the scrap) or MetaPost "scrap outline intersects itself".
@@ -155,13 +169,20 @@ plan-only config.
 - Walls carry a subtype for what they are drawn as: `clay` (mud: brown),
   `sand` (brown with dots), `flowstone` (green, smooth or running down
   a step), `blocks` (rock on the floor: green boulders or a humpy line),
-  `debris` (a floor with rubble: brown curls), plain `line wall` for
-  rock. The subtype goes on the line, `line wall -subtype clay`, never
+  `debris` (a floor with rubble: brown curls, or a line with boulders
+  drawn along it), plain `line wall` for rock. Boulders along a line
+  make it debris, not sand or mud.
+- A floor drawn only as a row of boulders or brown curls (no line under
+  them) is still a floor: `line wall -subtype debris` along the bottom of
+  the row (BoldStep 13 to 11). A row of straight brown dashes is mud
+  marked on a floor drawn elsewhere, not a floor. The subtype goes on the line, `line wall -subtype clay`, never
   on a point (`subtype clay` among the points: Therion takes it, but it
   is hard to follow when editing), and does not change along a line: a
   wall that changes is drawn as one line per kind, meeting end to end.
   Colour is only a hint: shape decides.
-- A wall inside the passage stays a wall (`-outline none`), not a border.
+- A line inside the passage is never a wall (no `-outline none`): every
+  outer line is a wall, and inner lines are drawn as what they are
+  (border, ledge, step, rock-border and so on).
 - A pool is an `area water` in an invisible closed border whose first two
   points are its surface, the second with `adjust horizontal` so the
   surface is level; a bowl wall under it where no floor was drawn.
@@ -172,6 +193,12 @@ plan-only config.
   passage is a `rock-border -close on`.
 
 ## Projected elevations (E315)
+
+- For now (walls parked): one scrap, `XSE315_1`, with the stations on the
+  dots of `Notes/XE315.xvi`, laid out as `tools/ElevationsExx.py` does
+  (xvi units, offset from the lowest station, the xvi as backdrop). The
+  walls are drawn round them. The rules below are for when the walls are
+  generated again.
 
 - 315 is the direction the viewer faces (`-projection [elevation 315]`).
   A survey X has `X/XE315.th2` (scraps `XSE315_1`, ...) with the
@@ -191,12 +218,61 @@ plan-only config.
   as large as it can be. Judged on the PDF and iterated.
 - No closing walls: Therion closes the outline (as for every scrap).
 
+## Scraps
+
+- Passages drawn over one another in a view go in separate scraps;
+  otherwise a scrap is as large as it can be. Overlap is read from the
+  3D model (as Loch shows it): `python3 -m tools.sketch2therion scraps X
+  --view plan|extended|315`. Scraps listed in `[scraps]` or
+  `[scraps_extended]` (project.toml) are used as they are.
+- Order: plan scraps from the model built from the splays, before the
+  plans are drawn; elevation scraps wait for the plans, from the model
+  built from the drawn plans together with the splays. The plans are
+  then checked against the model from the drawn plans (the feedback
+  loop).
+- Scraps meet where as few fill lines and points as possible are needed.
+  In a plan: at simple, linear passage, never at a junction (a hard
+  rule); near one, a leg or more down one of the passages. In an
+  elevation: near a junction most of the time, usually on a short piece
+  of passage by it (WestPassage 57 to 59, CJPitch, CrossRoads), maybe on
+  it, since that is where the split is needed (a rule still being
+  developed).
+- Examples to learn from are the pre-2026 hand drawings only; the 2026
+  splits are ours.
+- Two medium scraps are better than a short one and a very long one.
+- Every scrap has at least two stations. They are inside the drawn
+  passage, except at a continuation; in a short stubby scrap one may be
+  outside it.
+- Overlap: more than 70% of the smaller passage and at least 0.3 m2,
+  with one leg more than 1 m beyond the other's walls (one passage in
+  front of another, not the same space seen from two legs); in plan
+  only passages one above the other. Set by `scraps --calibrate` from
+  the splits made by hand.
+- In an extended elevation an overlap of 2 m2 or more is a clash whatever
+  share of the smaller passage it is (TritonSouth); the older 315
+  drawings keep larger overlaps in one scrap, so not in 315.
+- Where a scrap meets the next in an elevation, its walls end in line:
+  a floor does not run on past the nearest end of the ceiling (or the
+  next scrap's short bit of ceiling), and the other way round.
+- More than one split can be right: a split is judged by these rules
+  (no passage over another in a scrap, joins at simple passage, sizes,
+  stations), not by matching another split.
+
 ## Cross-sections
 
-- `line section` goes completely across the passage.
+- One scrap each, named survey + `PX` + station in a plan
+  (`FairyChimneysPX5`), `EX` in an elevation.
+- The leg and splay rule applies: the section's station and its splays
+  (the station's copy at the section in the xvi) are inside its
+  outline, splay ends no more than 0.5 m outside. Only the section's own
+  strokes go in it, never a stroke of the main drawing.
+
+- `line section` goes completely across the passage, and about 0.5 m
+  past it, so the arrows are clear of the walls.
 - Direction arrows do not overlap the passage they mark, and best not
   other passages.
-- Prefer `-direction both`; arrows only at the start or end if that is
+- Every section line has its arrows **[lint: section-direction]**:
+  prefer `-direction both`; arrows only at the start or end if that is
   the only option.
 - Therion draws the arrows on the line's left, so draw the line with
   the view direction (along the survey, from the station towards the
@@ -338,6 +414,22 @@ Build with `therion -l ../output/therion.log Plan_only.thcfg` in
   check with another renderer (MuPDF) before chasing them.
 - PDF viewers show overlapping rocks fading rather than clipping; this
   is a viewer fault, do not try to fix it.
+
+- This file is the source of truth: check every drawing run against
+  every rule here, and record what a review teaches.
+- At the end of every run that edits th2 files, build the whole cave in
+  plan, extended elevation and 315 projected elevation, from one config
+  (`LongwoodValleySink/Whole_cave.thcfg`, PDFs and SVGs in
+  `LongwoodValleySink/Outputs/WholeCave*`), and check legs and splays
+  against the fill: `python3 -m tools.sketch2therion fillcheck --build
+  [--survey X ...]` (report in `output/check/fillcheck.txt`). The SVGs
+  draw the same as the PDFs.
+- Check the PDF after processing drawings. The coloured fill shows
+  where Therion thinks the passage is (inside the walls). Legs and
+  splays are all inside the fill, except at passage ends where the
+  continuation is not drawn yet. A splay end may occasionally go
+  outside a wall: record it as a thing to check if it is outside by
+  more than 0.5 m.
 
 ## Updating this file
 
