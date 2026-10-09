@@ -370,3 +370,10 @@ findings (mostly `-outline none` walls) baselined; review PDFs in
 | FairyChimneys | 4 | 0 |
 
 First iteration, for the user's review.
+
+Still open after row 146 (2026-10-09):
+
+- MetaPost "scrap outline intersects itself" among the ten: BoldStepSE1, BoldStepSP1, ConnectionSE3, TridentCentreSP1, TritonSouthSE1, TritonSouthSP1. Fix without turning walls into borders.
+- Connection extended: SE3 has no floor under 24 to 27 (24's down splay ends 0.25 m off the grey line); SE4 crosses itself. The user may supply a hand-corrected `Connection.extended.th2`.
+- TridentLeft plan: the user's move of the wall by station 14 (station was outside it) is not yet learned by the converter.
+- Asked, not answered: a cleaner blocks/debris area pattern as a project symbol (the house `Symbols/` stay unchanged).
