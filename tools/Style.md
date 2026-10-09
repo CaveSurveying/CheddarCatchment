@@ -254,6 +254,18 @@ plan-only config.
 - Where a scrap meets the next in an elevation, its walls end in line:
   a floor does not run on past the nearest end of the ceiling (or the
   next scrap's short bit of ceiling), and the other way round.
+- Each scrap is a passage, in plan or elevation. Where a passage leaves
+  a junction into the next scrap (Trident: 10 to 12 one passage, 10 to
+  13 another), the walls of the passage leaving end on a near-vertical
+  line through the junction station: drawn on to it, or cut at it (only
+  the walls within about 2 m of the junction's height). A wall between
+  two scraps' passages, one either side of it, is a wall of each scrap
+  (elevations; the roof of 10 to 13 is the floor of the ramp to 12).
+- Plans are calibrated from the pre-2026 plans: they split where
+  passages overlap by more than 30% one above the other. Most older
+  plans split at junctions; the plan rule (never at a junction) is kept
+  as the user's rule, and where no simple place parts an overlap it is
+  left and reported (BoldStep).
 - More than one split can be right: a split is judged by these rules
   (no passage over another in a scrap, joins at simple passage, sizes,
   stations), not by matching another split.
