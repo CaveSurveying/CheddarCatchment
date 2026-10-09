@@ -126,10 +126,12 @@ GoSouth = ["1-16", "17-29"]
 [scraps_extended]
 # The same for extended elevations: where passages overlap in elevation.
 # GoSouth: the rift up to 19 rises over the passage from 1 to 8.
-# Trident (as the user split it): the ramp to 12; the passage from 13 on
-# to 34 and the far end, 36 and 38 to 43; 35 and 37 above it.
+# Trident (as the user split it, hand edit of Trident.extended.th2): the
+# passage through 10 (1 to 9, 11, 13 on to 34 and the far end, 36 and 38
+# to 43) whole; the ramp 10 to 12, a branch, its own scrap with the
+# junction 10; 35 and 37 above the far end.
 GoSouth = ["1-16", "17-29"]
-Trident = ["1-12", "13-34, 36, 38-43", "35, 37"]
+Trident = ["1-9, 11, 13-34, 36, 38-43", "10, 12", "35, 37"]
 
 [glitches]
 # Slips of the pen in a sketch: stroke points inside these boxes (sketch

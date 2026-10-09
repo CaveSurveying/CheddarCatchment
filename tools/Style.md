@@ -64,6 +64,15 @@ plan-only config.
   the outline cross itself, two passages are drawn over one another in
   one scrap: they want separate scraps (the converter keeps the line a
   border and lists it).
+- Two walls drawn on past the corner where they meet (crossing near an
+  end of each) are cut at the crossing and the ends past it go (Trident
+  17, hand edit). The rock the fill's closing-up takes in (a tongue
+  between two walls, round a passage end) is not passage, in elevations
+  as in plans; a station within 0.1 m of a face's edge doesn't make it
+  passage.
+- An outer line ending on the middle of a wall (a T) is a wall there as
+  a hand edit does it: the wall split at the T, and the piece of it
+  then inside the passage a border, if its legs say it is inner.
 - A black dashed line (no ticks) is a wall the surveyors could not see
   all of, where the passage carries on: `line wall -subtype presumed`.
 - The outline must not cross itself, and no wall may loop back on
@@ -232,7 +241,10 @@ plan-only config.
   loop).
 - Scraps meet where as few fill lines and points as possible are needed.
   In a plan: at simple, linear passage, never at a junction (a hard
-  rule); near one, a leg or more down one of the passages. In an
+  rule); near one, a leg or more down one of the passages. A split need
+  not be far from the junction: on the leg next to it (CJPitch along the
+  pitch leg, CJS a little back, CrossRoads) the junction is whole in one
+  scrap, and that keeps the rule. In an
   elevation: near a junction most of the time, usually on a short piece
   of passage by it (WestPassage 57 to 59, CJPitch, CrossRoads), maybe on
   it, since that is where the split is needed (a rule still being
@@ -254,18 +266,25 @@ plan-only config.
 - Where a scrap meets the next in an elevation, its walls end in line:
   a floor does not run on past the nearest end of the ceiling (or the
   next scrap's short bit of ceiling), and the other way round.
-- Each scrap is a passage, in plan or elevation. Where a passage leaves
-  a junction into the next scrap (Trident: 10 to 12 one passage, 10 to
-  13 another), the walls of the passage leaving end on a near-vertical
-  line through the junction station: drawn on to it, or cut at it (only
-  the walls within about 2 m of the junction's height). A wall between
-  two scraps' passages, one either side of it, is a wall of each scrap
-  (elevations; the roof of 10 to 13 is the floor of the ramp to 12).
+- Each scrap is a passage, in plan or elevation. At a junction the
+  passage through it (the two ways on to the most passage) stays one
+  scrap, its floor and roof running on past the junction; a branch drawn
+  over it is its own scrap, holding the junction station (Trident, hand
+  edit: 9-10-13 one scrap, the ramp 10 to 12 another with 10 in it). The
+  branch's walls start on the through passage's walls, on a
+  near-vertical line through the junction station: drawn on to it, or
+  cut at it (only walls within about 2 m of the junction's height). A
+  wall starting at the junction belongs to the passage whose leg it runs
+  along, not the nearest (the ramp's floor runs past 13). A wall
+  between two scraps' passages, alongside both legs, one either side of
+  it, is a wall of each scrap (elevations).
+- In an extended elevation two legs from one station clash when each
+  far end is more than 1.5 m beyond the other's walls and they share 2 m2
+  or more of the drawing (Trident 10 to 12 over 10 to 13; BoldStep 5 to 7
+  and 5 to 8, 2.4 m, stays one scrap).
 - Plans are calibrated from the pre-2026 plans: they split where
-  passages overlap by more than 30% one above the other. Most older
-  plans split at junctions; the plan rule (never at a junction) is kept
-  as the user's rule, and where no simple place parts an overlap it is
-  left and reported (BoldStep).
+  passages overlap by more than 30% one above the other, on the leg by
+  a junction where needed (the junction whole in one scrap).
 - More than one split can be right: a split is judged by these rules
   (no passage over another in a scrap, joins at simple passage, sizes,
   stations), not by matching another split.

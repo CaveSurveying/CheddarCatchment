@@ -140,4 +140,24 @@ class AutoScraps(unittest.TestCase):
 
     def test_no_clash_one_scrap(self):
         cut, comps, left = self.a.choose(self.legs, [], self.length, self.degree)
-        self.assertEqual((cut, len(comps)), (set(), 1))
+        self.assertEqual((len(cut), len(comps)), (0, 1))
+
+    def test_elevation_branch_detached_at_the_junction(self):
+        # Trident 10: the branch 5-10-11 rises over 5-6; the passage through 5 stays whole
+        clash = [(('5', '10'), ('5', '6'), 0.9)]
+        cut, comps, left = self.a.choose(self.legs, clash, self.length, self.degree, 'extended')
+        self.assertFalse(left)
+        self.assertEqual(cut, {('5', '10'): '5'})
+        self.assertEqual(sorted(map(sorted, comps), key=len)[0], [('10', '11'), ('5', '10')])
+
+    def test_plan_cut_by_a_junction_keeps_it_whole(self):
+        # CJPitch, CJS, CrossRoads: a leg by the junction is cut, the junction in one scrap
+        legs = [('1', '2'), ('2', '3'), ('3', '4'), ('2', '5'), ('5', '6')]
+        degree = {'1': 1, '2': 3, '3': 2, '4': 1, '5': 2, '6': 1}
+        cut, comps, left = self.a.choose(legs, [(('3', '4'), ('5', '6'), 0.9)], dict.fromkeys(legs, 1.0), degree, 'plan')
+        self.assertFalse(left)
+        (l, j), = cut.items()
+        self.assertIn('2', l)
+        self.assertIsNone(j)                       # in neither scrap
+        at2 = [i for i, c in enumerate(comps) for x in c if '2' in x]
+        self.assertEqual(len(set(at2)), 1)         # the junction whole in one scrap

@@ -1,5 +1,6 @@
 # Existing th2lint findings, not failing CI. Remove a line when it is fixed.
 # Regenerate with: python3 tools/th2lint.py --from ... --update-baseline
+LongwoodValleySink/BoldStep/BoldStep.plan.th2	BoldStepSP1	node-gap	1
 LongwoodValleySink/CJPitch/CJPitch.ee.th2	cjpitch-ee	scrap-author-copyright	1
 LongwoodValleySink/CJPitch/CJPitch.plan.th2	CJPitchSP1	scrap-author-copyright	1
 LongwoodValleySink/CJPitch/CJPitch.plan.th2	CJPitchSP2	scrap-author-copyright	1
@@ -35,6 +36,7 @@ LongwoodValleySink/Century/CenturyE090.th2	CenturySE090_1	scrap-author-copyright
 LongwoodValleySink/Century/CenturyE090.th2	CenturySE090_2	scrap-author-copyright	1
 LongwoodValleySink/Century/CenturyE315.th2	CenturySE315_1	scrap-author-copyright	1
 LongwoodValleySink/Century/CenturyE315.th2	CenturySE315_2	scrap-author-copyright	1
+LongwoodValleySink/Connection/Connection.plan.th2	ConnectionSP1	end-on-node	1
 LongwoodValleySink/CrossRoads/CrossRoads.ee.th2	crossroads-ee	scrap-author-copyright	1
 LongwoodValleySink/CrossRoads/CrossRoads.plan.th2	CrossRoadsSP0	scrap-author-copyright	1
 LongwoodValleySink/CrossRoads/CrossRoads.plan.th2	CrossRoadsSP1	scrap-author-copyright	1
@@ -82,6 +84,8 @@ LongwoodValleySink/Entrance/EntranceP.th2	EntranceSP2	clip-off-reason	1
 LongwoodValleySink/Entrance/EntranceP.th2	EntranceSP2	scrap-author-copyright	1
 LongwoodValleySink/Entrance/EntranceP.th2	EntranceSP3	scrap-author-copyright	1
 LongwoodValleySink/FairyChimneys/FairyChimneys.plan.th2	FairyChimneysPX5	clip-off-reason	1
+LongwoodValleySink/FairyChimneys/FairyChimneys.plan.th2	FairyChimneysSP1	end-on-node	1
+LongwoodValleySink/FairyChimneys/FairyChimneys.plan.th2	FairyChimneysSP1	node-gap	1
 LongwoodValleySink/GoSouth/GoSouth.extended.th2	GoSouthSE2	close-on-first-point	1
 LongwoodValleySink/NorthRift/NorthRift.ee.th2	northrift-ee	scrap-author-copyright	1
 LongwoodValleySink/NorthRift/NorthRift.plan.th2	NorthRiftSP1	end-on-node	1
@@ -151,7 +155,6 @@ LongwoodValleySink/Triassic2/Triassic2P.th2	Triassic2SP1	end-on-node	2
 LongwoodValleySink/Triassic2/Triassic2P.th2	Triassic2SP1	end-on-node	3
 LongwoodValleySink/Triassic2/Triassic2P.th2	Triassic2SP1	end-on-node	4
 LongwoodValleySink/Triassic2/Triassic2P.th2	Triassic2SP1	scrap-author-copyright	1
-LongwoodValleySink/TridentLeft/TridentLeft.plan.th2	TridentLeftSP1	node-gap	1
 LongwoodValleySink/WestPassage/WestPassage.ee.th2	westpassage-ee	scrap-author-copyright	1
 LongwoodValleySink/WestPassage/WestPassage.plan.th2	WestPassage-planS1	scrap-author-copyright	1
 LongwoodValleySink/WestPassage/WestPassage.plan.th2	WestPassage-planS2	scrap-author-copyright	1

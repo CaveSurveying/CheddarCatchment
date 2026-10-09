@@ -6,6 +6,7 @@ input "BoldStep.plan.th2"
 
 map BoldStepMP
   BoldStepSP1
+  BoldStepSP2
 endmap
 input "BoldStep.extended.th2"
 input "BoldStepE315.th2"
