@@ -47,6 +47,7 @@ wall_subtypes = true        # ... and is then mud (wall -subtype clay), sand (br
 interior_borders = true
 brown = "floor"
 boulder_min = 0.3           # m: a closed loop this wide or wider is a boulder
+drawn_rocks = true          # each boulder drawn as a rock of its own with rock edges, not an area of blocks
 wall_jog_max = 0.4
 pool_min_area = 0.05
 pools_first = true
@@ -132,6 +133,10 @@ GoSouth = ["1-16", "17-29"]
 # junction 10; 35 and 37 above the far end.
 GoSouth = ["1-16", "17-29"]
 Trident = ["1-9, 11, 13-34, 36, 38-43", "10, 12", "35, 37"]
+# Connection (as the user split it): left of 13 are three passages over one
+# another, two roughly level and one going up; 15-17 with the passage up to
+# 16 and on through 24 to 28, and 14 through 18 to 23.
+Connection = ["1-5, 8-13", "6, 7", "15-17, 24-28", "14, 18-23"]
 
 [glitches]
 # Slips of the pen in a sketch: stroke points inside these boxes (sketch

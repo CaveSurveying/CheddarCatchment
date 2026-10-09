@@ -18,6 +18,8 @@ endmap
 map ConnectionMEe
   ConnectionSE1
   ConnectionSE2
+  ConnectionSE3
+  ConnectionSE4
 endmap
 
 

@@ -75,8 +75,10 @@ plan-only config.
 - Wall ends that nearly meet (under 0.3 m) are one point, in a scrap and
   across a scrap join; a step or border ending on such an end moves with
   it. A drawn line that joins two wall ends (to within 15 cm) is wall.
-  Two free wall ends under 0.6 m apart, each the other's nearest, meet
-  (gaps in the wall closed where the outline is no worse).
+  Two free wall ends under 1 m apart, each the other's nearest, meet if
+  each wall heads within 20 degrees of the other end (a gap in a wall:
+  the walls run along it; at a continuation they are nearer square to
+  it), where the outline is no worse.
 - A line meeting another of its kind end to end is merged into it: always
   one of 2 nodes, one of 3 or 4 unless the join turns 90 degrees or more,
   walls included (where the outline is no worse). A short piece running
@@ -88,6 +90,13 @@ plan-only config.
 - In an elevation, a passage seen across a line with nothing between is
   the passage below or above it, not one beyond: the line is inner, the
   floor of one and the roof of the other.
+- In an elevation the splays straight up and down say which floor and
+  ceiling is which: a wall a scrap's station's splay ends on is that
+  scrap's (both scraps' if splays of each end on it), and a grey line two
+  or more splays end on is a wall, a floor or ceiling (Connection 22 to
+  26).
+- A splay crossing a line counts as passage beyond it only if it ends in
+  the drawn passage (one up an aven doesn't: Connection 15 to 16).
 - Walls round an outline all run the same way (a short piece by a
   junction is not drawn start to start with the wall beside it).
 - Two walls side by side between two scraps' passages (both passages'
@@ -170,6 +179,14 @@ plan-only config.
 - Rocks are drawn in file order and clip each other.
 - Large boulders get a `line rock-edge` inside them to look like 3D
   rocks.
+- Each sketched boulder (a brown loop 0.3 m or more across) is drawn as a
+  rock of its own, also among others (not an area of blocks); smaller
+  loops among them are `area debris`. A rock is angular and roughly
+  convex: the hull of the sketched loop cut to 5 to 8 corners by size.
+  From 0.5 m one edge line, corner to corner through a ridge a little to
+  the top left of the middle (light from the top left), bent about 140
+  degrees; from 1.6 m a third edge from the ridge. Rocks lower on the
+  page are drawn later, in front. Not copied from other drawings.
 - Rocks on the edge of a passage are best drawn going over the wall.
 - Steps, by height:
   - significant boundaries and low steps under 20 cm: `line border`;

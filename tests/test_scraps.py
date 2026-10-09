@@ -148,6 +148,7 @@ class Areas(unittest.TestCase):
         from shapely.geometry import box
         from tools.sketch2therion import marks, settings
         settings.load()
+        settings.SETTINGS["drawn_rocks"] = False        # (areas of rocks: the upstream way)
         passage = box(0, 0, 6, 2)
         loops = []
         for k in range(8):                    # boulders along the wall at y = 0
@@ -167,6 +168,7 @@ class Areas(unittest.TestCase):
         from shapely.geometry import box
         from tools.sketch2therion import marks, settings
         settings.load()
+        settings.SETTINGS["drawn_rocks"] = False
         passage = box(0, 0, 6, 2)
         loops = [("BROWN", [(x, 0.6), (x + 0.4, 0.6), (x + 0.4, 1.0), (x, 1.0), (x, 0.6)])
                  for x in (0.5 + 0.6 * k for k in range(6))]
@@ -196,6 +198,7 @@ class Mud(unittest.TestCase):
         from shapely.geometry import box
         from tools.sketch2therion import marks, settings
         settings.load()
+        settings.SETTINGS["drawn_rocks"] = False
         passage = box(0, 0, 12, 2)
         dashes = [[(x, 1.0), (x + 0.9, 1.05)] for x in (0.5, 2.0, 3.6, 5.1, 6.5)]      # 0.9 m dashes, 0.6 m apart
         rocks = [[(x, 0.3), (x + 0.4, 0.3), (x + 0.4, 0.7), (x, 0.7), (x, 0.3)] for x in (9.0, 9.6, 10.2, 10.8)]
