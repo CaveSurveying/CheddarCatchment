@@ -5,10 +5,9 @@ name: Build survey
 # LongwoodValleySink/Plan_only.thcfg is built. The repository is
 # private, so nothing is published: the sheets are attached to the run,
 # and a pull request gets a comment with the statistics and a link.
+# Switched off (2026-10-11, the user: not needed, and its failure emails
+# not wanted): run by hand only, from the Actions tab.
 on:
-  push:
-    branches: [main, "claude/**"]
-  pull_request:
   workflow_dispatch:
 
 permissions:
