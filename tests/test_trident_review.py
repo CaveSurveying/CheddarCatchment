@@ -371,4 +371,4 @@ class Elevations(unittest.TestCase):
         from tools import project
         P = project.load()
         self.assertEqual(P.scraps_extended.get('GoSouth'), ['1-16', '17-29'])
-        self.assertEqual(len(P.scraps_extended.get('Trident')), 3)
+        self.assertEqual(len(P.scraps_extended.get('Trident')), 4)      # the user's split, log row 150

@@ -77,24 +77,24 @@ class WallSubtypes(unittest.TestCase):
     def test_one_line_per_subtype_never_a_point_subtype(self):
         from tools.sketch2therion.smooth import wall_subtypes
         K = 100.0
-        body = ("# wall-subtype clay: 500 0 1000 0\n\n"
+        body = ("# wall-subtype sand: 500 0 1000 0\n\n"
                 "line wall\n  0 0\n  250 0\n  500 0\n  750 0\n  1000 0\nendline\n")
         objs = parse_scrap(body)
         wall_subtypes(objs, K)
         text = '\n'.join(o.text() for o in objs)
         self.assertNotIn('  subtype', text)
         heads = [o.head for o in objs if o.kind == 'line']
-        self.assertEqual(heads, ['line wall', 'line wall -subtype clay'])
+        self.assertEqual(heads, ['line wall', 'line wall -subtype sand'])
         a, b = [o for o in objs if o.kind == 'line']
         self.assertEqual(a.segments()[-1][-2:], b.segments()[0][-2:])        # they meet
 
     def test_short_stretch_goes_with_its_neighbour(self):
         from tools.sketch2therion.smooth import wall_subtypes
-        body = ("# wall-subtype clay: 0 0 400 0\n\n"
+        body = ("# wall-subtype sand: 0 0 400 0\n\n"
                 "line wall\n  0 0\n  200 0\n  400 0\n  420 0\nendline\n")
         objs = parse_scrap(body)
         wall_subtypes(objs, 100.0)
-        self.assertEqual([o.head for o in objs if o.kind == 'line'], ['line wall -subtype clay'])
+        self.assertEqual([o.head for o in objs if o.kind == 'line'], ['line wall -subtype sand'])
 
 
 class Scraps(unittest.TestCase):
@@ -111,3 +111,60 @@ class Scraps(unittest.TestCase):
         pp = [(0, 0), (1, 0), (1.5, 3), (2, 0), (3, 0)]
         out = cut_glitches([('BLACK', pp)], [[1.2, 1, 1.8, 4]])
         self.assertEqual([len(p) for _, p in out], [2, 2])
+
+
+class BoulderFloor(unittest.TestCase):
+    """A row of curls is a debris floor only where no floor line is drawn
+    under it, through it or just over it (Style.md, hard rule 2)."""
+
+    @staticmethod
+    def row(y):
+        return [('BROWN', [(x + 0.2 * math.cos(t / 3), y + 0.12 * math.sin(t / 3)) for t in range(19)])
+                for x in [0.5 * i for i in range(10)]]
+
+    def test_row_alone_is_a_floor(self):
+        self.assertEqual(len(el.boulder_floor(self.row(0.0))), 1)
+
+    def test_floor_over_the_tops(self):
+        # BoldStep, user: a line through the tops of the rocks, smoothed
+        (pp, kind), = el.boulder_floor(self.row(0.0))
+        self.assertTrue(all(0.05 < y < 0.15 for x, y in pp))
+
+    def test_row_on_a_line_under_it_is_not(self):
+        self.assertEqual(el.boulder_floor(self.row(0.3) + [('BROWN', [(-1, 0), (6, 0)])]), [])
+
+    def test_row_hanging_under_a_floor_line_is_not(self):
+        # FairyChimneys 25 to 28: the small rocks drawn just below the brown floor line
+        self.assertEqual(el.boulder_floor(self.row(-0.3) + [('BROWN', [(-1, 0), (6, 0)])]), [])
+
+
+class Dashes(unittest.TestCase):
+    """Two dashed lines side by side are two lines, not one zigzag (FairyChimneys 12)."""
+
+    def tearDown(self):
+        settings.use({})
+
+    def test_side_by_side(self):
+        from tools.sketch2therion import notation
+        settings.use({'dash_neighbours': True})
+        left = [('BLACK', [(0.0, y), (0.0, y + 0.3)]) for y in (0.0, 0.6, 1.2, 1.8)]
+        right = [('BLACK', [(0.5, y + 0.3), (0.5, y + 0.6)]) for y in (0.0, 0.6, 1.2, 1.8)]
+        found, used = notation.presumed(left + right, 1.2)
+        self.assertEqual(len(found), 2)
+        self.assertTrue(all(len({round(p[0], 1) for p in pp}) == 1 for pp in found))
+
+
+class ShortLinks(unittest.TestCase):
+    """A short stroke in a wall colour joined to the wall at both ends is wall (FairyChimneys 9)."""
+
+    def tearDown(self):
+        settings.use({})
+
+    def test_link_kept_loose_mark_not(self):
+        from tools.sketch2therion import convert
+        settings.use({'wall_colours': ['BLACK', 'BROWN', 'GREEN'], 'short_links': True})
+        a, link, b = [(0.0, 0.0), (2.0, 0.0)], [(2.1, 0.0), (2.6, 0.0)], [(2.7, 0.0), (5.0, 0.0)]
+        loose = [(3.0, 1.0), (3.5, 1.0)]
+        walls, _, _ = convert.wall_strokes([('BROWN', a), ('GREEN', link), ('BROWN', b), ('GREEN', loose)])
+        self.assertIn(link, walls)
+        self.assertNotIn(loose, walls)

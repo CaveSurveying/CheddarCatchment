@@ -36,6 +36,7 @@ class Obj:
     comment_before: bool        # the previous non-blank line is a # comment
     coords: list = field(default_factory=list)  # lines of numbers (lines only)
     ids: list = field(default_factory=list)     # referenced ids (areas only)
+    subtypes: list = field(default_factory=list)  # `subtype X` among a line's points
 
     def opt(self, name, default=None):
         """The value of option `-name`, or `default`."""
@@ -102,6 +103,8 @@ def parse(text):
         elif obj is not None:
             if obj.kind == "line" and _numbers(words):
                 obj.coords.append([float(w) for w in words])
+            elif obj.kind == "line" and head == "subtype" and len(words) > 1:
+                obj.subtypes.append(words[1])
             elif obj.kind == "area":
                 obj.ids.append(head)
         prev_comment = False
@@ -135,6 +138,13 @@ def check_wall_outline_none(scrap):
     for o in scrap.objects:
         if o.kind == "line" and o.type.split(":")[0] == "wall" and o.opt("outline") == "none":
             yield "wall-outline-none", o.line, "wall with -outline none"
+
+
+def check_no_clay(scrap):
+    for o in scrap.objects:
+        sub = [o.opt("subtype") or "", o.type.split(":")[1] if ":" in o.type else ""] + o.subtypes
+        if (o.kind == "area" and o.type == "clay") or (o.kind == "line" and "clay" in sub):
+            yield "no-clay", o.line, "clay: mud and sand are both sand"
 
 
 def check_line_points(scrap):

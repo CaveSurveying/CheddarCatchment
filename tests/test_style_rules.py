@@ -150,6 +150,23 @@ class AutoScraps(unittest.TestCase):
         self.assertEqual(cut, {('5', '10'): '5'})
         self.assertEqual(sorted(map(sorted, comps), key=len)[0], [('10', '11'), ('5', '10')])
 
+    def test_elevation_long_branch_the_scrap_coming_in_ends(self):
+        # FairyChimneys 16: a long branch 5-10-11 over 4-5 (the way in from 1); the scrap
+        # from 1 ends at 5 and the next carries on from it with 5-6 and the branch
+        length = dict(self.length)
+        length[('5', '10')] = length[('10', '11')] = 4.0
+        clash = [(('4', '5'), ('5', '10'), 0.5)]
+        cut, comps, left = self.a.choose(self.legs, clash, length, self.degree, 'extended', '1')
+        self.assertFalse(left)
+        self.assertEqual(cut, {('4', '5'): '5'})
+        other = [c for c in comps if ('5', '6') in c][0]
+        self.assertIn(('5', '10'), other)
+
+    def test_incoming(self):
+        came = self.a.incoming(self.legs, '1')
+        self.assertEqual(came['5'], ('4', '5'))
+        self.assertEqual(came['10'], ('5', '10'))
+
     def test_plan_cut_by_a_junction_keeps_it_whole(self):
         # CJPitch, CJS, CrossRoads: a leg by the junction is cut, the junction in one scrap
         legs = [('1', '2'), ('2', '3'), ('3', '4'), ('2', '5'), ('5', '6')]
@@ -161,3 +178,33 @@ class AutoScraps(unittest.TestCase):
         self.assertIsNone(j)                       # in neither scrap
         at2 = [i for i, c in enumerate(comps) for x in c if '2' in x]
         self.assertEqual(len(set(at2)), 1)         # the junction whole in one scrap
+
+
+class Passages(unittest.TestCase):
+    """autoscraps: ways paired through junctions, passages, the score against a hand split."""
+
+    def setUp(self):
+        from collections import defaultdict
+        from tools.sketch2therion import autoscraps
+        self.a = autoscraps
+        # Trident 10: 9 -> 10 -> 12 nearly straight; 11 -> 10 -> 13 the other way through
+        self.pos = {'9': (0, -3, 0), '10': (0, 0, 0), '12': (0.5, 3, 0.5), '11': (-3, 0, 0), '13': (3, 0.5, 0), '14': (6, 0.5, 0)}
+        self.legs = [('10', '9'), ('10', '12'), ('10', '11'), ('10', '13'), ('13', '14')]
+        self.degree = defaultdict(int)
+        for x, y in self.legs:
+            self.degree[x] += 1
+            self.degree[y] += 1
+
+    def test_pairs_straightest(self):
+        pairs = self.a.pair_ways(self.legs, self.pos, self.degree)['10']
+        self.assertEqual({frozenset(p) for p in pairs},
+                         {frozenset({('10', '9'), ('10', '12')}), frozenset({('10', '11'), ('10', '13')})})
+
+    def test_passages_through_the_pairs(self):
+        pairs = self.a.pair_ways(self.legs, self.pos, self.degree)
+        ps = sorted(sorted(p) for p in self.a.passages(self.legs, pairs, self.degree))
+        self.assertEqual(ps, [[('10', '11'), ('10', '13'), ('13', '14')], [('10', '12'), ('10', '9')]])
+
+    def test_score(self):
+        rows = self.a.score([['1', '2', '3'], ['4', '5']], [['1', '2'], ['3', '4', '5']])
+        self.assertEqual(rows, [(0, 0, ['3'], []), (1, 1, [], ['3'])])

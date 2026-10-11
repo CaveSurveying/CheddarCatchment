@@ -40,10 +40,12 @@ auto_scraps = true          # scraps from the 3D model where none are listed bel
 section_names = true        # cross-sections named FairyChimneysPX5 (log row 125)
 outer_walls = true          # every outer line is a wall: passage on one side only, by the splays (log row 125)
 dashed_presumed = true      # black dashed lines are wall -subtype presumed (log row 125)
+dash_neighbours = true      # a dash joins only its nearest neighbours: dashed lines side by side stay apart (log row 148)
+short_links = true          # short wall-coloured pieces joining walls end to end are wall (log row 148)
 section_arrows = true       # cross-section lines with arrows (Style.md, Cross-sections)
 layout_split = false        # never split or flip a drawing to fit where Therion puts the stations today (plan 5d)
 elevation_features = true   # elevations: pools, water flow, curtains, blocks, rocks, rubble, by shape
-wall_subtypes = true        # ... and is then mud (wall -subtype clay), sand (brown dots along it) or, green, flowstone (smooth) or blocks (lumpy, rock on the floor)
+wall_subtypes = true        # ... and is then sand (brown: mud too, no clay), debris (rocks along it) or, green, flowstone (smooth) or blocks (lumpy, rock on the floor)
 interior_borders = true
 brown = "floor"
 boulder_min = 0.3           # m: a closed loop this wide or wider is a boulder
@@ -127,12 +129,12 @@ GoSouth = ["1-16", "17-29"]
 [scraps_extended]
 # The same for extended elevations: where passages overlap in elevation.
 # GoSouth: the rift up to 19 rises over the passage from 1 to 8.
-# Trident (as the user split it, hand edit of Trident.extended.th2): the
-# passage through 10 (1 to 9, 11, 13 on to 34 and the far end, 36 and 38
-# to 43) whole; the ramp 10 to 12, a branch, its own scrap with the
-# junction 10; 35 and 37 above the far end.
+# Trident (the user, 2026-10-11, log row 150): the four-way junction 10 is
+# two passages through it: 1 to 9, 10 and on up the ramp to 12; and 11,
+# 10, 13, 14. The passage turns at 15, so 17, 15, 16 and on is the next
+# scrap (it looks better); 35 and 37 above the far end.
 GoSouth = ["1-16", "17-29"]
-Trident = ["1-9, 11, 13-34, 36, 38-43", "10, 12", "35, 37"]
+Trident = ["1-10, 12", "11, 13, 14", "15-34, 36, 38-43", "35, 37"]
 # Connection (as the user split it): left of 13 are three passages over one
 # another, two roughly level and one going up; 15-17 with the passage up to
 # 16 and on through 24 to 28, and 14 through 18 to 23.

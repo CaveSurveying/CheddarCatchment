@@ -17,8 +17,6 @@ endmap
 
 map TritonSouthMEe
   TritonSouthSE1
-  TritonSouthSE2
-  TritonSouthSE3
 endmap
 
 equate 10 18

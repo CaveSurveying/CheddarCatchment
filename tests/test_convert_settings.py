@@ -54,7 +54,7 @@ class BrownTest(unittest.TestCase):
         self.assertEqual(marks.kind_of([(0, 0), (0.05, 0.02)], 0.6), "sand")              # a dot
         self.assertEqual(marks.kind_of(loop(0, 0, 0.15), 0.6), "debris")                 # small loop
         self.assertEqual(marks.kind_of(loop(0, 0, 0.5), 0.6), "boulder")                 # 1 m across
-        self.assertEqual(marks.kind_of([(0, 0), (0.15, 0.01), (0.3, 0.0)], 0.6), "clay")  # a dash
+        self.assertEqual(marks.kind_of([(0, 0), (0.15, 0.01), (0.3, 0.0)], 0.6), "sand")  # a dash: mud, drawn as sand
         self.assertEqual(marks.kind_of([(0, 0), (1, 0.4), (2, 0)], 0.6), "line")          # a step in mud
 
     def test_areas_need_enough_marks(self):

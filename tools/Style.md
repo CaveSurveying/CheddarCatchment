@@ -14,6 +14,27 @@ Examples are from LongwoodValleySink. For another cave, read
 `<Cave>` for `LongwoodValleySink` and `<Cave>/Plan_only.thcfg` for its
 plan-only config.
 
+## Hard rules
+
+These are never broken, by the converter or by hand. They are added,
+removed or changed only with the user's confirmation; the rest of this
+file is worked out from reviews and may be tuned.
+
+1. Every outer line of the passage is a wall. Never `-outline none`.
+2. A scrap has only one outer wall on each side of the passage: in an
+   elevation one floor and one roof wherever it is cut across. A line
+   along a wall inside the passage is a border, or not drawn (debris is
+   a line with small rocks along it: the rocks are not a second wall).
+3. A wall is never made a border to mend the outline; the drawing is
+   mended instead.
+4. In a plan, scraps never meet at a junction (a cut on the leg next to
+   it keeps the junction whole: CJPitch, CJS, CrossRoads).
+5. Legs and splays are inside the passage fill, except at passage ends
+   not drawn yet (a splay crossing a wall by a little is a drawing
+   error).
+6. The converter never writes `-reverse on`: walls are drawn with the
+   passage on their left. `-reverse on` is for hand edits only.
+
 ## Names and files
 
 - New config files are named `name.thcfg` (e.g.
@@ -81,7 +102,8 @@ plan-only config.
   it), where the outline is no worse.
 - A line meeting another of its kind end to end is merged into it: always
   one of 2 nodes, one of 3 or 4 unless the join turns 90 degrees or more,
-  walls included (where the outline is no worse). A short piece running
+  walls included (where the outline is no worse). A wall piece under
+  5 cm on another wall's end is a slip, not drawn. A short piece running
   on from a border is a border (Connection 13 to 15).
 - A station on a line: its splays reaching well out on both sides, across
   the line's length and into the drawn passage, make the line inner
@@ -90,6 +112,10 @@ plan-only config.
 - In an elevation, a passage seen across a line with nothing between is
   the passage below or above it, not one beyond: the line is inner, the
   floor of one and the roof of the other.
+- In an elevation, a line two or more splays straight up or down end
+  on, all from one side, with none from the other side reaching it, is
+  that side's floor or roof: a wall (BoldStep 1 and 4: the floor of 0
+  to 4, over the passage at 5 and 6).
 - In an elevation the splays straight up and down say which floor and
   ceiling is which: a wall a scrap's station's splay ends on is that
   scrap's (both scraps' if splays of each end on it), and a grey line two
@@ -119,6 +145,14 @@ plan-only config.
   legs are on (a channel either side of the leg: TridentLeft 21 to 29).
 - A black dashed line (no ticks) is a wall the surveyors could not see
   all of, where the passage carries on: `line wall -subtype presumed`.
+  Each dash joins only its nearest dash ahead and behind (two dashed
+  lines side by side stay two: FairyChimneys 12); in an elevation dashes
+  up to 1.2 m apart are one line (a big chamber's roof is drawn
+  sparsely: FairyChimneys 34 to 39). Dashed lines are found before the
+  strokes are shared out between scraps.
+- A short stroke (0.3 m or more) in a wall colour joined end to end to
+  the wall at both ends is wall too (FairyChimneys 9: a floor drawn in
+  short brown and green pieces).
 - The outline must not cross itself, and no wall may loop back on
   itself. Otherwise Therion warns "invalid scrap outline" (no 3D model
   for the scrap) or MetaPost "scrap outline intersects itself".
@@ -227,6 +261,9 @@ plan-only config.
 
 ## Symbols: areas
 
+- No `clay`, as a wall subtype or an area: mud and sand are both
+  `sand` (user, 2026-10-11) **[lint: no-clay]**.
+
 - Water: a `line border -subtype invisible -id X -close on`, and an
   `area water` that refers to it by `X`. **[lint: water-border]** No other border on
   water.
@@ -243,17 +280,21 @@ plan-only config.
 
 ## Extended elevations
 
-- Walls carry a subtype for what they are drawn as: `clay` (mud: brown),
-  `sand` (brown with dots), `flowstone` (green, smooth or running down
+- Walls carry a subtype for what they are drawn as: `sand` (brown: mud
+  or sand, never `clay`), `flowstone` (green, smooth or running down
   a step), `blocks` (rock on the floor: green boulders or a humpy line),
   `debris` (a floor with rubble: brown curls, or a line with boulders
   drawn along it), plain `line wall` for rock. Boulders along a line
-  make it debris, not sand or mud.
+  make it debris, not sand.
 - A floor drawn only as a row of boulders or brown curls (no line under
-  them) is still a floor: `line wall -subtype debris` along the bottom of
-  the row (BoldStep 13 to 11). A row of straight brown dashes is mud
-  marked on a floor drawn elsewhere, not a floor. The subtype goes on the line, `line wall -subtype clay`, never
-  on a point (`subtype clay` among the points: Therion takes it, but it
+  them) is still a floor: `line wall -subtype debris` through the tops of
+  the rocks, smoothed over 1 m (BoldStep 12 to 11, user: the rocks are
+  only drawn; imagine a line through their tops). Where a floor line is drawn under the row,
+  through it or just over it (up to 0.5 m: FairyChimneys 25 to 28, small
+  rocks drawn hanging under the line), the line is the floor and the row
+  is only its debris: no second wall (hard rule 2). A row of straight brown dashes is mud
+  marked on a floor drawn elsewhere, not a floor. The subtype goes on the line, `line wall -subtype sand`, never
+  on a point (`subtype sand` among the points: Therion takes it, but it
   is hard to follow when editing), and does not change along a line: a
   wall that changes is drawn as one line per kind, meeting end to end.
   Colour is only a hint: shape decides.
@@ -346,10 +387,64 @@ plan-only config.
   along, not the nearest (the ramp's floor runs past 13). A wall
   between two scraps' passages, alongside both legs, one either side of
   it, is a wall of each scrap (elevations).
+- A station's splays straight up and down are part of its tube: a wall
+  they reach goes with that scrap. A junction a branch holds is in the
+  tube of the passage through it (FairyChimneys 9: the chimney over it
+  is the main scrap's, not the branch 9 to 12's).
+- A short run of wall strokes (3 m or less) carrying on in line, end to
+  end, between two pieces of another scrap's wall is that scrap's wall
+  (FairyChimneys 9: the floor under it, drawn where the branch 20 to 21
+  over it is nearer).
+- Where a scrap's wall ends on another scrap's wall (within 0.3 m), it
+  ends at a node of it: the other wall gets a node there.
+- In an elevation the fill reaches as high as the stations' splays say
+  the roof is (FairyChimneys 31 to 39, a chamber 7 to 11 m high).
 - In an extended elevation two legs from one station clash when each
   far end is more than 1.5 m beyond the other's walls and they share 2 m2
   or more of the drawing (Trident 10 to 12 over 10 to 13; BoldStep 5 to 7
   and 5 to 8, 2.4 m, stays one scrap).
+- Think of the survey as tubes, one round each leg (its walls from the
+  splays and the drawn plan, as Loch shows the model): tubes drawn over
+  one another in the view go in separate scraps, the rest stay together.
+  Scraps are as long as they can be, none over 150 m of legs (a
+  starting figure). Stations `equate`d are one station: a loop, not two
+  passages over one another (TritonSouth 10 and 18, 13 and 21).
+- Overlap in an extended elevation is judged on the elevation as it was
+  sketched (SexyTopo), never on Therion's extended layout or any other
+  Therion output made from the drawings (PDF, SVG, xvi): the th2 files
+  are got right as drawn, and the `extend` lines in the .th file tune
+  Therion's layout for the final output afterwards (user, 2026-10-11).
+  A station sketched in more than one place: each leg is taken between
+  the places of its stations as far apart across the page as its
+  horizontal length. Therion's outputs are used only to check (the fill
+  holding legs and splays).
+- The automatic split is meant to match the user's hand splits (GoSouth,
+  Trident, Connection): they are targets for the rules, not just inputs.
+- Elevations are split by passages (log row 150). At each junction the
+  ways are paired into passages running through it, the straightest
+  first in 3D (turning less than 90 degrees); a four-way junction may be
+  two passages through it (Trident 10: 9 to 10 to 12, and 11 to 10 to
+  13). Straight on is the default; which passage carries on from which
+  is not always the straightest, and the user may say otherwise.
+- Two passages clash when the drawn overlap of their legs that lie in
+  different spaces in 3D (beyond each other's walls by 0.8 m, or from
+  one station each far end 1.5 m beyond) is 2 m2 or more; or when one
+  is mostly (over 70%) drawn over the other and reaches more than 1.5 m
+  beyond its walls (FairyChimneys 9 to 12 over 8 to 9). Two legs in one
+  chamber, or the two sides of a small loop, are one space seen from
+  each (BoldStep, TritonSouth: one scrap each).
+- A branch whose overlap starts further along is cut at its first
+  overlapping leg, its first legs going with the passage it leaves
+  (Connection 4 to 5 with the main scrap, 6 to 7 its own).
+- Neighbouring passages are then put together, the longest scrap first,
+  while no two in a scrap clash and none is over 150 m: as few scraps as
+  can be, and as long. A junction may have only two scraps at it. A
+  station shared by scraps goes in the one with most of its legs (on a
+  tie, the one the survey starts in), every scrap keeping two stations.
+- `python3 -m tools.sketch2therion scraps --score` compares the chooser
+  with the user's splits ([scraps_extended]); a different split that
+  keeps the rules may be as good, and is reported for the user to look
+  at.
 - Plans are calibrated from the pre-2026 plans: they split where
   passages overlap by more than 30% one above the other, on the leg by
   a junction where needed (the junction whole in one scrap).
@@ -394,8 +489,8 @@ plan-only config.
 - Colours (`[convert]` in `tools/project.toml` tells the converter):
   - black: walls;
   - brown: the floor: boulders and debris are closed loops, told apart
-    by size (boulders drawn singly or as an area); sand is dots, mud is
-    dashes, always as area fills; other brown lines are steps in mud;
+    by size (boulders drawn singly or as an area); sand is dots or
+    dashes (mud too: no clay), always as area fills; other brown lines are steps in mud;
   - grey: ceiling steps, but also floor steps, pitches and channels;
   - colours are hints and are sometimes wrong: the notation decides;
   - blue: water (a closed outline is a pool, kept to its sketched
@@ -417,10 +512,10 @@ plan-only config.
 - Draw only what the plan sketch shows: no steps, pitches, labels or
   slope arrows inferred from the survey data or the elevation sketch.
 - Little marks (dots, tiny loops, short dashes) come from sketching in a
-  dirty place: ignore one on its own; many together are sand (dots) or
-  mud (dashes).
-- Brown dashes (up to about 1.5 m) are mud: draw the whole stretch where
-  they lie as one `area clay`, wall to wall, not a patch round each
+  dirty place: ignore one on its own; many together are sand (dots
+  or dashes: mud is drawn as sand).
+- Brown dashes (up to about 1.5 m) are mud, drawn as sand: the whole
+  stretch where they lie is one `area sand`, wall to wall, not a patch round each
   group; keep it off boulder and debris areas. Brown dashes beside a
   wall are mud, not the ticks of a step.
 - A brown stroke curled round on itself is a boulder, even if the loop
@@ -505,7 +600,9 @@ Build with `therion -l ../output/therion.log Plan_only.thcfg` in
   is clean.
 - `python3 -m tools.sketch2therion review check X/X.plan.th2`: every
   outline valid and its turning number not 0 (0 is MetaPost's
-  "intersects itself"), before building.
+  "intersects itself"), before building; and no "second wall on one side
+  of the passage" (hard rule 2: an outer wall within 1 m behind another,
+  seen from the nearest station, for 1 m or more).
 - `review show` (see `tools/README.md`): the drawing beside the sketch
   round the new stations, with someone who knows the cave.
 - Render and look. poppler (pdftoppm, Evince, Okular) can show white

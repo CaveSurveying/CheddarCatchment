@@ -20,6 +20,8 @@ CASES = {
     "node-gap": None,                   # needs a -scale: tested in NodeGapTest
     "wall-invisible": ("line wall -subtype invisible\n0 0\n1 1\nendline\n",
                        "line wall\n0 0\n1 1\nendline\n"),
+    "no-clay": ("line wall -subtype clay\n0 0\n1 1\nendline\n",
+                "line wall -subtype sand\n0 0\n1 1\nendline\n"),
     "wall-outline-none": ("line wall -outline none\n0 0\n1 1\nendline\n",
                           "line wall -outline in\n0 0\n1 1\nendline\n"),
     "line-points": ("line wall\n0 0\nendline\n",

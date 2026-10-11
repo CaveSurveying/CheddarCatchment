@@ -70,6 +70,41 @@ class Assign(unittest.TestCase):
         self.assertEqual(len(out), 1)
 
 
+class OneWallEachSide(unittest.TestCase):
+    """Hard rule 2: a scrap has one outer wall each side of its passage; of
+    two lying one behind the other, the one that is also another scrap's goes
+    (FairyChimneys 13 to 20)."""
+
+    def setUp(self):
+        # scrap 0: a crawl along y = 0 (stations 1, 2); scrap 1: a passage over it (3, 4)
+        self.groups = [['1', '2'], ['3', '4']]
+        self.pos = {'1': (0.0, 0.0), '2': (4.0, 0.0), '3': (0.0, 1.0), '4': (4.0, 1.0)}
+        self.crawl_roof = [(0.0, 0.3), (2.0, 0.3), (4.0, 0.3)]
+        self.crawl_floor = [(0.0, -0.3), (2.0, -0.3), (4.0, -0.3)]
+        self.upper_floor = [(0.0, 0.5), (2.0, 0.5), (4.0, 0.5)]
+
+    def test_shared_wall_behind_goes(self):
+        pieces = [(0, 'BLACK', self.crawl_roof), (0, 'BROWN', self.crawl_floor),
+                  (1, 'BLACK', self.upper_floor), (1, 'BROWN', self.crawl_floor)]
+        out = scraps.one_wall_each_side(pieces, self.groups, self.pos, {'BLACK', 'BROWN'})
+        self.assertNotIn((1, 'BROWN', self.crawl_floor), out)
+        self.assertIn((0, 'BROWN', self.crawl_floor), out)
+        self.assertIn((1, 'BLACK', self.upper_floor), out)
+
+    def test_shared_wall_in_front_goes(self):
+        # the upper passage's own floor drawn just under the crawl's roof: the roof (the crawl's) goes
+        low_floor = [(0.0, 0.1), (2.0, 0.1), (4.0, 0.1)]
+        pieces = [(0, 'BLACK', self.crawl_roof), (1, 'BLACK', self.crawl_roof), (1, 'BLACK', low_floor)]
+        out = scraps.one_wall_each_side(pieces, self.groups, self.pos, {'BLACK'})
+        self.assertEqual(out, [(0, 'BLACK', self.crawl_roof), (1, 'BLACK', low_floor)])
+
+    def test_own_walls_and_continuations_stay(self):
+        on = [(4.0, 0.3), (4.3, 0.8)]                   # carries on from the roof's end
+        pieces = [(0, 'BLACK', self.crawl_roof), (1, 'BLACK', self.crawl_roof), (0, 'BLACK', on)]
+        out = scraps.one_wall_each_side(pieces, self.groups, self.pos, {'BLACK'})
+        self.assertEqual(len(out), 3)
+
+
 class MeetEnds(unittest.TestCase):
     TEXT = """scrap A -projection plan
 line wall
@@ -203,7 +238,7 @@ class Mud(unittest.TestCase):
         dashes = [[(x, 1.0), (x + 0.9, 1.05)] for x in (0.5, 2.0, 3.6, 5.1, 6.5)]      # 0.9 m dashes, 0.6 m apart
         rocks = [[(x, 0.3), (x + 0.4, 0.3), (x + 0.4, 0.7), (x, 0.7), (x, 0.3)] for x in (9.0, 9.6, 10.2, 10.8)]
         _, areas, lines = marks.brown(dashes + rocks, passage, 0.3)
-        mud = [g for k, g in areas if k == 'clay']
+        mud = [g for k, g in areas if k == 'sand']                            # mud is drawn as sand
         self.assertEqual(len(mud), 1)
         self.assertGreater(mud[0].bounds[2] - mud[0].bounds[0], 6.5)            # the whole stretch
         rock = [g for k, g in areas if k in ('blocks', 'debris')]
@@ -244,3 +279,90 @@ class Corner(unittest.TestCase):
         kinds = [o.head for o in tidy.parse_scrap(body) if o.kind == "line" and len(o.segments()) > 1
                  and LineString(tidy.bezier_points(o.segments(), 6)).distance(corner) < 8]
         self.assertTrue(kinds and all(h.startswith("line wall") and "-outline none" not in h for h in kinds), kinds)
+
+
+class DoubledWallsCheck(unittest.TestCase):
+    """review check: a second outer wall on one side of the passage is reported (hard rule 2)."""
+
+    TH2 = """scrap S1 -projection extended -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+line wall
+  0 -40
+  400 -40
+endline
+
+line wall -subtype debris
+  0 -60
+  400 -60
+endline
+
+line wall
+  400 60
+  0 60
+endline
+
+point 0 0 station -name 1
+
+point 400 0 station -name 2
+
+endscrap
+"""
+
+    def check(self, text):
+        from tools.sketch2therion import review
+        with tempfile.NamedTemporaryFile('w', suffix='.th2', delete=False) as f:
+            f.write(text)
+        try:
+            return review.doubled_walls(f.name)
+        finally:
+            os.unlink(f.name)
+
+    def test_second_floor_reported(self):
+        found = self.check(self.TH2)
+        self.assertEqual(len(found), 1)
+        self.assertGreater(found[0][1], 4.0)
+
+    def test_one_floor_clean(self):
+        text = self.TH2.replace("line wall -subtype debris\n  0 -60\n  400 -60\nendline\n", "")
+        self.assertEqual(self.check(text), [])
+
+
+class CarriedThrough(unittest.TestCase):
+    """A short run of wall pieces between two pieces of another scrap's wall,
+    carrying on in line, is that scrap's (FairyChimneys 9: the floor under it)."""
+
+    def test_bridge_moved(self):
+        a, b, c = [(0.0, 0.0), (2.0, 0.0)], [(2.1, 0.0), (3.0, 0.0)], [(3.1, 0.0), (6.0, 0.0)]
+        out = scraps.carried_through([(0, 'BROWN', a), (1, 'GREEN', b), (0, 'BROWN', c)], {'BROWN', 'GREEN'})
+        self.assertEqual([k for k, _, _ in out], [0, 0, 0])
+
+    def test_turning_piece_stays(self):
+        a, b, c = [(0.0, 0.0), (2.0, 0.0)], [(2.1, 0.0), (2.1, 1.0)], [(2.1, 1.1), (5.0, 1.1)]
+        out = scraps.carried_through([(0, 'BLACK', a), (1, 'BLACK', b), (0, 'BLACK', c)], {'BLACK'})
+        self.assertEqual([k for k, _, _ in out], [0, 1, 0])
+
+
+class MeetOnWalls(unittest.TestCase):
+    """A wall ending on another scrap's wall ends at a node of it."""
+
+    TH2 = """scrap A -projection extended
+line wall
+  0.00 0.00
+  100.00 0.00
+endline
+endscrap
+scrap B -projection extended
+line wall
+  50.00 5.00
+  50.00 80.00
+endline
+endscrap
+"""
+
+    def test_node_added(self):
+        out = scraps.meet_on_walls(self.TH2, 10.0)
+        self.assertIn("  50.00 0.00\n  100.00 0.00", out)        # A split at 50 0
+        self.assertIn("  50.00 0.00\n  50.00 80.00", out)        # B's end moved onto it
+
+    def test_far_end_left(self):
+        self.assertEqual(scraps.meet_on_walls(self.TH2, 3.0), self.TH2)
