@@ -104,7 +104,11 @@ file is worked out from reviews and may be tuned.
   one of 2 nodes, one of 3 or 4 unless the join turns 90 degrees or more,
   walls included (where the outline is no worse). A wall piece under
   5 cm on another wall's end is a slip, not drawn. A short piece running
-  on from a border is a border (Connection 13 to 15).
+  on from a border is a border (Connection 13 to 15). Merged lines are
+  smooth through the joins: no corner is kept at a join unless the
+  sketch has one there; pieces closing a loop make one `-close on` line,
+  smooth all round (Connection SE3's presumed `-outline in` wall, the
+  user's edit).
 - A station on a line: its splays reaching well out on both sides, across
   the line's length and into the drawn passage, make the line inner
   (Connection 15); splays into passage not drawn yet, or past the line's
@@ -238,6 +242,16 @@ file is worked out from reviews and may be tuned.
   (`line wall -subtype debris`, `-subtype blocks`): drawn rocks do not
   replace them.
 - Rocks on the edge of a passage are best drawn going over the wall.
+- A rock fully outside the walls is never drawn, nor one more than half
+  outside (Connection extended, the user: the boulders across the floor
+  below station 1, 14 to 37% inside, and one under the debris floor by
+  11 removed).
+- Rocks along a wall (floor) line are not drawn: the wall's subtype
+  (`debris`, `blocks`) draws them in Therion's style. Only significant
+  ones on a wall line are drawn (a boulder, about 0.3 m across or more).
+  On a wall line is measured from the sketch's floor stroke as well as
+  the drawn wall (Connection SE4: a small rock 0.53 m from the drawn
+  wall but on the sketched floor, removed by the user).
 - Steps, by height:
   - significant boundaries and low steps under 20 cm: `line border`;
   - 20 cm to 2 m and easily climbed: `line floor-step`;
