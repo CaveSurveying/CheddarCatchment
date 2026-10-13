@@ -474,6 +474,17 @@ file is worked out from reviews and may be tuned.
   (the station's copy at the section in the xvi) are inside its
   outline, splay ends no more than 0.5 m outside. Only the section's own
   strokes go in it, never a stroke of the main drawing.
+- A cross-section keeps the shape it was sketched: its outline encloses
+  its station and splays, and a small section is not simplified as if
+  it were passage walls (no corner taken for an overshoot because it is
+  short for a passage; TridentLeft PX1 was smoothed to a sliver, the
+  user). A section sketched as one stroke open at the bottom is that
+  stroke with a floor straight across its ends; pebbles drawn on that
+  floor make it `-subtype debris` and are not drawn as rocks
+  (TridentLeft PX1, PX6, PX10).
+- A cross-section is a drawing of its own: its walls never join or end
+  on another scrap's (TridentLeft PX6 was joined to the plan's wall
+  beside it).
 
 - `line section` goes completely across the passage, and about 0.5 m
   past it, so the arrows are clear of the walls.

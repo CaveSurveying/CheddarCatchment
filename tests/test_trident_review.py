@@ -88,7 +88,8 @@ class SectionInPlace(unittest.TestCase):
                             "--survey", "Trident", "-o", out], cwd=REPO, check=True, capture_output=True)
             text = open(out).read()
         mark = re.search(r"point (\S+) (\S+) section -scrap (\S+)", text)
-        xs = re.search(r"(?ms)^scrap %s .*?^line wall -close on\n\s*(\S+) (\S+)" % mark.group(3), text)
+        # (its first wall: closed, or the stroke as drawn with a floor across its ends)
+        xs = re.search(r"(?ms)^scrap %s .*?^line wall[^\n]*\n\s*(\S+) (\S+)" % mark.group(3), text)
         self.assertLess(math.dist(tuple(map(float, mark.groups()[:2])), tuple(map(float, xs.groups()))), 2 * 78.74)
 
 
