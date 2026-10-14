@@ -7,6 +7,13 @@ input TennisBallRiftE315.th2
 map TennisBallRiftME315
     TennisBallRiftSE315_1
 endmap
+
+input "TennisBallRift.extended.th2"
+
+map TennisBallRiftMEe
+  TennisBallRiftSE1
+endmap
+
 input TennisBallRiftE000.th2
 
 map TennisBallRiftME000

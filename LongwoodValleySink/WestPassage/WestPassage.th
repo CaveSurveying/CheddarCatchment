@@ -18,6 +18,11 @@ endmap
 input WestPassageE000.th2
 input "WestPassage.ee.th2"
 
+map WestPassageMEe
+  westpassage-ee
+endmap
+
+
 map WestPassageME000
     WestPassageSE000_2
     break

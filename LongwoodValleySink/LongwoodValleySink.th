@@ -129,7 +129,8 @@ endmap
 
 ###################################################################
 #Extended elevation: the surveys drawn in extended elevation (the older
-#surveys' extended scraps hold stations only)
+#surveys' walls drawn by tools/sketch2therion unfold from their projected
+#elevations, for tidying by hand)
 map LongwoodValleySinkMEe
   GoSouthMEe@GoSouth
   TridentMEe@Trident
@@ -141,6 +142,21 @@ map LongwoodValleySinkMEe
   TritonSouthMEe@TritonSouth
   ConnectionMEe@Connection
   FairyChimneysMEe@FairyChimneys
+  EntranceMEe
+  TennisBallRiftMEe@TennisBallRift
+  TriassicMEe@Triassic
+  Triassic2MEe@Triassic2
+  CenturyMEe@Century
+  CJPitchMEe@CJPitch
+  CJSMEe@CJS
+  CrossRoadsMEe@CrossRoads
+  CrystalPitchMEe@CrystalPitch
+  CyclopsMEe@Cyclops
+  CyclopsEyeMEe@CyclopsEye
+  NorthRiftMEe@NorthRift
+  RoundTheBendMEe@RoundTheBend
+  TickleWestMEe@TickleWest
+  WestPassageMEe@WestPassage
 endmap
 
 ###################################################################

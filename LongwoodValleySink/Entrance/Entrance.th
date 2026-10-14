@@ -7,6 +7,13 @@ input EntranceE315.th2
 map EntranceME315
     EntranceSE315_1
 endmap
+
+input "Entrance.extended.th2"
+
+map EntranceMEe
+  EntranceSE1
+endmap
+
 input EntranceE000.th2
 input EntranceE0.th2
 input EntranceE90.th2

@@ -11,6 +11,11 @@ input CrossRoadsE090.th2
 input CrossRoadsE000.th2
 input "CrossRoads.ee.th2"
 
+map CrossRoadsMEe
+  crossroads-ee
+endmap
+
+
 map CrossRoadsME315
     CrossRoadsSE315_1
     CrossRoadsSE315_2

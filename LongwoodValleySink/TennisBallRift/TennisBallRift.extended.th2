@@ -1,0 +1,48 @@
+encoding  utf-8
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+
+# Extended elevation of TennisBallRift, unfolded from its projected elevations by
+# tools/sketch2therion unfold (each leg from the view seeing it most side on):
+#   TennisBallRiftE000.th2 TennisBallRiftSE000_1: facing 0, stations within 0.10 m
+#   TennisBallRiftE315.th2 TennisBallRiftSE315_1: facing 315, stations within 0.03 m
+#   TennisBallRiftE90.th2 TennisBallRiftSE901: facing 90, stations within 0.01 m
+
+scrap TennisBallRiftSE1 -projection extended -author 2014.05.25 "Andrew Atkinson" -copyright 2014 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+line wall
+  166.28 185.70
+  106.42 150.44 -139.76 13.15 -192.88 -25.82
+  -246.00 -64.78 -170.43 -39.67 -152.47 -48.10
+  -134.51 -56.53 -96.35 -71.67 -85.12 -76.38
+endline
+
+line wall
+  166.28 26.99
+  164.06 24.46 168.49 20.67 152.97 11.80
+  137.45 2.93 124.15 -7.13 73.16 -26.21
+  22.17 -45.29 -108.63 -87.11 -152.97 -102.68
+  -197.31 -118.24 -190.72 -109.61 -192.88 -119.62
+  -195.04 -129.63 -172.68 -154.38 -165.94 -162.74
+  -159.21 -171.11 -165.94 -168.93 -152.47 -169.80
+  -139.00 -170.67 -96.35 -168.25 -85.12 -167.94
+endline
+
+line wall
+  -192.88 -33.09
+  -186.61 -36.24 -161.55 -48.83 -155.28 -51.98
+endline
+
+line wall
+  -192.88 -188.22
+  -186.61 -187.36 -161.55 -183.91 -155.28 -183.05
+endline
+
+point 192.88 163.00 station -name 14
+
+point -192.88 -89.76 station -name 15
+
+point -85.12 -163.00 station -name 16
+
+point -155.28 -75.60 station -name 17
+
+endscrap

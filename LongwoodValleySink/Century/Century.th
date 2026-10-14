@@ -9,6 +9,11 @@ input "Centry.plan.th2"
 input CenturyE315.th2
 input CenturyE090.th2
 input "Centry.ee.th2"
+
+map CenturyMEe
+  centry-ee
+endmap
+
 input CenturyE000.th2
 
 

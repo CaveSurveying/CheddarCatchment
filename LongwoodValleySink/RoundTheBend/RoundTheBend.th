@@ -7,6 +7,11 @@ input "RoundTheBend.plan.th2"
 input RoundTheBendE315.th2
 input "RoundTheBend.ee.th2"
 
+map RoundTheBendMEe
+  roundthebend-ee
+endmap
+
+
 map RoundTheBendMP
   RoundTheBendSP0
   RoundTheBendSP2

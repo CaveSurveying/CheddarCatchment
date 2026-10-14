@@ -12,6 +12,7 @@ input "TritonNorthE315.th2"
 
 map TritonNorthME315
   TritonNorthSE315_1
+  TritonNorthSE315_2
 endmap
 
 

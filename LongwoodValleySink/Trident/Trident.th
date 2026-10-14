@@ -12,6 +12,11 @@ input "TridentE315.th2"
 
 map TridentME315
   TridentSE315_1
+  TridentSE315_2
+  TridentSE315_3
+  TridentSE315_4
+  TridentSE315_5
+  TridentSE315_6
 endmap
 
 

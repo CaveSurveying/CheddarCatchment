@@ -361,6 +361,10 @@ file is worked out from reviews and may be tuned.
   315 (set from the hand-drawn 315 splits, which keep larger overlaps in
   one scrap): GoSouth 3, not 7. The hand-drawn 315s are walls only, a
   few scraps each.
+- Projected walls have their nodes as sparse as the plans' (about a
+  metre apart, more on gentle curves): each is refitted with the same
+  Bezier fit as the plans (`smooth`, within 0.1 m of the wall), not one
+  node per projected point (the user, 2026-10-14).
 - A survey with projected elevations but no extended one (older surveys
   with no elevation sketch) gets one unfolded from them (`unfold X`):
   each leg from the view that sees it most side on (a pitch from any
@@ -375,6 +379,13 @@ file is worked out from reviews and may be tuned.
   the walls either side. Only walls nearest that leg or one meeting it
   count. Vertical walls away from a pitch (aven sides, passage ends) are
   not found: drawn by hand.
+- Filed (`unfold X --file`; `unfold X --ee --file` for an X.ee.th2 as it
+  is): `X.th` inputs the drawing with `map XMEe`, and `XMEe@X` (or
+  `XMEe` with `-namespace off`, Entrance) is in `LongwoodValleySinkMEe`
+  when the cave inputs the survey (not GoWest, TickleRift). The 2026
+  315s are filed with `projected X --walls --file`. Generated drawings
+  are filed for tidying by hand: the outline warnings they give are
+  expected until then (the user, 2026-10-14).
 - Learned from the hand-drawn 315s, 000s and 090s of the older surveys
   (log row 159):
   - heights carry from view to view: where two views both see a leg

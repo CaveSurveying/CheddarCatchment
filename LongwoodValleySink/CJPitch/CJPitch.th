@@ -11,6 +11,11 @@ input CJPitchE315.th2
 input CJPitchE090.th2
 input "CJPitch.ee.th2"
 
+map CJPitchMEe
+  cjpitch-ee
+endmap
+
+
 map CJPitchME315
     CJPitchSE315_1
     CJPitchSE315_2

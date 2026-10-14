@@ -24,6 +24,11 @@ map CJSME000
 endmap
 input "CJS.ee.th2"
 
+map CJSMEe
+  cjs-ee
+endmap
+
+
 equate 120 127
 
 map CJSMP

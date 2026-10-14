@@ -7,6 +7,11 @@ input TickleWestE315.th2
 input TickleWestE000.th2
 input "TickleWest.ee.th2"
 
+map TickleWestMEe
+  ticklewest-ee
+endmap
+
+
 map TickleWestME315
     TickleWestSE315_2
     TickleWestSE315_1

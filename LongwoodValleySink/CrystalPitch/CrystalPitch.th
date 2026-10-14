@@ -7,6 +7,11 @@ survey CrystalPitch
 
 input "CrystalPitch.plan.th2"
 input "CrystalPitch.ee.th2"
+
+map CrystalPitchMEe
+  crystalpitch-ee
+endmap
+
 input CrystalPitchE315.th2
 
 map CrystalPitchMP

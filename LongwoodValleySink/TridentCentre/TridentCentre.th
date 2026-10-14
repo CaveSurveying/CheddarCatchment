@@ -12,6 +12,7 @@ input "TridentCentreE315.th2"
 
 map TridentCentreME315
   TridentCentreSE315_1
+  TridentCentreSE315_2
 endmap
 
 

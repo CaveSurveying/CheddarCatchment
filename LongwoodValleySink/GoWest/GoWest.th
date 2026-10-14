@@ -7,6 +7,13 @@ input GoWestE315.th2
 map GoWestME315
     GoWestSE315_1
 endmap
+
+input "GoWest.extended.th2"
+
+map GoWestMEe
+  GoWestSE1
+endmap
+
 input GoWestE000.th2
 
 map GoWestME000

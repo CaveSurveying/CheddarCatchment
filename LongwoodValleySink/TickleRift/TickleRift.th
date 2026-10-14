@@ -7,6 +7,13 @@ input TickleRiftE315.th2
 map TickleRiftME315
     TickleRiftSE315_1
 endmap
+
+input "TickleRift.extended.th2"
+
+map TickleRiftMEe
+  TickleRiftSE1
+endmap
+
 input TickleRiftE000.th2
 
 map TickleRiftME000

@@ -23,6 +23,11 @@ map CyclopsEyeME000
 endmap
 input "CyclopsEye.ee.th2"
 
+map CyclopsEyeMEe
+  cyclopseye-ee
+endmap
+
+
  map CyclopsEyeMP
   CyclopsEyeSP1
 endmap
