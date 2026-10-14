@@ -39,20 +39,33 @@ class SectionShape(unittest.TestCase):
 
     def test_open_stroke_closed_by_a_floor(self):
         u = u_stroke()
-        floor = convert.drawn_floor([u] + [pebble(0.1 * k, 0.0) for k in range(1, 5)], (0.25, 0.45))
-        self.assertIsNotNone(floor)
-        poly, (a, b), sub = floor
-        self.assertEqual((a, b), (u[0], u[-1]))
-        self.assertEqual(sub, 'debris')                     # pebbles on it
-        self.assertGreater(poly.area, 0.4)                  # the whole section, about 0.5 x 0.9 m
+        out = convert.drawn_outline([('BLACK', u)] + [('BROWN', pebble(0.1 * k, 0.0)) for k in range(1, 5)],
+                                    (0.25, 0.45))
+        self.assertIsNotNone(out)
+        poly, lines, taken = out
+        self.assertEqual(lines[1], ([u[-1], u[0]], 'debris'))   # the floor straight across, pebbles on it
+        self.assertGreater(poly.area, 0.4)                      # the whole section, about 0.5 x 0.9 m
 
     def test_floor_without_marks_is_plain_wall(self):
-        self.assertIsNone(convert.drawn_floor([u_stroke()], (0.25, 0.45))[2])
+        self.assertIsNone(convert.drawn_outline([('BLACK', u_stroke())], (0.25, 0.45))[1][1][1])
 
     def test_closed_or_wide_open_strokes_not_floored(self):
         u = u_stroke()
-        self.assertIsNone(convert.drawn_floor([u + [u[0]]], (0.25, 0.45)))     # closed already
-        self.assertIsNone(convert.drawn_floor([u[20:-20]], (0.25, 0.45)))      # an arch, not a section
+        self.assertIsNone(convert.drawn_outline([('BLACK', u + [u[0]])], (0.25, 0.45)))   # closed already
+        self.assertIsNone(convert.drawn_outline([('BLACK', u[20:-20])], (0.25, 0.45)))    # an arch, not a section
+
+    def test_roof_and_brown_floor_with_sand_dashes(self):
+        """FairyChimneys PX5: a black roof, a brown floor meeting its ends,
+        and sand dashes under the floor: the dashes are not the outline."""
+        roof = [(3.0 * i / 20, 0.6 * math.sin(math.pi * i / 20)) for i in range(21)]
+        floor = [(3.0 - 3.0 * i / 20, -0.02) for i in range(21)]
+        dashes = [[(0.2 * k, -0.1), (0.2 * k + 0.1, -0.25)] for k in range(1, 14)]
+        strokes = [('BLACK', roof), ('BROWN', floor)] + [('BROWN', d) for d in dashes]
+        poly, lines, taken = convert.drawn_outline(strokes, (1.5, 0.3))
+        self.assertEqual([sub for _, sub in lines], [None, 'sand'])
+        self.assertGreater(poly.bounds[1], -0.05)               # nothing below the floor
+        self.assertEqual(lines[1][0][0], roof[-1])              # meeting the roof's ends
+        self.assertEqual(lines[1][0][-1], roof[0])
 
     def test_section_written_with_its_floor(self):
         lines = [('BLACK', u_stroke())] + [('BROWN', pebble(0.1 * k, 0.0)) for k in range(1, 5)]

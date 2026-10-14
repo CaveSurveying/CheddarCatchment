@@ -139,7 +139,10 @@ Trident = ["1-10, 12", "11, 13, 14", "15-34, 36, 38-43", "35, 37"]
 # Connection (as the user split it): left of 13 are three passages over one
 # another, two roughly level and one going up; 15-17 with the passage up to
 # 16 and on through 24 to 28, and 14 through 18 to 23.
-Connection = ["1-5, 8-13", "6, 7", "15-17, 24-28", "14, 18-23"]
+Connection = ["1-4, 8-13", "5-7", "15-17, 24-28", "14, 18-23"]   # 5 with 6, 7 (user's edit, 2026-10-12)
+# TridentLeft (the user's edit, 2026-10-12): the lower passages apart from those
+# above them, 1-5 under 6-10 and 16-21 under 22-32.
+TridentLeft = ["1-5", "6-15, 33-38", "22-32", "16-21"]
 
 [glitches]
 # Slips of the pen in a sketch: stroke points inside these boxes (sketch

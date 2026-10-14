@@ -174,6 +174,19 @@ file is worked out from reviews and may be tuned.
 - Where a passage was not sketched, walls may be drawn from the splays,
   as `line wall -subtype presumed`. Never guess a wall that neither the
   sketch nor the splays show.
+- Where a new survey joins an earlier one's drawn plan at an equated
+  station, the earlier plan's walls are cut back
+  to where the new survey starts: its walls drawn on past the join,
+  across the new passage's mouth or along a stretch the new survey
+  surveyed again, go. The walls are not moved: a line is cut by adding a
+  point on it (splitting the curve there), at the point nearest where a
+  new wall starts. A scrap of wall left at a line's end in the new
+  passage goes too (the user, 2026-10-13; `python3 -m
+  tools.sketch2therion joins`, its pictures in `review/joins/`). Only
+  equated joins: passages overlapping in plan with no equate pass over
+  or under each other (their heights differ) and both stay whole
+  (FairyChimneys 38 to 40 over RoundTheBend by 135; the user,
+  2026-10-14).
 
 ## Symbols: general
 
@@ -300,6 +313,16 @@ file is worked out from reviews and may be tuned.
   `debris` (a floor with rubble: brown curls, or a line with boulders
   drawn along it), plain `line wall` for rock. Boulders along a line
   make it debris, not sand.
+- A green stroke carrying a wall on, end to end, where no other line is
+  drawn, is the wall there, `flowstone` (Trident 31 to the sand floor,
+  FairyChimneys 34: the user).
+- A line with short straight ticks hanging from it (three or more, on one
+  side) is a `line overhang`, drawn with the ticks on its left (BoldStep
+  by 4, TritonSouth by 6: the user). Brown curls under a floor are its
+  rubble, not ticks.
+- A closed black loop with the survey passing above and below it (a loop
+  in the data) is a pillar, `line wall -outline in -close on`, not a rock
+  (TritonSouth 13 to 21, `equate 13 21`: the user).
 - A floor drawn only as a row of boulders or brown curls (no line under
   them) is still a floor: `line wall -subtype debris` through the tops of
   the rocks, smoothed over 1 m (BoldStep 12 to 11, user: the rocks are
@@ -331,6 +354,40 @@ file is worked out from reviews and may be tuned.
   (xvi units, offset from the lowest station, the xvi as backdrop). The
   walls are drawn round them. The rules below are for when the walls are
   generated again.
+- Generated walls (`projected X --walls --out DIR`, for review, not
+  filed) are in the xvi's units, offset from its lowest station, as the
+  stations-only scrap and the hand-drawn 315s are, so walls and stations
+  sit on the backdrop's dots. Their scraps are the scrap chooser's for
+  315 (set from the hand-drawn 315 splits, which keep larger overlaps in
+  one scrap): GoSouth 3, not 7. The hand-drawn 315s are walls only, a
+  few scraps each.
+- A survey with projected elevations but no extended one (older surveys
+  with no elevation sketch) gets one unfolded from them (`unfold X`):
+  each leg from the view that sees it most side on (a pitch from any
+  view drawing it), its walls moved by their place along the leg and
+  their height; a view with no angle (`-projection elevation`) is matched
+  to its stations' 3D positions.
+- The older surveys' extended drawings (`X.ee.th2`, stations only) get
+  their walls drawn from the projected elevations (`unfold X --ee`) as a
+  profile: along each leg, in the view seeing it most side on, the
+  nearest wall above (roof) and below (floor) at their heights, drawn
+  along the leg as unfolded (up to 15 m away: high roofs); a pitch takes
+  the walls either side. Only walls nearest that leg or one meeting it
+  count. Vertical walls away from a pitch (aven sides, passage ends) are
+  not found: drawn by hand.
+- Learned from the hand-drawn 315s, 000s and 090s of the older surveys
+  (log row 159):
+  - heights carry from view to view: where two views both see a leg
+    side on, roof and floor heights agree to a median 0.13 m. So a wall
+    keeps its height above or below its leg when projected;
+  - a view seeing a leg foreshortened draws the roof higher and the
+    floor lower (median 0.23 m when nearly end on): it sees the whole
+    width of the passage. The extended drawing does not hold this, and
+    hiding the inner roof or floor (drawing only the outermost) did not
+    match the hand drawings better, so walls are projected as they are;
+  - the width of a pitch or a passage seen end on is not the plan's
+    width across the view (it agrees at some, not most): it stays as the
+    extended drawing has it.
 
 - 315 is the direction the viewer faces (`-projection [elevation 315]`).
   A survey X has `X/XE315.th2` (scraps `XSE315_1`, ...) with the
@@ -388,7 +445,27 @@ file is worked out from reviews and may be tuned.
   drawings keep larger overlaps in one scrap, so not in 315.
 - Where a scrap meets the next in an elevation, its walls end in line:
   a floor does not run on past the nearest end of the ceiling (or the
-  next scrap's short bit of ceiling), and the other way round.
+  next scrap's short bit of ceiling), and the other way round. Only
+  where the scrap ends there: a branch joining part way along a passage
+  leaves the passage's walls running on past it (TridentCentre: 3 to 4
+  joins 3 to 7 from the side; its roof had been cut back to 4, the
+  user).
+- A wall with the scrap's own walls above and below it (for about half
+  its length or more) is inside the scrap's passage, not its outer wall:
+  it goes to another scrap whose legs it runs beside (within 1 m) and
+  whose passage it is not inside (TridentCentre: the roof and floor of
+  3 to 4 drawn inside the passage 3 to 7; Trident 10 to 12, the user).
+  A short piece of the same stroke left behind goes with it.
+- One sketch stroke is one wall: where a scrap has two walls on one side
+  (hard rule 2) and the one behind is a piece of a stroke cut off when
+  the strokes were shared out, carrying on in line in another scrap, it
+  goes back to that scrap (TridentCentre: the floor rising through 4 to
+  7, its start given to 3 to 4).
+- A scrap holds the stations in or by its drawing; one left with fewer
+  than two takes the rest of its group's stations too, even where no
+  walls are drawn near them (TridentCentre 8 to 10, the user). Stations
+  far from any drawing are otherwise left out (FairyChimneys 40,
+  TritonSouth 1, TridentLeft 30, the user).
 - Each scrap is a passage, in plan or elevation. At a junction the
   passage through it (the two ways on to the most passage) stays one
   scrap, its floor and roof running on past the junction; a branch drawn
@@ -482,6 +559,13 @@ file is worked out from reviews and may be tuned.
   stroke with a floor straight across its ends; pebbles drawn on that
   floor make it `-subtype debris` and are not drawn as rocks
   (TridentLeft PX1, PX6, PX10).
+- A section's outline is made only of its long strokes: pebbles and
+  short dashes (sand marks under a floor) show what the floor is and are
+  never part of the outline. Two strokes meeting end to end (a black
+  roof and walls, a brown floor) are the outline, each its own line
+  meeting at their ends; a brown floor is `-subtype sand`, or `debris`
+  with pebbles on it (FairyChimneys PX5, fixed by the user: the sand
+  dashes under the floor had been taken for its walls).
 - A cross-section is a drawing of its own: its walls never join or end
   on another scrap's (TridentLeft PX6 was joined to the plan's wall
   beside it).
