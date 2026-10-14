@@ -69,8 +69,9 @@ class PlanOnlyTest(unittest.TestCase):
         self.assertEqual(layout(self.text, "local"), layout(orig, "local"))
         plan = layout(self.text, "plan")
         plan = re.sub(r'^map-comment ".*?"\n', "", plan, flags=re.S | re.M)
-        inset = "  \\legendbox{-2}{104}{SW}{\\loadpicture{Outputs/LongwoodValleySinkE315.pdf}}\n"
-        self.assertEqual(plan, layout(orig, "plan").replace(inset, ""))
+        # the 315 inset: left out of Plan_only (no 315 build); in thconfig, on or commented out
+        inset = re.compile(r'^ ?#? *\\legendbox\{-2\}\{104\}\{SW\}\{\\loadpicture\{Outputs/LongwoodValleySinkE315\.pdf\}\}\n', re.M)
+        self.assertEqual(plan, inset.sub("", layout(orig, "plan")))
 
 
 if __name__ == "__main__":
