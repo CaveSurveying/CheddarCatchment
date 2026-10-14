@@ -64,7 +64,7 @@ code tex-map
 \def\maplayout{
   \legendbox{20}{3}{SW}{\northarrow}
   \legendbox{35}{25}{SW}{\scalebar}
-  \legendbox{-2}{104}{SW}{\loadpicture{Outputs/LongwoodValleySinkE315.pdf}}
+ # \legendbox{-2}{104}{SW}{\loadpicture{Outputs/LongwoodValleySinkE315.pdf}}
   \legendbox{105}{130}{NE}{\the\legendcontent}
  %\legendbox{00}{105}{W}{Elevation Looking Towards 315$^{^{\circ}}$}
 }

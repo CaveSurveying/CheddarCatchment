@@ -23,6 +23,8 @@ endmap
 map TridentLeftMEe
   TridentLeftSE1
   TridentLeftSE2
+  TridentLeftSE3
+  TridentLeftSE4
 endmap
 
 
