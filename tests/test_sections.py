@@ -1,4 +1,4 @@
-"""Cross-sections keep the shape they were sketched (TridentLeft PX1, PX6,
+"""Cross sections keep the shape they were sketched (TridentLeft PX1, PX6,
 PX10): an open stroke closed by a floor across its ends, small sections
 not despiked to a sliver, and no section joined to another scrap."""
 

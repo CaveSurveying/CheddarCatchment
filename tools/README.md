@@ -45,15 +45,23 @@ The other thconfigs are left as they are.
 
 ### Underground, in SexyTopo
 
-The converter reads the sketch colours:
+The converter reads the sketch colours (the rules in full: `Style.md`,
+"Sketching in SexyTopo"):
 
 | Colour | Becomes |
 |---|---|
-| Black | Walls. Small closed loops become boulders; a thin tapering triangle becomes a slope arrow pointing to its narrow end. |
-| Brown, grey | Walls of another level or an overlapping passage; inside the passage, borders (ledges, the edge of an upper level). |
+| Black | Walls; a dashed black line is a wall not seen (`-subtype presumed`). A thin tapering triangle becomes a slope arrow pointing to its narrow end. |
+| Brown | The floor: closed loops are boulders (0.3 m across or more) or debris (smaller); dots or short dashes are sand (mud is drawn as sand: no clay). In elevations, a brown floor line is sand. |
+| Grey | Steps, ledges, pitches and channels inside the passage. |
 | Blue | Water: hatching or a closed outline becomes a pool, a squiggle a water-flow arrow. |
-| Green | Formations: concentric rings a boss, a small "Y" a stalactite, anything else flowstone. |
-| Red, orange, purple | Ignored: use them for notes, text and leader lines. |
+| Green | Formations: concentric rings a boss, a small "Y" a stalactite, anything else flowstone; a solid green line a gour. In elevations, a green stroke carrying a wall on is flowstone wall. |
+| Purple | Walls of a passage where it overlaps another (rare: elsewhere it is drawn in the normal colours); read as black, and may join a black wall. |
+| Red, orange | Other lines of an overlapping passage, only to tell them apart: read by shape, as grey. |
+
+Colours are hints: the shape decides (ticks make a step or pitch in any
+colour, a closed loop is a boulder whatever its colour), and for an
+overlapping passage its symbols say what its lines are. Notes (P for a
+pitch, C for a climb) are SexyTopo text, not strokes.
 
 Draw both the plan and the extended elevation: the elevation gives the
 plan its floor steps, climbs and gradient arrows.
@@ -140,7 +148,7 @@ python3 -m tools.sketch2therion review gaps LongwoodValleySink/X/X.plan.th2 XSP1
 ## Another cave
 
 Copy `project.toml` and change it; the tools read every cave-specific
-name from it. `sections` (placing cross-sections) is not ported. The converter
+name from it. `sections` (placing cross sections) is not ported. The converter
 writes each section line with `-direction both`, the view direction on
 its left and 0.5 m past the passage (`section_arrows`); placing the
 section drawings clear of passages is still by hand.

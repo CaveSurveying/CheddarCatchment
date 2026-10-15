@@ -35,14 +35,15 @@ licence = "CC BY-NC-SA 4.0"         # survey data and drawings; the tools are GP
 # solid green lines gours. Colours are hints: the notation (ticks,
 # dashes) decides steps, pitches and overhangs.
 wall_colours = ["BLACK"]
+colour_map = { PURPLE = "BLACK", RED = "GRAY", ORANGE = "GRAY" }   # where passages overlap: purple walls (they may join black ones), red and orange other lines, read by shape (log row 166)
 elevation_wall_colours = ["BLACK", "BROWN", "GREEN"]   # in elevations the floor is often drawn brown or green ...
 auto_scraps = true          # scraps from the 3D model where none are listed below (log row 133)
-section_names = true        # cross-sections named FairyChimneysPX5 (log row 125)
+section_names = true        # cross sections named FairyChimneysPX5 (log row 125)
 outer_walls = true          # every outer line is a wall: passage on one side only, by the splays (log row 125)
 dashed_presumed = true      # black dashed lines are wall -subtype presumed (log row 125)
 dash_neighbours = true      # a dash joins only its nearest neighbours: dashed lines side by side stay apart (log row 148)
 short_links = true          # short wall-coloured pieces joining walls end to end are wall (log row 148)
-section_arrows = true       # cross-section lines with arrows (Style.md, Cross-sections)
+section_arrows = true       # cross section lines with arrows (Style.md, Cross sections)
 layout_split = false        # never split or flip a drawing to fit where Therion puts the stations today (plan 5d)
 elevation_features = true   # elevations: pools, water flow, curtains, blocks, rocks, rubble, by shape
 wall_subtypes = true        # ... and is then sand (brown: mud too, no clay), debris (rocks along it) or, green, flowstone (smooth) or blocks (lumpy, rock on the floor)
@@ -96,9 +97,9 @@ smooth_nodes = 60           # degrees: control points either side of a node in l
 wall_links = 0.4            # m: a piece of wall off the outline, this long or more, joining two outline walls' ends is wall (no hole)
 area_inside_min = 0.2       # an area less than this share inside the passage (its marks along a wall) is not drawn
 line_tol_rel = 0.02         # borders, steps and overhangs likewise
-section_tol_rel = 0.05      # a cross-section's wall to within this share of its size
-sections_in_place = true    # a cross-section is drawn where it was sketched, by its section mark
-section_shape = true        # a cross-section keeps its sketched shape: an open stroke closed by a floor across its ends
+section_tol_rel = 0.05      # a cross section's wall to within this share of its size
+sections_in_place = true    # a cross section is drawn where it was sketched, by its section mark
+section_shape = true        # a cross section keeps its sketched shape: an open stroke closed by a floor across its ends
 wall_ends_meet = 0.15       # m: wall ends this close meet (not across a leg, and only if the outline stays sound) ...
 wall_ends_meet_rel = 0.12   # ... or within this share of the nearby legs' length, if larger
 node_gap = 0.05             # m: no two nodes of a line closer than this, so each can be picked when editing ...

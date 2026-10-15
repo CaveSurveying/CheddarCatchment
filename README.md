@@ -5,13 +5,17 @@ survey (SVN: <https://www.cave-registry.org.uk/svn/CheddarCatchment/>),
 with tools for drawing new surveys from SexyTopo sketches and for
 checking and building the plan.
 
+**Going surveying?** Read [Sketching in SexyTopo](docs/sketching-guide.md):
+how to survey and sketch so the drawings and the 3D model come out well,
+and the SexyTopo export settings.
+
 | Path | What it is |
 |---|---|
 | `LongwoodValleySink/` | The survey, with its full SVN history. `Plan_only.thcfg` builds the plan. |
 | `common_layout.th`, `Symbols/` | Shared layout and symbols, also from SVN. |
 | `tools/` | Converting sketches, linting drawings, the build index, and the SVN sync ([`tools/README.md`](tools/README.md)). |
 | `tests/` | Unit tests: `python3 -m pytest -q tests`. |
-| `docs/` | The plan and the Phase 1 inventory. |
+| `docs/` | The plan, the Phase 1 inventory and the [sketching guide](docs/sketching-guide.md). |
 
 ## Building
 

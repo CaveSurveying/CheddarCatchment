@@ -194,7 +194,7 @@ file is worked out from reviews and may be tuned.
   clipped by the outer walls; use this for the best effect.
 - `-clip off` only in exceptional cases, with a `#` comment on the line
   before saying why. **[lint: clip-off-reason]**
-- Labels and cross-sections must not overlap passage or each other,
+- Labels and cross sections must not overlap passage or each other,
   including when combined with other surveys on the same sheet.
 
 ## Symbols: points
@@ -233,7 +233,7 @@ file is worked out from reviews and may be tuned.
 - A group of boulders is an area (`area blocks`, or `area debris` if
   mostly small). A boulder on its own, or one large for the passage it
   is in (a quarter of the passage's narrowest width across it or more,
-  also within a group), is drawn as a rock. Rocks in cross-sections are
+  also within a group), is drawn as a rock. Rocks in cross sections are
   drawn (closed brown loops there are rocks, not the section's outline).
 - A rock is a simplified line drawing seen from above: its outline
   angular and roughly convex (the hull of the sketched loop cut to 5 to 8
@@ -554,7 +554,7 @@ file is worked out from reviews and may be tuned.
   (no passage over another in a scrap, joins at simple passage, sizes,
   stations), not by matching another split.
 
-## Cross-sections
+## Cross sections
 
 - One scrap each, named survey + `PX` + station in a plan
   (`FairyChimneysPX5`), `EX` in an elevation.
@@ -562,7 +562,7 @@ file is worked out from reviews and may be tuned.
   (the station's copy at the section in the xvi) are inside its
   outline, splay ends no more than 0.5 m outside. Only the section's own
   strokes go in it, never a stroke of the main drawing.
-- A cross-section keeps the shape it was sketched: its outline encloses
+- A cross section keeps the shape it was sketched: its outline encloses
   its station and splays, and a small section is not simplified as if
   it were passage walls (no corner taken for an overshoot because it is
   short for a passage; TridentLeft PX1 was smoothed to a sliver, the
@@ -577,7 +577,7 @@ file is worked out from reviews and may be tuned.
   meeting at their ends; a brown floor is `-subtype sand`, or `debris`
   with pebbles on it (FairyChimneys PX5, fixed by the user: the sand
   dashes under the floor had been taken for its walls).
-- A cross-section is a drawing of its own: its walls never join or end
+- A cross section is a drawing of its own: its walls never join or end
   on another scrap's (TridentLeft PX6 was joined to the plan's wall
   beside it).
 
@@ -604,11 +604,12 @@ file is worked out from reviews and may be tuned.
 
 ## Sketching in SexyTopo
 
-- Sketch both the plan and the extended elevation, and cross-sections
+- Sketch both the plan and the extended elevation, and cross sections
   where the passage shape matters.
 - Colours (`[convert]` in `tools/project.toml` tells the converter):
   - black: walls;
-  - brown: the floor: boulders and debris are closed loops, told apart
+  - brown: mud, sand, debris and boulders, on a wall or across the
+    passage (in an elevation the floor, the lower wall, often): boulders and debris are closed loops, told apart
     by size (boulders drawn singly or as an area); sand is dots or
     dashes (mud too: no clay), always as area fills; other brown lines are steps in mud;
   - grey: ceiling steps, but also floor steps, pitches and channels;
@@ -617,7 +618,16 @@ file is worked out from reviews and may be tuned.
     outline: not run along a wall it only touches);
   - green: flowstone and pretties (area fills, and point symbols for the
     different stals); solid green lines are gours (`line rimstone-dam`);
-  - red or orange: notes, which the converter ignores.
+  - purple, red and orange: a passage where it overlaps another (rare;
+    elsewhere it is drawn in the normal colours). Purple is its walls,
+    read as black (they may join a black wall); red and orange have no
+    meaning of their own, they only tell its other lines apart and are
+    read by shape, as grey. Its symbols say what they are (built-in
+    symbols are coming to SexyTopo). Purple will also be a clue to
+    scraps once there are sketches using it (`colour_map` in
+    `[convert]`; the user, 2026-10-14).
+  - notes (P for a pitch, C for a climb) are SexyTopo text, new in
+    SexyTopo, not strokes.
 - A step or pitch is shown by its symbol (the ticks), not its colour: it
   can be any colour (brown for a step in mud).
 - Short jogs in a wall where the sketcher's strokes did not meet are not
@@ -693,12 +703,51 @@ file is worked out from reviews and may be tuned.
 - Walls follow the sketch closely (within about 2% of the nearby legs'
   length), with nodes where the wall bends rather than where the hand
   wobbled.
-- A cross-section is its own scrap, with its wall drawn, placed (in the
+- A cross section is its own scrap, with its wall drawn, placed (in the
   file's coordinates) by its section mark, so xTherion shows it there.
 - A boulder's edge lines meet at a ridge point and end on its corners;
   more than one may be needed, but as few as possible.
-- SexyTopo is set up to export in the house style (`X.plan.th2`, `XSP1`,
-  `map XMP`).
+- The guide for surveyors is the Claude Doc "Sketching in SexyTopo"
+  (the user's, 2026-10-14); what it adds is kept here:
+  - SexyTopo 1.12.3 or later. Export settings: plan file suffix `P`,
+    plan scrap suffix `SP#`, plan cross section suffix `SX#`; extended
+    elevation file suffix `Ee`, scrap suffix `SEe#`, vertical
+    cross section suffix `SVX#`, horizontal (plan-view) cross section
+    suffix `SHX#`; XVI folder `Notes` (the xvi files named after the
+    th2 files, one for each cross section too, new in SexyTopo); export
+    folder name blank and the export subtype box unticked. `#` is a
+    scrap's number, or a cross section's station. The converter reads
+    only the xvi sketches and names its own scraps (`XPX5`, `XEX5`), so
+    these names do not change what it draws.
+  - Trip information: the date, each person's role (the sketcher as
+    `notes`) and the licence (GPLv3.0+, the user).
+  - Splay a cross section at every station, the first and last too,
+    even where one was taken before. Every passage has a leg down it,
+    even where nobody can get there. The passage is drawn on a little
+    past the last station, and a survey never stops at a junction: if
+    the last station is one, a little of each passage is drawn.
+  - Elevations have cross sections too: vertical ones (the usual kind)
+    and horizontal ones (drawn in plan view). Horizontal sections are
+    new: no data yet, so the converter has no rule for them.
+  - Notes (P for a pitch, C for a climb) are SexyTopo text, not strokes.
+  - Brown is always mud, sand, debris or boulders (rocks), on a wall or
+    across the passage. "Floor" is only the name for the lower wall in
+    an elevation, whatever it is made of.
+  - Surveyors call an overhang in an elevation a traverse: the same
+    thing, a line with ticks hanging from one side (`line overhang`).
+  - Pillars can be in plan or elevation, and may be mud (not enough
+    data yet for a rule on mud pillars).
+  - Steps and pitches are shown by their ticks, generally grey, but
+    brown for mud or a boulder edge and green for a large calcite dam.
+  - Water: a closed blue outline (perhaps hatched) is a pool; a blue
+    squiggle with an arrow is water flowing that way.
+  - What was written for elevations holds for plans too: a closed loop
+    the survey goes round is a pillar; a wall's colour says what it is
+    (black rock, brown sand or mud, green flowstone); a wall of
+    boulders with no line drawn runs through their tops, a line drawn
+    under or through them is the wall and the boulders its debris; a
+    row of short straight brown dashes on a wall line is mud. (The
+    converter does these in elevations only so far.)
 
 ## Git and CI
 
