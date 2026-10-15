@@ -64,6 +64,14 @@ point 38.29439 -7.9575553 station -name 5
 
 point 193.7598 14.0838995 station -name 6
 
+# Cross sections from the sketch (sketch2therion, sections only).
+line section -direction both
+  -264.56 -135.99
+  -84.52 -185.57
+endline
+
+point -279.12 -79.37 section -scrap TickleWestPX3
+
 endscrap
 
 
@@ -451,6 +459,222 @@ point -1499.5 -158.5 label -scale m -text [Rift Chamber] -align bottom
 
 point -433.0 161.0 label -scale m -align bottom -text [Go West]
 
+# Cross sections from the sketch (sketch2therion, sections only).
+line section -direction both
+  63.96 459.37
+  221.44 458.69
+endline
+
+point 23.01 395.68 section -scrap TickleWestPX14
+
+line section -direction both
+  92.35 515.99
+  -22.59 654.17
+endline
+
+point 113.90 812.02 section -scrap TickleWestPX19
+
+line section -direction both
+  96.46 413.74
+  -58.18 443.48
+endline
+
+point 100.87 684.06 section -scrap TickleWestPX21
+
+line section -direction both
+  -446.96 165.88
+  -454.58 323.18
+endline
+
+point -434.09 608.52 section -scrap TickleWestPX25
+
+line section -direction both
+  -830.23 139.38
+  -850.49 298.08
+endline
+
+point -822.98 553.69 section -scrap TickleWestPX27
+
+line section -direction both
+  -1222.86 -101.90
+  -1308.88 243.52
+endline
+
+point -1255.09 563.62 section -scrap TickleWestPX29
+
+line section -direction both
+  -1791.70 -98.27
+  -1801.42 165.13
+endline
+
+point -1861.06 715.56 section -scrap TickleWestPX33
+
 endscrap
 
+scrap TickleWestPX3 -projection none -author 2024.10.26 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
+# Cross-section at station 3.
+
+line wall
+  -232.86 -113.14
+  -256.64 -50.35 -230.53 28.76 -324.31 19.34
+  -326.15 -14.19 -337.18 -64.36 -316.78 -91.28
+  -298.34 -115.62 -262.60 -116.05 -232.86 -113.14
+endline
+endscrap
+
+scrap TickleWestPX14 -projection none -author 2024.10.26 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 14.
+
+line wall
+  57.79 393.16
+  52.98 382.11 36.91 341.86 19.84 347.81
+  7.55 352.11 7.25 392.01 8.05 402.79
+  57.79 393.16
+endline
+endscrap
+
+scrap TickleWestPX19 -projection none -author 2024.10.26 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 19.
+
+line wall -close on
+  76.00 797.16
+  76.69 803.10 77.45 811.81 79.56 816.75
+  81.66 821.68 84.69 825.02 88.64 826.76
+  92.59 828.51 96.15 826.20 103.27 827.21
+  110.39 828.22 125.79 832.07 131.37 832.83
+  134.72 833.29 131.37 824.50 128.26 823.17
+  125.73 822.08 123.13 821.71 120.47 822.05
+  117.81 822.40 113.43 826.34 112.29 825.24
+  111.15 824.14 110.68 823.05 113.62 815.45
+  116.57 807.85 127.57 787.14 129.96 779.65
+  132.36 772.15 129.05 773.41 128.00 770.47
+  126.94 767.53 126.11 765.24 123.63 762.03
+  121.15 758.82 117.65 755.22 113.12 751.22
+  108.59 747.22 100.51 740.63 96.47 738.04
+  94.06 736.50 90.51 741.21 90.36 744.07
+  90.22 746.77 89.46 749.35 88.07 751.83
+  86.67 754.31 83.72 756.12 82.00 758.94
+  80.29 761.75 78.88 765.01 77.78 768.71
+  76.69 772.41 75.71 776.41 75.41 781.15
+  75.12 785.89 75.31 791.23 76.00 797.16
+endline
+endscrap
+
+scrap TickleWestPX21 -projection none -author 2024.10.26 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 21.
+
+line wall
+  102.65 637.25
+  104.83 647.54 105.44 667.64 109.38 676.16
+  111.37 680.47 120.10 681.41 119.19 686.97
+  117.55 696.94 96.83 704.25 87.74 704.27
+  82.51 704.28 78.98 700.79 74.32 699.98
+endline
+
+line wall
+  74.32 699.98
+  74.21 701.80 70.16 698.79 69.72 697.02
+  68.98 694.06 68.74 692.53 69.63 686.84
+  70.53 681.16 73.68 667.73 75.08 662.90
+  76.49 658.07 75.43 660.36 78.05 657.85
+  80.68 655.33 88.31 650.16 90.86 647.81
+  93.41 645.45 90.97 645.20 93.34 643.74
+  95.71 642.27 103.54 640.11 105.09 639.03
+endline
+endscrap
+
+scrap TickleWestPX25 -projection none -author 2024.10.26 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 25.
+
+line wall -close on
+  -462.97 607.66
+  -452.06 634.00 -449.80 635.88 -423.76 643.10
+  -423.19 625.53 -420.19 590.83 -441.05 581.92
+  -445.59 579.98 -449.71 583.64 -452.96 582.80
+  -458.18 592.39 -460.06 597.22 -462.97 607.66
+endline
+endscrap
+
+scrap TickleWestPX27 -projection none -author 2024.10.26 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 27.
+
+line wall
+  -847.47 498.11
+  -838.96 498.64 -829.29 500.90 -821.63 501.61
+  -819.61 514.37 -813.22 533.56 -816.18 546.35
+  -816.66 548.43 -819.86 551.50 -820.02 552.74
+  -829.68 553.53 -849.44 560.15 -857.95 554.30
+  -865.57 549.07 -870.70 521.97 -866.32 513.29
+  -864.26 509.22 -851.29 501.05 -847.47 498.11
+endline
+endscrap
+
+scrap TickleWestPX29 -projection none -author 2024.10.26 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 29.
+
+line wall -close on
+  -1315.88 509.63
+  -1254.76 508.83 -1294.29 537.16 -1242.46 545.27
+  -1219.18 548.91 -1203.65 522.03 -1180.65 514.56
+  -1227.35 503.45 -1268.44 504.03 -1315.88 509.63
+endline
+
+line rock-border -close on
+  -1232.61 538.94
+  -1247.03 559.98
+  -1264.78 543.32
+  -1260.76 518.09
+  -1252.61 510.59
+  -1232.61 538.94
+endline
+line rock-edge
+  -1260.76 518.09
+  -1257.53 528.23
+  -1253.23 524.27
+  -1242.67 539.23
+  -1250.28 550.34
+  -1247.03 559.98
+endline
+line rock-edge
+  -1257.53 528.23
+  -1264.78 543.32
+endline
+line rock-edge
+  -1253.23 524.27
+  -1252.61 510.59
+endline
+line rock-edge
+  -1242.67 539.23
+  -1232.61 538.94
+endline
+line rock-edge
+  -1250.28 550.34
+  -1264.78 543.32
+endline
+endscrap
+
+scrap TickleWestPX33 -projection none -author 2024.10.26 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 33.
+
+line wall -close on
+  -1930.10 609.32
+  -1935.66 629.69 -1941.63 649.75 -1948.48 669.71
+  -1929.87 683.01 -1891.14 694.20 -1880.57 715.11
+  -1866.70 742.54 -1893.34 789.97 -1892.25 820.15
+  -1891.49 841.16 -1877.97 857.03 -1875.16 877.68
+  -1863.17 965.77 -1892.84 1154.19 -1802.49 1203.64
+  -1773.39 1142.86 -1784.75 963.88 -1780.40 888.13
+  -1776.29 816.77 -1764.10 735.71 -1751.04 665.12
+  -1754.63 665.36 -1763.99 665.97 -1769.30 666.32
+  -1768.48 626.06 -1744.07 577.97 -1767.96 545.53
+  -1791.91 513.01 -1917.65 566.94 -1930.10 609.32
+endline
+endscrap

@@ -286,6 +286,14 @@ point 2479.3645 3637.2722 station -name 133
 
 point 1053.0812 -32.951492 station -name 135
 
+# Cross sections from the sketch (sketch2therion, sections only).
+line section -direction both
+  1222.99 775.30
+  1442.67 866.14
+endline
+
+point 1873.47 535.88 section -scrap CrossRoadsPX113
+
 endscrap
 
 
@@ -413,4 +421,21 @@ point 1213.4938 -590.26605 station -name 136
 
 endscrap
 
+scrap CrossRoadsPX113 -projection none -author 2025.07.12 "Andrew Atkinson" -copyright 2025 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
+# Cross-section at station 113.
+
+line wall -close on
+  1792.44 509.14
+  1790.86 537.42 1783.30 574.77 1794.85 601.50
+  1807.19 630.04 1837.68 640.73 1839.12 675.18
+  1841.74 738.29 1789.67 815.35 1835.81 871.67
+  1839.05 850.65 1837.63 824.89 1845.97 805.03
+  1858.20 775.91 1875.11 754.67 1880.59 721.76
+  1888.67 673.24 1878.87 587.59 1889.82 548.85
+  1900.71 510.30 1940.68 505.85 1912.52 463.81
+  1905.93 453.97 1882.78 446.01 1869.39 458.25
+  1866.00 461.36 1869.84 467.72 1866.08 469.51
+  1826.40 488.37 1798.35 457.18 1792.44 509.14
+endline
+endscrap

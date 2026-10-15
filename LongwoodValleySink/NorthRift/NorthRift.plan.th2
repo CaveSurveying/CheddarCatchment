@@ -390,6 +390,14 @@ line wall
   smooth off
 endline
 
+# Cross sections from the sketch (sketch2therion, sections only).
+line section -direction both
+  -4.95 -952.88
+  -310.57 -960.36
+endline
+
+point -580.76 -1203.88 section -scrap NorthRiftPX104
+
 endscrap
 
 
@@ -416,4 +424,15 @@ point -317.8798 835.12823 station -name 93
 
 endscrap
 
+scrap NorthRiftPX104 -projection none -author 2025.05.03 "Andrew Atkinson" -copyright 2025 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
+# Cross-section at station 104.
+
+line wall -close on
+  -688.15 -1218.87
+  -674.64 -1174.76 -610.02 -1149.78 -583.02 -1188.47
+  -560.04 -1221.40 -588.59 -1251.58 -591.95 -1289.48
+  -596.58 -1341.68 -556.23 -1410.72 -591.31 -1450.57
+  -623.06 -1428.26 -671.67 -1268.40 -688.15 -1218.87
+endline
+endscrap

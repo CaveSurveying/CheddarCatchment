@@ -251,6 +251,28 @@ line wall -reverse on
   smooth off
 endline
 
+# Cross sections from the sketch (sketch2therion, sections only).
+line section -direction both
+  -115.49 -114.59
+  -198.61 54.37
+endline
+
+point -85.76 188.48 section -scrap WestPassagePX54
+
+line section -direction both
+  -733.65 -458.51
+  -816.45 -324.55
+endline
+
+point -705.60 -931.97 section -scrap WestPassagePX69
+
+line section -direction both
+  -1164.66 -236.30
+  -1010.82 -202.60
+endline
+
+point -952.57 -31.46 section -scrap WestPassagePX76
+
 endscrap
 
 
@@ -310,4 +332,51 @@ point -440.04324 -76.99924 station -name	67
 
 endscrap
 
+scrap WestPassagePX54 -projection none -author 2024.11.09 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
+# Cross-section at station 54.
+
+line wall -close on
+  -146.40 146.34
+  -136.36 184.16 -123.57 243.46 -91.90 260.44
+  -77.36 239.16 -35.99 144.67 -56.06 123.61
+  -76.61 102.05 -130.76 129.44 -146.40 146.34
+endline
+endscrap
+
+scrap WestPassagePX69 -projection none -author 2024.11.09 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 69.
+
+line wall
+  -659.80 -875.98
+  -664.35 -878.30 -680.37 -885.42 -687.12 -889.89
+  -693.87 -894.36 -696.74 -897.90 -700.29 -902.81
+  -703.83 -907.73 -704.01 -907.34 -708.40 -919.38
+  -712.79 -931.41 -722.35 -963.09 -726.61 -975.02
+  -730.87 -986.95 -732.20 -985.92 -733.96 -990.94
+  -735.72 -995.95 -736.78 -1000.68 -737.16 -1005.11
+  -737.53 -1009.54 -736.80 -1014.24 -736.21 -1017.53
+  -735.63 -1020.82 -735.37 -1023.94 -733.64 -1024.85
+  -729.45 -1027.05
+  -724.00 -1029.91 -703.37 -1030.69 -697.02 -1029.05
+  -690.67 -1027.40 -693.49 -1023.33 -691.37 -1017.17
+  -689.25 -1011.02 -688.33 -1009.99 -684.30 -992.11
+  -680.27 -974.22 -671.90 -928.69 -667.20 -909.88
+  -662.50 -891.08 -659.36 -886.93 -656.10 -879.29
+  -652.85 -871.65 -649.07 -866.59 -647.66 -864.05
+  -659.80 -875.98
+endline
+endscrap
+
+scrap WestPassagePX76 -projection none -author 2024.11.09 "Andrew Atkinson" -copyright 2024 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 76.
+
+line wall -close on
+  -957.59 29.10
+  -954.31 42.87 -949.76 52.78 -943.84 63.67
+  -917.46 19.28 -902.33 -42.15 -908.37 -93.48
+  -964.72 -74.32 -966.08 -23.62 -957.59 29.10
+endline
+endscrap
