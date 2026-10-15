@@ -43,5 +43,24 @@ class Relink(unittest.TestCase):
         self.assertEqual(n, 0)
 
 
+class Layout(unittest.TestCase):
+    DATA = {"stations": [
+        {"name": "1", "legs": [{"distance": 2.0, "azimuth": 90.0, "inclination": 0.0, "destination": "2"}]},
+        {"name": "2", "eeDirection": "right",
+         "legs": [{"distance": 3.0, "azimuth": 180.0, "inclination": 30.0, "destination": "3"}]},
+        {"name": "3", "eeDirection": "left", "legs": []}]}
+
+    def test_plan(self):
+        pts, _ = stxvi.layout(self.DATA, 'plan')
+        self.assertAlmostEqual(pts["2"][0], 2.0)
+        self.assertAlmostEqual(pts["3"][1], -3.0 * 0.8660254, places=5)
+
+    def test_extended_unrolls_each_leg_by_its_destination(self):
+        pts, _ = stxvi.layout(self.DATA, 'ee')
+        self.assertAlmostEqual(pts["2"][0], 2.0)                      # 2 is "right": 2 m on
+        self.assertAlmostEqual(pts["3"][0], 2.0 - 3.0 * 0.8660254, places=5)   # 3 is "left": back
+        self.assertAlmostEqual(pts["3"][1], 1.5, places=5)            # and 1.5 m up
+
+
 if __name__ == "__main__":
     unittest.main()
