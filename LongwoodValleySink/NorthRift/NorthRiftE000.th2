@@ -102,8 +102,6 @@ scrap NorthRiftSE000_3 -projection [elevation 0] -scale [-128.0 -128.0 3238.23 -
 
 point 69.88 109.83999999999995 station -name 98
 
-line wall
-endline
 
 line wall
   99.25 264.0

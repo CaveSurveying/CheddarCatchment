@@ -600,6 +600,10 @@ file is worked out from reviews and may be tuned.
   including those of other surveys on the same sheet: it is moved the
   least distance that clears it, along its section line where that is
   about as short, so it is still clear where it belongs.
+- A section is moved by moving its `point section`. Therion centres the
+  drawing's bounding box on it. The section scrap's own drawing is never
+  moved or redrawn: it stays over its sketch in the backdrop (the user,
+  2026-10-22).
   `python3 -m tools.sketch2therion sections` fixes both (see
   `tools/README.md`).
 

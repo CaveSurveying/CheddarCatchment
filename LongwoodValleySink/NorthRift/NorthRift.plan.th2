@@ -40,9 +40,6 @@ area debris
   l65-122-886
 endarea
 
-line border -subtype invisible
-endline
-
 line border -id l65-122-886 -close on -subtype invisible
   118.0 882.0
   135.52 846.04 42.0 770.0 48.0 768.0

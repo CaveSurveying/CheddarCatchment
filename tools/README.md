@@ -154,7 +154,8 @@ both`, the view direction on its left and 0.5 m past the passage
 tools.sketch2therion sections [X ...] [--write]` evens each section line
 across its passage (0.5 m past the wall each side, less where an arrow
 would land in another passage, the arrow left off there in the extreme)
-and moves section drawings clear of the passages and of each other.
+and moves section drawings clear of the passages and of each other by
+moving their `point section` (the drawing stays over its sketch).
 
 ## SVN
 

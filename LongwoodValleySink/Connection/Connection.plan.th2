@@ -23,7 +23,6 @@ line border
 endline
 
 
-  point 176.7 2143.2 station -name 17
   point -554.3 1717.2 label -text Connection<br>Chamber -align left
 
 line wall
@@ -342,9 +341,8 @@ endline
 line wall -close off
   249.9 204.4
   244.2 207.2 245.5 214.8 243.8 225.2
-  242.2 235.6 243.7 255.8 244.8 267.8
-  245.8 279.8 247.7 289.6 250.3 297.3
-  258.1 308.2 263.3 317.6 267.5 328.4
+  242.6 252.7 244.7 276.7 246.4 290.6
+  259.8 302.0 263.3 317.6 267.5 328.4
   269.3 333.0 266.1 326.0 271.3 346.8
 endline
 
@@ -358,11 +356,20 @@ scrap ConnectionPX6 -projection none -author 2026.08.01 "Andrew Atkinson" -copyr
 
 # Cross-section at station 6.
 
-line wall -close on
-  293.9 682.0
-  297.2 668.2 307.6 591.3 302.7 558.9
-  301.7 552.5 285.6 549.1 285.9 555.5
-  287.0 576.8 289.8 597.6 288.4 615.4
+line wall -close on -reverse on
+  294.2 682.0
+  301.6 664.9 297.6 653.1 298.7 643.3
+  300.5 626.9 304.8 615.0 304.6 610.1
+  304.2 598.8 308.3 588.3 302.9 576.7
+  300.6 571.8 302.0 565.7 302.7 558.9
+  smooth off
+  297.5 556.7 290.4 554.7 285.1 555.2
+  smooth off
+  291.3 567.0 287.1 583.4 286.9 599.2
+  smooth off
+  284.7 617.0 288.3 616.7 290.2 625.5
+  292.1 634.4 291.9 664.5 291.9 670.4
+  291.9 676.3 286.8 699.1 294.2 682.0
 endline
   point 300.8 605.7 station -name 6
 endscrap
@@ -426,4 +433,5 @@ line wall -close on
 endline
 
 
+  point 176.7 2143.2 station -name 17
 endscrap

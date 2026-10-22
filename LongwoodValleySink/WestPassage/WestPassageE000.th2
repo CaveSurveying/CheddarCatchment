@@ -157,9 +157,8 @@ point 46.260000000000005 16.93000000000002 station -name 81
 
 point 72.44 26.190000000000026 station -name 79
 
-point 76.75 27.0 station -name 79
 
-point 84.05000000000001 25.40000000000002 station -name 78
+point 84.05000000000001 25.33147752752837 station -name 78
 
 point 80.12 33.860000000000014 station -name 77
 
@@ -209,6 +208,7 @@ point 145.86 373.04 station -name 65
 
 point 203.5 400.75 label -align top -text [<centre>Flowstone<br>Aven]
 
+  point 78.0 26.8 station -name 80
 endscrap
 
 

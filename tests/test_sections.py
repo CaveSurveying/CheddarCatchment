@@ -89,6 +89,26 @@ class SectionShape(unittest.TestCase):
         self.assertEqual(scraps.meet_on_walls(text, 10), text)
         self.assertEqual(scraps.meet_ends(text, 10), text)
 
+    def test_drawing_moved_by_its_point_only(self):
+        import tempfile
+        from types import SimpleNamespace
+        from tools.sketch2therion import sections as sec
+        from tools.sketch2therion.tidy import parse_scrap
+        plan = "point 0 0 station -name 1\npoint 50 100 section -scrap S\n"
+        drawing = "line wall -close on\n  300 300\n  300 340\n  320 340\nendline\n"
+        text = (f"scrap P -projection plan\n{plan}endscrap\n\n"
+                f"scrap S -projection none\n{drawing}endscrap\n")
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "X.plan.th2")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(text)
+            d = SimpleNamespace(path=path, scraps=[("P", parse_scrap(plan), None)])
+            sec.write(d, {}, {"S": (0, 1, (10.0, -5.0))})
+            with open(path, encoding="utf-8") as f:
+                out = f.read()
+        self.assertIn("point 60.00 95.00 section -scrap S", out)
+        self.assertIn(drawing, out)
+
 
 if __name__ == "__main__":
     unittest.main()

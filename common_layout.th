@@ -158,11 +158,6 @@ colour map-bg 90
 #here. This allows user to configure various things (like user defined symbols, map and
 #atlas layout at one place &c.) See the chapter Changing layout for details.
 
-
-  
-
-endcode
-
 doc-author "Andrew Atkinson"
 # doc-author <string> . set document author (M, A)
 

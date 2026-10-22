@@ -8,7 +8,7 @@ layout local
   # symbol-hide group cave-centreline
 endlayout
 
-source "Centry.th"
+source "Century.th"
 
 export model -fmt survex -o "Centry-th.3d"
 

@@ -67,7 +67,7 @@ code tex-map
   \legendbox{80}{0}{SW}{\the\legendcontent}
  %\legendbox{00}{105}{W}{Elevation Looking Towards 315$^{^{\circ}}$}
 }
-
+endcode
 endlayout
 
 layout local
