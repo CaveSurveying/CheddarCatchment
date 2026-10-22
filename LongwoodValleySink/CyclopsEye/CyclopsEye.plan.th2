@@ -84,7 +84,7 @@ line wall
   smooth off
 endline
 
-point 768.0 101.5 label -text [Too Tight] -scale xs -align top-right
+point 766.9 101.5 label -text [Too Tight] -scale xs -align top-right
 
 line wall
   -79.5 -52.5
@@ -126,13 +126,15 @@ line wall
   smooth off
 endline
 
-line wall
-endline
-
 point -158.74057 47.648415 station -name 90
 
 point -212.4783 148.54118 station -name 91
 
+  point 218.1 305.6 label -text "The Gullet" -align right
+  line arrow
+    190.7 253.1
+    -52.1 10.3
+  endline
 endscrap
 
 

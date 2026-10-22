@@ -8,6 +8,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAVE = os.path.join(REPO, "LongwoodValleySink")
 PLAN_ONLY = os.path.join(CAVE, "Plan_only.thcfg")
 THCONFIG = os.path.join(CAVE, "thconfig")
+LAYOUTS = os.path.join(CAVE, "Layouts.th")
 LICENCE = "CC BY-NC-SA 4.0"
 
 
@@ -43,11 +44,12 @@ class PlanOnlyTest(unittest.TestCase):
         self.assertEqual([s.split()[1] for s in selects], ["LongwoodValleySinkMP@LongwoodValleySink"])
 
     def test_no_loadpicture(self):
-        tex = "\n".join(l.split("%", 1)[0] for l in active(self.text))
+        # no elevation is built here, so the plan layout can't place one
+        tex = "\n".join(l.split("%", 1)[0] for l in active(self.text + read(LAYOUTS)))
         self.assertNotIn("\\loadpicture", tex)
 
     def test_map_comment_has_the_data_licence(self):
-        plan = layout(self.text, "plan")
+        plan = layout(read(LAYOUTS), "plan")
         self.assertIsNotNone(plan)
         m = re.search(r'^map-comment "(.*?)"\n', plan, re.S | re.M)
         self.assertIsNotNone(m, "plan layout has a map-comment")
@@ -62,16 +64,10 @@ class PlanOnlyTest(unittest.TestCase):
     def test_name_follows_thcfg_convention(self):
         self.assertTrue(PLAN_ONLY.endswith(".thcfg"))
 
-    @unittest.skipUnless(os.path.exists(THCONFIG), "LongwoodValleySink not migrated yet")
-    def test_layouts_match_thconfig_apart_from_listed_changes(self):
-        # Relax this as the two configs diverge on purpose.
-        orig = read(THCONFIG)
-        self.assertEqual(layout(self.text, "local"), layout(orig, "local"))
-        plan = layout(self.text, "plan")
-        plan = re.sub(r'^map-comment ".*?"\n', "", plan, flags=re.S | re.M)
-        # the 315 inset: left out of Plan_only (no 315 build); in thconfig, on or commented out
-        inset = re.compile(r'^ ?#? *\\legendbox\{-2\}\{104\}\{SW\}\{\\loadpicture\{Outputs/LongwoodValleySinkE315\.pdf\}\}\n', re.M)
-        self.assertEqual(plan, inset.sub("", layout(orig, "plan")))
+    def test_layouts_shared_with_thconfig(self):
+        for text in (self.text, read(THCONFIG)):
+            self.assertIn("input Layouts.th", active(text))
+            self.assertNotRegex(text, r"(?m)^layout ")
 
 
 if __name__ == "__main__":

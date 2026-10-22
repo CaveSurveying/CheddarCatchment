@@ -1,0 +1,97 @@
+encoding  utf-8
+# Sheet layouts for Longwood Valley Sink, input by thconfig and Plan_only.thcfg.
+
+layout Projected315
+copy local
+legend-width 6 cm
+map-header 100 101 nw
+map-comment "Location ST 4858 5548 Altitude 207m OD<br>\
+Length 1004.00m. Vertical Range 126.27m.<br>\
+Grade UISv1 6-4-BEF<br>\
+Copyright 2014-26 CC BY-NC-SA 4.0<br>\
+Data available at cave-registry.org.uk<br>\
+Drawn using Therion by Andrew Atkinson.<br>\
+Survey by Andrew Atkinson, Alison Moody,<br>\
+Pete Buckley,  John Cooper, Mike Wise,<br>\
+Lee Hawkswell, Barry Weaver.<br>\
+<br>\
+Heights in metres OD"
+map-header-bg on
+legend off
+
+code tex-map
+
+
+ \legendwidth=6cm
+  
+\def\maplayout{
+  \legendbox{0}{101}{NW}{\the\legendcontent}
+}
+endcode
+endlayout
+
+layout plan
+copy local
+map-header 0 101 nw
+map-header-bg off
+legend-width 65 mm
+rotate 45
+grid off
+grid-coords off
+scale-bar  25 metres
+map-comment "Location ST 4858 5548 Altitude 207m OD<br>\
+Length 1700m. Vertical Range 129m.<br>\
+Draft Survey<br>\
+Grade UISv1 6-4-BEF<br>\
+Copyright 2014-26 CC BY-NC-SA 4.0<br>\
+Data available at cave-registry.org.uk<br>\
+Drawn using Therion by Andrew Atkinson.<br>\
+Survey by Andrew Atkinson, Alison Moody,<br>\
+Pete Buckley, John Cooper, Mike Wise,<br>\
+Lee Hawkswell, Barry Weaver.<br>\
+<br>\
+Heights in metres OD"
+code tex-map
+  
+# \cavename={}%empty
+  \colorlegendfalse
+  \legendtextsize={\size[9]}
+  %\comment={Elevation Looking Towards 315$^{^{\circ}}$}
+  %\cavename={\size[10] Passage colours are the same on the plan and elevation} %bad bodge!
+  \legendtitle={}
+
+\def\maplayout{
+  \legendbox{55}{3}{SW}{\northarrow}
+  \legendbox{25}{3}{SW}{\scalebar}
+ # \legendbox{-2}{104}{SW}{\loadpicture{Outputs/LongwoodValleySinkE315.pdf}}
+  \legendbox{80}{0}{SW}{\the\legendcontent}
+ %\legendbox{00}{105}{W}{Elevation Looking Towards 315$^{^{\circ}}$}
+}
+
+endlayout
+
+layout local
+copy common
+doc-title "Longwood Valley Sink"
+grid-size 50 50 10 metres
+symbol-hide special north-arrow
+symbol-hide special scale-bar
+scale 1 500
+base-scale 1 350
+symbol-hide point remark
+symbol-hide group cave-centreline
+
+colour map-bg transparent
+colour map-fg map
+colour-legend off
+statistics explo off
+statistics topo off
+legend on
+overlap 5 mm
+
+code tex-map
+  \cavename={\size[30] Longwood Valley Sink}
+  \cavelength={}%empty
+  \cavedepth={}%empty
+endcode
+endlayout

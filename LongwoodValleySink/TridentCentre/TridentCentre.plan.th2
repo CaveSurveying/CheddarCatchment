@@ -25,11 +25,11 @@ line wall
   -419.47 410.20 -467.12 444.40 -443.14 387.71
   -399.11 283.62 -326.01 332.70 -244.03 294.19
   -201.12 274.04 -164.41 239.75 -129.56 208.34
-  -14.94 105.03 -42.92 114.87 4.21 -31.26
+  -14.94 105.03 -42.81 113.66 4.32 -32.47
 endline
 line wall
-  64.35 55.34
-  57.00 87.89 49.64 124.28 44.56 151.90
+  80.58 -3.62
+  67.54 30.06 49.64 124.28 44.56 151.90
 endline
 line wall
   44.56 151.90
@@ -136,12 +136,6 @@ area sand
   TridentCentreSP1-sand2
 endarea
 
-line border -id TridentCentreSP1-inner1
-  -218.61 431.29
-  -230.74 419.57 -260.12 396.67 -258.35 377.12
-  -256.72 359.05 -195.71 412.14 -213.14 423.34
-  -160.39 332.32 -82.91 244.76 -20.31 158.25
-endline
 
 
 
@@ -150,31 +144,27 @@ line border -id TridentCentreSP1-inner4
   -12.19 159.86 23.77 166.91 31.88 168.51
 endline
 
-line floor-step
-  -461.58 592.55
-  -460.01 584.42 -453.73 551.90 -452.16 543.77
-endline
 
 line section -direction both
-  -262.84 -72.08
-  262.84 72.08
+  -43.72 -11.99
+  109.90 30.14
 endline
 
-point 429.03 350.86 section -scrap TridentCentrePX1
+point 186.46 28.58 section -scrap TridentCentrePX1
 
-line section -direction both
-  -276.15 451.82
-  -122.17 515.78
+line section -direction end
+  -225.44 469.97
+  -120.43 516.50
 endline
 
-point 76.80 547.72 section -scrap TridentCentrePX5
+point -46.19 626.30 section -scrap TridentCentrePX5
 
-line section -direction both
-  -325.78 263.55
-  -201.26 494.99
+line section -direction begin
+  -291.02 261.58
+  -242.49 469.52
 endline
 
-point -317.35 84.43 section -scrap TridentCentrePX8
+point -371.76 591.83 section -scrap TridentCentrePX8
 
 point -263.52 379.27 station -name 8
 
@@ -195,6 +185,7 @@ point 0.00 0.00 station -name 1
 point -31.13 113.51 station -name 2
 
 point -459.88 508.97 station -name 10
+  point 636.0 802.1 label -text Trident<br>Series -scale xl
 endscrap
 
 scrap TridentCentrePX1 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
@@ -227,25 +218,14 @@ scrap TridentCentrePX8 -projection none -author 2026.07.11 "Andrew Atkinson" -co
 
 # Cross-section at station 8.
 
-line wall -close on
-  -408.16 92.12
-  -353.71 123.66 -313.20 129.97 -259.90 92.04
-  -269.69 83.80 -279.83 75.23 -289.67 66.79
-  -289.09 84.80 -291.49 95.10 -301.59 112.85
-  -315.38 95.90 -322.65 81.58 -326.23 64.09
-  -354.84 71.58 -389.15 79.00 -408.16 92.12
+line wall -close off
+  -408.5 90.4
+  -354.1 121.9 -315.8 130.6 -262.5 92.6
+endline
+line wall -close off -subtype sand
+  -262.5 92.6
+  -285.8 78.6 -297.4 62.6 -327.7 65.5
+  -382.6 70.7 -408.5 90.4 -408.5 90.4
 endline
 
-line rock-border -close on
-  -291.74 66.17
-  -294.64 74.95
-  -316.88 80.05
-  -319.38 66.17
-  -302.70 64.03
-  -291.74 66.17
-endline
-line rock-edge
-  -316.88 80.05
-  -291.74 66.17
-endline
 endscrap

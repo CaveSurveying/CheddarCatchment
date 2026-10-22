@@ -92,3 +92,23 @@ class SectionShape(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SectionLineEvenly(unittest.TestCase):
+    def test_even_margins_and_arrow_left_off_near_another_passage(self):
+        from shapely.geometry import box
+        from tools.sketch2therion import sections as sec
+        own = box(0, 0, 10, 2)                      # a passage 2 m wide, running east
+        r = sec.redo_line((5.0, -0.3), (5.0, 4.0), own, None)
+        (A, B), arrows, u = r
+        self.assertAlmostEqual(A[1], -sec.MARGIN)
+        self.assertAlmostEqual(B[1], 2 + sec.MARGIN)
+        self.assertEqual(arrows, [True, True])
+        # another passage 0.15 m north: the north end comes in to 0.1 m, its arrow kept
+        (A, B), arrows, u = sec.redo_line((5.0, -0.3), (5.0, 4.0), own, box(0, 2.15, 10, 5))
+        self.assertAlmostEqual(B[1], 2.1)
+        self.assertEqual(arrows, [True, True])
+        # only 0.05 m away: that arrow is left off
+        (A, B), arrows, u = sec.redo_line((5.0, -0.3), (5.0, 4.0), own, box(0, 2.05, 10, 5))
+        self.assertEqual(arrows, [True, False])
+

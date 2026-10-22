@@ -148,10 +148,13 @@ python3 -m tools.sketch2therion review gaps LongwoodValleySink/X/X.plan.th2 XSP1
 ## Another cave
 
 Copy `project.toml` and change it; the tools read every cave-specific
-name from it. `sections` (placing cross sections) is not ported. The converter
-writes each section line with `-direction both`, the view direction on
-its left and 0.5 m past the passage (`section_arrows`); placing the
-section drawings clear of passages is still by hand.
+name from it. The converter writes each section line with `-direction
+both`, the view direction on its left and 0.5 m past the passage
+(`section_arrows`). On the assembled plan, `python3 -m
+tools.sketch2therion sections [X ...] [--write]` evens each section line
+across its passage (0.5 m past the wall each side, less where an arrow
+would land in another passage, the arrow left off there in the extreme)
+and moves section drawings clear of the passages and of each other.
 
 ## SVN
 

@@ -22,9 +22,9 @@ class ReviewConfigTest(unittest.TestCase):
     def test_review_config(self):
         s = review.review_config(self.cfg, "/out/review-plan.pdf")
         exports = [l.strip() for l in s.splitlines() if l.strip().startswith("export")]
-        self.assertEqual(exports, ["export map -projection plan -layout plan -o /out/review-plan.pdf"])
-        self.assertIn("layout plan\n  debug station-names\n", s)
-        self.assertNotRegex(s, r"(?m)^\s*symbol-hide (group cave-centreline|point station)")
+        self.assertEqual(exports, ["export map -projection plan -layout review-names -o /out/review-plan.pdf"])
+        self.assertIn("layout review-names\n  copy plan\n  debug station-names\n", s)
+        self.assertIn("  symbol-show group cave-centreline\n", s)
         self.assertIn("input ../common_layout.th", s)
 
     def test_needs_a_plan_export(self):
@@ -32,7 +32,8 @@ class ReviewConfigTest(unittest.TestCase):
             review.review_config("source x.th\nexport model -o x.3d\n", "o.pdf")
 
     def test_sheet_scale_rotation(self):
-        self.assertEqual(review.sheet_scale_rotation(self.cfg), (500.0, 45.0))
+        cfg = review.config_with_inputs(os.path.join(REPO, "LongwoodValleySink", "Plan_only.thcfg"))
+        self.assertEqual(review.sheet_scale_rotation(cfg), (500.0, 45.0))
         self.assertEqual(review.sheet_scale_rotation("layout x\nendlayout\n"), (500.0, 0.0))
 
 

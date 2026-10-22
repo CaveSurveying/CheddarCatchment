@@ -130,8 +130,6 @@ endline
 
 point 136.0 190.0 water-flow -orientation 179.5
 
-line wall
-endline
 
 line wall -subtype debris
   121.25 40.25

@@ -177,9 +177,6 @@ class NoSwildonsNamesTest(unittest.TestCase):
                     continue        # origin notes
                 self.assertNotRegex(line, r"(?i)swil|sump1|stanton|footleg|waterworth", f"{path}:{n}")
 
-    def test_sections_not_ported(self):
-        self.assertFalse(os.path.exists(os.path.join(REPO, "tools", "sketch2therion", "sections.py")))
-
     def test_files_say_where_from(self):
         for path in glob.glob(os.path.join(REPO, "tools", "sketch2therion", "*.py")):
             with open(path, encoding="utf-8") as f:

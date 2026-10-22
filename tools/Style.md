@@ -591,8 +591,15 @@ file is worked out from reviews and may be tuned.
 - Therion draws the arrows on the line's left, so draw the line with
   the view direction (along the survey, from the station towards the
   next) on its left.
+- On the plan, a section line goes evenly across its passage: the same
+  distance (0.5 m) past the wall on each side, not far from it. Where an
+  arrow would land in another part of the passage it comes in (to
+  0.1 m), and in the extreme that side's arrow is left off (the user,
+  2026-10-15).
 - A section drawing must not overlap a passage or another section,
-  including those of other surveys on the same sheet.
+  including those of other surveys on the same sheet: it is moved the
+  least distance that clears it, along its section line where that is
+  about as short, so it is still clear where it belongs.
   `python3 -m tools.sketch2therion sections` fixes both (see
   `tools/README.md`).
 

@@ -116,9 +116,6 @@ line wall
   smooth off
 endline
 
-line wall
-endline
-
 point 56.375 43.375 label -text [Right Hand Tube] -align right
 
 line wall

@@ -19,9 +19,6 @@ point 32.854218 946.7611 station -name 90
 
 point 140.71898 1132.5858 station -name 91
 
-line overhang
-endline
-
 line overhang -reverse on
   -35.0 843.0
   -38.0 808.0 -70.0 776.0 -75.0 744.0
@@ -392,11 +389,11 @@ endline
 
 # Cross sections from the sketch (sketch2therion, sections only).
 line section -direction both
-  -4.95 -952.88
-  -310.57 -960.36
+  -57.00 -954.15
+  -208.06 -957.85
 endline
 
-point -580.76 -1203.88 section -scrap NorthRiftPX104
+point -377.81 -1000.74 section -scrap NorthRiftPX104
 
 endscrap
 
@@ -429,10 +426,11 @@ scrap NorthRiftPX104 -projection none -author 2025.05.03 "Andrew Atkinson" -copy
 # Cross-section at station 104.
 
 line wall -close on
-  -688.15 -1218.87
-  -674.64 -1174.76 -610.02 -1149.78 -583.02 -1188.47
-  -560.04 -1221.40 -588.59 -1251.58 -591.95 -1289.48
-  -596.58 -1341.68 -556.23 -1410.72 -591.31 -1450.57
-  -623.06 -1428.26 -671.67 -1268.40 -688.15 -1218.87
+  -692.5 -1215.8
+  -689.5 -1189.4 -613.4 -1147.8 -586.4 -1186.4
+  -563.4 -1219.4 -593.0 -1260.0 -596.4 -1297.9
+  -601.0 -1350.1 -563.7 -1398.3 -589.5 -1448.5
+  smooth off
+  -617.4 -1437.2 -620.8 -1436.2 -621.7 -1382.5
 endline
 endscrap

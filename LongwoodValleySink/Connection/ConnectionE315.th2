@@ -51,8 +51,8 @@ endline
 
 line wall -subtype debris
   108.42 71.95
-  107.29 77.11 106.29 83.32 101.10 86.04
-  89.73 91.99 55.03 76.47 44.53 70.89
+  107.29 77.11 101.33 80.01 96.14 82.73
+  84.77 88.68 55.03 76.47 44.53 70.89
 endline
 
 line wall -subtype presumed
@@ -130,8 +130,8 @@ scrap ConnectionSE315_2 -projection [elevation 315] -author 2026.08.01 "Andrew A
 # Walls of ConnectionSE2 (Connection.extended.th2) projected to 315.
 
 line wall
-  113.60 166.97
-  99.36 163.83 85.36 160.20 71.36 156.14
+  208.38 169.73
+  158.87 170.99 85.36 160.20 71.36 156.14
 endline
 
 point 91.87 134.45 station -name 5
@@ -140,6 +140,11 @@ point 103.56 141.14 station -name 6
 
 point 209.76 151.18 station -name 7
 
+  line wall
+    77.3 117.7
+    99.9 123.2 95.5 129.2 119.2 132.5
+    142.9 135.9 200.8 142.5 213.4 143.6
+  endline
 endscrap
 
 scrap ConnectionSE315_3 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
@@ -163,19 +168,19 @@ endline
 
 line wall -subtype presumed
   414.56 128.56
-  423.35 110.10 439.89 130.72 447.61 138.55
+  429.96 128.84 439.89 130.72 447.61 138.55
 endline
 
-line wall -subtype presumed
+line wall
   517.59 123.44
   534.16 121.37 542.37 140.86 532.44 153.78
   525.43 162.91 497.02 165.34 488.51 157.42
   469.73 139.94 506.45 125.90 517.59 123.44
 endline
 
-line wall
-  438.97 154.06
-  451.89 159.30 463.10 160.33 476.87 159.33
+line overhang -reverse on
+  420.46 156.70
+  433.38 161.94 463.10 160.33 476.87 159.33
 endline
 
 line wall -subtype presumed
@@ -193,7 +198,7 @@ line wall -subtype debris
   521.74 82.99 538.75 90.84 550.12 94.56
 endline
 
-line wall
+line wall -subtype presumed
   447.61 138.55
   455.77 133.41 464.17 130.11 471.68 123.77
   479.90 116.83 486.75 106.15 495.73 100.44

@@ -28,9 +28,6 @@ line wall
   smooth off
 endline
 
-area water
-endarea
-
 line wall -subtype debris
   73.75 5.5
   79.75 6.5 78.0 16.75 79.5 19.0

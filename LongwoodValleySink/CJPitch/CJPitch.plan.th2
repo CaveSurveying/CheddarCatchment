@@ -245,6 +245,7 @@ endline
 
 point -304.9809 -187.56277 station -name 108
 
+  point -914.8 109.3 label -text Compass<br>West -align left
 endscrap
 
 

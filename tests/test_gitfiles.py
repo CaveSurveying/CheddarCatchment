@@ -20,7 +20,9 @@ class GitFilesTest(unittest.TestCase):
     def test_build_outputs_ignored(self):
         for p in ["LongwoodValleySink/Outputs/LongwoodValleySinkP.pdf", "LongwoodValleySink/GoWest/Outputs/a.pdf",
                   "output/index.html", "proj/a.tif", "LongwoodValleySink/therion.log",
-                  "LongwoodValleySink/a.3d", "LongwoodValleySink/a.lox", "tools/__pycache__/x.pyc"]:
+                  "LongwoodValleySink/a.3d", "LongwoodValleySink/a.lox", "tools/__pycache__/x.pyc",
+                  "LongwoodValleySink/Trident/TridentP.pdf", "LongwoodValleySink/Trident/.xtherion.dat",
+                  "LongwoodValleySink/thTMPDIR/data.mp"]:
             self.assertTrue(self.ignored(p), p)
 
     def test_survey_data_not_ignored(self):
