@@ -103,9 +103,10 @@ plan its floor steps, climbs and gradient arrows.
    ```
    files the drawing: it removes SexyTopo's empty `XP.th2`, inputs
    `X.plan.th2` in `X.th` with a `map XMP` of its scraps, and adds
-   `XMP@X` to `LongwoodValleySinkMP` in `LongwoodValleySink.th`. `roofs` and
-   `details` use the splays from `output/layout.sql`; `smooth` comes
-   last. `tidy` redoes drawings converted earlier.
+   `XMP@X` to `LongwoodValleySinkMP` in `LongwoodValleySink.th`. `roofs`,
+   `details` and `smooth` read the legs and splays from the drawing's own
+   sketch (its backdrop `.xvi`), never from Therion's database; `smooth`
+   comes last. `tidy` redoes drawings converted earlier.
 6. **Finish by hand** in xTherion (the sketch is linked as a
    backdrop): passage names at the label sizes in `Style.md`, flow
    arrows, `C2`/`P5`, `join`s to neighbouring scraps.
@@ -148,7 +149,10 @@ python3 -m tools.sketch2therion review gaps LongwoodValleySink/X/X.plan.th2 XSP1
 ## Another cave
 
 Copy `project.toml` and change it; the tools read every cave-specific
-name from it. The converter writes each section line with `-direction
+name from it. A survey outside this cave converts as it is: `plan`,
+`extended`, `roofs`, `details` and `smooth` need only the sketch and the
+survey's `.th` beside it (or one folder up), which the scrap chooser
+models. The converter writes each section line with `-direction
 both`, the view direction on its left and 0.5 m past the passage
 (`section_arrows`). On the assembled plan, `python3 -m
 tools.sketch2therion sections [X ...] [--write]` evens each section line

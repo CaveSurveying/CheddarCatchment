@@ -20,6 +20,8 @@ input Special/s_northarrow_BCA.th
 
 layout symbols
 
+symbol-colour point water-flow [30 80 100]
+
 # Copy Areas
  ########################################
 copy a_blocks_BCA
@@ -34,7 +36,6 @@ copy l_wall_debris_CHED
 copy s_northarrow_BCA
 
 symbol-assign line wall:debris CHED
-
 
 code metapost
            
@@ -255,8 +256,7 @@ enddef;
 enddef;
 
     initsymbol ("l_floorstep_BCA");
- 
-symbol-colour point water-flow [30 80 100]
+
 
 # define water to be light blue
   def a_water (expr p) =
@@ -273,7 +273,6 @@ symbol-colour point water-flow [30 80 100]
   enddef;  
 
 
-code metapost
   let p_gradient = p_entrance_UIS;
 #replaces the UIS gradient symbol with the entrance symbol that looks like 
 #BCRA gradient symbol

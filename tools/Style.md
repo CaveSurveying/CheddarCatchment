@@ -349,6 +349,10 @@ file is worked out from reviews and may be tuned.
 
 ## Projected elevations (E315)
 
+- Planned: Therion's database may help in making a projection, but the
+  extended drawing's lines (its th2, from the extended xvi) must still
+  decide it (the user, 2026-10-22). `projected`, `unfold` and `joins`
+  still read the database for now.
 - For now (walls parked): one scrap, `XSE315_1`, with the stations on the
   dots of `Notes/XE315.xvi`, laid out as `tools/ElevationsExx.py` does
   (xvi units, offset from the lowest station, the xvi as backdrop). The
@@ -615,6 +619,9 @@ file is worked out from reviews and may be tuned.
 
 ## Sketching in SexyTopo
 
+- The drawing tools take the legs and splays from the sketch (`.xvi`),
+  never from Therion's database or a layout Therion generates, so they
+  run on any survey from its sketch and `.th` (the user, 2026-10-22).
 - Sketch both the plan and the extended elevation, and cross sections
   where the passage shape matters.
 - Colours (`[convert]` in `tools/project.toml` tells the converter):
