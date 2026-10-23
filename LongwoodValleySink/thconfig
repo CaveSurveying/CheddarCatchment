@@ -8,7 +8,7 @@ select LongwoodValleySinkM315@LongwoodValleySink -map-level 1
 #export map -proj [elevation 315] -layout Projected315 -o Outputs/LongwoodValleySinkE315.pdf
 
 #Produces plan of cave, on a single sheet
-export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
+#export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
 
 export model -fmt survex -o Outputs/LongwoodValleySinkth.3d
 #Survex file showing centre line only
