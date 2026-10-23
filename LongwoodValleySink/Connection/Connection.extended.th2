@@ -12,7 +12,7 @@ encoding  utf-8
 
 
 
-scrap ConnectionSE1 -projection extended -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap ConnectionSEe1 -projection extended -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # wall-subtype presumed: -683.7 283.8 -655.8 280.0 -629.4 260.3 -612.8 255.7 -577.2 247.1 -549.8 241.3 -515.8 238.5 -481.4 241.4 -451.6 237.1 -437.7 234.7 -403.8 228.9 -389.4 225.4 -349.7 214.8 -329.4 216.0 -295.7 212.7 -268.6 212.6
 # wall-subtype presumed: -169.8 146.5 -190.7 150.7 -232.9 150.9 -250.0 154.5 -291.6 152.5 -310.2 153.9 -370.2 158.9 -391.4 163.6 -439.9 167.3 -466.0 168.5 -499.6 169.5 -525.6 166.0 -572.8 156.0 -584.3 154.8 -612.8 147.7 -631.3 142.2 -676.6 127.9 -693.9 120.9
@@ -425,7 +425,7 @@ endscrap
 
 
 
-scrap ConnectionSE2 -projection extended -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap ConnectionSEe2 -projection extended -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 point -530.95 537.70 station -name 5
 
@@ -443,7 +443,7 @@ endscrap
 
 
 
-scrap ConnectionSE3 -projection extended -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap ConnectionSEe3 -projection extended -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 line wall -subtype debris
   -2231.35 351.97
@@ -602,7 +602,7 @@ endscrap
 
 
 
-scrap ConnectionSE4 -projection extended -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap ConnectionSEe4 -projection extended -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 line wall -subtype presumed
   -2448.52 288.71

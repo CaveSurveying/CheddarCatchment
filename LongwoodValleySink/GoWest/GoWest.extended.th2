@@ -5,7 +5,7 @@ encoding  utf-8
 # tools/sketch2therion unfold (each leg from the view seeing it most side on):
 #   GoWestE0.th2 GoWestSE01: facing 0, stations within 0.00 m
 
-scrap GoWestSE1 -projection extended -author 2023.10.27 "John Cooper" -copyright 2023 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap GoWestSEe1 -projection extended -author 2023.10.27 "John Cooper" -copyright 2023 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 line wall
   -1586.91 1142.55

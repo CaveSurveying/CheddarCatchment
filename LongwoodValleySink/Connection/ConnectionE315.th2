@@ -11,7 +11,7 @@ encoding  utf-8
 
 scrap ConnectionSE315_1 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of ConnectionSE1 (Connection.extended.th2) projected to 315.
+# Walls of ConnectionSEe1 (Connection.extended.th2) projected to 315.
 
 line wall
   332.35 314.84
@@ -127,7 +127,7 @@ endscrap
 
 scrap ConnectionSE315_2 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of ConnectionSE2 (Connection.extended.th2) projected to 315.
+# Walls of ConnectionSEe2 (Connection.extended.th2) projected to 315.
 
 line wall
   208.38 169.73
@@ -149,7 +149,7 @@ endscrap
 
 scrap ConnectionSE315_3 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of ConnectionSE3 (Connection.extended.th2) projected to 315.
+# Walls of ConnectionSEe3 (Connection.extended.th2) projected to 315.
 
 line wall -subtype debris
   351.57 105.44
@@ -245,7 +245,7 @@ endscrap
 
 scrap ConnectionSE315_4 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of ConnectionSE4 (Connection.extended.th2) projected to 315.
+# Walls of ConnectionSEe4 (Connection.extended.th2) projected to 315.
 
 line wall -subtype presumed
   351.49 29.70

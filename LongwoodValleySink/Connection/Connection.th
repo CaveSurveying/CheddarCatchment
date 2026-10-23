@@ -19,10 +19,10 @@ endmap
 
 
 map ConnectionMEe
-  ConnectionSE1
-  ConnectionSE2
-  ConnectionSE3
-  ConnectionSE4
+  ConnectionSEe1
+  ConnectionSEe2
+  ConnectionSEe3
+  ConnectionSEe4
 endmap
 
 

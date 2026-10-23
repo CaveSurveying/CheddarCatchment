@@ -271,18 +271,18 @@ join WallB@NorthRift:Bottom WallB_1@CrossRoads:end
 
 ###################################################################
 #### Joins for extended elevation
-join BoldStepSE1@BoldStep ConnectionSE3@Connection -smooth on
-join BoldStepSE1@BoldStep TridentLeftSE2@TridentLeft -smooth on
-join ConnectionSE1@Connection northrift-ee@NorthRift -smooth on
-join ConnectionSE3@Connection TritonSouthSE1@TritonSouth -smooth on
-join crossroads-ee@CrossRoads TridentSE1@Trident -smooth on
-join crystalpitch-ee@CrystalPitch GoSouthSE1@GoSouth -smooth on
-join FairyChimneysSE1@FairyChimneys TritonSouthSE1@TritonSouth -smooth on
-join IDontCareSE1@IDontCare TridentLeftSE3@TridentLeft -smooth on
-join TridentLeftSE2@TridentLeft TritonNorthSE1@TritonNorth -smooth on
-join TridentLeftSE2@TridentLeft TritonSouthSE1@TritonSouth -smooth on  # TritonSouth 1 is in no scrap: by 2
-join TridentSE1@Trident TridentCentreSE1@TridentCentre -smooth on
-join TridentSE2@Trident TridentLeftSE1@TridentLeft -smooth on
+join BoldStepSEe1@BoldStep ConnectionSEe3@Connection -smooth on
+join BoldStepSEe1@BoldStep TridentLeftSEe2@TridentLeft -smooth on
+join ConnectionSEe1@Connection northrift-ee@NorthRift -smooth on
+join ConnectionSEe3@Connection TritonSouthSEe1@TritonSouth -smooth on
+join crossroads-ee@CrossRoads TridentSEe1@Trident -smooth on
+join crystalpitch-ee@CrystalPitch GoSouthSEe1@GoSouth -smooth on
+join FairyChimneysSEe1@FairyChimneys TritonSouthSEe1@TritonSouth -smooth on
+join IDontCareSEe1@IDontCare TridentLeftSEe3@TridentLeft -smooth on
+join TridentLeftSEe2@TridentLeft TritonNorthSEe1@TritonNorth -smooth on
+join TridentLeftSEe2@TridentLeft TritonSouthSEe1@TritonSouth -smooth on  # TritonSouth 1 is in no scrap: by 2
+join TridentSEe1@Trident TridentCentreSEe1@TridentCentre -smooth on
+join TridentSEe2@Trident TridentLeftSEe1@TridentLeft -smooth on
 
 endsurvey
 

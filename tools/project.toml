@@ -17,7 +17,7 @@ plan_map_file = "LongwoodValleySink/LongwoodValleySink.th"   # defined here (gro
 # {survey} is a survey's name, e.g. GoSouth (see tools/Style.md).
 survey_file = "{survey}/{survey}.th"
 plan_file = "{survey}/{survey}.plan.th2"
-scrap_prefix = "{survey}S"          # the converter adds P1, P2, ... (plan) or E1, ... (elevation)
+scrap_prefix = "{survey}S"          # the converter adds P1, P2, ... (plan) or Ee1, ... ([convert] elevation_suffix)
 survey_plan_map = "{survey}MP"
 plan_sketch = '(\.plan|_p|P)\.xvi$'   # regex: which .xvi sketches are plans (the rest are elevations)
 
@@ -39,7 +39,10 @@ colour_map = { PURPLE = "BLACK", RED = "GRAY", ORANGE = "GRAY" }   # where passa
 elevation_wall_colours = ["BLACK", "BROWN", "GREEN"]   # in elevations the floor is often drawn brown or green ...
 auto_scraps = true          # scraps from the 3D model where none are listed below (log row 133)
 section_names = true        # cross sections named FairyChimneysPX5 (log row 125)
+elevation_suffix = "Ee"     # extended-elevation scraps GoSouthSEe1, as plans GoSouthSP1 (log row 184)
 outer_walls = true          # every outer line is a wall: passage on one side only, by the splays (log row 125)
+join_runs = true            # lines of a kind running on into each other are one line, walls too (log row 184)
+pitch_fill = true           # a shaft fills sideways to its walls, as far as the side splays (log row 183)
 dashed_presumed = true      # black dashed lines are wall -subtype presumed (log row 125)
 dash_neighbours = true      # a dash joins only its nearest neighbours: dashed lines side by side stay apart (log row 148)
 short_links = true          # short wall-coloured pieces joining walls end to end are wall (log row 148)
@@ -90,7 +93,7 @@ wall_presmooth = 3          # ... after smoothing out hand wobble over 3 times t
 rock_faces = true           # the fill is cut along the walls; rock it took in (bends, tongues, hooks) dropped
 pockets = true              # a wall piece out beyond the outline with both ends on one wall is a pocket: the wall goes round it
 wall_hooks = true           # a small black loop left open at a wall is a hook of the wall, not a boulder
-merge_short = 4             # a line of up to 4 nodes meeting another of its kind end to end is merged into it (a sharp join keeps its corner)
+merge_short = 4             # a piece of up to 4 nodes running on from a border's end is border (Connection 13 to 15)
 ends_meet = true            # lines of different kinds ending close together share the end (border to floor step to pit)
 despike = 0.3               # m: a wall turning right back over less than this is an overshoot, not a corner
 smooth_nodes = 60           # degrees: control points either side of a node in line, unless it turns more (a corner)

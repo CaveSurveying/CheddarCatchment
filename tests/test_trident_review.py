@@ -192,19 +192,19 @@ class WallHooks(unittest.TestCase):
         self.assertEqual(len(boulders), 1)
 
 
-class MergeShort(unittest.TestCase):
-    """Short lines joined into the line of their kind they meet (user, draft 5)."""
+class JoinRuns(unittest.TestCase):
+    """Lines joined into the line of their kind they run on into (user, draft 5; 2026-10-22)."""
 
     def line(self, head, pts):
         o = tidy.Obj('line', head, [])
         o.set_segments([[x, y] for x, y in pts])
         return o
 
-    def test_two_node_line_merged(self):
+    def test_touching_line_joined(self):
         a = self.line('line border', [(0, 0), (100, 0), (200, 0)])
         b = self.line('line border', [(210, 0), (300, 10)])
         objs = [a, b]
-        self.assertEqual(nodes.merge_short(objs, 100.0, 0.2), 1)
+        self.assertEqual(nodes.join_runs(objs, 100.0, 0.2), 1)
         self.assertEqual(len(objs), 1)
         self.assertEqual(tuple(objs[0].segments()[-1][-2:]), (300.0, 10.0))
 
@@ -213,15 +213,42 @@ class MergeShort(unittest.TestCase):
         b = self.line('line floor-step', [(200, 0), (300, 0)])
         g1 = self.line('line rimstone-dam', [(0, 50), (50, 60), (100, 50)])
         g2 = self.line('line rimstone-dam', [(100, 50), (150, 60)])
-        self.assertEqual(nodes.merge_short([a, b, g1, g2], 100.0, 0.2), 0)
+        self.assertEqual(nodes.join_runs([a, b, g1, g2], 100.0, 0.2), 0)
 
-    def test_merged_even_at_a_sharp_turn(self):
+    def test_touching_joined_whatever_the_angle(self):
         a = self.line('line border', [(0, 0), (100, 0), (200, 0)])
         back = self.line('line border', [(200, 0), (150, 20), (100, 30)])      # turns sharply
-        self.assertEqual(nodes.merge_short([a, back], 100.0, 0.2), 1)
+        self.assertEqual(nodes.join_runs([a, back], 100.0, 0.2), 1)
+
+    def test_across_a_gap_only_carrying_on(self):
+        long = [(0, 0), (100, 0), (200, 0), (300, 0), (400, 0), (500, 0)]      # length does not matter
+        a, b = self.line('line border', long), self.line('line border', [(525, 2), (700, 5), (800, 10)])
+        self.assertEqual(nodes.join_runs([a, b], 100.0, 0.05), 1)               # 25 cm, carrying on
+        a, b = self.line('line border', long), self.line('line border', [(525, 0), (525, 200)])
+        self.assertEqual(nodes.join_runs([a, b], 100.0, 0.05), 0)               # 25 cm, turning 90 degrees
+        a, b = self.line('line border', long), self.line('line border', [(540, 0), (700, 0)])
+        self.assertEqual(nodes.join_runs([a, b], 100.0, 0.05), 0)               # 40 cm: too far
+
+    def test_not_at_a_junction_nor_a_named_line(self):
         a = self.line('line border', [(0, 0), (100, 0), (200, 0)])
-        back = self.line('line border', [(200, 0), (150, 20), (100, 30)])
-        self.assertEqual(nodes.merge_short([a, back], 100.0, 0.2, turn_max=90), 0)   # if asked to be strict
+        b = self.line('line border', [(200, 0), (300, 0)])
+        c = self.line('line border', [(200, 0), (200, 100)])                    # a third ends there
+        self.assertEqual(nodes.join_runs([a, b, c], 100.0, 0.2), 0)
+        a = self.line('line border -id B1', [(0, 0), (100, 0), (200, 0)])
+        b = self.line('line border', [(200, 0), (300, 0)])
+        self.assertEqual(nodes.join_runs([a, b], 100.0, 0.2, named={'B1'}), 0)    # a join names it
+        self.assertEqual(nodes.join_runs([a, b], 100.0, 0.2), 1)                  # an id nothing names
+
+    def test_walls_joined_on_their_own(self):
+        a = self.line('line wall', [(0, 0), (100, 0), (200, 0), (300, 0), (400, 0)])
+        b = self.line('line wall', [(400, 0), (500, 50), (600, 50), (700, 50), (800, 0)])
+        c = self.line('line border', [(0, 50), (100, 50)])
+        self.assertEqual(nodes.join_runs([a, b, c], 100.0, 0.05), 0)            # walls only when asked
+        objs = [a, b, c]
+        self.assertEqual(nodes.join_runs(objs, 100.0, 0.05, walls=True), 1)
+        self.assertEqual(len(objs), 2)
+        b = self.line('line wall', [(1200, 0), (800, 0)])                        # ends where it ends: the other way round
+        self.assertEqual(nodes.join_runs([objs[0], b], 100.0, 0.05, walls=True), 0)
 
 
 class StepsKeepTheirTicks(unittest.TestCase):
@@ -233,10 +260,10 @@ class StepsKeepTheirTicks(unittest.TestCase):
     def test_steps_joined_only_running_the_same_way(self):
         a = self.line('line floor-step', [(0, 0), (100, 0), (200, 0)])
         b = self.line('line floor-step', [(300, 0), (210, 0)])          # runs the other way: ticks the other side
-        self.assertEqual(nodes.merge_short([a, b], 100.0, 0.2), 0)
+        self.assertEqual(nodes.join_runs([a, b], 100.0, 0.2), 0)
         c = self.line('line floor-step', [(210, 0), (300, 0)])
         objs = [a, c]
-        self.assertEqual(nodes.merge_short(objs, 100.0, 0.2), 1)
+        self.assertEqual(nodes.join_runs(objs, 100.0, 0.2), 1)
         s = objs[0].segments()
         self.assertEqual((tuple(s[0][-2:]), tuple(s[-1][-2:])), ((0.0, 0.0), (300.0, 0.0)))   # not turned round
 

@@ -84,7 +84,7 @@ LongwoodValleySink/Entrance/EntranceP.th2	EntranceSP2	scrap-author-copyright	1
 LongwoodValleySink/Entrance/EntranceP.th2	EntranceSP3	scrap-author-copyright	1
 LongwoodValleySink/FairyChimneys/FairyChimneys.plan.th2	FairyChimneysPX5	clip-off-reason	1
 LongwoodValleySink/FairyChimneys/FairyChimneys.plan.th2	FairyChimneysSP1	end-on-node	1
-LongwoodValleySink/GoSouth/GoSouth.extended.th2	GoSouthSE2	close-on-first-point	1
+LongwoodValleySink/GoSouth/GoSouth.extended.th2	GoSouthSEe2	close-on-first-point	1
 LongwoodValleySink/NorthRift/NorthRift.ee.th2	northrift-ee	scrap-author-copyright	1
 LongwoodValleySink/NorthRift/NorthRift.plan.th2	NorthRiftSP1	end-on-node	1
 LongwoodValleySink/NorthRift/NorthRift.plan.th2	NorthRiftSP1	line-points	1

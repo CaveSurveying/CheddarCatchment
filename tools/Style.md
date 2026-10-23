@@ -41,12 +41,13 @@ file is worked out from reviews and may be tuned.
   `LongwoodValleySink/Plan_only.thcfg`). Older names (`thconfig`,
   `thconfig_A0plan`, SexyTopo's `X.thconfig`) stay as they are.
 - A survey `X` lives in `<Cave>/X/`: `X.th`, its plan `X.plan.th2`,
-  its extended elevation `X.extended.th2` (scraps `XSE1`, …, in `map
-  XMEe`), projected elevations `XE315.th2` (and `XE000.th2`,
+  its extended elevation `X.extended.th2` (scraps `XSEe1`, …, in `map
+  XMEe`; `XSE1` is an error, the user 2026-10-22), projected elevations `XE315.th2` (and `XE000.th2`,
   `XE090.th2`), sketches in `X/Notes/*.xvi`. An extended elevation is
   drawn as sketched: laid out with the survey's own `extend` flags,
   not as it falls in the whole cave.
-- Plan scraps are `XSP1`, `XSP2`, …; elevation scraps `XSE315_1`, ….
+- Plan scraps are `XSP1`, `XSP2`, …, cross sections `XPX<station>`; extended
+  elevation scraps `XSEe1`, …; projected elevation scraps `XSE315_1`, ….
 - `X.th` has a `map XMP` listing its plan scraps (and `map XME315` for
   the elevation). The cave's plan map, `LongwoodValleySinkMP` in
   `LongwoodValleySink.th`, lists `XMP@X`; `Maps.th` holds group maps
@@ -100,14 +101,23 @@ file is worked out from reviews and may be tuned.
   each wall heads within 20 degrees of the other end (a gap in a wall:
   the walls run along it; at a continuation they are nearer square to
   it), where the outline is no worse.
-- A line meeting another of its kind end to end is merged into it: always
-  one of 2 nodes, one of 3 or 4 unless the join turns 90 degrees or more,
-  walls included (where the outline is no worse). A wall piece under
+- Lines of one kind (walls, borders, floor steps, pits, overhangs, the
+  same subtype) that run on into each other are one line, whatever their
+  length: floor steps above all, as their ticks look wrong at a break.
+  Ends too close to tell apart join whatever the angle (a sharp turn stays
+  a corner); ends up to 0.3 m apart join if the line carries on, turning
+  no more than 60 degrees. A wall, step, pitch or overhang is never turned
+  round to fit; a border may be. Not joined: a line a `join` names by its
+  id, where a third line of the kind ends (a junction), or where a wall's
+  outline would be worse. 3 or 4 nodes is a preferred minimum for a line,
+  not a length; a short line not running on into one of its kind just
+  happens sometimes (the user, 2026-10-22; to be developed as we go;
+  `join_runs`). A wall piece under
   5 cm on another wall's end is a slip, not drawn. A short piece running
   on from a border is a border (Connection 13 to 15). Merged lines are
   smooth through the joins: no corner is kept at a join unless the
   sketch has one there; pieces closing a loop make one `-close on` line,
-  smooth all round (Connection SE3's presumed `-outline in` wall, the
+  smooth all round (ConnectionSEe3's presumed `-outline in` wall, the
   user's edit).
 - A station on a line: its splays reaching well out on both sides, across
   the line's length and into the drawn passage, make the line inner
@@ -238,7 +248,9 @@ file is worked out from reviews and may be tuned.
 - A rock is a simplified line drawing seen from above: its outline
   angular and roughly convex (the hull of the sketched loop cut to 5 to 8
   corners by size, corners at least 6 cm apart), its rock edges
-  (`line rock-edge`, after the rock) in one of three styles, picked for
+  (`line rock-edge`, before the rock in the file: after it they are drawn
+  under its fill and do not show, Slingtastic 2026-10-22) in one of three
+  styles, picked for
   each rock (the same every run) so they don't all look alike:
   - a line across (about 35%), corner to a corner about opposite (two
     faces), on some rocks with a second line from another corner meeting
@@ -249,7 +261,9 @@ file is worked out from reviews and may be tuned.
     (top left), its shadow side drawn.
   Every corner inside the rock where edges meet has at least three lines
   meeting there, as at a corner of a solid, usually going out to corners
-  of the outline. Rocks lower on the page are drawn later, in front. Not
+  of the outline. Every end of a rock edge is on a point: a node of the
+  rock's border or of another rock edge, never loose inside the rock (a
+  ridge runs on to a corner; the user, 2026-10-22). Rocks lower on the page are drawn later, in front. Not
   copied from other drawings.
 - Walls that are rock or debris keep their subtype
   (`line wall -subtype debris`, `-subtype blocks`): drawn rocks do not
@@ -263,7 +277,7 @@ file is worked out from reviews and may be tuned.
   (`debris`, `blocks`) draws them in Therion's style. Only significant
   ones on a wall line are drawn (a boulder, about 0.3 m across or more).
   On a wall line is measured from the sketch's floor stroke as well as
-  the drawn wall (Connection SE4: a small rock 0.53 m from the drawn
+  the drawn wall (ConnectionSEe4: a small rock 0.53 m from the drawn
   wall but on the sketched floor, removed by the user).
 - Steps, by height:
   - significant boundaries and low steps under 20 cm: `line border`;
@@ -307,6 +321,9 @@ file is worked out from reviews and may be tuned.
 
 ## Extended elevations
 
+- In a pitch the passage reaches sideways from the legs to the walls on
+  each side, as far as the side splays go: a shaft's walls are often
+  drawn far from its legs (OIAS_V2, 2026-10-22; `pitch_fill`).
 - Walls carry a subtype for what they are drawn as: `sand` (brown: mud
   or sand, never `clay`), `flowstone` (green, smooth or running down
   a step), `blocks` (rock on the floor: green boulders or a humpy line),
@@ -622,8 +639,25 @@ file is worked out from reviews and may be tuned.
 - The drawing tools take the legs and splays from the sketch (`.xvi`),
   never from Therion's database or a layout Therion generates, so they
   run on any survey from its sketch and `.th` (the user, 2026-10-22).
+- Text is SexyTopo's own: the labels in its Therion export (`point …
+  label -text "…" -scale …`) are carried into the drawing exactly as
+  written, every one a `label`; their letters, which SexyTopo also draws
+  into the `.xvi`, are left out so they are not read as walls. Nothing is
+  worked out (no P6 or C1.5 from the legs, row 24).
+- A converted drawing never replaces a th2 holding anything the
+  converter did not write: only SexyTopo's export (stations and labels)
+  is written over; anything else needs `--force`.
+- Planned: SexyTopo's export leaves out its symbols (ENTRANCE, used in
+  OIAS Entrance as slope arrows, Therion `gradient`; pebbles, clay, which
+  are fills: an area of sand and pebbles; stalactites and stalagmites,
+  blocks), which are in its JSON only (a SexyTopo bug). The tools do not read the JSON; for OIAS_V2
+  they were added once by hand. To be fixed in SexyTopo, or read later.
 - Sketch both the plan and the extended elevation, and cross sections
   where the passage shape matters.
+- Colour is only a guide: what a line is depends on its type and where it
+  is. An outer line, with passage on one side only, is a wall whatever its
+  colour or marks (OIAS Entrance's gully, drawn brown with ticks; the
+  user, 2026-10-22).
 - Colours (`[convert]` in `tools/project.toml` tells the converter):
   - black: walls;
   - brown: mud, sand, debris and boulders, on a wall or across the
@@ -679,7 +713,7 @@ file is worked out from reviews and may be tuned.
   (`area blocks` or `area debris`) rather than drawing each one as well;
   an area stops at a trench or step and does not cross to the other
   side. A single boulder is a `line rock-border` (straight sides, not
-  smoothed) with its `line rock-edge` after it in the file, one edge line
+  smoothed) with its `line rock-edge` before it in the file, one edge line
   where its pieces share a point.
 - Lines other than boulders are smooth: points only where the line
   really bends, with splines, not every point of the sketch. How closely

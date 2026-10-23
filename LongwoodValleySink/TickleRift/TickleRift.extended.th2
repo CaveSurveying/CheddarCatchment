@@ -6,7 +6,7 @@ encoding  utf-8
 #   TickleRiftE0.th2 TickleRiftSE01: facing 0, stations within 0.00 m
 #   TickleRiftE90.th2 TickleRiftSE901: facing 90, stations within 0.00 m
 
-scrap TickleRiftSE1 -projection extended -author 2022.09.19 "John Cooper" -copyright 2022 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TickleRiftSEe1 -projection extended -author 2022.09.19 "John Cooper" -copyright 2022 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 line wall
   -601.65 546.10

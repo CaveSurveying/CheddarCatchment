@@ -63,6 +63,7 @@ data normal from to tape compass clino ignoreall
 #5	6	2.889	120.32	-2.63
 #5	6	2.857	120.48	-2.53
 #5	6	2.854	120.77	-2.76
+2  7  8.559  125.70  82.49
 
 extend start 1
 extend left 3

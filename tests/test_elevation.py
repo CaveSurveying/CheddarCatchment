@@ -168,3 +168,15 @@ class ShortLinks(unittest.TestCase):
         walls, _, _ = convert.wall_strokes([('BROWN', a), ('GREEN', link), ('BROWN', b), ('GREEN', loose)])
         self.assertIn(link, walls)
         self.assertNotIn(loose, walls)
+
+
+class PitchFill(unittest.TestCase):
+    def test_a_shaft_fills_sideways_to_its_walls(self):
+        from shapely.geometry import Point
+        from tools.sketch2therion.convert import elevation_fill
+        walls = [[(-5.0, -1.0), (-5.0, 11.0)], [(6.0, 11.0), (6.0, -1.0)]]     # a shaft 11 m across
+        legs = [((0.0, 0.0), (0.2, 10.0))]                                      # hung down its middle
+        filled = lambda side: any(p.contains(Point(-4, 5)) and p.contains(Point(5, 5))
+                                  for p in elevation_fill(walls, legs, side=side))
+        self.assertTrue(filled(7.0))
+        self.assertFalse(filled(0.0))       # without the side reach only the walls' and legs' edges

@@ -13,7 +13,7 @@ endmap
 input "Triassic.extended.th2"
 
 map TriassicMEe
-  TriassicSE1
+  TriassicSEe1
 endmap
 
 input TriassicE000.th2

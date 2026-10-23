@@ -87,7 +87,9 @@ plan its floor steps, climbs and gradient arrows.
    A fit within a few centimetres is normal; stations Therion doesn't
    know mean the trip isn't input, the layout is stale or `--survey`
    is wrong.
-5. **Convert the plan:**
+5. **Convert the plan** (SexyTopo's labels come from its th2 export,
+   the one with this sketch as its backdrop; a th2 that is not that
+   export is not overwritten without `--force`):
    ```bash
    python3 -m tools.sketch2therion plan LongwoodValleySink/X/Notes/XP.xvi \
      --survey X --floor LongwoodValleySink/X/Notes/XEE.xvi \

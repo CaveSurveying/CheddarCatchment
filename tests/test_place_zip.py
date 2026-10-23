@@ -42,7 +42,7 @@ EMPTY = "encoding utf-8\nscrap GoSouthSP1 -projection plan\npoint 0 0 station -n
 DRAWN = ('encoding  utf-8\n##XTHERION## xth_me_image_insert {667.33 1 1.0} {-1568.15 22} {Notes/GoSouthP.xvi} 0 {}\n'
          'scrap GoSouthSP1 -projection plan\nline wall\n  0 0\n  1 1\nendline\nendscrap\n'
          'scrap GoSouthSP2 -projection plan\nline wall\n  2 2\n  3 3\nendline\nendscrap\n'
-         'scrap GoSouthSE1 -projection extended\nendscrap\n')
+         'scrap GoSouthSEe1 -projection extended\nendscrap\n')
 
 
 class Fixture(unittest.TestCase):
@@ -77,7 +77,7 @@ class PlaceTest(Fixture):
         self.assertIn('input "GoSouth.plan.th2"\n\nmap GoSouthMP\n  GoSouthSP1\n  GoSouthSP2\nendmap\n'
                       'input "GoSouthE.th2"', th)
         self.assertIn('# input "Old.th2"', th)                       # comments left alone
-        self.assertNotIn("GoSouthSE1", th)                           # plan scraps only
+        self.assertNotIn("GoSouthSEe1", th)                           # plan scraps only
         master = self.get("LongwoodValleySink/LongwoodValleySink.th")
         self.assertIn("  NorthRiftMP\n  GoSouthMP@GoSouth\nendmap\nmap LongwoodValleySinkM315", master)
 

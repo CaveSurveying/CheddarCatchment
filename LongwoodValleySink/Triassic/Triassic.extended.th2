@@ -8,7 +8,7 @@ encoding  utf-8
 #   TriassicE315.th2 TriassicSE315_1: facing 315, stations within 0.07 m
 #   TriassicE90.th2 TriassicSE90_1: facing 90, stations within 0.02 m
 
-scrap TriassicSE1 -projection extended -author 2015.03.14 "Andrew Atkinson" -copyright 2015 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TriassicSEe1 -projection extended -author 2015.03.14 "Andrew Atkinson" -copyright 2015 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 line wall
   -332.20 -1.96

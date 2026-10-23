@@ -11,7 +11,7 @@ endmap
 input "GoWest.extended.th2"
 
 map GoWestMEe
-  GoWestSE1
+  GoWestSEe1
 endmap
 
 input GoWestE000.th2

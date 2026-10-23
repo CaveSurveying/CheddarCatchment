@@ -7,7 +7,7 @@ encoding  utf-8
 #   TennisBallRiftE315.th2 TennisBallRiftSE315_1: facing 315, stations within 0.03 m
 #   TennisBallRiftE90.th2 TennisBallRiftSE901: facing 90, stations within 0.01 m
 
-scrap TennisBallRiftSE1 -projection extended -author 2014.05.25 "Andrew Atkinson" -copyright 2014 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TennisBallRiftSEe1 -projection extended -author 2014.05.25 "Andrew Atkinson" -copyright 2014 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 line wall
   166.28 185.70

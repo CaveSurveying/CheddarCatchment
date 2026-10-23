@@ -12,7 +12,7 @@ encoding  utf-8
 
 
 
-scrap TridentSE1 -projection extended -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TridentSEe1 -projection extended -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # wall-subtype sand: 39.2 -49.3 35.1 -49.3 33.4 -49.8 32.1 -49.8 31.1 -49.3 16.9 -49.3 11.4 -48.3 4.5 -47.8 1.6 -46.8 0.5 -46.8 -0.2 -46.3 -4.2 -45.8 -5.8 -45.0 -8.0 -45.3 -12.0 -43.8 -13.4 -42.8 -16.1 -42.7 -20.7 -41.0 -21.7 -41.2 -24.8 -40.2 -31.3 -36.5 -41.2 -28.9 -44.5 -27.6 -47.5 -26.6 -53.1 -25.6 -60.6 -25.6 -61.6 -25.0 -66.6 -24.0 -67.8 -23.5 -68.5 -22.8 -71.3 -22.0 -75.1 -20.0
 # wall-subtype sand: 479.1 -83.6 470.1 -83.6 440.7 -90.6 407.5 -105.8 392.8 -110.8 388.2 -110.5 332.8 -121.2 328.2 -123.5 310.0 -127.5 284.9 -135.6 276.3 -139.6 264.0 -141.8 252.0 -145.4 234.1 -153.3 228.5 -157.1 220.8 -164.6 213.3 -169.6 204.3 -173.2 170.2 -181.3 147.6 -194.7
@@ -108,7 +108,7 @@ endscrap
 
 
 
-scrap TridentSE2 -projection extended -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TridentSEe2 -projection extended -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 line wall
   1888.85 195.97
@@ -163,7 +163,7 @@ endscrap
 
 
 
-scrap TridentSE3 -projection extended -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TridentSEe3 -projection extended -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # wall-subtype debris 0.5: 2864.2 141.3 2862.3 137.4 2850.7 122.9 2849.9 122.1 2849.9 121.6 2851.4 121.6 2857.8 128.0 2858.3 137.4 2846.1 144.3 2828.4 139.5 2812.1 128.1 2811.0 127.6
 # wall-subtype debris 0.5: 2735.2 121.6 2733.2 119.7 2712.0 104.4 2705.1 96.5 2706.6 97.0 2714.0 103.4 2719.4 111.0 2720.9 112.3 2707.4 112.8 2689.7 109.7 2675.0 102.8 2672.1 100.9
@@ -420,7 +420,7 @@ endscrap
 
 
 
-scrap TridentSE4 -projection extended -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap TridentSEe4 -projection extended -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # wall-subtype flowstone: 7994.5 802.0 7961.9 773.1 7949.5 760.7 7947.1 757.0 7945.2 757.1 7922.1 742.0 7899.6 730.8 7892.0 728.3 7849.3 706.0 7816.9 681.7 7793.8 668.5 7783.8 661.0 7776.3 657.3 7767.6 649.8 7763.9 648.5 7745.1 632.4 7741.8 631.1 7740.2 629.0 7727.6 621.2 7726.5 617.4
 

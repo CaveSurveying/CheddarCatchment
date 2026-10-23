@@ -11,7 +11,7 @@ endmap
 input "Entrance.extended.th2"
 
 map EntranceMEe
-  EntranceSE1
+  EntranceSEe1
 endmap
 
 input EntranceE000.th2

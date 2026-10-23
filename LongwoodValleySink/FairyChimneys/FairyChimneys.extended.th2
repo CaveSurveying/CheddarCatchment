@@ -12,7 +12,7 @@ encoding  utf-8
 
 
 
-scrap FairyChimneysSE1 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap FairyChimneysSEe1 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # wall-subtype presumed: 5315.9 -509.7 5322.9 -483.2 5338.3 -429.4 5341.7 -407.4 5363.9 -325.2 5375.8 -304.4 5393.6 -283.0 5400.6 -278.0 5427.7 -202.5 5439.3 -186.5 5452.6 -155.7 5463.9 -143.7 5469.3 -136.2 5480.7 -132.6
 # wall-subtype presumed: 5739.3 -367.1 5740.9 -367.4 5765.4 -377.6 5786.2 -381.9 5835.9 -414.2 5856.2 -423.2 5923.6 -463.5 5940.6 -469.9 6019.9 -501.3 6045.6 -510.6 6102.9 -532.0 6123.0 -531.0
@@ -275,7 +275,7 @@ endscrap
 
 
 
-scrap FairyChimneysSE2 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap FairyChimneysSEe2 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # wall-subtype presumed: 1420.0 -201.1 1419.6 -177.8 1420.7 -163.1 1416.4 -137.6 1420.8 -114.4 1416.0 -92.3
 # wall-subtype presumed: 1457.5 -77.4 1460.4 -99.9 1463.8 -118.8 1464.1 -137.4 1475.1 -163.6 1479.0 -177.7 1480.9 -197.6 1481.4 -206.7
@@ -317,7 +317,7 @@ endscrap
 
 
 
-scrap FairyChimneysSE3 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap FairyChimneysSEe3 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 line wall
   1645.47 -466.3
@@ -361,7 +361,7 @@ endscrap
 
 
 
-scrap FairyChimneysSE4 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap FairyChimneysSEe4 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 # wall-subtype presumed: 5315.9 -509.7 5322.9 -483.2 5338.3 -429.4 5341.7 -407.4 5363.9 -325.2 5375.8 -304.4 5393.6 -283.0 5400.6 -278.0 5427.7 -202.5 5439.3 -186.5 5452.6 -155.7 5463.9 -143.7 5469.3 -136.2 5480.7 -132.6
 # wall-subtype presumed: 5739.3 -367.1 5740.9 -367.4 5765.4 -377.6 5786.2 -381.9 5835.9 -414.2 5856.2 -423.2 5923.6 -463.5 5940.6 -469.9 6019.9 -501.3 6045.6 -510.6 6102.9 -532.0 6123.0 -531.0
@@ -416,7 +416,7 @@ endscrap
 
 
 
-scrap FairyChimneysSE5 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+scrap FairyChimneysSEe5 -projection extended -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 
 point 5379.23 -929.39 station -name 35
 

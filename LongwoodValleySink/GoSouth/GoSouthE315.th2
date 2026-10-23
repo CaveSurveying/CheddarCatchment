@@ -11,7 +11,7 @@ encoding  utf-8
 
 scrap GoSouthSE315_1 -projection [elevation 315] -author 2026.04.25 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of GoSouthSE1 (GoSouth.extended.th2) projected to 315.
+# Walls of GoSouthSEe1 (GoSouth.extended.th2) projected to 315.
 
 line wall
   -10.11 50.62
@@ -77,7 +77,7 @@ endscrap
 
 scrap GoSouthSE315_2 -projection [elevation 315] -author 2026.04.25 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of GoSouthSE1 (GoSouth.extended.th2) projected to 315.
+# Walls of GoSouthSEe1 (GoSouth.extended.th2) projected to 315.
 
 line wall -subtype sand
   54.60 59.82
@@ -97,7 +97,7 @@ endscrap
 
 scrap GoSouthSE315_3 -projection [elevation 315] -author 2026.04.25 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of GoSouthSE2 (GoSouth.extended.th2) projected to 315.
+# Walls of GoSouthSEe2 (GoSouth.extended.th2) projected to 315.
 
 line wall
   26.04 23.50

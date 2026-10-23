@@ -14,7 +14,7 @@ import unittest
 
 try:
     from shapely.geometry import LineString, Point, Polygon
-    from tools.sketch2therion import convert, jogs, settings, smooth, tidy
+    from tools.sketch2therion import convert, jogs, nodes, settings, smooth, tidy
 except ImportError:
     convert = None
 
@@ -146,7 +146,7 @@ class JoinTest(unittest.TestCase):
 
 @unittest.skipUnless(convert, "needs shapely")
 class BorderJoinTest(unittest.TestCase):
-    """join_borders: border pieces carrying on across a small gap are one line."""
+    """join_runs: border pieces carrying on across a small gap are one line."""
 
     def obj(self, pts):
         o = tidy.Obj('line', 'line border', [])
@@ -156,13 +156,13 @@ class BorderJoinTest(unittest.TestCase):
     def test_joined_across_gap(self):
         K = 78.74
         objs = [self.obj([(0, 0), (K, 0)]), self.obj([(1.2 * K, 0), (2 * K, 0)])]
-        self.assertEqual(jogs.join_borders(objs, K), 1)
+        self.assertEqual(nodes.join_runs(objs, K), 1)
         self.assertEqual(len([o for o in objs if o.kind == 'line']), 1)
 
     def test_not_joined_round_a_corner(self):
         K = 78.74
         objs = [self.obj([(0, 0), (K, 0)]), self.obj([(1.1 * K, 0.1 * K), (1.1 * K, K)])]
-        self.assertEqual(jogs.join_borders(objs, K), 0)
+        self.assertEqual(nodes.join_runs(objs, K), 0)
 
 
 @unittest.skipUnless(convert, "needs shapely")
