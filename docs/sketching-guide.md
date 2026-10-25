@@ -15,25 +15,6 @@ With modern survey kit, collecting the data is quick and easy. The drawing is no
 - At each junction, sketch a way down every passage, with its walls, floor and roof. Any distance will do.
 - Never finish a survey at a junction: if the last station is one, draw a little way down each passage. Otherwise draw the passage on a little past the last station.
 
-## SexyTopo and its export
-
-Use SexyTopo 1.12.3 or later. Set the Therion export so that a survey called SurveyName gives these files.
-
-In the names below, `#` stands for a number: a scrap's number, or for a cross section its station.
-
-| File | Holds | SexyTopo setting in Therion |
-| --- | --- | --- |
-| `SurveyName.th` | The data, date, team with roles, copyright, equates and maps | |
-| `SurveyNameP.th2` | The plan sketch<br>scraps `SurveyNameSP#`<br>cross sections, `SurveyNameSX#` | Plan File suffix: P<br>Plan Scrap suffix: SP#<br>Plan x-section suffix: SX# |
-| `SurveyNameEe.th2` | The extended elevation sketch<br>scraps `SurveyNameSEe#`<br>vertical cross sections `SurveyNameSVX#`<br>horizontal cross sections `SurveyNameSHX#` | EE File Suffix: Ee<br>EE scrap suffix: SEe#<br>Vertical x-section suffix: SVX#<br>Horizontal x-section suffix: SHX# |
-| `Notes/` | A folder holding the xvi drawings | XVI folder: Notes |
-| `SurveyNameP.xvi` | Plan sketch as a backdrop | Taken from file name |
-| `SurveyNameEe.xvi` | Extended elevation sketch as a backdrop | Taken from file name |
-
-Export folder name should be set to nothing (blank) and the export subtype tick box unticked
-
-In the trip information, give the date and each person's role. The Licence should be GPLv3.0+
-
 ## The drawings and the model
 
 Understanding the 3D model also helps. In most cases it needs the same as the sketch, but it is worth knowing how it is built. Therion's 3D model builds each passage from five things you produce in the cave:
@@ -171,3 +152,23 @@ Always sketch the elevation. It sets the roof and floor in the drawings and the 
 
 - **One roof and one floor per passage**
 - **Traverse:** drawn as a line with three or more short straight ticks hanging from one side.
+
+## SexyTopo and its export
+
+Use SexyTopo 1.12.3 or later. Set the Therion export so that a survey called SurveyName gives these files.
+
+In the names below, `#` stands for a number: a scrap's number, or for a cross section its station.
+
+| File | Holds | SexyTopo setting in Therion |
+| --- | --- | --- |
+| `SurveyName.th` | The data, date, team with roles, copyright, equates and maps | |
+| `SurveyNameP.th2` | The plan sketch<br>scraps `SurveyNameSP#`<br>cross sections, `SurveyNameSX#` | Plan File suffix: P<br>Plan Scrap suffix: SP#<br>Plan x-section suffix: SX# |
+| `SurveyNameEe.th2` | The extended elevation sketch<br>scraps `SurveyNameSEe#`<br>vertical cross sections `SurveyNameSVX#`<br>horizontal cross sections `SurveyNameSHX#` | EE File Suffix: Ee<br>EE scrap suffix: SEe#<br>Vertical x-section suffix: SVX#<br>Horizontal x-section suffix: SHX# |
+| `Notes/` | A folder holding the xvi drawings | XVI folder: Notes |
+| `SurveyNameP.xvi` | Plan sketch as a backdrop | Taken from file name |
+| `SurveyNameEe.xvi` | Extended elevation sketch as a backdrop | Taken from file name |
+
+Export folder name should be set to nothing (blank) and the export subtype tick box unticked
+
+In the trip information, give the date and each person's role. The Licence should be GPLv3.0+
+
