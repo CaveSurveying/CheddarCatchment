@@ -43,6 +43,8 @@ jobs:
           /opt/venv/bin/pip install -q pytest git-filter-repo
 
       - uses: actions/checkout@v5
+        with:
+          submodules: true     # tools/sketch2therion, the shared tools
 
       # The checkout belongs to the runner's user; git in the container
       # (root) refuses it as "dubious ownership" unless told it is safe.
@@ -64,6 +66,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          submodules: true     # tools/sketch2therion, the shared tools
 
       # output/ is git-ignored, and Therion will not create it.
       - name: Create output directory

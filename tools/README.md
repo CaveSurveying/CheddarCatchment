@@ -26,6 +26,13 @@ CC BY-NC-SA 4.0.
 
 ## Setting up
 
+`tools/sketch2therion` is a git submodule, the tools and drawing rules
+shared with other caves
+([CaveSurveying/Therion-Sketching](https://github.com/CaveSurveying/Therion-Sketching)).
+Clone with `git clone --recurse-submodules`, or run
+`git submodule update --init` in a clone made without it. A change to
+the rules is made there, then this repository moves its submodule on.
+
 You need Python 3.11 or later with the libraries in `sketch2therion/requirements.txt`,
 and Therion. CI uses Therion 6.4.0 in Docker (see
 `.github/workflows/build.yml`) and is the reference renderer; a local
