@@ -6,7 +6,7 @@ kept up to date from each drawing session and review (see "Updating
 this file"). `tools/sketch2therion` (`plan`, `tidy`, `sections`) follows
 it; keep to it when editing by hand too.
 
-Rules tagged **[lint: id]** are checked by `python3 tools/th2lint.py`
+Rules tagged **[lint: id]** are checked by `python3 -m tools.sketch2therion.th2lint`
 under that id; every id here has a check there, and the reverse. The other rules
 need a person to look at the render.
 
@@ -817,7 +817,7 @@ Build with `therion -l ../output/therion.log Plan_only.thcfg` in
   there should be none.
 - `grep "intersects itself" output/*.log | sort -u`: only scraps you
   didn't touch.
-- `python3 tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg`
+- `python3 -m tools.sketch2therion.th2lint --from LongwoodValleySink/Plan_only.thcfg`
   is clean.
 - `python3 -m tools.sketch2therion review check X/X.plan.th2`: every
   outline valid and its turning number not 0 (0 is MetaPost's
@@ -851,5 +851,5 @@ Build with `therion -l ../output/therion.log Plan_only.thcfg` in
 ## Updating this file
 
 Add whatever a review or drawing session teaches, in the same commit as
-the drawing. Tag a rule **[lint]** only when `tools/th2lint.py` checks
+the drawing. Tag a rule **[lint]** only when `tools/sketch2therion/th2lint.py` checks
 it, under a new id, and add the check in the same commit.

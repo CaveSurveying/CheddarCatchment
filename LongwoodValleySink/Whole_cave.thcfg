@@ -1,7 +1,7 @@
 encoding  utf-8
 # Whole cave check build: plan, extended elevation and 315 projected
 # elevation, built at the end of every run that edits th2 files
-# (tools/Style.md, Checking). Not a survey output: the fill is coloured
+# (tools/sketch2therion/Style.md, Checking). Not a survey output: the fill is coloured
 # by scrap, with the legs and station names shown, so the drawing can be
 # checked against the survey. The SVGs draw the same as the PDFs; the
 # ESRI and XVI exports in ../output/check/ are what

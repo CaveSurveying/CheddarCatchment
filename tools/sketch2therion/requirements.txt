@@ -1,4 +1,4 @@
-# Python libraries for tools/ (pip install -r tools/requirements.txt).
+# Python libraries for tools/ (pip install -r tools/sketch2therion/requirements.txt).
 shapely>=2.0        # sketch2therion: geometry
 numpy               # sketch2therion review: fitting
 matplotlib          # sketch2therion review show: the sketch panel

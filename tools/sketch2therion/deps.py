@@ -1,3 +1,5 @@
+# Part of tools/sketch2therion (new for the Cheddar Catchment survey).
+# GPLv3: see LICENSE.
 """List every file a Therion build needs, starting from a thconfig.
 
 Follows `source` and `input` (relative to the file that contains them,
@@ -6,7 +8,7 @@ to the thconfig's folder, where Therion runs). Reports targets that are
 missing, and targets that only exist with different letter case (they
 work on Windows but not on Linux or in CI).
 
-    python3 -m tools.svn2git.deps ROOT LongwoodValleySink/thconfig --within LongwoodValleySink
+    python3 -m tools.sketch2therion.deps ROOT LongwoodValleySink/thconfig --within LongwoodValleySink
 """
 
 import argparse

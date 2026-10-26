@@ -1,6 +1,8 @@
+# Part of tools/sketch2therion (new for the Cheddar Catchment survey).
+# GPLv3: see LICENSE.
 """The per-cave settings in tools/project.toml.
 
-    from tools import project
+    from tools.sketch2therion import project
     p = project.load()
     p.plan_file("GoSouth")      # LongwoodValleySink/GoSouth/GoSouth.plan.th2
     p.path(p.build["sql"])      # absolute path
@@ -10,7 +12,8 @@ import os
 import re
 import tomllib
 
-REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# The cave's repository: this package is at tools/sketch2therion in it
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 TOML = os.path.join(REPO, "tools", "project.toml")
 
 REQUIRED = {

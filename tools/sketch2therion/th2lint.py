@@ -1,13 +1,15 @@
-"""Check Therion scraps (.th2) against the [lint] rules in tools/Style.md.
+# Part of tools/sketch2therion (new for the Cheddar Catchment survey).
+# GPLv3: see LICENSE.
+"""Check Therion scraps (.th2) against the [lint] rules in tools/sketch2therion/Style.md.
 
 Each check has the id of the `[lint: id]` tag in Style.md. Findings
 already listed in the baseline file (existing drawings) are reported
 but do not fail; new findings fail, and baseline entries that no
 longer occur are reported so they can be removed.
 
-    python3 tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg
-    python3 tools/th2lint.py some/file.th2 other/file.th2
-    python3 tools/th2lint.py --from ... --update-baseline
+    python3 -m tools.sketch2therion.th2lint --from LongwoodValleySink/Plan_only.thcfg
+    python3 -m tools.sketch2therion.th2lint some/file.th2 other/file.th2
+    python3 -m tools.sketch2therion.th2lint --from ... --update-baseline
 """
 
 import argparse
@@ -18,9 +20,9 @@ import sys
 from dataclasses import dataclass, field
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(HERE)
+REPO = os.path.dirname(os.path.dirname(HERE))
 STYLE = os.path.join(HERE, "Style.md")
-BASELINE = os.path.join(HERE, "th2lint-baseline.txt")
+BASELINE = os.path.join(REPO, "tools", "th2lint-baseline.txt")   # the cave's drawings
 
 LABEL_SCALES = {"xl", "l", "m", "s", "xs"}
 CLIMB_WITH_UNITS = re.compile(r"^\s*[CP]\s*\d+(?:\.\d+)?\s*m(?:etres?)?\s*$", re.IGNORECASE)
@@ -337,7 +339,7 @@ def read_baseline(path):
 def write_baseline(path, findings):
     with open(path, "w", encoding="utf-8") as f:
         f.write("# Existing th2lint findings, not failing CI. Remove a line when it is fixed.\n")
-        f.write("# Regenerate with: python3 tools/th2lint.py --from ... --update-baseline\n")
+        f.write("# Regenerate with: python3 -m tools.sketch2therion.th2lint --from ... --update-baseline\n")
         for key in sorted({x.key() for x in findings}):
             f.write(key + "\n")
 
@@ -346,7 +348,7 @@ def files_from(thcfg, root=REPO):
     """The .th2 files a config file builds."""
     if REPO not in sys.path:
         sys.path.insert(0, REPO)
-    from tools.svn2git import deps
+    from tools.sketch2therion import deps
     res = deps.walk(root, os.path.normpath(thcfg))
     return [f for f in res.files if f.endswith(".th2")]
 

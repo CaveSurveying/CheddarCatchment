@@ -4,8 +4,9 @@ import os
 import re
 import unittest
 
-from tools import project
-from tools.svn2git import deps, inventory
+from tools.sketch2therion import project
+from tools.sketch2therion import deps
+from tools.svn2git import inventory
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,7 +76,7 @@ class WorkflowTest(unittest.TestCase):
 
     def test_runs_tests_and_lint(self):
         self.assertIn("python -m pytest -q tests", self.text)
-        self.assertIn("tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg", self.text)
+        self.assertIn("-m tools.sketch2therion.th2lint --from LongwoodValleySink/Plan_only.thcfg", self.text)
 
     def test_tests_run_where_git_svn_installs(self):
         test_job = self.text[self.text.index("  test:\n"):self.text.index("  build:\n")]
@@ -98,7 +99,7 @@ class PointerDocsTest(unittest.TestCase):
 
     def test_skill_does_not_copy_style(self):
         skill = read(".claude/skills/therion-drawing/SKILL.md")
-        self.assertIn("tools/Style.md", skill)
+        self.assertIn("tools/sketch2therion/Style.md", skill)
         self.assertNotIn("[lint", skill)
         self.assertLess(len(skill.splitlines()), 40)
 

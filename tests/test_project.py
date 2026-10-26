@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from tools import project
+from tools.sketch2therion import project
 
 MINIMAL = """
 [cave]
@@ -66,7 +66,7 @@ class ProjectTest(unittest.TestCase):
             self.assertRegex(f.read(), rf"(?m)^map {self.p.cave['plan_map']}\b")
 
     def test_licence_matches_style(self):
-        with open(self.p.path("tools/Style.md"), encoding="utf-8") as f:
+        with open(self.p.path("tools/sketch2therion/Style.md"), encoding="utf-8") as f:
             self.assertIn(self.p.drawing["licence"], f.read())
 
     def test_sheets(self):

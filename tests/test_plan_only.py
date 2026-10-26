@@ -56,7 +56,7 @@ class PlanOnlyTest(unittest.TestCase):
         self.assertIn(LICENCE, m.group(1))
 
     def test_style_gives_the_same_licence(self):
-        self.assertIn(LICENCE, read(os.path.join(REPO, "tools", "Style.md")))
+        self.assertIn(LICENCE, read(os.path.join(REPO, "tools", "sketch2therion", "Style.md")))
 
     def test_uses_common_layout(self):
         self.assertIn("input ../common_layout.th", active(self.text))

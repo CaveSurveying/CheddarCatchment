@@ -396,7 +396,7 @@ class Elevations(unittest.TestCase):
         self.assertTrue(_lumpy(loop))
 
     def test_extended_scraps_by_hand(self):
-        from tools import project
+        from tools.sketch2therion import project
         P = project.load()
         self.assertEqual(P.scraps_extended.get('GoSouth'), ['1-16', '17-29'])
         self.assertEqual(len(P.scraps_extended.get('Trident')), 4)      # the user's split, log row 150

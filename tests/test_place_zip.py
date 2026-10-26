@@ -6,7 +6,7 @@ import tempfile
 import unittest
 import zipfile
 
-from tools import project
+from tools.sketch2therion import project
 from tools.sketch2therion import place, reviewzip
 
 TOML = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "tools", "project.toml")

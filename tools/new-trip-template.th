@@ -4,7 +4,7 @@ encoding  utf-8
 # wrote, or as a start when it did not. A trip X lives in
 # LongwoodValleySink/X/X.th, with its plan drawing X.plan.th2 and its
 # sketches in X/Notes/. See tools/README.md for the whole workflow and
-# tools/Style.md for the conventions.
+# tools/sketch2therion/Style.md for the conventions.
 #
 # Then, in LongwoodValleySink/LongwoodValleySink.th:
 #   input X/X.th

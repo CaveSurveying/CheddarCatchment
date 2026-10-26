@@ -2,7 +2,7 @@
 
 Status: agreed 2026-10-06. **Phase 1 done** (findings and check point
 answers in `docs/lvs-phase1.md`, survey table in `docs/lvs-inventory.md`).
-**Phase 2 done** (`tools/Style.md` revised). **Phase 3 done**
+**Phase 2 done** (`tools/sketch2therion/Style.md` revised). **Phase 3 done**
 (2026-10-07): SVN history to r501 merged, `verify` clean, authors with
 placeholder emails. **Phase 4 done** (2026-10-07): the tools, the
 plan-only thconfig and CI (see "Phase 4 as built"). **Phase 5 started**
@@ -33,7 +33,7 @@ they will be worked on over time.
 4. Draw the **plan** `.th2` files that have not yet been drawn, for
    surveys undertaken **this year (2026)** only, copying the style and
    good practice of the rest of LongwoodValleySink.
-5. Keep `tools/Style.md` as a working file recording what improves the
+5. Keep `tools/sketch2therion/Style.md` as a working file recording what improves the
    output, and improve it from what we learn.
 
 ## Decisions taken
@@ -48,7 +48,7 @@ they will be worked on over time.
 | Licences | Aligned. Survey data: CC BY-NC-SA, as on the existing sheets (version to confirm). Tools: GPLv3, as the Swildons tools. `Style.md` and `Plan_only.thcfg` say the same; the existing files are left as they are in this trial. |
 | How 2026 surveys were sketched | SexyTopo. |
 | Publishing | CI build artefacts and a PR comment only; no GitHub Pages (the repository is private). |
-| `tools/Style.md` | Does not exist in SVN. Created new, starting from the supplied skill file (committed as-is alongside this plan), then revised as in Phase 2. |
+| `tools/sketch2therion/Style.md` | Does not exist in SVN. Created new, starting from the supplied skill file (committed as-is alongside this plan), then revised as in Phase 2. |
 | Working branch | `claude/serene-cerf-h45zcu`. |
 
 Assumptions: "this year" means a centreline `date` in 2026. A plan is
@@ -114,7 +114,7 @@ inputs on purpose (`GoWest`, `TickleRift`).
    renamed from `Long_Vall_Sink/`, `Longwood/` or elsewhere, add those
    source paths to the include filter for the revisions before the copy,
    so history is not cut at the copy.
-5. **Dependency walk:** `tools/svn2git/deps.py` follows every `input`,
+5. **Dependency walk:** `tools/sketch2therion/deps.py` follows every `input`,
    `source`, `load` and `\loadpicture` from
    `LongwoodValleySink/Plan_only.thcfg` (as planned) and lists every
    file outside
@@ -137,7 +137,7 @@ inputs on purpose (`GoWest`, `TickleRift`).
    - Git LFS;
    - extra paths from the dependency walk and copy history.
 
-## Phase 2: First revision of `tools/Style.md`
+## Phase 2: First revision of `tools/sketch2therion/Style.md`
 
 Done before the tools, because `th2lint` (Phase 4) reads the `[lint]`
 rules from it. The committed file is the supplied starting version,
@@ -242,15 +242,15 @@ Phase 5 keeps revising it as drawing teaches us more.
 
 | New path | From | Change |
 |---|---|---|
-| `tools/project.toml`, `tools/project.py` | new | Per-cave config: master `.th`, thconfig (`Plan_only.thcfg`), the plan map and the file it is in, file/scrap/map name patterns, which sketches are plans, line endings, map scale, licence, sheets. LongwoodValleySink first. |
+| `tools/project.toml`, `tools/sketch2therion/project.py` | new | Per-cave config: master `.th`, thconfig (`Plan_only.thcfg`), the plan map and the file it is in, file/scrap/map name patterns, which sketches are plans, line endings, map scale, licence, sheets. LongwoodValleySink first. |
 | `tools/svn2git/` | new | `svnhttp.py`, `deps.py`, `inventory.py`, `authors.txt`, `verify.py`, `migrate.sh`, and `sync.py` (Python, so it shares the rewrite and is tested) as SVN stays master; `sync.py` records SVN revisions already in git (option C, below). |
 | `tools/sketch2therion/` | Swildons | Names read from `project.toml`; output on LongwoodValleySink sketches identical to the unmodified upstream code apart from the licence line (regression test). `sections` not ported (no LongwoodValleySink plan has cross-sections). `review` ported, working per survey on a rotated sheet. |
 | `tools/layout.thcfg`, `tools/layout.th` | Swildons | Renamed from `layout.thconfig` to the `.thcfg` convention; point at the LongwoodValleySink master survey; also export `output/layout.sql` for `roofs` and `details`. |
 | `tools/new-trip-template.th` | Swildons | LongwoodValleySink naming (`…SP1`, `…SE315_1`) and equate example. |
 | `tools/web/make_index.py` | Swildons | Sheet list from config; writes `output/index.html` and `output/stats.md` (statistics from the log). |
-| `tools/th2lint.py` | new | Checks the `.th2` files that `Plan_only.thcfg` builds against the `[lint]` rules in `tools/Style.md`. Existing drawings are covered by a baseline file (`tools/th2lint-baseline.txt`); CI fails only on new findings, and fixing a baseline entry removes it. |
+| `tools/sketch2therion/th2lint.py` | new | Checks the `.th2` files that `Plan_only.thcfg` builds against the `[lint]` rules in `tools/sketch2therion/Style.md`. Existing drawings are covered by a baseline file (`tools/th2lint-baseline.txt`); CI fails only on new findings, and fixing a baseline entry removes it. |
 | `.github/workflows/build.yml` | Swildons | Builds `LongwoodValleySink/Plan_only.thcfg` only, pytest, `th2lint`, Therion error gate, PR comment, run artefact. Therion image pinned by digest, not tag. OSTN15 grid only if the cave's `cs` needs it. No Pages deploy. |
-| `.claude/skills/therion-drawing/SKILL.md`, `AGENTS.md` | Swildons | Short pointers to `tools/Style.md`, the single source of truth. |
+| `.claude/skills/therion-drawing/SKILL.md`, `AGENTS.md` | Swildons | Short pointers to `tools/sketch2therion/Style.md`, the single source of truth. |
 | `tools/README.md`, `README.md` | Swildons | LongwoodValleySink SexyTopo workflow, building, history. |
 
 Not copied: `routes/`, `surface/` (Swildons-specific; possible later).
@@ -273,7 +273,7 @@ licence that allows it.
   run on 6.4.0.
 - `LongwoodValleySinkMP` is in `LongwoodValleySink.th`, not `Maps.th`
   (which holds group maps such as `CyclopsMP`); corrected in
-  `tools/Style.md` and `docs/lvs-phase1.md`.
+  `tools/sketch2therion/Style.md` and `docs/lvs-phase1.md`.
 - Local build (Therion 6.2.0): no errors, 5 "scrap outline intersects
   itself" warnings from existing drawings. The sheet's `map-comment`
   still says "Length 1004.00m. Vertical Range 126.27m" (copied from
@@ -303,7 +303,7 @@ Status 2026-10-08: all ten converted, plans and extended elevations
 reviewed and hand-edited, the other eight first drafts for review (see
 `docs/lvs-phase5-log.md`).
 
-What the pilot teaches goes into `tools/Style.md` and the converter
+What the pilot teaches goes into `tools/sketch2therion/Style.md` and the converter
 before Trident is started. A test review zip of the GoSouth draft
 was sent first, to check the backdrop opens on the user's computer.
 
@@ -460,7 +460,7 @@ Review comments and their outcomes are in `docs/lvs-phase5-log.md`.
   water` with no matching border `-id`); a finding in the baseline does
   not fail; a new one does; a fixed one reports the stale baseline entry.
 - **Style.md and th2lint stay in step:** every `[lint]` rule in
-  `tools/Style.md` has a matching `th2lint` check, and the reverse.
+  `tools/sketch2therion/Style.md` has a matching `th2lint` check, and the reverse.
 - **make_index:** statistics parsed from a sample `therion.log`; a
   missing PDF is skipped without failing.
 - **sync.py** (SVN stays master; against a local `svnadmin` repository): a second run with no new SVN

@@ -32,7 +32,7 @@ class SettingsTest(unittest.TestCase):
 
     def test_house_rules_then_cave(self):
         # the cave's [convert] changes a house rule; the rest stay
-        from tools import project
+        from tools.sketch2therion import project
         p = project.load()
         p.convert = {"boulder_min": 0.5}
         settings.load(p)

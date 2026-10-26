@@ -50,7 +50,7 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Install Python libraries
-        run: /opt/venv/bin/pip install -q -r tools/requirements.txt
+        run: /opt/venv/bin/pip install -q -r tools/sketch2therion/requirements.txt
 
       # subversion and git-svn are for the svn2git sync tests.
       - name: Unit tests
@@ -58,7 +58,7 @@ jobs:
 
       # Fails only on findings not in tools/th2lint-baseline.txt.
       - name: th2lint
-        run: /opt/venv/bin/python tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg
+        run: /opt/venv/bin/python -m tools.sketch2therion.th2lint --from LongwoodValleySink/Plan_only.thcfg
 
   build:
     runs-on: ubuntu-latest

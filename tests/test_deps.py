@@ -2,7 +2,7 @@ import os
 import tempfile
 import unittest
 
-from tools.svn2git import deps
+from tools.sketch2therion import deps
 
 
 def write(root, rel, text=""):

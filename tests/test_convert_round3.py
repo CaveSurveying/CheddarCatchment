@@ -274,7 +274,8 @@ class LineTypesTest(unittest.TestCase):
     def test_converter_writes_therion_line_types(self):
         import glob
         src = "".join(open(f, encoding="utf-8").read()
-                      for f in glob.glob(os.path.join(REPO, "tools", "sketch2therion", "*.py")))
+                      for f in glob.glob(os.path.join(REPO, "tools", "sketch2therion", "*.py"))
+                      if os.path.basename(f) != "th2lint.py")      # its messages are not line types
         import re
         used = set(re.findall(r'"line ([a-z-]+)', src)) | set(re.findall(r"'line ([a-z-]+)", src))
         self.assertLessEqual(used, THERION_LINES, used - THERION_LINES)

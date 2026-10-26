@@ -21,7 +21,7 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 
-from tools import project as _project
+from tools.sketch2therion import project as _project
 
 
 def human(n):

@@ -2,20 +2,22 @@
 
 How to get a new SexyTopo trip into the LongwoodValleySink survey, with
 its plan drawn, and how the git copy is kept in step with SVN. The
-conventions for drawing are in [`Style.md`](Style.md); the overall plan
+conventions for drawing are in [`sketch2therion/Style.md`](sketch2therion/Style.md); the overall plan
 is [`docs/PLAN-LongwoodValleySink.md`](../docs/PLAN-LongwoodValleySink.md).
 
 | Path | What it is |
 |---|---|
-| `project.toml`, `project.py` | Per-cave settings: the master survey, the trial config, file and scrap names, line endings, licence, sheets. |
-| `sketch2therion/rules.toml` | The house drawing rules, shared by every cave. A cave changes one only in `[convert]` in its `project.toml`, with the reason. |
-| `sketch2therion/` | Converts SexyTopo (and PocketTopo) sketches into Therion drawings (`.th2`), and checks drawings against the sketches (`review`). |
+| `sketch2therion/` | The shared tools, the same for every cave. Converts SexyTopo (and PocketTopo) sketches into Therion drawings (`.th2`), and checks drawings against the sketches (`review`). |
+| `sketch2therion/Style.md`, `sketch2therion/rules.toml` | The house drawing rules, shared by every cave. A cave changes one only in `[convert]` in its `project.toml`, with the reason. |
+| `sketch2therion/th2lint.py` | Checks drawings against the `[lint]` rules in `Style.md`. |
+| `sketch2therion/project.py` | Reads `project.toml`. |
+| `sketch2therion/requirements.txt` | Python libraries (`pip install -r tools/sketch2therion/requirements.txt`). |
+| `project.toml` | This cave's settings: the master survey, the trial config, file and scrap names, line endings, licence, sheets. |
+| `th2lint-baseline.txt` | The findings in this cave's existing drawings. |
 | `layout.thcfg`, `layout.th` | Export where Therion puts every station, and the centreline as SQL, for the converter. |
 | `new-trip-template.th` | A starting point for a new trip's survey file. |
-| `th2lint.py`, `th2lint-baseline.txt` | Checks drawings against the `[lint]` rules in `Style.md`. |
 | `web/make_index.py` | The index page and statistics for a build. |
 | `svn2git/` | The git copy of SVN: migration, verification and sync. |
-| `requirements.txt` | Python libraries (`pip install -r tools/requirements.txt`). |
 
 `sketch2therion/` and `web/` are adapted from the Swildons survey's
 tools (<https://github.com/paperclipmonkey/caves-mendip-swildons>).
@@ -24,7 +26,7 @@ CC BY-NC-SA 4.0.
 
 ## Setting up
 
-You need Python 3.11 or later with the libraries in `requirements.txt`,
+You need Python 3.11 or later with the libraries in `sketch2therion/requirements.txt`,
 and Therion. CI uses Therion 6.4.0 in Docker (see
 `.github/workflows/build.yml`) and is the reference renderer; a local
 Therion (Ubuntu's `therion` package is 6.2.0) is fine for checking
@@ -35,7 +37,7 @@ otherwise.
 
 ```bash
 cd LongwoodValleySink && therion -l ../output/therion.log Plan_only.thcfg && cd ..
-python3 tools/th2lint.py --from LongwoodValleySink/Plan_only.thcfg
+python3 -m tools.sketch2therion.th2lint --from LongwoodValleySink/Plan_only.thcfg
 python3 -m tools.web.make_index          # output/index.html, output/stats.md
 ```
 

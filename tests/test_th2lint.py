@@ -1,10 +1,8 @@
 import os
-import sys
 import tempfile
 import unittest
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "tools"))
-import th2lint  # noqa: E402
+from tools.sketch2therion import th2lint
 
 HEAD = 'scrap ASP1 -projection plan -author 2026 "A N Other" -copyright 2026 "CC BY-NC-SA 4.0"\n'
 
@@ -118,7 +116,7 @@ class StyleInStepTest(unittest.TestCase):
         with open(th2lint.STYLE, encoding="utf-8") as f:
             tagged = th2lint.style_rules(f.read())
         self.assertEqual(tagged, set(th2lint.CHECKS),
-                         "every [lint: id] in tools/Style.md needs a check in th2lint, and the reverse")
+                         "every [lint: id] in tools/sketch2therion/Style.md needs a check in th2lint, and the reverse")
 
 
 class BaselineTest(unittest.TestCase):

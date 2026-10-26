@@ -9,8 +9,8 @@ import shutil
 import tempfile
 import unittest
 
-from tools import project
-from tools import th2lint
+from tools.sketch2therion import project
+from tools.sketch2therion import th2lint
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAVE = os.path.join(REPO, "LongwoodValleySink")

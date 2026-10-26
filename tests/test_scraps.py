@@ -7,7 +7,7 @@ import sys
 import tempfile
 import unittest
 
-from tools import project
+from tools.sketch2therion import project
 from tools.sketch2therion import scraps
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -1,5 +1,5 @@
 # Existing th2lint findings, not failing CI. Remove a line when it is fixed.
-# Regenerate with: python3 tools/th2lint.py --from ... --update-baseline
+# Regenerate with: python3 -m tools.sketch2therion.th2lint --from ... --update-baseline
 LongwoodValleySink/CJPitch/CJPitch.ee.th2	cjpitch-ee	scrap-author-copyright	1
 LongwoodValleySink/CJPitch/CJPitch.plan.th2	CJPitchSP1	scrap-author-copyright	1
 LongwoodValleySink/CJPitch/CJPitch.plan.th2	CJPitchSP2	scrap-author-copyright	1

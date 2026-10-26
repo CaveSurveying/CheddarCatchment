@@ -3,7 +3,7 @@ import shutil
 import tempfile
 import unittest
 
-from tools import project
+from tools.sketch2therion import project
 from tools.web import make_index
 
 LOG = """therion 6.2.0 (2023-12-21)
