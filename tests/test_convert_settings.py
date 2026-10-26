@@ -30,6 +30,16 @@ class SettingsTest(unittest.TestCase):
         self.assertEqual(settings.SETTINGS["brown"], "floor")
         self.assertTrue(settings.SETTINGS["climb_whole"])
 
+    def test_house_rules_then_cave(self):
+        # the cave's [convert] changes a house rule; the rest stay
+        from tools import project
+        p = project.load()
+        p.convert = {"boulder_min": 0.5}
+        settings.load(p)
+        self.assertEqual(settings.SETTINGS["boulder_min"], 0.5)
+        self.assertEqual(settings.SETTINGS["wall_colours"], ["BLACK"])
+        self.assertEqual(settings.house_rules()["boulder_min"], 0.3)
+
     def test_empty_is_upstream(self):
         settings.use({})
         self.assertEqual(settings.SETTINGS, settings.UPSTREAM)

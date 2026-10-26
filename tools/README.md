@@ -8,6 +8,7 @@ is [`docs/PLAN-LongwoodValleySink.md`](../docs/PLAN-LongwoodValleySink.md).
 | Path | What it is |
 |---|---|
 | `project.toml`, `project.py` | Per-cave settings: the master survey, the trial config, file and scrap names, line endings, licence, sheets. |
+| `sketch2therion/rules.toml` | The house drawing rules, shared by every cave. A cave changes one only in `[convert]` in its `project.toml`, with the reason. |
 | `sketch2therion/` | Converts SexyTopo (and PocketTopo) sketches into Therion drawings (`.th2`), and checks drawings against the sketches (`review`). |
 | `layout.thcfg`, `layout.th` | Export where Therion puts every station, and the centreline as SQL, for the converter. |
 | `new-trip-template.th` | A starting point for a new trip's survey file. |

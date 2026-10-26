@@ -658,7 +658,7 @@ file is worked out from reviews and may be tuned.
   is. An outer line, with passage on one side only, is a wall whatever its
   colour or marks (OIAS Entrance's gully, drawn brown with ticks; the
   user, 2026-10-22).
-- Colours (`[convert]` in `tools/project.toml` tells the converter):
+- Colours (`tools/sketch2therion/rules.toml` tells the converter):
   - black: walls;
   - brown: mud, sand, debris and boulders, on a wall or across the
     passage (in an elevation the floor, the lower wall, often): boulders and debris are closed loops, told apart
