@@ -13,13 +13,13 @@ scrap IDontCareSP1 -projection plan -author 2026.07.11 "Andrew Atkinson" -copyri
 
 
 line wall
-  -28.64 122.11
-  0.66 88.70 27.79 67.59 76.84 48.41
+  76.84 48.41
+  27.79 67.59 0.66 88.70 -28.64 122.11
 endline
 
 line wall
-  76.84 48.41
-  48.97 48.90 38.83 60.25 21.96 92.06
+  21.96 92.06
+  38.83 60.25 48.97 48.90 76.84 48.41
 endline
 
 line wall

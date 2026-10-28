@@ -42,6 +42,8 @@ CASES = {
                         "line rock-border -close on\n0 0\n1 0\n0 1\n0 0\nendline\n"),
     "ceiling-step": ("line ceiling-step\n0 0\n1 1\nendline\n",
                      "line overhang\n0 0\n1 1\nendline\n"),
+    "wall-side": ("line wall -close on\n0 0\n0 1\n1 1\n1 0\n0 0\nendline\n",      # clockwise: passage on the right
+                  "line wall -close on\n0 0\n1 0\n1 1\n0 1\n0 0\nendline\n"),
     "water-border": ("line border -id w1 -close on -subtype invisible\n0 0\n1 0\n0 1\n0 0\nendline\n"
                      "area water\nw2\nendarea\n",
                      "line border -id w1 -close on -subtype invisible\n0 0\n1 0\n0 1\n0 0\nendline\n"
@@ -72,6 +74,25 @@ class RuleTest(unittest.TestCase):
 
     def test_every_check_has_a_case(self):
         self.assertEqual(set(CASES), set(th2lint.CHECKS))
+
+
+class WallSideTest(unittest.TestCase):
+    # a section of two strokes end to end, the second drawn the wrong way round
+    TWO = ("line wall\n0 0\n2 0\n2 2\nendline\n"
+           "line wall -subtype sand\n0 0\n0 2\n2 2\nendline\n")
+    SECTION = HEAD.replace("-projection plan", "-projection none")
+
+    def test_stroke_against_the_outline(self):
+        f = th2lint.lint_text(self.SECTION + self.TWO + "endscrap\n", "a.th2")
+        self.assertEqual([(x.rule, x.line) for x in f], [("wall-side", 7)])
+
+    def test_reverse_on_counts(self):
+        bad = "line wall -close on -reverse on\n0 0\n1 0\n1 1\n0 1\n0 0\nendline\n"
+        self.assertEqual(rules(bad), ["wall-side"])
+        self.assertEqual(rules(bad.replace("1 0\n1 1\n0 1", "0 1\n1 1\n1 0")), [])
+
+    def test_pillar_goes_clockwise(self):
+        self.assertEqual(rules("line wall -outline in -close on\n0 0\n0 1\n1 1\n1 0\n0 0\nendline\n"), [])
 
 
 class NodeGapTest(unittest.TestCase):

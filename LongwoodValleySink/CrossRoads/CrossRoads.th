@@ -40,8 +40,8 @@ map CrossRoadsMP
   CrossRoadsSP2
 endmap
 
-join WallT_1:end WallT_2:Top
-join WallB_1:0 WallB_2:Bottom
+join WallT_1:0 WallT_2:Top
+join WallB_1:end WallB_2:Bottom
 
   centreline
   

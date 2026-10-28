@@ -6,9 +6,9 @@ encoding  utf-8
 
 scrap TennisBallRiftSP1 -projection plan -scale [0 0 400 800 0.0 0.0 5 10 m]
 
-line pit -reverse on
-  55.0 501.0
+line pit
   172.0 526.0
+  55.0 501.0
 endline
 
 area pebbles

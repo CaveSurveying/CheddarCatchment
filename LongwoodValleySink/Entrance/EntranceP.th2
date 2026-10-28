@@ -20,13 +20,13 @@ endline
 point 216.5 1464.5 entrance -orientation 205.7 -scale l
 
 line wall
-  200.5 1378.0
   128.0 1217.0
+  200.5 1378.0
 endline
 
 line wall
-  85.0 1240.0
   153.5 1395.0
+  85.0 1240.0
 endline
 
 endscrap
@@ -83,10 +83,10 @@ line ceiling-step
   smooth off
 endline
 
-line ceiling-step -reverse on
-  382.0 1139.5
-  386.0 1156.0 388.0 1187.0 384.0 1199.5
+line ceiling-step
+  384.0 1199.5
   smooth off
+  388.0 1187.0 386.0 1156.0 382.0 1139.5
 endline
 
 point 440.0 1230.0 label -align top-right -text Adit -scale m
@@ -115,10 +115,10 @@ line pit
   smooth off
 endline
 
-line overhang -reverse on -clip off
-  131.5 1106.0
-  132.0 1119.0 142.0 1167.0 159.0 1172.5
+line overhang -clip off
+  159.0 1172.5
   smooth off
+  142.0 1167.0 132.0 1119.0 131.5 1106.0
 endline
 
 line wall
@@ -177,8 +177,8 @@ endscrap
 scrap EntranceSP3 -projection plan -scale [0 0 236 236 0.0 0.0 3 3 m]
 
 line wall -visibility off
-  131.5 1106.0
   159.0 1172.5
+  131.5 1106.0
 endline
 
 line wall

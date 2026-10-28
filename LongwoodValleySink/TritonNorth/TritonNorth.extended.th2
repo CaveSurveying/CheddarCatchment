@@ -102,8 +102,8 @@ line border -id l46-3876--35 -close on -subtype invisible
 endline
 
 line wall
-  4010.0 3.0
-  3980.0 -8.0 3796.16 -39.6 3717.58 2.7
+  3717.58 2.7
+  3796.16 -39.6 3980.0 -8.0 4010.0 3.0
 endline
 
 line wall -subtype debris

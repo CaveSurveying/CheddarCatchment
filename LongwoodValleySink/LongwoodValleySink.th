@@ -215,9 +215,9 @@ join Wall28@BoldStep:C28a Wall28a@Connection:end -smooth on
 join Wall28@BoldStep:C28b Wall28b@Connection:0 -smooth on
 join  Wall28a@Connection:0 ConnectionLeft@TritonSouth:end -smooth on
 join  TritonSouthRight@Connection:end ConnectionRight@TritonSouth:Connect -smooth on
-join Wall1@TickleWest:Left Wall2@TickleWest:0 Wall3@TickleWest:0 -smooth on
-join Wall1@TickleWest:Right Wall3@TickleWest:end -smooth on
-join Wall3@TickleWest:Middle Wall4@TickleWest:end -smooth on
+join Wall1@TickleWest:Left Wall2@TickleWest:end Wall3@TickleWest:end -smooth on
+join Wall1@TickleWest:Right Wall3@TickleWest:0 -smooth on
+join Wall3@TickleWest:Middle Wall4@TickleWest:0 -smooth on
 
 
 ###################################################################
@@ -266,8 +266,8 @@ join TridentSE315_2@Trident TridentLeftSE315_1@TridentLeft -smooth on  # Trident
 #Joins Line points E325
 join WallT@Cyclops:0 Wall1@WestPassage:Top
 join WallB@Cyclops:end Wall1@WestPassage:Bottom
-join WallT@NorthRift:Top WallT_1@CrossRoads:0
-join WallB@NorthRift:Bottom WallB_1@CrossRoads:end
+join WallT@NorthRift:Top WallT_1@CrossRoads:end
+join WallB@NorthRift:Bottom WallB_1@CrossRoads:0
 
 ###################################################################
 #### Joins for extended elevation

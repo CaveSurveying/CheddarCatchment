@@ -216,10 +216,10 @@ line wall -outline out -subtype bedrock
   smooth off
 endline
 
-line overhang -reverse on
-  -1683.0 314.0
-  -1730.0 309.0 -1745.0 284.0 -1810.0 283.0
+line overhang
+  -1810.0 283.0
   smooth off
+  -1745.0 284.0 -1730.0 309.0 -1683.0 314.0
 endline
 
 line pit
@@ -250,17 +250,17 @@ line wall
   smooth off
 endline
 
-line overhang -reverse on
-  -1837.0 391.0
-  -1894.0 384.0 -1928.0 368.0 -1978.0 361.0
-  -2028.0 354.0 -2083.0 353.0 -2120.0 345.0
+line overhang
+  -2120.0 345.0
   smooth off
+  -2083.0 353.0 -2028.0 354.0 -1978.0 361.0
+  -1928.0 368.0 -1894.0 384.0 -1837.0 391.0
 endline
 
-line overhang -reverse on
-  -2067.0 49.0
-  -1998.0 55.0 -1915.0 86.0 -1883.0 102.0
+line overhang
+  -1883.0 102.0
   smooth off
+  -1915.0 86.0 -1998.0 55.0 -2067.0 49.0
 endline
 
 point -1906.0 629.0 label -align top-right -text Colossus

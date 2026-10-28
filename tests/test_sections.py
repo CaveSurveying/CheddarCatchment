@@ -73,6 +73,16 @@ class SectionShape(unittest.TestCase):
         heads = [l for l in o if l.startswith('line ')]
         self.assertEqual(heads, ['line wall', 'line wall -subtype debris'])
 
+    def test_section_on_the_walls_left(self):
+        """Hard rule 6: sketched either way round (u_stroke is clockwise), the
+        walls go round the section with it on their left."""
+        from tools.sketch2therion import th2lint
+        head = 'scrap XPX1 -projection none -author 2026 "A" -copyright 2026 "C"'
+        for u in (u_stroke(), u_stroke()[::-1]):
+            o = convert.section_th2('XPX1', '', [('BLACK', u)], (0.25, 0.45), K, '# test')[0]
+            text = '\n'.join([head] + o[1:])
+            self.assertEqual([f.rule for f in th2lint.lint_text(text) if f.rule == 'wall-side'], [])
+
     def test_small_section_not_despiked_to_a_sliver(self):
         lines = [('BLACK', u_stroke())] + [('BROWN', pebble(0.1 * k, 0.0)) for k in range(1, 5)]
         o = convert.section_th2('XPX1', '', lines, (0.25, 0.45), K, '# test')[0]

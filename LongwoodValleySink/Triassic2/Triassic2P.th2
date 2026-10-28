@@ -23,11 +23,11 @@ line border -id l18-150-822
   170.0 736.0
 endline
 
-line border -id l17-231-757 -reverse on
-  202.0 832.0
-  237.0 818.0
-  241.0 772.0
+line border -id l17-231-757
   217.0 737.0
+  241.0 772.0
+  237.0 818.0
+  202.0 832.0
 endline
 
 area flowstone
@@ -40,9 +40,9 @@ area flowstone
   l17-231-757
 endarea
 
-line flowstone -id l16-176-831 -reverse on
-  162.0 832.0
+line flowstone -id l16-176-831
   202.0 832.0
+  162.0 832.0
 endline
 
 line wall
