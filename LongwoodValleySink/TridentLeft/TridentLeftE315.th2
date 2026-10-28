@@ -74,8 +74,8 @@ line wall -subtype debris
 endline
 
 line wall
-  77.38 51.65
-  81.86 46.29 85.16 40.58 88.11 34.22
+  88.11 34.22
+  85.16 40.58 81.86 46.29 77.38 51.65
 endline
 
 line wall -subtype debris
@@ -135,13 +135,13 @@ line wall
 endline
 
 line wall -subtype sand
-  295.11 112.45
-  286.66 110.39 278.24 108.32 269.71 106.62
+  269.71 106.62
+  278.24 108.32 286.66 110.39 295.11 112.45
 endline
 
 line wall
-  269.71 106.62
-  276.26 111.68 282.85 113.95 290.75 116.23
+  290.75 116.23
+  282.85 113.95 276.26 111.68 269.71 106.62
 endline
 
 line wall
@@ -193,8 +193,8 @@ scrap TridentLeftSE315_5 -projection [elevation 315] -author 2026.07.11 "Andrew 
 # Walls of TridentLeftSEe4 (TridentLeft.extended.th2) projected to 315.
 
 line wall
-  159.85 73.34
-  175.66 75.99 190.77 80.73 206.08 85.40
+  206.08 85.40
+  190.77 80.73 175.66 75.99 159.85 73.34
 endline
 
 line wall
@@ -204,8 +204,8 @@ line wall
 endline
 
 line wall
-  178.33 62.03
-  170.61 60.41 164.97 56.05 158.46 51.72
+  158.46 51.72
+  164.97 56.05 170.61 60.41 178.33 62.03
 endline
 
 point 168.29 73.23 station -name 16
@@ -223,14 +223,14 @@ scrap TridentLeftSE315_6 -projection [elevation 315] -author 2026.07.11 "Andrew 
 # Walls of TridentLeftSEe4 (TridentLeft.extended.th2) projected to 315.
 
 line wall -subtype sand
-  208.40 60.20
-  208.08 63.32 207.81 66.44 207.55 69.57
-  217.47 72.60 227.57 75.49 237.62 78.29
+  237.62 78.29
+  227.57 75.49 217.47 72.60 207.55 69.57
+  207.81 66.44 208.08 63.32 208.40 60.20
 endline
 
 line wall
-  225.08 61.97
-  219.50 61.58 213.96 60.89 208.40 60.20
+  208.40 60.20
+  213.96 60.89 219.50 61.58 225.08 61.97
 endline
 
 point 207.40 72.64 station -name 19

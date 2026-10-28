@@ -14,18 +14,18 @@ scrap TritonSouthSE315_1 -projection [elevation 315] -author 2026.08.01 "Andrew 
 # Walls of TritonSouthSEe1 (TritonSouth.extended.th2) projected to 315.
 
 line wall
-  538.06 225.84
-  530.89 222.27 524.01 220.83 516.11 219.71
+  516.11 219.71
+  524.01 220.83 530.89 222.27 538.06 225.84
 endline
 
 line wall -subtype sand
-  181.74 178.36
-  167.69 182.75 159.28 185.65 144.65 180.93
+  144.65 180.93
+  159.28 185.65 167.69 182.75 181.74 178.36
 endline
 
 line wall
-  86.64 161.83
-  116.01 158.84 145.08 159.30 174.82 159.81
+  174.82 159.81
+  145.08 159.30 116.01 158.84 86.64 161.83
 endline
 
 line wall -subtype debris

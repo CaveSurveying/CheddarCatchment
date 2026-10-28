@@ -47,13 +47,13 @@ scrap TridentCentreSE315_2 -projection [elevation 315] -author 2026.07.11 "Andre
 # Walls of TridentCentreSEe2 (TridentCentre.extended.th2) projected to 315.
 
 line wall
-  37.93 44.08
-  50.53 45.45 55.90 45.67 60.85 32.82
+  60.85 32.82
+  55.90 45.67 50.53 45.45 37.93 44.08
 endline
 
 line wall -subtype sand
-  59.24 33.07
-  50.48 31.73 45.20 30.48 38.81 23.94
+  38.81 23.94
+  45.20 30.48 50.48 31.73 59.24 33.07
 endline
 
 line wall

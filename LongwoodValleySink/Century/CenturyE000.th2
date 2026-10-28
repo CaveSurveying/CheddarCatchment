@@ -153,10 +153,10 @@ line wall
   smooth off
 endline
 
-line overhang -reverse on
-  134.5 36.5
-  144.0 37.25 159.5 40.5 169.75 42.75
+line overhang
+  169.75 42.75
   smooth off
+  159.5 40.5 144.0 37.25 134.5 36.5
 endline
 
 line wall

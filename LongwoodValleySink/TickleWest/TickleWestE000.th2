@@ -104,10 +104,10 @@ line wall
   smooth off
 endline
 
-line overhang -reverse on
-  -5.0 -1.25
-  -0.75 0.25 14.5 2.0 19.0 2.0
+line overhang
+  19.0 2.0
   smooth off
+  14.5 2.0 -0.75 0.25 -5.0 -1.25
 endline
 
 line wall
@@ -122,10 +122,10 @@ line wall
   smooth off
 endline
 
-line overhang -reverse on
-  586.75 423.75
-  597.25 422.75 601.25 421.0 605.75 421.25
+line overhang
+  605.75 421.25
   smooth off
+  601.25 421.0 597.25 422.75 586.75 423.75
 endline
 
 point 136.0 190.0 water-flow -orientation 179.5
@@ -175,17 +175,17 @@ line overhang
   smooth off
 endline
 
-line overhang -reverse on
-  638.25 327.0
-  629.25 326.25 624.25 325.5 613.25 328.25
+line overhang
+  613.25 328.25
   smooth off
+  624.25 325.5 629.25 326.25 638.25 327.0
 endline
 
-line overhang -reverse on
-  613.25 328.25
-  615.5 318.25 620.0 299.5 617.75 295.25
-  615.5 291.0 602.25 287.25 597.75 286.0
+line overhang
+  597.75 286.0
   smooth off
+  602.25 287.25 615.5 291.0 617.75 295.25
+  620.0 299.5 615.5 318.25 613.25 328.25
 endline
 
 point 258.5 114.75 label -scale m -text [<centre>Rift<br>Chamber] -align bottom

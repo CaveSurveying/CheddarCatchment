@@ -6,10 +6,10 @@ encoding  utf-8
 
 scrap GoWestSP1 -projection plan -scale [-128.0 -128.0 1702.8 -128.0 0.0 0.0 46.50232 0.0 m]
 
-line pit -reverse on
-  1332.5 1507.0
-  1334.25 1506.5 1343.0 1506.25 1343.0 1506.25
+line pit
+  1343.0 1506.25
   smooth off
+  1343.0 1506.25 1334.25 1506.5 1332.5 1507.0
 endline
 
 point 1320.75 1478.25 label -text [Century Rift]
