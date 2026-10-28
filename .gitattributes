@@ -1,0 +1,5 @@
+# PocketTopo files are binary (svn:mime-type application/octet-stream).
+*.top binary
+
+# Reference outputs are compared byte for byte (some are CRLF).
+tests/fixtures/** -text

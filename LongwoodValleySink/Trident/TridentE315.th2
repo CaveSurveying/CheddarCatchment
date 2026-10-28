@@ -1,0 +1,343 @@
+encoding  utf-8
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+##XTHERION## xth_me_area_adjust -231.6 -224.2 1415.1 511.4
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {0.00 1 1.0} {44.10 1} {Notes/TridentE315.xvi} 0 {}
+
+
+# Projected elevation, facing 315: the walls of Trident.extended.th2 projected by
+# tools/sketch2therion projected (walls only; one scrap per run of passage heading one way
+# across the view).
+
+scrap TridentSE315_1 -projection [elevation 315] -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of TridentSEe1 (Trident.extended.th2) projected to 315.
+
+line wall -subtype sand
+  -11.89 39.06
+  -5.70 35.41 1.21 33.16 7.01 29.22
+endline
+
+line wall -subtype sand
+  7.01 29.22
+  20.25 22.21 32.49 20.27 47.36 20.33
+endline
+
+line wall
+  68.61 0.85
+  62.64 8.60 54.97 14.25 47.36 20.33
+endline
+
+line wall -subtype sand
+  63.59 -4.54
+  54.99 0.90 45.53 5.09 37.41 11.18
+  58.18 14.63 114.29 39.53 136.15 48.41
+  144.43 51.78 153.30 51.31 161.62 54.33
+endline
+
+line wall
+  163.28 79.49
+  154.45 74.99 144.11 74.78 135.88 70.73
+  132.15 68.89 130.00 64.52 126.47 62.28
+  116.31 55.83 98.35 48.86 86.54 46.50
+  79.54 45.11 71.97 49.44 65.18 47.43
+  54.37 44.23 50.42 32.08 36.49 33.08
+  26.01 33.83 13.33 42.31 3.71 46.48
+endline
+
+point 0.00 44.10 station -name 1
+
+point 26.17 25.40 station -name 2
+
+point 39.25 23.62 station -name 3
+
+point 66.81 0.00 station -name 4
+
+point 66.26 34.45 station -name 5
+
+point 104.53 44.69 station -name 6
+
+point 126.11 54.14 station -name 7
+
+point 136.13 62.99 station -name 8
+
+point 164.11 64.18 station -name 9
+
+endscrap
+
+scrap TridentSE315_2 -projection [elevation 315] -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of TridentSEe1 (Trident.extended.th2) projected to 315.
+
+line wall -subtype sand
+  160.90 54.34
+  168.52 56.85 176.14 59.35 183.76 61.86
+endline
+
+line wall -subtype sand
+  183.76 61.86
+  198.91 66.62 203.90 82.73 214.67 93.16
+endline
+
+line wall
+  214.85 109.30
+  197.96 97.05 182.17 87.78 163.03 79.49
+endline
+
+point 164.11 64.18 station -name 9
+
+point 189.86 85.83 station -name 10
+
+point 211.71 98.43 station -name 12
+
+endscrap
+
+scrap TridentSE315_3 -projection [elevation 315] -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of TridentSEe2 (Trident.extended.th2) projected to 315.
+
+line wall
+  251.55 93.07
+  241.17 90.44 231.38 89.72 220.64 90.56
+endline
+
+line wall -subtype sand
+  222.15 63.81
+  234.82 65.31 247.38 66.23 259.98 68.35
+endline
+
+line wall -subtype sand
+  278.75 67.89
+  283.21 68.47 287.66 69.04 292.12 69.62
+endline
+
+line wall
+  293.52 135.87
+  288.74 117.34 290.54 111.22 271.54 100.88
+endline
+
+line wall
+  245.67 91.59
+  254.64 93.77 262.84 97.87 271.54 100.88
+endline
+
+point 244.70 85.44 station -name 13
+
+point 273.65 81.10 station -name 14
+
+endscrap
+
+scrap TridentSE315_4 -projection [elevation 315] -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of TridentSEe3 (Trident.extended.th2) projected to 315.
+
+line wall -subtype sand
+  308.07 128.69
+  316.23 122.08 323.93 118.85 334.34 117.52
+endline
+
+line wall -subtype debris
+  335.84 69.52
+  354.77 71.24 375.40 74.40 393.40 80.53
+  388.14 82.63 382.98 83.11 377.91 85.70
+  393.22 87.78 409.20 89.67 424.64 88.62
+endline
+
+line wall -subtype sand
+  424.95 96.98
+  417.58 101.62 409.82 104.88 403.91 111.21
+  414.04 111.60 424.13 109.32 434.27 108.74
+  432.83 111.58
+  431.85 102.90 432.47 94.04 431.09 85.35
+endline
+
+line wall -subtype debris
+  489.08 95.81
+  500.14 100.13 511.98 96.46 523.64 98.21
+  531.98 99.47 539.73 102.97 547.99 104.63
+  585.02 112.06 619.70 115.69 657.37 112.13
+endline
+
+line wall -subtype sand
+  657.37 112.13
+  673.73 109.79 686.84 114.10 702.93 114.85
+  728.79 116.06 754.72 112.94 780.54 113.94
+  786.69 114.17 792.73 116.21 798.87 116.31
+  812.61 116.53 827.21 113.89 841.13 113.41
+  864.09 112.62 907.37 113.08 930.47 114.22
+endline
+
+line wall -subtype flowstone
+  930.47 114.22
+  948.72 116.77 951.87 128.47 952.72 145.23
+endline
+
+line wall -subtype flowstone
+  989.94 145.51
+  977.55 145.52 965.08 145.89 952.72 145.23
+endline
+
+line wall -subtype sand
+  989.94 145.51
+  1002.53 145.38 1015.16 144.79 1027.69 146.15
+endline
+
+line wall -subtype flowstone
+  1027.69 146.15
+  1040.35 147.69 1051.82 153.19 1064.34 155.41
+  1081.29 158.41 1098.00 154.99 1115.06 154.88
+endline
+
+line wall -subtype sand
+  1115.06 154.88
+  1137.42 153.68 1159.90 154.02 1182.29 153.81
+endline
+
+line wall
+  1195.46 234.91
+  1180.42 229.64 1164.44 222.90 1148.26 223.84
+endline
+
+line wall
+  1148.26 223.84
+  1142.48 224.30 1134.39 223.87 1129.42 227.30
+  1117.22 235.71 1115.09 277.47 1110.23 291.88
+  1099.69 280.66 1096.82 258.12 1090.97 250.17
+  1088.71 247.11 1080.97 245.46 1077.51 244.01
+endline
+
+line wall
+  1077.51 244.01
+  1062.33 241.15 1050.23 233.74 1035.75 229.28
+  1025.25 226.05 1014.04 228.80 1003.85 225.87
+  981.76 219.53 962.24 205.61 940.49 198.14
+  919.37 190.89 897.01 187.82 876.23 179.49
+  854.88 170.92 834.30 159.33 811.05 156.66
+  804.77 155.94 798.47 157.11 792.21 156.34
+  784.76 155.42 776.48 151.46 768.97 154.11
+  755.93 158.70 763.22 176.37 753.83 183.45
+  747.97 187.86 740.16 182.11 734.17 186.45
+  725.67 192.59 726.58 207.53 720.02 215.47
+  709.89 227.73 692.30 232.63 679.23 241.06
+endline
+
+line wall
+  679.23 241.06
+  649.05 245.38 639.43 231.55 614.12 222.17
+  602.47 217.85 589.75 216.51 577.85 213.00
+  540.90 202.13 514.53 177.12 490.62 148.12
+endline
+
+line wall
+  430.71 139.13
+  430.51 139.43 430.32 139.72 430.12 140.02
+endline
+
+line wall
+  430.71 139.13
+  432.08 139.62 433.44 140.11 434.81 140.60
+  417.39 137.74 396.25 143.28 377.88 143.52
+  380.70 142.61 386.29 140.29 389.80 137.92
+  364.25 129.35 323.62 143.90 309.16 136.06
+endline
+
+point 353.00 131.50 station -name 15
+
+point 391.83 115.36 station -name 16
+
+point 307.76 133.66 station -name 17
+
+point 375.96 128.35 station -name 18
+
+point 435.26 130.71 station -name 19
+
+point 430.25 126.38 station -name 20
+
+point 489.13 129.73 station -name 21
+
+point 504.02 125.00 station -name 23
+
+point 546.34 129.92 station -name 24
+
+point 608.28 141.54 station -name 25
+
+point 654.07 144.29 station -name 26
+
+point 677.60 145.08 station -name 27
+
+point 728.82 136.81 station -name 28
+
+point 792.29 148.62 station -name 29
+
+point 865.79 139.57 station -name 30
+
+point 945.41 150.00 station -name 31
+
+point 1001.92 168.90 station -name 32
+
+point 1024.05 184.45 station -name 33
+
+point 1055.65 186.62 station -name 34
+
+point 1080.29 183.86 station -name 36
+
+point 1124.83 171.26 station -name 38
+
+point 1178.28 162.21 station -name 39
+
+point 1207.65 168.51 station -name 40
+
+point 1236.32 196.26 station -name 41
+
+point 1232.98 168.11 station -name 42
+
+point 1253.03 186.81 station -name 43
+
+endscrap
+
+scrap TridentSE315_5 -projection [elevation 315] -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of TridentSEe3 (Trident.extended.th2) projected to 315.
+
+line wall -subtype sand
+  407.04 88.46
+  418.36 86.62 429.29 84.29 440.78 85.34
+endline
+
+line wall -subtype debris
+  389.46 95.81
+  395.83 94.00 401.30 91.77 407.04 88.46
+endline
+
+line wall
+  495.17 148.13
+  474.37 143.38 453.44 142.91 432.58 140.02
+endline
+
+point 430.25 126.38 station -name 20
+
+point 489.13 129.73 station -name 21
+
+point 403.11 99.81 station -name 22
+
+endscrap
+
+scrap TridentSE315_6 -projection [elevation 315] -author 2026.06.13 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of TridentSEe4 (Trident.extended.th2) projected to 315.
+
+line wall -subtype flowstone
+  1044.48 198.44
+  1053.81 210.04 1061.40 222.97 1070.93 234.59
+endline
+
+line wall
+  1078.16 264.84
+  1068.88 254.99 1057.91 249.56 1045.72 244.06
+endline
+
+point 1049.80 219.49 station -name 35
+
+point 1077.64 260.04 station -name 37
+
+endscrap

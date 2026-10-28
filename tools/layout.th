@@ -1,0 +1,10 @@
+encoding  utf-8
+# Centreline-only maps of the whole cave, for exporting Therion's own
+# station layout (see layout.thcfg).
+map LayoutPlan -projection plan
+  LongwoodValleySink
+endmap
+
+map LayoutExtended -projection extended
+  LongwoodValleySink
+endmap

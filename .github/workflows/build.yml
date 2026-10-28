@@ -1,0 +1,163 @@
+name: Build survey
+
+# Adapted from caves-mendip-swildons, .github/workflows/build.yml
+# (commit 198bf46). Trial scope (docs/PLAN-LongwoodValleySink.md): only
+# LongwoodValleySink/Plan_only.thcfg is built. The repository is
+# private, so nothing is published: the sheets are attached to the run,
+# and a pull request gets a comment with the statistics and a link.
+# Switched off (2026-10-11, the user: not needed, and its failure emails
+# not wanted): run by hand only, from the Actions tab.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Therion 6.4.0 with TeX, METAPOST, Ghostscript and python3, pinned by
+  # digest so a survey rebuilt in a year renders identically. Bump it
+  # deliberately (tag 6.4.0 at the time of pinning).
+  THERION_IMAGE: ghcr.io/paperclipmonkey/therion@sha256:6f7365a75e338a99a3772e6aaf48872f75717ebd4167ef5bd5e88777b24a2d45
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # Ubuntu 24.04's own git, git-svn and subversion, which work together
+    # (the runner's newer git cannot take Ubuntu's git-svn). Same system
+    # as the development environment.
+    container: ubuntu:24.04
+    steps:
+      # git before checkout, so the checkout is a real repository (the
+      # .gitignore and .gitattributes tests need one).
+      - name: Install tools
+        run: |
+          apt-get update -qq
+          DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \
+            git subversion git-svn python3 python3-venv
+          python3 -m venv /opt/venv
+          /opt/venv/bin/pip install -q pytest git-filter-repo
+
+      - uses: actions/checkout@v5
+        with:
+          submodules: true     # tools/sketch2therion, the shared tools
+
+      # The checkout belongs to the runner's user; git in the container
+      # (root) refuses it as "dubious ownership" unless told it is safe.
+      - name: Trust the checkout
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Install Python libraries
+        run: /opt/venv/bin/pip install -q -r tools/sketch2therion/requirements.txt
+
+      # subversion and git-svn are for the svn2git sync tests.
+      - name: Unit tests
+        run: /opt/venv/bin/python -m pytest -q tests
+
+      # Fails only on findings not in tools/th2lint-baseline.txt.
+      - name: th2lint
+        run: /opt/venv/bin/python -m tools.sketch2therion.th2lint --from LongwoodValleySink/Plan_only.thcfg
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: true     # tools/sketch2therion, the shared tools
+
+      # output/ is git-ignored, and Therion will not create it.
+      - name: Create output directory
+        run: mkdir -p output
+
+      # --user maps the container's output back to the runner user.
+      # Plan_only.thcfg runs in the cave folder, as its paths are
+      # relative to it. layout.thcfg is the converter's helper: built
+      # here so a broken survey shows up before anyone converts a sketch.
+      - name: Build with Therion
+        run: |
+          therion() {
+            docker run --rm -v "${{ github.workspace }}:/project" \
+              -u "$(id -u):$(id -g)" -w "/project/$1" \
+              -e PROJ_NETWORK=OFF "$THERION_IMAGE" "${@:2}"
+          }
+          therion LongwoodValleySink -l ../output/therion.log Plan_only.thcfg
+          therion . -l output/therion-layout.log tools/layout.thcfg
+
+      - name: Fail if Therion logged an error
+        run: |
+          status=0
+          for log in output/therion.log output/therion-layout.log; do
+            if grep -qE "^therion: error|invalid scrap outline" "$log"; then
+              echo "::error::Therion reported an error in $log"
+              grep -nE "^therion: (error|warning)|invalid scrap outline" "$log"
+              status=1
+            fi
+          done
+          # Worth seeing, not failing on: the existing drawings give a
+          # few "scrap outline intersects itself" warnings.
+          if grep -qiE "warning|intersects itself" output/therion.log; then
+            echo "::group::Therion warnings"
+            grep -inE "warning|intersects itself" output/therion.log | sort -u
+            echo "::endgroup::"
+          fi
+          exit $status
+
+      - name: Build the index page
+        run: |
+          sudo apt-get install -y -qq ghostscript
+          python3 -m tools.web.make_index
+
+      - name: Summarise the build
+        run: |
+          {
+            echo "### Survey built"
+            echo
+            cat output/stats.md
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload build
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: survey-${{ github.run_number }}-${{ github.sha }}
+          path: |
+            output/*.pdf
+            output/*.log
+            output/index.html
+            output/stats.md
+            output/previews/
+          retention-days: 14
+
+      - name: Comment on the PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const marker = '### Survey rebuilt from this PR';
+            const run = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            let stats = '';
+            try { stats = fs.readFileSync('output/stats.md', 'utf8'); } catch (e) {}
+            const body = [
+              marker, '', stats,
+              `**[Download the built sheets](${{ steps.upload.outputs.artifact-url }})**: unzip and open \`index.html\`.`,
+              '', `<sub>[Build log](${run}) · commit \`${context.sha.slice(0, 7)}\`</sub>`,
+            ].join('\n');
+            // Update our earlier comment rather than adding one per push.
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
+            });
+            const mine = comments.find(c => c.user.type === 'Bot' && c.body.startsWith(marker));
+            if (mine) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo, comment_id: mine.id, body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, body,
+              });
+            }

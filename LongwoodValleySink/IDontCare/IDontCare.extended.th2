@@ -1,0 +1,67 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -470.3 -413.6 792.7 275.6
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {241.27999999999997 1 1.0} {-87.0 4} Notes/IDontCareEe.xvi 0 {}
+
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+
+
+# Converted from IDontCareEe.xvi by tools/sketch2therion (extended elevation).
+# One scrap per sketch, or as chosen by hand ([scraps_extended] in tools/project.toml).
+
+
+
+
+scrap IDontCareSEe1 -projection extended -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+line wall
+  -267.34 67.75
+  -211.26 50.35 -155.47 34.47 -100.52 13.55
+  smooth off
+endline
+
+line wall
+  -100.52 13.55
+  -66.01 0.5 -29.36 -14.1 1.41 -24.41
+  45.77 -39.27 87.69 -47.91 121.82 -59.59
+  169.34 -75.85 216.63 -95.53 264.68 -112.35
+  292.99 -122.26 336.84 -141.7 376.06 -153.95
+  438.7 -173.5 501.53 -186.74 564.55 -207.47
+  smooth off
+endline
+
+line wall
+  586.35 -147.19
+  496.0 -122.0 498.93 -138.75 442.52 -134.74
+  412.91 -132.63 373.82 -122.75 346.22 -110.99
+  327.34 -102.94 295.82 -83.57 274.23 -75.83
+  240.51 -63.76 199.68 -61.75 163.26 -49.62
+  140.33 -41.96 120.96 -30.82 109.0 -21.0
+  smooth off
+  130.48 -16.73 207.52 1.27 223.57 5.57
+  smooth off
+endline
+
+line wall
+  203.45 47.55
+  179.12 43.74 88.9 28.44 57.54 24.3
+  21.17 19.51 -16.19 23.85 -51.82 32.5
+  -101.67 44.62 -184.6 79.41 -236.0 82.0
+  smooth off
+endline
+
+point 241.28 -87.00 station -name 4
+
+point 0.00 0.00 station -name 1
+
+point 505.00 -167.01 station -name 5
+
+point -301.37 86.33 station -name 3
+
+point 571.72 -181.20 station -name 6
+
+point 187.31 26.03 station -name 2
+
+endscrap
+
+

@@ -1,0 +1,12 @@
+# SVN username = Name <email>, for git svn --authors-file.
+# The emails are placeholders (.invalid never delivers); when the real
+# ones are known, add them to a .mailmap rather than rewriting history.
+# Only andrew, JohnCooper and graham appear in the migrated paths; the
+# others are mapped so git svn never stops on an unmapped author.
+andrew = Andrew Atkinson <andrew@cave-registry.invalid>
+JohnCooper = John Cooper <JohnCooper@cave-registry.invalid>
+graham = Graham Mullan <graham@cave-registry.invalid>
+ben = ben <ben@cave-registry.invalid>
+cavereg = cavereg <cavereg@cave-registry.invalid>
+wookey = wookey <wookey@cave-registry.invalid>
+(no author) = (no author) <no-author@cave-registry.invalid>

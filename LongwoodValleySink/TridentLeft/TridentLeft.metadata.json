@@ -1,0 +1,20 @@
+{
+  "sexyTopoVersionName": "1.12.2",
+  "sexyTopoVersionCode": 96,
+  "name": "TridentLeft",
+  "active-station": "35",
+  "connections": {
+    "1": [
+      [
+        "content:\/\/com.android.externalstorage.documents\/tree\/primary%3ADocuments%2FSurveys%2FLVS%2FTrident\/document\/primary%3ADocuments%2FSurveys%2FLVS%2FTrident",
+        "11"
+      ]
+    ],
+    "32": [
+      [
+        "content:\/\/com.android.externalstorage.documents\/tree\/primary%3ADocuments%2FSurveys%2FLVS%2FIDontCare\/document\/primary%3ADocuments%2FSurveys%2FLVS%2FIDontCare",
+        "6"
+      ]
+    ]
+  }
+}

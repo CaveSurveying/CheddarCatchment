@@ -1,0 +1,93 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -378.3 -205.8 1100.9 483.9
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {64.38 1 1.0} {132.78 8} Notes/TridentCentreEe.xvi 0 {}
+
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+
+
+# Converted from TridentCentreEe.xvi by tools/sketch2therion (extended elevation).
+# One scrap per sketch, or as chosen by hand ([scraps_extended] in tools/project.toml).
+
+
+
+
+scrap TridentCentreSEe1 -projection extended -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# wall-subtype sand: 315.0 95.5 297.0 88.4 297.1 87.0 292.2 85.7 290.8 83.4 285.2 82.1 285.4 80.8 283.4 81.2 283.6 79.9 272.8 76.7 272.9 75.4 258.1 72.2 258.5 70.9 255.4 71.3 255.8 70.2 245.8 68.7 239.4 65.6 236.7 66.0 234.4 63.9 228.6 63.3 227.2 61.1 208.2 56.1 190.5 46.8 188.3 47.1 182.4 42.3 180.3 42.7 171.5 37.3 169.0 34.3 165.0 32.8 159.1 27.3 157.2 27.4 157.3 26.4 134.6 21.2 130.3 19.4 130.5 18.0
+
+
+line wall -subtype sand
+  130.41 18.06
+  162.23 28.64 186.74 45.0 217.13 57.86
+  249.82 71.69 281.86 80.19 314.95 95.48
+  smooth off
+endline
+
+line wall
+  435.0 79.0
+  513.0 120.0 550.93 123.28 601.0 154.0
+  645.0 181.0 851.55 251.75 894.93 267.52
+  smooth off
+endline
+
+line wall
+  818.0 314.0
+  731.0 276.0 616.0 229.0 535.55 223.89
+  436.86 217.62 393.93 203.27 303.0 176.0
+  269.49 165.95 202.23 137.4 175.83 121.86
+  158.22 111.49 140.95 99.78 122.37 86.52
+  smooth off
+endline
+
+point 0.00 0.00 station -name 1
+
+point 117.70 66.09 station -name 2
+
+point 283.42 149.87 station -name 3
+
+point 528.88 172.07 station -name 5
+
+point 685.05 228.92 station -name 6
+
+point 844.45 277.77 station -name 7
+
+endscrap
+
+
+
+scrap TridentCentreSEe2 -projection extended -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+line wall
+  303.0 176.0
+  430.06 175.7 537.0 206.0 616.0 131.0
+  smooth off
+endline
+
+# wall-subtype sand: 596.1 130.5 567.4 128.7 566.6 127.7 524.4 127.8 501.9 130.6 485.7 130.5 473.3 128.7 458.7 125.1 457.8 123.8 454.2 124.2 453.3 122.9 447.4 123.3 446.1 122.0 422.3 120.6 406.1 117.9 392.8 117.9 392.0 116.9 365.9 114.3 364.7 113.0 360.2 113.5 316.7 97.3 315.0 95.5
+
+
+line wall -subtype sand
+  594.0 132.0
+  561.0 135.0 545.56 128.5 499.0 127.0
+  451.55 125.48 413.0 129.0 314.95 95.48
+  smooth off
+endline
+
+line wall
+  262.91 159.94
+  244.93 152.77 193.82 129.03 175.83 121.86
+  smooth off
+endline
+
+point 586.74 147.07 station -name 4
+
+point 64.38 132.78 station -name 8
+
+point -76.30 150.90 station -name 9
+
+point -172.56 213.17 station -name 10
+
+endscrap
+
+

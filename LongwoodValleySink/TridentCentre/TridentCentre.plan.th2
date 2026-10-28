@@ -1,0 +1,231 @@
+encoding  utf-8
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+##XTHERION## xth_me_area_adjust -679.0 -237.2 434.7 1007.5
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {-263.52 1 1.0} {379.27 8} {Notes/TridentCentreP.xvi} 0 {}
+
+
+# Converted from TridentCentreP.xvi by tools/sketch2therion (plan).
+# Not hand-finished: check flow arrows and anything the conversion missed.
+
+scrap TridentCentreSP1 -projection plan -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+
+
+
+
+
+
+
+
+
+
+line wall
+  -474.48 490.46
+  -419.47 410.20 -467.12 444.40 -443.14 387.71
+  -399.11 283.62 -326.01 332.70 -244.03 294.19
+  -201.12 274.04 -164.41 239.75 -129.56 208.34
+  -14.94 105.03 -42.81 113.66 4.32 -32.47
+endline
+line wall
+  80.58 -3.62
+  67.54 30.06 49.64 124.28 44.56 151.90
+endline
+line wall
+  44.56 151.90
+  70.16 148.17 93.34 143.95 116.26 143.66
+  160.97 143.09 194.61 149.22 228.09 190.51
+  232.99 196.54 234.28 199.76 234.73 205.94
+  239.64 272.83 175.09 300.10 116.21 303.66
+  25.84 309.12 -159.60 471.98 -187.13 552.25
+  -201.75 594.88 -145.51 587.52 -175.91 633.45
+  -181.98 642.64 -209.02 624.63 -213.08 614.84
+  -220.90 604.02 -227.57 641.76 -228.56 646.69
+  -231.32 675.06 -239.60 774.69 -252.88 800.58
+endline
+line wall
+  -252.88 800.58
+  -265.14 722.00 -264.48 646.20 -240.11 570.32
+  -231.44 543.32 -220.01 517.29 -211.54 490.22
+  -190.95 424.41 -256.92 453.51 -298.03 458.05
+  -307.59 459.10 -350.70 471.97 -354.16 487.36
+  -360.50 515.57 -406.46 511.48 -434.12 520.61
+  -468.94 532.09 -464.57 532.72 -474.48 490.46
+endline
+
+line rock-border -close on
+  -178.17 357.32
+  -168.98 372.44
+  -168.97 402.68
+  -185.16 394.58
+  -194.33 356.00
+  -178.17 357.32
+endline
+line rock-edge
+  -185.16 394.58
+  -177.19 393.29
+  -190.33 369.12
+  -185.16 394.58
+endline
+line rock-edge
+  -177.19 393.29
+  -168.98 372.44
+endline
+line rock-edge
+  -190.33 369.12
+  -178.17 357.32
+endline
+line rock-border -close on
+  72.20 155.29
+  44.42 198.03
+  25.24 171.47
+  35.37 158.63
+  78.98 140.17
+  72.20 155.29
+endline
+line rock-edge
+  25.24 171.47
+  52.25 183.47
+  70.35 153.17
+  35.37 158.63
+endline
+line rock-edge
+  52.25 183.47
+  72.20 155.29
+endline
+
+
+line border -subtype invisible -id TridentCentreSP1-sand1 -close on
+  55.13 338.46
+  87.73 336.83 168.43 314.81 190.17 297.11
+  211.92 279.42 179.43 250.78 185.60 232.29
+  191.78 213.80 220.82 196.39 227.22 186.18
+  233.63 175.97 236.21 179.74 224.02 171.03
+  211.83 162.33 181.71 139.64 154.09 133.94
+  126.47 128.25 73.28 141.45 58.30 136.86
+  43.32 132.28 74.06 107.72 64.20 106.43
+  54.34 105.14 18.05 115.89 -0.84 129.13
+  -19.72 142.36 -39.35 168.42 -49.11 185.85
+  -58.87 203.27 -66.69 213.51 -59.40 233.68
+  -52.12 253.86 -24.49 289.42 -5.40 306.89
+  13.69 324.35 22.54 340.09 55.13 338.46
+endline
+
+area sand
+  TridentCentreSP1-sand1
+endarea
+
+line border -subtype invisible -id TridentCentreSP1-sand2 -close on
+  -487.98 509.96
+  -492.10 527.48 -479.16 530.33 -473.49 534.96
+  -467.81 539.60 -480.22 547.77 -453.92 537.77
+  -427.63 527.77 -353.68 487.99 -315.72 474.97
+  -277.76 461.95 -242.33 472.42 -226.17 459.65
+  -210.00 446.89 -233.17 425.47 -218.73 398.37
+  -204.29 371.26 -151.97 319.64 -139.54 297.02
+  -127.11 274.40 -135.54 271.31 -144.15 262.67
+  -152.76 254.03 -173.70 241.71 -191.18 245.18
+  -208.67 248.65 -212.21 266.37 -249.06 283.50
+  -285.91 300.62 -377.97 330.57 -412.28 347.92
+  -446.58 365.27 -448.82 373.96 -454.90 387.61
+  -460.98 401.26 -443.25 409.43 -448.76 429.82
+  -454.28 450.21 -483.86 492.43 -487.98 509.96
+endline
+
+area sand
+  TridentCentreSP1-sand2
+endarea
+
+
+
+
+line border -id TridentCentreSP1-inner4
+  -20.31 158.25
+  -12.19 159.86 23.77 166.91 31.88 168.51
+endline
+
+
+line section -direction both
+  -43.72 -11.99
+  109.90 30.14
+endline
+
+point 186.46 28.58 section -scrap TridentCentrePX1
+
+line section -direction end
+  -225.44 469.97
+  -120.43 516.50
+endline
+
+point -46.19 626.30 section -scrap TridentCentrePX5
+
+line section -direction begin
+  -291.02 261.58
+  -242.49 469.52
+endline
+
+point -371.76 591.83 section -scrap TridentCentrePX8
+
+point -263.52 379.27 station -name 8
+
+point -236.18 635.52 station -name 6
+
+point -71.27 274.30 station -name 3
+
+point -255.46 793.75 station -name 7
+
+point -387.82 445.15 station -name 9
+
+point -199.16 483.80 station -name 5
+
+point 223.30 201.96 station -name 4
+
+point 0.00 0.00 station -name 1
+
+point -31.13 113.51 station -name 2
+
+point -459.88 508.97 station -name 10
+  point 636.0 802.1 label -text Trident<br>Series -scale xl
+endscrap
+
+scrap TridentCentrePX1 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 1.
+
+line wall -close on
+  452.85 323.05
+  440.93 331.16 436.58 335.34 428.49 347.38
+  452.33 408.56 499.23 370.85 500.07 361.55
+  501.22 348.96 484.92 345.81 476.33 337.68
+  471.77 333.38 471.12 326.02 465.09 323.06
+  461.10 321.10 456.17 324.44 452.85 323.05
+endline
+endscrap
+
+scrap TridentCentrePX5 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 5.
+
+line wall -close on
+  48.01 576.88
+  61.42 589.34 101.62 613.45 120.18 590.14
+  140.75 564.30 99.59 542.39 82.44 535.54
+  68.84 548.74 57.00 559.87 48.01 576.88
+endline
+endscrap
+
+scrap TridentCentrePX8 -projection none -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+# Cross-section at station 8.
+
+line wall -close off
+  -408.5 90.4
+  -354.1 121.9 -315.8 130.6 -262.5 92.6
+endline
+line wall -close off -subtype sand
+  -262.5 92.6
+  -285.8 78.6 -297.4 62.6 -327.7 65.5
+  -382.6 70.7 -408.5 90.4 -408.5 90.4
+endline
+
+endscrap

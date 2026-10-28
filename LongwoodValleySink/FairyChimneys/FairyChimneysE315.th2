@@ -1,0 +1,294 @@
+encoding  utf-8
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+##XTHERION## xth_me_area_adjust -242.7 -223.6 1312.9 619.7
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {1087.38 1 1.0} {374.61 1} {Notes/FairyChimneysE315.xvi} 0 {}
+
+
+# Projected elevation, facing 315: the walls of FairyChimneys.extended.th2 projected by
+# tools/sketch2therion projected (walls only; one scrap per run of passage heading one way
+# across the view).
+
+scrap FairyChimneysSE315_1 -projection [elevation 315] -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of FairyChimneysSEe1 (FairyChimneys.extended.th2) projected to 315.
+
+line wall -subtype sand
+  915.31 328.26
+  936.35 331.27 956.95 340.85 977.99 345.27
+  1015.99 353.25 1056.97 355.02 1093.24 369.18
+endline
+
+line wall -subtype sand
+  725.61 282.10
+  736.75 284.66 747.27 289.34 758.47 291.66
+  766.30 293.29 778.04 293.36 784.93 297.69
+  789.96 300.85 791.22 303.77 797.86 305.38
+  836.55 314.72 877.00 317.96 915.31 328.26
+endline
+
+line wall
+  697.07 283.03
+  706.66 283.35 716.06 281.48 725.61 282.10
+endline
+
+line wall -subtype sand
+  537.21 272.80
+  556.72 273.45 577.11 275.30 596.72 275.12
+  607.39 275.03 617.82 272.27 628.50 272.90
+  651.32 274.26 674.30 280.24 697.07 283.03
+endline
+
+line wall -subtype sand
+  518.78 274.18
+  524.97 274.45 530.99 273.22 537.21 272.80
+endline
+
+line wall -subtype debris
+  301.95 165.19
+  328.21 169.87 351.42 178.13 372.90 194.30
+  381.19 200.54 387.27 208.56 396.42 213.90
+  408.01 220.66 423.80 224.13 433.68 233.45
+  443.03 242.27 444.15 256.62 457.26 263.77
+  474.50 273.17 499.71 272.19 518.78 274.18
+endline
+
+line wall -subtype sand
+  265.97 142.12
+  278.74 148.81 290.27 156.91 301.95 165.19
+endline
+
+line wall -subtype sand
+  163.34 100.16
+  179.46 105.26 192.30 116.27 207.35 123.71
+  225.67 132.76 246.34 136.87 265.97 142.12
+endline
+
+line wall
+  81.42 89.67
+  107.14 86.20 138.47 93.60 163.34 100.16
+endline
+
+line wall
+  1089.68 384.93
+  1082.23 373.82 1057.18 372.65 1044.32 370.80
+  1012.21 366.20 978.33 358.88 947.22 349.91
+  936.59 346.85 930.84 354.62 921.80 347.14
+  922.28 345.75 922.94 342.74 923.35 341.68
+  903.89 337.01 884.01 331.16 864.37 327.57
+  851.63 325.24 838.34 325.66 825.73 322.44
+  790.80 313.54 756.15 300.65 720.80 293.09
+  714.49 317.17 725.76 377.71 714.71 400.40
+  708.21 376.36 709.21 349.66 707.78 324.94
+  707.36 317.78 710.22 305.37 707.18 298.91
+  704.83 293.92 693.46 285.81 688.20 284.37
+  676.56 281.18 649.82 282.77 636.46 282.12
+  629.25 281.77 621.25 279.56 614.27 281.81
+  602.92 285.47 598.35 296.88 588.32 301.60
+  579.19 305.89 567.61 301.75 558.81 307.23
+  542.44 317.43 562.72 337.21 536.98 350.88
+  528.15 337.99 531.76 317.67 527.29 302.67
+  507.50 301.75 478.30 292.95 464.86 315.68
+  460.46 323.13 462.60 333.21 458.49 339.97
+  445.55 323.83 454.57 305.63 439.72 290.06
+  419.47 268.83 368.93 265.10 345.32 251.81
+  334.31 245.62 305.93 232.29 299.45 222.75
+  292.30 212.24 298.00 195.22 287.64 185.95
+  275.53 175.10 204.10 155.67 182.06 146.41
+endline
+
+point 1087.38 374.61 station -name 1
+
+point 1055.23 367.13 station -name 2
+
+point 988.97 356.89 station -name 3
+
+point 922.85 339.57 station -name 4
+
+point 869.68 324.41 station -name 5
+
+point 833.63 316.73 station -name 6
+
+point 787.00 309.85 station -name 7
+
+point 753.32 298.23 station -name 8
+
+point 714.48 289.57 station -name 9
+
+point 662.28 280.51 station -name 13
+
+point 636.67 278.15 station -name 14
+
+point 613.84 277.76 station -name 15
+
+point 571.67 286.42 station -name 16
+
+point 539.51 287.21 station -name 22
+
+point 521.42 289.18 station -name 23
+
+point 497.75 283.86 station -name 24
+
+point 456.27 286.03 station -name 25
+
+point 433.45 261.03 station -name 26
+
+point 362.74 221.46 station -name 27
+
+point 345.62 209.45 station -name 28
+
+point 302.33 183.86 station -name 29
+
+point 267.53 167.33 station -name 30
+
+point 172.88 117.13 station -name 31
+
+point 98.27 112.99 station -name 32
+
+point 83.09 110.24 station -name 33
+
+endscrap
+
+scrap FairyChimneysSE315_2 -projection [elevation 315] -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of FairyChimneysSEe1 (FairyChimneys.extended.th2) projected to 315.
+
+line wall
+  41.62 104.14
+  54.53 98.81 65.11 92.05 79.05 89.67
+endline
+
+line wall -subtype presumed
+  -23.04 220.08
+  -15.49 220.57 -8.83 218.11 -1.48 216.58
+endline
+
+line wall -subtype flowstone
+  -1.48 216.58
+  -1.05 187.20 -2.82 148.72 17.43 124.83
+  24.43 116.57 33.50 111.11 41.62 104.14
+endline
+
+point 83.09 110.24 station -name 33
+
+point 9.18 144.69 station -name 34
+
+endscrap
+
+scrap FairyChimneysSE315_3 -projection [elevation 315] -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of FairyChimneysSEe2 (FairyChimneys.extended.th2) projected to 315.
+
+line wall -subtype presumed
+  747.80 315.99
+  750.99 327.47 750.08 339.68 750.22 351.53
+endline
+
+line wall
+  729.10 299.64
+  732.56 310.94 741.32 307.51 747.80 315.99
+endline
+
+line wall
+  739.75 322.19
+  730.50 313.53 726.27 311.36 724.53 298.02
+endline
+
+line wall -subtype presumed
+  744.06 355.26
+  743.09 344.19 742.71 332.92 739.75 322.19
+endline
+
+point 726.59 292.52 station -name 10
+
+point 727.98 311.81 station -name 11
+
+point 743.01 315.95 station -name 12
+
+endscrap
+
+scrap FairyChimneysSE315_4 -projection [elevation 315] -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of FairyChimneysSEe3 (FairyChimneys.extended.th2) projected to 315.
+
+line wall
+  534.45 258.08
+  564.97 261.93 587.12 281.90 619.02 279.62
+  615.40 282.67 612.31 286.45 608.77 289.38
+  595.80 277.86 585.78 292.87 574.45 274.27
+endline
+
+line wall
+  533.29 268.30
+  566.35 273.95 592.77 298.80 622.07 311.52
+  586.64 362.49 585.99 306.23 544.49 304.33
+endline
+
+point 584.89 314.96 station -name 17
+
+point 606.60 309.65 station -name 18
+
+point 620.11 293.70 station -name 19
+
+point 585.31 286.03 station -name 20
+
+point 544.25 265.95 station -name 21
+
+endscrap
+
+scrap FairyChimneysSE315_5 -projection [elevation 315] -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of FairyChimneysSEe4 (FairyChimneys.extended.th2) projected to 315.
+
+line wall
+  173.79 132.07
+  203.76 148.08 229.18 160.71 263.52 150.32
+endline
+
+line wall -subtype presumed
+  293.38 268.07
+  270.16 283.50 216.28 336.78 196.22 340.42
+endline
+
+line wall -subtype presumed
+  196.22 340.42
+  178.91 322.44 159.49 260.91 154.22 235.16
+endline
+
+line wall
+  154.22 235.16
+  146.66 204.50 140.91 173.08 123.33 146.29
+endline
+
+point 199.46 158.47 station -name 37
+
+point 265.58 168.90 station -name 38
+
+endscrap
+
+scrap FairyChimneysSE315_6 -projection [elevation 315] -author 2026.08.08 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of FairyChimneysSEe4 (FairyChimneys.extended.th2) projected to 315.
+
+line wall
+  276.55 108.59
+  280.61 88.62 279.24 46.49 287.10 30.67
+  291.72 21.38 303.06 14.09 311.67 8.96
+  322.69 2.41 334.53 -2.50 347.30 -3.95
+endline
+
+line wall
+  264.52 150.32
+  273.73 139.71 274.42 123.98 276.81 110.59
+endline
+
+line wall -subtype presumed
+  313.25 241.77
+  299.76 245.94 289.44 258.10 279.89 268.07
+endline
+
+point 265.58 168.90 station -name 38
+
+point 291.33 155.91 station -name 39
+
+endscrap

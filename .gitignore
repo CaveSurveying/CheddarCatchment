@@ -1,0 +1,18 @@
+__pycache__/
+
+# Therion build outputs. Outputs/ folders are kept (the thconfigs write
+# into them), their contents are not.
+output/
+proj/
+*.3d
+*.lox
+*.log
+**/Outputs/*
+!**/Outputs/.gitkeep
+
+# xTherion state and Therion's temporary folder: never committed.
+.xtherion.dat
+thTMPDIR/
+
+# PDFs are build outputs; force any exception with git add -f.
+*.pdf

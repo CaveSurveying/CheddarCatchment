@@ -1,0 +1,76 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -1040.0 -1668.0 200.0 225.0
+##XTHERION## xth_me_area_zoom_to 400
+##XTHERION## xth_me_image_insert {32.879999999999995 1 3.8018939632056115} {89.92000000000007 0} PocketTopo/EntranceE90.xvi 0 {}
+
+
+
+scrap EntranceSE901 -projection [elevation 90 deg] -scale [-128.0 -128.0 178.0 -128.0 0.0 0.0 7.772399999999999 0.0 m]
+
+point 16.25 95.75 label -text Entrance -align top-left
+
+point 58.75 75.25 label -text Adit -align top-right
+
+line wall
+  57.75 59.75
+  56.5 64.0 58.5 68.5 57.0 70.25
+  55.5 72.0 51.75 75.75 51.75 75.75
+  smooth off
+  51.75 75.75 52.75 69.0 53.0 68.0
+  53.25 67.0 52.61 66.16 50.25 70.0
+  48.25 73.25 33.07 89.92 33.07 89.92
+  smooth off
+endline
+
+line wall
+  29.75 86.0
+  46.93 66.77
+  46.93 66.77 44.75 64.25 44.75 62.5
+  44.75 60.75 46.75 58.5 48.25 56.5
+  49.75 54.5 50.5 44.25 50.5 42.5
+  50.5 40.75 49.5 39.0 44.5 36.25
+  39.5 33.5 34.75 23.75 40.25 21.5
+  45.75 19.25 48.25 24.25 51.25 19.75
+  54.25 15.25 53.75 13.75 55.5 12.25
+  57.25 10.75 57.5 10.96 61.5 11.25
+  smooth off
+endline
+
+line wall
+  129.25 42.5
+  124.25 43.25 107.25 48.0 101.75 49.75
+  96.25 51.5 59.0 59.0 57.75 59.75
+endline
+
+line wall
+  58.25 52.5
+  61.0 54.0 93.0 44.75 99.25 43.75
+  105.5 42.75 126.25 35.25 131.25 35.0
+endline
+
+line wall
+  68.75 19.25
+  67.27 21.48 72.25 26.25 70.5 28.0
+  68.75 29.75 63.75 30.75 61.5 38.5
+  59.25 46.25 55.39 49.64 58.25 52.5
+endline
+
+point 55.2 20.39 station -name 13
+
+point 58.74 25.98 station -name 12
+
+point 56.769999999999996 31.41 station -name 11
+
+point 52.36 56.3 station -name 2
+
+point 53.7 66.53 station -name 7
+
+point 51.89 59.21 station -name 6
+
+point 46.93 66.77 station -name 1
+
+point 33.07 89.92 station -name 0
+
+endscrap
+
+

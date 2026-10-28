@@ -1,0 +1,37 @@
+# Created with SexyTopo 1.8.3 on 2024-11-11
+
+encoding utf-8
+# created with SexyTopo 1.8.3
+
+survey WestPassage
+
+input "WestPassage.plan.th2"
+input "WestPassage.ee.th2"
+
+	
+	centreline
+	
+		date 2024.11.09
+		team "Andrew Atkinson" notes
+		team "Alison Moody" instruments
+		
+		data normal from to length compass clino
+		
+		48	-	4.504	204.14	-12.66	
+		48	-	4.505	204.13	-12.80	
+		48	-	4.501	24.46	12.46	
+		48	-	3.947	68.82	31.99	
+		48	-	0.720	28.75	-82.23	
+		48	-	1.111	336.56	-58.76	
+		48	-	0.765	333.58	-2.32	
+		48	-	0.789	353.92	65.54	
+		48	-	0.377	71.80	73.42	
+	
+	
+		extend start 48
+	
+	
+	endcentreline
+
+
+endsurvey

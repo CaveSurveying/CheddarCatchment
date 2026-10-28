@@ -1,0 +1,54 @@
+encoding  utf-8
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+##XTHERION## xth_me_area_adjust -221.0 -226.2 338.3 285.5
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {70.99 1 1.0} {45.27 1} {Notes/IDontCareE315.xvi} 0 {}
+
+
+# Projected elevation, facing 315: the walls of IDontCare.extended.th2 projected by
+# tools/sketch2therion projected (walls only; one scrap per run of passage heading one way
+# across the view).
+
+scrap IDontCareSE315_1 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of IDontCareSEe1 (IDontCare.extended.th2) projected to 315.
+
+line wall
+  83.11 48.68
+  89.62 53.53 96.38 57.91 103.22 62.28
+endline
+
+line wall
+  0.67 -6.57
+  13.39 3.76 27.19 15.50 41.12 24.06
+  55.25 32.74 70.28 37.94 83.11 48.68
+endline
+
+line wall
+  118.66 46.66
+  98.25 37.46 70.93 47.19 56.36 41.42
+  52.68 39.96 50.23 35.51 46.64 33.42
+  41.63 30.52 35.46 30.17 30.81 26.62
+  26.07 22.99 23.62 17.26 18.40 14.08
+  11.99 10.18 5.20 12.46 -1.37 8.50
+endline
+
+line wall
+  114.37 57.15
+  100.25 54.48 85.99 50.54 71.57 51.24
+  81.53 55.01 89.36 62.39 99.44 65.83
+endline
+
+point 70.99 45.27 station -name 1
+
+point 110.93 51.77 station -name 2
+
+point 107.32 66.93 station -name 3
+
+point 33.82 23.62 station -name 4
+
+point 6.26 3.54 station -name 5
+
+point 0.00 0.00 station -name 6
+
+endscrap

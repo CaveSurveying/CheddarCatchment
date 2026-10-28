@@ -1,0 +1,53 @@
+encoding  utf-8
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+
+# Extended elevation of Triassic2, unfolded from its projected elevations by
+# tools/sketch2therion unfold (each leg from the view seeing it most side on):
+#   Triassic2E000.th2 Triassic2SE000_1: facing 0, stations within 0.08 m
+#   Triassic2E315.th2 Triassic2SE315_1: facing 315, stations within 0.02 m
+#   Triassic2E90.th2 Triassic2SE90_1: facing 90, stations within 0.01 m
+
+scrap Triassic2SEe1 -projection extended -author 2018.05.17 "John Cooper" -copyright 2018 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+line wall
+  -639.24 92.52
+  -641.98 90.31 -655.59 79.60 -655.63 79.26
+  -655.68 78.93 -644.88 88.16 -639.51 90.52
+  -634.13 92.89 -628.76 93.45 -623.38 93.48
+  -618.01 93.50 -644.67 99.50 -607.26 90.68
+  -569.84 81.86 -469.77 56.40 -398.89 40.54
+  -328.02 24.68 -251.90 15.98 -181.99 -4.48
+  -112.07 -24.93 -36.55 -62.89 20.60 -82.19
+  77.75 -101.48 80.58 -102.70 160.90 -120.26
+  241.21 -137.82 424.96 -174.00 502.49 -187.54
+  580.02 -201.07 595.18 -199.10 626.08 -201.47
+  656.98 -203.83 677.58 -201.68 687.88 -201.73
+endline
+
+line wall
+  -687.88 194.29
+  -637.13 186.26 -447.06 158.26 -383.40 146.10
+  -319.74 133.94 -347.27 136.02 -305.93 121.33
+  -264.60 106.64 -200.22 78.40 -135.40 57.95
+  -70.58 37.50 23.25 12.21 83.00 -1.35
+  142.75 -14.91 166.06 -11.36 223.10 -23.40
+  280.14 -35.44 363.23 -61.65 425.24 -73.61
+  487.26 -85.57 551.41 -88.57 595.18 -95.14
+  638.96 -101.72 672.43 -110.07 687.88 -113.05
+endline
+
+point -687.88 92.52 station -name 0
+
+point -687.88 161.80 station -name 1
+
+point -429.88 106.68 station -name 2
+
+point -151.00 37.40 station -name 3
+
+point 129.80 -53.92 station -name 4
+
+point 425.24 -105.92 station -name 5
+
+point 687.88 -161.80 station -name 6
+
+endscrap

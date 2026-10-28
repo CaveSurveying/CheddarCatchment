@@ -1,0 +1,307 @@
+encoding  utf-8
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+##XTHERION## xth_me_area_adjust -237.2 -271.4 773.8 585.9
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {0.00 1 1.0} {0.00 1} {Notes/ConnectionE315.xvi} 0 {}
+
+
+# Projected elevation, facing 315: the walls of Connection.extended.th2 projected by
+# tools/sketch2therion projected (walls only; one scrap per run of passage heading one way
+# across the view).
+
+scrap ConnectionSE315_1 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of ConnectionSEe1 (Connection.extended.th2) projected to 315.
+
+line wall
+  332.35 314.84
+  327.41 298.34 322.92 281.63 316.51 265.63
+endline
+
+line wall
+  316.51 265.63
+  313.24 258.31 309.96 251.00 306.69 243.68
+endline
+
+line wall
+  306.69 243.68
+  301.06 224.40 295.09 205.40 289.27 186.13
+endline
+
+line wall
+  30.14 159.87
+  23.00 178.34 13.31 197.58 9.13 216.79
+endline
+
+line wall
+  -9.26 258.95
+  -0.29 246.27 4.08 231.33 9.13 216.79
+endline
+
+line wall -subtype sand
+  44.53 70.89
+  39.04 70.26 34.97 69.09 30.27 66.56
+  30.16 56.58 30.08 46.60 29.99 36.62
+endline
+
+line wall -subtype blocks
+  -17.49 -51.50
+  -2.79 -51.85 11.89 -51.51 26.59 -51.25
+endline
+
+line wall -subtype debris
+  108.42 71.95
+  107.29 77.11 101.33 80.01 96.14 82.73
+  84.77 88.68 55.03 76.47 44.53 70.89
+endline
+
+line wall -subtype presumed
+  33.93 52.29
+  64.54 54.51 82.62 56.93 108.42 71.95
+endline
+
+line wall -subtype sand
+  220.27 61.33
+  252.27 72.96 285.75 79.37 318.59 88.08
+endline
+
+line wall -subtype debris
+  140.09 37.75
+  151.13 37.67 168.56 36.39 176.50 46.05
+  180.90 51.39 182.00 59.22 186.28 64.81
+  190.09 62.65 191.49 59.13 194.94 56.71
+  201.41 52.17 213.44 59.00 220.27 61.33
+endline
+
+line wall
+  107.83 30.97
+  119.19 30.44 129.86 32.83 140.09 37.75
+endline
+
+line wall -subtype presumed
+  29.99 36.62
+  47.61 38.51 71.70 45.04 88.97 39.70
+  95.61 37.64 101.16 33.12 107.83 30.97
+endline
+
+line wall -subtype sand
+  26.59 -51.25
+  28.28 -21.97 28.30 7.36 30.00 36.65
+endline
+
+line wall
+  289.27 186.13
+  277.88 168.79 260.36 167.98 242.56 160.87
+  235.60 158.08 228.30 150.80 220.47 151.81
+  210.52 153.08 202.71 163.93 193.96 168.04
+  181.67 161.99 184.28 151.57 176.92 145.44
+  174.72 143.61 170.76 144.10 168.04 143.72
+  159.35 142.48 148.44 137.67 139.74 140.12
+  123.45 144.70 121.74 167.08 105.00 167.31
+  89.11 167.53 76.09 155.27 63.34 151.64
+  55.25 149.33 39.24 152.41 30.46 152.90
+  30.52 154.92 30.69 157.14 30.14 159.87
+endline
+
+point 0.00 0.00 station -name 1
+
+point 33.27 90.16 station -name 2
+
+point 63.19 100.79 station -name 3
+
+point 63.89 114.37 station -name 4
+
+point 95.35 111.03 station -name 8
+
+point 135.44 90.95 station -name 9
+
+point 168.15 92.72 station -name 10
+
+point 197.10 81.30 station -name 11
+
+point 243.45 96.46 station -name 12
+
+point 287.99 107.29 station -name 13
+
+endscrap
+
+scrap ConnectionSE315_2 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of ConnectionSEe2 (Connection.extended.th2) projected to 315.
+
+line wall
+  208.38 169.73
+  158.87 170.99 85.36 160.20 71.36 156.14
+endline
+
+point 91.87 134.45 station -name 5
+
+point 103.56 141.14 station -name 6
+
+point 209.76 151.18 station -name 7
+
+  line wall
+    77.3 117.7
+    99.9 123.2 95.5 129.2 119.2 132.5
+    142.9 135.9 200.8 142.5 213.4 143.6
+  endline
+endscrap
+
+scrap ConnectionSE315_3 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of ConnectionSEe3 (Connection.extended.th2) projected to 315.
+
+line wall -subtype debris
+  351.57 105.44
+  344.77 99.96 340.73 96.57 345.17 88.09
+endline
+
+line wall
+  362.94 113.05
+  358.67 111.00 355.31 108.43 351.57 105.44
+endline
+
+line wall
+  406.33 137.46
+  410.23 134.81 412.13 132.64 414.56 128.56
+endline
+
+line wall -subtype presumed
+  414.56 128.56
+  429.96 128.84 439.89 130.72 447.61 138.55
+endline
+
+line wall
+  517.59 123.44
+  534.16 121.37 542.37 140.86 532.44 153.78
+  525.43 162.91 497.02 165.34 488.51 157.42
+  469.73 139.94 506.45 125.90 517.59 123.44
+endline
+
+line overhang -reverse on
+  420.46 156.70
+  433.38 161.94 463.10 160.33 476.87 159.33
+endline
+
+line wall -subtype presumed
+  389.68 229.71
+  400.01 237.72 415.67 236.71 428.32 237.46
+endline
+
+line wall -subtype presumed
+  429.01 366.21
+  405.13 358.94 387.88 343.97 376.20 322.08
+endline
+
+line wall -subtype debris
+  512.55 92.66
+  521.74 82.99 538.75 90.84 550.12 94.56
+endline
+
+line wall -subtype presumed
+  447.61 138.55
+  455.77 133.41 464.17 130.11 471.68 123.77
+  479.90 116.83 486.75 106.15 495.73 100.44
+  502.87 95.90 508.45 101.20 512.55 92.66
+endline
+
+line wall -subtype sand
+  362.94 113.05
+  376.75 121.76 390.61 132.64 406.33 137.46
+endline
+
+line wall
+  470.96 186.45
+  461.90 188.65 453.86 197.13 443.61 195.36
+  427.11 192.51 400.26 159.75 388.95 186.29
+  392.57 187.00 396.54 187.79 399.91 188.70
+  392.54 201.51 391.35 215.22 389.68 229.71
+endline
+
+line wall
+  554.15 225.78
+  535.07 220.53 508.81 227.11 493.26 212.41
+  488.63 208.03 486.56 201.71 482.30 197.05
+  478.69 193.09 474.33 190.78 470.96 186.45
+endline
+
+point 360.93 156.70 station -name 15
+
+point 386.68 230.51 station -name 16
+
+point 394.89 159.45 station -name 17
+
+point 437.07 170.87 station -name 24
+
+point 447.93 172.44 station -name 25
+
+point 471.31 177.37 station -name 26
+
+point 527.41 175.20 station -name 27
+
+point 550.37 126.77 station -name 28
+
+endscrap
+
+scrap ConnectionSE315_4 -projection [elevation 315] -author 2026.08.01 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
+
+# Walls of ConnectionSEe4 (Connection.extended.th2) projected to 315.
+
+line wall -subtype presumed
+  351.49 29.70
+  352.34 43.90 353.27 58.03 355.36 72.11
+endline
+
+line wall
+  394.72 137.07
+  403.73 137.13 412.76 136.80 421.59 138.47
+endline
+
+line wall
+  369.22 110.54
+  385.43 115.05 388.78 122.60 394.72 137.07
+endline
+
+line wall -subtype sand
+  357.56 109.41
+  361.40 110.21 365.13 110.40 369.22 110.54
+endline
+
+line wall
+  355.36 72.11
+  354.81 84.70 354.59 97.10 357.56 109.41
+endline
+
+line wall -subtype presumed
+  336.74 57.54
+  338.89 48.54 340.27 39.40 341.81 30.28
+endline
+
+line wall -subtype debris
+  323.34 88.05
+  336.11 85.72 335.15 68.30 336.74 57.54
+endline
+
+line wall
+  421.59 138.47
+  421.71 144.78 421.99 150.65 420.46 156.70
+  400.39 166.72 388.19 151.55 369.36 148.34
+  362.77 147.22 355.96 150.53 350.05 148.71
+  342.73 146.46 337.69 140.13 330.17 138.07
+endline
+
+point 318.06 103.74 station -name 14
+
+point 334.48 113.59 station -name 18
+
+point 356.06 113.78 station -name 19
+
+point 364.83 116.74 station -name 20
+
+point 386.96 132.68 station -name 21
+
+point 395.17 142.92 station -name 22
+
+point 418.70 152.76 station -name 23
+
+endscrap

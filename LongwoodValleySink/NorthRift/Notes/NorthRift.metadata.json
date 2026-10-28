@@ -1,0 +1,11 @@
+{
+  "active-station": "107",
+  "connections": {
+    "85": [
+      [
+        "content:\/\/com.android.externalstorage.documents\/tree\/primary%3ADocuments%2FSurveys%2FLVS%2FCyclopes\/document\/primary%3ADocuments%2FSurveys%2FLVS%2FCyclopes",
+        "85"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+encoding  utf-8
+# A new survey trip in LongwoodValleySink. SexyTopo (set up for the
+# house style) exports most of this; use this file to check what it
+# wrote, or as a start when it did not. A trip X lives in
+# LongwoodValleySink/X/X.th, with its plan drawing X.plan.th2 and its
+# sketches in X/Notes/. See tools/README.md for the whole workflow and
+# tools/sketch2therion/Style.md for the conventions.
+#
+# Then, in LongwoodValleySink/LongwoodValleySink.th:
+#   input X/X.th
+#   equate 27@CrystalPitch 1@X        (tie its first station on)
+# and add XMP@X to map LongwoodValleySinkMP.
+
+survey NewTrip -title "New Trip"
+
+  # The plan drawing and its map, once converted (tools/sketch2therion)
+  # and drawn; Therion stops on a map whose scraps are not input yet.
+  # input "NewTrip.plan.th2"
+  #
+  # map NewTripMP
+  #   NewTripSP1
+  # endmap
+
+  centreline
+    copyright 2026 "CC BY-NC-SA 4.0"
+
+    date 2026.01.01
+    team "First Surveyor" notes
+    team "Second Surveyor" instruments
+    team "Third Surveyor" assistant
+
+    explo-date 2026.01.01
+    explo-team "First Surveyor"
+
+    # SexyTopo writes: data normal from to tape compass clino ignoreall
+    data normal from to tape compass clino
+    1 2 4.21 231.5 -12.0
+    2 - 1.10 140.0 3.0
+    2 3 3.87 245.0 -4.5
+
+    extend right
+  endcentreline
+endsurvey

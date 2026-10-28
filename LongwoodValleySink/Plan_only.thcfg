@@ -1,0 +1,13 @@
+encoding  utf-8
+# Plan of Longwood Valley Sink only (trial: see docs/PLAN-LongwoodValleySink.md).
+# The layouts are thconfig's, from Layouts.th.
+# Run from this folder: therion Plan_only.thcfg
+
+source LongwoodValleySink.th
+
+select LongwoodValleySinkMP@LongwoodValleySink -map-level 1
+
+export map -proj plan -layout plan -o Outputs/LongwoodValleySinkP.pdf
+
+input Layouts.th
+input ../common_layout.th

@@ -1,0 +1,188 @@
+encoding  utf-8
+survey TickleRift
+
+input TickleRiftP.th2
+input TickleRiftE315.th2
+
+map TickleRiftME315
+    TickleRiftSE315_1
+endmap
+
+input "TickleRift.extended.th2"
+
+map TickleRiftMEe
+  TickleRiftSEe1
+endmap
+
+input TickleRiftE000.th2
+
+map TickleRiftME000
+    TickleRiftSE000_1
+endmap
+input TickleRiftE0.th2
+#input TickleRiftE90.th2
+
+map TickleRiftMP
+  TickleRiftSP1
+  break
+  TickleRiftSP2
+  break
+  TickleRiftSP3
+  break
+  TickleRiftSP4
+endmap
+
+map TickleRiftME0
+  TickleRiftSE01
+endmap
+
+#map TickleRiftME90
+#  TickleRiftSE901
+#endmap
+
+centreline
+cs OSGB:ST
+
+copyright 2018 "CC BY SA NC"
+
+  date 2022.09.19
+
+  team "John Cooper" notes
+  team "John Cooper" instruments
+  team "Alison Moody" dog
+
+  instrument  instruments "John Cooper"
+
+  explo-date 2022.09.19
+
+  data normal from to compass clino tape ignoreall
+  extend right
+
+# 30 is drilled hole, 13 on Entrance
+
+  30 31 333.52 35.58 1.506
+  31 - 100.97 -36.92 1.380
+  31 - 100.35 26.81 0.499
+  31 - 348.59 -82.45 0.885
+  31 32 46.20 -17.97 1.744
+  32 - 128.47 -24.56 0.739
+  32 - 108.07 61.70 0.530
+  32 - 327.05 66.60 0.537
+  32 - 152.97 -63.91 0.375
+  32 33 51.89 -11.55 2.183
+  33 - 177.91 -1.43 0.603
+  33 - 174.41 51.03 0.898
+  33 - 163.69 -57.12 1.148
+  33 34 120.09 -23.41 1.530
+  34 35 78.48 16.81 1.694
+  34 - 1.56 4.86 0.295
+  34 - 8.18 -53.01 0.561
+  34 - 144.88 -72.75 0.598
+  34 - 340.12 65.81 0.459
+  34 36 300.75 -58.47 1.440
+  36 - 7.28 -8.28 0.646
+  36 - 182.88 11.38 0.527
+  36 - 123.42 -68.79 0.497
+  36 - 85.55 -16.88 0.782
+  36 37 33.37 -59.11 1.763 37 is handhold
+  37 - 42.38 -80.03 0.625
+  37 - 176.31 1.36 0.296
+  37 - 270.06 -31.52 2.165
+  37 - 237.10 78.42 1.596
+  37 38 89.68 -9.55 1.458
+  38 - 359.35 6.84 0.176
+  38 - 193.56 -7.81 0.883
+  38 - 195.98 53.81 1.027
+  38 - 191.29 -52.31 1.178
+  38 - 160.14 -70.26 1.168
+  38 39 325.68 -73.89 2.915
+  39 - 112.53 28.08 0.648
+  39 - 153.96 33.95 0.818
+  39 - 218.60 0.20 0.564
+  39 - 260.75 13.11 0.741
+  39 - 315.64 3.27 0.509
+  39 40 322.26 -82.42 1.103 40 is drilled hole
+  40 41 110.62 -81.20 0.705
+  40 - 97.08 2.74 0.439
+  40 - 164.71 2.48 0.508
+  40 - 196.29 2.62 0.482
+  40 - 246.96 3.47 0.926
+  40 - 287.86 11.01 0.990
+  40 - 271.87 -36.83 1.108
+  copyright 2023 "CC BY SA NC"
+
+  team "John Cooper" notes
+  team "John Cooper" instruments
+  team "Alison Moody" dog
+  team "Lee Hawkswell" dog
+
+  instrument  instruments "John Cooper"
+
+  date 2023.10.27
+  data normal from to compass clino tape
+  extend right
+  42.0 40 133.22 34.65 1.354
+  42.0 - 155.22 5.26 0.633
+  42.0 - 6.58 22.28 0.509
+  42.0 - 88.32 -6.40 0.960
+  42.0 - 70.30 14.08 0.814
+  42.0 - 57.79 -68.74 1.128
+  42.0 43.0 82.96 -35.70 1.857
+  43.0 - 35.77 -4.41 0.690
+  43.0 - 94.36 7.12 0.371
+  43.0 - 136.12 10.31 1.392
+  43.0 - 201.08 2.16 0.398
+  43.0 - 190.89 5.98 1.065
+  43.0 - 37.25 69.93 0.443
+  43.0 - 97.47 -59.34 1.509
+  43.0 - 85.71 -60.16 1.560
+  43.0 - 91.23 -65.77 1.587
+  43.0 44.0 59.64 -51.32 1.674
+  44.0 - 288.74 -6.11 0.479
+  44.0 - 304.91 38.39 0.597
+  44.0 - 335.76 -72.13 1.548
+  44.0 - 13.10 -70.06 1.346
+  44.0 - 326.14 -11.93 1.025
+  44.0 - 350.36 -33.59 1.462
+#  44.0 45.0 343.34 -44.44 2.120
+#  45.0 - 24.07 -81.88 0.799
+#  45.0 - 272.29 -65.42 0.782
+#  45.0 - 275.47 -4.69 0.379
+#  45.0 - 289.23 63.31 0.663
+#  45.0 - 24.06 84.31 0.619
+#  45.0 - 316.69 81.54 2.120
+#  45.0 - 311.72 -38.02 0.753
+#  45.0 - 1.86 -19.38 0.588
+#  45.0 - 330.37 -35.53 1.069
+#  45.0 - 137.55 7.27 0.577
+#  45.0 - 77.43 5.53 0.965
+#  45.0 46.0 115.18 0.07 2.381
+#  45.0 - 8.54 60.04 0.593
+#  45.0 - 43.79 0.35 0.970
+#  45.0 - 9.22 -11.98 0.511
+#  45.0 - 16.58 18.60 1.094
+
+#Corrected for missing leg
+  44.0 45.0 343.34 -44.44 2.120 #OK
+  45.0 - 24.07 -81.88 0.799     #Splay at 45 down to floor
+  45.0 - 272.29 -65.42 0.782    #Splay at 45 Opposite wall
+  45.0 - 275.47 -4.69 0.379     #Splay at 45 Opposite wall
+  45.0 - 289.23 63.31 0.663     #Splay at 45 Up
+  45.0 - 24.06 84.31 0.619      #Splay at 45 Up
+  45.0 - 316.69 81.54 2.120     #Splay at 45 Up
+  45.0 - 311.72 -38.02 0.753    #Splay at 45 Forward
+  45.0 - 1.86 -19.38 0.588      #Splay at 45 Forward
+  45.0 46.0 330.37 -35.53 1.069    #Corrected to 45.0 to 46.0 - This is the missing leg.
+  46.0 - 137.55 7.27 0.577      #Splay to Right hand entrance to Right Hand Tube from 46.0
+  46.0 - 77.43 5.53 0.965       #Splay to Left hand entrance to Right Hand Tube from 46.0
+  46.0 46.5 115.18 0.07 2.381   #Leg Up Right Hand Tube from 46.0
+  46.0 - 8.54 60.04 0.593       #Splay at 46
+  46.0 - 43.79 0.35 0.970       #Splay at 46
+  46.0 - 9.22 -11.98 0.511      #Splay at 46
+  46.0 - 16.58 18.60 1.094      #Splay at 46
+  46.0 47.0 15.53 2.99 1.421    #New start station 46.0
+
+endcentreline
+
+endsurvey
+
