@@ -5,13 +5,13 @@ encoding  utf-8
 ##XTHERION## xth_me_image_insert {0.00 1 1.0} {115.55 1} {Notes/TritonNorthE315.xvi} 0 {}
 
 
-# Projected elevation, facing 315: the walls of TritonNorth.extended.th2 projected by
+# Projected elevation, facing 315: the walls of TritonNorthEe.th2 projected by
 # tools/sketch2therion projected (walls only; one scrap per run of passage heading one way
 # across the view).
 
 scrap TritonNorthSE315_1 -projection [elevation 315] -author 2026.07.25 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of TritonNorthSEe1 (TritonNorth.extended.th2) projected to 315.
+# Walls of TritonNorthSEe1 (TritonNorthEe.th2) projected to 315.
 
 line wall
   784.19 335.74
@@ -173,7 +173,7 @@ endscrap
 
 scrap TritonNorthSE315_2 -projection [elevation 315] -author 2026.07.25 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of TritonNorthSEe2 (TritonNorth.extended.th2) projected to 315.
+# Walls of TritonNorthSEe2 (TritonNorthEe.th2) projected to 315.
 
 line wall
   765.90 234.28

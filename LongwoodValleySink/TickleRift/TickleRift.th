@@ -8,19 +8,14 @@ map TickleRiftME315
     TickleRiftSE315_1
 endmap
 
-input "TickleRift.extended.th2"
+input "TickleRiftEe.th2"
 
 map TickleRiftMEe
   TickleRiftSEe1
 endmap
 
 input TickleRiftE000.th2
-
-map TickleRiftME000
-    TickleRiftSE000_1
-endmap
-input TickleRiftE0.th2
-#input TickleRiftE90.th2
+#input TickleRiftE090.th2
 
 map TickleRiftMP
   TickleRiftSP1

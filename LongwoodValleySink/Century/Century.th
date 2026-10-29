@@ -5,13 +5,12 @@ encoding  utf-8
 
 survey Century
 
-input "Centry.plan.th2"
+input "CenturyP.th2"
 input CenturyE315.th2
 input CenturyE090.th2
-input "Centry.ee.th2"
-
+input "CenturyEe.th2"
 map CenturyMEe
-  centry-ee
+  CenturySEe1
 endmap
 
 input CenturyE000.th2

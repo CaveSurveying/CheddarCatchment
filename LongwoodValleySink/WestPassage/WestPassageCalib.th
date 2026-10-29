@@ -5,8 +5,8 @@ encoding utf-8
 
 survey WestPassage
 
-input "WestPassage.plan.th2"
-input "WestPassage.ee.th2"
+input "WestPassageP.th2"
+input "WestPassageEe.th2"
 
 	
 	centreline

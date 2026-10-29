@@ -45,7 +45,7 @@ class TemplateTest(unittest.TestCase):
         self.assertTrue(s.dates)
         self.assertGreater(s.length, 0)
         self.assertIn('copyright 2026 "CC BY-NC-SA 4.0"', text)
-        self.assertIn('NewTrip.plan.th2', text)
+        self.assertIn('NewTripP.th2', text)
         self.assertIn("NewTripSP1", text)
         self.assertIn("map NewTripMP", text)
         # Nothing it inputs is live until the drawing exists.

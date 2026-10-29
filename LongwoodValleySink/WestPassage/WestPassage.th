@@ -2,7 +2,7 @@ encoding  utf-8
 # Created with SexyTopo 1.8.3 on 2024-11-11
 survey WestPassage
 
-input "WestPassage.plan.th2"
+input "WestPassageP.th2"
 input WestPassageE315.th2
 
 map WestPassageME315
@@ -16,10 +16,9 @@ map WestPassageME090
     WestPassageSE090_1
 endmap
 input WestPassageE000.th2
-input "WestPassage.ee.th2"
-
+input "WestPassageEe.th2"
 map WestPassageMEe
-  westpassage-ee
+  WestPassageSEe1
 endmap
 
 

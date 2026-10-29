@@ -5,17 +5,16 @@ encoding  utf-8
 
 survey NorthRift
 
-input "NorthRift.plan.th2"
+input "NorthRiftP.th2"
 input NorthRiftE315.th2
 
 map NorthRiftME315
     NorthRiftSE315_1
 endmap
 input NorthRiftE090.th2
-input "NorthRift.ee.th2"
-
+input "NorthRiftEe.th2"
 map NorthRiftMEe
-  northrift-ee
+  NorthRiftSEe1
 endmap
 
 

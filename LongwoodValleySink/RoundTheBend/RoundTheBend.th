@@ -3,12 +3,11 @@ encoding  utf-8
 
 survey RoundTheBend
 
-input "RoundTheBend.plan.th2"
+input "RoundTheBendP.th2"
 input RoundTheBendE315.th2
-input "RoundTheBend.ee.th2"
-
+input "RoundTheBendEe.th2"
 map RoundTheBendMEe
-  roundthebend-ee
+  RoundTheBendSEe1
 endmap
 
 

@@ -5,7 +5,7 @@ encoding  utf-8
 
 survey CyclopsEye
 
-input "CyclopsEye.plan.th2"
+input "CyclopsEyeP.th2"
 input CyclopsEyeE315.th2
 
 map CyclopsEyeME315
@@ -21,10 +21,9 @@ input CyclopsEyeE000.th2
 map CyclopsEyeME000
     CyclopsEyeSE000_1
 endmap
-input "CyclopsEye.ee.th2"
-
+input "CyclopsEyeEe.th2"
 map CyclopsEyeMEe
-  cyclopseye-ee
+  CyclopsEyeSEe1
 endmap
 
 

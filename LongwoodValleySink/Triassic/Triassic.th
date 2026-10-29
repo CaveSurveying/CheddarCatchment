@@ -10,14 +10,14 @@ map TriassicME315
     TriassicSE315_1
 endmap
 
-input "Triassic.extended.th2"
+input "TriassicEe.th2"
 
 map TriassicMEe
   TriassicSEe1
 endmap
 
 input TriassicE000.th2
-input TriassicE90.th2
+input TriassicE090.th2
 
 map TriassicME000
     TriassicSE000_2

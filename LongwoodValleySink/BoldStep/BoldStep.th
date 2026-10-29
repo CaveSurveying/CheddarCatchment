@@ -2,13 +2,13 @@ encoding utf-8
 survey BoldStep
 # Created with SexyTopo 1.12.2 on 2026-07-25
 
-input "BoldStep.plan.th2"
+input "BoldStepP.th2"
 
 map BoldStepMP
   BoldStepSP1
   BoldStepSP2
 endmap
-input "BoldStep.extended.th2"
+input "BoldStepEe.th2"
 input "BoldStepE315.th2"
 
 map BoldStepME315

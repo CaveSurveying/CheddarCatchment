@@ -142,9 +142,9 @@ class XviTest(unittest.TestCase):
 class SurveyTest(unittest.TestCase):
     def test_survey_of(self):
         from tools.sketch2therion.survey import survey_of
-        self.assertEqual(survey_of(os.path.join(CAVE, "Cyclops", "Cyclops.plan.th2")), "Cyclops")   # quoted input
+        self.assertEqual(survey_of(os.path.join(CAVE, "Cyclops", "CyclopsP.th2")), "Cyclops")   # quoted input
         self.assertEqual(survey_of(os.path.join(CAVE, "Cyclops", "CyclopsE315.th2")), "Cyclops")    # bare input
-        self.assertEqual(survey_of(os.path.join(CAVE, "BoldStep", "BoldStep.plan.th2")), "BoldStep")
+        self.assertEqual(survey_of(os.path.join(CAVE, "BoldStep", "BoldStepP.th2")), "BoldStep")
         self.assertIsNone(survey_of(os.path.join(CAVE, "GoSouth", "Nothing.th2")))
 
     def test_fit(self):
@@ -184,6 +184,38 @@ class NoSwildonsNamesTest(unittest.TestCase):
             self.assertTrue("caves-mendip-swildons" in head or "new for the Cheddar Catchment survey" in head, path)
             self.assertIn("GPLv3", head, path)
 
+
+@unittest.skipUnless(HAVE_SHAPELY, "needs shapely")
+class SurveyedStations(unittest.TestCase):
+    """A sketch station the survey has no leg to (CJS 107) is not written:
+    Therion would stop with 'station does not exist'."""
+
+    def test_only_surveyed_stations(self):
+        from tools.sketch2therion import convert
+        opt = convert.Options("XS", "X", surveyed={"1", "2"})
+        self.assertEqual(opt.stations(["1", "2", "107"]), ["1", "2"])
+        self.assertEqual(opt.unsurveyed, {"107"})
+
+    def test_unknown_survey_writes_all(self):
+        from tools.sketch2therion import convert
+        self.assertEqual(convert.Options("XS").stations(["1", "107"]), ["1", "107"])
+
+    def test_commented_leg_left_out(self):
+        from tools.sketch2therion.autoscraps import survey_legs
+        with tempfile.NamedTemporaryFile("w", suffix=".th", delete=False) as f:
+            f.write("survey X\n  centreline\n    data normal from to length compass clino\n"
+                    "    1 2 3.0 10 0\n #  2 107 4.4 205 4\n  endcentreline\nendsurvey\n")
+        self.addCleanup(os.remove, f.name)
+        self.assertEqual(survey_legs(f.name), [("1", "2")])
+
+
+    def test_centreline_closed_by_endsurvey(self):
+        from tools.sketch2therion.autoscraps import survey_legs
+        with tempfile.NamedTemporaryFile("w", suffix=".th", delete=False) as f:
+            f.write("survey X\ncentreline\ndata normal from to tape compass clino ignoreall\n"
+                    "1 2 3.0 10 0\n#18 21 4.9 191 67\nendsurvey\n")
+        self.addCleanup(os.remove, f.name)
+        self.assertEqual(survey_legs(f.name), [("1", "2")])
 
 if __name__ == "__main__":
     unittest.main()

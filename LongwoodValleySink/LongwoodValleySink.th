@@ -273,10 +273,10 @@ join WallB@NorthRift:Bottom WallB_1@CrossRoads:0
 #### Joins for extended elevation
 join BoldStepSEe1@BoldStep ConnectionSEe3@Connection -smooth on
 join BoldStepSEe1@BoldStep TridentLeftSEe2@TridentLeft -smooth on
-join ConnectionSEe1@Connection northrift-ee@NorthRift -smooth on
+join ConnectionSEe1@Connection NorthRiftSEe1@NorthRift -smooth on
 join ConnectionSEe3@Connection TritonSouthSEe1@TritonSouth -smooth on
-join crossroads-ee@CrossRoads TridentSEe1@Trident -smooth on
-join crystalpitch-ee@CrystalPitch GoSouthSEe1@GoSouth -smooth on
+join CrossRoadsSEe1@CrossRoads TridentSEe1@Trident -smooth on
+join CrystalPitchSEe1@CrystalPitch GoSouthSEe1@GoSouth -smooth on
 join FairyChimneysSEe1@FairyChimneys TritonSouthSEe1@TritonSouth -smooth on
 join IDontCareSEe1@IDontCare TridentLeftSEe3@TridentLeft -smooth on
 join TridentLeftSEe2@TridentLeft TritonNorthSEe1@TritonNorth -smooth on

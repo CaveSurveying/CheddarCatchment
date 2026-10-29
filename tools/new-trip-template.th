@@ -2,7 +2,7 @@ encoding  utf-8
 # A new survey trip in LongwoodValleySink. SexyTopo (set up for the
 # house style) exports most of this; use this file to check what it
 # wrote, or as a start when it did not. A trip X lives in
-# LongwoodValleySink/X/X.th, with its plan drawing X.plan.th2 and its
+# LongwoodValleySink/X/X.th, with its plan drawing XP.th2 and its
 # sketches in X/Notes/. See tools/README.md for the whole workflow and
 # tools/sketch2therion/Style.md for the conventions.
 #
@@ -15,7 +15,7 @@ survey NewTrip -title "New Trip"
 
   # The plan drawing and its map, once converted (tools/sketch2therion)
   # and drawn; Therion stops on a map whose scraps are not input yet.
-  # input "NewTrip.plan.th2"
+  # input "NewTripP.th2"
   #
   # map NewTripMP
   #   NewTripSP1

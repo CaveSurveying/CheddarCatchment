@@ -5,7 +5,7 @@ encoding  utf-8
 # tools/sketch2therion unfold (each leg from the view seeing it most side on):
 #   Triassic2E000.th2 Triassic2SE000_1: facing 0, stations within 0.08 m
 #   Triassic2E315.th2 Triassic2SE315_1: facing 315, stations within 0.02 m
-#   Triassic2E90.th2 Triassic2SE90_1: facing 90, stations within 0.01 m
+#   Triassic2E090.th2 Triassic2SE90_1: facing 90, stations within 0.01 m
 
 scrap Triassic2SEe1 -projection extended -author 2018.05.17 "John Cooper" -copyright 2018 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 

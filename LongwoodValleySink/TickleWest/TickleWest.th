@@ -2,13 +2,12 @@ encoding  utf-8
 # Created with SexyTopo 1.8.3 on 2024-10-27
 survey TickleWest
 
-input "TickleWest.plan.th2"
+input "TickleWestP.th2"
 input TickleWestE315.th2
 input TickleWestE000.th2
-input "TickleWest.ee.th2"
-
+input "TickleWestEe.th2"
 map TickleWestMEe
-  ticklewest-ee
+  TickleWestSEe1
 endmap
 
 

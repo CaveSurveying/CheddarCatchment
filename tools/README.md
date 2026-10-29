@@ -104,17 +104,17 @@ plan its floor steps, climbs and gradient arrows.
    python3 -m tools.sketch2therion plan LongwoodValleySink/X/Notes/XP.xvi \
      --survey X --floor LongwoodValleySink/X/Notes/XEE.xvi \
      --author 2026.04.25 "Andrew Atkinson" --copyright 2026 "CC BY-NC-SA 4.0" \
-     -o LongwoodValleySink/X/X.plan.th2
-   python3 -m tools.sketch2therion roofs LongwoodValleySink/X/X.plan.th2
-   python3 -m tools.sketch2therion details LongwoodValleySink/X/X.plan.th2
-   python3 -m tools.sketch2therion smooth LongwoodValleySink/X/X.plan.th2
+     -o LongwoodValleySink/X/XP.th2
+   python3 -m tools.sketch2therion roofs LongwoodValleySink/X/XP.th2
+   python3 -m tools.sketch2therion details LongwoodValleySink/X/XP.th2
+   python3 -m tools.sketch2therion smooth LongwoodValleySink/X/XP.th2
    ```
    Scraps are named `XSP1`, `XSP2`, … (`project.toml`). Then
    ```bash
    python3 -m tools.sketch2therion place X
    ```
-   files the drawing: it removes SexyTopo's empty `XP.th2`, inputs
-   `X.plan.th2` in `X.th` with a `map XMP` of its scraps, and adds
+   files the drawing (written over SexyTopo's empty `XP.th2`): it inputs
+   `XP.th2` in `X.th` with a `map XMP` of its scraps, and adds
    `XMP@X` to `LongwoodValleySinkMP` in `LongwoodValleySink.th`. `roofs`,
    `details` and `smooth` read the legs and splays from the drawing's own
    sketch (its backdrop `.xvi`), never from Therion's database; `smooth`
@@ -138,8 +138,8 @@ plan its floor steps, climbs and gradient arrows.
 ```bash
 python3 -m tools.sketch2therion review build      # output/review-plan.pdf, with station names
 python3 -m tools.sketch2therion review show out.png 90 91 92 --survey NorthRift [--before old.pdf]
-python3 -m tools.sketch2therion review check LongwoodValleySink/X/X.plan.th2
-python3 -m tools.sketch2therion review gaps LongwoodValleySink/X/X.plan.th2 XSP1
+python3 -m tools.sketch2therion review check LongwoodValleySink/X/XP.th2
+python3 -m tools.sketch2therion review gaps LongwoodValleySink/X/XP.th2 XSP1
 ```
 
 - `build` makes the plan from `Plan_only.thcfg` with station names on;

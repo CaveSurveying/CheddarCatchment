@@ -1,0 +1,43 @@
+encoding  utf-8
+# Licence: CC BY-NC-SA 4.0 (see README.md at the top of the repository)
+##XTHERION## xth_me_area_adjust -491.9 -206.1 1020.1 948.9
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {404.47 1 1.0} {653.02 4} {Notes/TritonAvenEE.xvi} 0 {}
+
+
+# Converted from TritonAvenEE.xvi by tools/sketch2therion (extended elevation).
+# One scrap per sketch, or as chosen by hand ([scraps_extended] in tools/project.toml).
+
+scrap TritonAvenSEe1 -projection extended -author 2026.09.18 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
+
+
+
+line wall
+  124.58 180.89
+  134.32 220.28 169.70 367.37 182.65 417.09
+  193.96 460.51 227.51 544.82 267.44 566.04
+  313.34 590.48 377.06 613.34 428.65 616.59
+  471.83 619.27 514.44 613.11 557.74 614.72
+  630.08 617.41 751.67 597.50 813.95 613.80
+endline
+line wall
+  803.18 648.73
+  760.65 648.42 721.96 652.84 680.71 653.70
+  645.80 654.40 604.51 647.54 571.14 656.67
+  527.83 668.52 471.61 680.61 427.11 686.10
+  396.86 689.83 406.34 681.71 372.95 686.16
+  317.18 693.59 216.99 698.71 179.23 742.71
+endline
+
+point 404.47 653.02 station -name 4
+
+point 247.41 565.20 station -name 2
+
+point -285.91 664.68 station -name 3
+
+point 577.61 635.53 station -name 5
+
+point 0.00 0.00 station -name 1
+
+point 803.09 625.12 station -name 6
+endscrap

@@ -5,13 +5,13 @@ encoding  utf-8
 ##XTHERION## xth_me_image_insert {0.00 1 1.0} {0.00 1} {Notes/TridentCentreE315.xvi} 0 {}
 
 
-# Projected elevation, facing 315: the walls of TridentCentre.extended.th2 projected by
+# Projected elevation, facing 315: the walls of TridentCentreEe.th2 projected by
 # tools/sketch2therion projected (walls only; one scrap per run of passage heading one way
 # across the view).
 
 scrap TridentCentreSE315_1 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of TridentCentreSEe1 (TridentCentre.extended.th2) projected to 315.
+# Walls of TridentCentreSEe1 (TridentCentreEe.th2) projected to 315.
 
 line wall -subtype sand
   16.03 4.53
@@ -44,7 +44,7 @@ endscrap
 
 scrap TridentCentreSE315_2 -projection [elevation 315] -author 2026.07.11 "Andrew Atkinson" -copyright 2026 "CC BY-NC-SA 4.0" -scale [0 0 196.850 0 0.0 0.0 10 0 m]
 
-# Walls of TridentCentreSEe2 (TridentCentre.extended.th2) projected to 315.
+# Walls of TridentCentreSEe2 (TridentCentreEe.th2) projected to 315.
 
 line wall
   60.85 32.82

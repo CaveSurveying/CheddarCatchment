@@ -8,7 +8,7 @@ map EntranceME315
     EntranceSE315_1
 endmap
 
-input "Entrance.extended.th2"
+input "EntranceEe.th2"
 
 map EntranceMEe
   EntranceSEe1
@@ -16,7 +16,7 @@ endmap
 
 input EntranceE000.th2
 input EntranceE0.th2
-input EntranceE90.th2
+input EntranceE090.th2
 
 map EntranceME000
     EntranceSE000_1

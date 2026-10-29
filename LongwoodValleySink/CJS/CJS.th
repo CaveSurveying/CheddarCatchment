@@ -5,7 +5,7 @@ encoding  utf-8
 
 survey CJS
 
-input "CJS.plan.th2"
+input "CJSP.th2"
 input CJSE315.th2
 
 map CJSME315
@@ -22,10 +22,9 @@ map CJSME000
     CJSSE000_1
     CJSSE000_2
 endmap
-input "CJS.ee.th2"
-
+input "CJSEe.th2"
 map CJSMEe
-  cjs-ee
+  CJSSEe1
 endmap
 
 

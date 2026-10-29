@@ -16,7 +16,8 @@ plan_map_file = "LongwoodValleySink/LongwoodValleySink.th"   # defined here (gro
 [names]
 # {survey} is a survey's name, e.g. GoSouth (see tools/sketch2therion/Style.md).
 survey_file = "{survey}/{survey}.th"
-plan_file = "{survey}/{survey}.plan.th2"
+plan_file = "{survey}/{survey}P.th2"
+extended_file = "{survey}/{survey}Ee.th2"
 scrap_prefix = "{survey}S"          # the converter adds P1, P2, ... (plan) or Ee1, ... ([convert] elevation_suffix)
 survey_plan_map = "{survey}MP"
 plan_sketch = '(\.plan|_p|P)\.xvi$'   # regex: which .xvi sketches are plans (the rest are elevations)
@@ -67,6 +68,9 @@ Connection = ["1-4, 8-13", "5-7", "15-17, 24-28", "14, 18-23"]   # 5 with 6, 7 (
 # TridentLeft (the user's edit, 2026-10-12): the lower passages apart from those
 # above them, 1-5 under 6-10 and 16-21 under 22-32.
 TridentLeft = ["1-5", "6-15, 33-38", "22-32", "16-21"]
+# CrystalPitch (the user, 2026-10-29): 5 to 11, the passage out over the top of
+# the pitch, apart from the pitch below it; the user draws its walls.
+CrystalPitch = ["1-4, 12-32", "5-11"]
 
 [glitches]
 # Slips of the pen in a sketch: stroke points inside these boxes (sketch
