@@ -24,8 +24,9 @@ except ImportError:
 
 
 def normalise(text):
-    """What may differ from upstream: line endings, licence line, backdrop path."""
+    """What may differ from upstream: line endings, licence line, converter version, backdrop path."""
     text = text.replace("\r\n", "\n")
+    text = re.sub(r"(by tools/sketch2therion) \S+ \(", r"\1 (", text)
     text = re.sub(r"^# Licence: .*\n", "", text, flags=re.M)
     return re.sub(r"^##XTHERION## xth_me_image_insert .*\n", "", text, flags=re.M)
 
