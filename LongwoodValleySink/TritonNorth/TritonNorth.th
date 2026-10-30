@@ -12,7 +12,7 @@ input "TritonNorthE315.th2"
 
 map TritonNorthME315
   TritonNorthSE315_1
-  TritonNorthSE315_2
+  # TritonNorthSE315_2 has no stations (21 to 24 are out of the survey)
 endmap
 
 
