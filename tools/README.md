@@ -119,6 +119,19 @@ plan its floor steps, climbs and gradient arrows.
    `details` and `smooth` read the legs and splays from the drawing's own
    sketch (its backdrop `.xvi`), never from Therion's database; `smooth`
    comes last. `tidy` redoes drawings converted earlier.
+
+   **Convert the extended elevation** the same way, all three steps:
+   ```bash
+   python3 -m tools.sketch2therion extended LongwoodValleySink/X/Notes/XEE.xvi \
+     --survey X --author 2026.04.25 "Andrew Atkinson" --copyright 2026 "CC BY-NC-SA 4.0" \
+     -o LongwoodValleySink/X/X.extended.th2
+   python3 -m tools.sketch2therion roofs LongwoodValleySink/X/X.extended.th2
+   python3 -m tools.sketch2therion smooth LongwoodValleySink/X/X.extended.th2
+   ```
+   What `plan` or `extended` writes is not finished (walls with
+   `-outline none` round an invisible outline, rocks only marked) until
+   `smooth` has run. The sketch may be kept anywhere: every step after
+   the first, and the scrap chooser, read it from the drawing's backdrop.
 6. **Finish by hand** in xTherion (the sketch is linked as a
    backdrop): passage names at the label sizes in `Style.md`, flow
    arrows, `C2`/`P5`, `join`s to neighbouring scraps.
