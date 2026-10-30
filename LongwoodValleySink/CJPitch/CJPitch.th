@@ -5,14 +5,13 @@ encoding  utf-8
 
 survey CJPitch
 
-input "CJPitch.plan.th2"
+input "CJPitchP.th2"
 input CJPitchE000.th2
 input CJPitchE315.th2
 input CJPitchE090.th2
-input "CJPitch.ee.th2"
-
+input "CJPitchEe.th2"
 map CJPitchMEe
-  cjpitch-ee
+  CJPitchSEe1
 endmap
 
 

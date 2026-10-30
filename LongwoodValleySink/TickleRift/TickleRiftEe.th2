@@ -4,7 +4,7 @@ encoding  utf-8
 # Extended elevation of TickleRift, unfolded from its projected elevations by
 # tools/sketch2therion unfold (each leg from the view seeing it most side on):
 #   TickleRiftE0.th2 TickleRiftSE01: facing 0, stations within 0.00 m
-#   TickleRiftE90.th2 TickleRiftSE901: facing 90, stations within 0.00 m
+#   TickleRiftE090.th2 TickleRiftSE901: facing 90, stations within 0.00 m
 
 scrap TickleRiftSEe1 -projection extended -author 2022.09.19 "John Cooper" -copyright 2022 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 

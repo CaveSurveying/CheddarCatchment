@@ -3,9 +3,7 @@ survey TritonAven
 # Created with SexyTopo 1.12.3 on 2026-10-02
 
 input "TritonAvenP.th2"
-input "TritonAvenEE.th2"
-
-
+input "TritonAvenEe.th2"
 centreline
 date 2026.09.18
 instrument insts "DistoX-2027"

@@ -2,17 +2,17 @@ encoding  utf-8
 survey TritonNorth
 # Created with SexyTopo 1.12.2 on 2026-07-25
 
-input "TritonNorth.plan.th2"
+input "TritonNorthP.th2"
 
 map TritonNorthMP
   TritonNorthSP1
 endmap
-input "TritonNorth.extended.th2"
+input "TritonNorthEe.th2"
 input "TritonNorthE315.th2"
 
 map TritonNorthME315
   TritonNorthSE315_1
-  TritonNorthSE315_2
+  # TritonNorthSE315_2 has no stations (21 to 24 are out of the survey)
 endmap
 
 

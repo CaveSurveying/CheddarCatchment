@@ -5,11 +5,12 @@ encoding  utf-8
 
 survey CrystalPitch
 
-input "CrystalPitch.plan.th2"
-input "CrystalPitch.ee.th2"
+input "CrystalPitchP.th2"
+input "CrystalPitchEe.th2"
 
 map CrystalPitchMEe
-  crystalpitch-ee
+  CrystalPitchSEe1
+  CrystalPitchSEe2
 endmap
 
 input CrystalPitchE315.th2

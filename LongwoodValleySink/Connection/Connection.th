@@ -2,12 +2,12 @@ encoding  utf-8
 survey Connection
 # Created with SexyTopo 1.12.3 on 2026-08-01
 
-input "Connection.plan.th2"
+input "ConnectionP.th2"
 
 map ConnectionMP
   ConnectionSP1
 endmap
-input "Connection.extended.th2"
+input "ConnectionEe.th2"
 input "ConnectionE315.th2"
 
 map ConnectionME315

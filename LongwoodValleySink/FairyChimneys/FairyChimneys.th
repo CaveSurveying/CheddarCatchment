@@ -2,12 +2,12 @@ encoding  utf-8
 survey FairyChimneys
 # Created with SexyTopo 1.12.3 on 2026-08-08
 
-input "FairyChimneys.plan.th2"
+input "FairyChimneysP.th2"
 
 map FairyChimneysMP
   FairyChimneysSP1
 endmap
-input "FairyChimneys.extended.th2"
+input "FairyChimneysEe.th2"
 input "FairyChimneysE315.th2"
 
 map FairyChimneysME315

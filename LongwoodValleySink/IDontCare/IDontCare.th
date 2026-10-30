@@ -2,12 +2,12 @@ encoding utf-8
 survey IDontCare
 # Created with SexyTopo 1.12.2 on 2026-07-11
 
-input "IDontCare.plan.th2"
+input "IDontCareP.th2"
 
 map IDontCareMP
   IDontCareSP1
 endmap
-input "IDontCare.extended.th2"
+input "IDontCareEe.th2"
 input "IDontCareE315.th2"
 
 map IDontCareME315

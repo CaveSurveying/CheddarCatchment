@@ -8,19 +8,14 @@ map GoWestME315
     GoWestSE315_1
 endmap
 
-input "GoWest.extended.th2"
+input "GoWestEe.th2"
 
 map GoWestMEe
   GoWestSEe1
 endmap
 
 input GoWestE000.th2
-
-map GoWestME000
-    GoWestSE000_1
-endmap
-input GoWestE0.th2
-#input GoWestE90.th2
+#input GoWestE090.th2
 
 map GoWestMP
   GoWestSP1

@@ -6,7 +6,7 @@ encoding  utf-8
 #   EntranceE0.th2 EntranceSE01: facing 0, stations within 0.00 m
 #   EntranceE000.th2 EntranceSE000_1: facing 0, stations within 0.00 m
 #   EntranceE315.th2 EntranceSE315_1: facing 315, stations within 0.00 m
-#   EntranceE90.th2 EntranceSE901: facing 90, stations within 0.00 m
+#   EntranceE090.th2 EntranceSE901: facing 90, stations within 0.00 m
 
 scrap EntranceSEe1 -projection extended -author 2013.11.19 "Andrew Atkinson" -copyright 2013 "CC BY-NC-SA 4.0" -scale [0 0 787.40 787.40 0.0 0.0 10 10 m]
 

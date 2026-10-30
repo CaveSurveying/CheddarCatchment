@@ -8,14 +8,14 @@ map Triassic2ME315
     Triassic2SE315_1
 endmap
 
-input "Triassic2.extended.th2"
+input "Triassic2Ee.th2"
 
 map Triassic2MEe
   Triassic2SEe1
 endmap
 
 input Triassic2E000.th2
-input Triassic2E90.th2
+input Triassic2E090.th2
 
 
 map Triassic2ME000

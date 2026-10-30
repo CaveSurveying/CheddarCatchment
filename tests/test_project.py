@@ -38,7 +38,8 @@ class ProjectTest(unittest.TestCase):
         self.p = project.load()
 
     def test_names(self):
-        self.assertEqual(self.p.plan_file("GoSouth"), "LongwoodValleySink/GoSouth/GoSouth.plan.th2")
+        self.assertEqual(self.p.plan_file("GoSouth"), "LongwoodValleySink/GoSouth/GoSouthP.th2")
+        self.assertEqual(self.p.extended_file("GoSouth"), "LongwoodValleySink/GoSouth/GoSouthEe.th2")
         self.assertEqual(self.p.survey_file("GoSouth"), "LongwoodValleySink/GoSouth/GoSouth.th")
         self.assertEqual(self.p.scrap_prefix("GoSouth") + "P1", "GoSouthSP1")
         self.assertEqual(self.p.survey_plan_map("GoSouth"), "GoSouthMP")

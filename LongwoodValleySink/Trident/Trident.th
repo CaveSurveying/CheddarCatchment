@@ -2,12 +2,12 @@ encoding  utf-8
 survey Trident
 # Created with SexyTopo 1.11.2 on 2026-06-13
 
-input "Trident.plan.th2"
+input "TridentP.th2"
 
 map TridentMP
   TridentSP1
 endmap
-input "Trident.extended.th2"
+input "TridentEe.th2"
 input "TridentE315.th2"
 
 map TridentME315

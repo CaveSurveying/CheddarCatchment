@@ -50,6 +50,8 @@ class Fixture(unittest.TestCase):
         self.root = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, self.root)
         self.p = project.load(TOML, root=self.root)
+        # a cave whose drawing is not SexyTopo's file: place removes the empty export
+        self.p.names = dict(self.p.names, plan_file="{survey}/{survey}.plan.th2")
         self.dir = os.path.join(self.root, "LongwoodValleySink", "GoSouth")
         os.makedirs(os.path.join(self.dir, "Notes"))
         self.put("LongwoodValleySink/GoSouth/GoSouth.th", SURVEY_TH)
@@ -80,6 +82,14 @@ class PlaceTest(Fixture):
         self.assertNotIn("GoSouthSEe1", th)                           # plan scraps only
         master = self.get("LongwoodValleySink/LongwoodValleySink.th")
         self.assertIn("  NorthRiftMP\n  GoSouthMP@GoSouth\nendmap\nmap LongwoodValleySinkM315", master)
+
+    def test_drawing_is_the_sexytopo_file(self):
+        self.p.names = dict(self.p.names, plan_file="{survey}/{survey}P.th2")
+        self.put("LongwoodValleySink/GoSouth/GoSouthP.th2", DRAWN)
+        place.place("GoSouth", self.p)
+        self.assertTrue(os.path.exists(os.path.join(self.dir, "GoSouthP.th2")))
+        self.assertIn('input "GoSouthP.th2"\n\nmap GoSouthMP\n  GoSouthSP1\n  GoSouthSP2\nendmap\n',
+                      self.get("LongwoodValleySink/GoSouth/GoSouth.th"))
 
     def test_twice_changes_nothing(self):
         place.place("GoSouth", self.p)

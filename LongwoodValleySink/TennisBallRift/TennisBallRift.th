@@ -8,7 +8,7 @@ map TennisBallRiftME315
     TennisBallRiftSE315_1
 endmap
 
-input "TennisBallRift.extended.th2"
+input "TennisBallRiftEe.th2"
 
 map TennisBallRiftMEe
   TennisBallRiftSEe1
@@ -23,7 +23,7 @@ endmap
 #TennisBallRift not on E0 at present
 #input TennisBallRiftE0.th2
 
-input TennisBallRiftE90.th2
+input TennisBallRiftE090.th2
 
 map TennisBallRiftMP
   TennisBallRiftSP1

@@ -5,14 +5,13 @@ encoding  utf-8
 
 survey CrossRoads
 
-input "CrossRoads.plan.th2"
+input "CrossRoadsP.th2"
 input CrossRoadsE315.th2
 input CrossRoadsE090.th2
 input CrossRoadsE000.th2
-input "CrossRoads.ee.th2"
-
+input "CrossRoadsEe.th2"
 map CrossRoadsMEe
-  crossroads-ee
+  CrossRoadsSEe1
 endmap
 
 
