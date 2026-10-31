@@ -72,8 +72,8 @@ class WallsMeet(unittest.TestCase):
 class Curls(unittest.TestCase):
     def test_a_curl_is_a_closed_loop(self):
         c = [(0.3 * math.cos(a / 10), 0.3 * math.sin(a / 10)) for a in range(0, 52)]      # 300 degrees round
-        self.assertTrue(marks.is_curl(c))
-        self.assertFalse(marks.is_curl([(0, 0), (0.5, 0.02), (1.0, 0)]))
+        self.assertTrue(marks.is_open_loop(c))
+        self.assertFalse(marks.is_open_loop([(0, 0), (0.5, 0.02), (1.0, 0)]))
 
 
 class SectionInPlace(unittest.TestCase):

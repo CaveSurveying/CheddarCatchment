@@ -14,8 +14,8 @@ class Shapes(unittest.TestCase):
 
     def test_curl_is_rubble_floor_line_is_not(self):
         curl = [(0.3 + 0.25 * math.cos(t / 5), 0.25 * math.sin(t / 5)) for t in range(40)]
-        self.assertTrue(el.is_curl(curl))
-        self.assertFalse(el.is_curl([(x * 0.5, 0) for x in range(10)]))
+        self.assertTrue(el.is_squiggle(curl))
+        self.assertFalse(el.is_squiggle([(x * 0.5, 0) for x in range(10)]))
 
     def test_curtain_hangs_and_is_long(self):
         self.assertTrue(el.is_curtain([(0, 0), (0.05, -0.6), (0, -1.3)]))
