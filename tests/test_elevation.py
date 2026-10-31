@@ -22,9 +22,10 @@ class Shapes(unittest.TestCase):
         self.assertFalse(el.is_curtain([(0, 0), (0, -0.6)]))                      # a stalactite's stroke
         self.assertFalse(el.is_curtain([(0, 0), (1.3, -0.2)]))
 
-    def test_blocks_humpy_and_gentle_flowstone_smooth_or_steep(self):
-        hump = [(x * 0.1, 0.5 * math.sin(math.pi * x / 12)) for x in range(13)]
-        self.assertTrue(el.is_blocks(hump))
+    def test_blocks_humpy_and_gentle_flowstone_smooth_steep_or_large(self):
+        hump = lambda w: [(x * w / 12, w / 2.4 * math.sin(math.pi * x / 12)) for x in range(13)]
+        self.assertTrue(el.is_blocks(hump(0.6)))       # rock-sized
+        self.assertFalse(el.is_blocks(hump(1.2)))      # a lump of flowstone (GoSouth)
         self.assertFalse(el.is_blocks([(0, 0), (0.6, 0.02), (1.2, 0.03)]))
         steep = [(0, 0), (0.2, 0.9), (1.2, 1.5)]
         self.assertFalse(el.is_blocks(steep))
