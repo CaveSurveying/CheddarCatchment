@@ -228,32 +228,32 @@ line rimstone-dam
 endline
 
 line section -direction both
-  -75.83 326.00
+  -76.34 325.81
   46.55 370.70
 endline
 
 point -187.78 309.43 section -scrap ConnectionPX3
 
 line section -direction both
-  61.11 507.52
+  61.10 507.53
   147.13 451.87
 endline
 
 point 246.90 435.68 section -scrap ConnectionPX6
 
 line section -direction both
-  -125.20 565.68
-  3.44 584.30
+  -122.44 566.08
+  3.48 584.31
 endline
 
 point -232.47 599.91 section -scrap ConnectionPX8
 
 line section -direction both
-  -444.38 2243.56
+  -444.39 2243.56
   -318.25 2264.13
 endline
 
-point -489.15 2421.66 section -scrap ConnectionPX18 -align top-left
+point -552.69 2467.38 section -scrap ConnectionPX18 -align top-left
 
 line section -direction both
   -156.00 2338.76

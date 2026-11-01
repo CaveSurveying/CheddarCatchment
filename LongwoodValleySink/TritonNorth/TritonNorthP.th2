@@ -272,8 +272,8 @@ line floor-step
 endline
 
 line section -direction both
-  104.75 700.57
-  272.24 687.24
+  104.43 700.60
+  271.21 687.32
 endline
 
 point 20.28 716.09 section -scrap TritonNorthPX5
@@ -287,14 +287,14 @@ point -35.17 2007.17 section -scrap TritonNorthPX10
 
 line section -direction both
   227.03 2706.36
-  412.62 2690.19
+  412.61 2690.19
 endline
 
 point 144.37 2711.06 section -scrap TritonNorthPX13
 
 line section -direction both
   338.39 3058.52
-  464.77 3025.28
+  464.79 3025.28
 endline
 
 point 269.60 3082.31 section -scrap TritonNorthPX15

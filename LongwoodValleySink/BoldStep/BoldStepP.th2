@@ -222,12 +222,12 @@ endline
 
 point -681.39 -192.59 section -scrap BoldStepPX8
 
-line section -direction end
-  -180.02 -50.89
-  -139.68 77.21
+line section -direction both
+  -367.16 -645.14
+  -139.82 76.76
 endline
 
-point -85.05 107.30 section -scrap BoldStepPX2
+point -102.49 98.21 section -scrap BoldStepPX2
 
 point 0.00 0.00 station -name 0
 

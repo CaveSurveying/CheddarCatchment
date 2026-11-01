@@ -253,8 +253,8 @@ endline
 
 # Cross sections from the sketch (sketch2therion, sections only).
 line section -direction both
-  -115.96 -113.63
-  -203.22 47.65
+  -115.95 -113.65
+  -178.94 2.77
 endline
 
 point -219.12 126.34 section -scrap WestPassagePX54

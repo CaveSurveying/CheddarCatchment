@@ -459,7 +459,7 @@ point -633.2 0.4 label -scale m -align bottom -text [Go West]
 
 line section -direction both
   100.09 459.21
-  218.26 458.7
+  218.26 458.70
 endline
 
 point 380.69 515.76 section -scrap TickleWestPX14
@@ -471,36 +471,36 @@ endline
 
 point -72.02 707.03 section -scrap TickleWestPX19
 
-line section -direction end
-  87.5 415.46
-  -24.5 437.0
+line section -direction both
+  89.50 415.08
+  -24.50 437.00
 endline
 
-point 82.82 353.29 section -scrap TickleWestPX21
+point 93.98 411.30 section -scrap TickleWestPX21
 
 line section -direction both
-  -447.4 174.92
-  -452.6 298.52
+  -447.40 174.97
+  -453.03 308.74
 endline
 
 point -457.73 69.22 section -scrap TickleWestPX25
 
 line section -direction both
-  -825.38 119.67
-  -846.76 268.84
+  -828.52 141.54
+  -846.76 268.87
 endline
 
 point -818.61 24.35 section -scrap TickleWestPX27
 
 line section -direction both
-  -1209.14 -146.56
-  -1296.45 193.59
+  -1221.11 -99.91
+  -1296.44 193.55
 endline
 
-point -1167.59 -379.13 section -scrap TickleWestPX29
+point -1152.90 -436.35 section -scrap TickleWestPX29
 
 line section -direction both
-  -1791.79 -95.75
+  -1791.79 -95.74
   -1800.68 145.03
 endline
 

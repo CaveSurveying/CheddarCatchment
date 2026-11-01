@@ -363,22 +363,22 @@ endline
 point 90.55 -510.74 section -scrap TritonSouthPX3 -align top-right
 
 line section -direction end
-  -630.40 -936.20
-  -660.09 -733.18
+  -630.57 -935.02
+  -660.42 -730.93
 endline
 
 point -780.05 -497.10 section -scrap TritonSouthPX8
 
 line section -direction both
-  -1014.19 -975.85
+  -1014.19 -975.86
   -1057.13 -836.45
 endline
 
-point -1146.55 -772.88 section -scrap TritonSouthPX10 -align top
+point -1152.33 -754.12 section -scrap TritonSouthPX10 -align top
 
-line section -direction end
-  -1662.78 -1123.50
-  -1704.83 -995.15
+line section -direction both
+  -1706.43 -990.28
+  -1628.26 -1228.86
 endline
 
 point -1701.83 -913.01 section -scrap TritonSouthPX19

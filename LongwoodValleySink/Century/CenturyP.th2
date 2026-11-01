@@ -538,7 +538,7 @@ endline
 
 point 475.67 351.85 section -scrap CenturyPX61
 
-line section -direction begin
+line section -direction both
   1727.31 696.32
   1739.79 526.06
 endline
