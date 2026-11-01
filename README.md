@@ -14,7 +14,7 @@ and the SexyTopo export settings.
 | `LongwoodValleySink/` | The survey, with its full SVN history. `Plan_only.thcfg` builds the plan. |
 | `common_layout.th`, `Symbols/` | Shared layout and symbols, also from SVN. |
 | `tools/` | Converting sketches, linting drawings, the build index, and the SVN sync ([`tools/README.md`](tools/README.md)). |
-| `tests/` | Unit tests: `python3 -m pytest -q tests`. |
+| `tests/` | Tests of this cave's drawings, settings and build, and of its own tools in `tools/`: `python3 -m pytest -q tests`. The converter's tests are in Therion-Sketching. |
 | `docs/` | The plan, the Phase 1 inventory and the Phase 5 log. |
 
 ## Building
