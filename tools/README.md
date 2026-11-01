@@ -14,7 +14,7 @@ is [`docs/PLAN-LongwoodValleySink.md`](../docs/PLAN-LongwoodValleySink.md).
 | `sketch2therion/requirements.txt` | Python libraries (`pip install -r tools/sketch2therion/requirements.txt`). |
 | `project.toml` | This cave's settings: the master survey, the trial config, file and scrap names, line endings, licence, sheets. |
 | `th2lint-baseline.txt` | The findings in this cave's existing drawings. |
-| `layout.thcfg`, `layout.th` | Export where Therion puts every station, and the centreline as SQL, for the converter. |
+| `layout.thcfg`, `layout.th` | Export where Therion puts every station (for `check`, `joins`, `sections`, `review`), and the centreline as SQL for the converter. |
 | `new-trip-template.th` | A starting point for a new trip's survey file. |
 | `web/make_index.py` | The index page and statistics for a build. |
 | `svn2git/` | The git copy of SVN: migration, verification and sync. |
@@ -101,9 +101,10 @@ plan its floor steps, climbs and gradient arrows.
    ```bash
    python3 -m tools.sketch2therion check LongwoodValleySink/X/Notes/XP.xvi --survey X
    ```
-   A fit within a few centimetres is normal; stations Therion doesn't
-   know mean the trip isn't input, the layout is stale or `--survey`
-   is wrong.
+   It lists the sketch's stations, legs and lines. Stations Therion
+   doesn't know mean the trip isn't input, the layout is stale or
+   `--survey` is wrong. The drawing keeps the sketch's own station
+   positions, so they are not compared with Therion's.
 5. **Convert the plan** (SexyTopo's labels come from its th2 export,
    the one with this sketch as its backdrop; a th2 that is not that
    export is not overwritten without `--force`):
