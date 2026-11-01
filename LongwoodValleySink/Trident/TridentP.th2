@@ -805,8 +805,8 @@ line rimstone-dam
 endline
 
 line section -direction both
-  -83.05 148.13
-  35.84 173.95
+  -83.04 148.13
+  35.85 173.95
 endline
 
 point -160.10 90.64 section -scrap TridentPX2

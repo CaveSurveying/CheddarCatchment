@@ -552,60 +552,60 @@ line floor-step
 endline
 
 line section -direction both
-  -37.25 -25.08
-  35.33 84.29
+  -45.72 -37.85
+  43.53 96.64
 endline
 
 point -78.63 -99.81 section -scrap TridentLeftPX1
 
-line section -direction end
-  -304.51 349.99
-  -219.54 447.55
+line section -direction both
+  -323.63 328.04
+  -219.49 447.60
 endline
 
-point -129.90 371.24 section -scrap TridentLeftPX6
+point -131.26 391.02 section -scrap TridentLeftPX6
 
-line section -direction end
-  -669.97 404.58
-  -693.40 588.20
+line section -direction both
+  -670.47 408.50
+  -693.41 588.29
 endline
 
 point -600.22 655.32 section -scrap TridentLeftPX10
 
 line section -direction both
-  -989.22 935.79
-  -829.98 972.86
+  -989.23 935.79
+  -829.97 972.86
 endline
 
 point -734.85 1012.74 section -scrap TridentLeftPX21
 
-line section -direction end
-  -903.93 309.44
-  -876.35 461.07
+line section -direction both
+  -903.93 309.43
+  -876.35 461.08
 endline
 
 point -880.15 238.07 section -scrap TridentLeftPX12
 
 line section -direction both
-  -813.64 1664.01
-  -764.54 1486.92
+  -813.64 1664.03
+  -764.54 1486.91
 endline
 
 point -866.64 1690.97 section -scrap TridentLeftPX28
 
 line section -direction both
-  -1739.86 1014.94
-  -1588.00 966.63
+  -1740.10 1015.02
+  -1588.19 966.69
 endline
 
 point -1859.17 1139.23 section -scrap TridentLeftPX37
 
 line section -direction both
-  -1679.95 484.81
-  -1820.03 526.33
+  -1670.65 482.05
+  -1831.71 529.79
 endline
 
-point -1427.95 180.71 section -scrap TridentLeftPX38
+point -1361.75 58.74 section -scrap TridentLeftPX38
 
 point -690.59 792.97 station -name 20
 

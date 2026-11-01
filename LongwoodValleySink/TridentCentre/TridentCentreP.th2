@@ -146,22 +146,22 @@ endline
 
 
 line section -direction both
-  -43.72 -11.99
-  109.90 30.14
+  -43.06 -11.81
+  111.13 30.48
 endline
 
 point 186.46 28.58 section -scrap TridentCentrePX1
 
-line section -direction end
-  -225.44 469.97
-  -120.43 516.50
+line section -direction both
+  -245.06 461.28
+  -120.22 516.59
 endline
 
 point -46.19 626.30 section -scrap TridentCentrePX5
 
-line section -direction begin
-  -291.02 261.58
-  -242.49 469.52
+line section -direction both
+  -289.56 267.83
+  -238.36 487.23
 endline
 
 point -371.76 591.83 section -scrap TridentCentrePX8

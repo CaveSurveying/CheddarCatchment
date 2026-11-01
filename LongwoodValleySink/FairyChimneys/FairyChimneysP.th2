@@ -596,8 +596,8 @@ endline
 point -1775.28 -421.91 section -scrap FairyChimneysPX14
 
 line section -direction both
-  -2189.28 -787.21
-  -2374.26 -812.38
+  -2190.32 -787.35
+  -2374.47 -812.41
 endline
 
 point -2412.30 -901.05 section -scrap FairyChimneysPX22 -align left
@@ -607,14 +607,14 @@ line section -direction both
   -2188.96 -1490.75
 endline
 
-point -1961.54 -1443.31 section -scrap FairyChimneysPX25 -align top-right
+point -1942.53 -1438.19 section -scrap FairyChimneysPX25 -align top-right
 
 line section -direction both
-  -2077.46 -3581.69
-  -2158.72 -3325.64
+  -2076.69 -3584.13
+  -2154.94 -3337.56
 endline
 
-point -2009.17 -3099.14 section -scrap FairyChimneysPX32 -align top-left
+point -2032.99 -3024.09 section -scrap FairyChimneysPX32 -align top-left
 
 point -2229.74 -3450.91 station -name 33
 
