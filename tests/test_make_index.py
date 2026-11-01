@@ -58,5 +58,20 @@ class CollectTest(unittest.TestCase):
         self.assertIn("abcdef1", html)
 
 
+class NoSwildonsNamesTest(unittest.TestCase):
+    """tools/web came from the Swildons survey with sketch2therion."""
+
+    def test_no_swildons_names_left(self):
+        import glob
+        import re
+        for path in glob.glob(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                           "tools", "web", "*.py")):
+            with open(path, encoding="utf-8") as f:
+                for n, line in enumerate(f, 1):
+                    if "caves-mendip-swildons" in line or "Swildons version" in line or "Swildons survey" in line:
+                        continue        # origin notes
+                    self.assertIsNone(re.search(r"(?i)swil|sump1|stanton|footleg|waterworth", line), f"{path}:{n}")
+
+
 if __name__ == "__main__":
     unittest.main()
